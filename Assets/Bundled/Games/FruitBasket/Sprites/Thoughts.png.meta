@@ -1,0 +1,1865 @@
+fileFormatVersion: 2
+guid: fe8686f527697794e968054527760981
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 100
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Thoughts_0
+      rect:
+        serializedVersion: 2
+        x: 5643
+        y: 2281
+        width: 205
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d8670d08b636a34496db1cf9462b2c3
+      internalID: 1423491249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_1
+      rect:
+        serializedVersion: 2
+        x: 5642
+        y: 2103
+        width: 205
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5709d2bb784c7d4e8947e84224bc9f9
+      internalID: 2060742153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_2
+      rect:
+        serializedVersion: 2
+        x: 5644
+        y: 1912
+        width: 201
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0240d7dd372ceaa489108a206e01ab0b
+      internalID: -1828198779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_3
+      rect:
+        serializedVersion: 2
+        x: 5640
+        y: 1719
+        width: 208
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82fcb569b62b3864599a806744e68916
+      internalID: -459223378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_4
+      rect:
+        serializedVersion: 2
+        x: 4492
+        y: 1690
+        width: 1071
+        height: 733
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b21a7c00d528da549ac3083f764386cc
+      internalID: 1552930912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_5
+      rect:
+        serializedVersion: 2
+        x: 3337
+        y: 1690
+        width: 1088
+        height: 733
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3b794b6a60ceb64da00a55f0297caf1
+      internalID: -1090298191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_6
+      rect:
+        serializedVersion: 2
+        x: 3357
+        y: 854
+        width: 1047
+        height: 731
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4729cb35aee19404c8ca9fa1bca891bf
+      internalID: -1020157127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_7
+      rect:
+        serializedVersion: 2
+        x: 4486
+        y: 875
+        width: 1094
+        height: 748
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33df0247fb9c6e840b1971590e199ff1
+      internalID: 1750345528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_8
+      rect:
+        serializedVersion: 2
+        x: 1061
+        y: 3556
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c71c174c198f7a4cbfa1032eea13886
+      internalID: -91013949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_9
+      rect:
+        serializedVersion: 2
+        x: 1355
+        y: 3556
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f0cb6b9636b7994e8f4267ea6643ab0
+      internalID: 149061808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_10
+      rect:
+        serializedVersion: 2
+        x: 1634
+        y: 3556
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7354279b9c6216e4aaacbe8e5c4fa752
+      internalID: -1264577099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_11
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 3002
+        width: 599
+        height: 430
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0700f1c48f1b7854d8e63b92f4b7c813
+      internalID: 1913164078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_12
+      rect:
+        serializedVersion: 2
+        x: 720
+        y: 2997
+        width: 603
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 750169191190b3e4dab18c48df6e46b3
+      internalID: -1942814738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_13
+      rect:
+        serializedVersion: 2
+        x: 1395
+        y: 3002
+        width: 602
+        height: 428
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f61394bdf23f8d34683c9df90a4231bf
+      internalID: 1288161266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_14
+      rect:
+        serializedVersion: 2
+        x: 2076
+        y: 3320
+        width: 492
+        height: 427
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90b484ff53d965241ada870ec89f1590
+      internalID: -1599877919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_15
+      rect:
+        serializedVersion: 2
+        x: 2606
+        y: 3311
+        width: 495
+        height: 442
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c72a584094eb254e8e5546bde208199
+      internalID: -858657568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_16
+      rect:
+        serializedVersion: 2
+        x: 3185
+        y: 3309
+        width: 501
+        height: 441
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f4afb1868a27b14fa569190e1cc0c74
+      internalID: -1164332917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_17
+      rect:
+        serializedVersion: 2
+        x: 2132
+        y: 3107
+        width: 314
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2ffb74b88cea8f4889d403e781be460
+      internalID: -646768250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_18
+      rect:
+        serializedVersion: 2
+        x: 2106
+        y: 2554
+        width: 409
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c912cb04c6cdf04ab18c5e19a431e80
+      internalID: -1621036249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_19
+      rect:
+        serializedVersion: 2
+        x: 2600
+        y: 2557
+        width: 408
+        height: 433
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86a2feea5f97dc94ba2bd1f41ce4d9a3
+      internalID: -1712047157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_20
+      rect:
+        serializedVersion: 2
+        x: 3089
+        y: 2548
+        width: 408
+        height: 432
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4294db7b10abf2a43a5adf817f06ac82
+      internalID: 534331581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_21
+      rect:
+        serializedVersion: 2
+        x: 3811
+        y: 3520
+        width: 654
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b760e9a3bd87ec044a543029ed58f2f2
+      internalID: -525367506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_22
+      rect:
+        serializedVersion: 2
+        x: 3773
+        y: 3454
+        width: 864
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82e3c21f99788f3498b2e5eb3c2496f8
+      internalID: 1698143367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_23
+      rect:
+        serializedVersion: 2
+        x: 4672
+        y: 3449
+        width: 867
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3413bcf07fd7e42439d7a74eae1fbc3b
+      internalID: 2037020173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_24
+      rect:
+        serializedVersion: 2
+        x: 5403
+        y: 3646
+        width: 139
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc6a496596bee1442ad8ad688e986989
+      internalID: 266912799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_25
+      rect:
+        serializedVersion: 2
+        x: 5403
+        y: 3515
+        width: 142
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 733b82d3f6549724f83ba81ed6942c0c
+      internalID: 1662929266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_26
+      rect:
+        serializedVersion: 2
+        x: 3776
+        y: 3046
+        width: 17
+        height: 297
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a81f9695d5ee31d4781e2d7f86f68a11
+      internalID: 1527488172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_27
+      rect:
+        serializedVersion: 2
+        x: 3820
+        y: 3216
+        width: 72
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c22edc99d411d04ea44d4459c603565
+      internalID: 662523041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_28
+      rect:
+        serializedVersion: 2
+        x: 3814
+        y: 3177
+        width: 134
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a39a30ec2b2e1624dad90713852fea85
+      internalID: 1003363281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_29
+      rect:
+        serializedVersion: 2
+        x: 3815
+        y: 3026
+        width: 104
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49c9dcb3556a52147944f0bce3cf7577
+      internalID: 780114236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_30
+      rect:
+        serializedVersion: 2
+        x: 3959
+        y: 3037
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca7a9ef26f14a8e44a9e90d8744222af
+      internalID: 1997456745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_31
+      rect:
+        serializedVersion: 2
+        x: 3959
+        y: 2985
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5927a6c7b229954c9c44320e4eeb841
+      internalID: -1521682519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_32
+      rect:
+        serializedVersion: 2
+        x: 3866
+        y: 2980
+        width: 74
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24bc7c06c9b38654c9c9643ee5f4458a
+      internalID: 2101091380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_33
+      rect:
+        serializedVersion: 2
+        x: 3773
+        y: 2863
+        width: 75
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc00b63528a33cd4c9e8c71cac830b19
+      internalID: 191647901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_34
+      rect:
+        serializedVersion: 2
+        x: 3875
+        y: 2892
+        width: 102
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 243b383402b01724fbdcf3c7f24d7d41
+      internalID: -1851683706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_35
+      rect:
+        serializedVersion: 2
+        x: 3827
+        y: 2714
+        width: 106
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c25034e3ddc8cdb4db56c2f3a81020f5
+      internalID: 2077598106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_36
+      rect:
+        serializedVersion: 2
+        x: 4029
+        y: 3160
+        width: 73
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83e719658b3b7a84ab1757dde13fdc69
+      internalID: -326038900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_37
+      rect:
+        serializedVersion: 2
+        x: 4029
+        y: 3017
+        width: 73
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d1aacd2e2b8ffc4e916748ffa8688fc
+      internalID: -1889680580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_38
+      rect:
+        serializedVersion: 2
+        x: 4029
+        y: 2875
+        width: 70
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41690127b36b0a8409e7e954aa361362
+      internalID: -1934520339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_39
+      rect:
+        serializedVersion: 2
+        x: 5676
+        y: 3282
+        width: 29
+        height: 471
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4a7506b116e41741acad0fb29407339
+      internalID: -364445833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_40
+      rect:
+        serializedVersion: 2
+        x: 5737
+        y: 3285
+        width: 50
+        height: 474
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 580d91591f2bb0c48977aebc95793ebe
+      internalID: -127338735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_41
+      rect:
+        serializedVersion: 2
+        x: 5813
+        y: 3296
+        width: 29
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cccdfd04bc8c7e34988d6188399d46b4
+      internalID: -410026839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_42
+      rect:
+        serializedVersion: 2
+        x: 5865
+        y: 3279
+        width: 26
+        height: 454
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cb12b0de87b0a64492e65fee30f5e32
+      internalID: 1611910830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_43
+      rect:
+        serializedVersion: 2
+        x: 5665
+        y: 3125
+        width: 136
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ced13c7e08f7ed7439bde3824cf405fc
+      internalID: 627789847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_44
+      rect:
+        serializedVersion: 2
+        x: 5807
+        y: 3128
+        width: 140
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a157f9d41ffacf4e97e044002131f86
+      internalID: -1577041611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_45
+      rect:
+        serializedVersion: 2
+        x: 5656
+        y: 3072
+        width: 145
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e8abb9679a54114ab8cf250cfa4820b
+      internalID: 583412971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_46
+      rect:
+        serializedVersion: 2
+        x: 5662
+        y: 3031
+        width: 131
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44a455ee460f16c45b1b1b5133e553d2
+      internalID: 503297170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_47
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 1905
+        width: 504
+        height: 442
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 669d0f0bbb9d0fe418ede92a5218b298
+      internalID: 1709865845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_48
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 1355
+        width: 518
+        height: 469
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 514bb6fd9a1fd654b9d593027ecc3a4d
+      internalID: -1440008960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_49
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 840
+        width: 507
+        height: 457
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ebf54d9c072b4b40b48c8e7cd2a801d
+      internalID: -668194850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_50
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 600
+        width: 137
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19b1df8e3731dea4994db70b49638409
+      internalID: 729236759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_51
+      rect:
+        serializedVersion: 2
+        x: 738
+        y: 1998
+        width: 227
+        height: 448
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bea55c26c68e544ab018ceeb4085eca
+      internalID: -2143589147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_52
+      rect:
+        serializedVersion: 2
+        x: 979
+        y: 1996
+        width: 224
+        height: 442
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edadbafa58b27984a910c5aea9102f50
+      internalID: -36357181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_53
+      rect:
+        serializedVersion: 2
+        x: 1213
+        y: 1996
+        width: 223
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 882d1238c2d9c6049a6bb2d1845d9758
+      internalID: 820242289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_54
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 2397
+        width: 81
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81d30ac4e91c929489c0e11813a57b33
+      internalID: 804212559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_55
+      rect:
+        serializedVersion: 2
+        x: 1716
+        y: 2333
+        width: 48
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97e96a727d7826b46a6996f97eb25aad
+      internalID: 1582892187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_56
+      rect:
+        serializedVersion: 2
+        x: 1713
+        y: 2257
+        width: 69
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20c7e0bdf58b0be48b52c47f67686b2a
+      internalID: 2105037715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_57
+      rect:
+        serializedVersion: 2
+        x: 1575
+        y: 1853
+        width: 588
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daf255b854018ba42a649c6876e6f4e3
+      internalID: 1350936897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_58
+      rect:
+        serializedVersion: 2
+        x: 2254
+        y: 1891
+        width: 157
+        height: 235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36be50283dc1e384cbaf56a16441b0f6
+      internalID: 550033630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_59
+      rect:
+        serializedVersion: 2
+        x: 2584
+        y: 2222
+        width: 208
+        height: 143
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c11135eaccfef5a4096c456775412cab
+      internalID: 1251120551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_60
+      rect:
+        serializedVersion: 2
+        x: 2871
+        y: 2237
+        width: 140
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 565ba6825d2791944915538cefe2b692
+      internalID: 507631182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_61
+      rect:
+        serializedVersion: 2
+        x: 3089
+        y: 2234
+        width: 140
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29ef4c6f1ebbafd4dac41d19b2484c8f
+      internalID: 1223313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_62
+      rect:
+        serializedVersion: 2
+        x: 2530
+        y: 1876
+        width: 382
+        height: 314
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7c39967e26690c4fb83e263efc6314b
+      internalID: -166608043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_63
+      rect:
+        serializedVersion: 2
+        x: 2987
+        y: 1931
+        width: 32
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 557965d19da577c4aa525fac5b31e6b2
+      internalID: 336785007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_64
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 1271
+        width: 661
+        height: 480
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7d1e35908e2c2f4f86bdf868c06eb50
+      internalID: 1514950346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_65
+      rect:
+        serializedVersion: 2
+        x: 1480
+        y: 1268
+        width: 666
+        height: 483
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4c6c15ab303d2c49913fb579602e637
+      internalID: -249275100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_66
+      rect:
+        serializedVersion: 2
+        x: 2205
+        y: 1273
+        width: 648
+        height: 478
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98dab1373740e694b95845aa9d88a639
+      internalID: -1751969400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_67
+      rect:
+        serializedVersion: 2
+        x: 741
+        y: 642
+        width: 643
+        height: 480
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e8f74f76f2c4bf4aa6695800abf06ce
+      internalID: 1888701195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_68
+      rect:
+        serializedVersion: 2
+        x: 1494
+        y: 639
+        width: 652
+        height: 483
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 368a72bf0e4d2d9409c0667abefa140e
+      internalID: -1460436668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_69
+      rect:
+        serializedVersion: 2
+        x: 2225
+        y: 645
+        width: 628
+        height: 477
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd6be651aa5b83942acc66d7acc63986
+      internalID: 1277069494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_70
+      rect:
+        serializedVersion: 2
+        x: 2912
+        y: 922
+        width: 128
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 548dae8bdf290514481c7559e3d773b1
+      internalID: 1683387542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_71
+      rect:
+        serializedVersion: 2
+        x: 2912
+        y: 784
+        width: 84
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8039a6fde1e2df5469988142e4f75ba2
+      internalID: 235036678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_72
+      rect:
+        serializedVersion: 2
+        x: 2903
+        y: 642
+        width: 88
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb84639e7c24a3e4e82af82a1e5932f6
+      internalID: 2020058598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_73
+      rect:
+        serializedVersion: 2
+        x: 3162
+        y: 881
+        width: 75
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe81e9a6056897e47be46777c2b893c2
+      internalID: -1872900660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_74
+      rect:
+        serializedVersion: 2
+        x: 3156
+        y: 782
+        width: 76
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 251adac0d4af23d439bedb1312d209f5
+      internalID: -1659047639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_75
+      rect:
+        serializedVersion: 2
+        x: 3159
+        y: 671
+        width: 73
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae4f8378a1cdc7043b3553082570a2cc
+      internalID: -1096572675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_76
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 98
+        width: 739
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f6bf97bd97f8be4ba6c13ea50a51bdb
+      internalID: -330484114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_77
+      rect:
+        serializedVersion: 2
+        x: 1541
+        y: 89
+        width: 739
+        height: 349
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 437d12971b53cd840a73e2360115285f
+      internalID: -769070611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Thoughts_78
+      rect:
+        serializedVersion: 2
+        x: 2373
+        y: 100
+        width: 736
+        height: 350
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: babfd64406c0b9f40b7ba5ac891bab89
+      internalID: -881859185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Thoughts_0: 1423491249
+      Thoughts_1: 2060742153
+      Thoughts_10: 149061808
+      Thoughts_11: -1264577099
+      Thoughts_12: 1913164078
+      Thoughts_13: -1942814738
+      Thoughts_14: 1288161266
+      Thoughts_15: -1599877919
+      Thoughts_16: -858657568
+      Thoughts_17: -1164332917
+      Thoughts_18: -646768250
+      Thoughts_19: -1621036249
+      Thoughts_2: -1828198779
+      Thoughts_20: -1712047157
+      Thoughts_21: 534331581
+      Thoughts_22: -525367506
+      Thoughts_23: 1698143367
+      Thoughts_24: 2037020173
+      Thoughts_25: 266912799
+      Thoughts_26: 1662929266
+      Thoughts_27: 1527488172
+      Thoughts_28: 662523041
+      Thoughts_29: 1003363281
+      Thoughts_3: -459223378
+      Thoughts_30: 780114236
+      Thoughts_31: 1997456745
+      Thoughts_32: -1521682519
+      Thoughts_33: 2101091380
+      Thoughts_34: 191647901
+      Thoughts_35: -1851683706
+      Thoughts_36: 2077598106
+      Thoughts_37: -326038900
+      Thoughts_38: -1889680580
+      Thoughts_39: -1934520339
+      Thoughts_4: 1552930912
+      Thoughts_40: -364445833
+      Thoughts_41: -127338735
+      Thoughts_42: -410026839
+      Thoughts_43: 1611910830
+      Thoughts_44: 627789847
+      Thoughts_45: -1577041611
+      Thoughts_46: 583412971
+      Thoughts_47: 503297170
+      Thoughts_48: 1709865845
+      Thoughts_49: -1440008960
+      Thoughts_5: -1090298191
+      Thoughts_50: -668194850
+      Thoughts_51: 729236759
+      Thoughts_52: -2143589147
+      Thoughts_53: -36357181
+      Thoughts_54: 820242289
+      Thoughts_55: 804212559
+      Thoughts_56: 1582892187
+      Thoughts_57: 2105037715
+      Thoughts_58: 1350936897
+      Thoughts_59: 550033630
+      Thoughts_6: -1020157127
+      Thoughts_60: 1251120551
+      Thoughts_61: 507631182
+      Thoughts_62: 1223313
+      Thoughts_63: -166608043
+      Thoughts_64: 336785007
+      Thoughts_65: 1514950346
+      Thoughts_66: -249275100
+      Thoughts_67: -1751969400
+      Thoughts_68: 1888701195
+      Thoughts_69: -1460436668
+      Thoughts_7: 1750345528
+      Thoughts_70: 1277069494
+      Thoughts_71: 1683387542
+      Thoughts_72: 235036678
+      Thoughts_73: 2020058598
+      Thoughts_74: -1872900660
+      Thoughts_75: -1659047639
+      Thoughts_76: -1096572675
+      Thoughts_77: -330484114
+      Thoughts_78: -769070611
+      Thoughts_8: 2090430129
+      Thoughts_9: -91013949
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: ctrfruitbasket/common
+  assetBundleVariant: 

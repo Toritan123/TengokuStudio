@@ -1,0 +1,1415 @@
+fileFormatVersion: 2
+guid: 0a848e704c149ba41ae8567cc2bd3e1e
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: packingpests_0
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 3843
+        width: 198
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a3ffd39f93c40d43a606ab73ca1edba
+      internalID: -974377930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_1
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 3859
+        width: 121
+        height: 166
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: daeedc8bc9e13ef4c94ae4332ef9deb2
+      internalID: 1942040875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_2
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 3870
+        width: 130
+        height: 145
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcd6e15547b4cca4383d5776f7bee116
+      internalID: -756319046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_3
+      rect:
+        serializedVersion: 2
+        x: 895
+        y: 3871
+        width: 139
+        height: 143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ceee586f15044204581947a6943224d5
+      internalID: -740789714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_4
+      rect:
+        serializedVersion: 2
+        x: 1142
+        y: 3164
+        width: 415
+        height: 877
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d0aeb83cd285d04eaa02e6cac4f7b3f
+      internalID: 1137660169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_5
+      rect:
+        serializedVersion: 2
+        x: 1671
+        y: 3797
+        width: 551
+        height: 236
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59749c6eb42ae2449998b468d496add0
+      internalID: 975304218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_14
+      rect:
+        serializedVersion: 2
+        x: 2368
+        y: 3710
+        width: 456
+        height: 336
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0638bed073e0ae4082f63a771c3d615
+      internalID: -1311209268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_15
+      rect:
+        serializedVersion: 2
+        x: 3004
+        y: 3728
+        width: 377
+        height: 301
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5cacc40cab1ce343a5c393ebaa0345b
+      internalID: 355548973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_16
+      rect:
+        serializedVersion: 2
+        x: 3667
+        y: 3725
+        width: 337
+        height: 319
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b8d19ec5babde44d9e31ca07989b6cd
+      internalID: 1310362060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_18
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 3491
+        width: 247
+        height: 206
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e42f28125a5de60498a5aea75989e424
+      internalID: 2045775835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_19
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 3472
+        width: 247
+        height: 225
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69fd43855411841469c04b2b5dc7478a
+      internalID: 1544324892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_20
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 3492
+        width: 247
+        height: 205
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16ed29bd8a76a0949aeb96ca70b585e3
+      internalID: -1301991744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_21
+      rect:
+        serializedVersion: 2
+        x: 1687
+        y: 3475
+        width: 157
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de79ed9d187d32547b2631850fdda564
+      internalID: -646493399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_23
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 3234
+        width: 27
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 077e7c1caa8fe804db25265848e692ba
+      internalID: -954655038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_24
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 3153
+        width: 55
+        height: 203
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ee8da469ef95b64bba3b70bb9964bd4
+      internalID: 697652409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_25
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 3199
+        width: 50
+        height: 173
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f8b4c1c0cba7d44f91b42420beafbd8
+      internalID: -1249169008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_26
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 3330
+        width: 98
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 363611fc782ae59498971c119372be17
+      internalID: 156035504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_27
+      rect:
+        serializedVersion: 2
+        x: 878
+        y: 3107
+        width: 77
+        height: 101
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a621e9017b229b14485c4f6a66f5e9f7
+      internalID: 1132153806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_28
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 3096
+        width: 63
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 081472dde3fd290448e4bb635d9c2f34
+      internalID: 468342890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_29
+      rect:
+        serializedVersion: 2
+        x: 1138
+        y: 2976
+        width: 99
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3516371ab7b886140946b8c69cf6a60b
+      internalID: 335666197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_30
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 2427
+        width: 467
+        height: 628
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee7d94b510ed0a548ac642f98b83fb60
+      internalID: 163832116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_31
+      rect:
+        serializedVersion: 2
+        x: 1986
+        y: 2446
+        width: 454
+        height: 593
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52ec398cb2972c04f818857d0a0792cc
+      internalID: 540004362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_32
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 2442
+        width: 456
+        height: 601
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a9dd1fef6293fc498949b63e4a8a78e
+      internalID: -1628925211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_33
+      rect:
+        serializedVersion: 2
+        x: 3183
+        y: 2447
+        width: 373
+        height: 590
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f99b9543ce1b8a4da9d75eb1e7e0b06
+      internalID: -110496447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_34
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 2756
+        width: 338
+        height: 210
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7276fb32cc3d835439a2289fe8e2037b
+      internalID: 699696812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_35
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 2780
+        width: 344
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe430be5e54010343b2cfc5ad9d34942
+      internalID: 1086938060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_36
+      rect:
+        serializedVersion: 2
+        x: 1122
+        y: 2801
+        width: 135
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4193c9cdfbdad1341a85793c1d089ec8
+      internalID: 149632417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_37
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 2409
+        width: 367
+        height: 193
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 219825c4eb2d79f4b8aa0f9cac6aa0a0
+      internalID: -271465180
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_38
+      rect:
+        serializedVersion: 2
+        x: 1116
+        y: 2600
+        width: 147
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d331f8db796e8814a9b064f4bf193303
+      internalID: 1401086908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_39
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 2447
+        width: 345
+        height: 143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3de9a63ea2d1a944aab2c25b8c049489
+      internalID: -873770698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_40
+      rect:
+        serializedVersion: 2
+        x: 1114
+        y: 2411
+        width: 149
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14337483b397bb64b8f024fbb6a11308
+      internalID: 1075598768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_41
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 2054
+        width: 341
+        height: 196
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5d1b45318e07124985455c0031b17eb
+      internalID: -713692718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_42
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 2075
+        width: 342
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36140e4605d7a0b44afaa255e3f0a39b
+      internalID: 85426762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_43
+      rect:
+        serializedVersion: 2
+        x: 1089
+        y: 1619
+        width: 207
+        height: 676
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aec930e75bb9092488321ef60bcf534e
+      internalID: 962525694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_45
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 1657
+        width: 452
+        height: 606
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7605a34355e282947b59fc532975e8e9
+      internalID: -1313811552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_46
+      rect:
+        serializedVersion: 2
+        x: 1988
+        y: 1710
+        width: 449
+        height: 592
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9602dda082208f42885c5e2eb1c8352
+      internalID: -1558134662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_47
+      rect:
+        serializedVersion: 2
+        x: 2562
+        y: 1688
+        width: 453
+        height: 635
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6917859636033544cbcf5ad8b8094b1d
+      internalID: -1577742236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_48
+      rect:
+        serializedVersion: 2
+        x: 3212
+        y: 1710
+        width: 314
+        height: 592
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01bc96aa33172bb4eb8fe48448ace4a4
+      internalID: -933811891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_49
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 1721
+        width: 321
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a0eb0f1035481643b88b6fec988ed33
+      internalID: -2093306762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_50
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 1575
+        width: 383
+        height: 376
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3069964a3db4ba3469036c0c2cfae075
+      internalID: -922295171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_52
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 1350
+        width: 286
+        height: 226
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fadd43f5ce019a54e95506f2f555b9da
+      internalID: -1930577733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_53
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 566
+        width: 159
+        height: 889
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 138b8cae6d041ca40ad5be6575c4c3c7
+      internalID: -1342869273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_54
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 561
+        width: 330
+        height: 905
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5148544f7b4c5d14dadce3d2ba800a17
+      internalID: -143377819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_55
+      rect:
+        serializedVersion: 2
+        x: 1329
+        y: 602
+        width: 61
+        height: 821
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fb5fc17e88c3ff4a808f16068ebecbb
+      internalID: 1589869506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_56
+      rect:
+        serializedVersion: 2
+        x: 1499
+        y: 601
+        width: 64
+        height: 821
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ba4254305ff1bd4da669513dd507351
+      internalID: 1306656259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_57
+      rect:
+        serializedVersion: 2
+        x: 1661
+        y: 605
+        width: 49
+        height: 812
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 328e0817c69b3974e84ac68ecb5413fd
+      internalID: -1279344498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_58
+      rect:
+        serializedVersion: 2
+        x: 1824
+        y: 606
+        width: 43
+        height: 811
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d085838cdb6328844a04414b23b42e05
+      internalID: -569522079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_59
+      rect:
+        serializedVersion: 2
+        x: 1986
+        y: 973
+        width: 452
+        height: 593
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acf7d592d78724d4c844d4b8e97bee21
+      internalID: 878654358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_60
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 899
+        width: 275
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85a99b4f792f3dc4a8a619264de62fcd
+      internalID: 678884375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_61
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 481
+        width: 317
+        height: 252
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93c9eb08b057d63468fba98106bd5007
+      internalID: 132141784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_62
+      rect:
+        serializedVersion: 2
+        x: 1970
+        y: 549
+        width: 306
+        height: 282
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0b2ddbfcd40262498c36458cd2f8e7c
+      internalID: 1550279475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_63
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 75
+        width: 325
+        height: 339
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a98ed715a8e1c9429152e0ef194b9a7
+      internalID: 342088652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_64
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 57
+        width: 350
+        height: 378
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a56f78935fe3cb5408a8192dedf2ad27
+      internalID: -747254800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_65
+      rect:
+        serializedVersion: 2
+        x: 1584
+        y: 397
+        width: 106
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf147851b1419cf4b80f35e0548c4b0a
+      internalID: -248852966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_66
+      rect:
+        serializedVersion: 2
+        x: 1833
+        y: 399
+        width: 119
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5dcd94a1bfff00448433471818ffb0d
+      internalID: -942909227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_67
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 76
+        width: 374
+        height: 245
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13807929567b53b469f4e44675ad463c
+      internalID: -392998188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_68
+      rect:
+        serializedVersion: 2
+        x: 1565
+        y: 229
+        width: 108
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e58cade754c5884cb94c9898ec18760
+      internalID: -42291823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_69
+      rect:
+        serializedVersion: 2
+        x: 1793
+        y: 229
+        width: 103
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42a4d7e887fa6414f9704810303edb07
+      internalID: 1335500922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      packingpests_0: -974377930
+      packingpests_1: 1942040875
+      packingpests_10: -855455111
+      packingpests_11: -1360080339
+      packingpests_12: -1791679383
+      packingpests_13: -293446718
+      packingpests_14: -1311209268
+      packingpests_15: 355548973
+      packingpests_16: 1310362060
+      packingpests_17: -750090344
+      packingpests_18: 2045775835
+      packingpests_19: 1544324892
+      packingpests_2: -756319046
+      packingpests_20: -1301991744
+      packingpests_21: -646493399
+      packingpests_22: -2108082509
+      packingpests_23: -954655038
+      packingpests_24: 697652409
+      packingpests_25: -1249169008
+      packingpests_26: 156035504
+      packingpests_27: 1132153806
+      packingpests_28: 468342890
+      packingpests_29: 335666197
+      packingpests_3: -740789714
+      packingpests_30: 163832116
+      packingpests_31: 540004362
+      packingpests_32: -1628925211
+      packingpests_33: -110496447
+      packingpests_34: 699696812
+      packingpests_35: 1086938060
+      packingpests_36: 149632417
+      packingpests_37: -271465180
+      packingpests_38: 1401086908
+      packingpests_39: -873770698
+      packingpests_4: 1137660169
+      packingpests_40: 1075598768
+      packingpests_41: -713692718
+      packingpests_42: 85426762
+      packingpests_43: 962525694
+      packingpests_44: -1646792338
+      packingpests_45: -1313811552
+      packingpests_46: -1558134662
+      packingpests_47: -1577742236
+      packingpests_48: -933811891
+      packingpests_49: -2093306762
+      packingpests_5: 975304218
+      packingpests_50: -922295171
+      packingpests_51: -792705375
+      packingpests_52: -1930577733
+      packingpests_53: -1342869273
+      packingpests_54: -143377819
+      packingpests_55: 1589869506
+      packingpests_56: 1306656259
+      packingpests_57: -1279344498
+      packingpests_58: -569522079
+      packingpests_59: 878654358
+      packingpests_6: 73832685
+      packingpests_60: 678884375
+      packingpests_61: 132141784
+      packingpests_62: 1550279475
+      packingpests_63: 342088652
+      packingpests_64: -747254800
+      packingpests_65: -248852966
+      packingpests_66: -942909227
+      packingpests_67: -392998188
+      packingpests_68: -42291823
+      packingpests_69: 1335500922
+      packingpests_7: 371925653
+      packingpests_8: 2004225101
+      packingpests_9: -1781452918
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: rvlsorting/common
+  assetBundleVariant: 

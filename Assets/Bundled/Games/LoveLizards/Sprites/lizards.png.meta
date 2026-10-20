@@ -1,0 +1,1104 @@
+fileFormatVersion: 2
+guid: a1553302937af274983f51a8e1e9a069
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 100
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: lizards_0
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 2933
+        width: 906
+        height: 1086
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 747fa67c36300cf42883d099340a8b14
+      internalID: 1262228113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lizards_1
+      rect:
+        serializedVersion: 2
+        x: 1126
+        y: 2904
+        width: 1002
+        height: 1133
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81a38ab33f9aac04d9b19a658d23c85e
+      internalID: -455111438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lizards_2
+      rect:
+        serializedVersion: 2
+        x: 2333
+        y: 3756
+        width: 183
+        height: 223
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baf76fa716cead646b660126195288e6
+      internalID: 11902161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lizards_3
+      rect:
+        serializedVersion: 2
+        x: 2663
+        y: 3792
+        width: 204
+        height: 197
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4927be36ab88fc47a14a972f1cbcef0
+      internalID: 2138425870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lizards_4
+      rect:
+        serializedVersion: 2
+        x: 2934
+        y: 3792
+        width: 195
+        height: 209
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1441e2b99eec9384784b7ad3b2e6275a
+      internalID: -1623280740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lizards_5
+      rect:
+        serializedVersion: 2
+        x: 3186
+        y: 3789
+        width: 191
+        height: 219
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a37936b5f216e534cae7e94f4f8b56d4
+      internalID: -168383131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lizards_6
+      rect:
+        serializedVersion: 2
+        x: 2306
+        y: 3521
+        width: 254
+        height: 186
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 773482a9a60fd2346a5680203d824f75
+      internalID: 634056348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lizards_7
+      rect:
+        serializedVersion: 2
+        x: 2663
+        y: 3521
+        width: 196
+        height: 219
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7759ddf2f5e64d54abe2bf3f87442d15
+      internalID: 871532574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lizards_8
+      rect:
+        serializedVersion: 2
+        x: 2951
+        y: 3522
+        width: 180
+        height: 219
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f5198013002deb44ac6bdb2e61e3a55
+      internalID: 145296253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lizards_9
+      rect:
+        serializedVersion: 2
+        x: 2689
+        y: 3241
+        width: 187
+        height: 239
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44e77472d9a7e09499169e1064fb29a0
+      internalID: 1748255770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lizards_10
+      rect:
+        serializedVersion: 2
+        x: 2954
+        y: 3244
+        width: 197
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf8913901b530d940a708d57699ccd8b
+      internalID: -666958328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lizards_11
+      rect:
+        serializedVersion: 2
+        x: 3498
+        y: 2702
+        width: 112
+        height: 111
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edadfdccb6c33d04a8a3cf467593da44
+      internalID: -1723689552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lizards_12
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 372
+        width: 392
+        height: 677
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a799e1c8e85ae24c89a6bd95672a514
+      internalID: 399078283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lizards_13
+      rect:
+        serializedVersion: 2
+        x: 2467
+        y: 914
+        width: 561
+        height: 511
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dc41f36296e3724baa96cc6999638b4
+      internalID: 755795631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lizards_14
+      rect:
+        serializedVersion: 2
+        x: 3310
+        y: 527
+        width: 288
+        height: 248
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07f02e4bbc0e6c24eb02282b55ecc93c
+      internalID: 38214104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lizards_15
+      rect:
+        serializedVersion: 2
+        x: 3705
+        y: 545
+        width: 231
+        height: 190
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddb642c0e0f25ac4ebf49af7f8eac051
+      internalID: -1666936322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lizards_16
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 181
+        width: 154
+        height: 136
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec45d8d765dc0774a9dcca1012ff1966
+      internalID: -160316205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lizards_17
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 178
+        width: 132
+        height: 165
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 828321b16c6ce7a43bf7d544c067fc66
+      internalID: 260986765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lizards_18
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 178
+        width: 143
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a6ba388d959a5744bcfa776d4a9abdf
+      internalID: -199107126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lizards_19
+      rect:
+        serializedVersion: 2
+        x: 586
+        y: 180
+        width: 151
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f32c7a3729aea154ab456df6a8b21424
+      internalID: 1719547297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lizards_21
+      rect:
+        serializedVersion: 2
+        x: 3267
+        y: 143
+        width: 240
+        height: 287
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d65c4a54556170b4ab116737b8e0d7d4
+      internalID: 222216085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lizards_22
+      rect:
+        serializedVersion: 2
+        x: 3728
+        y: 191
+        width: 172
+        height: 167
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8a4c66f1bb74064a9cbdfae0766f285
+      internalID: -2094091961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lizards_23
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 38
+        width: 158
+        height: 131
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e38a5ba52f30d704ea437c824fcf9444
+      internalID: -239323242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lizards_24
+      rect:
+        serializedVersion: 2
+        x: 1482
+        y: 75
+        width: 193
+        height: 183
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 298a01332066b924d89e6a537feb1121
+      internalID: 482167670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lizards_26
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 28
+        width: 161
+        height: 134
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4bdbb037b3a04a4f94e1ebcd6a6130a
+      internalID: 1243407542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lizards_27
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 27
+        width: 155
+        height: 135
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90e0cc75802c7364d9569bf9fef292a2
+      internalID: -425725925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lizards_20
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 1208
+        width: 303
+        height: 284
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e84eaeb503740f14086d134d7b2160ce
+      internalID: 862814339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lizards_25
+      rect:
+        serializedVersion: 2
+        x: 426
+        y: 1196
+        width: 396
+        height: 307
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d78e3a2a2552a8d47b0a2e8370e6baac
+      internalID: -1961729012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lizards_28
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 370
+        width: 422
+        height: 704
+      alignment: 9
+      pivot: {x: 0.48271114, y: 0.50179243}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a08b74f9db36cf94c89cf798802092d2
+      internalID: -185004101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lizards_29
+      rect:
+        serializedVersion: 2
+        x: 927
+        y: 370
+        width: 561
+        height: 674
+      alignment: 9
+      pivot: {x: 0.3608038, y: 0.53190887}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6125d9672267d784c97f83d9fbb08422
+      internalID: 1907178735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lizards_30
+      rect:
+        serializedVersion: 2
+        x: 1492
+        y: 371
+        width: 665
+        height: 495
+      alignment: 9
+      pivot: {x: 0.3087037, y: 0.71568346}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca38daa96b3353a4c81b578aef818be7
+      internalID: 1349637448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lizards_31
+      rect:
+        serializedVersion: 2
+        x: 3163
+        y: 912
+        width: 918
+        height: 535
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd7557312ecb67240b722f5f1192da50
+      internalID: -1514375822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lizards_32
+      rect:
+        serializedVersion: 2
+        x: 3015
+        y: 1471
+        width: 1036
+        height: 404
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 313ae626e598ef949a4d1b60a28f8d14
+      internalID: 1638838566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lizards_33
+      rect:
+        serializedVersion: 2
+        x: 3623
+        y: 2702
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bedc66ab40b452c4791eb75d3386b50e
+      internalID: 78550059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lizards_34
+      rect:
+        serializedVersion: 2
+        x: 3746
+        y: 2702
+        width: 112
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94d84a70c98b5064bbec3335259d06ed
+      internalID: -1043948924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lizards_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1679
+        width: 1100
+        height: 1165
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1c96fdc8a73bdc4888ea7c7262bdb58
+      internalID: 1917893363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lizards_36
+      rect:
+        serializedVersion: 2
+        x: 1122
+        y: 1683
+        width: 1051
+        height: 1162
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf52d04a91c90f14e9bb2abc477baa9e
+      internalID: -993611836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lizards_37
+      rect:
+        serializedVersion: 2
+        x: 2190
+        y: 1901
+        width: 1107
+        height: 1149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 399a0ff26ecfc884f892c4eea16af8ef
+      internalID: 701146800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lizards_38
+      rect:
+        serializedVersion: 2
+        x: 3421
+        y: 3661
+        width: 401
+        height: 399
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ac834c53b40a3a4d84f31d6c6096a9c
+      internalID: 1612939705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lizards_39
+      rect:
+        serializedVersion: 2
+        x: 1782
+        y: 116
+        width: 99
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6ed2157073b75343b11fffd99bb9534
+      internalID: -388785273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lizards_40
+      rect:
+        serializedVersion: 2
+        x: 1898
+        y: 113
+        width: 138
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff71a07fe859d8b43a063e1b2f5574df
+      internalID: 972436288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lizards_41
+      rect:
+        serializedVersion: 2
+        x: 2046
+        y: 115
+        width: 155
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 226cebcfabe8c1e47bab9bbe22468906
+      internalID: 1191292393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lizards_42
+      rect:
+        serializedVersion: 2
+        x: 2209
+        y: 108
+        width: 188
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa37927de65e29249ac71fbce9bb28b0
+      internalID: -886547938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lizards_43
+      rect:
+        serializedVersion: 2
+        x: 1245
+        y: 74
+        width: 193
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4da7e4eb3afd90041bf94336af09dd9d
+      internalID: 1311027832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lizards_44
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 74
+        width: 193
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4e03ec42d0bb6a4aa403fa74e8b031a
+      internalID: -1918158378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      lizards_0: 1262228113
+      lizards_1: -455111438
+      lizards_10: -666958328
+      lizards_11: -1723689552
+      lizards_12: 399078283
+      lizards_13: 755795631
+      lizards_14: 38214104
+      lizards_15: -1666936322
+      lizards_16: -160316205
+      lizards_17: 260986765
+      lizards_18: -199107126
+      lizards_19: 1719547297
+      lizards_2: 11902161
+      lizards_20: 862814339
+      lizards_21: 222216085
+      lizards_22: -2094091961
+      lizards_23: -239323242
+      lizards_24: 482167670
+      lizards_25: -1961729012
+      lizards_26: 1243407542
+      lizards_27: -425725925
+      lizards_28: -185004101
+      lizards_29: 1907178735
+      lizards_3: 2138425870
+      lizards_30: 1349637448
+      lizards_31: -1514375822
+      lizards_32: 1638838566
+      lizards_33: 78550059
+      lizards_34: -1043948924
+      lizards_35: 1917893363
+      lizards_36: -993611836
+      lizards_37: 701146800
+      lizards_38: 1612939705
+      lizards_39: -388785273
+      lizards_4: -1623280740
+      lizards_40: 972436288
+      lizards_41: 1191292393
+      lizards_42: -886547938
+      lizards_43: 1311027832
+      lizards_44: -1918158378
+      lizards_5: -168383131
+      lizards_6: 634056348
+      lizards_7: 871532574
+      lizards_8: 145296253
+      lizards_9: 1748255770
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

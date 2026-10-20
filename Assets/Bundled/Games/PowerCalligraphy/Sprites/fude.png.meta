@@ -1,0 +1,1667 @@
+fileFormatVersion: 2
+guid: 71b160e84f751d740a27198cdf4a4771
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 400
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 100
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: hand_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 2820
+        width: 1428
+        height: 1268
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f3e9bf7000000000800000000000000
+      internalID: 2142888950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hand_1
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 1540
+        width: 1428
+        height: 1268
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd67b167000000000800000000000000
+      internalID: 1981511391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hand_2
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 260
+        width: 1428
+        height: 1268
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb38bfe4000000000800000000000000
+      internalID: 1325106110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thumb_0
+      rect:
+        serializedVersion: 2
+        x: 2440
+        y: 2884
+        width: 436
+        height: 372
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0a93b2fffffffff0800000000000000
+      internalID: -223110643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_stick_0_0
+      rect:
+        serializedVersion: 2
+        x: 2536
+        y: 3748
+        width: 212
+        height: 336
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 176, z: 0, w: 76}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ace20a45000000000800000000000000
+      internalID: 1419783882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_tip_0_0
+      rect:
+        serializedVersion: 2
+        x: 1452
+        y: 3752
+        width: 236
+        height: 332
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac9fec99ffffffff0800000000000000
+      internalID: -1714488886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_ball_0
+      rect:
+        serializedVersion: 2
+        x: 3208
+        y: 2820
+        width: 212
+        height: 212
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbddabc0000000000800000000000000
+      internalID: 213573052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_stick_2_0
+      rect:
+        serializedVersion: 2
+        x: 2984
+        y: 3172
+        width: 212
+        height: 916
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15f539e6000000000800000000000000
+      internalID: 1855151953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_stick_3_0
+      rect:
+        serializedVersion: 2
+        x: 3208
+        y: 3044
+        width: 212
+        height: 1044
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2166907affffffff0800000000000000
+      internalID: -1492556270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_stick_4_0
+      rect:
+        serializedVersion: 2
+        x: 3432
+        y: 2820
+        width: 212
+        height: 1268
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a3fa404000000000800000000000000
+      internalID: 1078653857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_stick_5_0
+      rect:
+        serializedVersion: 2
+        x: 3656
+        y: 2820
+        width: 212
+        height: 1268
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e9ea108ffffffff0800000000000000
+      internalID: -2145719836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_stick_6_0
+      rect:
+        serializedVersion: 2
+        x: 3880
+        y: 2820
+        width: 212
+        height: 1268
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ddf9a87000000000800000000000000
+      internalID: 2024406486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_tip_1_0
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 3748
+        width: 244
+        height: 340
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc782a91000000000800000000000000
+      internalID: 430081996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_tip_2_0
+      rect:
+        serializedVersion: 2
+        x: 1960
+        y: 3748
+        width: 244
+        height: 340
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8977f4dffffffff0800000000000000
+      internalID: -721978998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_tip_3_0
+      rect:
+        serializedVersion: 2
+        x: 2216
+        y: 3748
+        width: 308
+        height: 340
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1101284fffffffff0800000000000000
+      internalID: -192802799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_tip_4_0
+      rect:
+        serializedVersion: 2
+        x: 1448
+        y: 3492
+        width: 308
+        height: 244
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a0f73baffffffff0800000000000000
+      internalID: -1422397272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_tip_5_0
+      rect:
+        serializedVersion: 2
+        x: 1768
+        y: 3492
+        width: 308
+        height: 244
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 633e4154000000000800000000000000
+      internalID: 1158996790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_tip_6_0
+      rect:
+        serializedVersion: 2
+        x: 2088
+        y: 3492
+        width: 340
+        height: 244
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb4d8ffeffffffff0800000000000000
+      internalID: -268905281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_stick_1_0
+      rect:
+        serializedVersion: 2
+        x: 2760
+        y: 3748
+        width: 212
+        height: 340
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 180, z: 0, w: 156}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 265a36bdffffffff0800000000000000
+      internalID: -614226590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_tip_7_0
+      rect:
+        serializedVersion: 2
+        x: 1448
+        y: 3044
+        width: 308
+        height: 436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 018ecd16000000000800000000000000
+      internalID: 1641867280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_tip_8_0
+      rect:
+        serializedVersion: 2
+        x: 1768
+        y: 3048
+        width: 308
+        height: 436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93e8753effffffff0800000000000000
+      internalID: -480801223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_tip_9_0
+      rect:
+        serializedVersion: 2
+        x: 2088
+        y: 3044
+        width: 340
+        height: 436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34f8ff5effffffff0800000000000000
+      internalID: -436236477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_tip_10_0
+      rect:
+        serializedVersion: 2
+        x: 2440
+        y: 3268
+        width: 212
+        height: 468
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6e9c49dffffffff0800000000000000
+      internalID: -649290134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_tip_11_0
+      rect:
+        serializedVersion: 2
+        x: 2664
+        y: 3268
+        width: 212
+        height: 468
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76dc7acdffffffff0800000000000000
+      internalID: -592982681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_tip_0_1
+      rect:
+        serializedVersion: 2
+        x: 1452
+        y: 2472
+        width: 236
+        height: 332
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcf885ffffffffff0800000000000000
+      internalID: -10973233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_tip_1_1
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 2468
+        width: 244
+        height: 340
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c736ac60000000000800000000000000
+      internalID: 113927036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_tip_2_1
+      rect:
+        serializedVersion: 2
+        x: 1960
+        y: 2468
+        width: 244
+        height: 340
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e40bf05000000000800000000000000
+      internalID: 1358628071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_tip_3_1
+      rect:
+        serializedVersion: 2
+        x: 2216
+        y: 2468
+        width: 308
+        height: 340
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d0b148a2000000000800000000000000
+      internalID: 713300749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_tip_4_1
+      rect:
+        serializedVersion: 2
+        x: 1448
+        y: 2212
+        width: 308
+        height: 244
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c64444effffffff0800000000000000
+      internalID: -465287483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_tip_5_1
+      rect:
+        serializedVersion: 2
+        x: 1768
+        y: 2212
+        width: 308
+        height: 244
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae02afd4000000000800000000000000
+      internalID: 1308238058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_tip_6_1
+      rect:
+        serializedVersion: 2
+        x: 2088
+        y: 2212
+        width: 340
+        height: 244
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6748ef93000000000800000000000000
+      internalID: 972981366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_tip_7_1
+      rect:
+        serializedVersion: 2
+        x: 1448
+        y: 1764
+        width: 308
+        height: 436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90c25b77000000000800000000000000
+      internalID: 2008361993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_tip_8_1
+      rect:
+        serializedVersion: 2
+        x: 1768
+        y: 1764
+        width: 308
+        height: 436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bd09c87000000000800000000000000
+      internalID: 2026442160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_tip_9_1
+      rect:
+        serializedVersion: 2
+        x: 2088
+        y: 1764
+        width: 340
+        height: 436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8dad426000000000800000000000000
+      internalID: 1649257871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_tip_10_1
+      rect:
+        serializedVersion: 2
+        x: 2440
+        y: 1988
+        width: 212
+        height: 468
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bb0e4a4000000000800000000000000
+      internalID: 1246628787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_tip_11_1
+      rect:
+        serializedVersion: 2
+        x: 2664
+        y: 1988
+        width: 212
+        height: 468
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5817a8bffffffff0800000000000000
+      internalID: -1197008802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_tip_0_2
+      rect:
+        serializedVersion: 2
+        x: 1452
+        y: 1192
+        width: 236
+        height: 332
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6dee638ffffffff0800000000000000
+      internalID: -2089882262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_tip_1_2
+      rect:
+        serializedVersion: 2
+        x: 1704
+        y: 1188
+        width: 244
+        height: 340
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cffa9c52000000000800000000000000
+      internalID: 633974780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_tip_2_2
+      rect:
+        serializedVersion: 2
+        x: 1960
+        y: 1188
+        width: 244
+        height: 340
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ff7f595000000000800000000000000
+      internalID: 1499430905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_tip_3_2
+      rect:
+        serializedVersion: 2
+        x: 2216
+        y: 1188
+        width: 308
+        height: 340
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81864858ffffffff0800000000000000
+      internalID: -2054920168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_tip_4_2
+      rect:
+        serializedVersion: 2
+        x: 1448
+        y: 932
+        width: 308
+        height: 244
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d62d899fffffffff0800000000000000
+      internalID: -107425171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_tip_5_2
+      rect:
+        serializedVersion: 2
+        x: 1768
+        y: 932
+        width: 308
+        height: 244
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8fdd29cffffffff0800000000000000
+      internalID: -919740534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_tip_6_2
+      rect:
+        serializedVersion: 2
+        x: 2088
+        y: 932
+        width: 340
+        height: 244
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a525a953000000000800000000000000
+      internalID: 899306074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_tip_12_0
+      rect:
+        serializedVersion: 2
+        x: 1448
+        y: 3876
+        width: 244
+        height: 212
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6015b0f1000000000800000000000000
+      internalID: 520835334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_tip_12_1
+      rect:
+        serializedVersion: 2
+        x: 1448
+        y: 2596
+        width: 244
+        height: 212
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9ccaaaaffffffff0800000000000000
+      internalID: -1431647073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_tip_12_2
+      rect:
+        serializedVersion: 2
+        x: 1448
+        y: 1316
+        width: 244
+        height: 212
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e02511effffffff0800000000000000
+      internalID: -518709021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_tip_7_2
+      rect:
+        serializedVersion: 2
+        x: 1448
+        y: 484
+        width: 308
+        height: 436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7929c22000000000800000000000000
+      internalID: 583608701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_tip_8_2
+      rect:
+        serializedVersion: 2
+        x: 1768
+        y: 484
+        width: 308
+        height: 436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9587f295000000000800000000000000
+      internalID: 1496283225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_tip_9_2
+      rect:
+        serializedVersion: 2
+        x: 2088
+        y: 484
+        width: 340
+        height: 436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c89020c0000000000800000000000000
+      internalID: 201460108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_tip_10_2
+      rect:
+        serializedVersion: 2
+        x: 2440
+        y: 708
+        width: 212
+        height: 468
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d27ac02000000000800000000000000
+      internalID: 550138584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_tip_11_2
+      rect:
+        serializedVersion: 2
+        x: 2664
+        y: 708
+        width: 212
+        height: 468
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20a8cb1affffffff0800000000000000
+      internalID: -1581479422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: end
+      rect:
+        serializedVersion: 2
+        x: 2888
+        y: 2820
+        width: 308
+        height: 340
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 543b205affffffff0800000000000000
+      internalID: -1526549691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thumb_1
+      rect:
+        serializedVersion: 2
+        x: 2440
+        y: 1604
+        width: 436
+        height: 372
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c85d6e6000000000800000000000000
+      internalID: 1852659906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thumb_2
+      rect:
+        serializedVersion: 2
+        x: 2440
+        y: 324
+        width: 436
+        height: 372
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 084e9670000000000800000000000000
+      internalID: 124380288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_ball_1
+      rect:
+        serializedVersion: 2
+        x: 3208
+        y: 1540
+        width: 212
+        height: 212
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63226801000000000800000000000000
+      internalID: 277226038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_ball_2
+      rect:
+        serializedVersion: 2
+        x: 3208
+        y: 260
+        width: 212
+        height: 212
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c991a34000000000800000000000000
+      internalID: 1134664130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_stick_3_1
+      rect:
+        serializedVersion: 2
+        x: 3208
+        y: 1764
+        width: 212
+        height: 1044
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4545b458ffffffff0800000000000000
+      internalID: -2058660780
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_stick_3_2
+      rect:
+        serializedVersion: 2
+        x: 3208
+        y: 484
+        width: 212
+        height: 1044
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1de9b5e2000000000800000000000000
+      internalID: 777756369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_stick_4_1
+      rect:
+        serializedVersion: 2
+        x: 3432
+        y: 1540
+        width: 212
+        height: 1268
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c32d97fffffffff0800000000000000
+      internalID: -140696638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_stick_5_1
+      rect:
+        serializedVersion: 2
+        x: 3656
+        y: 1540
+        width: 212
+        height: 1268
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed9ab459ffffffff0800000000000000
+      internalID: -1790203426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_stick_6_1
+      rect:
+        serializedVersion: 2
+        x: 3880
+        y: 1540
+        width: 212
+        height: 1268
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcb01876000000000800000000000000
+      internalID: 1736510413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_stick_4_2
+      rect:
+        serializedVersion: 2
+        x: 3432
+        y: 260
+        width: 212
+        height: 1268
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8aed575cffffffff0800000000000000
+      internalID: -982131032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_stick_5_2
+      rect:
+        serializedVersion: 2
+        x: 3656
+        y: 260
+        width: 212
+        height: 1268
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 91135544000000000800000000000000
+      internalID: 1146433817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_stick_6_2
+      rect:
+        serializedVersion: 2
+        x: 3880
+        y: 260
+        width: 212
+        height: 1268
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d728a9bffffffff0800000000000000
+      internalID: -1180162089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_stick_2_1
+      rect:
+        serializedVersion: 2
+        x: 2984
+        y: 1892
+        width: 212
+        height: 916
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e8c6c48ffffffff0800000000000000
+      internalID: -2067347227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_stick_2_2
+      rect:
+        serializedVersion: 2
+        x: 2984
+        y: 612
+        width: 212
+        height: 916
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5b18babffffffff0800000000000000
+      internalID: -1162339490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_stick_1_1
+      rect:
+        serializedVersion: 2
+        x: 2760
+        y: 2468
+        width: 212
+        height: 340
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 180, z: 0, w: 156}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7a0b58a8ffffffff0800000000000000
+      internalID: -1970949977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_stick_1_2
+      rect:
+        serializedVersion: 2
+        x: 2760
+        y: 1188
+        width: 212
+        height: 340
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 180, z: 0, w: 156}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c44ca32000000000800000000000000
+      internalID: 598492357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_stick_0_1
+      rect:
+        serializedVersion: 2
+        x: 2536
+        y: 2468
+        width: 212
+        height: 340
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 176, z: 0, w: 76}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a964cf44000000000800000000000000
+      internalID: 1157383834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fude_stick_0_2
+      rect:
+        serializedVersion: 2
+        x: 2536
+        y: 1188
+        width: 212
+        height: 340
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 176, z: 0, w: 76}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db671aa8ffffffff0800000000000000
+      internalID: -1969129795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      end: -1526549691
+      fude_ball_0: 213573052
+      fude_ball_1: 277226038
+      fude_ball_2: 1134664130
+      fude_stick_0_0: 1419783882
+      fude_stick_0_1: 1157383834
+      fude_stick_0_2: -1969129795
+      fude_stick_1_0: -614226590
+      fude_stick_1_1: -1970949977
+      fude_stick_1_2: 598492357
+      fude_stick_2_0: 1855151953
+      fude_stick_2_1: -2067347227
+      fude_stick_2_2: -1162339490
+      fude_stick_3_0: -1492556270
+      fude_stick_3_1: -2058660780
+      fude_stick_3_2: 777756369
+      fude_stick_4_0: 1078653857
+      fude_stick_4_1: -140696638
+      fude_stick_4_2: -982131032
+      fude_stick_5_0: -2145719836
+      fude_stick_5_1: -1790203426
+      fude_stick_5_2: 1146433817
+      fude_stick_6_0: 2024406486
+      fude_stick_6_1: 1736510413
+      fude_stick_6_2: -1180162089
+      fude_tip_0_0: -1714488886
+      fude_tip_0_1: -10973233
+      fude_tip_0_2: -2089882262
+      fude_tip_10_0: -649290134
+      fude_tip_10_1: 1246628787
+      fude_tip_10_2: 550138584
+      fude_tip_11_0: -592982681
+      fude_tip_11_1: -1197008802
+      fude_tip_11_2: -1581479422
+      fude_tip_12_0: 520835334
+      fude_tip_12_1: -1431647073
+      fude_tip_12_2: -518709021
+      fude_tip_1_0: 430081996
+      fude_tip_1_1: 113927036
+      fude_tip_1_2: 633974780
+      fude_tip_2_0: -721978998
+      fude_tip_2_1: 1358628071
+      fude_tip_2_2: 1499430905
+      fude_tip_3_0: -192802799
+      fude_tip_3_1: 713300749
+      fude_tip_3_2: -2054920168
+      fude_tip_4_0: -1422397272
+      fude_tip_4_1: -465287483
+      fude_tip_4_2: -107425171
+      fude_tip_5_0: 1158996790
+      fude_tip_5_1: 1308238058
+      fude_tip_5_2: -919740534
+      fude_tip_6_0: -268905281
+      fude_tip_6_1: 972981366
+      fude_tip_6_2: 899306074
+      fude_tip_7_0: 1641867280
+      fude_tip_7_1: 2008361993
+      fude_tip_7_2: 583608701
+      fude_tip_8_0: -480801223
+      fude_tip_8_1: 2026442160
+      fude_tip_8_2: 1496283225
+      fude_tip_9_0: -436236477
+      fude_tip_9_1: 1649257871
+      fude_tip_9_2: 201460108
+      hand_0: 2142888950
+      hand_1: 1981511391
+      hand_2: 1325106110
+      thumb_0: -223110643
+      thumb_1: 1852659906
+      thumb_2: 124380288
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: agbcalligraphy/common
+  assetBundleVariant: 

@@ -1,0 +1,225 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+using Jukebox;
+using System.Linq;
+using System;
+using static HeavenStudio.EntityTypes;
+using HeavenStudio.Common;
+
+namespace HeavenStudio.Editor
+{
+    public class EventParameterManager : MonoBehaviour
+    {
+        [Header("General References")]
+        [SerializeField] private GameObject eventSelector;
+        [SerializeField] private GridGameSelector gridGameSelector;
+
+        [Header("Property Prefabs")]
+        [SerializeField] private GameObject IntegerP;
+        [SerializeField] private GameObject FloatP;
+        [SerializeField] private GameObject NoteP;
+        [SerializeField] private GameObject ButtonP;
+        [SerializeField] private GameObject BooleanP;
+        [SerializeField] private GameObject DropdownP;
+        [SerializeField] private GameObject AssetP;
+        [SerializeField] private GameObject ColorP;
+        [SerializeField] private GameObject StringP;
+        private static Dictionary<Type, GameObject> PropertyPrefabs;
+
+
+        public RiqEntity entity;
+
+        public bool active;
+
+        private int childCountAtStart;
+        string setFont;
+
+        public Dictionary<string, EventPropertyPrefab> currentProperties = new();
+
+        public bool canDisable = true;
+
+        public static EventParameterManager instance { get; set; }
+
+        private void Awake()
+        {
+            instance = this;
+
+            if (PersistentDataManager.gameSettings.fontType == 1) Editor.instance.currentFont = "Rodin DB"; 
+            
+            
+            setFont = Editor.instance.currentFont;
+            Editor.instance.SetGameEventTitle($"<font={setFont}>{"Game Manager"}</font>");
+
+            if (PropertyPrefabs == null)
+            {
+                PropertyPrefabs = new() {
+                    { typeof(Integer), IntegerP },
+                    { typeof(Float), FloatP },
+                    { typeof(Note), NoteP },
+                    { typeof(Dropdown), DropdownP },
+                    { typeof(NoteSampleDropdown), DropdownP },
+                    { typeof(Asset), AssetP },
+                    { typeof(Button), ButtonP },
+                    { typeof(Color), ColorP },
+                    { typeof(bool), BooleanP },
+                    { typeof(string), StringP },
+                };
+            }
+        }
+
+        private void Start()
+        {
+            childCountAtStart = transform.childCount;
+        }
+
+        private void Update()
+        {
+            
+            if (Input.GetMouseButtonDown(0))
+            {
+                if (canDisable && active)
+                {
+                    Disable();
+                }
+            }
+            canDisable = true;
+        }
+
+        public void Disable()
+        {
+            
+            active = false;
+            eventSelector.SetActive(true);
+
+            DestroyParams();
+            if (PersistentDataManager.gameSettings.fontType == 1)
+            {
+                Editor.instance.currentFont = "Rodin DB";
+            }
+            else
+            {
+                Editor.instance.currentFont = GridGameSelector.instance.SelectedMinigame.font;
+            }
+            setFont = Editor.instance.currentFont;
+            // Editor.instance.SetGameEventTitle($"Select game event for {gridGameSelector.SelectedMinigame.displayName.Replace("\n", "")}");
+            Editor.instance?.SetGameEventTitle($"<font={setFont}>{gridGameSelector.SelectedMinigame.displayName.Replace("\n", "")}</font>");
+        }
+
+        public void StartParams(RiqEntity entity)
+        {
+            active = true;
+            AddParams(entity);
+        }
+
+        private void AddParams(RiqEntity entity)
+        {
+            string[] split = entity.datamodel.Split('/');
+            var minigame = EventCaller.instance.GetMinigame(split[0]);
+            Minigames.GameAction action = minigame.actions.Find(c => c.actionName == split[1]);
+
+            if (action.parameters != null)
+            {
+                eventSelector.SetActive(false);
+                this.entity = entity;
+
+                string col = (int)entity["track"] switch
+                {
+                    1 => EditorTheme.theme.properties.Layer2Col,
+                    2 => EditorTheme.theme.properties.Layer3Col,
+                    3 => EditorTheme.theme.properties.Layer4Col,
+                    4 => EditorTheme.theme.properties.Layer5Col,
+                    _ => EditorTheme.theme.properties.Layer1Col
+                };
+
+                string gameName = action.displayName;
+                const int cutOff = 20;
+                if (gameName.Length > (cutOff + 3)) {
+                    gameName = gameName[..cutOff] + "...";
+                }
+                
+                Editor.instance.SetGameEventTitle(Localization.F("<color=#{0}>{1}</color> at ♪ {2:F2} on <color=#{0}>Track {3}</color>", col, gameName, entity.beat, (int)entity["track"] + 1));
+
+                DestroyParams();
+
+                for (int i = 0; i < action.parameters.Count; i++)
+                {
+                    var p = action.parameters[i];
+                    string caption = p.caption;
+                    if (p.advanced) caption = "<color=#ff8>" + p.caption;
+
+                    if (p.advanced && !PersistentDataManager.gameSettings.advancedFeatures)
+                        currentProperties.Add(p.propertyName, null);
+                    else
+                        currentProperties.Add(p.propertyName, AddParam(p.propertyName, p.parameter, caption, p.tooltip));
+                }
+
+                foreach (var p in action.parameters)
+                {
+                    if (p.collapseParams == null || p.collapseParams.Count == 0) continue;
+                    EventPropertyPrefab input = currentProperties[p.propertyName];
+                    foreach (var c in p.collapseParams)
+                    {
+                        List<EventPropertyPrefab> collapseables = c.collapseables.Select(x => currentProperties[x]).ToList();
+                        input.propertyCollapses.Add(new EventPropertyPrefab.PropertyCollapse(collapseables, c.CollapseOn, entity));
+                    }
+                    input.SetCollapses(p.parameter);
+                }
+
+                foreach (var p in action.parameters)
+                {
+                    EventPropertyPrefab prop = currentProperties[p.propertyName];
+
+                    if (p.advanced && !PersistentDataManager.gameSettings.advancedFeatures) continue;
+
+                    prop.PostLoadProperties(p.parameter);
+                }
+
+                active = true;
+            }
+            else
+            {
+                active = false;
+            }
+        }
+
+        private EventPropertyPrefab AddParam(string propertyName, object type, string caption, string tooltip = "")
+        {
+            Type typeType = type.GetType();
+            GameObject propertyPrefab = DropdownP; // enum check is hardcoded because enums are awesome (lying)
+            if (!typeType.IsEnum && !PropertyPrefabs.TryGetValue(typeType, out propertyPrefab))
+            {
+                Debug.LogError("Can't make property interface of type: " + typeType);
+                return null;
+            }
+
+            GameObject input = Instantiate(propertyPrefab, transform);
+            input.SetActive(true);
+            input.transform.localScale = Vector3.one;
+
+            if (tooltip != string.Empty)
+            {
+                Tooltip.AddTooltip(input, tooltip, null, PersistentDataManager.gameSettings.showParamTooltips);
+
+            }
+
+            EventPropertyPrefab property = input.GetComponent<EventPropertyPrefab>();
+            property.SetProperties(propertyName, type, caption);
+
+            return property;
+        }
+
+        private void DestroyParams()
+        {
+            Editor.instance.editingInputField = false;
+            active = false;
+            for (int i = childCountAtStart; i < transform.childCount; i++)
+            {
+                Destroy(transform.GetChild(i).gameObject);
+            }
+
+            currentProperties.Clear();
+        }
+    }
+}

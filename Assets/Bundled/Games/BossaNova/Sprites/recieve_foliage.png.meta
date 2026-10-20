@@ -1,0 +1,708 @@
+fileFormatVersion: 2
+guid: 7b8b33f83c7a0894e9f210daa8bbc6f8
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 100
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: recieve_foliage_0
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 1129
+        width: 1731
+        height: 865
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd8b3faf6da0799408fcc12f8a5e818e
+      internalID: -678154462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_foliage_1
+      rect:
+        serializedVersion: 2
+        x: 1900
+        y: 1288
+        width: 884
+        height: 689
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddf434447b8b4ea4789dc4a45eb368d9
+      internalID: -1894559464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_foliage_2
+      rect:
+        serializedVersion: 2
+        x: 2923
+        y: 1677
+        width: 302
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dd0c68290378f14e8bebe85743e74b7
+      internalID: 226505005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_foliage_3
+      rect:
+        serializedVersion: 2
+        x: 3364
+        y: 1485
+        width: 426
+        height: 482
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 591ebf10daec22c4989be97b1b827253
+      internalID: -1040299152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_foliage_4
+      rect:
+        serializedVersion: 2
+        x: 3945
+        y: 1538
+        width: 52
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac9d047d416d53248a09a7a7cc541ff4
+      internalID: -660212814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_foliage_5
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 521
+        width: 1265
+        height: 462
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a914ddc04e9cd8439a7f696f698f06e
+      internalID: -199421891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_foliage_6
+      rect:
+        serializedVersion: 2
+        x: 1498
+        y: 782
+        width: 266
+        height: 214
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2825cf8ba9437904f94bc495c5b75eed
+      internalID: -362765617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_foliage_7
+      rect:
+        serializedVersion: 2
+        x: 1909
+        y: 725
+        width: 648
+        height: 430
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a2a7b5e1fbdb7743996cb2f7381d10f
+      internalID: 649636663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_foliage_8
+      rect:
+        serializedVersion: 2
+        x: 2731
+        y: 927
+        width: 10
+        height: 226
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11720d9710842bc44b76a0bc516581e2
+      internalID: -572222675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_foliage_9
+      rect:
+        serializedVersion: 2
+        x: 2928
+        y: 744
+        width: 1119
+        height: 627
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 135cdfe3374b0a7438b0464cc0777078
+      internalID: -2132542275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_foliage_10
+      rect:
+        serializedVersion: 2
+        x: 1983
+        y: 479
+        width: 350
+        height: 129
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2002ded950eda54eb73f7560a7a6a9d
+      internalID: 1167460909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_foliage_11
+      rect:
+        serializedVersion: 2
+        x: 2449
+        y: 525
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2eb919ba4a37c5649be58fe3ea557a4f
+      internalID: -2018668835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_foliage_12
+      rect:
+        serializedVersion: 2
+        x: 2668
+        y: 395
+        width: 202
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e9991b2163752e43b311f6f1efbb413
+      internalID: 637549772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_foliage_13
+      rect:
+        serializedVersion: 2
+        x: 3048
+        y: 553
+        width: 69
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a25040e3baf3834d95bc2388f5e5aa6
+      internalID: -531046502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_foliage_14
+      rect:
+        serializedVersion: 2
+        x: 3275
+        y: 415
+        width: 133
+        height: 199
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cd32db155e38af4187b8c4e014eda4a
+      internalID: -1031791883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_foliage_15
+      rect:
+        serializedVersion: 2
+        x: 3680
+        y: 483
+        width: 191
+        height: 187
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2b7b2430403d1f41bf3ba7d7f282e7a
+      internalID: 963695278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_foliage_16
+      rect:
+        serializedVersion: 2
+        x: 3965
+        y: 573
+        width: 68
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e69f00a70c98e63459f1a1d56696737d
+      internalID: 1314766761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_foliage_17
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 60
+        width: 265
+        height: 316
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d30cefa97451aea4da8f547a867637bb
+      internalID: -2055759865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_foliage_18
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 34
+        width: 226
+        height: 352
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b8edb556d9f3484cab182425739dd6d
+      internalID: 79994101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_foliage_19
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 71
+        width: 173
+        height: 307
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a0cf151f6d2ddf4f9909ced3029303a
+      internalID: 95284713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_foliage_20
+      rect:
+        serializedVersion: 2
+        x: 2457
+        y: 342
+        width: 80
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f22f4ad92bd49db40907dc1532c8230a
+      internalID: -711706614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_foliage_21
+      rect:
+        serializedVersion: 2
+        x: 3007
+        y: 344
+        width: 121
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 213dcef1ca48c34428b91823e1f86001
+      internalID: -974348158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_foliage_22
+      rect:
+        serializedVersion: 2
+        x: 3562
+        y: 199
+        width: 139
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76b82c3a66af2654b959ae7836c6e877
+      internalID: 298032089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_foliage_23
+      rect:
+        serializedVersion: 2
+        x: 3854
+        y: 79
+        width: 171
+        height: 292
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90fd415a7c0a7634987fc7450f3b6fed
+      internalID: 2124711255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_foliage_24
+      rect:
+        serializedVersion: 2
+        x: 2468
+        y: 162
+        width: 58
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b57bfae9d0704243abcd88c7e89e4c1
+      internalID: -1382730191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_foliage_25
+      rect:
+        serializedVersion: 2
+        x: 3034
+        y: 55
+        width: 76
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e56ff44d522620843bc49ebae6cdb804
+      internalID: 1796842570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_foliage_26
+      rect:
+        serializedVersion: 2
+        x: 3306
+        y: 107
+        width: 85
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f636d1e3c7387b41b73f99475b5b823
+      internalID: -25219866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      recieve_foliage_0: -678154462
+      recieve_foliage_1: -1894559464
+      recieve_foliage_10: 1167460909
+      recieve_foliage_11: -2018668835
+      recieve_foliage_12: 637549772
+      recieve_foliage_13: -531046502
+      recieve_foliage_14: -1031791883
+      recieve_foliage_15: 963695278
+      recieve_foliage_16: 1314766761
+      recieve_foliage_17: -2055759865
+      recieve_foliage_18: 79994101
+      recieve_foliage_19: 95284713
+      recieve_foliage_2: 226505005
+      recieve_foliage_20: -711706614
+      recieve_foliage_21: -974348158
+      recieve_foliage_22: 298032089
+      recieve_foliage_23: 2124711255
+      recieve_foliage_24: -1382730191
+      recieve_foliage_25: 1796842570
+      recieve_foliage_26: -25219866
+      recieve_foliage_3: -1040299152
+      recieve_foliage_4: -660212814
+      recieve_foliage_5: -199421891
+      recieve_foliage_6: -362765617
+      recieve_foliage_7: 649636663
+      recieve_foliage_8: -572222675
+      recieve_foliage_9: -2132542275
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: rvlreceive/common
+  assetBundleVariant: 

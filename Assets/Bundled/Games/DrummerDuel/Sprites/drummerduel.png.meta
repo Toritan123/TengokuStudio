@@ -1,0 +1,1876 @@
+fileFormatVersion: 2
+guid: 170733b22be0d044789ad499cc1c70bb
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 200
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: drummer_body1
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 3739
+        width: 198
+        height: 218
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 305e59558df58814997ae50967fd4f7c
+      internalID: -685924844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummer_body2
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 3739
+        width: 206
+        height: 242
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f59339f23007ba8478f294749d82c370
+      internalID: 1190597106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummer_body3
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 3738
+        width: 221
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f3ac4445a495b94a9995135fba63b7b
+      internalID: -1623933715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummer_hand
+      rect:
+        serializedVersion: 2
+        x: 1283
+        y: 3769
+        width: 149
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8db9c62ffef9e454b9dc658138734439
+      internalID: 1630215667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sweat
+      rect:
+        serializedVersion: 2
+        x: 1614
+        y: 3781
+        width: 83
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad54a7113c8e0244da4e4579811644f9
+      internalID: -1187419416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: taikoDrum_leg1
+      rect:
+        serializedVersion: 2
+        x: 2965
+        y: 3386
+        width: 86
+        height: 449
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bb54c6a87b76f545945e5118c1f447b
+      internalID: -976597196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: swoosh
+      rect:
+        serializedVersion: 2
+        x: 3217
+        y: 3637
+        width: 796
+        height: 336
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68f72bcbafc6f5540879de2038bab616
+      internalID: -591257769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummer_legs1
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 3327
+        width: 469
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 156076287bb70044e9e009ad913e137c
+      internalID: -1337838187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummer_legs2
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 3329
+        width: 455
+        height: 252
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd98207508d5326468d8c8c801bedbfd
+      internalID: -1459771391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummer_legs
+      rect:
+        serializedVersion: 2
+        x: 1283
+        y: 3326
+        width: 453
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afd3e40c0f006be45a108c669a3e515a
+      internalID: 1278878170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: impact2
+      rect:
+        serializedVersion: 2
+        x: 3255
+        y: 3230
+        width: 300
+        height: 330
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d11d823c394df646b5a8b4da2ce9680
+      internalID: 1253522895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: impact1
+      rect:
+        serializedVersion: 2
+        x: 3709
+        y: 3230
+        width: 300
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 596a5aaaa78a71448b65ec22f14a9eb8
+      internalID: -816403724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummer_face
+      rect:
+        serializedVersion: 2
+        x: 121
+        y: 3056
+        width: 100
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ae6ebac41200474d97a2b01abf3c9ff
+      internalID: 425279605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummer_faceMad
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 3056
+        width: 100
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa6fcc0690e38754bb2d340ad560013a
+      internalID: 1355346393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummer_faceNG
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 3056
+        width: 100
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a179ca20eee0fc40b3341b375a0f357
+      internalID: -1981077351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummer_head
+      rect:
+        serializedVersion: 2
+        x: 758
+        y: 2886
+        width: 343
+        height: 295
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f85eb07c88ef7044b4f37f6e89e270a
+      internalID: 994623682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummer_headBand1
+      rect:
+        serializedVersion: 2
+        x: 1279
+        y: 2889
+        width: 85
+        height: 273
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c38eddd67332cf84484a6a08f64955d7
+      internalID: -142853552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummer_headBand2
+      rect:
+        serializedVersion: 2
+        x: 1547
+        y: 2932
+        width: 251
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbb9c394a812be246bc460a9f1bdb96f
+      internalID: 894783876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummer_headBand3
+      rect:
+        serializedVersion: 2
+        x: 1959
+        y: 2941
+        width: 275
+        height: 165
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf0dd174b6f1b064d81fdacb279b8df0
+      internalID: -1294167609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: star
+      rect:
+        serializedVersion: 2
+        x: 2424
+        y: 2976
+        width: 140
+        height: 137
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a121a2f83615c29478ca8105a8fac412
+      internalID: -436507464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: stroke
+      rect:
+        serializedVersion: 2
+        x: 2746
+        y: 2981
+        width: 105
+        height: 137
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1854d1b522593c469a8f20a52c271bd
+      internalID: 1374104877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shadow
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 2757
+        width: 338
+        height: 183
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 156736a0d5e4fd74ab7cfcfa4251d1e6
+      internalID: 2074747670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummer_arm4
+      rect:
+        serializedVersion: 2
+        x: 1645
+        y: 2394
+        width: 362
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78b5d28da9213104a92a95ad06412251
+      internalID: -715965429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummer_arm5
+      rect:
+        serializedVersion: 2
+        x: 2076
+        y: 2400
+        width: 293
+        height: 404
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dcedf817e9207c4fa4c8be0ac7a430d
+      internalID: 92339336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummer_arm6
+      rect:
+        serializedVersion: 2
+        x: 2461
+        y: 2379
+        width: 210
+        height: 452
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6776fc2cd5787c148ab229d52d3f9baa
+      internalID: -37242127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummer_arm7
+      rect:
+        serializedVersion: 2
+        x: 2791
+        y: 2390
+        width: 163
+        height: 447
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e60bf061a8c2036479838e48f01de00b
+      internalID: -343674064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummer_arm8
+      rect:
+        serializedVersion: 2
+        x: 3109
+        y: 2380
+        width: 176
+        height: 454
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 959de74feef52ca41b5eec1cf77c0d01
+      internalID: -664905159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummer_arm9
+      rect:
+        serializedVersion: 2
+        x: 3374
+        y: 2354
+        width: 235
+        height: 486
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5259f661c3195044fb42ac6845fa5308
+      internalID: 1233088922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummer_arm10
+      rect:
+        serializedVersion: 2
+        x: 3713
+        y: 2349
+        width: 323
+        height: 484
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9b25191f8ff3644dbcd2aadecf036df
+      internalID: 1536304135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummer_arm1
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 2352
+        width: 497
+        height: 237
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b198f463e7d5d74989c68513090a1fa
+      internalID: -508300173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummer_arm2
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 2351
+        width: 485
+        height: 241
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f1d0b201e8fe4842be4cf04db9c13fd
+      internalID: 806208534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummer_arm3
+      rect:
+        serializedVersion: 2
+        x: 1158
+        y: 2364
+        width: 446
+        height: 324
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 498bda553c7274e459ba1f4f79bb2e66
+      internalID: -1393987423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummer_arm11
+      rect:
+        serializedVersion: 2
+        x: 2573
+        y: 1738
+        width: 223
+        height: 472
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07a31807ca0a34c499d1ef0253708315
+      internalID: 1455875524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummer_arm12
+      rect:
+        serializedVersion: 2
+        x: 2966
+        y: 1680
+        width: 134
+        height: 603
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5897edc2e79d3b949b7e59e3b0d1a913
+      internalID: -1767129463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummer_arm13
+      rect:
+        serializedVersion: 2
+        x: 3287
+        y: 1671
+        width: 233
+        height: 584
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73467d73570f1034aa34ce3e2cca9e0b
+      internalID: -1345311778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummer_arm14
+      rect:
+        serializedVersion: 2
+        x: 3658
+        y: 1687
+        width: 330
+        height: 518
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8987f7a93758f5f45b238d8378802306
+      internalID: -2088065099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: referee_head
+      rect:
+        serializedVersion: 2
+        x: 1623
+        y: 1265
+        width: 350
+        height: 350
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6985a6899b80e734d9c1de90e5bb03aa
+      internalID: -1049581584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: referee_knot
+      rect:
+        serializedVersion: 2
+        x: 2055
+        y: 1448
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c745b99b800d4548949fc5aece6d0c6
+      internalID: 1420939933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: referee_body
+      rect:
+        serializedVersion: 2
+        x: 2309
+        y: 1260
+        width: 250
+        height: 350
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84cb5940f9ef04a4fa571138c97e47e9
+      internalID: 1820790536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platform
+      rect:
+        serializedVersion: 2
+        x: 2768
+        y: 89
+        width: 3
+        height: 1494
+      alignment: 5
+      pivot: {x: 1, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 829ca6163084d1146b6257e0b9334213
+      internalID: -834670722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platform_end
+      rect:
+        serializedVersion: 2
+        x: 3100
+        y: 87
+        width: 949
+        height: 1496
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8969c5b368396346a2357bb6a1c9295
+      internalID: -1646887374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: referee_hand
+      rect:
+        serializedVersion: 2
+        x: 2061
+        y: 1240
+        width: 150
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8ca623054f303a4aa724dc339676614
+      internalID: 617192327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: referee_foot1
+      rect:
+        serializedVersion: 2
+        x: 1620
+        y: 979
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aae7cbb64eb37a4479d3549fbf64eeea
+      internalID: -331450562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: referee_foot2
+      rect:
+        serializedVersion: 2
+        x: 1838
+        y: 979
+        width: 200
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aae73e9ac1232564ba2cf3426a46119b
+      internalID: -1128171633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_58
+      rect:
+        serializedVersion: 2
+        x: 2107
+        y: 992
+        width: 79
+        height: 159
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cace58469c835d5429372aab5f53ddd7
+      internalID: 118611442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: referee_arm1
+      rect:
+        serializedVersion: 2
+        x: 2273
+        y: 948
+        width: 150
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fda32c88762a974d9b6e8c69b26b3e5
+      internalID: -157746208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: referee_patch
+      rect:
+        serializedVersion: 2
+        x: 2483
+        y: 1034
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ca79b01475ff1444959616408900358
+      internalID: -902909714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: referee_arm3
+      rect:
+        serializedVersion: 2
+        x: 2336
+        y: 574
+        width: 300
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef7a57d2b3611f34bbd3d01afec74023
+      internalID: 979247349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: referee_arm2
+      rect:
+        serializedVersion: 2
+        x: 2021
+        y: 555
+        width: 300
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f99f683639c8fb4aa17aca863c2d13c
+      internalID: 1446792886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bg_Gradient
+      rect:
+        serializedVersion: 2
+        x: 1604
+        y: 111
+        width: 1029
+        height: 371
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76f08a4b74081ad46b728bca5778ce50
+      internalID: 1362247495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: referee_faceNG
+      rect:
+        serializedVersion: 2
+        x: 1631
+        y: 736
+        width: 200
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c775fafdabd08fe4bbf826f0af85d6fd
+      internalID: -1732305541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: referee_face
+      rect:
+        serializedVersion: 2
+        x: 1852
+        y: 736
+        width: 200
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d08417a596326d44b3311308878c09c
+      internalID: 1715074596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: referee_faceGood
+      rect:
+        serializedVersion: 2
+        x: 2059
+        y: 736
+        width: 200
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26731a7fc37f19049919a1dd4390a46a
+      internalID: 2111091231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: platform_center
+      rect:
+        serializedVersion: 2
+        x: 2773
+        y: 89
+        width: 3
+        height: 1494
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00665551d27e9994bb87c1d9e30120a0
+      internalID: -606250252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: referee_mouthBlur
+      rect:
+        serializedVersion: 2
+        x: 1945
+        y: 779
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03e1d8dc4531fff469f4f1f67537e9fc
+      internalID: 726134797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aa
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 1138
+        width: 150
+        height: 464
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84648d80dce9f03468a0b7e526e8742e
+      internalID: 1506696985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: a
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 1142
+        width: 144
+        height: 480
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cc523d6ad1761140b62305d853ca9d6
+      internalID: 311226683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaa
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 1140
+        width: 138
+        height: 491
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6c0d2658660a7e49bdb742f276b4ede
+      internalID: -431076083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaa
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 1164
+        width: 138
+        height: 469
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf3bd63f342ed854897525ad4a618c00
+      internalID: 1749816160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaa
+      rect:
+        serializedVersion: 2
+        x: 1066
+        y: 1230
+        width: 165
+        height: 409
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e9e6fcc5fa99ae4e894461b36d447f1
+      internalID: 16230856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ab
+      rect:
+        serializedVersion: 2
+        x: 1278
+        y: 1314
+        width: 183
+        height: 329
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a14d0c2920290e43b855b609499b0be
+      internalID: -1799695939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ac
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 883
+        width: 138
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7220c6d875c6ce4da2660733484261e
+      internalID: -1182163220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ah
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 654
+        width: 144
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f197ed348a01e8241a365b413dec5ab6
+      internalID: 198053909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ad
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 870
+        width: 155
+        height: 97
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1abcbfdbaa26264488286229c85696f2
+      internalID: 1030075195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ae
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 878
+        width: 58
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2d2297a4f6a66f48a7eeb836764e0e8
+      internalID: 916414141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: af
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 781
+        width: 277
+        height: 259
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cf0961d6b0c1e74fa8964fd41dccb2b
+      internalID: -603632838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ag
+      rect:
+        serializedVersion: 2
+        x: 1222
+        y: 787
+        width: 277
+        height: 257
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ba57704ff1292f45833f85fb25dc00c
+      internalID: -81721523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ai
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 450
+        width: 307
+        height: 269
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bac7787a86c586143b008eef10f1bc7b
+      internalID: -1842899831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aj
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 551
+        width: 327
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d3c7d057c5dd4a4686a38ac044b72a8
+      internalID: 192332466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ak
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 99
+        width: 215
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e8e2b8448073364d9a6afb913fa5ad2
+      internalID: -1712186813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: al
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 104
+        width: 265
+        height: 187
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 287f7fdc72cbeb242943d82ef9f6a37e
+      internalID: 1382265616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: am
+      rect:
+        serializedVersion: 2
+        x: 827
+        y: 124
+        width: 274
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8d01eee7e5540849a5902dd0bc1dde2
+      internalID: 1812503657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: an
+      rect:
+        serializedVersion: 2
+        x: 1214
+        y: 132
+        width: 250
+        height: 251
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3ff37028a5527846b01d196d1a2f145
+      internalID: -1310475576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ao
+      rect:
+        serializedVersion: 2
+        x: 1875
+        y: 3245
+        width: 915
+        height: 725
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 435c5192c49efca43868186906a12cc9
+      internalID: 1675445039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ap
+      rect:
+        serializedVersion: 2
+        x: 3053
+        y: 2950
+        width: 392
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63d9388f85a9fe949a80a18c73559483
+      internalID: 1795889644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummer_arm10Alt
+      rect:
+        serializedVersion: 2
+        x: 3680
+        y: 2591
+        width: 389
+        height: 242
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83edc74dfe65fe04ba134ee0f1002d63
+      internalID: 1991035263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pompom_highlight1
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 529
+        width: 232
+        height: 175
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a39e2ea7cc3831d4ca03e2a2b3590ea5
+      internalID: -796979655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pompom_highlight2
+      rect:
+        serializedVersion: 2
+        x: 1723
+        y: 536
+        width: 204
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21f6795b2408e484c9f8c2ea3cd40900
+      internalID: -219558457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      bg_Gradient: 1362247495
+      cheerLeader_arm: -146484390
+      cheerLeader_body1: -761377482
+      cheerLeader_body2: -1246309136
+      cheerLeader_face: -963157155
+      cheerLeader_faceGood: -1279529566
+      cheerLeader_faceNG: -2120117338
+      cheerLeader_hair1: -432326302
+      cheerLeader_hair2: -1869612884
+      cheerLeader_hairClip: -182263233
+      cheerLeader_head: 968493961
+      cheerLeader_leg1: -940519957
+      cheerLeader_leg2: -1056232640
+      cheerLeader_leg3: 1203216808
+      cheerLeader_leg4: -1760906808
+      cheerLeader_leg5: -2069338979
+      cheerLeader_leg6: -644484257
+      cheerLeader_pomPom1: -1142592121
+      cheerLeader_pomPom2: 68001383
+      drummer_arm1: -508300173
+      drummer_arm10: 1536304135
+      drummer_arm10Alt: 1991035263
+      drummer_arm11: 1455875524
+      drummer_arm12: -1767129463
+      drummer_arm13: -1345311778
+      drummer_arm14: -2088065099
+      drummer_arm2: 806208534
+      drummer_arm3: -1393987423
+      drummer_arm4: -715965429
+      drummer_arm5: 92339336
+      drummer_arm6: -37242127
+      drummer_arm7: -343674064
+      drummer_arm8: -664905159
+      drummer_arm9: 1233088922
+      drummer_body1: -685924844
+      drummer_body2: 1190597106
+      drummer_body3: -1623933715
+      drummer_face: 425279605
+      drummer_faceMad: 1355346393
+      drummer_faceNG: -1981077351
+      drummer_hand: 1630215667
+      drummer_head: 994623682
+      drummer_headBand1: -142853552
+      drummer_headBand2: 894783876
+      drummer_headBand3: -1294167609
+      drummer_legs: 1278878170
+      drummer_legs1: -1337838187
+      drummer_legs2: -1459771391
+      drummerduel_12: 510343050
+      drummerduel_13: -2051892491
+      drummerduel_15: -85824983
+      drummerduel_22: -1375242105
+      drummerduel_23: 2005482098
+      drummerduel_24: 706559340
+      drummerduel_58: 118611442
+      drummerduel_61: 376160476
+      drummerduel_62: 999970600
+      drummerduel_63: 410935773
+      drummerduel_64: 1695642147
+      drummerduel_68: -676711302
+      drummerduel_69: -284220616
+      drummerduel_70: 1959117658
+      drummerduel_71: -967101590
+      drummerduel_72: -1788945100
+      drummerduel_73: 857418908
+      drummerduel_74: -1821107811
+      drummerduel_75: 16575486
+      drummerduel_76: -1945502248
+      drummerduel_77: -1223222556
+      drummerduel_78: -666740622
+      drummerduel_79: 1653778948
+      drummerduel_80: 37233314
+      drummerduel_81: 124954204
+      drummerduel_83: 317088447
+      drummerduel_84: -1879722991
+      drummerduel_85: -2007408530
+      drummerduel_86: -1523358497
+      drummerduel_87: 177631606
+      drummerduel_88: -1065656984
+      drummerduel_90: 574278726
+      drummerduel_91: -1196856909
+      impact1: -816403724
+      impact2: 1253522895
+      platform: -834670722
+      platform_center: -606250252
+      platform_end: -1646887374
+      pompom_highlight1: -796979655
+      pompom_highlight2: -219558457
+      referee_arm1: -157746208
+      referee_arm2: 1446792886
+      referee_arm3: 979247349
+      referee_arm4: 118611442
+      referee_body: 1820790536
+      referee_face: 1715074596
+      referee_faceGood: 2111091231
+      referee_faceNG: -1732305541
+      referee_foot1: -331450562
+      referee_foot2: -1128171633
+      referee_hand: 617192327
+      referee_head: -1049581584
+      referee_knot: 1420939933
+      referee_mouthBlur: 726134797
+      referee_patch: -902909714
+      shadow: 2074747670
+      star: -436507464
+      stroke: 1374104877
+      sweat: -1187419416
+      swoosh: -591257769
+      taikoDrum: -517700676
+      taikoDrum_leg1: -976597196
+      taikoDrum_leg2: -1871806062
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: ntrtaiko/common
+  assetBundleVariant: 

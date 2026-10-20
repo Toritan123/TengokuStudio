@@ -1,0 +1,522 @@
+fileFormatVersion: 2
+guid: 878df530664fd8b48a31903596add0c2
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: figurelights_0
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 3308
+        width: 1840
+        height: 744
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f04eb03551253f84eb594c63d0123e00
+      internalID: 1284452205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: figurelights_2
+      rect:
+        serializedVersion: 2
+        x: 1965
+        y: 2128
+        width: 1420
+        height: 1921
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3da26e661fc8be74b9dc312913ee9946
+      internalID: -160972256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: figurelights_4
+      rect:
+        serializedVersion: 2
+        x: 3484
+        y: 3232
+        width: 356
+        height: 832
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4356448999f8788489ad6a14be271868
+      internalID: 509080934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: figurelights_18
+      rect:
+        serializedVersion: 2
+        x: 3472
+        y: 2080
+        width: 388
+        height: 1060
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6550e132474515e48b7c1778438d4572
+      internalID: 1847603942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: figurelights_25
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 1416
+        width: 808
+        height: 1302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 261c643cba9774b42a9ef0ac75af7e3c
+      internalID: 1961463524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: figurelights_54
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 744
+        width: 720
+        height: 1336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7efebbbe8fdacab4ba9dd145bdc1038d
+      internalID: 144787335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: figurelights_55
+      rect:
+        serializedVersion: 2
+        x: 1975
+        y: 2076
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbccebc9fe47faf4e80acec804b4b91c
+      internalID: -1962787147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: figurelights_57
+      rect:
+        serializedVersion: 2
+        x: 1975
+        y: 2060
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7668d3e186ec6894b94b9cb38e49a56e
+      internalID: 1077143636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: figurelights_60
+      rect:
+        serializedVersion: 2
+        x: 2596
+        y: 912
+        width: 696
+        height: 1136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be4d2b29bf678964ea0af646eb26add1
+      internalID: -1636885860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: figurelights_61
+      rect:
+        serializedVersion: 2
+        x: 3412
+        y: 1024
+        width: 596
+        height: 992
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81f93c0bae063434f974150b8b28fb10
+      internalID: -1062795639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: figurelights_77
+      rect:
+        serializedVersion: 2
+        x: 3456
+        y: 36
+        width: 508
+        height: 888
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83548dcde9fe6fd469cd53595c758051
+      internalID: 1410075389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: figurelights_78
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 67
+        width: 1072
+        height: 769
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a9b3ba583f717b4f89f952b8396bb71
+      internalID: -1694775605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: figurelights_79
+      rect:
+        serializedVersion: 2
+        x: 1520
+        y: 47
+        width: 1760
+        height: 609
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acf615de3ac266742ad4639bb9950ee1
+      internalID: -285336040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: figurelights_1
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 2820
+        width: 1636
+        height: 414
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15b18405064492d4e9f629ba00a91d86
+      internalID: -1127608933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: figurelights_3
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 876
+        width: 1707
+        height: 415
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5a5db157340dfb499281b4d554fc2d5
+      internalID: -959842943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      figurelights_0: 1284452205
+      figurelights_1: -1127608933
+      figurelights_10: 1220927982
+      figurelights_11: -683980913
+      figurelights_12: -1786737257
+      figurelights_13: 1682104381
+      figurelights_14: 416540121
+      figurelights_15: 853849365
+      figurelights_16: -601846044
+      figurelights_17: -1526192325
+      figurelights_18: 1847603942
+      figurelights_19: 439728602
+      figurelights_2: -160972256
+      figurelights_20: 200512606
+      figurelights_21: 33187522
+      figurelights_22: -2035184269
+      figurelights_23: 1263468785
+      figurelights_24: -1345249170
+      figurelights_25: 1961463524
+      figurelights_26: 1517560164
+      figurelights_27: 316502733
+      figurelights_28: 611203951
+      figurelights_29: 162859305
+      figurelights_3: -959842943
+      figurelights_30: -1790231083
+      figurelights_31: -556069195
+      figurelights_32: 296068892
+      figurelights_33: -1532577883
+      figurelights_34: -468310128
+      figurelights_35: 151405608
+      figurelights_36: 912956178
+      figurelights_37: 116341365
+      figurelights_38: -1248266246
+      figurelights_39: -1921022728
+      figurelights_4: 509080934
+      figurelights_40: -859098176
+      figurelights_41: 398577901
+      figurelights_42: -1855311125
+      figurelights_43: 1981896134
+      figurelights_44: 1157565796
+      figurelights_45: -794407461
+      figurelights_46: 1455922529
+      figurelights_47: 1423972504
+      figurelights_48: -1445229228
+      figurelights_49: -1684609947
+      figurelights_5: 1645000263
+      figurelights_50: 444871371
+      figurelights_51: 41963648
+      figurelights_52: 1921021292
+      figurelights_53: -590326197
+      figurelights_54: 144787335
+      figurelights_55: -1962787147
+      figurelights_56: 1975931995
+      figurelights_57: 1077143636
+      figurelights_58: 88969454
+      figurelights_59: -525052173
+      figurelights_6: -893901313
+      figurelights_60: -1636885860
+      figurelights_61: -1062795639
+      figurelights_62: -1945208834
+      figurelights_63: 1757941900
+      figurelights_64: -971322341
+      figurelights_65: -1308275611
+      figurelights_66: -508718156
+      figurelights_67: 2016153630
+      figurelights_68: -757045776
+      figurelights_69: -47920756
+      figurelights_7: 974293398
+      figurelights_70: -232039588
+      figurelights_71: -1485820609
+      figurelights_72: 1257103668
+      figurelights_73: -1461369824
+      figurelights_74: -1967798035
+      figurelights_75: -499180258
+      figurelights_76: 1789309525
+      figurelights_77: 1410075389
+      figurelights_78: -1694775605
+      figurelights_79: -285336040
+      figurelights_8: -536375753
+      figurelights_9: 1659183761
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: rvlmuscle/common
+  assetBundleVariant: 

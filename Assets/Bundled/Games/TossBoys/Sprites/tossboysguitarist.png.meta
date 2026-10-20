@@ -1,0 +1,579 @@
+fileFormatVersion: 2
+guid: c1894bbfacfc5414dac2326591e1cbe1
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 100
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: tossboysguitarist_0
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 3293
+        width: 562
+        height: 483
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f84d360258d5dd45b1de0f9ec4bc317
+      internalID: 814769093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tossboysguitarist_1
+      rect:
+        serializedVersion: 2
+        x: 1026
+        y: 3573
+        width: 224
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: faecc73fb8b9bcf42bd2b94a112a5cbc
+      internalID: -712843485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tossboysguitarist_3
+      rect:
+        serializedVersion: 2
+        x: 3249
+        y: 2125
+        width: 586
+        height: 1719
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 427e58fb030e5ab4c817e5181038e1cc
+      internalID: 788075577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tossboysguitarist_7
+      rect:
+        serializedVersion: 2
+        x: 1523
+        y: 3290
+        width: 230
+        height: 377
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 688a7d26503c3d74abfb2c2c1b05300c
+      internalID: -2044325184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tossboysguitarist_8
+      rect:
+        serializedVersion: 2
+        x: 2670
+        y: 3237
+        width: 419
+        height: 415
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edbe49a44850d4041a05d8698ee493e3
+      internalID: -1175956905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tossboysguitarist_10
+      rect:
+        serializedVersion: 2
+        x: 1026
+        y: 3255
+        width: 225
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b23613d0f0cd14d4dbb3c89d83f9a290
+      internalID: -1002544575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tossboysguitarist_12
+      rect:
+        serializedVersion: 2
+        x: 2078
+        y: 3383
+        width: 199
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64854e43daa17cd42a5bed077583023e
+      internalID: -1489878922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tossboysguitarist_17
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 2707
+        width: 460
+        height: 299
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a26058bf66f5576419e2373976a10c63
+      internalID: -1109601210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tossboysguitarist_18
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 2609
+        width: 454
+        height: 397
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b0e6bb56067af640aee6b5f09cb4c97
+      internalID: -2139167323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tossboysguitarist_19
+      rect:
+        serializedVersion: 2
+        x: 1586
+        y: 2489
+        width: 395
+        height: 517
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 637199ef5fdd38a418796395c83d9e04
+      internalID: -321541894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tossboysguitarist_20
+      rect:
+        serializedVersion: 2
+        x: 2182
+        y: 2471
+        width: 299
+        height: 535
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa9a294784c7f8e4d82c7af5f010c962
+      internalID: 1391367468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tossboysguitarist_21
+      rect:
+        serializedVersion: 2
+        x: 2831
+        y: 2599
+        width: 173
+        height: 291
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d624cceeda90d284dabfbc88298a16b7
+      internalID: -1003951689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tossboysguitarist_22
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 1199
+        width: 746
+        height: 1117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31b34863c415be343a483b6307fb7705
+      internalID: 1945086556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tossboysguitarist_23
+      rect:
+        serializedVersion: 2
+        x: 1464
+        y: 1547
+        width: 585
+        height: 623
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdecc2806cdb8d543aafbda281ad5139
+      internalID: 1146623189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tossboysguitarist_24
+      rect:
+        serializedVersion: 2
+        x: 2331
+        y: 1520
+        width: 278
+        height: 566
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f33ef4881dece0542983dbd1ebc5687a
+      internalID: -1667537162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tossboysguitarist_25
+      rect:
+        serializedVersion: 2
+        x: 3249
+        y: 207
+        width: 586
+        height: 1718
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 371cc20dacec97047927fc31d7a84846
+      internalID: 222331243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tossboysguitarist_26
+      rect:
+        serializedVersion: 2
+        x: 315
+        y: 749
+        width: 938
+        height: 316
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f09f27cc957bf641bb824909001f89f
+      internalID: 1202233376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tossboysguitarist_28
+      rect:
+        serializedVersion: 2
+        x: 1657
+        y: 884
+        width: 249
+        height: 365
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c366052d7489f9a47b1cffb8546bd0a5
+      internalID: 275649757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tossboysguitarist_29
+      rect:
+        serializedVersion: 2
+        x: 2323
+        y: 1011
+        width: 138
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02795d235d1007246b04b6d5282e6042
+      internalID: -701110247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tossboysguitarist_30
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 306
+        width: 1000
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df53e4b5c5c58ef44b7ac38585b9fa8b
+      internalID: -743054551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      tossboysguitarist_0: 814769093
+      tossboysguitarist_1: -712843485
+      tossboysguitarist_10: -1002544575
+      tossboysguitarist_11: 1142227475
+      tossboysguitarist_12: -1489878922
+      tossboysguitarist_13: -1652202363
+      tossboysguitarist_14: 1192273333
+      tossboysguitarist_15: 1790013508
+      tossboysguitarist_16: -1882883872
+      tossboysguitarist_17: -1109601210
+      tossboysguitarist_18: -2139167323
+      tossboysguitarist_19: -321541894
+      tossboysguitarist_2: -48747243
+      tossboysguitarist_20: 1391367468
+      tossboysguitarist_21: -1003951689
+      tossboysguitarist_22: 1945086556
+      tossboysguitarist_23: 1146623189
+      tossboysguitarist_24: -1667537162
+      tossboysguitarist_25: 222331243
+      tossboysguitarist_26: 1202233376
+      tossboysguitarist_27: -1434857950
+      tossboysguitarist_28: 275649757
+      tossboysguitarist_29: -701110247
+      tossboysguitarist_3: 788075577
+      tossboysguitarist_30: -743054551
+      tossboysguitarist_31: 866351951
+      tossboysguitarist_4: -938107748
+      tossboysguitarist_5: -33804452
+      tossboysguitarist_6: 654425777
+      tossboysguitarist_7: -2044325184
+      tossboysguitarist_8: -1175956905
+      tossboysguitarist_9: -952613636
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

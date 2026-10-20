@@ -1,0 +1,2868 @@
+fileFormatVersion: 2
+guid: 2256055712735e147bfe4f00d3a25b50
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: holeinoneguy_0
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 2868
+        width: 607
+        height: 414
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e866952bffffffff0800000000000000
+      internalID: -1302763890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_1
+      rect:
+        serializedVersion: 2
+        x: 665
+        y: 2583
+        width: 757
+        height: 698
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc4d3c48ffffffff0800000000000000
+      internalID: -2067540788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_2
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 2580
+        width: 256
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e52d84aaffffffff0800000000000000
+      internalID: -1438068130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_3
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 2038
+        width: 374
+        height: 504
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbf9f120000000000800000000000000
+      internalID: 35626940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_4
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 2038
+        width: 532
+        height: 496
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1307d054000000000800000000000000
+      internalID: 1158508593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_5
+      rect:
+        serializedVersion: 2
+        x: 1018
+        y: 2041
+        width: 338
+        height: 497
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c0146aeffffffff0800000000000000
+      internalID: -362540864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_6
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 1624
+        width: 345
+        height: 371
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 937e243bffffffff0800000000000000
+      internalID: -1287461063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_7
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 1686
+        width: 347
+        height: 309
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fdf127effffffff0800000000000000
+      internalID: -417202695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_8
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 1050
+        width: 509
+        height: 531
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b28f9ebeffffffff0800000000000000
+      internalID: -336988117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_9
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 1044
+        width: 374
+        height: 604
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e794e3a6000000000800000000000000
+      internalID: 1782466942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_10
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 1401
+        width: 434
+        height: 308
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6db5a91affffffff0800000000000000
+      internalID: -1583719466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_11
+      rect:
+        serializedVersion: 2
+        x: 983
+        y: 1044
+        width: 499
+        height: 312
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88aad82dffffffff0800000000000000
+      internalID: -762467704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_12
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 847
+        width: 165
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 10151d54000000000800000000000000
+      internalID: 1171345665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_13
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 655
+        width: 157
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef8916feffffffff0800000000000000
+      internalID: -278816514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_16
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 850
+        width: 161
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67386b6cffffffff0800000000000000
+      internalID: -961117322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_17
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 656
+        width: 161
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b8b2167000000000800000000000000
+      internalID: 1980938416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_18
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 340
+        width: 283
+        height: 279
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1aafbd80000000000800000000000000
+      internalID: 148634273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_19
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 341
+        width: 280
+        height: 277
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a853ec68ffffffff0800000000000000
+      internalID: -2033306230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_20
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 342
+        width: 277
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 923aa75effffffff0800000000000000
+      internalID: -444947671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_21
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 342
+        width: 281
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03e1de74000000000800000000000000
+      internalID: 1206722096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_22
+      rect:
+        serializedVersion: 2
+        x: 1302
+        y: 347
+        width: 274
+        height: 267
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 83ac9ec6000000000800000000000000
+      internalID: 1827260984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_23
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 19
+        width: 280
+        height: 286
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93bdc6ebffffffff0800000000000000
+      internalID: -1100162247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_24
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 16
+        width: 285
+        height: 288
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c563d10dffffffff0800000000000000
+      internalID: -803391908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_25
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 17
+        width: 288
+        height: 284
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5c235094000000000800000000000000
+      internalID: 1225077445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_26
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 18
+        width: 283
+        height: 284
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bedeecd2000000000800000000000000
+      internalID: 768536043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_27
+      rect:
+        serializedVersion: 2
+        x: 1300
+        y: 17
+        width: 284
+        height: 285
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f905cfceffffffff0800000000000000
+      internalID: -319008609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_28
+      rect:
+        serializedVersion: 2
+        x: 2388
+        y: 3034
+        width: 250
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f86b9caffffffff0800000000000000
+      internalID: -1399101199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_29
+      rect:
+        serializedVersion: 2
+        x: 2674
+        y: 3033
+        width: 251
+        height: 275
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cf50dd2000000000800000000000000
+      internalID: 768630725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_30
+      rect:
+        serializedVersion: 2
+        x: 2420
+        y: 2656
+        width: 245
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a29ee456000000000800000000000000
+      internalID: 1699670314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_31
+      rect:
+        serializedVersion: 2
+        x: 2711
+        y: 2655
+        width: 234
+        height: 325
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ac10803000000000800000000000000
+      internalID: 813702304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_14
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 854
+        width: 152
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4039f2ccffffffff0800000000000000
+      internalID: -869297404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_15
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 662
+        width: 155
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19e40475000000000800000000000000
+      internalID: 1463832209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_32
+      rect:
+        serializedVersion: 2
+        x: 3698
+        y: 3165
+        width: 158
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c445ecbffffffff0800000000000000
+      internalID: -1125825337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_33
+      rect:
+        serializedVersion: 2
+        x: 3700
+        y: 2936
+        width: 151
+        height: 175
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3613ca90000000000800000000000000
+      internalID: 162279779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_34
+      rect:
+        serializedVersion: 2
+        x: 2965
+        y: 3035
+        width: 340
+        height: 337
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5472bbdffffffff0800000000000000
+      internalID: -609061793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_35
+      rect:
+        serializedVersion: 2
+        x: 1906
+        y: 2649
+        width: 250
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf0655eaffffffff0800000000000000
+      internalID: -1370136324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_36
+      rect:
+        serializedVersion: 2
+        x: 2195
+        y: 2647
+        width: 185
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3950918cffffffff0800000000000000
+      internalID: -937884269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_37
+      rect:
+        serializedVersion: 2
+        x: 1938
+        y: 2395
+        width: 219
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9fad122000000000800000000000000
+      internalID: 572370842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_38
+      rect:
+        serializedVersion: 2
+        x: 2195
+        y: 2389
+        width: 188
+        height: 213
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 141be18cffffffff0800000000000000
+      internalID: -937512639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_39
+      rect:
+        serializedVersion: 2
+        x: 2161
+        y: 2102
+        width: 161
+        height: 246
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3a2ca55000000000800000000000000
+      internalID: 1437346365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_40
+      rect:
+        serializedVersion: 2
+        x: 1681
+        y: 2262
+        width: 157
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 984ab749ffffffff0800000000000000
+      internalID: -1803836279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_41
+      rect:
+        serializedVersion: 2
+        x: 1426
+        y: 2266
+        width: 221
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4887426000000000800000000000000
+      internalID: 1648855119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_42
+      rect:
+        serializedVersion: 2
+        x: 1365
+        y: 1751
+        width: 217
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 662bb414000000000800000000000000
+      internalID: 1095479910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_43
+      rect:
+        serializedVersion: 2
+        x: 1144
+        y: 668
+        width: 177
+        height: 235
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce09b4cfffffffff0800000000000000
+      internalID: -62156564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_44
+      rect:
+        serializedVersion: 2
+        x: 1366
+        y: 670
+        width: 214
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffa54374000000000800000000000000
+      internalID: 1194613503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_45
+      rect:
+        serializedVersion: 2
+        x: 2064
+        y: 666
+        width: 159
+        height: 236
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54a83724000000000800000000000000
+      internalID: 1114868293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_46
+      rect:
+        serializedVersion: 2
+        x: 2260
+        y: 667
+        width: 216
+        height: 231
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6eb71a05000000000800000000000000
+      internalID: 1352760294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_47
+      rect:
+        serializedVersion: 2
+        x: 2486
+        y: 386
+        width: 179
+        height: 229
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57e96cc8ffffffff0800000000000000
+      internalID: -1933140363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_48
+      rect:
+        serializedVersion: 2
+        x: 2711
+        y: 386
+        width: 181
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 897959f1000000000800000000000000
+      internalID: 529897368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_49
+      rect:
+        serializedVersion: 2
+        x: 2965
+        y: 668
+        width: 181
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d84fa45000000000800000000000000
+      internalID: 1420773591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_50
+      rect:
+        serializedVersion: 2
+        x: 3192
+        y: 667
+        width: 209
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df79571effffffff0800000000000000
+      internalID: -512387075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_51
+      rect:
+        serializedVersion: 2
+        x: 3896
+        y: 670
+        width: 180
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afc73767000000000800000000000000
+      internalID: 1987280122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_52
+      rect:
+        serializedVersion: 2
+        x: 3829
+        y: 375
+        width: 251
+        height: 236
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d531c25000000000800000000000000
+      internalID: 1388393939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_53
+      rect:
+        serializedVersion: 2
+        x: 2869
+        y: 2395
+        width: 154
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ad27c3affffffff0800000000000000
+      internalID: -1547227739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_54
+      rect:
+        serializedVersion: 2
+        x: 3062
+        y: 2396
+        width: 147
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f23eb1f5000000000800000000000000
+      internalID: 1595663151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_55
+      rect:
+        serializedVersion: 2
+        x: 2836
+        y: 2112
+        width: 216
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5129bf7000000000800000000000000
+      internalID: 2142839133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_56
+      rect:
+        serializedVersion: 2
+        x: 3094
+        y: 2108
+        width: 147
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3296f240000000000800000000000000
+      internalID: 70215971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_57
+      rect:
+        serializedVersion: 2
+        x: 3664
+        y: 2393
+        width: 193
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ea687d4000000000800000000000000
+      internalID: 1299737318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_58
+      rect:
+        serializedVersion: 2
+        x: 3892
+        y: 2398
+        width: 186
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a02bc453000000000800000000000000
+      internalID: 894218762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_59
+      rect:
+        serializedVersion: 2
+        x: 3696
+        y: 2649
+        width: 157
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90246cfdffffffff0800000000000000
+      internalID: -540655095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_60
+      rect:
+        serializedVersion: 2
+        x: 3893
+        y: 2647
+        width: 184
+        height: 209
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4278cc31000000000800000000000000
+      internalID: 332171044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_61
+      rect:
+        serializedVersion: 2
+        x: 1625
+        y: 28
+        width: 272
+        height: 295
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62965738ffffffff0800000000000000
+      internalID: -2089457370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_62
+      rect:
+        serializedVersion: 2
+        x: 2259
+        y: 20
+        width: 250
+        height: 312
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 49ce4445000000000800000000000000
+      internalID: 1413803156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_63
+      rect:
+        serializedVersion: 2
+        x: 2868
+        y: 26
+        width: 279
+        height: 303
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 730645c9ffffffff0800000000000000
+      internalID: -1672191945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_64
+      rect:
+        serializedVersion: 2
+        x: 3537
+        y: 23
+        width: 254
+        height: 312
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afc7a475000000000800000000000000
+      internalID: 1464499450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_65
+      rect:
+        serializedVersion: 2
+        x: 1596
+        y: 957
+        width: 266
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ffa8bd8ffffffff0800000000000000
+      internalID: -1917276170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_66
+      rect:
+        serializedVersion: 2
+        x: 2236
+        y: 958
+        width: 299
+        height: 328
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e388fd2000000000800000000000000
+      internalID: 771261408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_67
+      rect:
+        serializedVersion: 2
+        x: 2900
+        y: 955
+        width: 245
+        height: 330
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37c1bc38ffffffff0800000000000000
+      internalID: -2083840909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_68
+      rect:
+        serializedVersion: 2
+        x: 3508
+        y: 952
+        width: 279
+        height: 336
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87f25b01000000000800000000000000
+      internalID: 280309624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_69
+      rect:
+        serializedVersion: 2
+        x: 1849
+        y: 1341
+        width: 270
+        height: 329
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53bfea55000000000800000000000000
+      internalID: 1437530933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_70
+      rect:
+        serializedVersion: 2
+        x: 2488
+        y: 1341
+        width: 274
+        height: 328
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8690c2c6000000000800000000000000
+      internalID: 1814825320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_71
+      rect:
+        serializedVersion: 2
+        x: 3127
+        y: 1344
+        width: 276
+        height: 329
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 388c7b23000000000800000000000000
+      internalID: 850905219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_72
+      rect:
+        serializedVersion: 2
+        x: 3446
+        y: 1338
+        width: 309
+        height: 329
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfb3b088ffffffff0800000000000000
+      internalID: -2012529668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_73
+      rect:
+        serializedVersion: 2
+        x: 2361
+        y: 1729
+        width: 334
+        height: 327
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad3a1b5cffffffff0800000000000000
+      internalID: -978213926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_74
+      rect:
+        serializedVersion: 2
+        x: 3127
+        y: 1726
+        width: 269
+        height: 329
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b8f2fa0000000000800000000000000
+      internalID: 183695541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_75
+      rect:
+        serializedVersion: 2
+        x: 3796
+        y: 1723
+        width: 279
+        height: 333
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8502b612000000000800000000000000
+      internalID: 560668760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_76
+      rect:
+        serializedVersion: 2
+        x: 3346
+        y: 2644
+        width: 316
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73b0d1ccffffffff0800000000000000
+      internalID: -870511817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_77
+      rect:
+        serializedVersion: 2
+        x: 1618
+        y: 658
+        width: 189
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a50a047cffffffff0800000000000000
+      internalID: -952065958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_78
+      rect:
+        serializedVersion: 2
+        x: 1842
+        y: 661
+        width: 189
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1d4f707000000000800000000000000
+      internalID: 1887391005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_79
+      rect:
+        serializedVersion: 2
+        x: 2516
+        y: 664
+        width: 187
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39723a1fffffffff0800000000000000
+      internalID: -240965741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_80
+      rect:
+        serializedVersion: 2
+        x: 2737
+        y: 666
+        width: 185
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 033cd8f9ffffffff0800000000000000
+      internalID: -1618099408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_81
+      rect:
+        serializedVersion: 2
+        x: 3442
+        y: 665
+        width: 189
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41cabfd0000000000800000000000000
+      internalID: 234597396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_82
+      rect:
+        serializedVersion: 2
+        x: 3669
+        y: 665
+        width: 184
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7800ce9cffffffff0800000000000000
+      internalID: -907280249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_83
+      rect:
+        serializedVersion: 2
+        x: 2004
+        y: 375
+        width: 185
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0aac3a5cffffffff0800000000000000
+      internalID: -979121504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_84
+      rect:
+        serializedVersion: 2
+        x: 2232
+        y: 374
+        width: 213
+        height: 241
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b39f2efffffffff0800000000000000
+      internalID: -30436423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_85
+      rect:
+        serializedVersion: 2
+        x: 2936
+        y: 373
+        width: 180
+        height: 243
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdc663fbffffffff0800000000000000
+      internalID: -1086952228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_86
+      rect:
+        serializedVersion: 2
+        x: 3158
+        y: 376
+        width: 184
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07066c98ffffffff0800000000000000
+      internalID: -1983487888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_87
+      rect:
+        serializedVersion: 2
+        x: 3381
+        y: 374
+        width: 183
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f24b072effffffff0800000000000000
+      internalID: -495930321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_88
+      rect:
+        serializedVersion: 2
+        x: 3599
+        y: 372
+        width: 192
+        height: 247
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cff42dcffffffff0800000000000000
+      internalID: -853213245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_89
+      rect:
+        serializedVersion: 2
+        x: 1423
+        y: 2004
+        width: 195
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60d6e321000000000800000000000000
+      internalID: 306081030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_90
+      rect:
+        serializedVersion: 2
+        x: 1649
+        y: 2006
+        width: 191
+        height: 214
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 987af3afffffffff0800000000000000
+      internalID: -96491639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_91
+      rect:
+        serializedVersion: 2
+        x: 1616
+        y: 1747
+        width: 224
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eb3e8c92000000000800000000000000
+      internalID: 701031358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_92
+      rect:
+        serializedVersion: 2
+        x: 1878
+        y: 2105
+        width: 248
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69454d17000000000800000000000000
+      internalID: 1909740694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_93
+      rect:
+        serializedVersion: 2
+        x: 2353
+        y: 2100
+        width: 158
+        height: 249
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52a557bfffffffff0800000000000000
+      internalID: -76195291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_94
+      rect:
+        serializedVersion: 2
+        x: 2551
+        y: 2106
+        width: 247
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 692ef21affffffff0800000000000000
+      internalID: -1590697322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_95
+      rect:
+        serializedVersion: 2
+        x: 3283
+        y: 2102
+        width: 252
+        height: 246
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae0ed8eeffffffff0800000000000000
+      internalID: -292691734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_96
+      rect:
+        serializedVersion: 2
+        x: 3570
+        y: 2105
+        width: 222
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdf3593bffffffff0800000000000000
+      internalID: -1282064417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_97
+      rect:
+        serializedVersion: 2
+        x: 3824
+        y: 2100
+        width: 256
+        height: 250
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9288b1bffffffff0800000000000000
+      internalID: -1313308006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_98
+      rect:
+        serializedVersion: 2
+        x: 2418
+        y: 2387
+        width: 188
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3671433000000000800000000000000
+      internalID: 859928127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_99
+      rect:
+        serializedVersion: 2
+        x: 2643
+        y: 2390
+        width: 187
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff0940f5000000000800000000000000
+      internalID: 1594134783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_100
+      rect:
+        serializedVersion: 2
+        x: 3251
+        y: 2393
+        width: 154
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4d9de48ffffffff0800000000000000
+      internalID: -2064802481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_101
+      rect:
+        serializedVersion: 2
+        x: 3444
+        y: 2392
+        width: 185
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99f0c127000000000800000000000000
+      internalID: 1914441625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_102
+      rect:
+        serializedVersion: 2
+        x: 3891
+        y: 2904
+        width: 188
+        height: 211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16126ed7000000000800000000000000
+      internalID: 2112233825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_103
+      rect:
+        serializedVersion: 2
+        x: 3444
+        y: 3351
+        width: 216
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4a4de276000000000800000000000000
+      internalID: 1731122340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_104
+      rect:
+        serializedVersion: 2
+        x: 1621
+        y: 373
+        width: 154
+        height: 246
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9e61e7cffffffff0800000000000000
+      internalID: -941527397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_105
+      rect:
+        serializedVersion: 2
+        x: 1809
+        y: 372
+        width: 157
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 500e6611000000000800000000000000
+      internalID: 291954693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_106
+      rect:
+        serializedVersion: 2
+        x: 3888
+        y: 3155
+        width: 193
+        height: 251
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4abc4898ffffffff0800000000000000
+      internalID: -1987785820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_107
+      rect:
+        serializedVersion: 2
+        x: 1947
+        y: 27
+        width: 272
+        height: 296
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e81c0d1000000000800000000000000
+      internalID: 487332073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_108
+      rect:
+        serializedVersion: 2
+        x: 2554
+        y: 24
+        width: 272
+        height: 297
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b52f9e3000000000800000000000000
+      internalID: 1050617270
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_109
+      rect:
+        serializedVersion: 2
+        x: 3188
+        y: 21
+        width: 310
+        height: 308
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c665405cffffffff0800000000000000
+      internalID: -989571476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_110
+      rect:
+        serializedVersion: 2
+        x: 3826
+        y: 17
+        width: 253
+        height: 317
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1808480000000000800000000000000
+      internalID: 138938398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_111
+      rect:
+        serializedVersion: 2
+        x: 1907
+        y: 949
+        width: 283
+        height: 341
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5634868affffffff0800000000000000
+      internalID: -1469562011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_112
+      rect:
+        serializedVersion: 2
+        x: 2584
+        y: 948
+        width: 276
+        height: 341
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9be56a54000000000800000000000000
+      internalID: 1168531129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_113
+      rect:
+        serializedVersion: 2
+        x: 3190
+        y: 951
+        width: 276
+        height: 338
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bd0d798ffffffff0800000000000000
+      internalID: -1988293193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_114
+      rect:
+        serializedVersion: 2
+        x: 3831
+        y: 946
+        width: 249
+        height: 344
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79e06990000000000800000000000000
+      internalID: 160829079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_115
+      rect:
+        serializedVersion: 2
+        x: 1523
+        y: 1334
+        width: 283
+        height: 339
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 036d8f14000000000800000000000000
+      internalID: 1106826800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_116
+      rect:
+        serializedVersion: 2
+        x: 2163
+        y: 1335
+        width: 280
+        height: 339
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3b5555baffffffff0800000000000000
+      internalID: -1420470861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_117
+      rect:
+        serializedVersion: 2
+        x: 2802
+        y: 1333
+        width: 283
+        height: 341
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 377302a4000000000800000000000000
+      internalID: 1243625331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_118
+      rect:
+        serializedVersion: 2
+        x: 3797
+        y: 1333
+        width: 279
+        height: 343
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a9bcaf0000000000800000000000000
+      internalID: 262977955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_119
+      rect:
+        serializedVersion: 2
+        x: 1974
+        y: 1719
+        width: 340
+        height: 343
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9341926000000000800000000000000
+      internalID: 1653687197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_120
+      rect:
+        serializedVersion: 2
+        x: 2742
+        y: 1717
+        width: 339
+        height: 341
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39d78375000000000800000000000000
+      internalID: 1463319955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_121
+      rect:
+        serializedVersion: 2
+        x: 3444
+        y: 1717
+        width: 314
+        height: 341
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9818718ffffffff0800000000000000
+      internalID: -2122835812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_122
+      rect:
+        serializedVersion: 2
+        x: 2994
+        y: 2651
+        width: 316
+        height: 334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbc5767affffffff0800000000000000
+      internalID: -1486398276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: holeinoneguy_123
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 1747
+        width: 352
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d25ed0dffffffff0800000000000000
+      internalID: -790736176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      holeinoneguy_0: -1302763890
+      holeinoneguy_1: -2067540788
+      holeinoneguy_10: -1583719466
+      holeinoneguy_100: -2064802481
+      holeinoneguy_101: 1914441625
+      holeinoneguy_102: 2112233825
+      holeinoneguy_103: 1731122340
+      holeinoneguy_104: -941527397
+      holeinoneguy_105: 291954693
+      holeinoneguy_106: -1987785820
+      holeinoneguy_107: 487332073
+      holeinoneguy_108: 1050617270
+      holeinoneguy_109: -989571476
+      holeinoneguy_11: -762467704
+      holeinoneguy_110: 138938398
+      holeinoneguy_111: -1469562011
+      holeinoneguy_112: 1168531129
+      holeinoneguy_113: -1988293193
+      holeinoneguy_114: 160829079
+      holeinoneguy_115: 1106826800
+      holeinoneguy_116: -1420470861
+      holeinoneguy_117: 1243625331
+      holeinoneguy_118: 262977955
+      holeinoneguy_119: 1653687197
+      holeinoneguy_12: 1171345665
+      holeinoneguy_120: 1463319955
+      holeinoneguy_121: -2122835812
+      holeinoneguy_122: -1486398276
+      holeinoneguy_123: -790736176
+      holeinoneguy_13: -278816514
+      holeinoneguy_14: -869297404
+      holeinoneguy_15: 1463832209
+      holeinoneguy_16: -961117322
+      holeinoneguy_17: 1980938416
+      holeinoneguy_18: 148634273
+      holeinoneguy_19: -2033306230
+      holeinoneguy_2: -1438068130
+      holeinoneguy_20: -444947671
+      holeinoneguy_21: 1206722096
+      holeinoneguy_22: 1827260984
+      holeinoneguy_23: -1100162247
+      holeinoneguy_24: -803391908
+      holeinoneguy_25: 1225077445
+      holeinoneguy_26: 768536043
+      holeinoneguy_27: -319008609
+      holeinoneguy_28: -1399101199
+      holeinoneguy_29: 768630725
+      holeinoneguy_3: 35626940
+      holeinoneguy_30: 1699670314
+      holeinoneguy_31: 813702304
+      holeinoneguy_32: -1125825337
+      holeinoneguy_33: 162279779
+      holeinoneguy_34: -609061793
+      holeinoneguy_35: -1370136324
+      holeinoneguy_36: -937884269
+      holeinoneguy_37: 572370842
+      holeinoneguy_38: -937512639
+      holeinoneguy_39: 1437346365
+      holeinoneguy_4: 1158508593
+      holeinoneguy_40: -1803836279
+      holeinoneguy_41: 1648855119
+      holeinoneguy_42: 1095479910
+      holeinoneguy_43: -62156564
+      holeinoneguy_44: 1194613503
+      holeinoneguy_45: 1114868293
+      holeinoneguy_46: 1352760294
+      holeinoneguy_47: -1933140363
+      holeinoneguy_48: 529897368
+      holeinoneguy_49: 1420773591
+      holeinoneguy_5: -362540864
+      holeinoneguy_50: -512387075
+      holeinoneguy_51: 1987280122
+      holeinoneguy_52: 1388393939
+      holeinoneguy_53: -1547227739
+      holeinoneguy_54: 1595663151
+      holeinoneguy_55: 2142839133
+      holeinoneguy_56: 70215971
+      holeinoneguy_57: 1299737318
+      holeinoneguy_58: 894218762
+      holeinoneguy_59: -540655095
+      holeinoneguy_6: -1287461063
+      holeinoneguy_60: 332171044
+      holeinoneguy_61: -2089457370
+      holeinoneguy_62: 1413803156
+      holeinoneguy_63: -1672191945
+      holeinoneguy_64: 1464499450
+      holeinoneguy_65: -1917276170
+      holeinoneguy_66: 771261408
+      holeinoneguy_67: -2083840909
+      holeinoneguy_68: 280309624
+      holeinoneguy_69: 1437530933
+      holeinoneguy_7: -417202695
+      holeinoneguy_70: 1814825320
+      holeinoneguy_71: 850905219
+      holeinoneguy_72: -2012529668
+      holeinoneguy_73: -978213926
+      holeinoneguy_74: 183695541
+      holeinoneguy_75: 560668760
+      holeinoneguy_76: -870511817
+      holeinoneguy_77: -952065958
+      holeinoneguy_78: 1887391005
+      holeinoneguy_79: -240965741
+      holeinoneguy_8: -336988117
+      holeinoneguy_80: -1618099408
+      holeinoneguy_81: 234597396
+      holeinoneguy_82: -907280249
+      holeinoneguy_83: -979121504
+      holeinoneguy_84: -30436423
+      holeinoneguy_85: -1086952228
+      holeinoneguy_86: -1983487888
+      holeinoneguy_87: -495930321
+      holeinoneguy_88: -853213245
+      holeinoneguy_89: 306081030
+      holeinoneguy_9: 1782466942
+      holeinoneguy_90: -96491639
+      holeinoneguy_91: 701031358
+      holeinoneguy_92: 1909740694
+      holeinoneguy_93: -76195291
+      holeinoneguy_94: -1590697322
+      holeinoneguy_95: -292691734
+      holeinoneguy_96: -1282064417
+      holeinoneguy_97: -1313308006
+      holeinoneguy_98: 859928127
+      holeinoneguy_99: 1594134783
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: rvlgolf/common
+  assetBundleVariant: 

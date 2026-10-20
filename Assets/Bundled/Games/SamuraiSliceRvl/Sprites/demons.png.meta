@@ -1,0 +1,1013 @@
+fileFormatVersion: 2
+guid: 1c009cb6deb6a0d42b09c351c88d0f1f
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 200
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 100
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: demons_2
+      rect:
+        serializedVersion: 2
+        x: 3202
+        y: 4008
+        width: 828
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4abd8ee84bff92240b5532ec26d12a33
+      internalID: -638296078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demons_3
+      rect:
+        serializedVersion: 2
+        x: 2692
+        y: 3644
+        width: 24
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cab4f569b34f6ca44998a9d3f55eb8ff
+      internalID: -1386095268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demons_4
+      rect:
+        serializedVersion: 2
+        x: 2848
+        y: 3650
+        width: 222
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6c872e672507324d8faac10aabf3b07
+      internalID: -819287654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demons_5
+      rect:
+        serializedVersion: 2
+        x: 3236
+        y: 3778
+        width: 796
+        height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8728363e298aa4c449f6fca08c5dcb4e
+      internalID: 1240400982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demons_6
+      rect:
+        serializedVersion: 2
+        x: 3268
+        y: 3554
+        width: 696
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a5543d088ed4724ab6ff566ef107b35
+      internalID: -1912974476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demons_7
+      rect:
+        serializedVersion: 2
+        x: 3268
+        y: 3330
+        width: 660
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8067f247638bd7340b45c57822565444
+      internalID: 352181468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demons_8
+      rect:
+        serializedVersion: 2
+        x: 3370
+        y: 3114
+        width: 662
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d403498b1da49d4a9a2dd8de509fc44
+      internalID: 781418930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demons_9
+      rect:
+        serializedVersion: 2
+        x: 3374
+        y: 2924
+        width: 518
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9c07c0579c70754ab126aeb64b189dd
+      internalID: 1327787632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demons_40
+      rect:
+        serializedVersion: 2
+        x: 3732
+        y: 2742
+        width: 34
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a7e8fdba92878a478fd379b3bd87eee
+      internalID: 713332154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demons_41
+      rect:
+        serializedVersion: 2
+        x: 3310
+        y: 2368
+        width: 290
+        height: 122
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e151b0126cc6fe74f8f9812760dca971
+      internalID: 2105986821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demons_42
+      rect:
+        serializedVersion: 2
+        x: 3698
+        y: 2225
+        width: 393
+        height: 425
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f1415cb24d740f47900f0a43e02d41f
+      internalID: 479142445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demons_43
+      rect:
+        serializedVersion: 2
+        x: 3458
+        y: 2024
+        width: 334
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ead5b65e14219d4db669772bd29f057
+      internalID: 1928429916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demons_0
+      rect:
+        serializedVersion: 2
+        x: 3898
+        y: 2050
+        width: 140
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db6302d077d104b4db356fad99326d54
+      internalID: -1452242378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demons_14
+      rect:
+        serializedVersion: 2
+        x: 3920
+        y: 1874
+        width: 108
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e79509bcb68e6d240a9060d015e1dd03
+      internalID: -769002716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demons_38
+      rect:
+        serializedVersion: 2
+        x: 3908
+        y: 1688
+        width: 114
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e665a990e400c845acfe7f0093a36b2
+      internalID: 383310486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demons_39
+      rect:
+        serializedVersion: 2
+        x: 3898
+        y: 1500
+        width: 134
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad91aae270d4aed44a2d49761d79cbe6
+      internalID: -1485527584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demons_44
+      rect:
+        serializedVersion: 2
+        x: 3908
+        y: 1266
+        width: 130
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5042930dee9b0e042babb1368a091250
+      internalID: 1054180661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demons_45
+      rect:
+        serializedVersion: 2
+        x: 3904
+        y: 1052
+        width: 120
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cb8d2c081bb749438a9f4c9db94115d
+      internalID: 399498253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demons_46
+      rect:
+        serializedVersion: 2
+        x: 3908
+        y: 810
+        width: 120
+        height: 142
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a62787daa3df5b42bdae8e02ef886fc
+      internalID: 488100006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demons_47
+      rect:
+        serializedVersion: 2
+        x: 3910
+        y: 582
+        width: 116
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18d22851c9d42b6459797d0104f696a7
+      internalID: 699572712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demons_48
+      rect:
+        serializedVersion: 2
+        x: 3864
+        y: 348
+        width: 190
+        height: 152
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d43a904f14171542a3a06eec4ed38ba
+      internalID: -1712313918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demons_49
+      rect:
+        serializedVersion: 2
+        x: 3878
+        y: 76
+        width: 170
+        height: 148
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b619893b1765869418568b17797bcfe8
+      internalID: -1056486708
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demons_50
+      rect:
+        serializedVersion: 2
+        x: 3350
+        y: 2692
+        width: 106
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6a90007df9daa545a025e5b14aaf985
+      internalID: 1831615938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demons_51
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 1352
+        width: 352
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c49319b668d49e47ab6197c285dc930
+      internalID: 1739095200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demons_52
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 1382
+        width: 224
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75f7f1d3511baab45b2f242266b02327
+      internalID: -1937937199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demons_53
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 1352
+        width: 320
+        height: 210
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da91791334e9d994eba77188fe186e4c
+      internalID: -64183069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demons_54
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 1706
+        width: 348
+        height: 402
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3f3c69b49a27174dac852f17aa2f069
+      internalID: -1761369475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demons_55
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 1784
+        width: 414
+        height: 308
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72b94f86a69306844aa2eb471dbcd284
+      internalID: -2350092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demons_56
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 1724
+        width: 434
+        height: 376
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4042f8014f1470145ac84b3104e7bd63
+      internalID: 288861921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demons_57
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 2222
+        width: 464
+        height: 438
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e928f254bef1c8344a246adb8e1612b9
+      internalID: 362217249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demons_58
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 2224
+        width: 454
+        height: 490
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cc157568d093384081e0770176e182a
+      internalID: -946486868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demons_59
+      rect:
+        serializedVersion: 2
+        x: 1116
+        y: 2226
+        width: 438
+        height: 408
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b92cfbd2843771645b032a392d25de08
+      internalID: -2108533676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demons_60
+      rect:
+        serializedVersion: 2
+        x: 1274
+        y: 2800
+        width: 404
+        height: 464
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c130d988db3a4742988c9c7f74bdffc
+      internalID: -483751099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demons_61
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 2800
+        width: 424
+        height: 476
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b0f41228a7919644947bb2d5732bd7c
+      internalID: -1656405001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demons_62
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 2786
+        width: 500
+        height: 490
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a889560f192ccc846ac63f70e7b2d9a7
+      internalID: -978673693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demons_63
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 3388
+        width: 752
+        height: 666
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d2b796ad176e3746acdb6b2cc6ef94c
+      internalID: -473821553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demons_64
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 3526
+        width: 574
+        height: 552
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b7459f7b2a5bae4f8a7bf43d6e429ae
+      internalID: 1359931504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demons_65
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 3346
+        width: 658
+        height: 644
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 4, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6095194e46286f4d967b103aa08849a
+      internalID: 646142170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: demons_66
+      rect:
+        serializedVersion: 2
+        x: 2914
+        y: 2356
+        width: 272
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa1f35095721c8f46b196f0bc4cd9754
+      internalID: 723776964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      demons_0: -1452242378
+      demons_1: -1806318894
+      demons_10: 1584950398
+      demons_11: -1153779284
+      demons_12: 1353294186
+      demons_13: 383598544
+      demons_14: -769002716
+      demons_15: -440352564
+      demons_16: -674303854
+      demons_17: -365203941
+      demons_18: -197888181
+      demons_19: -1556649806
+      demons_2: -638296078
+      demons_20: 1254355318
+      demons_21: 1529901212
+      demons_22: 653154018
+      demons_23: 1843571540
+      demons_24: 584565160
+      demons_25: 2118583994
+      demons_26: -1671153383
+      demons_27: 136739846
+      demons_28: -1890396349
+      demons_29: 1819752109
+      demons_3: -1386095268
+      demons_30: 1193262047
+      demons_31: 2065328801
+      demons_32: 744307024
+      demons_33: -1950831908
+      demons_34: 898168909
+      demons_35: 1728055335
+      demons_36: 262977745
+      demons_37: 51249612
+      demons_38: 383310486
+      demons_39: -1485527584
+      demons_4: -819287654
+      demons_40: 713332154
+      demons_41: 2105986821
+      demons_42: 479142445
+      demons_43: 1928429916
+      demons_44: 1054180661
+      demons_45: 399498253
+      demons_46: 488100006
+      demons_47: 699572712
+      demons_48: -1712313918
+      demons_49: -1056486708
+      demons_5: 1240400982
+      demons_50: 1831615938
+      demons_51: 1739095200
+      demons_52: -1937937199
+      demons_53: -64183069
+      demons_54: -1761369475
+      demons_55: -2350092
+      demons_56: 288861921
+      demons_57: 362217249
+      demons_58: -946486868
+      demons_59: -2108533676
+      demons_6: -1912974476
+      demons_60: -483751099
+      demons_61: -1656405001
+      demons_62: -1221351292
+      demons_63: -978673693
+      demons_64: -473821553
+      demons_65: 1359931504
+      demons_66: 646142170
+      demons_7: 352181468
+      demons_8: 781418930
+      demons_9: 1327787632
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: rvlsamurai/common
+  assetBundleVariant: 

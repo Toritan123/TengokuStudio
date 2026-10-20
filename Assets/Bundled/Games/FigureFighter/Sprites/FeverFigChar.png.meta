@@ -1,0 +1,1777 @@
+fileFormatVersion: 2
+guid: a21dbf70e39e6054c8553eca8d994016
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 400
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: FeverFigChar_1
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 3624
+        width: 328
+        height: 308
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfd49f9fffffffff0800000000000000
+      internalID: -101102083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_2
+      rect:
+        serializedVersion: 2
+        x: 676
+        y: 3616
+        width: 320
+        height: 304
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1d040e44000000000800000000000000
+      internalID: 1155547345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_3
+      rect:
+        serializedVersion: 2
+        x: 1192
+        y: 3604
+        width: 348
+        height: 308
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 540a8334000000000800000000000000
+      internalID: 1127784517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_4
+      rect:
+        serializedVersion: 2
+        x: 1736
+        y: 3612
+        width: 356
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ffec4caffffffff0800000000000000
+      internalID: -1404243977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_5
+      rect:
+        serializedVersion: 2
+        x: 2264
+        y: 3608
+        width: 372
+        height: 308
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82985453000000000800000000000000
+      internalID: 893749544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_6
+      rect:
+        serializedVersion: 2
+        x: 2828
+        y: 3612
+        width: 332
+        height: 308
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cf6c2aeffffffff0800000000000000
+      internalID: -366186554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_7
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 3136
+        width: 204
+        height: 332
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21f9fbaaffffffff0800000000000000
+      internalID: -1430282478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_8
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 3132
+        width: 260
+        height: 328
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 341a38faffffffff0800000000000000
+      internalID: -1350327997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_9
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 3096
+        width: 320
+        height: 356
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8257fe1000000000800000000000000
+      internalID: 519525006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_10
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 3060
+        width: 440
+        height: 412
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74e45b99ffffffff0800000000000000
+      internalID: -1716171193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_11
+      rect:
+        serializedVersion: 2
+        x: 1692
+        y: 3056
+        width: 408
+        height: 436
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b806811000000000800000000000000
+      internalID: 293996725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_12
+      rect:
+        serializedVersion: 2
+        x: 2192
+        y: 3092
+        width: 324
+        height: 376
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f226095000000000800000000000000
+      internalID: 1493574393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_13
+      rect:
+        serializedVersion: 2
+        x: 2616
+        y: 3124
+        width: 244
+        height: 332
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5905ccfbffffffff0800000000000000
+      internalID: -1077129067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_14
+      rect:
+        serializedVersion: 2
+        x: 2968
+        y: 3064
+        width: 368
+        height: 432
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9d3e27bffffffff0800000000000000
+      internalID: -1221706338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_15
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 2816
+        width: 188
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b75cfcabffffffff0800000000000000
+      internalID: -1160788613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_16
+      rect:
+        serializedVersion: 2
+        x: 540
+        y: 2816
+        width: 196
+        height: 136
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5bd55eddffffffff0800000000000000
+      internalID: -572170827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_17
+      rect:
+        serializedVersion: 2
+        x: 932
+        y: 2812
+        width: 216
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 557e8c08ffffffff0800000000000000
+      internalID: -2134317227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_18
+      rect:
+        serializedVersion: 2
+        x: 1352
+        y: 2816
+        width: 236
+        height: 136
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a4ca600000000000800000000000000
+      internalID: 6997155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_19
+      rect:
+        serializedVersion: 2
+        x: 1756
+        y: 2808
+        width: 244
+        height: 136
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c3824550000000000800000000000000
+      internalID: 89401404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_20
+      rect:
+        serializedVersion: 2
+        x: 2220
+        y: 2852
+        width: 40
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 850ff854000000000800000000000000
+      internalID: 1167061080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_21
+      rect:
+        serializedVersion: 2
+        x: 2408
+        y: 2852
+        width: 52
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 828de404000000000800000000000000
+      internalID: 1078908968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_22
+      rect:
+        serializedVersion: 2
+        x: 3916
+        y: 2868
+        width: 104
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3cb16714000000000800000000000000
+      internalID: 1098259395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_23
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 2492
+        width: 60
+        height: 204
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a33158e4000000000800000000000000
+      internalID: 1317344058
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_24
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 2476
+        width: 88
+        height: 212
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88e5fb80000000000800000000000000
+      internalID: 146759304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_25
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 2464
+        width: 108
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efc63c9affffffff0800000000000000
+      internalID: -1446810370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_26
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 2476
+        width: 136
+        height: 220
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8be396affffffff0800000000000000
+      internalID: -1500255350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_27
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 2564
+        width: 116
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd490e47000000000800000000000000
+      internalID: 1960875228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_28
+      rect:
+        serializedVersion: 2
+        x: 1360
+        y: 2580
+        width: 104
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8c445dafffffffff0800000000000000
+      internalID: -86686520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_29
+      rect:
+        serializedVersion: 2
+        x: 1604
+        y: 2564
+        width: 192
+        height: 116
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c7d5f36000000000800000000000000
+      internalID: 1677055937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_30
+      rect:
+        serializedVersion: 2
+        x: 1900
+        y: 2636
+        width: 72
+        height: 72
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ea40beaffffffff0800000000000000
+      internalID: -1364178201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_31
+      rect:
+        serializedVersion: 2
+        x: 2236
+        y: 2644
+        width: 92
+        height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0eb95533000000000800000000000000
+      internalID: 861248480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_32
+      rect:
+        serializedVersion: 2
+        x: 2344
+        y: 2644
+        width: 92
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b564f124000000000800000000000000
+      internalID: 1109345883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_33
+      rect:
+        serializedVersion: 2
+        x: 2808
+        y: 2376
+        width: 1248
+        height: 332
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0447af7fffffffff0800000000000000
+      internalID: -134581184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_34
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 2216
+        width: 168
+        height: 168
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e70b6ebffffffff0800000000000000
+      internalID: -1100281888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_35
+      rect:
+        serializedVersion: 2
+        x: 1960
+        y: 2348
+        width: 756
+        height: 164
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9824e58ffffffff0800000000000000
+      internalID: -2048644966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_36
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 2136
+        width: 68
+        height: 204
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 560be4b3000000000800000000000000
+      internalID: 995012709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_37
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 2120
+        width: 92
+        height: 220
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f383109ffffffff0800000000000000
+      internalID: -1877769230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_38
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 2116
+        width: 108
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9907f3c4000000000800000000000000
+      internalID: 1279226009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_39
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 2116
+        width: 128
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d01e909cffffffff0800000000000000
+      internalID: -922099443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_40
+      rect:
+        serializedVersion: 2
+        x: 1636
+        y: 1200
+        width: 588
+        height: 1040
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41dd1c35000000000800000000000000
+      internalID: 1405213972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_41
+      rect:
+        serializedVersion: 2
+        x: 2488
+        y: 1144
+        width: 368
+        height: 1100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc95499dffffffff0800000000000000
+      internalID: -644589107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_42
+      rect:
+        serializedVersion: 2
+        x: 2956
+        y: 1176
+        width: 456
+        height: 1064
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3c00cf0dffffffff0800000000000000
+      internalID: -788791101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_43
+      rect:
+        serializedVersion: 2
+        x: 3500
+        y: 1200
+        width: 548
+        height: 1040
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92d2f3b1000000000800000000000000
+      internalID: 457125161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_44
+      rect:
+        serializedVersion: 2
+        x: 92
+        y: 1788
+        width: 68
+        height: 204
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79ef1870000000000800000000000000
+      internalID: 125959831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_45
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 1780
+        width: 96
+        height: 212
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a78ae0d4000000000800000000000000
+      internalID: 1292806266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_46
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 1768
+        width: 128
+        height: 216
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6235589ffffffff0800000000000000
+      internalID: -1739246995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_47
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 1768
+        width: 148
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b48534effffffff0800000000000000
+      internalID: -466254667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_48
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 1788
+        width: 284
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eda71c6cffffffff0800000000000000
+      internalID: -960398626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_49
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 1432
+        width: 68
+        height: 204
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8030bc6000000000800000000000000
+      internalID: 1823486093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_50
+      rect:
+        serializedVersion: 2
+        x: 340
+        y: 1432
+        width: 84
+        height: 204
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 027e9b53000000000800000000000000
+      internalID: 901375776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_51
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 1432
+        width: 104
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3460f816000000000800000000000000
+      internalID: 1636763203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_52
+      rect:
+        serializedVersion: 2
+        x: 824
+        y: 1432
+        width: 120
+        height: 204
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c274427000000000800000000000000
+      internalID: 1917088455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_53
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 1632
+        width: 224
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b45ce0affffffff0800000000000000
+      internalID: -1595124553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_54
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 1408
+        width: 100
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f9f78e9ffffffff0800000000000000
+      internalID: -1635255822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_55
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 1176
+        width: 172
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c242d77effffffff0800000000000000
+      internalID: -411229140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_56
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 1176
+        width: 180
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4711dfd2000000000800000000000000
+      internalID: 771559796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_57
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 1176
+        width: 168
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb8d0a81000000000800000000000000
+      internalID: 413194427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_58
+      rect:
+        serializedVersion: 2
+        x: 916
+        y: 1176
+        width: 180
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db7130ceffffffff0800000000000000
+      internalID: -335341635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_59
+      rect:
+        serializedVersion: 2
+        x: 1228
+        y: 1156
+        width: 160
+        height: 148
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb15f081000000000800000000000000
+      internalID: 403657147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_60
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 892
+        width: 152
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c1cdf80000000000800000000000000
+      internalID: 150847938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_61
+      rect:
+        serializedVersion: 2
+        x: 364
+        y: 888
+        width: 144
+        height: 168
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e850319ffffffff0800000000000000
+      internalID: -1859102488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_62
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 892
+        width: 168
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e2f2c6cffffffff0800000000000000
+      internalID: -960302368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_63
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 888
+        width: 156
+        height: 164
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a3090aeffffffff0800000000000000
+      internalID: -368507999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_64
+      rect:
+        serializedVersion: 2
+        x: 1220
+        y: 900
+        width: 160
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afbb24a9ffffffff0800000000000000
+      internalID: -1706902534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_65
+      rect:
+        serializedVersion: 2
+        x: 1508
+        y: 920
+        width: 96
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06bc5e37000000000800000000000000
+      internalID: 1944439648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_66
+      rect:
+        serializedVersion: 2
+        x: 1716
+        y: 652
+        width: 1112
+        height: 352
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe800696000000000800000000000000
+      internalID: 1767901423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_67
+      rect:
+        serializedVersion: 2
+        x: 2932
+        y: 620
+        width: 1108
+        height: 392
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f94dcf83000000000800000000000000
+      internalID: 956093599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_68
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 684
+        width: 240
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0fa980c6000000000800000000000000
+      internalID: 1812503280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_69
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 420
+        width: 836
+        height: 344
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b2fc3c0000000000800000000000000
+      internalID: 205320889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_70
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 452
+        width: 228
+        height: 152
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bf4650c2000000000800000000000000
+      internalID: 738551035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_71
+      rect:
+        serializedVersion: 2
+        x: 2356
+        y: 204
+        width: 472
+        height: 296
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18ad9a93000000000800000000000000
+      internalID: 967432833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_72
+      rect:
+        serializedVersion: 2
+        x: 2932
+        y: 96
+        width: 1108
+        height: 364
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3bab024000000000800000000000000
+      internalID: 1108060990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_73
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 184
+        width: 252
+        height: 176
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed31ccf2000000000800000000000000
+      internalID: 801903582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_74
+      rect:
+        serializedVersion: 2
+        x: 1729
+        y: 201
+        width: 550
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f695d9f3000000000800000000000000
+      internalID: 1067276655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: FeverFigChar_0
+      rect:
+        serializedVersion: 2
+        x: 2522
+        y: 2763
+        width: 48
+        height: 175
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a61349ae8dba0744faf55d0d86602d11
+      internalID: 2055801092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      FeverFigChar_0: 2055801092
+      FeverFigChar_1: -101102083
+      FeverFigChar_10: -1716171193
+      FeverFigChar_11: 293996725
+      FeverFigChar_12: 1493574393
+      FeverFigChar_13: -1077129067
+      FeverFigChar_14: -1221706338
+      FeverFigChar_15: -1160788613
+      FeverFigChar_16: -572170827
+      FeverFigChar_17: -2134317227
+      FeverFigChar_18: 6997155
+      FeverFigChar_19: 89401404
+      FeverFigChar_2: 1155547345
+      FeverFigChar_20: 1167061080
+      FeverFigChar_21: 1078908968
+      FeverFigChar_22: 1098259395
+      FeverFigChar_23: 1317344058
+      FeverFigChar_24: 146759304
+      FeverFigChar_25: -1446810370
+      FeverFigChar_26: -1500255350
+      FeverFigChar_27: 1960875228
+      FeverFigChar_28: -86686520
+      FeverFigChar_29: 1677055937
+      FeverFigChar_3: 1127784517
+      FeverFigChar_30: -1364178201
+      FeverFigChar_31: 861248480
+      FeverFigChar_32: 1109345883
+      FeverFigChar_33: -134581184
+      FeverFigChar_34: -1100281888
+      FeverFigChar_35: -2048644966
+      FeverFigChar_36: 995012709
+      FeverFigChar_37: -1877769230
+      FeverFigChar_38: 1279226009
+      FeverFigChar_39: -922099443
+      FeverFigChar_4: -1404243977
+      FeverFigChar_40: 1405213972
+      FeverFigChar_41: -644589107
+      FeverFigChar_42: -788791101
+      FeverFigChar_43: 457125161
+      FeverFigChar_44: 125959831
+      FeverFigChar_45: 1292806266
+      FeverFigChar_46: -1739246995
+      FeverFigChar_47: -466254667
+      FeverFigChar_48: -960398626
+      FeverFigChar_49: 1823486093
+      FeverFigChar_5: 893749544
+      FeverFigChar_50: 901375776
+      FeverFigChar_51: 1636763203
+      FeverFigChar_52: 1917088455
+      FeverFigChar_53: -1595124553
+      FeverFigChar_54: -1635255822
+      FeverFigChar_55: -411229140
+      FeverFigChar_56: 771559796
+      FeverFigChar_57: 413194427
+      FeverFigChar_58: -335341635
+      FeverFigChar_59: 403657147
+      FeverFigChar_6: -366186554
+      FeverFigChar_60: 150847938
+      FeverFigChar_61: -1859102488
+      FeverFigChar_62: -960302368
+      FeverFigChar_63: -368507999
+      FeverFigChar_64: -1706902534
+      FeverFigChar_65: 1944439648
+      FeverFigChar_66: 1767901423
+      FeverFigChar_67: 956093599
+      FeverFigChar_68: 1812503280
+      FeverFigChar_69: 205320889
+      FeverFigChar_7: -1430282478
+      FeverFigChar_70: 738551035
+      FeverFigChar_71: 967432833
+      FeverFigChar_72: 1108060990
+      FeverFigChar_73: 801903582
+      FeverFigChar_74: 1067276655
+      FeverFigChar_8: -1350327997
+      FeverFigChar_9: 519525006
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: rvlmuscle/common
+  assetBundleVariant: 

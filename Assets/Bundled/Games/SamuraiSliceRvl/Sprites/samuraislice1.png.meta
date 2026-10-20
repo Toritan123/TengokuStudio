@@ -1,0 +1,1293 @@
+fileFormatVersion: 2
+guid: 7f90696a729dc9343ab533f8cb791efc
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 200
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 100
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: samuraislice1_0
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 3564
+        width: 794
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1de8970038711cc49886ff9f58710636
+      internalID: 2037148742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samuraislice1_1
+      rect:
+        serializedVersion: 2
+        x: 1122
+        y: 3584
+        width: 766
+        height: 450
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a196dc02322e004f8575f904a353b75
+      internalID: -833501444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samuraislice1_2
+      rect:
+        serializedVersion: 2
+        x: 3170
+        y: 3976
+        width: 852
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59df1354c97fa3c4aa9782d1ea893848
+      internalID: -1974032375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samuraislice1_3
+      rect:
+        serializedVersion: 2
+        x: 2126
+        y: 3508
+        width: 946
+        height: 488
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 012e160999eb66b4c9adf1aa5171d3d1
+      internalID: -1071741440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samuraislice1_4
+      rect:
+        serializedVersion: 2
+        x: 3146
+        y: 3664
+        width: 942
+        height: 148
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b4e5ebfd5c142e4382afbd13073e24d
+      internalID: -1703152572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samuraislice1_5
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 2948
+        width: 786
+        height: 470
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 522ace1daccf8a24ab91e4f9b250b1cb
+      internalID: 405093690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samuraislice1_6
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 2924
+        width: 670
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca756fe88e5465a40a1294aa0b766f0a
+      internalID: 293175076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samuraislice1_7
+      rect:
+        serializedVersion: 2
+        x: 2058
+        y: 2338
+        width: 852
+        height: 1014
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34b35935be75b614e835b8995ce20d67
+      internalID: -866948817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samuraislice1_8
+      rect:
+        serializedVersion: 2
+        x: 3148
+        y: 3256
+        width: 946
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 095647ef543ce1f41af292eff53431ab
+      internalID: -1862594257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samuraislice1_9
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 2336
+        width: 768
+        height: 476
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ce7b60507ba3434897d897f67dfa617
+      internalID: -37131753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samuraislice1_10
+      rect:
+        serializedVersion: 2
+        x: 1140
+        y: 2336
+        width: 816
+        height: 496
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 636598c25b1398e44b5eff7ab5d4ee5e
+      internalID: 1086408868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samuraislice1_11
+      rect:
+        serializedVersion: 2
+        x: 2966
+        y: 2614
+        width: 338
+        height: 468
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 582adf0f4bdaab64dbc7ecfcbd8bdfe4
+      internalID: 2003414279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samuraislice1_12
+      rect:
+        serializedVersion: 2
+        x: 3532
+        y: 2756
+        width: 268
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58bf45fd8365b88449988680a876668d
+      internalID: -1922210441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samuraislice1_13
+      rect:
+        serializedVersion: 2
+        x: 3540
+        y: 2496
+        width: 248
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebe0ec3cfcee79c4ebaefb0f22a9cbed
+      internalID: 1897998797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samuraislice1_14
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 1732
+        width: 858
+        height: 440
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7929627f90b4ccf41b0a4e2752dc70d2
+      internalID: 1648918826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samuraislice1_15
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 1970
+        width: 344
+        height: 240
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b2abbeb90138154caa7d31a26e51746
+      internalID: 1753156887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samuraislice1_16
+      rect:
+        serializedVersion: 2
+        x: 2978
+        y: 2158
+        width: 128
+        height: 274
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85d9a0acf11772048ba719c1944b04f8
+      internalID: -1188789778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samuraislice1_17
+      rect:
+        serializedVersion: 2
+        x: 3248
+        y: 2080
+        width: 206
+        height: 182
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc100c57a37ded143b97758d5abcf2b4
+      internalID: 1668151825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samuraislice1_18
+      rect:
+        serializedVersion: 2
+        x: 3606
+        y: 2080
+        width: 172
+        height: 264
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48cfb71b94d7c6c4baf07eda6099abbb
+      internalID: -86672308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samuraislice1_19
+      rect:
+        serializedVersion: 2
+        x: 3916
+        y: 2090
+        width: 102
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 057110d22abbe574caf4887fd4f72023
+      internalID: -1409025245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samuraislice1_20
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 1120
+        width: 788
+        height: 718
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d47dcfa78eeb634fa16fa6cb21217c6
+      internalID: 130145690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samuraislice1_21
+      rect:
+        serializedVersion: 2
+        x: 2116
+        y: 1634
+        width: 226
+        height: 350
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0e79f76fbea17f4886dcbd50e316e01
+      internalID: 2141276158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samuraislice1_22
+      rect:
+        serializedVersion: 2
+        x: 2420
+        y: 1708
+        width: 108
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 251666728ab9caf4f989488ede0390cc
+      internalID: 1534350124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samuraislice1_23
+      rect:
+        serializedVersion: 2
+        x: 2656
+        y: 1716
+        width: 136
+        height: 268
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c862341ab97daa04c92c332773b9ca7b
+      internalID: -1685577556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samuraislice1_24
+      rect:
+        serializedVersion: 2
+        x: 2914
+        y: 1836
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80015adab81b02a4bae743f58a9580ea
+      internalID: 1611394068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samuraislice1_25
+      rect:
+        serializedVersion: 2
+        x: 3136
+        y: 1816
+        width: 126
+        height: 148
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fe387ab7a252ad479c351103d7e9f51
+      internalID: -96667310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samuraislice1_26
+      rect:
+        serializedVersion: 2
+        x: 3384
+        y: 1796
+        width: 280
+        height: 168
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f948c10fe953b7b4a954088b56f0353b
+      internalID: 1455194354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samuraislice1_27
+      rect:
+        serializedVersion: 2
+        x: 3788
+        y: 1802
+        width: 240
+        height: 148
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c80e368cebf137b4fb9ea695b7a43ba3
+      internalID: -1084324806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samuraislice1_28
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 1134
+        width: 888
+        height: 454
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee167b404bad8ef45883434026cf6ee1
+      internalID: -111464623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samuraislice1_29
+      rect:
+        serializedVersion: 2
+        x: 2470
+        y: 1444
+        width: 118
+        height: 156
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bdfdcd3461c4fc4681dd2d52aad5af5
+      internalID: 1821633196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samuraislice1_30
+      rect:
+        serializedVersion: 2
+        x: 2756
+        y: 1460
+        width: 120
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61cedffd42c0f1e44ad15317e0aeee68
+      internalID: 1565630800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samuraislice1_31
+      rect:
+        serializedVersion: 2
+        x: 3020
+        y: 1496
+        width: 148
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0fb0e384488949409adf3d74b637187
+      internalID: -1678136069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samuraislice1_32
+      rect:
+        serializedVersion: 2
+        x: 3314
+        y: 1508
+        width: 122
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fc9b3060841666479a36e78a326541c
+      internalID: -1592639882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samuraislice1_33
+      rect:
+        serializedVersion: 2
+        x: 3604
+        y: 1504
+        width: 126
+        height: 164
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6531b625dcbed143a142912d0c60e08
+      internalID: 412971589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samuraislice1_34
+      rect:
+        serializedVersion: 2
+        x: 3888
+        y: 1516
+        width: 128
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd68a45aa5747f7468abc793746008fe
+      internalID: 518401436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samuraislice1_35
+      rect:
+        serializedVersion: 2
+        x: 2016
+        y: 1408
+        width: 288
+        height: 92
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f32e02471bbfa7b40a6e0559848bbf9a
+      internalID: -1058629318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samuraislice1_36
+      rect:
+        serializedVersion: 2
+        x: 2008
+        y: 1130
+        width: 322
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a50cb1fa0e584764283bf9992880450e
+      internalID: 2061600810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samuraislice1_37
+      rect:
+        serializedVersion: 2
+        x: 2456
+        y: 1128
+        width: 118
+        height: 148
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb1ba204c0a5b564f9f5162bc41f74f6
+      internalID: -943957409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samuraislice1_38
+      rect:
+        serializedVersion: 2
+        x: 2744
+        y: 1116
+        width: 156
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b2c7ad14bbeb004391c64e8dbaa0da5
+      internalID: -1007992224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samuraislice1_39
+      rect:
+        serializedVersion: 2
+        x: 3008
+        y: 1148
+        width: 168
+        height: 196
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2bef3c19cea2ec4bb3c7d3c3298d1bb
+      internalID: -1188923428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samuraislice1_40
+      rect:
+        serializedVersion: 2
+        x: 3290
+        y: 1120
+        width: 172
+        height: 258
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49fcc649d0b1225409f314f369689872
+      internalID: -439983689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samuraislice1_41
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 1128
+        width: 160
+        height: 238
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 934c5702843a0eb48af56c55d7075d84
+      internalID: 1301549328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samuraislice1_42
+      rect:
+        serializedVersion: 2
+        x: 3870
+        y: 1124
+        width: 160
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f79440026c6b93e41a5e3032266ba4eb
+      internalID: 1604778290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samuraislice1_43
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 448
+        width: 536
+        height: 534
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0c7389385811ee488d68ad608697a5e
+      internalID: 495276395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samuraislice1_44
+      rect:
+        serializedVersion: 2
+        x: 792
+        y: 422
+        width: 544
+        height: 570
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dec638da46123704b93d400af0dd5421
+      internalID: 1194838245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samuraislice1_45
+      rect:
+        serializedVersion: 2
+        x: 1480
+        y: 422
+        width: 468
+        height: 566
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2e7cdd0feac5e94ca5c57393573899b
+      internalID: 1810914572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samuraislice1_46
+      rect:
+        serializedVersion: 2
+        x: 2084
+        y: 480
+        width: 412
+        height: 508
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c46b7d599a7da564eb6de1bae0280e91
+      internalID: -939403763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samuraislice1_47
+      rect:
+        serializedVersion: 2
+        x: 2664
+        y: 484
+        width: 500
+        height: 500
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5310e4dc9bfcfbb47960dee7044a1bdf
+      internalID: 361413811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samuraislice1_48
+      rect:
+        serializedVersion: 2
+        x: 3262
+        y: 412
+        width: 538
+        height: 574
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 856ed0c936b6f0e44a4c8ac7a565f1fe
+      internalID: 1898740453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samuraislice1_49
+      rect:
+        serializedVersion: 2
+        x: 3920
+        y: 860
+        width: 124
+        height: 130
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8fdbb4af69d7d649bc5b163183bc0db
+      internalID: -1612851305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samuraislice1_50
+      rect:
+        serializedVersion: 2
+        x: 2962
+        y: 48
+        width: 218
+        height: 294
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34729073738b1a64fae3d394461bf474
+      internalID: 437777111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samuraislice1_51
+      rect:
+        serializedVersion: 2
+        x: 3332
+        y: 60
+        width: 24
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 583b962ed05e9d14b8116f225e986707
+      internalID: -1968794866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: samuraislice1_52
+      rect:
+        serializedVersion: 2
+        x: 3488
+        y: 66
+        width: 222
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da9b8986737903c45b23ff5c6d3ba532
+      internalID: 407313889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      samuraislice1_0: 2037148742
+      samuraislice1_1: -833501444
+      samuraislice1_10: 1086408868
+      samuraislice1_11: 2003414279
+      samuraislice1_12: -1922210441
+      samuraislice1_13: 1897998797
+      samuraislice1_14: 1648918826
+      samuraislice1_15: 1753156887
+      samuraislice1_16: -1188789778
+      samuraislice1_17: 1668151825
+      samuraislice1_18: -86672308
+      samuraislice1_19: -1409025245
+      samuraislice1_2: -1974032375
+      samuraislice1_20: 130145690
+      samuraislice1_21: 2141276158
+      samuraislice1_22: 1534350124
+      samuraislice1_23: -1685577556
+      samuraislice1_24: 1611394068
+      samuraislice1_25: -96667310
+      samuraislice1_26: 1455194354
+      samuraislice1_27: -1084324806
+      samuraislice1_28: -111464623
+      samuraislice1_29: 1821633196
+      samuraislice1_3: -1071741440
+      samuraislice1_30: 1565630800
+      samuraislice1_31: -1678136069
+      samuraislice1_32: -1592639882
+      samuraislice1_33: 412971589
+      samuraislice1_34: 518401436
+      samuraislice1_35: -1058629318
+      samuraislice1_36: 2061600810
+      samuraislice1_37: -943957409
+      samuraislice1_38: -1007992224
+      samuraislice1_39: -1188923428
+      samuraislice1_4: -1703152572
+      samuraislice1_40: -439983689
+      samuraislice1_41: 1301549328
+      samuraislice1_42: 1604778290
+      samuraislice1_43: 495276395
+      samuraislice1_44: 1194838245
+      samuraislice1_45: 1810914572
+      samuraislice1_46: -939403763
+      samuraislice1_47: 361413811
+      samuraislice1_48: 1898740453
+      samuraislice1_49: -1612851305
+      samuraislice1_5: 405093690
+      samuraislice1_50: 437777111
+      samuraislice1_51: -1968794866
+      samuraislice1_52: 407313889
+      samuraislice1_6: 293175076
+      samuraislice1_7: -866948817
+      samuraislice1_8: -1862594257
+      samuraislice1_9: -37131753
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: rvlsamurai/common
+  assetBundleVariant: 

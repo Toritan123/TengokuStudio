@@ -1,0 +1,919 @@
+fileFormatVersion: 2
+guid: 99b327a653483e74f81289067c1b700c
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 80
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: balloonHunterCharacters_0
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 3471
+        width: 450
+        height: 427
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a136bee1ec403834f89a6afba84915d1
+      internalID: -254174707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloonHunterCharacters_1
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 3472
+        width: 450
+        height: 427
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3b87baf1d1dcd840ac8ca38ef89575b
+      internalID: -1283814971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloonHunterCharacters_2
+      rect:
+        serializedVersion: 2
+        x: 1545
+        y: 3471
+        width: 454
+        height: 435
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4448b62c1e87f04d9bd45ed31aeef99
+      internalID: -1281689460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloonHunterCharacters_3
+      rect:
+        serializedVersion: 2
+        x: 2195
+        y: 3478
+        width: 450
+        height: 426
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00fbc6ef51a6701499cc8440aa59817e
+      internalID: -1154026302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloonHunterCharacters_4
+      rect:
+        serializedVersion: 2
+        x: 2920
+        y: 1471
+        width: 971
+        height: 2444
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65ea17a56178bc8428aa21b4d8917062
+      internalID: 1759520687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloonHunterCharacters_5
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 2158
+        width: 672
+        height: 1105
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26db99233cfa3ca4bbf39f1bfcae7557
+      internalID: 609777289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloonHunterCharacters_6
+      rect:
+        serializedVersion: 2
+        x: 919
+        y: 2662
+        width: 72
+        height: 593
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7b00b1d5f000184196f4a5b30ff20cd
+      internalID: 286877904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloonHunterCharacters_7
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 2673
+        width: 313
+        height: 588
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1affc16b9ab4eee49afa64f410e7da70
+      internalID: 387528568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloonHunterCharacters_8
+      rect:
+        serializedVersion: 2
+        x: 1734
+        y: 2772
+        width: 331
+        height: 441
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0f42c2f16523c5469c032533cf86e08
+      internalID: -322478363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloonHunterCharacters_9
+      rect:
+        serializedVersion: 2
+        x: 2255
+        y: 2747
+        width: 371
+        height: 479
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: debb249fd37969c49b3bcd5333a8bb21
+      internalID: -1836106678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloonHunterCharacters_10
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 2121
+        width: 505
+        height: 433
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bb24afca36782a49997d225ab7fd450
+      internalID: -618742211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloonHunterCharacters_11
+      rect:
+        serializedVersion: 2
+        x: 1681
+        y: 2081
+        width: 389
+        height: 484
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a1e64da126c7574face5b8d1e0a4f3a
+      internalID: 847063131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloonHunterCharacters_12
+      rect:
+        serializedVersion: 2
+        x: 2313
+        y: 2402
+        width: 374
+        height: 215
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9416be51e7901f489954e656ad3cb20
+      internalID: 478994529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloonHunterCharacters_13
+      rect:
+        serializedVersion: 2
+        x: 255
+        y: 1694
+        width: 291
+        height: 196
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ac8f536847021747a601c75b6345c77
+      internalID: -1455580464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloonHunterCharacters_14
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 1707
+        width: 260
+        height: 218
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a724685ec241cf41b85f74d89b1ee10
+      internalID: -1554215758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloonHunterCharacters_15
+      rect:
+        serializedVersion: 2
+        x: 1087
+        y: 1707
+        width: 261
+        height: 218
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15f73318650ed3a4bba5c9dc00de2240
+      internalID: -1195200796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloonHunterCharacters_16
+      rect:
+        serializedVersion: 2
+        x: 1470
+        y: 1707
+        width: 260
+        height: 218
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2debd84c1159c1f42969828dbdbd4841
+      internalID: -1190666798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloonHunterCharacters_17
+      rect:
+        serializedVersion: 2
+        x: 1847
+        y: 1707
+        width: 260
+        height: 218
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 320fc7e9a383a7a49915774ed99fc508
+      internalID: -1979729699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloonHunterCharacters_18
+      rect:
+        serializedVersion: 2
+        x: 2281
+        y: 1714
+        width: 438
+        height: 438
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62c34124be0b7904e95f8a96559efc7e
+      internalID: 1688906246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloonHunterCharacters_19
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 1425
+        width: 154
+        height: 142
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b477876e8d114f4889c55f8fba8d65d
+      internalID: 822760964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloonHunterCharacters_20
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 1438
+        width: 179
+        height: 167
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6b292152f2ba6b40a657e42b5ecb6f4
+      internalID: -1532946235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloonHunterCharacters_21
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 1429
+        width: 274
+        height: 197
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8288400a8b5b5e488a4c21a6e22d6bf
+      internalID: -2094605613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloonHunterCharacters_22
+      rect:
+        serializedVersion: 2
+        x: 1182
+        y: 1477
+        width: 196
+        height: 148
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc8380243ff6baa4fb47752140607aa3
+      internalID: -1981693656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloonHunterCharacters_23
+      rect:
+        serializedVersion: 2
+        x: 1434
+        y: 1472
+        width: 155
+        height: 156
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5a8982d5e780074b925a495153b4d7f
+      internalID: 1050816125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloonHunterCharacters_24
+      rect:
+        serializedVersion: 2
+        x: 1629
+        y: 1471
+        width: 126
+        height: 156
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13e646581903b9a4ea9b9ba7417466a2
+      internalID: 1279875518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloonHunterCharacters_25
+      rect:
+        serializedVersion: 2
+        x: 1854
+        y: 1432
+        width: 250
+        height: 218
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c91d0cbd7fd21c24faf650242cb0b06a
+      internalID: 2098776946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloonHunterCharacters_26
+      rect:
+        serializedVersion: 2
+        x: 73
+        y: 109
+        width: 1020
+        height: 1095
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4feb4607ec294314eac9eaaa960cfa16
+      internalID: 1438546933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloonHunterCharacters_27
+      rect:
+        serializedVersion: 2
+        x: 3598
+        y: 878
+        width: 317
+        height: 415
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b788877300b209c4e803bc8d1034bf06
+      internalID: -637513448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloonHunterCharacters_28
+      rect:
+        serializedVersion: 2
+        x: 1264
+        y: 118
+        width: 726
+        height: 709
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89456e0c94b10d44ea3cad41334d09ca
+      internalID: 115604292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloonHunterCharacters_29
+      rect:
+        serializedVersion: 2
+        x: 1282
+        y: 999
+        width: 221
+        height: 247
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e95a83306f7acf459dd93a72097dfcd
+      internalID: 2013062139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloonHunterCharacters_30
+      rect:
+        serializedVersion: 2
+        x: 1523
+        y: 1019
+        width: 231
+        height: 302
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01de376cdea628a438e44c2e103197fa
+      internalID: 720485459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloonHunterCharacters_31
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 1004
+        width: 454
+        height: 378
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cdca57b4686bed49b27e09205a65512
+      internalID: 1230545881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloonHunterCharacters_32
+      rect:
+        serializedVersion: 2
+        x: 2313
+        y: 1321
+        width: 413
+        height: 343
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 161dd037a14a6234f8acdcae414c9e07
+      internalID: 809885472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloonHunterCharacters_33
+      rect:
+        serializedVersion: 2
+        x: 3269
+        y: 847
+        width: 293
+        height: 309
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da62b67d690e63e479815f3045b9be5a
+      internalID: -887252192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloonHunterCharacters_34
+      rect:
+        serializedVersion: 2
+        x: 2953
+        y: 891
+        width: 263
+        height: 295
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acbcff72a47735d4ca9b16cb8625e503
+      internalID: 1467281308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: balloonHunterCharacters_35
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 814
+        width: 329
+        height: 345
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb21e555e5a5f184f940cd6d3ad61e88
+      internalID: 1322883986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      balloonHunterCharacters_0: -254174707
+      balloonHunterCharacters_1: -1283814971
+      balloonHunterCharacters_10: -618742211
+      balloonHunterCharacters_11: 847063131
+      balloonHunterCharacters_12: 478994529
+      balloonHunterCharacters_13: -1455580464
+      balloonHunterCharacters_14: -1554215758
+      balloonHunterCharacters_15: -1195200796
+      balloonHunterCharacters_16: -1190666798
+      balloonHunterCharacters_17: -1979729699
+      balloonHunterCharacters_18: 1688906246
+      balloonHunterCharacters_19: 822760964
+      balloonHunterCharacters_2: -1281689460
+      balloonHunterCharacters_20: -1532946235
+      balloonHunterCharacters_21: -2094605613
+      balloonHunterCharacters_22: -1981693656
+      balloonHunterCharacters_23: 1050816125
+      balloonHunterCharacters_24: 1279875518
+      balloonHunterCharacters_25: 2098776946
+      balloonHunterCharacters_26: 1438546933
+      balloonHunterCharacters_27: -637513448
+      balloonHunterCharacters_28: 115604292
+      balloonHunterCharacters_29: 2013062139
+      balloonHunterCharacters_3: -1154026302
+      balloonHunterCharacters_30: 720485459
+      balloonHunterCharacters_31: 1230545881
+      balloonHunterCharacters_32: 809885472
+      balloonHunterCharacters_33: -887252192
+      balloonHunterCharacters_34: 1467281308
+      balloonHunterCharacters_35: 1322883986
+      balloonHunterCharacters_4: 1759520687
+      balloonHunterCharacters_5: 609777289
+      balloonHunterCharacters_6: 286877904
+      balloonHunterCharacters_7: 387528568
+      balloonHunterCharacters_8: -322478363
+      balloonHunterCharacters_9: -1836106678
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: pcoballoon/common
+  assetBundleVariant: 

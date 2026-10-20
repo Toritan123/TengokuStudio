@@ -1,0 +1,255 @@
+{
+  "//": "日本語音声のときだけ、英語版のタイミングから声をずらします。キーは「ゲーム名/音声ファイル名」。beat: 拍でずらす（マイナスで早く）, offset: 秒で微調整, volume: 音量の倍率, mute: true で鳴らさない",
+  "//karateman": "カラテ家：英語は「Hit・3」、日本語は「3・Hit」（数字が先）。英語版の Hit は録音に合わせて0.042秒早く鳴らしているが、日本語版の音は頭が拍なので打ち消す",
+  "karateman/one": {
+    "beat": -0.5
+  },
+  "karateman/two": {
+    "beat": -0.5
+  },
+  "karateman/three": {
+    "beat": -0.5
+  },
+  "karateman/threeAlt": {
+    "beat": -0.5
+  },
+  "karateman/four": {
+    "beat": -0.5
+  },
+  "karateman/hit": {
+    "beat": 0.5,
+    "offset": -0.042
+  },
+  "karateman/hitAlt": {
+    "beat": 0.5,
+    "offset": -0.042
+  },
+  "//marchingOrders": "マーチャ：日本語は「ぜん・たーい」が英語より1/4拍遅く始まり、「ま・えへ・すすめ」は1/4拍ずつ。右（左）向けの2つ目は1/4拍遅い",
+  "marchingOrders/attention1": {
+    "beat": 0.25
+  },
+  "marchingOrders/attention2": {
+    "beat": 0.5
+  },
+  "marchingOrders/attention3": {
+    "mute": true
+  },
+  "marchingOrders/march2": {
+    "beat": 0.25
+  },
+  "marchingOrders/march3": {
+    "beat": 0.5
+  },
+  "marchingOrders/leftFaceTurn2": {
+    "beat": 0.25
+  },
+  "marchingOrders/rightFaceTurn2": {
+    "beat": 0.25
+  },
+  "marchingOrders/leftFaceTurn2fast": {
+    "beat": 0.25
+  },
+  "marchingOrders/rightFaceTurn2fast": {
+    "beat": 0.25
+  },
+  "//splashdown": "シンクロ：英語は「A・lley・oop」、日本語は「そー・れ」なので真ん中は鳴らさない",
+  "splashdown/alleyOop2": {
+    "mute": true
+  },
+  "//flipperFlop": "コロコロたんけん隊：英語は「Attention... company!」の6つ＋隊員の返事、日本語は「ずっとい はじめ」の5つ＋同じ返事。隊員の返事（3拍後、アニメーションもここ）を基準にそろえる",
+  "flipperFlop/attention1": {
+    "beat": 0.25
+  },
+  "flipperFlop/attention2": {
+    "beat": 0.5
+  },
+  "flipperFlop/attention3": {
+    "beat": 1.5
+  },
+  "flipperFlop/attention4": {
+    "beat": 0.25
+  },
+  "flipperFlop/attention5": {
+    "beat": 0.25
+  },
+  "flipperFlop/attention6": {
+    "mute": true
+  },
+  "//packingPests": "しわけ：英語「Dou-ble up!」は 0, 0.25, 0.5拍、日本語「い・く・ぜ」は 0, 0.125, 0.333拍",
+  "packingPests/SE_SHIWAKE_EN_VOICE_READY2": {
+    "beat": -0.125
+  },
+  "packingPests/SE_SHIWAKE_EN_VOICE_READY3": {
+    "beat": -0.167
+  },
+  "//loveRap": "だいスキRAP：RHRE3 の日本語版の拍に合わせて各音節をずらす。日本語版で1音節多いところ（MCアドレの「スキなんだ」、ラッパーの「マジ大スキ」裏拍）は extra で足す",
+  "loveRap/SE_RAP_EN_WOMAN_DAISUKI_2": {
+    "beat": -0.127
+  },
+  "loveRap/SE_RAP_EN_WOMAN_DAISUKI_3": {
+    "beat": 0.08
+  },
+  "loveRap/SE_RAP_EN_MAN_LEFT_DAISUKI_2": {
+    "beat": -0.164
+  },
+  "loveRap/SE_RAP_EN_MAN_LEFT_DAISUKI_3": {
+    "beat": 0.081
+  },
+  "loveRap/SE_RAP_EN_MAN_RIGHT_DAISUKI_2": {
+    "beat": -0.164
+  },
+  "loveRap/SE_RAP_EN_MAN_RIGHT_DAISUKI_3": {
+    "beat": 0.081
+  },
+  "loveRap/SE_RAP_EN_WOMAN_MAJI_2": {
+    "beat": 0.028
+  },
+  "loveRap/SE_RAP_EN_WOMAN_MAJI_3": {
+    "beat": -0.003
+  },
+  "loveRap/SE_RAP_EN_WOMAN_MAJI_4": {
+    "beat": -0.167
+  },
+  "loveRap/SE_RAP_EN_WOMAN_MAJI_5": {
+    "beat": 0.082
+  },
+  "loveRap/SE_RAP_EN_MAN_LEFT_MAJI_2": {
+    "beat": 0.085
+  },
+  "loveRap/SE_RAP_EN_MAN_LEFT_MAJI_3": {
+    "beat": -0.002
+  },
+  "loveRap/SE_RAP_EN_MAN_LEFT_MAJI_4": {
+    "beat": -0.168
+  },
+  "loveRap/SE_RAP_EN_MAN_LEFT_MAJI_5": {
+    "beat": 0.081
+  },
+  "loveRap/SE_RAP_EN_MAN_RIGHT_MAJI_2": {
+    "beat": 0.085
+  },
+  "loveRap/SE_RAP_EN_MAN_RIGHT_MAJI_3": {
+    "beat": -0.002
+  },
+  "loveRap/SE_RAP_EN_MAN_RIGHT_MAJI_4": {
+    "beat": -0.168
+  },
+  "loveRap/SE_RAP_EN_MAN_RIGHT_MAJI_5": {
+    "beat": 0.081
+  },
+  "loveRap/SE_RAP_EN_WOMAN_MAJI_OFFBEAT_2": {
+    "beat": -0.108
+  },
+  "loveRap/SE_RAP_EN_WOMAN_MAJI_OFFBEAT_3": {
+    "beat": -0.002
+  },
+  "loveRap/SE_RAP_EN_WOMAN_MAJI_OFFBEAT_4": {
+    "beat": 0.083
+  },
+  "loveRap/SE_RAP_EN_WOMAN_MAJI_OFFBEAT_5": {
+    "beat": -0.084
+  },
+  "loveRap/SE_RAP_EN_MAN_LEFT_MAJI_OFFBEAT_2": {
+    "beat": -0.081
+  },
+  "loveRap/SE_RAP_EN_MAN_LEFT_MAJI_OFFBEAT_3": {
+    "beat": -0.002
+  },
+  "loveRap/SE_RAP_EN_MAN_LEFT_MAJI_OFFBEAT_4": {
+    "beat": -0.086
+  },
+  "loveRap/SE_RAP_EN_MAN_LEFT_MAJI_OFFBEAT_5": {
+    "beat": -0.342,
+    "extra": [
+      {
+        "sound": "jp_rapper2majidaisukialt6",
+        "beat": 0.25
+      }
+    ]
+  },
+  "loveRap/SE_RAP_EN_MAN_RIGHT_MAJI_OFFBEAT_2": {
+    "beat": -0.081
+  },
+  "loveRap/SE_RAP_EN_MAN_RIGHT_MAJI_OFFBEAT_3": {
+    "beat": -0.002
+  },
+  "loveRap/SE_RAP_EN_MAN_RIGHT_MAJI_OFFBEAT_4": {
+    "beat": -0.086
+  },
+  "loveRap/SE_RAP_EN_MAN_RIGHT_MAJI_OFFBEAT_5": {
+    "beat": -0.342,
+    "extra": [
+      {
+        "sound": "jp_rapper1majidaisukialt6",
+        "beat": 0.25
+      }
+    ]
+  },
+  "loveRap/SE_RAP_EN_WOMAN_HONTO_OFFBEAT_2": {
+    "beat": 0.125
+  },
+  "loveRap/SE_RAP_EN_MAN_LEFT_HONTO_OFFBEAT_2": {
+    "beat": 0.125
+  },
+  "loveRap/SE_RAP_EN_MAN_LEFT_HONTO_OFFBEAT_3": {
+    "beat": -0.02
+  },
+  "loveRap/SE_RAP_EN_MAN_RIGHT_HONTO_OFFBEAT_2": {
+    "beat": 0.125
+  },
+  "loveRap/SE_RAP_EN_MAN_RIGHT_HONTO_OFFBEAT_3": {
+    "beat": -0.02
+  },
+  "loveRap/SE_RAP_EN_WOMAN_HONTO_2": {
+    "beat": -0.002
+  },
+  "loveRap/SE_RAP_EN_MAN_LEFT_HONTO_2": {
+    "beat": -0.02
+  },
+  "loveRap/SE_RAP_EN_MAN_RIGHT_HONTO_2": {
+    "beat": -0.02
+  },
+  "loveRap/SE_RAP_EN_WOMAN_SUKINANDA_OFFBEAT_2": {
+    "beat": -0.084
+  },
+  "loveRap/SE_RAP_EN_WOMAN_SUKINANDA_OFFBEAT_3": {
+    "beat": -0.064
+  },
+  "loveRap/SE_RAP_EN_WOMAN_SUKINANDA_OFFBEAT_4": {
+    "beat": -0.329,
+    "extra": [
+      {
+        "sound": "jp_mcadoresukinanda5",
+        "beat": 0.325
+      }
+    ]
+  },
+  "loveRap/SE_RAP_EN_MAN_LEFT_SUKINANDA_2": {
+    "beat": 0.082
+  },
+  "loveRap/SE_RAP_EN_MAN_LEFT_SUKINANDA_3": {
+    "beat": -0.019
+  },
+  "loveRap/SE_RAP_EN_MAN_LEFT_SUKINANDA_4": {
+    "beat": -0.001
+  },
+  "loveRap/SE_RAP_EN_MAN_RIGHT_SUKINANDA_2": {
+    "beat": 0.082
+  },
+  "loveRap/SE_RAP_EN_MAN_RIGHT_SUKINANDA_3": {
+    "beat": -0.019
+  },
+  "loveRap/SE_RAP_EN_MAN_RIGHT_SUKINANDA_4": {
+    "beat": -0.001
+  },
+  "loveRap/SE_RAP_EN_MAN_RIGHT_SUKINANDA_EXTRA_4": {
+    "beat": -0.001
+  },
+  "//warioDeMambo": "まわるメイドインワリオの曲データのとおり。アナウンスは英語版より1拍遅く（曲の頭から1.5拍）始まる。memorize2/3（今は使われていない）は「お・ぼ・えて」を隙間なくつないだときの位置（140BPM）",
+  "warioDeMambo/ladiesandgentlemen": {
+    "beat": 1.0
+  },
+  "warioDeMambo/memorize2": {
+    "beat": -0.125
+  }
+}

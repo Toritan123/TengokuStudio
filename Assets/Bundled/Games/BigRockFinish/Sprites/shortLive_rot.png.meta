@@ -1,0 +1,2569 @@
+fileFormatVersion: 2
+guid: df72b4f04774ace439b6a22de099373b
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 100
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: shortLive_rot_0
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 3662
+        width: 279
+        height: 364
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c31e17e7bd37dc243bb2fdaf47d7fdea
+      internalID: 1083371148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_1
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 3662
+        width: 280
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e65998ca2e15c1848824e1d6f589681e
+      internalID: 746162723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_2
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 3666
+        width: 280
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e25a0af7c2074a40b17453bc9cf5a4d
+      internalID: -58965433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_3
+      rect:
+        serializedVersion: 2
+        x: 998
+        y: 3666
+        width: 280
+        height: 388
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9706b3c0bf1b3a4cbcdb7a1a4bf27d2
+      internalID: 1053036223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_4
+      rect:
+        serializedVersion: 2
+        x: 1322
+        y: 3670
+        width: 282
+        height: 388
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bf65660596122242ac77600d29c796c
+      internalID: 1905288802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_5
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 3666
+        width: 280
+        height: 372
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c71a82b7c135d8048aaac7b991e31b20
+      internalID: -1529758911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_6
+      rect:
+        serializedVersion: 2
+        x: 1962
+        y: 3670
+        width: 279
+        height: 360
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08dd055253dab31458093dc447e2e823
+      internalID: -81636144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_7
+      rect:
+        serializedVersion: 2
+        x: 2276
+        y: 3674
+        width: 294
+        height: 312
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f95da0252b536e347a845914ca504123
+      internalID: 2102362798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_8
+      rect:
+        serializedVersion: 2
+        x: 2626
+        y: 3676
+        width: 352
+        height: 350
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5737586cbc540af4a8785ea07b35639a
+      internalID: 1908963631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_9
+      rect:
+        serializedVersion: 2
+        x: 3036
+        y: 3678
+        width: 278
+        height: 348
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4e3d0f445e97c846adc45ddc26c0d81
+      internalID: -1145516663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_10
+      rect:
+        serializedVersion: 2
+        x: 3370
+        y: 3678
+        width: 288
+        height: 380
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca4ce1f423a267c41adfa56a87c9d4c3
+      internalID: 1879424851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_11
+      rect:
+        serializedVersion: 2
+        x: 3718
+        y: 3678
+        width: 272
+        height: 372
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f17f980f25d0e34e9e67f393280a5a2
+      internalID: -1813137555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_12
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 3202
+        width: 296
+        height: 342
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab8979177f1378243ab63ffbd17b9065
+      internalID: -1666207385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_13
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 3214
+        width: 278
+        height: 340
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6331e5d59eb12141b6406ee347d5e9b
+      internalID: -986301830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_14
+      rect:
+        serializedVersion: 2
+        x: 716
+        y: 3222
+        width: 230
+        height: 388
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 941c7d996acf8144a8cd882c8bc12041
+      internalID: 1995223649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_15
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 3222
+        width: 294
+        height: 352
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9705ca7502c37be42815151e87683ab1
+      internalID: -404189153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_16
+      rect:
+        serializedVersion: 2
+        x: 1351
+        y: 3222
+        width: 283
+        height: 352
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7b55d5009b79094281e5c13f6ab1c32
+      internalID: 1997672377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_17
+      rect:
+        serializedVersion: 2
+        x: 1672
+        y: 3222
+        width: 230
+        height: 388
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f93375f69e03c494394bb2de4bb3d20a
+      internalID: -159299559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_18
+      rect:
+        serializedVersion: 2
+        x: 1954
+        y: 3202
+        width: 316
+        height: 412
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d67b4d266344d0c4790787efe8d4dce5
+      internalID: -1192908454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_19
+      rect:
+        serializedVersion: 2
+        x: 2306
+        y: 3200
+        width: 312
+        height: 406
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f43d3f334e2f3aa43ac3a07ec8955dd2
+      internalID: 846909108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_20
+      rect:
+        serializedVersion: 2
+        x: 2658
+        y: 3200
+        width: 315
+        height: 410
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b97a2b7c7db1bd419fab55cc267077c
+      internalID: 1919181544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_21
+      rect:
+        serializedVersion: 2
+        x: 3010
+        y: 3200
+        width: 315
+        height: 406
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8183abb380f381845969edd46ebb31fd
+      internalID: 2123355847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_22
+      rect:
+        serializedVersion: 2
+        x: 3362
+        y: 3202
+        width: 312
+        height: 412
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58eb90fc184fdda41a511d0c1a1a915e
+      internalID: -1547926580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_23
+      rect:
+        serializedVersion: 2
+        x: 3734
+        y: 3398
+        width: 132
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1784ba71584d33140a36cb8e60b50405
+      internalID: 77701278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_24
+      rect:
+        serializedVersion: 2
+        x: 3732
+        y: 3238
+        width: 132
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03e73077d0ea87844b1b464cb11d1cad
+      internalID: -1986595310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_25
+      rect:
+        serializedVersion: 2
+        x: 3924
+        y: 3238
+        width: 122
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76f0bb4c1554720418bf6032c0faf9f1
+      internalID: -330354549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_26
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 2766
+        width: 284
+        height: 364
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5647ef07f4c631c4980839727b23d997
+      internalID: 1684426020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_27
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 2766
+        width: 286
+        height: 380
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c48390e04c4e554398793645b48ce0b
+      internalID: -205107843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_28
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 2770
+        width: 286
+        height: 384
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee315800a528782459283d2b994dc295
+      internalID: 1496028844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_29
+      rect:
+        serializedVersion: 2
+        x: 998
+        y: 2770
+        width: 286
+        height: 388
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2954ee16f67d3174bb7a0c17c8a07189
+      internalID: -2091756610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_30
+      rect:
+        serializedVersion: 2
+        x: 1322
+        y: 2770
+        width: 286
+        height: 388
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d500b5f1456a1d41abaac76417d784d
+      internalID: 155232041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_31
+      rect:
+        serializedVersion: 2
+        x: 1638
+        y: 2770
+        width: 284
+        height: 372
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 178c0b0138e0aa14a9df298951885d42
+      internalID: -735235303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_32
+      rect:
+        serializedVersion: 2
+        x: 1960
+        y: 2770
+        width: 286
+        height: 364
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4aff6a65166f04e4b9a9d5cb44628044
+      internalID: -1177258778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_33
+      rect:
+        serializedVersion: 2
+        x: 2278
+        y: 2778
+        width: 300
+        height: 312
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc9b572730f8c5c4fb7aa816b88da3e0
+      internalID: 203635575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_34
+      rect:
+        serializedVersion: 2
+        x: 2634
+        y: 2782
+        width: 348
+        height: 348
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8625a37466328af44b6eb6479dfe39ab
+      internalID: -1498719069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_35
+      rect:
+        serializedVersion: 2
+        x: 3042
+        y: 2782
+        width: 288
+        height: 348
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 094f857619d2d9c48b5cbe83f3fe1611
+      internalID: -1480048434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_36
+      rect:
+        serializedVersion: 2
+        x: 3374
+        y: 2782
+        width: 286
+        height: 380
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3f2d9118f581494e9824b02b15d384c
+      internalID: 693268393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_37
+      rect:
+        serializedVersion: 2
+        x: 3722
+        y: 2782
+        width: 288
+        height: 376
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a68d6e52f742c2249ae52d0eae8677b8
+      internalID: -1519524102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_38
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 2374
+        width: 146
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 983f722ece06aa8489fbb27823731f19
+      internalID: -539571573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_39
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 2306
+        width: 176
+        height: 412
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94b4537e43ae88d4d8d6e3093d668f87
+      internalID: -1746628397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_40
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 2306
+        width: 176
+        height: 406
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae4ac8e6782ba15408ad8e6ccc1796be
+      internalID: 1047518433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_41
+      rect:
+        serializedVersion: 2
+        x: 678
+        y: 2306
+        width: 176
+        height: 404
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8969253a2d344ee45ade93d0702e2b7f
+      internalID: 777626012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_42
+      rect:
+        serializedVersion: 2
+        x: 914
+        y: 2394
+        width: 256
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cddcc90769a8e14c903f970d092849f
+      internalID: -578412258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_43
+      rect:
+        serializedVersion: 2
+        x: 1222
+        y: 2386
+        width: 276
+        height: 268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a96031395b1580f438c98647c4cd7677
+      internalID: 1076438676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_44
+      rect:
+        serializedVersion: 2
+        x: 1546
+        y: 2370
+        width: 304
+        height: 284
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4462a30e25ce07e4caeeab3b2d0020d8
+      internalID: 1631113608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_45
+      rect:
+        serializedVersion: 2
+        x: 1932
+        y: 2386
+        width: 136
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c372217173c41a43a2cb797bc2775a5
+      internalID: 437101965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_46
+      rect:
+        serializedVersion: 2
+        x: 2115
+        y: 2386
+        width: 154
+        height: 322
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50b6306b909256542ad6c79ea7d8fa0b
+      internalID: 605579128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_47
+      rect:
+        serializedVersion: 2
+        x: 2307
+        y: 2386
+        width: 154
+        height: 302
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54aff9460a4a93a46a2392e6bcf7efe7
+      internalID: -1763413308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_48
+      rect:
+        serializedVersion: 2
+        x: 2500
+        y: 2386
+        width: 152
+        height: 292
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3f265068a7202047b00e8c820f6bb00
+      internalID: 1694039626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_49
+      rect:
+        serializedVersion: 2
+        x: 2694
+        y: 2462
+        width: 178
+        height: 252
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5519557dda2f54548814b779cc650d59
+      internalID: -1335343048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_50
+      rect:
+        serializedVersion: 2
+        x: 2918
+        y: 2462
+        width: 176
+        height: 240
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7d5edaa847b77240a153f851bebc47b
+      internalID: 1460486107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_51
+      rect:
+        serializedVersion: 2
+        x: 3143
+        y: 2462
+        width: 175
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 568d2b01f600a6346bd58c1ba94a22db
+      internalID: 1376095066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_52
+      rect:
+        serializedVersion: 2
+        x: 3378
+        y: 2462
+        width: 196
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ddd1acbaca099d4cae951918b3a42fa
+      internalID: -925196898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_53
+      rect:
+        serializedVersion: 2
+        x: 3626
+        y: 2567
+        width: 180
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d31d018bcd349d643be390153f8835a4
+      internalID: 1118070265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_54
+      rect:
+        serializedVersion: 2
+        x: 3854
+        y: 2570
+        width: 224
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09a2b881e976a24408b9d7a7eab4113a
+      internalID: 2002038992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_55
+      rect:
+        serializedVersion: 2
+        x: 1938
+        y: 2162
+        width: 138
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c787b4e00e3d134ea49eaa8beeed60f
+      internalID: -1804503978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_56
+      rect:
+        serializedVersion: 2
+        x: 2314
+        y: 2162
+        width: 142
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 305f6ba7c54841047b956c972b9d2454
+      internalID: 2078730330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_57
+      rect:
+        serializedVersion: 2
+        x: 2514
+        y: 2162
+        width: 144
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 325296beeaf8a974eb9e411e0ed65735
+      internalID: 1096972687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_58
+      rect:
+        serializedVersion: 2
+        x: 2702
+        y: 2162
+        width: 144
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc88f9a668621424d9f5be5083c77b7e
+      internalID: 1996275358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_59
+      rect:
+        serializedVersion: 2
+        x: 2922
+        y: 2254
+        width: 140
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c57642056f034cf47973bfe87c27caad
+      internalID: 1515819014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_60
+      rect:
+        serializedVersion: 2
+        x: 3112
+        y: 2118
+        width: 149
+        height: 292
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc09fb571f91be344b1bfd4db482dc1c
+      internalID: -7181294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_61
+      rect:
+        serializedVersion: 2
+        x: 3594
+        y: 2310
+        width: 200
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 353e3f6c31311044caa2d2d1e7e61932
+      internalID: 1038771942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_62
+      rect:
+        serializedVersion: 2
+        x: 3856
+        y: 2308
+        width: 206
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56a3a8a100dfcb34bbe949ff49db1fce
+      internalID: 443229578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_63
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 1806
+        width: 200
+        height: 456
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abf62191b5e83aa45954d5c8a1c6e42b
+      internalID: 1989305626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_64
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 1806
+        width: 216
+        height: 436
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d0be6cf74b44df4380627382985c6e3
+      internalID: 675269765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_65
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 1806
+        width: 224
+        height: 428
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46564a9c7f1e0394596ef7455b7ec026
+      internalID: 932360927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_66
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 1806
+        width: 228
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9633ec292418158418f996010576d6a4
+      internalID: -1527371790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_67
+      rect:
+        serializedVersion: 2
+        x: 1076
+        y: 1806
+        width: 230
+        height: 412
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b263b1a1df97de24c8c7b443b5cfbd20
+      internalID: -1033534155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_68
+      rect:
+        serializedVersion: 2
+        x: 1364
+        y: 1806
+        width: 230
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 744ac8234c5758d4c86c87cdc5966d59
+      internalID: -766417905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_69
+      rect:
+        serializedVersion: 2
+        x: 1658
+        y: 1806
+        width: 224
+        height: 428
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a08fafeb87d0664d8aec300ef998e50
+      internalID: -771012644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_70
+      rect:
+        serializedVersion: 2
+        x: 2130
+        y: 2162
+        width: 142
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67aade9b5b7af924785a4ce80eff31c3
+      internalID: -1766101048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_71
+      rect:
+        serializedVersion: 2
+        x: 1922
+        y: 1790
+        width: 148
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b586f572b73c4bd479ebc655d6832203
+      internalID: 417570378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_72
+      rect:
+        serializedVersion: 2
+        x: 2114
+        y: 1790
+        width: 147
+        height: 312
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d17e7c3997234d49a8090cf9f71eef4
+      internalID: -1927354614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_73
+      rect:
+        serializedVersion: 2
+        x: 2302
+        y: 1926
+        width: 114
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b41253370cdee842981c9c24684237d
+      internalID: -788236782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_74
+      rect:
+        serializedVersion: 2
+        x: 2462
+        y: 1926
+        width: 136
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae0a643bc467534429046d1b51c090c2
+      internalID: 788636257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_75
+      rect:
+        serializedVersion: 2
+        x: 2650
+        y: 1922
+        width: 152
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb4e79c0a4a677a418b7a5b193f7dfe9
+      internalID: -1865486112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_76
+      rect:
+        serializedVersion: 2
+        x: 2934
+        y: 1435
+        width: 1122
+        height: 629
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49bdb7100ade71d42a8f6bde03061ecd
+      internalID: -636912946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_77
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 1498
+        width: 100
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a3e43689ccd99d4db71d0c88b18f8ba
+      internalID: 1409921545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_78
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 1498
+        width: 100
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd73f9d470fa2ce4984772ed9cc68640
+      internalID: 662068020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_79
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 1498
+        width: 100
+        height: 256
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c3cc41fc63f99a44af3acf0e0d6afa7
+      internalID: -1176099384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_80
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 1494
+        width: 160
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18a396f559e6f904ba0a4a257dce47e3
+      internalID: 870616224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_81
+      rect:
+        serializedVersion: 2
+        x: 738
+        y: 1494
+        width: 164
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a863816cc317f734689efa5497f2ab7d
+      internalID: -586584231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_82
+      rect:
+        serializedVersion: 2
+        x: 934
+        y: 1494
+        width: 184
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 065cb7bcefe31114180361cc8593e487
+      internalID: -86136189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_83
+      rect:
+        serializedVersion: 2
+        x: 1150
+        y: 1494
+        width: 196
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ec20ad78bafa7a41accc8c5631eff1c
+      internalID: 1435261602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_84
+      rect:
+        serializedVersion: 2
+        x: 1386
+        y: 1494
+        width: 176
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd76560da718eee498a83955379e3960
+      internalID: -1265828840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_85
+      rect:
+        serializedVersion: 2
+        x: 1602
+        y: 1494
+        width: 196
+        height: 130
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc52cacc1dafbf546b9a829e47d81524
+      internalID: -1163877864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_86
+      rect:
+        serializedVersion: 2
+        x: 1828
+        y: 1494
+        width: 192
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71b13d89bda85d143b2a51c4552d0c09
+      internalID: -1961910798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_87
+      rect:
+        serializedVersion: 2
+        x: 2050
+        y: 1494
+        width: 172
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2f53bb5b64975047a3d0cb81659a661
+      internalID: 964521543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_88
+      rect:
+        serializedVersion: 2
+        x: 2278
+        y: 1494
+        width: 167
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1cfb4cb2ad7e6543aa0d653bdb19c9d
+      internalID: 704225257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_89
+      rect:
+        serializedVersion: 2
+        x: 2506
+        y: 1494
+        width: 160
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82d7a94bde67c8e4cb9a2512e576049e
+      internalID: 242614055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_90
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 1184
+        width: 112
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32d9ec9e96d42c34da810bec0d93d975
+      internalID: 443954159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_91
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 1184
+        width: 112
+        height: 248
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1762a0f5685d7fd4385195f27588ba5f
+      internalID: -1175493605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_92
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 1184
+        width: 108
+        height: 246
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 469896d91ba744d49803ea61cb19a87d
+      internalID: -1903841292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_93
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 656
+        width: 1111
+        height: 734
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2796875a27e681246ab7cf0d524b7f3e
+      internalID: 224338115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_94
+      rect:
+        serializedVersion: 2
+        x: 1762
+        y: 655
+        width: 1111
+        height: 763
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c1c3a3fc8228374e952e3f51d59b0bd
+      internalID: 1407449747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_95
+      rect:
+        serializedVersion: 2
+        x: 2934
+        y: 658
+        width: 1112
+        height: 750
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab3beeb0ec7d64c448c3ae256a06c1b3
+      internalID: -732438578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_96
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 903
+        width: 104
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e279310d71471ad4b96267d72cff8a50
+      internalID: -1749944676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_97
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 904
+        width: 104
+        height: 242
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 456ef3f2d05bb3f488697a30cb1ded45
+      internalID: -1550047067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_98
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 900
+        width: 154
+        height: 224
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bac3a498cf2b621408e639217cb223a5
+      internalID: 245398540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_99
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 694
+        width: 114
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eeaa8281fbf5e964a909eba6c0667f51
+      internalID: 1526448591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_100
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 694
+        width: 104
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9df9fc1bee1dd7d46b891e93e6ec3163
+      internalID: 2077727595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_101
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 688
+        width: 104
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4815523c70ded847b9b9736235df294
+      internalID: 1149472387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_102
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 462
+        width: 102
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a7cb5f56e100ca468f2977c000ce321
+      internalID: -743976973
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_103
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 466
+        width: 120
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50c564211b7330b45bd07311241afd4a
+      internalID: 1405952643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_104
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 466
+        width: 120
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c0164fbbe9db2841860283c92c92007
+      internalID: -1650518222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_105
+      rect:
+        serializedVersion: 2
+        x: 610
+        y: 0
+        width: 1124
+        height: 622
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e679dc09a06b65f40aba74024d5af351
+      internalID: 1728841992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_106
+      rect:
+        serializedVersion: 2
+        x: 1762
+        y: 0
+        width: 1124
+        height: 621
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8f260d525e1e234ebad21f464f9b206
+      internalID: -452975203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_107
+      rect:
+        serializedVersion: 2
+        x: 2932
+        y: 0
+        width: 1122
+        height: 622
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24a00062faf90e24c9f4db781e965d5b
+      internalID: 1443149800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_108
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 102
+        width: 122
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26dd829d18133044a8124135ff98e590
+      internalID: 1000627662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_109
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 102
+        width: 122
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d250d9b392f241488d96261e1dd9e36
+      internalID: 1101089957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_rot_110
+      rect:
+        serializedVersion: 2
+        x: 372
+        y: 102
+        width: 122
+        height: 304
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 906c3816866955447b827624acd239bf
+      internalID: -1473360196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      shortLive_rot_0: 1083371148
+      shortLive_rot_1: 746162723
+      shortLive_rot_10: 1879424851
+      shortLive_rot_100: 2077727595
+      shortLive_rot_101: 1149472387
+      shortLive_rot_102: -743976973
+      shortLive_rot_103: 1405952643
+      shortLive_rot_104: -1650518222
+      shortLive_rot_105: 1728841992
+      shortLive_rot_106: -452975203
+      shortLive_rot_107: 1443149800
+      shortLive_rot_108: 1000627662
+      shortLive_rot_109: 1101089957
+      shortLive_rot_11: -1813137555
+      shortLive_rot_110: -1473360196
+      shortLive_rot_12: -1666207385
+      shortLive_rot_13: -986301830
+      shortLive_rot_14: 1995223649
+      shortLive_rot_15: -404189153
+      shortLive_rot_16: 1997672377
+      shortLive_rot_17: -159299559
+      shortLive_rot_18: -1192908454
+      shortLive_rot_19: 846909108
+      shortLive_rot_2: -58965433
+      shortLive_rot_20: 1919181544
+      shortLive_rot_21: 2123355847
+      shortLive_rot_22: -1547926580
+      shortLive_rot_23: 77701278
+      shortLive_rot_24: -1986595310
+      shortLive_rot_25: -330354549
+      shortLive_rot_26: 1684426020
+      shortLive_rot_27: -205107843
+      shortLive_rot_28: 1496028844
+      shortLive_rot_29: -2091756610
+      shortLive_rot_3: 1053036223
+      shortLive_rot_30: 155232041
+      shortLive_rot_31: -735235303
+      shortLive_rot_32: -1177258778
+      shortLive_rot_33: 203635575
+      shortLive_rot_34: -1498719069
+      shortLive_rot_35: -1480048434
+      shortLive_rot_36: 693268393
+      shortLive_rot_37: -1519524102
+      shortLive_rot_38: -539571573
+      shortLive_rot_39: -1746628397
+      shortLive_rot_4: 1905288802
+      shortLive_rot_40: 1047518433
+      shortLive_rot_41: 777626012
+      shortLive_rot_42: -578412258
+      shortLive_rot_43: 1076438676
+      shortLive_rot_44: 1631113608
+      shortLive_rot_45: 437101965
+      shortLive_rot_46: 605579128
+      shortLive_rot_47: -1763413308
+      shortLive_rot_48: 1694039626
+      shortLive_rot_49: -1335343048
+      shortLive_rot_5: -1529758911
+      shortLive_rot_50: 1460486107
+      shortLive_rot_51: 1376095066
+      shortLive_rot_52: -925196898
+      shortLive_rot_53: 1118070265
+      shortLive_rot_54: 2002038992
+      shortLive_rot_55: -1804503978
+      shortLive_rot_56: 2078730330
+      shortLive_rot_57: 1096972687
+      shortLive_rot_58: 1996275358
+      shortLive_rot_59: 1515819014
+      shortLive_rot_6: -81636144
+      shortLive_rot_60: -7181294
+      shortLive_rot_61: 1038771942
+      shortLive_rot_62: 443229578
+      shortLive_rot_63: 1989305626
+      shortLive_rot_64: 675269765
+      shortLive_rot_65: 932360927
+      shortLive_rot_66: -1527371790
+      shortLive_rot_67: -1033534155
+      shortLive_rot_68: -766417905
+      shortLive_rot_69: -771012644
+      shortLive_rot_7: 2102362798
+      shortLive_rot_70: -1766101048
+      shortLive_rot_71: 417570378
+      shortLive_rot_72: -1927354614
+      shortLive_rot_73: -788236782
+      shortLive_rot_74: 788636257
+      shortLive_rot_75: -1865486112
+      shortLive_rot_76: -636912946
+      shortLive_rot_77: 1409921545
+      shortLive_rot_78: 662068020
+      shortLive_rot_79: -1176099384
+      shortLive_rot_8: 1908963631
+      shortLive_rot_80: 870616224
+      shortLive_rot_81: -586584231
+      shortLive_rot_82: -86136189
+      shortLive_rot_83: 1435261602
+      shortLive_rot_84: -1265828840
+      shortLive_rot_85: -1163877864
+      shortLive_rot_86: -1961910798
+      shortLive_rot_87: 964521543
+      shortLive_rot_88: 704225257
+      shortLive_rot_89: 242614055
+      shortLive_rot_9: -1145516663
+      shortLive_rot_90: 443954159
+      shortLive_rot_91: -1175493605
+      shortLive_rot_92: -1903841292
+      shortLive_rot_93: 224338115
+      shortLive_rot_94: 1407449747
+      shortLive_rot_95: -732438578
+      shortLive_rot_96: -1749944676
+      shortLive_rot_97: -1550047067
+      shortLive_rot_98: 245398540
+      shortLive_rot_99: 1526448591
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: ntrshortlive/common
+  assetBundleVariant: 

@@ -1,0 +1,2181 @@
+fileFormatVersion: 2
+guid: 2cbed287815b20940b4f246101a71547
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 100
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: corner_2
+      rect:
+        serializedVersion: 2
+        x: 3209
+        y: 868
+        width: 374
+        height: 374
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb4a2207b7847d049bb524aeb7dd3095
+      internalID: -802625710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radio_2
+      rect:
+        serializedVersion: 2
+        x: 2719
+        y: 3223
+        width: 137
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25cc1fe7d73b2d643ba33e182c10459d
+      internalID: 1111879098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doctor_head_0
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 2739
+        width: 282
+        height: 298
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11def12b3be593846ab87c74021b7d06
+      internalID: 1933536464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fork_3
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 2307
+        width: 277
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11e5a1372b2285c4dbbf5a0cc4c35cc2
+      internalID: -1429813814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doctor_leg_1
+      rect:
+        serializedVersion: 2
+        x: 1919
+        y: 1874
+        width: 323
+        height: 241
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7954c47cbd5aa704cbc0436e2b1a14fd
+      internalID: 1348183726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sick_main_29
+      rect:
+        serializedVersion: 2
+        x: 3969
+        y: 3500
+        width: 19
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a4dfa5668e88d04980cf1169ef4ac1b
+      internalID: -1999160733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: organism_0
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 3200
+        width: 193
+        height: 159
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 202ae674f3d31aa48892b6f4702b48ca
+      internalID: 310217554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: organism_1
+      rect:
+        serializedVersion: 2
+        x: 525
+        y: 3193
+        width: 193
+        height: 143
+      alignment: 9
+      pivot: {x: 0.497, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63c9e0f85787bef479f350968eee3db5
+      internalID: -7863152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: virus_resist_0
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 918
+        width: 275
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85f514ff5f9519a4f8ecce3e36fc95d4
+      internalID: 55993229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: virus_0
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 3891
+        width: 208
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd1a0008f86ee8e42ad4286a92ad6397
+      internalID: -252320285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: virus_1
+      rect:
+        serializedVersion: 2
+        x: 518
+        y: 3892
+        width: 206
+        height: 148
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc43829ef2636b94aad47362604c2966
+      internalID: 1908573535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: virus_2
+      rect:
+        serializedVersion: 2
+        x: 905
+        y: 3889
+        width: 205
+        height: 151
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21e4ecbcae627d54a82c1042c58132ca
+      internalID: 1932677982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: virus_3
+      rect:
+        serializedVersion: 2
+        x: 1291
+        y: 3891
+        width: 207
+        height: 148
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a45fce0512a94aa458003f3337c6627f
+      internalID: 1146971881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: virus_4
+      rect:
+        serializedVersion: 2
+        x: 1682
+        y: 3892
+        width: 209
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99d8bba0e2a81c24e8f318b71293e041
+      internalID: -1991781044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: virus_5
+      rect:
+        serializedVersion: 2
+        x: 2076
+        y: 3890
+        width: 193
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d68baf92cea18d94c83196a8f0d50d01
+      internalID: 853603398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: virus_6
+      rect:
+        serializedVersion: 2
+        x: 2453
+        y: 3889
+        width: 205
+        height: 97
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46a5dc9241af9ee47bbb7aa218e4442f
+      internalID: 1980622154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: virus_7
+      rect:
+        serializedVersion: 2
+        x: 2840
+        y: 3888
+        width: 205
+        height: 121
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79b0335b072343d43b01662373a42d2f
+      internalID: -737039221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: virus_8
+      rect:
+        serializedVersion: 2
+        x: 3226
+        y: 3892
+        width: 208
+        height: 147
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84b1758403ad035429b4fa1dc69bc6ff
+      internalID: 778873934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: virus_9
+      rect:
+        serializedVersion: 2
+        x: 3613
+        y: 3891
+        width: 209
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d42c86d7c2e8a841af2a6a177ab36f8
+      internalID: -2107094898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: virus_10
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 3542
+        width: 207
+        height: 207
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c74f0c22611a8e04b83ed44b2355f32d
+      internalID: 986602743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: virus_11
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 3539
+        width: 205
+        height: 205
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d8ba388c82420a4daa395ce49b08bc6
+      internalID: 1810579873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: virus_12
+      rect:
+        serializedVersion: 2
+        x: 913
+        y: 3533
+        width: 133
+        height: 196
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d43ac83c5373dc4286022b7b0288cc0
+      internalID: -19853634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: virus_13
+      rect:
+        serializedVersion: 2
+        x: 1243
+        y: 3535
+        width: 110
+        height: 194
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8bd7f03eed6686479e8932bf6503109
+      internalID: -1650341719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: virus_14
+      rect:
+        serializedVersion: 2
+        x: 1556
+        y: 3536
+        width: 132
+        height: 193
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e2495bfddffeea458b5c0da9440f153
+      internalID: -2127473361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: virus_15
+      rect:
+        serializedVersion: 2
+        x: 1887
+        y: 3548
+        width: 114
+        height: 188
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d1578984c933eb41b972bd70d4d71a6
+      internalID: -172394325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: virus_16
+      rect:
+        serializedVersion: 2
+        x: 2197
+        y: 3529
+        width: 126
+        height: 207
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3ca9b8509899b54ba26c6421062db34
+      internalID: -939927299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: virus_18
+      rect:
+        serializedVersion: 2
+        x: 2833
+        y: 3539
+        width: 159
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46560bb40fe77ab42920f892d5ec464e
+      internalID: 1795694611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: virus_17
+      rect:
+        serializedVersion: 2
+        x: 2515
+        y: 3537
+        width: 145
+        height: 185
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a55b09e389f57934c81d2295b7c8d6e5
+      internalID: 1691008205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sick_main_23
+      rect:
+        serializedVersion: 2
+        x: 3147
+        y: 3531
+        width: 114
+        height: 211
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f48c626ffc8c6634eb70b9a06bc6ad2a
+      internalID: 138300236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sick_main_26
+      rect:
+        serializedVersion: 2
+        x: 3672
+        y: 3460
+        width: 98
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f9f59052fc7b0f41b3c2ef273680f79
+      internalID: -1346992477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sick_main_28
+      rect:
+        serializedVersion: 2
+        x: 3430
+        y: 3475
+        width: 63
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 460aa24867a7a104fa3b96c09e3612a7
+      internalID: 666478421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: organism_2
+      rect:
+        serializedVersion: 2
+        x: 913
+        y: 3202
+        width: 193
+        height: 157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a73fbea06fd388746a07fe20a7cc66a0
+      internalID: 366997328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: organism_3
+      rect:
+        serializedVersion: 2
+        x: 1303
+        y: 3196
+        width: 189
+        height: 179
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d4fb888325ca984196e0fa0f07fbafa
+      internalID: 2071472580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: organism_4
+      rect:
+        serializedVersion: 2
+        x: 1690
+        y: 3182
+        width: 189
+        height: 197
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c76eb59f52536d347820c82302b84ea0
+      internalID: -548836086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radio_0
+      rect:
+        serializedVersion: 2
+        x: 2072
+        y: 3224
+        width: 137
+        height: 129
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbaf0e1032ed4c34eb570b9a02c3123d
+      internalID: -421496423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: radio_1
+      rect:
+        serializedVersion: 2
+        x: 2396
+        y: 3224
+        width: 137
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07458a4b2464b2440a363246616a9e80
+      internalID: -288897160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sick_main_38
+      rect:
+        serializedVersion: 2
+        x: 3034
+        y: 3206
+        width: 147
+        height: 151
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41725dcfcc2a6264e84cc9e5bc428f64
+      internalID: 997623067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sick_main_39
+      rect:
+        serializedVersion: 2
+        x: 3438
+        y: 3226
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0a8554126315d9458f5e57d5d917266
+      internalID: 1848821635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sick_main_43
+      rect:
+        serializedVersion: 2
+        x: 3672
+        y: 3202
+        width: 92
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3562b284a48efbb40881c7999272c038
+      internalID: -1154663545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sick_main_46
+      rect:
+        serializedVersion: 2
+        x: 3940
+        y: 3211
+        width: 78
+        height: 76
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc363d9dbf3dd1448b9a49556c7ce0ff
+      internalID: 59853899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doctor_head_1
+      rect:
+        serializedVersion: 2
+        x: 579
+        y: 2736
+        width: 282
+        height: 291
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f5fd3bcdd744494dbdc572ffb0ca55b
+      internalID: -2009488626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doctor_head_2
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 2760
+        width: 282
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58656e1b516f22945aa21f4856ececb4
+      internalID: -1778222066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doctor_head_3
+      rect:
+        serializedVersion: 2
+        x: 1483
+        y: 2757
+        width: 282
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25d64af148280e7489f8836c5dab196c
+      internalID: -326402817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doctor_head_4
+      rect:
+        serializedVersion: 2
+        x: 1935
+        y: 2759
+        width: 279
+        height: 272
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17c898b7136dd5247a7a26cb4fdd7197
+      internalID: 336111520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doctor_head_5
+      rect:
+        serializedVersion: 2
+        x: 2386
+        y: 2757
+        width: 282
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 678f161e1e3cc1e42a4e1749594b712f
+      internalID: 1407187509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doctor_head_6
+      rect:
+        serializedVersion: 2
+        x: 2839
+        y: 2758
+        width: 278
+        height: 268
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02c728bf48d45d741812447d7b6ea079
+      internalID: 105379021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doctor_head_7
+      rect:
+        serializedVersion: 2
+        x: 3291
+        y: 2759
+        width: 278
+        height: 265
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7f3df87a8c031b44b547b809e4933ae
+      internalID: 1085899632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doctor_head_8
+      rect:
+        serializedVersion: 2
+        x: 130
+        y: 2303
+        width: 278
+        height: 274
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 227e72221bd612440b6254ede70ffe07
+      internalID: 1521019007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doctor_arm_0
+      rect:
+        serializedVersion: 2
+        x: 1026
+        y: 2332
+        width: 357
+        height: 218
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0966faf5c60d79d41a2e4672e20a8aac
+      internalID: -244670704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doctor_arm_1
+      rect:
+        serializedVersion: 2
+        x: 1542
+        y: 2331
+        width: 356
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb52ab941715dc542a4a741a8538407b
+      internalID: -1942448487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doctor_arm_2
+      rect:
+        serializedVersion: 2
+        x: 2082
+        y: 2334
+        width: 299
+        height: 218
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ec691551ffb9a74c8e54a423bb8cff0
+      internalID: 1038277834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doctor_arm_3
+      rect:
+        serializedVersion: 2
+        x: 2595
+        y: 2331
+        width: 305
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 653ee4d458f9535448f3c5b8e0b4ad8b
+      internalID: 1412317423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doctor_arm_4
+      rect:
+        serializedVersion: 2
+        x: 3119
+        y: 2329
+        width: 289
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b732483ebe1d4394eafa122e79e4d6a8
+      internalID: 393157355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doctor_arm_5
+      rect:
+        serializedVersion: 2
+        x: 3638
+        y: 2328
+        width: 287
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c79417a6b743ed44ba46a0a8e8723ba9
+      internalID: 287384698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doctor_0
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 1494
+        width: 408
+        height: 546
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f70142fcfc5ce7459f54afcd95bed0d
+      internalID: 238154750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doctor_1
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 1494
+        width: 396
+        height: 547
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf2203e510c899843a5a3a39266fa2ee
+      internalID: 1074413175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doctor_leg_0
+      rect:
+        serializedVersion: 2
+        x: 1321
+        y: 1862
+        width: 357
+        height: 266
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f73e66b736d2e240af277d56f134e16
+      internalID: 1889612716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doctor_leg_2
+      rect:
+        serializedVersion: 2
+        x: 2489
+        y: 1911
+        width: 408
+        height: 169
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56c920633f228ff4da4a6741f44b3428
+      internalID: -436928230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sick_main_69
+      rect:
+        serializedVersion: 2
+        x: 1973
+        y: 1867
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e19c4aa84bddf44478c0b51d868ed8bb
+      internalID: -952566429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: object_10
+      rect:
+        serializedVersion: 2
+        x: 3909
+        y: 1724
+        width: 115
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e473c23a758c7c54dba6a5b30cb4426e
+      internalID: -1987866192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doctor_leg_3
+      rect:
+        serializedVersion: 2
+        x: 1326
+        y: 1418
+        width: 347
+        height: 253
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c082ef6f2888aa54fbf7deeab9855058
+      internalID: 1249293129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doctor_leg_4
+      rect:
+        serializedVersion: 2
+        x: 1912
+        y: 1415
+        width: 336
+        height: 255
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e141b76ca5cdd80498d2a14fd506df66
+      internalID: -1493756477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doctor_leg_5
+      rect:
+        serializedVersion: 2
+        x: 2475
+        y: 1442
+        width: 441
+        height: 205
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5974b31a93f27dd4babb0033050b7686
+      internalID: -625173179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: doctor_leg_6
+      rect:
+        serializedVersion: 2
+        x: 3144
+        y: 1423
+        width: 388
+        height: 243
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93a46e2339f658041bbbbdd57921eb05
+      internalID: -988366329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: object_0
+      rect:
+        serializedVersion: 2
+        x: 3707
+        y: 1393
+        width: 119
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14dc63e38f2700a47869746e70a6c383
+      internalID: 1341582912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: object_3
+      rect:
+        serializedVersion: 2
+        x: 3927
+        y: 1394
+        width: 101
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c53581b112ae514fa301e79491dbfad
+      internalID: -716759044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: virus_resist_1
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 907
+        width: 297
+        height: 297
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57b5e134cf0e9734cab6aedfe00b9837
+      internalID: 1591725854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: virus_resist_2
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 894
+        width: 326
+        height: 325
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2165d4d1a56657946ada43faa75bd95f
+      internalID: 1268100220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: virus_resist_3
+      rect:
+        serializedVersion: 2
+        x: 1656
+        y: 866
+        width: 384
+        height: 382
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe9f7bad5f479334e96950ae321ebcf1
+      internalID: -721236354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: virus_resist_4
+      rect:
+        serializedVersion: 2
+        x: 2171
+        y: 864
+        width: 387
+        height: 387
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dcc5be198ec76e4795e112080fd3374
+      internalID: 1966967154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: corner_1
+      rect:
+        serializedVersion: 2
+        x: 2728
+        y: 903
+        width: 305
+        height: 310
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 576546fd246ea2148824c7d8fc638cbe
+      internalID: 2866425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: object_1
+      rect:
+        serializedVersion: 2
+        x: 3741
+        y: 1071
+        width: 56
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c6107ee6e3a0dd40bdd8f0ea01fdd3e
+      internalID: 1899939602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: object_5
+      rect:
+        serializedVersion: 2
+        x: 3919
+        y: 1079
+        width: 102
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eccc84b02aeb7ca4da856ee0599b02ad
+      internalID: -700389824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: object_2
+      rect:
+        serializedVersion: 2
+        x: 3723
+        y: 750
+        width: 95
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dbd264cfec854f419ef81ea7dcdc437
+      internalID: 1736709376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: object_6
+      rect:
+        serializedVersion: 2
+        x: 3914
+        y: 747
+        width: 104
+        height: 103
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba85fb23d8b73784f990168e95e572d7
+      internalID: -1400238664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sick_main_96
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 515
+        width: 496
+        height: 179
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b07a989ec80229e4d843c83ccf079ea1
+      internalID: -1885966754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: key
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 306
+        width: 398
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f57ba8a39ef4b04db08c9934b31bcc6
+      internalID: 1713147920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fork_1
+      rect:
+        serializedVersion: 2
+        x: 1728
+        y: 641
+        width: 621
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c61ce04807e70fc49ac704209274bc05
+      internalID: 1899224344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: virus_dash
+      rect:
+        serializedVersion: 2
+        x: 2521
+        y: 515
+        width: 846
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 547200e926f70d342b4ed17147229098
+      internalID: 465004101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fork_2
+      rect:
+        serializedVersion: 2
+        x: 1730
+        y: 379
+        width: 617
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98abbd26469a71043b7b6f62dff79529
+      internalID: 1860603115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: object_4
+      rect:
+        serializedVersion: 2
+        x: 3710
+        y: 422
+        width: 115
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a9b522b305883d42b41e3338db2554c
+      internalID: -1379803609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: object_7
+      rect:
+        serializedVersion: 2
+        x: 3915
+        y: 424
+        width: 103
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 256baab6c0b6cde4bad0d0c5a18bfc83
+      internalID: -1769847781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hit
+      rect:
+        serializedVersion: 2
+        x: 1395
+        y: 326
+        width: 198
+        height: 367
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e333078c17d7da4482b8031f580e576
+      internalID: -368976279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sick_main_107
+      rect:
+        serializedVersion: 2
+        x: 163
+        y: 123
+        width: 484
+        height: 186
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4183a4b7983ae9444bb31d918ed9c600
+      internalID: 836046865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shock
+      rect:
+        serializedVersion: 2
+        x: 3308
+        y: 134
+        width: 177
+        height: 159
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d6ad9f5e24865b4fa681541603fc3cc
+      internalID: -527670469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: organism_5
+      rect:
+        serializedVersion: 2
+        x: 2530
+        y: 126
+        width: 183
+        height: 183
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2efe703ecade3a44e984649d47150b23
+      internalID: 1582364468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: organism_6
+      rect:
+        serializedVersion: 2
+        x: 2918
+        y: 124
+        width: 184
+        height: 185
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b6116da58ac85249a625ce0e0ffe4a8
+      internalID: -872835235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: object_9
+      rect:
+        serializedVersion: 2
+        x: 3726
+        y: 112
+        width: 88
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb6cf228dc88cd946b91921eaedc5625
+      internalID: -1590337553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: object_8
+      rect:
+        serializedVersion: 2
+        x: 3931
+        y: 98
+        width: 70
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1478861e16e3964cbc02059ce760cb0
+      internalID: 708020952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hit_fast
+      rect:
+        serializedVersion: 2
+        x: 1395
+        y: 564
+        width: 165
+        height: 129
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ea265a877d1df64b89e004a5309294e
+      internalID: -1840603377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: hit_late
+      rect:
+        serializedVersion: 2
+        x: 1421
+        y: 326
+        width: 172
+        height: 94
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c40e471d3a8bc74d92ca1805757a8c2
+      internalID: -285319817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      corner_1: 2866425
+      corner_2: -802625710
+      doctor_0: 238154750
+      doctor_1: 1074413175
+      doctor_arm_0: -244670704
+      doctor_arm_1: -1942448487
+      doctor_arm_2: 1038277834
+      doctor_arm_3: 1412317423
+      doctor_arm_4: 393157355
+      doctor_arm_5: 287384698
+      doctor_head_0: 1933536464
+      doctor_head_1: -2009488626
+      doctor_head_2: -1778222066
+      doctor_head_3: -326402817
+      doctor_head_4: 336111520
+      doctor_head_5: 1407187509
+      doctor_head_6: 105379021
+      doctor_head_7: 1085899632
+      doctor_head_8: 1521019007
+      doctor_leg_0: 1889612716
+      doctor_leg_1: 1348183726
+      doctor_leg_2: -436928230
+      doctor_leg_3: 1249293129
+      doctor_leg_4: -1493756477
+      doctor_leg_5: -625173179
+      doctor_leg_6: -988366329
+      fork_1: 1899224344
+      fork_2: 1860603115
+      fork_3: -1429813814
+      hit: -368976279
+      hit_fast: -361247953
+      hit_late: -285319817
+      key: 1713147920
+      object_0: 1341582912
+      object_1: 1899939602
+      object_10: -1987866192
+      object_2: 1736709376
+      object_3: -716759044
+      object_4: -1379803609
+      object_5: -700389824
+      object_6: -1400238664
+      object_7: -1769847781
+      object_8: 708020952
+      object_9: -1590337553
+      organism_0: 310217554
+      organism_1: -7863152
+      organism_2: 366997328
+      organism_3: 2071472580
+      organism_4: -548836086
+      organism_5: 1582364468
+      organism_6: -872835235
+      radio_0: -421496423
+      radio_1: -288897160
+      radio_2: 1111879098
+      shock: -527670469
+      sick_main_0: 1580539804
+      sick_main_100: 1600642827
+      sick_main_101: 1632589900
+      sick_main_107: 836046865
+      sick_main_108: -470861058
+      sick_main_109: 52562856
+      sick_main_110: -1081694937
+      sick_main_111: -1645222655
+      sick_main_112: 965463901
+      sick_main_113: -1931250378
+      sick_main_115: 610105427
+      sick_main_117: -1197924618
+      sick_main_119: 1738736052
+      sick_main_120: 1083253594
+      sick_main_121: -1528292787
+      sick_main_122: -1978601808
+      sick_main_123: -1240118683
+      sick_main_124: 481852103
+      sick_main_125: 742152807
+      sick_main_19: -1447091920
+      sick_main_21: 1291319973
+      sick_main_22: 55967072
+      sick_main_23: 138300236
+      sick_main_24: 1716393482
+      sick_main_25: -1498011618
+      sick_main_26: -1346992477
+      sick_main_27: -1614333926
+      sick_main_28: 666478421
+      sick_main_29: -1999160733
+      sick_main_38: 997623067
+      sick_main_39: 1848821635
+      sick_main_40: -707858856
+      sick_main_41: 1768880019
+      sick_main_42: -1795217113
+      sick_main_43: -1154663545
+      sick_main_44: -2098194727
+      sick_main_45: 591037156
+      sick_main_46: 59853899
+      sick_main_49: 1660174998
+      sick_main_69: -952566429
+      sick_main_77: -1154026639
+      sick_main_78: 1058879430
+      sick_main_83: 981294801
+      sick_main_85: -1370700235
+      sick_main_90: 883933068
+      sick_main_91: -1094808295
+      sick_main_94: -1131100833
+      sick_main_95: 738650431
+      sick_main_96: -1885966754
+      sick_main_98: 777406962
+      virus_0: -252320285
+      virus_1: 1908573535
+      virus_10: 986602743
+      virus_11: 1810579873
+      virus_12: -19853634
+      virus_13: -1650341719
+      virus_14: -2127473361
+      virus_15: -172394325
+      virus_16: -939927299
+      virus_17: 1691008205
+      virus_18: 1795694611
+      virus_2: 1932677982
+      virus_3: 1146971881
+      virus_4: -1991781044
+      virus_5: 853603398
+      virus_6: 1980622154
+      virus_7: -737039221
+      virus_8: 778873934
+      virus_9: -2107094898
+      virus_dash: 465004101
+      virus_resist_0: 55993229
+      virus_resist_1: 1591725854
+      virus_resist_2: 1268100220
+      virus_resist_3: -721236354
+      virus_resist_4: 1966967154
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: agbvirus/common
+  assetBundleVariant: 

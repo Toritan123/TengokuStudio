@@ -1,0 +1,1456 @@
+fileFormatVersion: 2
+guid: 53f3dbd53e952e848a32797fd1cd57af
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 100
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: moai_Face_NoMouth
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2725
+        width: 787
+        height: 1362
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2906b5f6cc409b740988cb7da5db9206
+      internalID: 144071100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moai_Face_Chin
+      rect:
+        serializedVersion: 2
+        x: 807
+        y: 2737
+        width: 810
+        height: 1354
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28873e81bab06494a9ae1d9e2a10c58d
+      internalID: -1430504679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Birds_Wings3
+      rect:
+        serializedVersion: 2
+        x: 2661
+        y: 3939
+        width: 288
+        height: 124
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0a9a062f9819a54d976fcc7e533d197
+      internalID: -2136092233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Birds_Wings4
+      rect:
+        serializedVersion: 2
+        x: 2961
+        y: 3941
+        width: 282
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cbb321a66adb0d489191d94382094bc
+      internalID: -1178694147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bird_Wings_Penultimate
+      rect:
+        serializedVersion: 2
+        x: 3246
+        y: 3941
+        width: 309
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 810a3c182594966479411a676ce790aa
+      internalID: 792379703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Birds_Wings1
+      rect:
+        serializedVersion: 2
+        x: 3245
+        y: 3717
+        width: 282
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 828a7028414166c44996d13a9ce5a945
+      internalID: 1625969233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoopSplash1
+      rect:
+        serializedVersion: 2
+        x: 3575
+        y: 3900
+        width: 151
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fc7e43a8e0fbd94092945b11131c3a2
+      internalID: 534246321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoopRemain1
+      rect:
+        serializedVersion: 2
+        x: 3827
+        y: 3883
+        width: 94
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90801c91c9d1fe342a526eb285f864c9
+      internalID: -1210043181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoopDrip1
+      rect:
+        serializedVersion: 2
+        x: 3967
+        y: 3826
+        width: 94
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12651aeb341229a4f8dd2d12e4b2fd11
+      internalID: 61500043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moai_Ears
+      rect:
+        serializedVersion: 2
+        x: 1767
+        y: 3141
+        width: 234
+        height: 740
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19ce805fc99b79849a76082b9b22012e
+      internalID: 711636909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moai_Ribbon
+      rect:
+        serializedVersion: 2
+        x: 2035
+        y: 3435
+        width: 422
+        height: 446
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fc247130874be147b7c91f613a40cb1
+      internalID: 1755924416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoopLines
+      rect:
+        serializedVersion: 2
+        x: 2766
+        y: 3302
+        width: 85
+        height: 577
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4bbba553cd98ec4abb914325a9e84cd
+      internalID: -1168282898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Birds_Wings2
+      rect:
+        serializedVersion: 2
+        x: 2907
+        y: 3717
+        width: 330
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38bef5534e3f771419035fe5e3bfb225
+      internalID: 334319424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoopSplash2
+      rect:
+        serializedVersion: 2
+        x: 3588
+        y: 3687
+        width: 153
+        height: 139
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13a421d7753aa584cb58d24dffc51293
+      internalID: 1499331193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoopRemain2
+      rect:
+        serializedVersion: 2
+        x: 3825
+        y: 3651
+        width: 82
+        height: 82
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1c7b588cb1df8e488e6efeaa350c45c
+      internalID: 1424780808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bird_Beat1
+      rect:
+        serializedVersion: 2
+        x: 3149
+        y: 3478
+        width: 350
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a7ded34224fb4b42a28a1ca3fba6cd1
+      internalID: -1093024090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoopDrip2
+      rect:
+        serializedVersion: 2
+        x: 3961
+        y: 3598
+        width: 107
+        height: 138
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6f05a0a0d03a6449b54b23ec20163c4
+      internalID: 368169504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoopSplash3
+      rect:
+        serializedVersion: 2
+        x: 3578
+        y: 3461
+        width: 154
+        height: 151
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2992002e03c83754fbfd3120af164d65
+      internalID: 1010284339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoopRemain3
+      rect:
+        serializedVersion: 2
+        x: 3835
+        y: 3425
+        width: 87
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e0f19d79f41ffe42bb20776108e891d
+      internalID: 197049092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoopDrip3
+      rect:
+        serializedVersion: 2
+        x: 3977
+        y: 3362
+        width: 97
+        height: 174
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 711a5a57307341d4ca37b244108aac84
+      internalID: -1388397611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moai_Eye_Big
+      rect:
+        serializedVersion: 2
+        x: 2111
+        y: 3283
+        width: 124
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5542c6193ba7fda49bc9b74f0f19530f
+      internalID: -1303862761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bird_Beat2
+      rect:
+        serializedVersion: 2
+        x: 3169
+        y: 3194
+        width: 330
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a518040ecab7ae46b68b31dd0203ff7
+      internalID: 1666953194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moai_Eye_Close1
+      rect:
+        serializedVersion: 2
+        x: 2259
+        y: 3297
+        width: 78
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ff749da34bbca84dae45237e4f52996
+      internalID: -1704490774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moai_SideEye_Big
+      rect:
+        serializedVersion: 2
+        x: 2687
+        y: 3144
+        width: 143
+        height: 83
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39a55f7bc2379d0409eb0e75557710c6
+      internalID: 819420438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moai_SideEye_Small
+      rect:
+        serializedVersion: 2
+        x: 2482
+        y: 3168
+        width: 85
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a1059e6b27a0de4cb9d91812bf312a1
+      internalID: 1226883121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moai_Eye_Close2
+      rect:
+        serializedVersion: 2
+        x: 2365
+        y: 3295
+        width: 56
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b746eb937be4a1438cb9e19ea093787
+      internalID: -828759744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoopSplash4
+      rect:
+        serializedVersion: 2
+        x: 3567
+        y: 3209
+        width: 160
+        height: 169
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fefa4b28768bdf3459166b805a511e7f
+      internalID: 893292232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bird_Stand
+      rect:
+        serializedVersion: 2
+        x: 3169
+        y: 2932
+        width: 330
+        height: 251
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f5265b577a201b489f6c60186472f3d
+      internalID: -605726773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoopRemain4
+      rect:
+        serializedVersion: 2
+        x: 3831
+        y: 3161
+        width: 90
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 240d3adb4d954dc47b03cf8769dfadc1
+      internalID: 345241243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoopDrip4
+      rect:
+        serializedVersion: 2
+        x: 3960
+        y: 3107
+        width: 95
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5174cd21e07da494ebef3cc72eef1c52
+      internalID: -764797141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moai_Speak_Open2
+      rect:
+        serializedVersion: 2
+        x: 2453
+        y: 2616
+        width: 374
+        height: 499
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80153900af2afa54dab9a88025f9e615
+      internalID: -1812395575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moai_Neutral
+      rect:
+        serializedVersion: 2
+        x: 1653
+        y: 2759
+        width: 374
+        height: 282
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63051e79505947846bb322746ef87d93
+      internalID: -1609020717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moai_Speak_Open1
+      rect:
+        serializedVersion: 2
+        x: 2059
+        y: 2688
+        width: 364
+        height: 385
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f672748ecb8c2d4459a8f15f0d6afe7a
+      internalID: 1334847134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BirdShadow
+      rect:
+        serializedVersion: 2
+        x: 2907
+        y: 2959
+        width: 170
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52fdf7d5e829f4645b3bcc2babb338eb
+      internalID: -874132828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoopSplash5
+      rect:
+        serializedVersion: 2
+        x: 3580
+        y: 2941
+        width: 162
+        height: 190
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71707d5b1a62c2b49850b7af9c3b5aaf
+      internalID: -1404856122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoopRemain5
+      rect:
+        serializedVersion: 2
+        x: 3845
+        y: 2913
+        width: 80
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c22c5d74c81121c4fb1038095b3f8882
+      internalID: 27416374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PoopDrip5
+      rect:
+        serializedVersion: 2
+        x: 3977
+        y: 2893
+        width: 95
+        height: 110
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 209f84b4286359248aeddb8a9671aa70
+      internalID: -1152881479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moai_Pedestal
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 1589
+        width: 958
+        height: 1092
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 627278f450fb7474dafab8b11000aaa3
+      internalID: 1203698139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moai_Speak_Close1
+      rect:
+        serializedVersion: 2
+        x: 1381
+        y: 2247
+        width: 440
+        height: 480
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dec8b481e3b9aa41a34167961b812c1
+      internalID: 553914535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moai_Speak_Close2
+      rect:
+        serializedVersion: 2
+        x: 1887
+        y: 2213
+        width: 408
+        height: 438
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06f0f120a11fc62438325d5353c13160
+      internalID: 461466056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Moai_Speak_Close3
+      rect:
+        serializedVersion: 2
+        x: 2335
+        y: 2253
+        width: 468
+        height: 322
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6e0962e4b9a8ca4f988e1cf6bfe63e5
+      internalID: 1911417211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moai_Shout1
+      rect:
+        serializedVersion: 2
+        x: 1255
+        y: 1559
+        width: 424
+        height: 636
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 970138f53b613a14faccc5de0a4ec9d5
+      internalID: -1704388131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moai_Shout2
+      rect:
+        serializedVersion: 2
+        x: 1759
+        y: 1571
+        width: 418
+        height: 582
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3b73070ba6e8754e8d95bc4c0b22b2f
+      internalID: -924628093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moai_Shout3
+      rect:
+        serializedVersion: 2
+        x: 2243
+        y: 1707
+        width: 378
+        height: 412
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e05a3987761492a4aaadcf9f2cb4358c
+      internalID: 1219766025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moai_Shout4
+      rect:
+        serializedVersion: 2
+        x: 2633
+        y: 1709
+        width: 414
+        height: 276
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5328a64e8fdb92441938e64a70eb5195
+      internalID: -820994861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BackgroundNight
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 1173
+        width: 2640
+        height: 362
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1af451bd3de54e408a7de93a23b2580
+      internalID: -728898349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass_Cover
+      rect:
+        serializedVersion: 2
+        x: 2889
+        y: 1227
+        width: 538
+        height: 282
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7c77245676ead440817ea2eb968367f
+      internalID: 782902684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass_Hole
+      rect:
+        serializedVersion: 2
+        x: 3517
+        y: 1245
+        width: 538
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aee81e1050565da41a988a46bd7b95ed
+      internalID: 2137862921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BackgroundGradient
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 429
+        width: 2640
+        height: 718
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8513b458317404543baf69c5ef6516c4
+      internalID: -939419310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass_FG
+      rect:
+        serializedVersion: 2
+        x: 2813
+        y: 793
+        width: 1260
+        height: 290
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6aaf3fd9912961429db43dc97fb5d54
+      internalID: -1326543634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BackgroundDay
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 39
+        width: 2640
+        height: 362
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd81aab1c7e81ae40888cb3e879af72f
+      internalID: -1157321857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Grass_BG
+      rect:
+        serializedVersion: 2
+        x: 2811
+        y: 37
+        width: 1260
+        height: 696
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9bfd67353d8ef14babee9cbb625adbf
+      internalID: 720941885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moai_Eye_Small
+      rect:
+        serializedVersion: 2
+        x: 2590
+        y: 3407
+        width: 112
+        height: 107
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 876d7f4fe185d3242a586e81e9faba55
+      internalID: -315890078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moai_Eyes_Left
+      rect:
+        serializedVersion: 2
+        x: 2096
+        y: 3146
+        width: 109
+        height: 113
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 734f48be2db2751489d731e59b5fd5a1
+      internalID: 1425837312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moai_Eyes_Right
+      rect:
+        serializedVersion: 2
+        x: 2290
+        y: 3121
+        width: 118
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e857c314fc588a94ba0d96dab04ef7a3
+      internalID: -1148065219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moai_Squint_Left
+      rect:
+        serializedVersion: 2
+        x: 2962
+        y: 2810
+        width: 98
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c7c6f630678cc84598c088cb8aee1d0
+      internalID: -785626499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moai_Squint_Right
+      rect:
+        serializedVersion: 2
+        x: 3158
+        y: 2784
+        width: 152
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 900c719c5abf7f8458a3aa301351bba9
+      internalID: -2126056928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Bird_Shadow_Moai
+      rect:
+        serializedVersion: 2
+        x: 3392
+        y: 2757
+        width: 265
+        height: 134
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abedbea251442d848b4bfb9f9cb949e9
+      internalID: -724363666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moai_Main_0
+      rect:
+        serializedVersion: 2
+        x: 3054
+        y: 2214
+        width: 646
+        height: 472
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24bc5032068e35b47b2c5860ecb83e50
+      internalID: -1189711665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: moai_Main_1
+      rect:
+        serializedVersion: 2
+        x: 3471
+        y: 1766
+        width: 510
+        height: 411
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af85400532b9bf1479783a4a74adb9b5
+      internalID: -915056763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      BackgroundDay: -1157321857
+      BackgroundGradient: -939419310
+      BackgroundNight: -728898349
+      BirdShadow: -874132828
+      Bird_Beat1: -1093024090
+      Bird_Beat2: 1666953194
+      Bird_Shadow_Moai: -724363666
+      Bird_Stand: -605726773
+      Bird_Wings_Penultimate: 792379703
+      Birds_Wings1: 1625969233
+      Birds_Wings2: 334319424
+      Birds_Wings3: -2136092233
+      Birds_Wings4: -1178694147
+      Grass_BG: 720941885
+      Grass_Cover: 782902684
+      Grass_FG: -1326543634
+      Grass_Hole: 2137862921
+      Moai_Neutral: -1609020717
+      Moai_Speak_Close1: 553914535
+      Moai_Speak_Close2: 461466056
+      Moai_Speak_Close3: 1911417211
+      Moai_Speak_Open1: 1334847134
+      Moai_Speak_Open2: -1812395575
+      PoopDrip1: 61500043
+      PoopDrip2: 368169504
+      PoopDrip3: -1388397611
+      PoopDrip4: -764797141
+      PoopDrip5: -1152881479
+      PoopLines: -1168282898
+      PoopRemain1: -1210043181
+      PoopRemain2: 1424780808
+      PoopRemain3: 197049092
+      PoopRemain4: 345241243
+      PoopRemain5: 27416374
+      PoopSplash1: 534246321
+      PoopSplash2: 1499331193
+      PoopSplash3: 1010284339
+      PoopSplash4: 893292232
+      PoopSplash5: -1404856122
+      moai_Ears: 711636909
+      moai_Eye_Big: -1303862761
+      moai_Eye_Close1: -1704490774
+      moai_Eye_Close2: -828759744
+      moai_Eye_Small: 1333697533
+      moai_Eyes_Left: 1425837312
+      moai_Eyes_Right: -1148065219
+      moai_Face_Chin: -1430504679
+      moai_Face_NoMouth: 144071100
+      moai_Main_0: -1189711665
+      moai_Main_1: -915056763
+      moai_Main_13: -1752913679
+      moai_Main_16: 186279839
+      moai_Main_17: -1969871405
+      moai_Main_18: 212583899
+      moai_Main_19: 961980372
+      moai_Main_20: 1421058007
+      moai_Main_22: 1996685284
+      moai_Main_26: -204133529
+      moai_Main_27: 2040082145
+      moai_Main_28: 958542354
+      moai_Main_29: -1142555057
+      moai_Main_35: 842390382
+      moai_Main_39: 567246602
+      moai_Main_40: 624074716
+      moai_Main_41: 374594023
+      moai_Main_48: 1706451515
+      moai_Main_49: 657122879
+      moai_Main_5: -1878522138
+      moai_Main_50: 2139609338
+      moai_Main_54: -71973657
+      moai_Main_55: 1193484941
+      moai_Main_6: 792679367
+      moai_Pedestal: 1203698139
+      moai_Ribbon: 1755924416
+      moai_Shout1: -1704388131
+      moai_Shout2: -924628093
+      moai_Shout3: 1219766025
+      moai_Shout4: -820994861
+      moai_SideEye_Big: 819420438
+      moai_SideEye_Small: 1226883121
+      moai_Squint_Left: -785626499
+      moai_Squint_Right: -2126056928
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: ntrmoai/common
+  assetBundleVariant: 

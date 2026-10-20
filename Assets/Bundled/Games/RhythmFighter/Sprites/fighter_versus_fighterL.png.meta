@@ -1,0 +1,813 @@
+fileFormatVersion: 2
+guid: 2ca20c0fd169a394bbf46e3a36432d8e
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: fighter_versus_fighterL_0
+      rect:
+        serializedVersion: 2
+        x: 1679
+        y: 3609
+        width: 226
+        height: 405
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07c6258284e152749b6f65b1d8d8df5e
+      internalID: -866893408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fighter_versus_fighterL_1
+      rect:
+        serializedVersion: 2
+        x: 2959
+        y: 3659
+        width: 325
+        height: 392
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73b5c305b288a7940b6b43fdd1b13790
+      internalID: 181223693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fighter_versus_fighterL_2
+      rect:
+        serializedVersion: 2
+        x: 3585
+        y: 3881
+        width: 130
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34914cd9fcef88446bea3b25fc3ed187
+      internalID: -1842522263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fighter_versus_fighterL_5
+      rect:
+        serializedVersion: 2
+        x: 3737
+        y: 3877
+        width: 123
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bca014c3e25d8443b83bc4e299e652a
+      internalID: 469554541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fighter_versus_fighterL_6
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 3775
+        width: 270
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd324dd26745e0c4aadad87a3a53ed62
+      internalID: 1108273531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fighter_versus_fighterL_7
+      rect:
+        serializedVersion: 2
+        x: 513
+        y: 3726
+        width: 360
+        height: 260
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b8d64c8ec34cc945876ff07e1788003
+      internalID: -1788964433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fighter_versus_fighterL_8
+      rect:
+        serializedVersion: 2
+        x: 1093
+        y: 3657
+        width: 261
+        height: 326
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f297d3799e31b2408826fdb936d4de6
+      internalID: 64342141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fighter_versus_fighterL_9
+      rect:
+        serializedVersion: 2
+        x: 2197
+        y: 3681
+        width: 314
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50213f6b762052241bf2c321c9d0e2d6
+      internalID: 492202319
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fighter_versus_fighterL_12
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 3110
+        width: 222
+        height: 291
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85b2c28293155964995218c1bce0eaa1
+      internalID: -1526250609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fighter_versus_fighterL_13
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 3099
+        width: 278
+        height: 346
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d18d5ba148b2c6489bac52541bb7a0f
+      internalID: 440032616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fighter_versus_fighterL_14
+      rect:
+        serializedVersion: 2
+        x: 1946
+        y: 3041
+        width: 217
+        height: 420
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 418a2283c48523448837fb2663fbf038
+      internalID: -1407798890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fighter_versus_fighterL_15
+      rect:
+        serializedVersion: 2
+        x: 2587
+        y: 3037
+        width: 302
+        height: 406
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05650bb9c33cdd94da782763d9e2c465
+      internalID: -52807616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fighter_versus_fighterL_16
+      rect:
+        serializedVersion: 2
+        x: 3585
+        y: 3392
+        width: 472
+        height: 455
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6478348eb69f48f4d890b09fbc826d52
+      internalID: -1776049545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fighter_versus_fighterL_17
+      rect:
+        serializedVersion: 2
+        x: 1315
+        y: 3113
+        width: 191
+        height: 266
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b862ea628dc443488774ae62f29f40d
+      internalID: 1942988517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fighter_versus_fighterL_18
+      rect:
+        serializedVersion: 2
+        x: 3171
+        y: 2942
+        width: 387
+        height: 377
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e33085a04f34154c853e521b19e8c37
+      internalID: 692158454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fighter_versus_fighterL_19
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 2463
+        width: 433
+        height: 436
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 210e86b1fe99cab45a21675620145622
+      internalID: 590009110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fighter_versus_fighterL_20
+      rect:
+        serializedVersion: 2
+        x: 987
+        y: 2517
+        width: 146
+        height: 377
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 796079362487be34d82e5bfd445d533d
+      internalID: 391732540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fighter_versus_fighterL_21
+      rect:
+        serializedVersion: 2
+        x: 1621
+        y: 2479
+        width: 286
+        height: 416
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18a892c83cbb2a64c911eb9c7e5573b4
+      internalID: 1887315461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fighter_versus_fighterL_22
+      rect:
+        serializedVersion: 2
+        x: 2153
+        y: 2542
+        width: 617
+        height: 253
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa313c431cd9df144bfdf3899af06712
+      internalID: -1315549762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fighter_versus_fighterL_23
+      rect:
+        serializedVersion: 2
+        x: 2857
+        y: 2689
+        width: 1113
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35fda5a468268f4409a5b628a7d651ce
+      internalID: 1317994099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fighter_versus_fighterL_24
+      rect:
+        serializedVersion: 2
+        x: 313
+        y: 2005
+        width: 282
+        height: 317
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5c4978fa8b235d429de09ce70de4ce4
+      internalID: 844786208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fighter_versus_fighterL_25
+      rect:
+        serializedVersion: 2
+        x: 2742
+        y: 1863
+        width: 609
+        height: 648
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 466fdcceba95a7d488e900fc8061dfd5
+      internalID: 2018150903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fighter_versus_fighterL_26
+      rect:
+        serializedVersion: 2
+        x: 3473
+        y: 2285
+        width: 525
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bba1046e703d21b4fb6969668e84e4aa
+      internalID: 954708627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fighter_versus_fighterL_27
+      rect:
+        serializedVersion: 2
+        x: 1029
+        y: 2003
+        width: 756
+        height: 272
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cf371160603f3c4b9fd99fa9f0808ce
+      internalID: -276201520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fighter_versus_fighterL_28
+      rect:
+        serializedVersion: 2
+        x: 2189
+        y: 2079
+        width: 306
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b22caf436bb550458abccfa10da828d
+      internalID: -1781834260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fighter_versus_fighterL_29
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 1629
+        width: 305
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a7d1bab00092ac4f9ce08cc3113ee29
+      internalID: -75844813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fighter_versus_fighterL_30
+      rect:
+        serializedVersion: 2
+        x: 1253
+        y: 1561
+        width: 326
+        height: 238
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d1560afbf8592947afae30a9f6fb8f0
+      internalID: 1943817484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fighter_versus_fighterL_31
+      rect:
+        serializedVersion: 2
+        x: 2237
+        y: 1601
+        width: 206
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d028611eab3464f4599807d195cc8235
+      internalID: -884706141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fighter_versus_fighterL_32
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 1097
+        width: 262
+        height: 273
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a50a17dcb34da745b8584764590bb1c
+      internalID: 1585763030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fighter_versus_fighterL_33
+      rect:
+        serializedVersion: 2
+        x: 1282
+        y: 1118
+        width: 231
+        height: 268
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9310b73f5db5104fb19c891b4938460
+      internalID: 674830550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: fighter_versus_fighterL_34
+      rect:
+        serializedVersion: 2
+        x: 2298
+        y: 1171
+        width: 89
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72351914c94e5c049bbd0d97a54d8b5b
+      internalID: -1730420800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      fighter_versus_fighterL_0: -866893408
+      fighter_versus_fighterL_1: 181223693
+      fighter_versus_fighterL_10: 558952303
+      fighter_versus_fighterL_11: 1914659152
+      fighter_versus_fighterL_12: -1526250609
+      fighter_versus_fighterL_13: 440032616
+      fighter_versus_fighterL_14: -1407798890
+      fighter_versus_fighterL_15: -52807616
+      fighter_versus_fighterL_16: -1776049545
+      fighter_versus_fighterL_17: 1942988517
+      fighter_versus_fighterL_18: 692158454
+      fighter_versus_fighterL_19: 590009110
+      fighter_versus_fighterL_2: -1842522263
+      fighter_versus_fighterL_20: 391732540
+      fighter_versus_fighterL_21: 1887315461
+      fighter_versus_fighterL_22: -1315549762
+      fighter_versus_fighterL_23: 1317994099
+      fighter_versus_fighterL_24: 844786208
+      fighter_versus_fighterL_25: 2018150903
+      fighter_versus_fighterL_26: 954708627
+      fighter_versus_fighterL_27: -276201520
+      fighter_versus_fighterL_28: -1781834260
+      fighter_versus_fighterL_29: -75844813
+      fighter_versus_fighterL_3: 865167213
+      fighter_versus_fighterL_30: 1943817484
+      fighter_versus_fighterL_31: -884706141
+      fighter_versus_fighterL_32: 1585763030
+      fighter_versus_fighterL_33: 674830550
+      fighter_versus_fighterL_34: -1730420800
+      fighter_versus_fighterL_4: -1687377757
+      fighter_versus_fighterL_5: 469554541
+      fighter_versus_fighterL_6: 1108273531
+      fighter_versus_fighterL_7: -1788964433
+      fighter_versus_fighterL_8: 64342141
+      fighter_versus_fighterL_9: 492202319
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: rvlversus/common
+  assetBundleVariant: 

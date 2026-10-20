@@ -1,0 +1,3185 @@
+fileFormatVersion: 2
+guid: da0499f5455259f4cbe0bcb58bf81430
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 100
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: recieve_main_0
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 3943
+        width: 130
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef88cff5c13638f46bed90526fce133c
+      internalID: 1731162562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_1
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 3943
+        width: 131
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a39b786733227747b49a94a8d2efbb6
+      internalID: -662686498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_2
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 3946
+        width: 130
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebfcee8bad19ba5409c1b7fb3eff14de
+      internalID: -293833009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_3
+      rect:
+        serializedVersion: 2
+        x: 825
+        y: 3938
+        width: 66
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7d7875adb200a14e836399fd37e34fd
+      internalID: -1258776647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_4
+      rect:
+        serializedVersion: 2
+        x: 1035
+        y: 3933
+        width: 83
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 253fea876bf75364393cbac20aab45bd
+      internalID: 1168408403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_5
+      rect:
+        serializedVersion: 2
+        x: 1251
+        y: 3926
+        width: 159
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e958cbbd53e354a47a03c0160e226470
+      internalID: -929150704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_6
+      rect:
+        serializedVersion: 2
+        x: 1534
+        y: 3926
+        width: 157
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca5850642763e044eb2e654f0eafcd62
+      internalID: -1043655992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_7
+      rect:
+        serializedVersion: 2
+        x: 1815
+        y: 3933
+        width: 132
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec1f3647c0d10ff44a3bd74674de4c67
+      internalID: -173915943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_8
+      rect:
+        serializedVersion: 2
+        x: 2073
+        y: 3926
+        width: 181
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fca025af847d0145bd365ca9e9ee443
+      internalID: 1866425421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_9
+      rect:
+        serializedVersion: 2
+        x: 2386
+        y: 3931
+        width: 120
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 007536bc3081ca34a93382cc8ea68b0b
+      internalID: -2111222671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_10
+      rect:
+        serializedVersion: 2
+        x: 2637
+        y: 3931
+        width: 73
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9da1a8030f463ad41a2440c64a550421
+      internalID: -509863372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_11
+      rect:
+        serializedVersion: 2
+        x: 2831
+        y: 3979
+        width: 23
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11a351dd18c79e7428d11dd4edb8cbe9
+      internalID: 132304392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_12
+      rect:
+        serializedVersion: 2
+        x: 2971
+        y: 3925
+        width: 74
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e8964acded21e44588057b62a4f8502
+      internalID: -1918082535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_13
+      rect:
+        serializedVersion: 2
+        x: 3670
+        y: 3910
+        width: 122
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15f88ae0f8a9b404d94605c11db40c68
+      internalID: -1073699238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_14
+      rect:
+        serializedVersion: 2
+        x: 3867
+        y: 493
+        width: 170
+        height: 3541
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 656494cab683e6a4ba84bbea185e24d8
+      internalID: -1341864365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_15
+      rect:
+        serializedVersion: 2
+        x: 3236
+        y: 3837
+        width: 54
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2463519107fbeea44bf10af778cf3134
+      internalID: -529537255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_16
+      rect:
+        serializedVersion: 2
+        x: 3401
+        y: 3699
+        width: 163
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ee1cb6a1af52c14dbb1d69692e6f4d4
+      internalID: 380164121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_17
+      rect:
+        serializedVersion: 2
+        x: 3670
+        y: 3717
+        width: 120
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd79f07cee572e54fbb3ab33717ee51e
+      internalID: 1620864438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_18
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 3634
+        width: 208
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d42aad8da3cef2e4f956fb6aeaeab08c
+      internalID: 1162724518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_19
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 3637
+        width: 210
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f13f8788594c0b44aff3e575f747b96
+      internalID: -558299604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_20
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 3641
+        width: 208
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52f2ebb972bd07a4b8912dd0ad289934
+      internalID: 1880690459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_21
+      rect:
+        serializedVersion: 2
+        x: 1081
+        y: 3634
+        width: 212
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 359f4e46bb703344e8ababae0031700a
+      internalID: -986936598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_22
+      rect:
+        serializedVersion: 2
+        x: 1417
+        y: 3646
+        width: 194
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9761358c6ae8ea46936186eb8c11238
+      internalID: 1223228667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_23
+      rect:
+        serializedVersion: 2
+        x: 1726
+        y: 3635
+        width: 167
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e452ee4379e8334487136f8d3cfef9d
+      internalID: 1433040223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_24
+      rect:
+        serializedVersion: 2
+        x: 2006
+        y: 3641
+        width: 165
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c94936e06c07344f9226171848432c6
+      internalID: -840145816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_25
+      rect:
+        serializedVersion: 2
+        x: 2301
+        y: 3646
+        width: 178
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb6976c0962763a4fbef6c62f80eb817
+      internalID: 2014511686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_26
+      rect:
+        serializedVersion: 2
+        x: 2613
+        y: 3618
+        width: 205
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be03765d1f969ec448953964f6d30f77
+      internalID: -73465355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_27
+      rect:
+        serializedVersion: 2
+        x: 2941
+        y: 3638
+        width: 193
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abcce014a6a0e974382d6716eb0649e5
+      internalID: 1495318081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_28
+      rect:
+        serializedVersion: 2
+        x: 3670
+        y: 3527
+        width: 122
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9346581878b64be409e7fccb103135e2
+      internalID: -2002938141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_29
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 3379
+        width: 124
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1529f3667e731c44b8e03845b789d7cf
+      internalID: -2115986018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_30
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 3383
+        width: 124
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ddf0e2a3977f5240a27f1cb4acc62cb
+      internalID: -965200516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_31
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 3385
+        width: 125
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62ddaf1557bbd964dba3ca04001aec35
+      internalID: 369834362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_32
+      rect:
+        serializedVersion: 2
+        x: 819
+        y: 3390
+        width: 111
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b17c44e063e090145a55016ba14d617e
+      internalID: 2055245354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_33
+      rect:
+        serializedVersion: 2
+        x: 1045
+        y: 3385
+        width: 112
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a32e89a8f4c1fa740af1e1faaa5e297d
+      internalID: -467039153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_34
+      rect:
+        serializedVersion: 2
+        x: 1273
+        y: 3366
+        width: 110
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fa3d8bb1dbb9e64799424a77ec5259e
+      internalID: 160326280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_35
+      rect:
+        serializedVersion: 2
+        x: 1511
+        y: 3378
+        width: 118
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5610985544733d4a917cfc151ce24fa
+      internalID: 94824460
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_36
+      rect:
+        serializedVersion: 2
+        x: 1749
+        y: 3390
+        width: 121
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb08752cff4b5b740ade2d511cc01252
+      internalID: -352689206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_37
+      rect:
+        serializedVersion: 2
+        x: 1985
+        y: 3381
+        width: 116
+        height: 109
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f702d10f3d0ffc44392ddceca5b16945
+      internalID: 944902477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_38
+      rect:
+        serializedVersion: 2
+        x: 2234
+        y: 3370
+        width: 135
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b15b76ddd26e94f489cbf8334ae532d6
+      internalID: 599172622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_39
+      rect:
+        serializedVersion: 2
+        x: 2487
+        y: 3385
+        width: 126
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a899ff01c4bcd24e8c26b5480ac2be4
+      internalID: -2656869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_40
+      rect:
+        serializedVersion: 2
+        x: 2941
+        y: 3314
+        width: 208
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74cf78b043fa27441a79dd6765d21168
+      internalID: -1322192628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_41
+      rect:
+        serializedVersion: 2
+        x: 3289
+        y: 3318
+        width: 209
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56867e81e239ba240a0525c20c0d75a4
+      internalID: -1658674873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_42
+      rect:
+        serializedVersion: 2
+        x: 3670
+        y: 3334
+        width: 122
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e6d29a89285af541ab3c3fba3d194ef
+      internalID: -150787405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_43
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 3129
+        width: 138
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aafc7afa9aa46324798206e91cabfee0
+      internalID: 373893753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_44
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 3129
+        width: 136
+        height: 104
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1212d70dd327ab40bcf10c3aedb465f
+      internalID: -176654520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_45
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 3137
+        width: 132
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a72117bae161284fbc2df08cf19ebe1
+      internalID: -635852798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_46
+      rect:
+        serializedVersion: 2
+        x: 829
+        y: 3133
+        width: 121
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8411e91fbee717547bcaf08fd3710c88
+      internalID: -331537875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_47
+      rect:
+        serializedVersion: 2
+        x: 1081
+        y: 3141
+        width: 129
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e5b81ab9196b4d43b9a33fd097eb644
+      internalID: 1495647077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_48
+      rect:
+        serializedVersion: 2
+        x: 1333
+        y: 3139
+        width: 130
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 683a50fba4e5c234e804ae616917325b
+      internalID: 1241123940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_49
+      rect:
+        serializedVersion: 2
+        x: 1587
+        y: 3137
+        width: 134
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f88728f38296efc46a87f80acee2c423
+      internalID: 1003026777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_50
+      rect:
+        serializedVersion: 2
+        x: 1842
+        y: 3123
+        width: 133
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d7f612c36057234ab527c4c5d41026b
+      internalID: 1617361372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_51
+      rect:
+        serializedVersion: 2
+        x: 2091
+        y: 3133
+        width: 146
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf3912f49e7eb5f42b62dd1d08e4d4c9
+      internalID: -1185575428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_52
+      rect:
+        serializedVersion: 2
+        x: 2354
+        y: 3130
+        width: 119
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae13e9fd907e2d444a91e01fe15aaf60
+      internalID: -495612207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_53
+      rect:
+        serializedVersion: 2
+        x: 2606
+        y: 3131
+        width: 131
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a75ba36a4acffe498b71b656546627c
+      internalID: -134108907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_54
+      rect:
+        serializedVersion: 2
+        x: 3293
+        y: 3007
+        width: 194
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b3b0c9f20f5fb743a6d5c018957ec01
+      internalID: 1405803863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_55
+      rect:
+        serializedVersion: 2
+        x: 3670
+        y: 3149
+        width: 120
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bd87cc2f076a3740b46da15eadbf260
+      internalID: -592400954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_56
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 2893
+        width: 56
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42dd3ecee7a0521419cde1858deb31a8
+      internalID: 925191887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_57
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 2893
+        width: 58
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 184e176fd2f9b8049b83d877dab84efc
+      internalID: -1177563800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_58
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 2890
+        width: 58
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef195db2c3212d94cac9c109e90f102c
+      internalID: -105957320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_59
+      rect:
+        serializedVersion: 2
+        x: 661
+        y: 2889
+        width: 60
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 622580510e72c744381eb601c7c4b665
+      internalID: -81983667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_60
+      rect:
+        serializedVersion: 2
+        x: 853
+        y: 2889
+        width: 72
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9849e88de272494b8da3f462680ddec
+      internalID: -539572550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_61
+      rect:
+        serializedVersion: 2
+        x: 1043
+        y: 2870
+        width: 62
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad066a32bfcef9a4cafb9cc6bac856af
+      internalID: -382542194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_62
+      rect:
+        serializedVersion: 2
+        x: 1217
+        y: 2882
+        width: 50
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cd107cff9a8f184fa5b83bb2746373d
+      internalID: -694114140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_63
+      rect:
+        serializedVersion: 2
+        x: 1395
+        y: 2881
+        width: 68
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f75d004052e735146814fcf3c5ef2421
+      internalID: -976373468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_64
+      rect:
+        serializedVersion: 2
+        x: 1586
+        y: 2879
+        width: 49
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39a7029c129c6f9488f3622da8e71519
+      internalID: -413576236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_65
+      rect:
+        serializedVersion: 2
+        x: 1749
+        y: 2875
+        width: 134
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 829a0abcd71ab5f4a959332c19ac98c9
+      internalID: 1520764158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_66
+      rect:
+        serializedVersion: 2
+        x: 2007
+        y: 2889
+        width: 164
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bf2f3db133ec4e4d98c6c7878e6aecb
+      internalID: 1704413121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_67
+      rect:
+        serializedVersion: 2
+        x: 2293
+        y: 2902
+        width: 134
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37ca14b55b581d04bb2a36b81df423c9
+      internalID: 1980236188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_68
+      rect:
+        serializedVersion: 2
+        x: 2546
+        y: 2889
+        width: 107
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1455d977944649458a818deebd6d832
+      internalID: -1094717302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_69
+      rect:
+        serializedVersion: 2
+        x: 2769
+        y: 2903
+        width: 128
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 437928e88bb7a704b9b704f137532f20
+      internalID: -585516424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_70
+      rect:
+        serializedVersion: 2
+        x: 3025
+        y: 2873
+        width: 140
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 717f496dcae70c0409a5a68cec6bf503
+      internalID: -7929215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_71
+      rect:
+        serializedVersion: 2
+        x: 3670
+        y: 2959
+        width: 120
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19af8c7a16c1f2a45a90b5c16a32a5f2
+      internalID: 76901427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_72
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 2690
+        width: 105
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cc8cbc0d70995b4fa3a6781124fdfa8
+      internalID: 532167032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_73
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 2691
+        width: 104
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60ab4d0570faf91458005bb3d7d6cead
+      internalID: 1451240589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_74
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 2693
+        width: 108
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 649560cc56b23b04fa162a71f3fd3ca4
+      internalID: 1807705087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_75
+      rect:
+        serializedVersion: 2
+        x: 737
+        y: 2705
+        width: 132
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0c463ceba2f6b94dad0e618d4810ca0
+      internalID: 617074697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_76
+      rect:
+        serializedVersion: 2
+        x: 993
+        y: 2709
+        width: 108
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 207d8ba416ae42242afab6b7142777dd
+      internalID: 1705285560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_77
+      rect:
+        serializedVersion: 2
+        x: 1223
+        y: 2715
+        width: 44
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf97427fab98fbb4597adb4cb02d53f2
+      internalID: 2052128975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_78
+      rect:
+        serializedVersion: 2
+        x: 1387
+        y: 2718
+        width: 48
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 101e90e97ec445e459ef14dd58649869
+      internalID: -1408935538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_79
+      rect:
+        serializedVersion: 2
+        x: 1558
+        y: 2711
+        width: 81
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 707885de949890a43b04bd542a10f5c4
+      internalID: -1221044441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_80
+      rect:
+        serializedVersion: 2
+        x: 1759
+        y: 2693
+        width: 68
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cfdf43f02ebb174991f38f6b1a2c384
+      internalID: -1535948378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_81
+      rect:
+        serializedVersion: 2
+        x: 2397
+        y: 2571
+        width: 204
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 071667012abf7db4bb3f3db3a8b8e538
+      internalID: -1211681001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_82
+      rect:
+        serializedVersion: 2
+        x: 2962
+        y: 2565
+        width: 207
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 503085648586ff5469930998d81cc522
+      internalID: -1641226054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_83
+      rect:
+        serializedVersion: 2
+        x: 3349
+        y: 2683
+        width: 162
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b00f679cc030fd94bb540ab4545fdb26
+      internalID: 617676585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_84
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 2491
+        width: 71
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbd9fb894fb4fce488db14d8483a7d0a
+      internalID: -331581175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_85
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 2493
+        width: 70
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7bd790729f342444b9fb02873042ece
+      internalID: 1647899571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_86
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 2493
+        width: 73
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2b5050ac4f456f4e8f5ec1d681aa4c4
+      internalID: 427603471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_87
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 2495
+        width: 66
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f6d75786539b814a9a50e298325ca50
+      internalID: 712440575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_88
+      rect:
+        serializedVersion: 2
+        x: 853
+        y: 2474
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95d04b039de11c94d8e64ebf801b662c
+      internalID: -1523214171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_89
+      rect:
+        serializedVersion: 2
+        x: 3366
+        y: 2363
+        width: 191
+        height: 178
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bfb9a86c2b3dca40ae4f7ab2b574824
+      internalID: -948896221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_90
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 2257
+        width: 64
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c27cb09573db0e44f9a60a64c4fd7f8f
+      internalID: 788370204
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_91
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 2262
+        width: 62
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66f16518097ca904bbda1216a775752c
+      internalID: -1105529213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_92
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 2262
+        width: 62
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b356d644a7a2bd48a89e49ae7f1623e
+      internalID: -1406648552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_93
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 2257
+        width: 62
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b42c2a8046602c468f0be17607ca780
+      internalID: 1453586028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_94
+      rect:
+        serializedVersion: 2
+        x: 821
+        y: 2254
+        width: 66
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3304a387d80061342becc8a15f1d19eb
+      internalID: -630499819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_95
+      rect:
+        serializedVersion: 2
+        x: 1017
+        y: 2255
+        width: 60
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8466015f86325dd47b3e72984fcbfe5c
+      internalID: 155076735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_96
+      rect:
+        serializedVersion: 2
+        x: 1189
+        y: 2258
+        width: 56
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2196321552b67064d9ea7923aa47ecd3
+      internalID: 1638457260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_97
+      rect:
+        serializedVersion: 2
+        x: 1365
+        y: 2257
+        width: 68
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83dc1a4e1db26324c826d02ca81ba073
+      internalID: -871455953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_98
+      rect:
+        serializedVersion: 2
+        x: 1549
+        y: 2249
+        width: 65
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97f594dec8021c14788579fdde1e5e29
+      internalID: -1896618745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_99
+      rect:
+        serializedVersion: 2
+        x: 1725
+        y: 2259
+        width: 74
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f04d3dd49ee03884d9e0c70ea02b9472
+      internalID: 675089849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_100
+      rect:
+        serializedVersion: 2
+        x: 1918
+        y: 2250
+        width: 59
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9582f28a36dcdc74eb847e58b5d457a0
+      internalID: 487753995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_101
+      rect:
+        serializedVersion: 2
+        x: 2092
+        y: 2241
+        width: 73
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bebf37c8d395b4341b75fd3d805061d4
+      internalID: -970853545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_102
+      rect:
+        serializedVersion: 2
+        x: 2293
+        y: 2245
+        width: 82
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8253b0bd007a3f4fad9580c99104f58
+      internalID: -2113521911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_103
+      rect:
+        serializedVersion: 2
+        x: 2495
+        y: 2267
+        width: 196
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48ce690e44a350f40929b5d46898d898
+      internalID: 1150205350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_104
+      rect:
+        serializedVersion: 2
+        x: 2802
+        y: 2129
+        width: 89
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e3196aefc7a4714c830ccdc89481768
+      internalID: -1097557044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_105
+      rect:
+        serializedVersion: 2
+        x: 2911
+        y: 2126
+        width: 80
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04c422df204f2874994e321f17561bd0
+      internalID: 331492886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_106
+      rect:
+        serializedVersion: 2
+        x: 3106
+        y: 2129
+        width: 113
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dd180b47ae919d4497b710db9dcd7f8
+      internalID: -312956088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_107
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 2010
+        width: 66
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5478bed6828526d44b099e79c3630bee
+      internalID: 1516810769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_108
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 2009
+        width: 68
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86fbe1fd417b3e749ac30a40c58c4e9c
+      internalID: 534926493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_109
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 2009
+        width: 72
+        height: 133
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c543234c66f26d242bdc67ba8baab708
+      internalID: -2067640952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_110
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 2005
+        width: 76
+        height: 138
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d760c0ab56d2ec547a940c286e1fd7b7
+      internalID: -628934839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_111
+      rect:
+        serializedVersion: 2
+        x: 850
+        y: 2013
+        width: 71
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83b9e5a2aa9e25d4b93098964f8af479
+      internalID: -1988462487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_112
+      rect:
+        serializedVersion: 2
+        x: 1043
+        y: 2010
+        width: 59
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef401e0118050ca408fe407758452dd4
+      internalID: 1758896890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_113
+      rect:
+        serializedVersion: 2
+        x: 1213
+        y: 2034
+        width: 60
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bdfd71e3f23bfb4badff4270b4e7fc5
+      internalID: 238795265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_114
+      rect:
+        serializedVersion: 2
+        x: 1397
+        y: 2014
+        width: 65
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca2845862fdcd5f4f948bbd1e9a2dc48
+      internalID: -488080053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_115
+      rect:
+        serializedVersion: 2
+        x: 1581
+        y: 2019
+        width: 57
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e303cc93097985b469f67219a5d27a4e
+      internalID: -286147630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_116
+      rect:
+        serializedVersion: 2
+        x: 1751
+        y: 2029
+        width: 76
+        height: 100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cc946ee40d8b284086d9f66df09fe23
+      internalID: -1017778063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_117
+      rect:
+        serializedVersion: 2
+        x: 1947
+        y: 2021
+        width: 67
+        height: 125
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c785b05367970c84991541bd963c1c96
+      internalID: 1018164102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_118
+      rect:
+        serializedVersion: 2
+        x: 2123
+        y: 2003
+        width: 76
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 636cf546cc645f84fbcb06cf9c7a76fa
+      internalID: 1042892728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_119
+      rect:
+        serializedVersion: 2
+        x: 2317
+        y: 2007
+        width: 88
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc03688b02951c94aae45f9b967c4c13
+      internalID: 225482976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_120
+      rect:
+        serializedVersion: 2
+        x: 3325
+        y: 2123
+        width: 242
+        height: 103
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f24e3b4dd409901408598b39ba9fbc3e
+      internalID: -2054936331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_121
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 1721
+        width: 145
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d16ff4745ed6ce40bd23edc057364a1
+      internalID: 548059662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_122
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 1725
+        width: 148
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15f35e8299320d04daf9294bb72eed1c
+      internalID: 221480254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_123
+      rect:
+        serializedVersion: 2
+        x: 622
+        y: 1728
+        width: 151
+        height: 163
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5865265a62dde324aaa856de961049e6
+      internalID: 275052852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_124
+      rect:
+        serializedVersion: 2
+        x: 906
+        y: 1717
+        width: 141
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59ddd473adf531d42b2da71549f02517
+      internalID: 1945680717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_125
+      rect:
+        serializedVersion: 2
+        x: 1189
+        y: 1717
+        width: 140
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da7cf9e70b8bcfd41bacd042505e5da0
+      internalID: -1990599295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_126
+      rect:
+        serializedVersion: 2
+        x: 1473
+        y: 1717
+        width: 145
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e3d12174df22164eb5ed93b8bc48630
+      internalID: -214024895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_127
+      rect:
+        serializedVersion: 2
+        x: 1753
+        y: 1714
+        width: 146
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 247376655490bc04fbb9421b2d68828a
+      internalID: -1828845714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_128
+      rect:
+        serializedVersion: 2
+        x: 2042
+        y: 1715
+        width: 153
+        height: 191
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8fd4c90a28412b4c92fce51a081e060
+      internalID: 1067521727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_129
+      rect:
+        serializedVersion: 2
+        x: 2321
+        y: 1718
+        width: 152
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 323b8ea9b0ebacb4288af082062e0340
+      internalID: -1326102618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_130
+      rect:
+        serializedVersion: 2
+        x: 2602
+        y: 1726
+        width: 148
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6632b9a311c063e4db25fc95c3f9de8a
+      internalID: 993605258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_131
+      rect:
+        serializedVersion: 2
+        x: 2898
+        y: 1722
+        width: 141
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 474aef9a936e96247be731157a9f6ae9
+      internalID: -476752111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_132
+      rect:
+        serializedVersion: 2
+        x: 3177
+        y: 1721
+        width: 144
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 016a8e4267b674244b766ca5d4abf0e7
+      internalID: 627007839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_133
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 1396
+        width: 233
+        height: 232
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae6ab080683b1114db50d594346b902a
+      internalID: -434864298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_134
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 1452
+        width: 173
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9382b2b55a396e745a0aa733c9853fbb
+      internalID: 725410877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_135
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 1482
+        width: 114
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06d276ada25dece49bd6a724d7890b5a
+      internalID: 712046914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_136
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 1514
+        width: 49
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d840501e562e9cf4c95785675a970ee9
+      internalID: 388819813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_137
+      rect:
+        serializedVersion: 2
+        x: 1051
+        y: 149
+        width: 1392
+        height: 1392
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54eeabcadd622f24f9ba09e43085f6b7
+      internalID: -1406399340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: recieve_main_138
+      rect:
+        serializedVersion: 2
+        x: 2709
+        y: 1238
+        width: 573
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e80875078e32884e8db196b91c93d91
+      internalID: -1098021629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      recieve_main_0: 1731162562
+      recieve_main_1: -662686498
+      recieve_main_10: -509863372
+      recieve_main_100: 487753995
+      recieve_main_101: -970853545
+      recieve_main_102: -2113521911
+      recieve_main_103: 1150205350
+      recieve_main_104: -1097557044
+      recieve_main_105: 331492886
+      recieve_main_106: -312956088
+      recieve_main_107: 1516810769
+      recieve_main_108: 534926493
+      recieve_main_109: -2067640952
+      recieve_main_11: 132304392
+      recieve_main_110: -628934839
+      recieve_main_111: -1988462487
+      recieve_main_112: 1758896890
+      recieve_main_113: 238795265
+      recieve_main_114: -488080053
+      recieve_main_115: -286147630
+      recieve_main_116: -1017778063
+      recieve_main_117: 1018164102
+      recieve_main_118: 1042892728
+      recieve_main_119: 225482976
+      recieve_main_12: -1918082535
+      recieve_main_120: -2054936331
+      recieve_main_121: 548059662
+      recieve_main_122: 221480254
+      recieve_main_123: 275052852
+      recieve_main_124: 1945680717
+      recieve_main_125: -1990599295
+      recieve_main_126: -214024895
+      recieve_main_127: -1828845714
+      recieve_main_128: 1067521727
+      recieve_main_129: -1326102618
+      recieve_main_13: -1073699238
+      recieve_main_130: 993605258
+      recieve_main_131: -476752111
+      recieve_main_132: 627007839
+      recieve_main_133: -434864298
+      recieve_main_134: 725410877
+      recieve_main_135: 712046914
+      recieve_main_136: 388819813
+      recieve_main_137: -1406399340
+      recieve_main_138: -1098021629
+      recieve_main_14: -1341864365
+      recieve_main_15: -529537255
+      recieve_main_16: 380164121
+      recieve_main_17: 1620864438
+      recieve_main_18: 1162724518
+      recieve_main_19: -558299604
+      recieve_main_2: -293833009
+      recieve_main_20: 1880690459
+      recieve_main_21: -986936598
+      recieve_main_22: 1223228667
+      recieve_main_23: 1433040223
+      recieve_main_24: -840145816
+      recieve_main_25: 2014511686
+      recieve_main_26: -73465355
+      recieve_main_27: 1495318081
+      recieve_main_28: -2002938141
+      recieve_main_29: -2115986018
+      recieve_main_3: -1258776647
+      recieve_main_30: -965200516
+      recieve_main_31: 369834362
+      recieve_main_32: 2055245354
+      recieve_main_33: -467039153
+      recieve_main_34: 160326280
+      recieve_main_35: 94824460
+      recieve_main_36: -352689206
+      recieve_main_37: 944902477
+      recieve_main_38: 599172622
+      recieve_main_39: -2656869
+      recieve_main_4: 1168408403
+      recieve_main_40: -1322192628
+      recieve_main_41: -1658674873
+      recieve_main_42: -150787405
+      recieve_main_43: 373893753
+      recieve_main_44: -176654520
+      recieve_main_45: -635852798
+      recieve_main_46: -331537875
+      recieve_main_47: 1495647077
+      recieve_main_48: 1241123940
+      recieve_main_49: 1003026777
+      recieve_main_5: -929150704
+      recieve_main_50: 1617361372
+      recieve_main_51: -1185575428
+      recieve_main_52: -495612207
+      recieve_main_53: -134108907
+      recieve_main_54: 1405803863
+      recieve_main_55: -592400954
+      recieve_main_56: 925191887
+      recieve_main_57: -1177563800
+      recieve_main_58: -105957320
+      recieve_main_59: -81983667
+      recieve_main_6: -1043655992
+      recieve_main_60: -539572550
+      recieve_main_61: -382542194
+      recieve_main_62: -694114140
+      recieve_main_63: -976373468
+      recieve_main_64: -413576236
+      recieve_main_65: 1520764158
+      recieve_main_66: 1704413121
+      recieve_main_67: 1980236188
+      recieve_main_68: -1094717302
+      recieve_main_69: -585516424
+      recieve_main_7: -173915943
+      recieve_main_70: -7929215
+      recieve_main_71: 76901427
+      recieve_main_72: 532167032
+      recieve_main_73: 1451240589
+      recieve_main_74: 1807705087
+      recieve_main_75: 617074697
+      recieve_main_76: 1705285560
+      recieve_main_77: 2052128975
+      recieve_main_78: -1408935538
+      recieve_main_79: -1221044441
+      recieve_main_8: 1866425421
+      recieve_main_80: -1535948378
+      recieve_main_81: -1211681001
+      recieve_main_82: -1641226054
+      recieve_main_83: 617676585
+      recieve_main_84: -331581175
+      recieve_main_85: 1647899571
+      recieve_main_86: 427603471
+      recieve_main_87: 712440575
+      recieve_main_88: -1523214171
+      recieve_main_89: -948896221
+      recieve_main_9: -2111222671
+      recieve_main_90: 788370204
+      recieve_main_91: -1105529213
+      recieve_main_92: -1406648552
+      recieve_main_93: 1453586028
+      recieve_main_94: -630499819
+      recieve_main_95: 155076735
+      recieve_main_96: 1638457260
+      recieve_main_97: -871455953
+      recieve_main_98: -1896618745
+      recieve_main_99: 675089849
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: rvlreceive/common
+  assetBundleVariant: 

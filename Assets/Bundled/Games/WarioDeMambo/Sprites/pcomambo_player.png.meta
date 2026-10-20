@@ -1,0 +1,926 @@
+fileFormatVersion: 2
+guid: 4c14e6f78eabfd34a8c3f0ed34d5cceb
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: pcomambo_player_0
+      rect:
+        serializedVersion: 2
+        x: 633
+        y: 1343
+        width: 237
+        height: 127
+      alignment: 9
+      pivot: {x: 0.48368558, y: 0.41736224}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1beb05d3dafa6f74cbdc27e96cbc7b89
+      internalID: -93376518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pcomambo_player_2
+      rect:
+        serializedVersion: 2
+        x: 1001
+        y: 1287
+        width: 252
+        height: 181
+      alignment: 9
+      pivot: {x: 0.1386709, y: 0.15004127}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3621d4d42f70044da6e3742687a2fac
+      internalID: -1449095518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pcomambo_player_4
+      rect:
+        serializedVersion: 2
+        x: 1770
+        y: 1233
+        width: 192
+        height: 201
+      alignment: 9
+      pivot: {x: 0.8829772, y: 0.18123615}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aac55c7e45e84a84d9da6da5bb6237ca
+      internalID: -1774290500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pcomambo_player_5
+      rect:
+        serializedVersion: 2
+        x: 2501
+        y: 1022
+        width: 386
+        height: 397
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a5bdeaf7921c9d4aadce6295668f722
+      internalID: 1190547997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pcomambo_player_7
+      rect:
+        serializedVersion: 2
+        x: 2067
+        y: 1063
+        width: 277
+        height: 198
+      alignment: 9
+      pivot: {x: 0.7781491, y: 0.8466731}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 802b20a32495b6c499bc6fea0a5c9dfc
+      internalID: -31940257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pcomambo_player_8
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 1195
+        width: 230
+        height: 121
+      alignment: 9
+      pivot: {x: 0.49759868, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c12d77d13a24cc48b4a34c2d08c293e
+      internalID: -128801790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pcomambo_player_11
+      rect:
+        serializedVersion: 2
+        x: 2518
+        y: 1261
+        width: 10
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a82f0a63c80d9c947a8abee2b624f21c
+      internalID: 319518390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pcomambo_player_12
+      rect:
+        serializedVersion: 2
+        x: 633
+        y: 1071
+        width: 211
+        height: 103
+      alignment: 9
+      pivot: {x: 0.5235607, y: 0.15141933}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b52df10451b1f684a85ce44b1c110db1
+      internalID: -2073537623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pcomambo_player_13
+      rect:
+        serializedVersion: 2
+        x: 983
+        y: 977
+        width: 191
+        height: 200
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bc151036121ce241a6f199cdbf864a2
+      internalID: 997615151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pcomambo_player_14
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 969
+        width: 195
+        height: 271
+      alignment: 9
+      pivot: {x: 0, y: 0.37687114}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14ff91a8269f74b45a5589c2b14056e8
+      internalID: -1134581995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pcomambo_player_15
+      rect:
+        serializedVersion: 2
+        x: 1708
+        y: 1016
+        width: 152
+        height: 197
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7a5a4e51cec2b74ab2cbc164559cd45
+      internalID: -85438115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pcomambo_player_16
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 902
+        width: 236
+        height: 138
+      alignment: 9
+      pivot: {x: 0.4685718, y: 0.5920609}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b9bd762122bd3547866657b079b3f89
+      internalID: -1749684104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pcomambo_player_17
+      rect:
+        serializedVersion: 2
+        x: 1641
+        y: 958
+        width: 5
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9801e8c794e6354fae385db3d37e909
+      internalID: 434319109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pcomambo_player_20
+      rect:
+        serializedVersion: 2
+        x: 1523
+        y: 823
+        width: 250
+        height: 117
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a6a4e57f3b3976438fbeb37ed6121be
+      internalID: -22018954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pcomambo_player_21
+      rect:
+        serializedVersion: 2
+        x: 2511
+        y: 533
+        width: 394
+        height: 389
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e416e8843a0085049bae46b81dcc8607
+      internalID: 415783833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pcomambo_player_22
+      rect:
+        serializedVersion: 2
+        x: 1841
+        y: 512
+        width: 116
+        height: 381
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be4dbd513c6823147884957ce9218383
+      internalID: -1153480223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pcomambo_player_23
+      rect:
+        serializedVersion: 2
+        x: 2016
+        y: 522
+        width: 146
+        height: 367
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bc1bc65ef0b2554eaff4e402bc89d20
+      internalID: 257218442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pcomambo_player_24
+      rect:
+        serializedVersion: 2
+        x: 2066
+        y: 877
+        width: 15
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61ea85ae66304a749a81dcaa0d5757b9
+      internalID: 1126533805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pcomambo_player_25
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 511
+        width: 143
+        height: 385
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc2db09539d33b6468e73970bfb65839
+      internalID: -2041069638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pcomambo_player_26
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 631
+        width: 385
+        height: 201
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7ebf86e004591d4394f1632b320ab6c
+      internalID: 1328903707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pcomambo_player_27
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 626
+        width: 399
+        height: 232
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 739706a7256b07a49b2e9df7380f534e
+      internalID: 610128079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pcomambo_player_28
+      rect:
+        serializedVersion: 2
+        x: 1160
+        y: 767
+        width: 114
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f8a2768546eda24b8430a54ebcf5d98
+      internalID: 993194185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pcomambo_player_29
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 539
+        width: 152
+        height: 198
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 003d39f5ea4ab54499376d08b90d1823
+      internalID: 1665717528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pcomambo_player_30
+      rect:
+        serializedVersion: 2
+        x: 1609
+        y: 623
+        width: 73
+        height: 105
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b062dbe8e37ec044a3a8fa3d0020f66
+      internalID: -1113695990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pcomambo_player_31
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 352
+        width: 443
+        height: 213
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a33b9a3d4bb28ce499262aaba895d4cf
+      internalID: -1521245919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pcomambo_player_32
+      rect:
+        serializedVersion: 2
+        x: 591
+        y: 352
+        width: 409
+        height: 185
+      alignment: 2
+      pivot: {x: 0.5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e01612c0ce173b84aaa1cbf8b25ba133
+      internalID: 466738163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pcomambo_player_33
+      rect:
+        serializedVersion: 2
+        x: 1132
+        y: 75
+        width: 154
+        height: 318
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8809a929feb1d2648ad0bff84781be2c
+      internalID: 629388323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pcomambo_player_34
+      rect:
+        serializedVersion: 2
+        x: 1343
+        y: 69
+        width: 174
+        height: 385
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 186116ac2cc41d54b979db3bfc7afaee
+      internalID: -442210185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pcomambo_player_35
+      rect:
+        serializedVersion: 2
+        x: 1551
+        y: 68
+        width: 200
+        height: 388
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9d5fd07713a0374fbf9db1452c63989
+      internalID: -547222619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pcomambo_player_36
+      rect:
+        serializedVersion: 2
+        x: 1779
+        y: 71
+        width: 187
+        height: 369
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1693ee94771fabe44b8e4c37dc4fef7b
+      internalID: 485247587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pcomambo_player_37
+      rect:
+        serializedVersion: 2
+        x: 2010
+        y: 67
+        width: 151
+        height: 373
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d63ca401e7c6cfb409259ee5cfd8ccaf
+      internalID: 1172310563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pcomambo_player_38
+      rect:
+        serializedVersion: 2
+        x: 2213
+        y: 115
+        width: 158
+        height: 327
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 927ed40d36be665419da6e8b31cf8165
+      internalID: -792362576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pcomambo_player_39
+      rect:
+        serializedVersion: 2
+        x: 2519
+        y: 74
+        width: 384
+        height: 389
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4419d8ff1815f542864f518edd54a45
+      internalID: 1642283519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pcomambo_player_40
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 72
+        width: 134
+        height: 183
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b77bed53755fac4ab1bc3e657384f96
+      internalID: 2139398156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pcomambo_player_41
+      rect:
+        serializedVersion: 2
+        x: 491
+        y: 68
+        width: 111
+        height: 171
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30b2eec44d514fb4fad03a20323b9d19
+      internalID: -577111365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pcomambo_player_42
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 72
+        width: 115
+        height: 184
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1264b06134145f44e88edc9dc0d9d0f3
+      internalID: 177300020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      pcomambo_player_0: -93376518
+      pcomambo_player_1: -2072864709
+      pcomambo_player_10: -1535583460
+      pcomambo_player_11: 319518390
+      pcomambo_player_12: -2073537623
+      pcomambo_player_13: 997615151
+      pcomambo_player_14: -1134581995
+      pcomambo_player_15: -85438115
+      pcomambo_player_16: -1749684104
+      pcomambo_player_17: 434319109
+      pcomambo_player_18: -1878964997
+      pcomambo_player_19: -927065372
+      pcomambo_player_2: -1449095518
+      pcomambo_player_20: -22018954
+      pcomambo_player_21: 415783833
+      pcomambo_player_22: -1153480223
+      pcomambo_player_23: 257218442
+      pcomambo_player_24: 1126533805
+      pcomambo_player_25: -2041069638
+      pcomambo_player_26: 1328903707
+      pcomambo_player_27: 610128079
+      pcomambo_player_28: 993194185
+      pcomambo_player_29: 1665717528
+      pcomambo_player_3: 1722875796
+      pcomambo_player_30: -1113695990
+      pcomambo_player_31: -1521245919
+      pcomambo_player_32: 466738163
+      pcomambo_player_33: 629388323
+      pcomambo_player_34: -442210185
+      pcomambo_player_35: -547222619
+      pcomambo_player_36: 485247587
+      pcomambo_player_37: 1172310563
+      pcomambo_player_38: -792362576
+      pcomambo_player_39: 1642283519
+      pcomambo_player_4: -1774290500
+      pcomambo_player_40: 2139398156
+      pcomambo_player_41: -577111365
+      pcomambo_player_42: 177300020
+      pcomambo_player_5: 1190547997
+      pcomambo_player_6: -1481952124
+      pcomambo_player_7: -31940257
+      pcomambo_player_8: -128801790
+      pcomambo_player_9: -203932933
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: pcomambo/common
+  assetBundleVariant: 

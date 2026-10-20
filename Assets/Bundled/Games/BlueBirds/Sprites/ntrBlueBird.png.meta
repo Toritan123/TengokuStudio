@@ -1,0 +1,2109 @@
+fileFormatVersion: 2
+guid: e2b7775e6e3202547acbb0f9e0c272c6
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ntrBlueBird_0
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 3619
+        width: 279
+        height: 422
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99b06609f8d001a4cb0fba2affbea7a8
+      internalID: 154024985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_1
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 3619
+        width: 279
+        height: 422
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c16c476bd76abf4582dfd0259a2ee47
+      internalID: -275892418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_2
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 3661
+        width: 298
+        height: 379
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d57a9eaa1e433bc42a775e0143f9c79f
+      internalID: 623613606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_3
+      rect:
+        serializedVersion: 2
+        x: 1371
+        y: 3633
+        width: 235
+        height: 407
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2f19052638d36649af82cddf17d0c98
+      internalID: 1259129130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_4
+      rect:
+        serializedVersion: 2
+        x: 1771
+        y: 3633
+        width: 235
+        height: 407
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a928a5aa70ba24a42aad32df2bdb4506
+      internalID: 1211071077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_5
+      rect:
+        serializedVersion: 2
+        x: 2180
+        y: 3633
+        width: 235
+        height: 407
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 233d2b92d15b19b40acd662307bee720
+      internalID: 130072063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_6
+      rect:
+        serializedVersion: 2
+        x: 2534
+        y: 3284
+        width: 288
+        height: 749
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c02fdf1c5329ca341b2c07e7a9a1ee6e
+      internalID: -1524777266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_7
+      rect:
+        serializedVersion: 2
+        x: 2925
+        y: 3285
+        width: 292
+        height: 748
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7e00db82b710e84cba01b3b1216a91a
+      internalID: -672815824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_8
+      rect:
+        serializedVersion: 2
+        x: 3354
+        y: 3299
+        width: 299
+        height: 734
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 586a1659e37477947b2ba0e7b14e7f27
+      internalID: 1985118831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_9
+      rect:
+        serializedVersion: 2
+        x: 3740
+        y: 3287
+        width: 302
+        height: 746
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0b3df7b28adf4243bc4e63791a201dd
+      internalID: -167931982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_10
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 2712
+        width: 308
+        height: 736
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56901efe77d961c489468bc1062a0f79
+      internalID: 493826542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_11
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 2712
+        width: 359
+        height: 725
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13fb0d58483e0b744beb3a22e9f0da95
+      internalID: -1276898365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_12
+      rect:
+        serializedVersion: 2
+        x: 1051
+        y: 3058
+        width: 279
+        height: 486
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27578d37a91eeb140b47141ed76caa23
+      internalID: -507156899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_13
+      rect:
+        serializedVersion: 2
+        x: 1473
+        y: 3293
+        width: 355
+        height: 251
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db396bcd3a6f5034f9884f7f0f2f6627
+      internalID: 466322297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_14
+      rect:
+        serializedVersion: 2
+        x: 1928
+        y: 3284
+        width: 355
+        height: 265
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c5930d737ba5564a8dd4a2aab531934
+      internalID: 1399807238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_15
+      rect:
+        serializedVersion: 2
+        x: 1473
+        y: 2986
+        width: 355
+        height: 250
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f07b14b130cd8a44a944df1d2e7fcf00
+      internalID: -1685795600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_16
+      rect:
+        serializedVersion: 2
+        x: 1914
+        y: 2854
+        width: 369
+        height: 383
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dba2de2500f8ce418b30b40ab02ef47
+      internalID: 2137480209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_17
+      rect:
+        serializedVersion: 2
+        x: 2374
+        y: 3066
+        width: 151
+        height: 137
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f944ace97ef97844b2b0d494cb15b13
+      internalID: 428496065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_18
+      rect:
+        serializedVersion: 2
+        x: 2591
+        y: 3067
+        width: 137
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5cf919329a2f4f4a87ea318cdafcd41
+      internalID: 1736437600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_19
+      rect:
+        serializedVersion: 2
+        x: 2787
+        y: 3058
+        width: 199
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db109367ca15e4e43bbc6c9d5d26f559
+      internalID: 1843897807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_20
+      rect:
+        serializedVersion: 2
+        x: 3079
+        y: 3033
+        width: 200
+        height: 189
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32c1acb8143efd84f87084a4bf9f9fbc
+      internalID: 1238020534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_21
+      rect:
+        serializedVersion: 2
+        x: 3346
+        y: 3033
+        width: 227
+        height: 191
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0b411b5e343a8f468e08da2f3ffe0e7
+      internalID: 241744630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_22
+      rect:
+        serializedVersion: 2
+        x: 3645
+        y: 3005
+        width: 141
+        height: 198
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f89ee8bf4398c6441b05df4e10645642
+      internalID: 1116156019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_23
+      rect:
+        serializedVersion: 2
+        x: 3857
+        y: 3007
+        width: 194
+        height: 206
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6b29c516ad94094bb8f3085f6ff075f
+      internalID: 235959418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_24
+      rect:
+        serializedVersion: 2
+        x: 1051
+        y: 2658
+        width: 300
+        height: 343
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e196be95ad59b934d851e631f8cb3525
+      internalID: -979688286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_25
+      rect:
+        serializedVersion: 2
+        x: 1472
+        y: 2658
+        width: 358
+        height: 245
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 732992a3b0c1d114ebabfec3859881af
+      internalID: 734548158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_26
+      rect:
+        serializedVersion: 2
+        x: 2335
+        y: 2815
+        width: 235
+        height: 186
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7066a5e5a6202a948a826821b3f77128
+      internalID: 490469738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_27
+      rect:
+        serializedVersion: 2
+        x: 2651
+        y: 2787
+        width: 218
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92714b06b44215b42bdce3824bb14675
+      internalID: -1199424816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_28
+      rect:
+        serializedVersion: 2
+        x: 2939
+        y: 2815
+        width: 227
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d2a70dd0d1b0a24cb21d9cc9d548ad7
+      internalID: 1308341377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_29
+      rect:
+        serializedVersion: 2
+        x: 3231
+        y: 2815
+        width: 261
+        height: 168
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6699861ac64d1f41864db0ea5cf2629
+      internalID: 1905644446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_30
+      rect:
+        serializedVersion: 2
+        x: 3602
+        y: 2770
+        width: 290
+        height: 196
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5ca38c890021cd4c8ceec37802914d8
+      internalID: 957739071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_31
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 2319
+        width: 224
+        height: 258
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68b49cfeb94c37f4f96684ba1e3295fa
+      internalID: 718629911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_32
+      rect:
+        serializedVersion: 2
+        x: 368
+        y: 2319
+        width: 206
+        height: 271
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bdbd6611485c1649b5778a8b7b7838d
+      internalID: 1696210634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_33
+      rect:
+        serializedVersion: 2
+        x: 675
+        y: 2314
+        width: 197
+        height: 276
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5b6af21c94867a4fbc3cf89ca5bcc16
+      internalID: -2073092502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_34
+      rect:
+        serializedVersion: 2
+        x: 965
+        y: 2301
+        width: 176
+        height: 289
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10b0f19eaddf2fa4e9fe1bf898ba5f65
+      internalID: 154844920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_35
+      rect:
+        serializedVersion: 2
+        x: 1899
+        y: 2549
+        width: 290
+        height: 206
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ffceeda7c42b3c40a4677a989de5501
+      internalID: 1723063991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_36
+      rect:
+        serializedVersion: 2
+        x: 2311
+        y: 2549
+        width: 289
+        height: 206
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9cd724b678d2824e87f374bbe1322a7
+      internalID: 1100773191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_37
+      rect:
+        serializedVersion: 2
+        x: 2692
+        y: 2548
+        width: 290
+        height: 196
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d824d1da35b521d48b8107db40e2d59f
+      internalID: 1281137542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_38
+      rect:
+        serializedVersion: 2
+        x: 3075
+        y: 2484
+        width: 227
+        height: 243
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f59bac301a6e6e94f8773fab94dd976d
+      internalID: -1926009144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_39
+      rect:
+        serializedVersion: 2
+        x: 3366
+        y: 2484
+        width: 227
+        height: 243
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 331ed91595396164b8471cafbd908aaa
+      internalID: -1821496062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_40
+      rect:
+        serializedVersion: 2
+        x: 3659
+        y: 2302
+        width: 374
+        height: 418
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb6b6f7c0e4a8ac4dac6a941b34aa5bc
+      internalID: 1605366761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_41
+      rect:
+        serializedVersion: 2
+        x: 1233
+        y: 2301
+        width: 204
+        height: 199
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 626d3382467cb744eaed64c2b5f66009
+      internalID: 2138831591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_42
+      rect:
+        serializedVersion: 2
+        x: 1542
+        y: 2081
+        width: 374
+        height: 419
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38a70f382a2b3ee439e6c1cde4aa4cb9
+      internalID: -554741020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_43
+      rect:
+        serializedVersion: 2
+        x: 2070
+        y: 1833
+        width: 1372
+        height: 589
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 010c0018ea04fab4c8faaa53b737aa20
+      internalID: -1397727847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_44
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 1886
+        width: 106
+        height: 353
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a63631c69419fd4ab3019bf885ace5e
+      internalID: 1072282822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_45
+      rect:
+        serializedVersion: 2
+        x: 363
+        y: 1886
+        width: 98
+        height: 278
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33f75484b631abc48ae139aa7fb43568
+      internalID: -381877405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_46
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 1886
+        width: 98
+        height: 331
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff3aa75643e04354bbe3d1c24c8a2abe
+      internalID: -673422108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_47
+      rect:
+        serializedVersion: 2
+        x: 965
+        y: 1898
+        width: 107
+        height: 266
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cfeb3ed23e0def4792dced2e1042425
+      internalID: 1346351390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_48
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 1886
+        width: 106
+        height: 318
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f6fbe364591b0d439f67a46ab983943
+      internalID: -2042417762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_49
+      rect:
+        serializedVersion: 2
+        x: 1597
+        y: 1905
+        width: 431
+        height: 97
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 669686f4bcb9676409ef378c6db6cb89
+      internalID: 1217661099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_50
+      rect:
+        serializedVersion: 2
+        x: 3497
+        y: 1097
+        width: 538
+        height: 1093
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c94743173897f8547ba731e336221704
+      internalID: -1546850841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_51
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 1638
+        width: 175
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 441281ad3925cd34f84f962f5b737db6
+      internalID: 1506335377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_52
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 1486
+        width: 297
+        height: 302
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46bec76fd9265954abcdb7745313a38c
+      internalID: 909520950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_53
+      rect:
+        serializedVersion: 2
+        x: 706
+        y: 1486
+        width: 297
+        height: 302
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9d7a7b5f72ac254db45ffe8eaa6bd70
+      internalID: -441093021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_54
+      rect:
+        serializedVersion: 2
+        x: 1082
+        y: 1491
+        width: 297
+        height: 297
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96fe645708c8ae64a84b1efada8d7e60
+      internalID: 1619030450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_55
+      rect:
+        serializedVersion: 2
+        x: 1597
+        y: 1551
+        width: 255
+        height: 309
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 274b53a3bd6fc864d872a2ee6f76a8c7
+      internalID: 354319974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_56
+      rect:
+        serializedVersion: 2
+        x: 1863
+        y: 1585
+        width: 310
+        height: 254
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: caa384986b9d0ac45bb9fc25974db50f
+      internalID: -1901916110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_58
+      rect:
+        serializedVersion: 2
+        x: 2244
+        y: 1143
+        width: 238
+        height: 622
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98492e6c8f8c91f4684a2b786fc9142b
+      internalID: -1587092971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_59
+      rect:
+        serializedVersion: 2
+        x: 2565
+        y: 1584
+        width: 81
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7b82628b4749f543a790774d154337f
+      internalID: 163826856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_60
+      rect:
+        serializedVersion: 2
+        x: 2705
+        y: 1610
+        width: 56
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 899a037ca010fca4e9281f68feb5cc16
+      internalID: 1034581867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_61
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 1571
+        width: 101
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 079030160129ebe4195b8fb30d9c38bb
+      internalID: -737017171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_62
+      rect:
+        serializedVersion: 2
+        x: 2950
+        y: 1584
+        width: 78
+        height: 88
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70edeb76efbbb9e4c8f8d63768373a6c
+      internalID: -323053297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_63
+      rect:
+        serializedVersion: 2
+        x: 3102
+        y: 1600
+        width: 46
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02f179e1d27c5bf4db0cd641baf61301
+      internalID: 1591673775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_64
+      rect:
+        serializedVersion: 2
+        x: 3210
+        y: 1584
+        width: 87
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18022a54175a21c42923d96a19b91048
+      internalID: -950588201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_65
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1318
+        width: 236
+        height: 217
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ac0a9f894a7b0b42866d4de3660c710
+      internalID: 151867019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_66
+      rect:
+        serializedVersion: 2
+        x: 1635
+        y: 1309
+        width: 171
+        height: 215
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a96bbac95c415284c8f003eb4b522a87
+      internalID: 369984975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_67
+      rect:
+        serializedVersion: 2
+        x: 1937
+        y: 1334
+        width: 214
+        height: 171
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c1c2312c869f7b45be5bd65e575224c
+      internalID: 345602749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_70
+      rect:
+        serializedVersion: 2
+        x: 2837
+        y: 1471
+        width: 64
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6cd9a11a7637964cbc43ad0ebb480fd
+      internalID: -940688386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_71
+      rect:
+        serializedVersion: 2
+        x: 2958
+        y: 1465
+        width: 77
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33263487bf3fe74448ce03af7ff73ff5
+      internalID: -827937041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_72
+      rect:
+        serializedVersion: 2
+        x: 3069
+        y: 1447
+        width: 113
+        height: 114
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 822ba6c4a19e2014d9df08b7f6a6ba50
+      internalID: -702512156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_73
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 1450
+        width: 106
+        height: 106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 632699cf64e5fa44592b13171af34258
+      internalID: -304862584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_74
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 1333
+        width: 139
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ee0d5c88a36a164fb0b993c6216385c
+      internalID: 6493796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_75
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 1328
+        width: 141
+        height: 91
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30cbdfd24f987324faa2e4a66eddea56
+      internalID: -936733218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_76
+      rect:
+        serializedVersion: 2
+        x: 751
+        y: 1328
+        width: 141
+        height: 97
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 472b7818e2b6aa74caa4109c381325d6
+      internalID: -439968875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_77
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 1326
+        width: 149
+        height: 107
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccdb0e73e50d4f5448aa3315fa2c11fc
+      internalID: -206517847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_78
+      rect:
+        serializedVersion: 2
+        x: 2632
+        y: 1281
+        width: 73
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa0183a2d4205b64cb1cb5e8761c2bbd
+      internalID: 1009093492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_79
+      rect:
+        serializedVersion: 2
+        x: 2743
+        y: 1285
+        width: 51
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbfe9c48d31019f45a7724d9ad21aaa4
+      internalID: 1851879970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_80
+      rect:
+        serializedVersion: 2
+        x: 2900
+        y: 1279
+        width: 127
+        height: 125
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4ace777d4dcc6843a4feec302576a79
+      internalID: -1867142715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_81
+      rect:
+        serializedVersion: 2
+        x: 3087
+        y: 1341
+        width: 69
+        height: 67
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99537d3b47e26194999207ab6f4660ae
+      internalID: -316972574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_82
+      rect:
+        serializedVersion: 2
+        x: 3205
+        y: 1320
+        width: 58
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f66f3ce278d72844d866ad5add9303b9
+      internalID: 262613592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_83
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 1056
+        width: 234
+        height: 193
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b096ae3323469aa42b2029f63d19c7f1
+      internalID: -1845533316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_84
+      rect:
+        serializedVersion: 2
+        x: 373
+        y: 1056
+        width: 299
+        height: 217
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11ab81f17a5747049959e7c228f3d895
+      internalID: 1613161517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_85
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 1083
+        width: 743
+        height: 194
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1deb4c49d98fbb948ba483f9d64c6911
+      internalID: 925813941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_86
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 1109
+        width: 90
+        height: 149
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ee873419e3655942ab1f3dbdc7c0871
+      internalID: -470586673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_87
+      rect:
+        serializedVersion: 2
+        x: 1991
+        y: 1181
+        width: 149
+        height: 89
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38ef440bf01aeda4fa0cf766a0395120
+      internalID: -312742927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_88
+      rect:
+        serializedVersion: 2
+        x: 3142
+        y: 1116
+        width: 171
+        height: 173
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f80fdccb4609634982549cb17e82028
+      internalID: -680663081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_89
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 402
+        width: 3126
+        height: 496
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 047dbe04e823dbe4cad2332deebe4f33
+      internalID: 14593020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_91
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 130
+        width: 3705
+        height: 193
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05597cf86a509c54e8676d588f259a9b
+      internalID: 839689736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_57
+      rect:
+        serializedVersion: 2
+        x: 2692
+        y: 917
+        width: 440
+        height: 330
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5374caba81271d45a3ae6cd5b98d4ae
+      internalID: 1329022794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ntrBlueBird_68
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 349
+        width: 746
+        height: 686
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19214a585cbb12e4eb271ce23fb56240
+      internalID: 1097922768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      ntrBlueBird_0: 154024985
+      ntrBlueBird_1: -275892418
+      ntrBlueBird_10: 493826542
+      ntrBlueBird_11: -1276898365
+      ntrBlueBird_12: -507156899
+      ntrBlueBird_13: 466322297
+      ntrBlueBird_14: 1399807238
+      ntrBlueBird_15: -1685795600
+      ntrBlueBird_16: 2137480209
+      ntrBlueBird_17: 428496065
+      ntrBlueBird_18: 1736437600
+      ntrBlueBird_19: 1843897807
+      ntrBlueBird_2: 623613606
+      ntrBlueBird_20: 1238020534
+      ntrBlueBird_21: 241744630
+      ntrBlueBird_22: 1116156019
+      ntrBlueBird_23: 235959418
+      ntrBlueBird_24: -979688286
+      ntrBlueBird_25: 734548158
+      ntrBlueBird_26: 490469738
+      ntrBlueBird_27: -1199424816
+      ntrBlueBird_28: 1308341377
+      ntrBlueBird_29: 1905644446
+      ntrBlueBird_3: 1259129130
+      ntrBlueBird_30: 957739071
+      ntrBlueBird_31: 718629911
+      ntrBlueBird_32: 1696210634
+      ntrBlueBird_33: -2073092502
+      ntrBlueBird_34: 154844920
+      ntrBlueBird_35: 1723063991
+      ntrBlueBird_36: 1100773191
+      ntrBlueBird_37: 1281137542
+      ntrBlueBird_38: -1926009144
+      ntrBlueBird_39: -1821496062
+      ntrBlueBird_4: 1211071077
+      ntrBlueBird_40: 1605366761
+      ntrBlueBird_41: 2138831591
+      ntrBlueBird_42: -554741020
+      ntrBlueBird_43: -1397727847
+      ntrBlueBird_44: 1072282822
+      ntrBlueBird_45: -381877405
+      ntrBlueBird_46: -673422108
+      ntrBlueBird_47: 1346351390
+      ntrBlueBird_48: -2042417762
+      ntrBlueBird_49: 1217661099
+      ntrBlueBird_5: 130072063
+      ntrBlueBird_50: -1546850841
+      ntrBlueBird_51: 1506335377
+      ntrBlueBird_52: 909520950
+      ntrBlueBird_53: -441093021
+      ntrBlueBird_54: 1619030450
+      ntrBlueBird_55: 354319974
+      ntrBlueBird_56: -1901916110
+      ntrBlueBird_57: 1329022794
+      ntrBlueBird_58: -1587092971
+      ntrBlueBird_59: 163826856
+      ntrBlueBird_6: -1524777266
+      ntrBlueBird_60: 1034581867
+      ntrBlueBird_61: -737017171
+      ntrBlueBird_62: -323053297
+      ntrBlueBird_63: 1591673775
+      ntrBlueBird_64: -950588201
+      ntrBlueBird_65: 151867019
+      ntrBlueBird_66: 369984975
+      ntrBlueBird_67: 345602749
+      ntrBlueBird_68: 1097922768
+      ntrBlueBird_69: -1077894764
+      ntrBlueBird_7: -672815824
+      ntrBlueBird_70: -940688386
+      ntrBlueBird_71: -827937041
+      ntrBlueBird_72: -702512156
+      ntrBlueBird_73: -304862584
+      ntrBlueBird_74: 6493796
+      ntrBlueBird_75: -936733218
+      ntrBlueBird_76: -439968875
+      ntrBlueBird_77: -206517847
+      ntrBlueBird_78: 1009093492
+      ntrBlueBird_79: 1851879970
+      ntrBlueBird_8: 1985118831
+      ntrBlueBird_80: -1867142715
+      ntrBlueBird_81: -316972574
+      ntrBlueBird_82: 262613592
+      ntrBlueBird_83: -1845533316
+      ntrBlueBird_84: 1613161517
+      ntrBlueBird_85: 925813941
+      ntrBlueBird_86: -470586673
+      ntrBlueBird_87: -312742927
+      ntrBlueBird_88: -680663081
+      ntrBlueBird_89: 14593020
+      ntrBlueBird_9: -167931982
+      ntrBlueBird_90: -1366542734
+      ntrBlueBird_91: 839689736
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: ntrbluebirds/common
+  assetBundleVariant: 

@@ -1,0 +1,356 @@
+fileFormatVersion: 2
+guid: 5d7bb2dd917fcbc46ac950029a46a81c
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 100
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: shortLive_BG_rot_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3066
+        width: 1670
+        height: 1030
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49f295299bd721642ac4d20c17ccc5fd
+      internalID: -1301508594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_BG_rot_1
+      rect:
+        serializedVersion: 2
+        x: 1714
+        y: 3326
+        width: 606
+        height: 744
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b46ff98f47b1db34f90987a98e0efe91
+      internalID: 1721441160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_BG_rot_3
+      rect:
+        serializedVersion: 2
+        x: 3232
+        y: 2368
+        width: 864
+        height: 864
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf69dd07be0b0a14ea5ebd7ab89530c0
+      internalID: 656863962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_BG_rot_4
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 2362
+        width: 840
+        height: 683
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ba2bee1800785b46af4f2a8998530c7
+      internalID: -1343478798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_BG_rot_5
+      rect:
+        serializedVersion: 2
+        x: 946
+        y: 2070
+        width: 674
+        height: 978
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e396802d9055aa04d82c9e990030542b
+      internalID: 1155501974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_BG_rot_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2046
+        width: 102
+        height: 104
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60a6e8498a975e04eaeee12e3dfefa61
+      internalID: 1371656147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_BG_rot_2
+      rect:
+        serializedVersion: 2
+        x: 3268
+        y: 3271
+        width: 800
+        height: 788
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c853f9e9055b22f409ecde79b7e503b2
+      internalID: -496239193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shortLive_BG_rot_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1414
+        height: 1414
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f03c82b7f84ac5c47beb37140f83e559
+      internalID: -539122529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      shortLive_BG_rot_0: -1301508594
+      shortLive_BG_rot_1: 1721441160
+      shortLive_BG_rot_11: 260274242
+      shortLive_BG_rot_12: -535057723
+      shortLive_BG_rot_13: -391878714
+      shortLive_BG_rot_14: 2145327137
+      shortLive_BG_rot_15: 2129234544
+      shortLive_BG_rot_16: -1156571571
+      shortLive_BG_rot_17: 259666028
+      shortLive_BG_rot_18: 1016361488
+      shortLive_BG_rot_19: 759795708
+      shortLive_BG_rot_2: -496239193
+      shortLive_BG_rot_20: -2139479347
+      shortLive_BG_rot_21: 1884389395
+      shortLive_BG_rot_22: 47116288
+      shortLive_BG_rot_23: -927027125
+      shortLive_BG_rot_24: 1970579018
+      shortLive_BG_rot_25: -1539273638
+      shortLive_BG_rot_26: 1751442418
+      shortLive_BG_rot_27: 37519590
+      shortLive_BG_rot_28: 1928210925
+      shortLive_BG_rot_29: -909379503
+      shortLive_BG_rot_3: 656863962
+      shortLive_BG_rot_30: -461191085
+      shortLive_BG_rot_31: -1080361631
+      shortLive_BG_rot_32: 881226599
+      shortLive_BG_rot_33: 113438522
+      shortLive_BG_rot_34: -385522251
+      shortLive_BG_rot_35: 1243468592
+      shortLive_BG_rot_36: -3635084
+      shortLive_BG_rot_37: 1063107876
+      shortLive_BG_rot_38: 1543652059
+      shortLive_BG_rot_39: -1382844117
+      shortLive_BG_rot_4: -1343478798
+      shortLive_BG_rot_40: -163652199
+      shortLive_BG_rot_41: 117531065
+      shortLive_BG_rot_42: 1901817216
+      shortLive_BG_rot_43: 1269111847
+      shortLive_BG_rot_44: 696989763
+      shortLive_BG_rot_45: -95959461
+      shortLive_BG_rot_46: 1757698624
+      shortLive_BG_rot_47: 1507281898
+      shortLive_BG_rot_48: 1437239393
+      shortLive_BG_rot_49: 1588184419
+      shortLive_BG_rot_5: 1155501974
+      shortLive_BG_rot_50: 38589339
+      shortLive_BG_rot_51: 233293559
+      shortLive_BG_rot_52: 1794504521
+      shortLive_BG_rot_53: -1687349105
+      shortLive_BG_rot_54: 1581036751
+      shortLive_BG_rot_55: -1021843190
+      shortLive_BG_rot_56: 1014770298
+      shortLive_BG_rot_57: 896074851
+      shortLive_BG_rot_58: 102372675
+      shortLive_BG_rot_59: 2056077265
+      shortLive_BG_rot_60: 2020386784
+      shortLive_BG_rot_61: -2060906877
+      shortLive_BG_rot_62: -1256840120
+      shortLive_BG_rot_7: 1371656147
+      shortLive_BG_rot_8: -539122529
+      shortLive_BG_rot_9: -640997673
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: ntrshortlive/common
+  assetBundleVariant: 

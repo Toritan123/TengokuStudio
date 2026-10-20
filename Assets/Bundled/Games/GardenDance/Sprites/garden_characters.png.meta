@@ -1,0 +1,785 @@
+fileFormatVersion: 2
+guid: ae8e32ee50815844d8de008ec84f3fc9
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 100
+    crunchedCompression: 1
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GardenCharacters_2
+      rect:
+        serializedVersion: 2
+        x: 2637
+        y: 1411
+        width: 540
+        height: 528
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccb0ee513d0b80341acf4d135d0262c4
+      internalID: 964941615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GardenCharacters_3
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 1719
+        width: 196
+        height: 156
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8cd20b035e326744bb89a24017a8ec4
+      internalID: -376989055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GardenCharacters_5
+      rect:
+        serializedVersion: 2
+        x: 701
+        y: 1721
+        width: 208
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62b52cf5c3990534ab8c50437705b40c
+      internalID: -388083289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GardenCharacters_8
+      rect:
+        serializedVersion: 2
+        x: 983
+        y: 1651
+        width: 196
+        height: 226
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50ceca664069cc641920dc0a6da7689f
+      internalID: 319037958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GardenCharacters_9
+      rect:
+        serializedVersion: 2
+        x: 1223
+        y: 1707
+        width: 242
+        height: 167
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53f445ff6aca2ed459ef5fa8ead1d120
+      internalID: -13337080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GardenCharacters_12
+      rect:
+        serializedVersion: 2
+        x: 1507
+        y: 1737
+        width: 255
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1f45b44510e53a43b667e8ff1ba3dec
+      internalID: 558150556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GardenCharacters_13
+      rect:
+        serializedVersion: 2
+        x: 1811
+        y: 1735
+        width: 254
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d59bba367475f794380e34e82d72398c
+      internalID: 983759859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GardenCharacters_16
+      rect:
+        serializedVersion: 2
+        x: 2123
+        y: 1733
+        width: 188
+        height: 130
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77c6990e4c7b6c745b3b80bfa8847886
+      internalID: -1100909260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GardenCharacters_17
+      rect:
+        serializedVersion: 2
+        x: 2365
+        y: 1729
+        width: 206
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb78641f186208b408f65a214db6544a
+      internalID: 1993512683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GardenCharacters_19
+      rect:
+        serializedVersion: 2
+        x: 3246
+        y: 1676
+        width: 215
+        height: 201
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f4f11b70424fbf4684716b7b66e932d
+      internalID: 1247481101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GardenCharacters_30
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 1413
+        width: 194
+        height: 136
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8362da5f240199e4bbe204949089fe95
+      internalID: 1607964380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GardenCharacters_31
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 1245
+        width: 260
+        height: 314
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efd038a872716874aaf5c7e176139214
+      internalID: -236180388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GardenCharacters_32
+      rect:
+        serializedVersion: 2
+        x: 1113
+        y: 1241
+        width: 152
+        height: 328
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58941f544e52cbf4799c3a59f9013cfa
+      internalID: -640247199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GardenCharacters_33
+      rect:
+        serializedVersion: 2
+        x: 1321
+        y: 1245
+        width: 134
+        height: 340
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5dd7b41b1fac95429e85754a7ec0e1a
+      internalID: -881167246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GardenCharacters_34
+      rect:
+        serializedVersion: 2
+        x: 1509
+        y: 1245
+        width: 144
+        height: 410
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 237eb8442c66d3745b2b08c448a05ec1
+      internalID: -1241547395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GardenCharacters_35
+      rect:
+        serializedVersion: 2
+        x: 1709
+        y: 1235
+        width: 140
+        height: 378
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4219f8bd87629794a90835b69ebe04c0
+      internalID: -568077049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GardenCharacters_36
+      rect:
+        serializedVersion: 2
+        x: 1887
+        y: 1235
+        width: 136
+        height: 335
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ce910858a22f984ea2eb086e517b023
+      internalID: -1769386315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GardenCharacters_37
+      rect:
+        serializedVersion: 2
+        x: 2097
+        y: 1371
+        width: 178
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cf7b4a17ab4fc4458b55f7661953911
+      internalID: -433358266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GardenCharacters_38
+      rect:
+        serializedVersion: 2
+        x: 2293
+        y: 1371
+        width: 152
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 810ec0d6752af414a999d023816452d5
+      internalID: 1576698621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GardenCharacters_39
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 903
+        width: 220
+        height: 158
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56db4491e1208c8469736ca1a1dd8cc5
+      internalID: 1374367483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GardenCharacters_40
+      rect:
+        serializedVersion: 2
+        x: 877
+        y: 667
+        width: 676
+        height: 416
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7f41336e03fddc41806c6d935a6b50d
+      internalID: 1976088735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GardenCharacters_41
+      rect:
+        serializedVersion: 2
+        x: 1595
+        y: 953
+        width: 54
+        height: 54
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5b692cb5194fcc4382b041b59245cd1
+      internalID: 23251900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GardenCharacters_42
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 731
+        width: 274
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 902048a66bb5dbc40a838d444c307efb
+      internalID: 1515126495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GardenCharacters_43
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 565
+        width: 322
+        height: 126
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c3ec098204da914caf860d5c8565833
+      internalID: 182410354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GardenCharacters_44
+      rect:
+        serializedVersion: 2
+        x: 899
+        y: 315
+        width: 178
+        height: 326
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3680eaeb5dc1bd4c97a2de72b6ef268
+      internalID: 1612969020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GardenCharacters_45
+      rect:
+        serializedVersion: 2
+        x: 1129
+        y: 313
+        width: 178
+        height: 300
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37e352aa95981cf49a6a6ff841dd6368
+      internalID: 1620633863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GardenCharacters_46
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 401
+        width: 282
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0ca3901bcbc65a4682dfd17aa9e727d
+      internalID: 501025273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GardenCharacters_47
+      rect:
+        serializedVersion: 2
+        x: 1355
+        y: 293
+        width: 178
+        height: 134
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8e1182e5f608ab4786b2d737c06b918
+      internalID: -1432937866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GardenCharacters_48
+      rect:
+        serializedVersion: 2
+        x: 1563
+        y: 109
+        width: 178
+        height: 318
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d59461a565e4e5047911b6ace79d12f6
+      internalID: -2140544934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      GardenCharacters_0: 1682683383
+      GardenCharacters_1: -96680539
+      GardenCharacters_10: 708607341
+      GardenCharacters_11: -575851280
+      GardenCharacters_12: 558150556
+      GardenCharacters_13: 983759859
+      GardenCharacters_14: -136976377
+      GardenCharacters_15: -787627992
+      GardenCharacters_16: -1100909260
+      GardenCharacters_17: 1993512683
+      GardenCharacters_18: -1935372614
+      GardenCharacters_19: 1247481101
+      GardenCharacters_2: 964941615
+      GardenCharacters_20: 597381770
+      GardenCharacters_21: -767078785
+      GardenCharacters_22: 233761092
+      GardenCharacters_23: -693281642
+      GardenCharacters_24: -773596900
+      GardenCharacters_25: 1626853050
+      GardenCharacters_26: 1029758821
+      GardenCharacters_27: -1455454109
+      GardenCharacters_28: 1625602769
+      GardenCharacters_29: -2123838406
+      GardenCharacters_3: -376989055
+      GardenCharacters_30: 1607964380
+      GardenCharacters_31: -236180388
+      GardenCharacters_32: -640247199
+      GardenCharacters_33: -881167246
+      GardenCharacters_34: -1241547395
+      GardenCharacters_35: -568077049
+      GardenCharacters_36: -1769386315
+      GardenCharacters_37: -433358266
+      GardenCharacters_38: 1576698621
+      GardenCharacters_39: 1374367483
+      GardenCharacters_4: 752014237
+      GardenCharacters_40: 1976088735
+      GardenCharacters_41: 23251900
+      GardenCharacters_42: 1515126495
+      GardenCharacters_43: 182410354
+      GardenCharacters_44: 1612969020
+      GardenCharacters_45: 1620633863
+      GardenCharacters_46: 501025273
+      GardenCharacters_47: -1432937866
+      GardenCharacters_48: -2140544934
+      GardenCharacters_5: -388083289
+      GardenCharacters_6: 2115019502
+      GardenCharacters_7: 285072554
+      GardenCharacters_8: 319037958
+      GardenCharacters_9: -13337080
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: pcogarden/common
+  assetBundleVariant: 

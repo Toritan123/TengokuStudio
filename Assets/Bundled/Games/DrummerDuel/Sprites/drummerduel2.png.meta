@@ -1,0 +1,1759 @@
+fileFormatVersion: 2
+guid: 15e867785fd3e244ab82036f4d2ec9d0
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 200
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: drummerduel_0
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 3747
+        width: 182
+        height: 202
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27dc92f349d8e494dad02e42103fb6c0
+      internalID: -2022330642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_1
+      rect:
+        serializedVersion: 2
+        x: 506
+        y: 3741
+        width: 194
+        height: 238
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbcd71e4d629b4944b63992df7a68173
+      internalID: -1874478214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_2
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 3742
+        width: 219
+        height: 252
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54e0494b6a720e34c991662f6d44f043
+      internalID: 17600621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_3
+      rect:
+        serializedVersion: 2
+        x: 1287
+        y: 3774
+        width: 141
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b937096d57b47564bbdbd9d0b6f06fb1
+      internalID: -40713682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_4
+      rect:
+        serializedVersion: 2
+        x: 1617
+        y: 3786
+        width: 77
+        height: 140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcdc89109cb59c341b512bb391aa4be0
+      internalID: 2115655118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ao
+      rect:
+        serializedVersion: 2
+        x: 1875
+        y: 3245
+        width: 915
+        height: 725
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 435c5192c49efca43868186906a12cc9
+      internalID: 1675445039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_6
+      rect:
+        serializedVersion: 2
+        x: 2971
+        y: 3395
+        width: 74
+        height: 431
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 915fd7c2d7d0c1c4d84cbf22df983c40
+      internalID: 640217260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_7
+      rect:
+        serializedVersion: 2
+        x: 3227
+        y: 3644
+        width: 775
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3f8f5cfb211c2b40b1138ae1a03efd3
+      internalID: -830668333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_8
+      rect:
+        serializedVersion: 2
+        x: 99
+        y: 3331
+        width: 451
+        height: 242
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1a46ad185a50da4a9d5e2dc29f2a959
+      internalID: -364135719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_9
+      rect:
+        serializedVersion: 2
+        x: 698
+        y: 3331
+        width: 445
+        height: 248
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4f77d568857e8f41b71b22a60fc3ac5
+      internalID: -1286528096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_10
+      rect:
+        serializedVersion: 2
+        x: 1286
+        y: 3331
+        width: 447
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a3b6ecbb7b798c41af1984bcde3225c
+      internalID: 54704369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_14
+      rect:
+        serializedVersion: 2
+        x: 3730
+        y: 3234
+        width: 243
+        height: 315
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c5e1ba967033514696881cec2d84c05
+      internalID: -1492202588
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_19
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 2891
+        width: 337
+        height: 285
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 564a871208e92784ca02d11b3bf58db5
+      internalID: -605470018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_20
+      rect:
+        serializedVersion: 2
+        x: 1279
+        y: 2889
+        width: 85
+        height: 273
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebd7234dfbb67434390740bba5b0b36c
+      internalID: -1061577724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ap
+      rect:
+        serializedVersion: 2
+        x: 3053
+        y: 2950
+        width: 392
+        height: 180
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63d9388f85a9fe949a80a18c73559483
+      internalID: 1795889644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_25
+      rect:
+        serializedVersion: 2
+        x: 1547
+        y: 2932
+        width: 251
+        height: 178
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96fc765ff1bdc8449b8c0675bcfb2868
+      internalID: 554618868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_26
+      rect:
+        serializedVersion: 2
+        x: 1959
+        y: 2941
+        width: 275
+        height: 165
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea3561de092fc9d4dad12a2fb08da34b
+      internalID: 2120243532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_27
+      rect:
+        serializedVersion: 2
+        x: 2429
+        y: 2983
+        width: 130
+        height: 123
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 080fcc4fc0bc2264e84aa5815d812f7d
+      internalID: -875439937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_28
+      rect:
+        serializedVersion: 2
+        x: 2751
+        y: 2988
+        width: 95
+        height: 123
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38d940a98c6e8724aa7d4fac0450f807
+      internalID: -270939723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_29
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 2757
+        width: 338
+        height: 183
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 513d961409bc20044a5933499d5cae74
+      internalID: -2050715060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_30
+      rect:
+        serializedVersion: 2
+        x: 1645
+        y: 2394
+        width: 362
+        height: 366
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab537b8a6fe8c924fa00077fe06081f1
+      internalID: -1884112175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_31
+      rect:
+        serializedVersion: 2
+        x: 2076
+        y: 2400
+        width: 293
+        height: 404
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf6c2439ae94ce542a8a446c57977b05
+      internalID: -1792610903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_32
+      rect:
+        serializedVersion: 2
+        x: 2461
+        y: 2379
+        width: 210
+        height: 452
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 730dcfc9ae3877a43bb3a74b067b3e5a
+      internalID: 464661990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_33
+      rect:
+        serializedVersion: 2
+        x: 2791
+        y: 2390
+        width: 163
+        height: 447
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 504b427f63e53ae42bad044241e08942
+      internalID: 1666207473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_34
+      rect:
+        serializedVersion: 2
+        x: 3109
+        y: 2380
+        width: 176
+        height: 454
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58da078758f6ce442aed1943c963d0e6
+      internalID: 447741122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_35
+      rect:
+        serializedVersion: 2
+        x: 3374
+        y: 2354
+        width: 235
+        height: 486
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dad2362701aef9f449a37e7ff28e2f98
+      internalID: 134763506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_36
+      rect:
+        serializedVersion: 2
+        x: 3713
+        y: 2349
+        width: 323
+        height: 484
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c838b4c3e5d708b49ac411f054049282
+      internalID: 2131398546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_37
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 2352
+        width: 497
+        height: 237
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24673e14f245cac48a438b5e3bfe7e99
+      internalID: -819772874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_38
+      rect:
+        serializedVersion: 2
+        x: 621
+        y: 2351
+        width: 485
+        height: 241
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61d916c4be019a74da8f3e0287cde905
+      internalID: 639501524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_39
+      rect:
+        serializedVersion: 2
+        x: 1158
+        y: 2364
+        width: 446
+        height: 324
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e6e42e26e684a243925ce9e818d17f7
+      internalID: -562705123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_40
+      rect:
+        serializedVersion: 2
+        x: 2573
+        y: 1738
+        width: 223
+        height: 472
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a45a04d02e6ac9429f8357ba9498e87
+      internalID: 912296335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_41
+      rect:
+        serializedVersion: 2
+        x: 2966
+        y: 1680
+        width: 134
+        height: 603
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4af3171d0e8a16a45bb09b98029922b1
+      internalID: 777048829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_42
+      rect:
+        serializedVersion: 2
+        x: 3287
+        y: 1671
+        width: 233
+        height: 584
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 173a54db12d6d624886637bb0f5ffb3b
+      internalID: 124594276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_43
+      rect:
+        serializedVersion: 2
+        x: 3658
+        y: 1687
+        width: 330
+        height: 518
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cea0db57b698854386bddce4fa556c5
+      internalID: -1950730877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aa
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 1138
+        width: 150
+        height: 464
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84648d80dce9f03468a0b7e526e8742e
+      internalID: 1506696985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: a
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 1142
+        width: 144
+        height: 480
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cc523d6ad1761140b62305d853ca9d6
+      internalID: 311226683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaa
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 1140
+        width: 138
+        height: 491
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6c0d2658660a7e49bdb742f276b4ede
+      internalID: -431076083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaa
+      rect:
+        serializedVersion: 2
+        x: 857
+        y: 1164
+        width: 138
+        height: 469
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf3bd63f342ed854897525ad4a618c00
+      internalID: 1749816160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aaaaa
+      rect:
+        serializedVersion: 2
+        x: 1066
+        y: 1230
+        width: 165
+        height: 409
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e9e6fcc5fa99ae4e894461b36d447f1
+      internalID: 16230856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ab
+      rect:
+        serializedVersion: 2
+        x: 1278
+        y: 1314
+        width: 183
+        height: 329
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a14d0c2920290e43b855b609499b0be
+      internalID: -1799695939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_50
+      rect:
+        serializedVersion: 2
+        x: 1629
+        y: 1284
+        width: 341
+        height: 304
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d9877ff617fdb849958abaf4b23c3fb
+      internalID: 261009450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_51
+      rect:
+        serializedVersion: 2
+        x: 2074
+        y: 1448
+        width: 121
+        height: 150
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e52790f9246687a4c8e0e738fe3c7ac3
+      internalID: -186481097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_52
+      rect:
+        serializedVersion: 2
+        x: 2322
+        y: 1270
+        width: 230
+        height: 319
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f557591b75545934288f4aca026b0b1c
+      internalID: 1591050014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_53
+      rect:
+        serializedVersion: 2
+        x: 2766
+        y: 89
+        width: 140
+        height: 1494
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4596e78b37c30e94381a3255d4371fb4
+      internalID: 950871141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_54
+      rect:
+        serializedVersion: 2
+        x: 3098
+        y: 87
+        width: 920
+        height: 1496
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a461eb4adb5e4b429b20dfdc22dd151
+      internalID: -1358028168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_55
+      rect:
+        serializedVersion: 2
+        x: 2082
+        y: 1262
+        width: 108
+        height: 107
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac0b3fba790916b4f9f4c478c87e0245
+      internalID: 1110112506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_56
+      rect:
+        serializedVersion: 2
+        x: 1659
+        y: 992
+        width: 106
+        height: 167
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c47808934e5c744cba9ea2ef9eddb42
+      internalID: -1511183893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_57
+      rect:
+        serializedVersion: 2
+        x: 1858
+        y: 991
+        width: 168
+        height: 171
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2900c6a15e4585147bf18558b316aea9
+      internalID: 909870815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_58
+      rect:
+        serializedVersion: 2
+        x: 2107
+        y: 992
+        width: 79
+        height: 159
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdc3287fdbeae41459e86f8e7f7558b6
+      internalID: -1566888097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_59
+      rect:
+        serializedVersion: 2
+        x: 2283
+        y: 959
+        width: 113
+        height: 220
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6747437974c0f914ba85ee50aa4c2081
+      internalID: 1824966748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_60
+      rect:
+        serializedVersion: 2
+        x: 2498
+        y: 1053
+        width: 69
+        height: 62
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67880e1ecd40932428faecbd17716f18
+      internalID: -1664123735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ae
+      rect:
+        serializedVersion: 2
+        x: 649
+        y: 878
+        width: 58
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2d2297a4f6a66f48a7eeb836764e0e8
+      internalID: 916414141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: af
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 781
+        width: 277
+        height: 259
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cf0961d6b0c1e74fa8964fd41dccb2b
+      internalID: -603632838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ag
+      rect:
+        serializedVersion: 2
+        x: 1222
+        y: 787
+        width: 277
+        height: 257
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ba57704ff1292f45833f85fb25dc00c
+      internalID: -81721523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_82
+      rect:
+        serializedVersion: 2
+        x: 2346
+        y: 584
+        width: 284
+        height: 285
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe32fc9cf271b0f49b6fd01a1d7ccb9d
+      internalID: -647642320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ai
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 450
+        width: 307
+        height: 269
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bac7787a86c586143b008eef10f1bc7b
+      internalID: -1842899831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_92
+      rect:
+        serializedVersion: 2
+        x: 2037
+        y: 569
+        width: 226
+        height: 130
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f7836f015460e74e9bcbe204166a2c5
+      internalID: -951419132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: aj
+      rect:
+        serializedVersion: 2
+        x: 968
+        y: 551
+        width: 327
+        height: 68
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d3c7d057c5dd4a4686a38ac044b72a8
+      internalID: 192332466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ak
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 99
+        width: 215
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e8e2b8448073364d9a6afb913fa5ad2
+      internalID: -1712186813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: al
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 104
+        width: 265
+        height: 187
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 287f7fdc72cbeb242943d82ef9f6a37e
+      internalID: 1382265616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: am
+      rect:
+        serializedVersion: 2
+        x: 827
+        y: 124
+        width: 274
+        height: 275
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8d01eee7e5540849a5902dd0bc1dde2
+      internalID: 1812503657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: an
+      rect:
+        serializedVersion: 2
+        x: 1214
+        y: 132
+        width: 250
+        height: 251
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3ff37028a5527846b01d196d1a2f145
+      internalID: -1310475576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_98
+      rect:
+        serializedVersion: 2
+        x: 1603
+        y: 110
+        width: 1031
+        height: 372
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7877cb3d514f7de41b55af42392e18a8
+      internalID: 2098519432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_11
+      rect:
+        serializedVersion: 2
+        x: 3258
+        y: 3217
+        width: 302
+        height: 343
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2d8975dab5530f47a3808013a8f73e6
+      internalID: -439135824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_12
+      rect:
+        serializedVersion: 2
+        x: 2075
+        y: 771
+        width: 174
+        height: 95
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fc81c247544ebc4b9fd9f856af3dd63
+      internalID: -662568868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_13
+      rect:
+        serializedVersion: 2
+        x: 1878
+        y: 768
+        width: 150
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac76b15b7a431094097de3da2800d669
+      internalID: -1582074113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_15
+      rect:
+        serializedVersion: 2
+        x: 1651
+        y: 769
+        width: 166
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0059a34b1d5a3ec4e9d10bd4a3e9536e
+      internalID: 1327342109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ad
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 870
+        width: 155
+        height: 97
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1abcbfdbaa26264488286229c85696f2
+      internalID: 1030075195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ac
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 883
+        width: 138
+        height: 85
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7220c6d875c6ce4da2660733484261e
+      internalID: -1182163220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ah
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 654
+        width: 144
+        height: 109
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f197ed348a01e8241a365b413dec5ab6
+      internalID: 198053909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_16
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 3047
+        width: 100
+        height: 123
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d2992a00e46ad84baeb75470f5af455
+      internalID: 1829351461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_17
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 3052
+        width: 108
+        height: 143
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74aae8bbf8056d4458f2e8bcc9a0da42
+      internalID: 1323600145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: drummerduel_18
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 3048
+        width: 63
+        height: 115
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64574782b94b41d4cbdb213f9ff62819
+      internalID: -386498000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      a: 311226683
+      aa: 1506696985
+      aaa: -431076083
+      aaaa: 1749816160
+      aaaaa: 16230856
+      ab: -1799695939
+      ac: -1182163220
+      ad: 1030075195
+      ae: 916414141
+      af: -603632838
+      ag: -81721523
+      ah: 198053909
+      ai: -1842899831
+      aj: 192332466
+      ak: -1712186813
+      al: 1382265616
+      am: 1812503657
+      an: -1310475576
+      ao: 1675445039
+      ap: 1795889644
+      drummerduel_0: -2022330642
+      drummerduel_1: -1874478214
+      drummerduel_10: 54704369
+      drummerduel_11: -439135824
+      drummerduel_12: -662568868
+      drummerduel_13: -1582074113
+      drummerduel_14: -1492202588
+      drummerduel_15: 1327342109
+      drummerduel_16: 1829351461
+      drummerduel_17: 1323600145
+      drummerduel_18: -386498000
+      drummerduel_19: -605470018
+      drummerduel_2: 17600621
+      drummerduel_20: -1061577724
+      drummerduel_22: 152651456
+      drummerduel_23: -667376789
+      drummerduel_24: -2002049070
+      drummerduel_25: 554618868
+      drummerduel_26: 2120243532
+      drummerduel_27: -875439937
+      drummerduel_28: -270939723
+      drummerduel_29: -2050715060
+      drummerduel_3: -40713682
+      drummerduel_30: -1884112175
+      drummerduel_31: -1792610903
+      drummerduel_32: 464661990
+      drummerduel_33: 1666207473
+      drummerduel_34: 447741122
+      drummerduel_35: 134763506
+      drummerduel_36: 2131398546
+      drummerduel_37: -819772874
+      drummerduel_38: 639501524
+      drummerduel_39: -562705123
+      drummerduel_4: 2115655118
+      drummerduel_40: 912296335
+      drummerduel_41: 777048829
+      drummerduel_42: 124594276
+      drummerduel_43: -1950730877
+      drummerduel_50: 261009450
+      drummerduel_51: -186481097
+      drummerduel_52: 1591050014
+      drummerduel_53: 950871141
+      drummerduel_54: -1358028168
+      drummerduel_55: 1110112506
+      drummerduel_56: -1511183893
+      drummerduel_57: 909870815
+      drummerduel_58: -1566888097
+      drummerduel_59: 1824966748
+      drummerduel_6: 640217260
+      drummerduel_60: -1664123735
+      drummerduel_64: 1876678852
+      drummerduel_68: 1625405831
+      drummerduel_69: 1554955911
+      drummerduel_7: -830668333
+      drummerduel_70: -950230297
+      drummerduel_71: 298411083
+      drummerduel_72: 1733683280
+      drummerduel_73: 1318620356
+      drummerduel_74: 1364842281
+      drummerduel_75: 2090417963
+      drummerduel_76: -594884346
+      drummerduel_77: -1246826803
+      drummerduel_78: 229284707
+      drummerduel_79: -1935907872
+      drummerduel_8: -364135719
+      drummerduel_80: -1842337114
+      drummerduel_81: -1074377693
+      drummerduel_82: -647642320
+      drummerduel_83: -1718030548
+      drummerduel_84: -2084689977
+      drummerduel_85: -242332162
+      drummerduel_86: -2116310709
+      drummerduel_87: -1241363462
+      drummerduel_88: -1233178510
+      drummerduel_9: -1286528096
+      drummerduel_90: -1650205557
+      drummerduel_91: -194776557
+      drummerduel_92: -951419132
+      drummerduel_98: 2098519432
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
