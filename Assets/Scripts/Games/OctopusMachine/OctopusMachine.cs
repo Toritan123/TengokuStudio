@@ -313,7 +313,7 @@ namespace HeavenStudio.Games
         public void ChangeText(string text, string youText)
         {
             Text.text = text;
-            YouText.text = youText;
+            YouText.text = HeavenStudio.Common.Localization.T(youText);
             YouArrow.SetActive(youText != "");
         }
 
