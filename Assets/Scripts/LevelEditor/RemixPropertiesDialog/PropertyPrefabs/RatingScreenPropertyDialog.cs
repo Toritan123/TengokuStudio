@@ -101,7 +101,7 @@ namespace HeavenStudio.Editor
 
         void UpdateInfo()
         {
-            headerInput.text = (string)diag.chart["resultcaption"];
+            headerInput.text = Localization.T((string)diag.chart["resultcaption"]);
             if (rankImages[(int)currentEditingRank] != null)
             {
                 imagePreview.sprite = rankImages[(int)currentEditingRank];
@@ -126,7 +126,7 @@ namespace HeavenStudio.Editor
                 Ranks.Hi => "hi",
                 _ => "ok",
             };
-            epilogueInput.text = (string)diag.chart["epilogue_" + propSuffix];
+            epilogueInput.text = JudgementManager.EpilogueText((string)diag.chart["epilogue_" + propSuffix]);
             SetCatEditing(currentEditingCat);
         }
 
@@ -170,7 +170,7 @@ namespace HeavenStudio.Editor
 
                 ratingLabel.text = Localization.T("Rating Message");
 
-                messageInput.text = (string)diag.chart["resultcommon_" + propSuffix];
+                messageInput.text = Localization.T((string)diag.chart["resultcommon_" + propSuffix]);
             }
             else
             {
@@ -186,7 +186,7 @@ namespace HeavenStudio.Editor
 
                 ratingLabel.text = Localization.F("Rating Message <sprite=\"categoryMarker\" index={0}>", currentEditingCat + 1);
 
-                messageInput.text = (string)diag.chart["resultcat" + currentEditingCat + "_" + propSuffix];
+                messageInput.text = Localization.T((string)diag.chart["resultcat" + currentEditingCat + "_" + propSuffix]);
             }
         }
 

@@ -67,6 +67,13 @@ namespace HeavenStudio
 
         const string MessageAdd = "Also... ";
 
+        // the default epilogue words are also plain UI words ("OK"), so they get their own keys
+        public static string EpilogueText(string text) => text switch
+        {
+            "Superb" or "OK" or "Try Again" => Localization.T($"Epilogue: {text}"),
+            _ => Localization.T(text),
+        };
+
         static JudgementInfo judgementInfo;
         static RiqBeatmap playedBeatmap;
 
@@ -307,7 +314,7 @@ namespace HeavenStudio
                 }
             }
 
-            header.text = playedBeatmap != null ? playedBeatmap["resultcaption"] : "Rhythm League Notes";
+            header.text = Localization.T(playedBeatmap != null ? (string)playedBeatmap["resultcaption"] : "Rhythm League Notes");
 
             if (twoMessage)
             {
@@ -486,7 +493,7 @@ namespace HeavenStudio
         {
             if (twoMessage) return;
             audioSource.PlayOneShot(messageLast);
-            message0.text = msg0;
+            message0.text = Localization.T(msg0);
         }
 
         public void ShowMessage1()
@@ -494,7 +501,7 @@ namespace HeavenStudio
             if (!twoMessage) return;
             audioSource.PlayOneShot(messageMid);
             // message1.text = "message line 1";
-            message1.text = msg1;
+            message1.text = Localization.T(msg1);
         }
 
         public void ShowMessage2()
@@ -502,6 +509,7 @@ namespace HeavenStudio
             if (!twoMessage) return;
             audioSource.PlayOneShot(messageLast);
 
+            msg2 = Localization.T(msg2);
             if (!string.IsNullOrEmpty(msg2) && msg2.Length > 1)
             {
                 if (!char.IsLower(msg2[0]) && char.IsLower(msg2[1])) // Makes the first letter lowercase if the second letter is too, so we get some good grammar!
@@ -510,7 +518,7 @@ namespace HeavenStudio
                 }
             }
 
-            message2.text = MessageAdd + msg2;
+            message2.text = Localization.T(MessageAdd) + msg2;
         }
 
         public void StartBar()
@@ -671,17 +679,17 @@ namespace HeavenStudio
                     audioSource.Stop();
                     if (rank == Rank.Ng)
                     {
-                        epilogueMessage.text = playedBeatmap != null ? playedBeatmap["epilogue_ng"] : "Try Again picture";
+                        epilogueMessage.text = playedBeatmap != null ? EpilogueText((string)playedBeatmap["epilogue_ng"]) : "Try Again picture";
                         audioSource.PlayOneShot(jglNg);
                     }
                     else if (rank == Rank.Ok)
                     {
-                        epilogueMessage.text = playedBeatmap != null ? playedBeatmap["epilogue_ok"] : "OK picture";
+                        epilogueMessage.text = playedBeatmap != null ? EpilogueText((string)playedBeatmap["epilogue_ok"]) : "OK picture";
                         audioSource.PlayOneShot(jglOk);
                     }
                     else
                     {
-                        epilogueMessage.text = playedBeatmap != null ? playedBeatmap["epilogue_hi"] : "Superb picture";
+                        epilogueMessage.text = playedBeatmap != null ? EpilogueText((string)playedBeatmap["epilogue_hi"]) : "Superb picture";
                         audioSource.PlayOneShot(jglHi);
                     }
                     didEpilogue = true;
