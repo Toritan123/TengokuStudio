@@ -53,7 +53,7 @@ namespace HeavenStudio
         public static string buildTime = "00/00/0000 00:00:00";
         public static int buildInt = 0;
         public static string friendlyReleaseName = "Bobby Build 2024/12/06";
-        public static bool newPackins = false;
+        public static bool newPackins = true;  // the pack-in levels changed in this release: copy them into existing libraries on first launch
 
         public static bool HasShutDown = false;
         public static bool discordDuringTesting = false;
