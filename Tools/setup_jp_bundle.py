@@ -72,8 +72,9 @@ def setup(game):
         t = re.sub(r'assetBundleName:.*', f'assetBundleName: {bundle}', t)
         t = re.sub(r'assetBundleVariant:.*', 'assetBundleVariant: jp', t)
         open(path + '.meta', 'w').write(t)
+    folder_guid = guid_of(jp + '.meta')  # read before the file is reopened for writing
     open(jp + '.meta', 'w').write(
-        f'fileFormatVersion: 2\nguid: {guid_of(jp + ".meta")}\nfolderAsset: yes\nDefaultImporter:\n'
+        f'fileFormatVersion: 2\nguid: {folder_guid}\nfolderAsset: yes\nDefaultImporter:\n'
         f'  externalObjects: {{}}\n  userData: \n  assetBundleName: {bundle}\n  assetBundleVariant: jp\n')
 
     # add "jp" to the game's supported locales
