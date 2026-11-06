@@ -122,4 +122,6 @@ __pycache__/
 .DS_Store
 # 元の Heaven Studio のビルド用ワークフロー（Unity のライセンスが要るので、このリポジトリでは動かさない）
 /.github/workflows/
-Tools/name_notes_edits.json
+# 個人用のページ（この Mac だけで使う）
+Tools/name_notes*
+Tools/voice_check*
