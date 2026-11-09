@@ -75,6 +75,7 @@ def entries():
                 game = string_value(args[0]) if args else None
             elif kind == 'GameAction' and game:
                 action = (string_value(args[0]), string_value(args[1]) if len(args) > 1 else None)
+                yield game, action, None, None, None  # every event, also the ones without properties
             elif kind == 'Param' and game and action and len(args) >= 3:
                 prop, caption = string_value(args[0]), string_value(args[2])
                 tooltip = string_value(args[3]) if len(args) > 3 else ''
@@ -95,6 +96,8 @@ def main(kind):
     else:
         pa = json.load(open(os.path.join(JA, 'params.json')))
         for game, (act, _), prop, caption, tooltip in entries():
+            if prop is None:
+                continue
             cur = pa.get(f'{game}/{act}/{prop}') or pa.get(caption) or ''
             print('\t'.join(s.replace('\t', ' ').replace('\n', ' ') for s in [game, act, prop, caption, cur, tooltip]))
 
