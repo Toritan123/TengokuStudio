@@ -118,6 +118,20 @@ namespace HeavenStudio.Common
             Debug.Log($"Loaded {CurrentLanguage} localization: {strings.Count} strings, {enums.Count} enum names, {gameNames.Count} game names, {voiceTimings.Count} voice timings");
         }
 
+        /// <summary>
+        /// Read the voice timings again (the bundled table, then the one in the data folder),
+        /// so timing tweaks made while the game is open apply the next time a level plays.
+        /// </summary>
+        public static void ReloadVoiceTimings()
+        {
+            if (IsSource) return;
+            voiceTimings.Clear();
+            TextAsset bundled = Resources.Load<TextAsset>($"Localization/{CurrentLanguage}/voice_timing");
+            if (bundled != null) LoadTable("voice_timing", bundled.text);
+            string file = Path.Combine(Application.persistentDataPath, "Localization", CurrentLanguage, "voice_timing.json");
+            if (File.Exists(file)) LoadTable("voice_timing", File.ReadAllText(file));
+        }
+
         private static void LoadTable(string tableName, string json)
         {
             JObject table;

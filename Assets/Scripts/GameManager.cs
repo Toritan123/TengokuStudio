@@ -911,6 +911,7 @@ namespace HeavenStudio
             canInput = true;
             if (!paused)
             {
+                Localization.ReloadVoiceTimings();  // pick up voice timing tweaks without restarting
                 inputOffsetSamples.Clear();
                 averageInputOffset = 0;
 
