@@ -99,7 +99,7 @@ namespace HeavenStudio.Games.Loaders
                 },
                 new GameAction("yay", "Yay!")
                 {
-                    function = delegate {CheerReaders.instance.Yay(eventCaller.currentEntity["solo"]); },
+                    function = delegate {var e = eventCaller.currentEntity; CheerReaders.instance.Yay(e["solo"], e.beat); },
                     defaultLength = 0.5f,
                     parameters = new List<Param>()
                     {
@@ -223,6 +223,58 @@ namespace HeavenStudio.Games
         bool shouldYay;
         bool shouldDoSuccessZoom;
         bool lastSolo;
+
+        // japanese voices: each cue's voice lines are scheduled a little before the cue, see VoiceLeadCues
+        VoiceLeadCues voiceCues;
+        readonly Dictionary<double, int> earlySpeakers = new();
+
+        bool ScheduleEarlyVoices(RiqEntity e)
+        {
+            switch (e.datamodel)
+            {
+                case "cheerReaders/oneTwoThree": OneTwoThree(e.beat, e["solo"], true); break;
+                case "cheerReaders/itsUpToYou": ItsUpToYou(e.beat, e["solo"], true); break;
+                case "cheerReaders/letsGoReadABunchaBooks": LetsGoReadABunchaBooks(e.beat, e["solo"], true); break;
+                case "cheerReaders/rahRahSisBoomBaBoom": RahRahSisBoomBaBoom(e.beat, e["solo"], e["consecutive"], true); break;
+                case "cheerReaders/okItsOn":
+                case "cheerReaders/okItsOnStretch":
+                    OkItsOnStretchable(e.beat, e.length, e["solo"], e["toggle"], e["poster"], e["happy"], e["impactZoom"], true); break;
+                case "cheerReaders/yay":
+                    if (!shouldYay) return false;
+                    YayVoice(e["solo"], e.beat);
+                    break;
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// Start of a cue: when its voices were scheduled early, use the speaker picked then (and leave lastSolo as it is
+        /// now, since later cues may already have been picked from it).
+        /// </summary>
+        bool CueStart(double beat, bool voicesOnly, ref int whoSpeaks, out bool keepSolo)
+        {
+            keepSolo = lastSolo;
+            if (voicesOnly || voiceCues == null || !voiceCues.Claim(beat) || !earlySpeakers.Remove(beat, out int speaker)) return false;
+            whoSpeaks = speaker;
+            return true;
+        }
+
+        static bool IsVoice(MultiSound.Sound s) => s.name.StartsWith("cheerReaders/Solo/") || s.name.StartsWith("cheerReaders/Girls/") || s.name.StartsWith("cheerReaders/All/");
+
+        /// <summary>Plays the cue's sounds; returns true when only the voices were wanted (the rest of the cue comes on its beat).</summary>
+        bool PlayCueSounds(double beat, int whoSpeaks, List<MultiSound.Sound> sounds, bool voicesOnly, bool early, bool keepSolo)
+        {
+            if (voicesOnly)
+            {
+                earlySpeakers[beat] = whoSpeaks;
+                MultiSound.Play(sounds.Where(IsVoice).ToArray(), forcePlay: true);
+                return true;
+            }
+            if (early) lastSolo = keepSolo;
+            var rest = early ? sounds.Where(x => !IsVoice(x)).ToArray() : sounds.ToArray();
+            if (rest.Length > 0) MultiSound.Play(rest, forcePlay: true);
+            return false;
+        }
         public bool shouldBeBlack = false;
         bool captionsChecked = false;
         int currentZoomIndex;
@@ -342,6 +394,8 @@ namespace HeavenStudio.Games
         void Update()
         {
             var cond = Conductor.instance;
+            voiceCues ??= new VoiceLeadCues("cheerReaders", ScheduleEarlyVoices, "oneTwoThree", "itsUpToYou", "letsGoReadABunchaBooks", "rahRahSisBoomBaBoom", "okItsOn", "okItsOnStretch", "yay");
+            voiceCues.Update();
 
             if (cond.isPlaying && !cond.isPaused)
             {
@@ -497,9 +551,22 @@ namespace HeavenStudio.Games
             }
         }
 
-        public void Yay(int whoSpeaks)
+        /// <summary>the yay line itself</summary>
+        void YayVoice(int whoSpeaks, double beat)
         {
+            SoundByte.PlayOneShotGame(whoSpeaks switch
+            {
+                (int)WhoSpeaks.Solo => "cheerReaders/Solo/yayS",
+                (int)WhoSpeaks.Girls => "cheerReaders/Girls/yayGirls",
+                _ => "cheerReaders/All/yay",
+            }, beat, forcePlay: true);
+        }
+
+        public void Yay(int whoSpeaks, double beat = -1)
+        {
+            bool early = beat >= 0 && voiceCues != null && voiceCues.Claim(beat);
             if (!shouldYay) return;
+            if (!early) YayVoice(whoSpeaks, -1);
             if (shouldBeBlack)
             {
                 blackYayParticle.Play();
@@ -525,7 +592,6 @@ namespace HeavenStudio.Games
             switch (whoSpeaks)
             {
                 case (int)WhoSpeaks.Solo:
-                    SoundByte.PlayOneShotGame("cheerReaders/Solo/yayS");
                     player.Yay(true);
                     foreach (var girl in allGirls)
                     {
@@ -533,7 +599,6 @@ namespace HeavenStudio.Games
                     }
                     break;
                 case (int)WhoSpeaks.Girls:
-                    SoundByte.PlayOneShotGame("cheerReaders/Girls/yayGirls");
                     foreach (var girl in allGirls)
                     {
                         girl.Yay(true);
@@ -541,7 +606,6 @@ namespace HeavenStudio.Games
                     player.Yay(false);
                     break;
                 default:
-                    SoundByte.PlayOneShotGame("cheerReaders/All/yay");
                     foreach (var girl in allGirls)
                     {
                         girl.Yay(true);
@@ -645,8 +709,9 @@ namespace HeavenStudio.Games
             });
         }
 
-        public void OneTwoThree(double beat, int whoSpeaks)
+        public void OneTwoThree(double beat, int whoSpeaks, bool voicesOnly = false)
         {
+            bool early = CueStart(beat, voicesOnly, ref whoSpeaks, out bool keepSolo);
             if (whoSpeaks == (int)WhoSpeaks.Automatic)
             {
                 if (gameManager.Beatmap.Entities.FindAll(e => e.datamodel is "cheerReaders/oneTwoThree" or "cheerReaders/itsUpToYou" or "cheerReaders/letsGoReadABunchaBooks" or "cheerReaders/rahRahSisBoomBaBoom" or "cheerReaders/okItsOn" or "cheerReaders/okItsOnStretch" && ((e.beat > beat && e.beat < beat + 3) || (e.beat < beat && e.beat + e.length > beat))).Count > 0)
@@ -661,8 +726,8 @@ namespace HeavenStudio.Games
                 }
             }
 
-            canBop = false;
-            ScheduleInput(beat, 2, InputAction_BasicPress, JustFlip, MissFlip, Nothing);
+            if (!voicesOnly) canBop = false;
+            if (!voicesOnly) ScheduleInput(beat, 2, InputAction_BasicPress, JustFlip, MissFlip, Nothing);
             List<MultiSound.Sound> soundsToPlay = new List<MultiSound.Sound>()
             {
                 new MultiSound.Sound("cheerReaders/bookHorizontal", beat),
@@ -700,7 +765,7 @@ namespace HeavenStudio.Games
                     });
                     break;
             }
-            MultiSound.Play(soundsToPlay.ToArray(), forcePlay: true);
+            if (PlayCueSounds(beat, whoSpeaks, soundsToPlay, voicesOnly, early, keepSolo)) return;
 
             SetCheerCaptions(beat, 3.5f, ottText);
 
@@ -792,8 +857,9 @@ namespace HeavenStudio.Games
             });
         }
 
-        public void ItsUpToYou(double beat, int whoSpeaks)
+        public void ItsUpToYou(double beat, int whoSpeaks, bool voicesOnly = false)
         {
+            bool early = CueStart(beat, voicesOnly, ref whoSpeaks, out bool keepSolo);
             if (whoSpeaks == (int)WhoSpeaks.Automatic)
             {
                 if (gameManager.Beatmap.Entities.FindAll(e => e.datamodel is "cheerReaders/oneTwoThree" or "cheerReaders/itsUpToYou" or "cheerReaders/letsGoReadABunchaBooks" or "cheerReaders/rahRahSisBoomBaBoom" or "cheerReaders/okItsOn" or "cheerReaders/okItsOnStretch" && ((e.beat > beat && e.beat < beat + 3) || (e.beat < beat && e.beat + e.length > beat))).Count > 0)
@@ -808,8 +874,8 @@ namespace HeavenStudio.Games
                 }
             }
 
-            canBop = false;
-            ScheduleInput(beat, 2, InputAction_BasicPress, JustFlip, MissFlip, Nothing);
+            if (!voicesOnly) canBop = false;
+            if (!voicesOnly) ScheduleInput(beat, 2, InputAction_BasicPress, JustFlip, MissFlip, Nothing);
             List<MultiSound.Sound> soundsToPlay = new List<MultiSound.Sound>()
             {
                 new MultiSound.Sound("cheerReaders/bookVertical", beat),
@@ -856,7 +922,7 @@ namespace HeavenStudio.Games
                     });
                     break;
             }
-            MultiSound.Play(soundsToPlay.ToArray(), forcePlay: true);
+            if (PlayCueSounds(beat, whoSpeaks, soundsToPlay, voicesOnly, early, keepSolo)) return;
 
             SetCheerCaptions(beat, 3.5f, hycdText);
 
@@ -968,8 +1034,9 @@ namespace HeavenStudio.Games
             });
         }
 
-        public void LetsGoReadABunchaBooks(double beat, int whoSpeaks)
+        public void LetsGoReadABunchaBooks(double beat, int whoSpeaks, bool voicesOnly = false)
         {
+            bool early = CueStart(beat, voicesOnly, ref whoSpeaks, out bool keepSolo);
             if (whoSpeaks == (int)WhoSpeaks.Automatic)
             {
                 if (gameManager.Beatmap.Entities.FindAll(e => e.datamodel is "cheerReaders/oneTwoThree" or "cheerReaders/itsUpToYou" or "cheerReaders/letsGoReadABunchaBooks" or "cheerReaders/rahRahSisBoomBaBoom" or "cheerReaders/okItsOn" or "cheerReaders/okItsOnStretch" && ((e.beat > beat && e.beat < beat + 3) || (e.beat < beat && e.beat + e.length > beat))).Count > 0)
@@ -984,8 +1051,8 @@ namespace HeavenStudio.Games
                 }
             }
 
-            canBop = false;
-            ScheduleInput(beat, 2, InputAction_BasicPress, JustFlip, MissFlip, Nothing);
+            if (!voicesOnly) canBop = false;
+            if (!voicesOnly) ScheduleInput(beat, 2, InputAction_BasicPress, JustFlip, MissFlip, Nothing);
             List<MultiSound.Sound> soundsToPlay = new List<MultiSound.Sound>()
             {
                 new MultiSound.Sound("cheerReaders/letsGoRead", beat),
@@ -1051,7 +1118,7 @@ namespace HeavenStudio.Games
                     });
                     break;
             }
-            MultiSound.Play(soundsToPlay.ToArray(), forcePlay: true);
+            if (PlayCueSounds(beat, whoSpeaks, soundsToPlay, voicesOnly, early, keepSolo)) return;
 
             SetCheerCaptions(beat, 3.5f, evbdygoText);
 
@@ -1173,8 +1240,9 @@ namespace HeavenStudio.Games
             });
         }
 
-        public void RahRahSisBoomBaBoom(double beat, int whoSpeaks, bool consecutive)
+        public void RahRahSisBoomBaBoom(double beat, int whoSpeaks, bool consecutive, bool voicesOnly = false)
         {
+            bool early = CueStart(beat, voicesOnly, ref whoSpeaks, out bool keepSolo);
             if (whoSpeaks == (int)WhoSpeaks.Automatic)
             {
                 if (gameManager.Beatmap.Entities.FindAll(e => e.datamodel is "cheerReaders/oneTwoThree" or "cheerReaders/itsUpToYou" or "cheerReaders/letsGoReadABunchaBooks" or "cheerReaders/rahRahSisBoomBaBoom" or "cheerReaders/okItsOn" or "cheerReaders/okItsOnStretch" && ((e.beat > beat && e.beat < beat + 4) || (e.beat < beat && e.beat + e.length > beat))).Count > 0)
@@ -1189,8 +1257,8 @@ namespace HeavenStudio.Games
                 }
             }
 
-            canBop = false;
-            ScheduleInput(beat, 2.5f, InputAction_BasicPress, JustFlipBoom, MissFlip, Nothing);
+            if (!voicesOnly) canBop = false;
+            if (!voicesOnly) ScheduleInput(beat, 2.5f, InputAction_BasicPress, JustFlipBoom, MissFlip, Nothing);
             List<MultiSound.Sound> soundsToPlay = new List<MultiSound.Sound>()
             {
                 new MultiSound.Sound("cheerReaders/bookDiagonal", beat + 0.5f),
@@ -1246,7 +1314,7 @@ namespace HeavenStudio.Games
             {
                 soundsToPlay.Add(new MultiSound.Sound("cheerReaders/bookDiagonal", beat));
             }
-            MultiSound.Play(soundsToPlay.ToArray(), forcePlay: true);
+            if (PlayCueSounds(beat, whoSpeaks, soundsToPlay, voicesOnly, early, keepSolo)) return;
 
             SetCheerCaptions(beat, 3.5f, rrsbbbText);
 
@@ -1438,8 +1506,9 @@ namespace HeavenStudio.Games
             }
         }
 
-        public void OkItsOnStretchable(double beat, float length, int whoSpeaks, bool whistle, int posterToChoose, bool shouldHappyFace, bool shouldImpactZoom)
+        public void OkItsOnStretchable(double beat, float length, int whoSpeaks, bool whistle, int posterToChoose, bool shouldHappyFace, bool shouldImpactZoom, bool voicesOnly = false)
         {
+            bool early = CueStart(beat, voicesOnly, ref whoSpeaks, out bool keepSolo);
             if (whoSpeaks == (int)WhoSpeaks.Automatic)
             {
                 if (gameManager.Beatmap.Entities.FindAll(e => e.datamodel is "cheerReaders/oneTwoThree" or "cheerReaders/itsUpToYou" or "cheerReaders/letsGoReadABunchaBooks" or "cheerReaders/rahRahSisBoomBaBoom" or "cheerReaders/okItsOn" or "cheerReaders/okItsOnStretch" && ((e.beat > beat && e.beat < beat + length) || (e.beat < beat && e.beat + e.length > beat))).Count > 0)
@@ -1454,10 +1523,10 @@ namespace HeavenStudio.Games
                 }
             }
 
-            canBop = false;
+            if (!voicesOnly) canBop = false;
             float actualLength = length * 0.25f;
-            ScheduleInput(beat, 2 * actualLength, InputAction_AltStart, JustHoldSpin, MissFlip, Nothing);
-            ScheduleInput(beat, 3 * actualLength, InputAction_AltFinish, JustReleaseSpin, MissFlip, Nothing).IsHittable = IsReleaseSpinHittable;
+            if (!voicesOnly) ScheduleInput(beat, 2 * actualLength, InputAction_AltStart, JustHoldSpin, MissFlip, Nothing);
+            if (!voicesOnly) ScheduleInput(beat, 3 * actualLength, InputAction_AltFinish, JustReleaseSpin, MissFlip, Nothing).IsHittable = IsReleaseSpinHittable;
             List<MultiSound.Sound> soundsToPlay = new List<MultiSound.Sound>();
 			
 			//if (!shouldImpactZoom)
@@ -1513,7 +1582,7 @@ namespace HeavenStudio.Games
                     });
                     break;
             }
-            MultiSound.Play(soundsToPlay.ToArray(), forcePlay: true);
+            if (PlayCueSounds(beat, whoSpeaks, soundsToPlay, voicesOnly, early, keepSolo)) return;
 
             SetCheerCaptions(beat, length - 0.5f, okdmText);
 

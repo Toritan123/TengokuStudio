@@ -12,6 +12,20 @@ namespace HeavenStudio.Util
 {
     public class SoundByte
     {
+        /// <summary>
+        /// How many beats before a voice line a game decides it and schedules it. Japanese voices often have to start a
+        /// little before the beat to sound on it, which a sound started right on its beat can't do.
+        /// </summary>
+        public const double VoiceLead = 0.25;
+
+        /// <summary>VoiceLead, but never less than 0.15 seconds (at fast tempos a quarter beat is too short for some voices)</summary>
+        public static double VoiceLeadAt(double beat)
+        {
+            var cond = Conductor.instance;
+            if (cond == null) return VoiceLead;
+            return Math.Max(VoiceLead, cond.SecsToBeats(0.15, cond.GetBpmAtBeat(beat)));
+        }
+
         static GameObject oneShotAudioSourceObject;
         static AudioSource oneShotAudioSource;
         //static int soundIdx = 0;    Unused value - Marc
@@ -590,4 +604,66 @@ namespace HeavenStudio.Util
         }
     }
 
+
+    /// <summary>
+    /// For a game whose cues play their voice lines from the event's function, right on the cue's beat: a japanese voice
+    /// that has to start a little before the beat (see Localization.VoiceTiming) can't, so it sounds late. Call Update()
+    /// from the game's Update; while the game plays japanese voices, each cue's voice lines are handed to `schedule` a
+    /// little before the cue (SoundByte.VoiceLeadAt; it returns false if it left them for the cue), and the cue's
+    /// function asks Claim(beat) whether to leave them out.
+    /// </summary>
+    public class VoiceLeadCues
+    {
+        readonly string game;
+        readonly HashSet<string> actions;
+        readonly Func<Jukebox.RiqEntity, bool> schedule;
+        readonly HashSet<double> early = new();
+        readonly HashSet<double> claimed = new();
+        List<Jukebox.RiqEntity> cues;
+        int next;
+        bool japanese;
+
+        public VoiceLeadCues(string game, Func<Jukebox.RiqEntity, bool> schedule, params string[] actions)
+        {
+            this.game = game;
+            this.schedule = schedule;
+            this.actions = new HashSet<string>(actions.Select(a => $"{game}/{a}"));
+        }
+
+        public void Update()
+        {
+            var cond = Conductor.instance;
+            if (cond == null || !cond.isPlaying)
+            {
+                // stopped: start over next time (the level may be edited in between)
+                cues = null;
+                early.Clear();
+                claimed.Clear();
+                return;
+            }
+            if (cond.isPaused) return;
+            double now = cond.songPositionInBeatsAsDouble;
+            if (cues == null)
+            {
+                japanese = Localization.UsesJapaneseVoice(game);
+                cues = GameManager.instance.Beatmap.Entities.Where(e => actions.Contains(e.datamodel)).OrderBy(e => e.beat).ToList();
+                next = 0;
+                while (next < cues.Count && cues[next].beat < now) next++;
+            }
+            if (!japanese) return;
+            while (next < cues.Count && cues[next].beat <= now + SoundByte.VoiceLeadAt(cues[next].beat))
+            {
+                var e = cues[next++];
+                if (e.beat <= now || claimed.Contains(e.beat)) continue;  // too late, the function plays it as usual
+                if (schedule(e)) early.Add(e.beat);
+            }
+        }
+
+        /// <summary>True when the voice lines of the cue at this beat were already scheduled (leave them out).</summary>
+        public bool Claim(double beat)
+        {
+            claimed.Add(beat);
+            return early.Contains(beat);
+        }
+    }
 }

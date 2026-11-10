@@ -121,9 +121,14 @@ namespace HeavenStudio.Games
             }
         }
 
+        // japanese voices: "one" is scheduled a little before the assistant's stop, see VoiceLeadCues
+        VoiceLeadCues voiceCues;
+
         private void Update()
         {
             var cond = Conductor.instance;
+            voiceCues ??= new VoiceLeadCues("boardMeeting", e => { SoundByte.PlayOneShotGame("boardMeeting/one", e.beat); return true; }, "assStop");
+            voiceCues.Update();
 
             if (cond.isPlaying && !cond.isPaused)
             {
@@ -183,13 +188,15 @@ namespace HeavenStudio.Games
             assistantCanBop = false;
             string twoSound = "boardMeeting/two";
             if (beat % 1 != 0) twoSound = "boardMeeting/twoUra";
-            MultiSound.Play(new List<MultiSound.Sound>
+            var sounds = new List<MultiSound.Sound>
             {
                 new MultiSound.Sound("boardMeeting/one", beat),
                 new MultiSound.Sound(twoSound, beat + 0.5f),
                 new MultiSound.Sound("boardMeeting/three", beat + 1),
                 new MultiSound.Sound("boardMeeting/stopAll", beat + 2)
-            });
+            };
+            if (voiceCues != null && voiceCues.Claim(beat)) sounds.RemoveAt(0);  // already scheduled
+            MultiSound.Play(sounds);
             BeatAction.New(instance, new List<BeatAction.Action>()
             {
                 new BeatAction.Action(beat, delegate { assistantAnim.DoScaledAnimationAsync("One", 0.5f); }),

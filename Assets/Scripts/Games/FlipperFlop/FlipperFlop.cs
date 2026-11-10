@@ -435,6 +435,8 @@ namespace HeavenStudio.Games
 
         public void QueueFlips(double beat, float length, bool roll, int uh = 0, bool thatsIt = false, int appreciation = 0, bool heart = false, bool thatsItBarberShop = false)
         {
+            // pick the random line now: the voice is scheduled a little before the face animation
+            if (appreciation == (int)AppreciationType.Random) appreciation = UnityEngine.Random.Range(1, 6);
             int flopCount = 1;
             int recounts = 0;
             for (int i = 0; i < length; i++)
@@ -478,34 +480,36 @@ namespace HeavenStudio.Games
                     {
                         int noiseToPlay = (flopCount == 4) ? 2 : flopCount;
                         soundToPlay = $"flipperFlop/count/flopNoise{noiseToPlay}";
+                        // the lines are known now, so schedule them on their beats (a japanese voice can then start early)
                         if (thatsItBarberShop)
                         {
+                            SoundByte.PlayOneShotGame("flipperFlop/appreciation/thatsit1", beat + i, forcePlay: true);
+                            SoundByte.PlayOneShotGame(soundToPlay, beat + i, forcePlay: true);
+                            SoundByte.PlayOneShotGame("flipperFlop/appreciation/thatsit2", beat + i + 0.5f, forcePlay: true);
                             BeatAction.New(instance, new List<BeatAction.Action>()
                             {
                                 new BeatAction.Action(beat + i, delegate
                                 {
-                                    SoundByte.PlayOneShotGame("flipperFlop/appreciation/thatsit1");
-                                    SoundByte.PlayOneShotGame(soundToPlay);
                                     captainTuckAnim.DoScaledAnimationAsync("CaptainBop", 0.5f);
                                     captainTuckFaceAnim.DoScaledAnimationAsync("CaptainTuckSpeakExpression", 0.5f);
                                 }),
-                                new BeatAction.Action(beat + i + 0.5f, delegate { SoundByte.PlayOneShotGame("flipperFlop/appreciation/thatsit2"); captainTuckFaceAnim.DoScaledAnimationAsync("CaptainTuckSpeakExpression", 0.5f); }),
+                                new BeatAction.Action(beat + i + 0.5f, delegate { captainTuckFaceAnim.DoScaledAnimationAsync("CaptainTuckSpeakExpression", 0.5f); }),
                             });
                         }
                         else
                         {
+                            SoundByte.PlayOneShotGame("flipperFlop/appreciation/thatsit1", beat + i - 0.5f, forcePlay: true);
+                            SoundByte.PlayOneShotGame("flipperFlop/appreciation/thatsit2", beat + i, forcePlay: true);
+                            SoundByte.PlayOneShotGame(soundToPlay, beat + i, forcePlay: true);
                             BeatAction.New(instance, new List<BeatAction.Action>()
                             {
                                 new BeatAction.Action(beat + i - 0.5f, delegate
                                 {
-                                    SoundByte.PlayOneShotGame("flipperFlop/appreciation/thatsit1");
                                     captainTuckFaceAnim.DoScaledAnimationAsync("CaptainTuckSpeakExpression", 0.5f);
                                 }),
                                 new BeatAction.Action(beat + i, delegate
                                 {
-                                    SoundByte.PlayOneShotGame("flipperFlop/appreciation/thatsit2");
                                     captainTuckFaceAnim.DoScaledAnimationAsync("CaptainTuckSpeakExpression", 0.5f);
-                                    SoundByte.PlayOneShotGame(soundToPlay);
                                     captainTuckAnim.DoScaledAnimationAsync("CaptainBop", 0.5f);
                                 }),
                             });
@@ -514,8 +518,13 @@ namespace HeavenStudio.Games
                     else
                     {
                         string failingSoundToPlay = $"flipperFlop/count/flopCountFail{flopCount}";
+                        double countBeat = beat + i;
                         BeatAction.New(instance, new List<BeatAction.Action>()
                         {
+                            // decide the count line a little before its beat and schedule it, so a japanese voice can start early
+                            new BeatAction.Action(countBeat - SoundByte.VoiceLead, delegate {
+                                SoundByte.PlayOneShotGame(missed ? failingSoundToPlay : soundToPlay, countBeat, forcePlay: true);
+                            }),
                             new BeatAction.Action(beat + i, delegate {
                                 string voiceLine = soundToPlay;
                                 string failVoiceLine = failingSoundToPlay;
@@ -531,16 +540,16 @@ namespace HeavenStudio.Games
                                     captainTuckFaceAnim.DoScaledAnimationAsync("CaptainTuckRollExpression", 0.5f);
                                 }
                                 CaptainTuckBop();
-
-                                SoundByte.PlayOneShotGame(voiceLine);
                             }),
                         });
                     }
 
                     if (appreciation != (int)AppreciationType.None && uh == 0 && i + 1 == length)
                     {
+                        double thanksBeat = beat + i + 1f;
                         BeatAction.New(instance, new List<BeatAction.Action>()
                         {
+                            new BeatAction.Action(thanksBeat - SoundByte.VoiceLead, delegate { AppreciationVoice(appreciation, thanksBeat); }),
                             new BeatAction.Action(beat + i + 1f, delegate
                             {
                                 AppreciationVoiceLine(beat + i, appreciation, heart);
@@ -617,8 +626,12 @@ namespace HeavenStudio.Games
                     string voiceLine = $"flipperFlop/uh{voiceLineIndex}";
                     string failVoiceLine = $"flipperFlop/uhfail{voiceLineIndex}";
 
+                    double uhBeat = beat + length + i;
                     BeatAction.New(instance, new List<BeatAction.Action>()
                     {
+                        new BeatAction.Action(uhBeat - SoundByte.VoiceLead, delegate {
+                            SoundByte.PlayOneShotGame(missed ? failVoiceLine : voiceLine, uhBeat, forcePlay: true);
+                        }),
                         new BeatAction.Action(beat + length + i, delegate {
                             string voiceLineToPlay = voiceLine;
                             string failVoiceLineToPlay = failVoiceLine;
@@ -635,12 +648,12 @@ namespace HeavenStudio.Games
                             }
 
                             CaptainTuckBop();
-                            SoundByte.PlayOneShotGame(voiceLineToPlay);
                         }),
                     });
                 }
                 BeatAction.New(instance, new List<BeatAction.Action>()
                 {
+                    new BeatAction.Action(beat + length + uh - SoundByte.VoiceLead, delegate { AppreciationVoice(appreciation, beat + length + uh); }),
                     new BeatAction.Action(beat + length + uh, delegate
                     {
                         AppreciationVoiceLine(beat + length + uh, appreciation, heart);
@@ -671,6 +684,7 @@ namespace HeavenStudio.Games
             {
                 BeatAction.New(instance, new List<BeatAction.Action>()
                 {
+                    new BeatAction.Action(beat + length - SoundByte.VoiceLead, delegate { AppreciationVoice(appreciation, beat + length); }),
                     new BeatAction.Action(beat + length, delegate
                     {
                         AppreciationVoiceLine(beat + length, appreciation, heart);
@@ -699,6 +713,22 @@ namespace HeavenStudio.Games
             }
         }
 
+        /// <summary>the appreciation line itself, scheduled for its beat a little before it comes (see SoundByte.VoiceLead)</summary>
+        static void AppreciationVoice(int appreciation, double beat)
+        {
+            if (instance.missed) return;
+            string line = (AppreciationType)appreciation switch
+            {
+                AppreciationType.Good => "good",
+                AppreciationType.GoodJob => "goodjob",
+                AppreciationType.Nice => "nice",
+                AppreciationType.WellDone => "welldone",
+                AppreciationType.Yes => "yes",
+                _ => null,
+            };
+            if (line != null) SoundByte.PlayOneShotGame("flipperFlop/appreciation/" + line, beat, forcePlay: true);
+        }
+
         public static void AppreciationVoiceLine(double beat, int appreciation, bool heart)
         {
             if (FlipperFlop.instance.missed) return;
@@ -708,7 +738,6 @@ namespace HeavenStudio.Games
                 case (int)AppreciationType.None:
                     break;
                 case (int)AppreciationType.Good:
-                    SoundByte.PlayOneShotGame("flipperFlop/appreciation/good");
                     if (heart)
                     {
                         BeatAction.New(instance, new List<BeatAction.Action>()
@@ -725,7 +754,6 @@ namespace HeavenStudio.Games
                     }
                     break;
                 case (int)AppreciationType.GoodJob:
-                    SoundByte.PlayOneShotGame("flipperFlop/appreciation/goodjob");
                     if (heart)
                     {
                         BeatAction.New(instance, new List<BeatAction.Action>()
@@ -743,7 +771,6 @@ namespace HeavenStudio.Games
                     }
                     break;
                 case (int)AppreciationType.Nice:
-                    SoundByte.PlayOneShotGame("flipperFlop/appreciation/nice");
                     if (heart)
                     {
                         BeatAction.New(instance, new List<BeatAction.Action>()
@@ -760,7 +787,6 @@ namespace HeavenStudio.Games
                     }
                     break;
                 case (int)AppreciationType.WellDone:
-                    SoundByte.PlayOneShotGame("flipperFlop/appreciation/welldone");
                     if (heart)
                     {
                         BeatAction.New(instance, new List<BeatAction.Action>()
@@ -778,7 +804,6 @@ namespace HeavenStudio.Games
                     }
                     break;
                 case (int)AppreciationType.Yes:
-                    SoundByte.PlayOneShotGame("flipperFlop/appreciation/yes");
                     if (heart)
                     {
                         BeatAction.New(instance, new List<BeatAction.Action>()

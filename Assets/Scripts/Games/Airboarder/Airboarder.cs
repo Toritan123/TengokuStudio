@@ -556,12 +556,10 @@ namespace HeavenStudio.Games
         {
             if(voiceOn)
             {
-                BeatAction.New(instance, new List<BeatAction.Action>(){
-                    
-                    new BeatAction.Action(beat, delegate {SoundByte.PlayOneShotGame("airboarder/start1");}),
-                    new BeatAction.Action(beat + 6.5, delegate {SoundByte.PlayOneShotGame("airboarder/start2");}),
-                    new BeatAction.Action(beat + 7, delegate {SoundByte.PlayOneShotGame("airboarder/start3");}),
-                });
+                // scheduled on their beats, so japanese voices can start a little early
+                SoundByte.PlayOneShotGame("airboarder/start1", beat);
+                SoundByte.PlayOneShotGame("airboarder/start2", beat + 6.5);
+                SoundByte.PlayOneShotGame("airboarder/start3", beat + 7);
             }
             BeatAction.New(instance, new List<BeatAction.Action>(){
                 

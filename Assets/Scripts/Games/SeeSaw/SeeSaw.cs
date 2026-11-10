@@ -345,9 +345,22 @@ namespace HeavenStudio.Games
             bgLow.color = new Color(newColorR, newColorG, newColorB);
         }
 
+        // japanese voices: the other guy's long-jump voice is scheduled a little before his jump, see VoiceLeadCues
+        VoiceLeadCues voiceCues;
+
+        bool ScheduleEarlyVoice(RiqEntity e)
+        {
+            if (see.dead || saw.dead) return false;
+            if (currentJumpIndex != 0 && (currentJumpIndex >= allJumpEvents.Count || allJumpEvents[currentJumpIndex].beat != e.beat)) return false;
+            SoundByte.PlayOneShotGame("seeSaw/otherVoiceLong1", e.beat);
+            return true;
+        }
+
         private void Update()
         {
             var cond = Conductor.instance;
+            voiceCues ??= new VoiceLeadCues("seeSaw", ScheduleEarlyVoice, "longLong", "longShort");
+            voiceCues.Update();
             if (cond.isPlaying && !cond.isPaused)
             {
                 BackgroundColorUpdate(cond);
@@ -456,6 +469,7 @@ namespace HeavenStudio.Games
 
         public void LongLong(double beat, bool high, float height)
         {
+            bool earlyVoice = voiceCues != null && voiceCues.Claim(beat);
             if (see.dead || saw.dead) return;
             if (currentJumpIndex != 0)
             {
@@ -476,7 +490,6 @@ namespace HeavenStudio.Games
                 MultiSound.Play(new MultiSound.Sound[]
                 {
                     new MultiSound.Sound("seeSaw/otherHighJump", beat),
-                    new MultiSound.Sound("seeSaw/otherVoiceLong1", beat),
                     new MultiSound.Sound("seeSaw/otherVoiceLong2", beat + 1),
                     new MultiSound.Sound("seeSaw/midAirShine", beat + 1),
                 });
@@ -487,10 +500,11 @@ namespace HeavenStudio.Games
                 MultiSound.Play(new MultiSound.Sound[]
                 {
                     new MultiSound.Sound("seeSaw/otherLongJump", beat),
-                    new MultiSound.Sound("seeSaw/otherVoiceLong1", beat),
                     new MultiSound.Sound("seeSaw/otherVoiceLong2", beat + 1),
                 });
             }
+
+            if (!earlyVoice) SoundByte.PlayOneShotGame("seeSaw/otherVoiceLong1", beat);
 
             ScheduleInput(beat, 2f, InputAction_BasicPress, high ? JustLongHigh : JustLong, MissLong, Empty);
             if (currentJumpIndex < allJumpEvents.Count) 
@@ -516,6 +530,7 @@ namespace HeavenStudio.Games
 
         public void LongShort(double beat, bool high, float height)
         {
+            bool earlyVoice = voiceCues != null && voiceCues.Claim(beat);
             if (see.dead || saw.dead) return;
             if (currentJumpIndex != 0)
             {
@@ -536,7 +551,6 @@ namespace HeavenStudio.Games
                 MultiSound.Play(new MultiSound.Sound[]
                 {
                     new MultiSound.Sound("seeSaw/otherHighJump", beat),
-                    new MultiSound.Sound("seeSaw/otherVoiceLong1", beat),
                     new MultiSound.Sound("seeSaw/otherVoiceLong2", beat + 1),
                     new MultiSound.Sound("seeSaw/midAirShine", beat + 1),
                 });
@@ -547,10 +561,11 @@ namespace HeavenStudio.Games
                 MultiSound.Play(new MultiSound.Sound[]
                 {
                     new MultiSound.Sound("seeSaw/otherLongJump", beat),
-                    new MultiSound.Sound("seeSaw/otherVoiceLong1", beat),
                     new MultiSound.Sound("seeSaw/otherVoiceLong2", beat + 1),
                 });
             }
+            if (!earlyVoice) SoundByte.PlayOneShotGame("seeSaw/otherVoiceLong1", beat);
+
             ScheduleInput(beat, 2f, InputAction_BasicPress, high ? JustShortHigh : JustShort, MissShort, Empty);
             if (currentJumpIndex < allJumpEvents.Count)
             {

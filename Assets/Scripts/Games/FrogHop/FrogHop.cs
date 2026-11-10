@@ -46,7 +46,7 @@ namespace HeavenStudio.Games.Loaders
                         var e = eventCaller.currentEntity;
                         FrogHop.CountVox(e.beat, e["leader"], e["backup"]);
                     },
-                    preFunctionLength = 0,
+                    preFunctionLength = 0.5f,  // a little early, so japanese voices can start before the beat
                     parameters = new List<Param>()
                     {
                         new Param("start", true, "Start Shaking", "Start shaking after the count in."),
@@ -67,7 +67,7 @@ namespace HeavenStudio.Games.Loaders
                         var e = eventCaller.currentEntity;
                         FrogHop.CountForceVox(e.beat, e["syllable"], e["leader"], e["backup"]);
                     },
-                    preFunctionLength = 0,
+                    preFunctionLength = 0.5f,  // a little early, so japanese voices can start before the beat
                     parameters = new List<Param>()
                     {
                         new Param("syllable", FrogHop.Number.One, "Type", "Which number the frog(s) should say."),
@@ -107,7 +107,7 @@ namespace HeavenStudio.Games.Loaders
                         var e = eventCaller.currentEntity;
                         FrogHop.TwoHopVox(e.beat, e["enabled"]);
                     },
-                    preFunctionLength = 0,
+                    preFunctionLength = 0.5f,  // a little early, so japanese voices can start before the beat
                     parameters = new List<Param>()
                     {
                         new Param("enabled", true, "Cue Sound", "Choose whether to play the cue sound for this event."),
@@ -128,7 +128,7 @@ namespace HeavenStudio.Games.Loaders
                         var e = eventCaller.currentEntity;
                         FrogHop.ThreeHopVox(e.beat, e["enabled"]);
                     },
-                    preFunctionLength = 0,
+                    preFunctionLength = 0.5f,  // a little early, so japanese voices can start before the beat
                     parameters = new List<Param>()
                     {
                         new Param("enabled", true, "Cue Sound", "Choose whether to play the cue sound for this event."),
@@ -149,7 +149,7 @@ namespace HeavenStudio.Games.Loaders
                         var e = eventCaller.currentEntity;
                         FrogHop.SpinItBoysVox(e.beat, e["enabled"]);
                     },
-                    preFunctionLength = 0,
+                    preFunctionLength = 0.5f,  // a little early, so japanese voices can start before the beat
                     parameters = new List<Param>()
                     {
                         new Param("enabled", true, "Cue Sound", "Choose whether to play the cue sound for this event."),
@@ -861,7 +861,7 @@ namespace HeavenStudio.Games
 
         public static void CountVox(double beat, bool leaderCounts, bool backupCounts)
         {
-            float pitchToUse = GetPitch(Conductor.instance.songPositionInBeatsAsDouble);
+            float pitchToUse = GetPitch(beat);
 
             var sounds = new List<MultiSound.Sound>();
 
@@ -906,14 +906,14 @@ namespace HeavenStudio.Games
 
         public static void CountForceVox(double beat, int Number, bool leaderCounts, bool backupCounts)
         {
-            float pitchToUse = GetPitch(Conductor.instance.songPositionInBeatsAsDouble);
+            float pitchToUse = GetPitch(beat);
 
-            if (leaderCounts) SoundByte.PlayOneShotGame($"frogHop/SE_NTR_FROG_EN_COUNT" + (Number + 1), forcePlay: true);
+            if (leaderCounts) SoundByte.PlayOneShotGame($"frogHop/SE_NTR_FROG_EN_COUNT" + (Number + 1), beat, forcePlay: true);
 
             if (backupCounts)
             {
-                SoundByte.PlayOneShotGame($"frogHop/SE_NTR_FROG_EN_COUNT" + (Number + 1) + $"_EXTRAS_CUSTOM", forcePlay: true);
-                SoundByte.PlayOneShotGame($"frogHop/SE_NTR_FROG_EN_COUNT" + (Number + 1) + $"_PLAYER_CUSTOM", forcePlay: true);
+                SoundByte.PlayOneShotGame($"frogHop/SE_NTR_FROG_EN_COUNT" + (Number + 1) + $"_EXTRAS_CUSTOM", beat, forcePlay: true);
+                SoundByte.PlayOneShotGame($"frogHop/SE_NTR_FROG_EN_COUNT" + (Number + 1) + $"_PLAYER_CUSTOM", beat, forcePlay: true);
             }
         }
 
@@ -985,7 +985,7 @@ namespace HeavenStudio.Games
         public static void TwoHopVox(double beat, bool enabled)
         {
             if (!enabled) return;
-            float pitchToUse = GetPitch(Conductor.instance.songPositionInBeatsAsDouble);
+            float pitchToUse = GetPitch(beat);
 
             var sounds = new List<MultiSound.Sound>();
 
@@ -1029,7 +1029,7 @@ namespace HeavenStudio.Games
         public static void ThreeHopVox(double beat, bool enabled)
         {
             if (!enabled) return;
-            float pitchToUse = GetPitch(Conductor.instance.songPositionInBeatsAsDouble);
+            float pitchToUse = GetPitch(beat);
 
             var sounds = new List<MultiSound.Sound>();
 
@@ -1073,7 +1073,7 @@ namespace HeavenStudio.Games
         public static void SpinItBoysVox(double beat, bool enabled)
         {
             if (!enabled) return;
-            float pitchToUse = GetPitch(Conductor.instance.songPositionInBeatsAsDouble);
+            float pitchToUse = GetPitch(beat);
 
             var sounds = new List<MultiSound.Sound>();
 
