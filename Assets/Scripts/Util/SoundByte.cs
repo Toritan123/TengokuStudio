@@ -438,6 +438,18 @@ namespace HeavenStudio.Util
         ///    Unpitched, non-scheduled, non-looping sounds are played using a global One-Shot audio source that doesn't create a Sound object.
         ///    Looped sounds return their created Sound object so they can be canceled after creation.
         /// </summary>
+        /// <summary>
+        /// Move a sound's beat by a number of straight (unswung) beats. A japanese voice is shifted from where the english
+        /// one plays; with swing on, the shift has to be measured from where that sound really lands, or the
+        /// syllables between the swung notes stretch and squash.
+        /// </summary>
+        static double ShiftBeat(double beat, double by, bool ignoreSwing)
+        {
+            if (by == 0 || ignoreSwing || Conductor.instance == null) return beat + by;  // ignoreSwing: the beat is still straight here
+            var cond = Conductor.instance;
+            return cond.GetSwungBeat(cond.GetUnSwungBeat(beat) + by);
+        }
+
         public static Sound PlayOneShotGame(string name, double beat = -1, float pitch = 1f, float volume = 1f, bool looping = false, bool forcePlay = false, double offset = 0f, bool ignoreConductorPause = false, bool ignoreSwing = false, float panning = 0f)
         {
             string gameName = name.Split('/')[0];
@@ -450,11 +462,11 @@ namespace HeavenStudio.Util
                     {
                         foreach (var (sound, extraBeat) in timing.extra)
                         {
-                            PlayOneShot($"games/{gameName}/{sound}", beat + timing.beat + extraBeat, pitch, volume * timing.volume, false, inf.UsesAssetBundle ? gameName : null, 0, ignoreConductorPause, ignoreSwing, panning);
+                            PlayOneShot($"games/{gameName}/{sound}", ShiftBeat(beat, timing.beat + extraBeat, ignoreSwing), pitch, volume * timing.volume, false, inf.UsesAssetBundle ? gameName : null, 0, ignoreConductorPause, ignoreSwing, panning);
                         }
                     }
                     if (timing.mute) return null;
-                    if (beat >= 0) beat += timing.beat;
+                    if (beat >= 0) beat = ShiftBeat(beat, timing.beat, ignoreSwing);
                     offset += timing.offset;
                     volume *= timing.volume;
                 }
