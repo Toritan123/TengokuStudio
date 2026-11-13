@@ -245,9 +245,30 @@ namespace HeavenStudio.Games
             return (reporterHeadAnim.IsPlayingAnimationNames(new string[] { "BlinkHead", "ExtendBlink", "ExcitedBlink", "Idle", "ExtendIdle", "Excited", "Miss", "Late" }) || reporterHeadAnim.IsAnimationNotPlaying()) && !reporterHeadAnim.GetCurrentAnimatorStateInfo(0).IsName("Flinch");
         }
 
+        // japanese voices: the first voice of a question or "woah you go big guy" is scheduled a little before its beat, see VoiceLeadCues
+        VoiceLeadCues voiceCues;
+        readonly Dictionary<double, int> earlyVariants = new();
+
+        bool ScheduleEarlyVoice(RiqEntity e)
+        {
+            bool bigGuy = e.datamodel == "ringside/woahYouGoBigGuy";
+            if (!bigGuy && e.datamodel == "ringside/questionScaled" && e.length <= 2f) return false;
+            int variant = e["variant"];
+            if (variant == (int)QuestionVariant.Random) variant = UnityEngine.Random.Range(1, 4);
+            earlyVariants[e.beat] = variant;
+            // no code offset: the english line can't start before the cue either, it plays right on the beat
+            SoundByte.PlayOneShotGame(bigGuy ? $"ringside/en/bigguy_var{variant}_1" : $"ringside/en/wubdub_var{variant}_1", e.beat, forcePlay: true);
+            return true;
+        }
+
+        /// <summary>the variant picked when the first voice was scheduled early, or -1</summary>
+        int EarlyVariant(double beat) => voiceCues != null && voiceCues.Claim(beat) && earlyVariants.Remove(beat, out int v) ? v : -1;
+
         void Update()
         {
             var cond = Conductor.instance;
+            voiceCues ??= new VoiceLeadCues("ringside", ScheduleEarlyVoice, "question", "questionScaled", "woahYouGoBigGuy");
+            voiceCues.Update();
 
             if (cond.isPlaying && !cond.isPaused)
             {
@@ -385,18 +406,16 @@ namespace HeavenStudio.Games
         public void Question(double beat, bool alt, int questionVariant, bool doFlash, float length = 4f)
         {
             if (length <= 2f) return;
-            int currentQuestion = questionVariant;
+            int currentQuestion = EarlyVariant(beat);
+            bool early = currentQuestion > 0;
+            if (!early) currentQuestion = questionVariant;
             if (currentQuestion == (int)QuestionVariant.Random) currentQuestion = UnityEngine.Random.Range(1, 4);
             reporterAnim.DoScaledAnimationAsync("WubbaLubbaDubbaThatTrue", 0.4f);
             reporterHeadAnim.DoScaledAnimationAsync("Wubba", 0.4f);
             List<MultiSound.Sound> qSounds = new List<MultiSound.Sound>();
-            if (alt)
+            if (!early) qSounds.Add(new MultiSound.Sound($"ringside/en/wubdub_var{currentQuestion}_1", beat, 1, 1, false, 0.015));
+            if (!alt)
             {
-                qSounds.Add(new MultiSound.Sound($"ringside/en/wubdub_var{currentQuestion}_1", beat, 1, 1, false, 0.015));
-            }
-            else
-            {
-                qSounds.Add(new MultiSound.Sound($"ringside/en/wubdub_var{currentQuestion}_1", beat, 1, 1, false, 0.015));
                 qSounds.Add(new MultiSound.Sound($"ringside/en/wubdub_var{currentQuestion}_2", beat + 0.25f, 1, 1, false, 0.002));
             }
             float extend = length - 3f;
@@ -455,13 +474,15 @@ namespace HeavenStudio.Games
 
         public void BigGuy(double beat, int questionVariant, bool doFlash)
         {
-            int currentQuestion = questionVariant;
+            int currentQuestion = EarlyVariant(beat);
+            bool early = currentQuestion > 0;
+            if (!early) currentQuestion = questionVariant;
             if (currentQuestion == (int)QuestionVariant.Random) currentQuestion = UnityEngine.Random.Range(1, 4);
             reporterAnim.DoScaledAnimationAsync("Woah", 0.5f);
             reporterHeadAnim.DoScaledAnimationAsync("Woah", 0.5f);
             float youBeat = 0.081f;
             if (currentQuestion == (int)QuestionVariant.Third) youBeat = 0.027f;
-            MultiSound.Play(new MultiSound.Sound[]
+            var bigGuySounds = new List<MultiSound.Sound>
             {
                 new MultiSound.Sound($"ringside/en/bigguy_var{currentQuestion}_1", beat, 1, 1, false, youBeat),
                 new MultiSound.Sound($"ringside/en/bigguy_var{currentQuestion}_2", beat + 0.75f, 1, 1, false, youBeat),
@@ -469,7 +490,9 @@ namespace HeavenStudio.Games
                 new MultiSound.Sound($"ringside/en/bigguy_var{currentQuestion}_4", beat + 1.5f, 1, 1, false, 0.006),
                 new MultiSound.Sound($"ringside/en/bigguy_var{currentQuestion}_5", beat + 2f, 1, 1, false, 0.009),
                 new MultiSound.Sound($"ringside/mic_swoosh", beat + 2f, 1, 1, false, 0),
-            }, forcePlay: true);
+            };
+            if (early) bigGuySounds.RemoveAt(0);  // already scheduled
+            MultiSound.Play(bigGuySounds.ToArray(), forcePlay: true);
 
             ScheduleInput(beat, 2.5f, InputAction_BasicPress, JustBigGuyFirst, MissBigGuyOne, Nothing);
             ScheduleInput(beat, 3f, InputAction_FlickPress, JustBigGuySecond, MissBigGuyTwo, Nothing);
