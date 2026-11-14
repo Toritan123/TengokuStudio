@@ -5,24 +5,28 @@
     "beat": -0.5
   },
   "karateman/two": {
-    "beat": -0.5
+    "beat": -0.5,
+    "offset": 0.01
   },
   "karateman/three": {
-    "beat": -0.5
+    "beat": -0.5,
+    "offset": 0.025
   },
   "karateman/threeAlt": {
-    "beat": -0.5
+    "beat": -0.5,
+    "offset": 0.035
   },
   "karateman/four": {
-    "beat": -0.5
+    "beat": -0.5,
+    "offset": 0.03
   },
   "karateman/hit": {
     "beat": 0.5,
-    "offset": -0.042
+    "offset": -0.01
   },
   "karateman/hitAlt": {
     "beat": 0.5,
-    "offset": -0.042
+    "offset": 0.01
   },
   "//marchingOrders": "マーチャ：日本語は「ぜん・たーい」が英語より1/4拍遅く始まり、「ま・えへ・すすめ」は1/4拍ずつ。右（左）向けの2つ目は1/4拍遅い",
   "marchingOrders/attention1": {
@@ -58,7 +62,8 @@
   },
   "//flipperFlop": "コロコロたんけん隊：英語は「Attention... company!」の6つ＋隊員の返事、日本語は「ずっとい はじめ」の5つ＋同じ返事。隊員の返事（3拍後、アニメーションもここ）を基準にそろえる",
   "flipperFlop/attention1": {
-    "beat": 0.25
+    "beat": 0.25,
+    "offset": 0.02
   },
   "flipperFlop/attention2": {
     "beat": 0.5
@@ -80,7 +85,8 @@
     "beat": -0.125
   },
   "packingPests/SE_SHIWAKE_EN_VOICE_READY3": {
-    "beat": -0.167
+    "beat": -0.167,
+    "offset": 0.02
   },
   "//loveRap": "だいスキRAP：RHRE3 の日本語版の拍に合わせて各音節をずらす。日本語版で1音節多いところ（MCアドレの「スキなんだ」、ラッパーの「マジ大スキ」裏拍）は extra で足す",
   "loveRap/SE_RAP_EN_WOMAN_DAISUKI_2": {
@@ -250,7 +256,8 @@
     "beat": 1.0
   },
   "warioDeMambo/memorize2": {
-    "beat": -0.125
+    "beat": -0.125,
+    "offset": 0.03
   },
   "//beatPoint": "ここから下は自動で測った微調整：声の「拍に聞こえる点」（最初の音節が山の半分まで立ち上がった瞬間）を英語版と比べ、日本語版がずれているぶんだけ offset で早める（マイナスは遅らせる）。差が10ms未満は直さない。60msを超えるものは手で確かめる",
   "airRally/baBumBumBum_FarAlt3": {
@@ -260,7 +267,7 @@
     "offset": 0.011
   },
   "airRally/baBumBumBum_Farther2": {
-    "offset": -0.01
+    "offset": 0.04
   },
   "airRally/baBumBumBum_Farthest4": {
     "offset": -0.012
@@ -298,236 +305,68 @@
   "airRally/nya_Farthest": {
     "offset": 0.022
   },
-  "airboarder/crouchvox": {
-    "offset": -0.043
-  },
-  "airboarder/start2": {
-    "offset": 0.016
-  },
-  "airboarder/start3": {
-    "offset": -0.01
-  },
-  "blueBirds/out": {
-    "offset": -0.023
-  },
-  "blueBirds/stretch": {
-    "offset": -0.025
-  },
-  "blueBirds/ur": {
-    "offset": -0.03
-  },
-  "boardMeeting/one": {
-    "offset": 0.012
-  },
-  "boardMeeting/three": {
-    "offset": 0.032
-  },
-  "bossaNova/SE_BOSSA_EN_10": {
-    "offset": 0.029
-  },
-  "bossaNova/SE_BOSSA_EN_11": {
-    "offset": 0.055
-  },
-  "bossaNova/SE_BOSSA_EN_13": {
-    "offset": -0.01
-  },
-  "bossaNova/SE_BOSSA_EN_16": {
-    "offset": -0.01
-  },
   "bossaNova/SE_BOSSA_EN_18": {
-    "offset": 0.014
-  },
-  "bossaNova/SE_BOSSA_EN_19": {
-    "offset": -0.021
-  },
-  "bossaNova/SE_BOSSA_EN_20": {
-    "offset": 0.014
-  },
-  "bossaNova/SE_BOSSA_EN_22": {
-    "offset": 0.013
-  },
-  "bossaNova/SE_BOSSA_EN_23": {
-    "offset": -0.026
-  },
-  "bossaNova/SE_BOSSA_EN_24": {
-    "offset": -0.014
-  },
-  "bossaNova/SE_BOSSA_EN_25": {
-    "offset": 0.017
-  },
-  "bossaNova/SE_BOSSA_EN_26": {
-    "offset": 0.025
-  },
-  "bossaNova/SE_BOSSA_EN_28": {
-    "offset": -0.012
-  },
-  "bossaNova/SE_BOSSA_EN_31": {
-    "offset": 0.048
-  },
-  "bossaNova/SE_BOSSA_EN_34": {
-    "offset": 0.037
-  },
-  "bossaNova/SE_BOSSA_EN_37": {
-    "offset": 0.019
-  },
-  "bossaNova/SE_BOSSA_EN_38": {
-    "offset": 0.016
-  },
-  "bossaNova/SE_BOSSA_EN_40": {
-    "offset": -0.053
-  },
-  "bossaNova/SE_BOSSA_EN_43": {
-    "offset": 0.033
-  },
-  "bossaNova/SE_BOSSA_EN_44": {
-    "offset": -0.032
-  },
-  "bossaNova/SE_BOSSA_EN_45": {
-    "offset": 0.017
-  },
-  "bossaNova/SE_BOSSA_EN_47": {
-    "offset": 0.051
-  },
-  "bossaNova/SE_BOSSA_EN_5": {
-    "offset": 0.026
-  },
-  "bossaNova/SE_BOSSA_EN_51": {
-    "offset": 0.012
-  },
-  "bossaNova/SE_BOSSA_EN_52": {
-    "offset": 0.021
-  },
-  "bossaNova/SE_BOSSA_EN_6": {
-    "offset": 0.016
-  },
-  "bossaNova/SE_BOSSA_EN_62": {
-    "offset": 0.021
-  },
-  "bossaNova/SE_BOSSA_EN_66": {
-    "offset": 0.014
-  },
-  "bossaNova/SE_BOSSA_EN_67": {
-    "offset": -0.014
-  },
-  "bossaNova/SE_BOSSA_EN_7": {
-    "offset": -0.014
-  },
-  "bossaNova/SE_BOSSA_EN_9": {
-    "offset": 0.041
-  },
-  "catchOfTheDay/threefish5": {
-    "offset": -0.02
-  },
-  "cheerReaders/bunchaBooksS1": {
-    "offset": 0.06
-  },
-  "cheerReaders/bunchaBooksS3": {
-    "offset": -0.015
-  },
-  "cheerReaders/bunchaBooksS6": {
-    "offset": -0.023
-  },
-  "cheerReaders/bunchaBooksS7": {
-    "offset": -0.017
-  },
-  "cheerReaders/bunchaBooksgirls1": {
-    "offset": 0.053
-  },
-  "cheerReaders/bunchaBooksgirls3": {
-    "offset": 0.015
-  },
-  "cheerReaders/bunchaBooksgirls4": {
-    "offset": 0.021
-  },
-  "cheerReaders/bunchaBooksgirls7": {
-    "offset": -0.03
-  },
-  "cheerReaders/bunchaBooksgirls8": {
-    "offset": 0.016
-  },
-  "cheerReaders/itgirls": {
-    "offset": 0.029
-  },
-  "cheerReaders/itsUpToYouS1": {
-    "offset": 0.052
-  },
-  "cheerReaders/itsUpToYouS3": {
-    "offset": -0.013
-  },
-  "cheerReaders/itsUpToYouS4": {
-    "offset": -0.029
-  },
-  "cheerReaders/okItsOnS3": {
-    "offset": -0.026
-  },
-  "cheerReaders/okItsOnS5": {
-    "offset": 0.024
-  },
-  "cheerReaders/okItsOngirls1": {
     "offset": 0.01
   },
-  "cheerReaders/okItsOngirls2": {
-    "offset": -0.016
+  "bossaNova/SE_BOSSA_EN_22": {
+    "offset": 0.01
   },
-  "cheerReaders/okItsOngirls3": {
-    "offset": -0.011
+  "bossaNova/SE_BOSSA_EN_40": {
+    "offset": -0.03
+  },
+  "bossaNova/SE_BOSSA_EN_43": {
+    "offset": -0.02
+  },
+  "bossaNova/SE_BOSSA_EN_44": {
+    "offset": -0.03
+  },
+  "bossaNova/SE_BOSSA_EN_5": {
+    "offset": 0.015
+  },
+  "bossaNova/SE_BOSSA_EN_9": {
+    "offset": 0.01
+  },
+  "cheerReaders/bunchaBooksS1": {
+    "offset": 0.01
+  },
+  "cheerReaders/bunchaBooksgirls1": {
+    "offset": 0.015
+  },
+  "cheerReaders/itgirls": {
+    "offset": 0.015
+  },
+  "cheerReaders/itsUpToYouS1": {
+    "offset": 0.015
+  },
+  "cheerReaders/okItsOnS5": {
+    "offset": 0.035
   },
   "cheerReaders/okItsOngirls5": {
-    "offset": 0.037
-  },
-  "cheerReaders/oneTwoThreeS1": {
-    "offset": -0.015
-  },
-  "cheerReaders/oneTwoThreeS2": {
-    "offset": -0.04
+    "offset": 0.05
   },
   "cheerReaders/onegirls": {
-    "offset": -0.029
-  },
-  "cheerReaders/rahRahSisBoomBaBoomS6": {
-    "offset": -0.011
+    "offset": -0.01
   },
   "cheerReaders/rahRahSisBoomBaBoomgirls1": {
-    "offset": 0.027
-  },
-  "cheerReaders/rahRahSisBoomBaBoomgirls2": {
-    "offset": -0.019
-  },
-  "cheerReaders/rahRahSisBoomBaBoomgirls3": {
-    "offset": 0.025
-  },
-  "cheerReaders/rahRahSisBoomBaBoomgirls4": {
-    "offset": 0.023
+    "offset": 0.01
   },
   "cheerReaders/rahRahSisBoomBaBoomgirls5": {
-    "offset": 0.034
+    "offset": 0.01
   },
   "cheerReaders/threegirls": {
-    "offset": 0.031
-  },
-  "cheerReaders/twogirls": {
-    "offset": -0.055
-  },
-  "cheerReaders/upgirls": {
-    "offset": 0.013
+    "offset": 0.03
   },
   "cheerReaders/yay": {
-    "offset": 0.021
+    "offset": 0.02
   },
   "cheerReaders/yayGirls": {
-    "offset": 0.037
+    "offset": 0.025
   },
   "cheerReaders/yougirls": {
-    "offset": -0.027
+    "offset": 0.01
   },
   "dogNinja/go": {
-    "offset": 0.048
-  },
-  "dogNinja/here": {
-    "offset": -0.017
-  },
-  "dogNinja/we": {
-    "offset": 0.021
+    "offset": 0.075
   },
   "flipperFlop/flipperRollCount1": {
     "offset": 0.025
@@ -544,9 +383,6 @@
   "flipperFlop/flipperRollCount7": {
     "offset": 0.038
   },
-  "flipperFlop/flipperRollCount7B": {
-    "offset": 0.046
-  },
   "flipperFlop/flipperRollCount8": {
     "offset": 0.053
   },
@@ -557,7 +393,7 @@
     "offset": 0.024
   },
   "flipperFlop/flipperRollCountB": {
-    "offset": 0.022
+    "offset": 0.042
   },
   "flipperFlop/flipperRollCountNow": {
     "offset": 0.029
@@ -604,344 +440,83 @@
   "flipperFlop/welldone": {
     "offset": -0.014
   },
-  "frogHop/SE_NTR_FROG_EN_COUNT3": {
-    "offset": 0.022
-  },
-  "frogHop/SE_NTR_FROG_EN_COUNT3_EXTRAS_CUSTOM": {
-    "offset": 0.044
-  },
-  "frogHop/SE_NTR_FROG_EN_COUNT3_PLAYER_CUSTOM": {
-    "offset": 0.032
-  },
-  "frogHop/SE_NTR_FROG_EN_E_HA": {
-    "offset": -0.039
-  },
-  "frogHop/SE_NTR_FROG_EN_E_HAI": {
-    "offset": -0.033
-  },
-  "frogHop/SE_NTR_FROG_EN_E_KURU_2": {
-    "offset": 0.042
-  },
-  "frogHop/SE_NTR_FROG_EN_E_LIN": {
-    "offset": 0.053
-  },
-  "frogHop/SE_NTR_FROG_EN_P_HA": {
-    "offset": -0.029
-  },
-  "frogHop/SE_NTR_FROG_EN_P_HAAI": {
-    "offset": -0.049
-  },
-  "frogHop/SE_NTR_FROG_EN_P_HAI": {
-    "offset": -0.031
-  },
-  "frogHop/SE_NTR_FROG_EN_P_KURU_2": {
-    "offset": 0.023
-  },
-  "frogHop/SE_NTR_FROG_EN_P_LIN": {
-    "offset": 0.04
-  },
-  "frogHop/SE_NTR_FROG_EN_T_HA": {
-    "offset": -0.019
-  },
-  "frogHop/SE_NTR_FROG_EN_T_HAAI": {
-    "offset": -0.04
-  },
-  "frogHop/SE_NTR_FROG_EN_T_HAI": {
-    "offset": -0.024
-  },
-  "frogHop/SE_NTR_FROG_EN_T_KURU_2": {
-    "offset": 0.013
-  },
-  "frogHop/SE_NTR_FROG_EN_T_LIN": {
-    "offset": 0.025
-  },
-  "gleeClub/togetherEN-02": {
-    "offset": -0.014
-  },
-  "gleeClub/togetherEN-03": {
-    "offset": -0.028
-  },
   "gleeClub/togetherEN-04": {
-    "offset": 0.034
-  },
-  "karateman/ko": {
-    "offset": -0.017
-  },
-  "karateman/punchKick2": {
-    "offset": 0.026
-  },
-  "karateman/punchKick3": {
-    "offset": -0.019
-  },
-  "karateman/punchy1": {
-    "offset": -0.014
-  },
-  "karateman/punchy2": {
-    "offset": -0.025
-  },
-  "karateman/punchy3": {
-    "offset": -0.025
-  },
-  "loveRap/SE_RAP_EN_MAN_LEFT_DAISUKI_1": {
-    "offset": -0.01
-  },
-  "loveRap/SE_RAP_EN_MAN_LEFT_HONTO_1": {
-    "offset": 0.058
-  },
-  "loveRap/SE_RAP_EN_MAN_LEFT_MAJI_1": {
-    "offset": 0.01
-  },
-  "loveRap/SE_RAP_EN_MAN_RIGHT_DAISUKI_1": {
-    "offset": -0.014
-  },
-  "loveRap/SE_RAP_EN_MAN_RIGHT_HONTO_1": {
-    "offset": 0.036
-  },
-  "loveRap/SE_RAP_EN_MAN_RIGHT_MAJI_1": {
-    "offset": -0.058
-  },
-  "loveRap/SE_RAP_EN_MAN_RIGHT_MAJI_OFFBEAT_1": {
-    "offset": -0.032
-  },
-  "loveRap/SE_RAP_EN_WOMAN_HONTO_1": {
-    "offset": 0.016
-  },
-  "loveRap/SE_RAP_EN_WOMAN_HONTO_OFFBEAT_1": {
-    "offset": 0.023
-  },
-  "loveRap/SE_RAP_EN_WOMAN_HONTO_OFFBEAT_3": {
-    "offset": -0.038
-  },
-  "loveRap/SE_RAP_EN_WOMAN_MAJI_1": {
-    "offset": -0.03
-  },
-  "loveRap/SE_RAP_EN_WOMAN_MAJI_OFFBEAT_1": {
-    "offset": -0.03
-  },
-  "loveRap/SE_RAP_EN_WOMAN_SUKINANDA_OFFBEAT_1": {
-    "offset": 0.017
-  },
-  "marchingOrders/leftFaceTurn1": {
-    "offset": 0.017
-  },
-  "marchingOrders/leftFaceTurn1fast": {
-    "offset": 0.029
-  },
-  "marchingOrders/leftFaceTurn3": {
-    "offset": 0.045
-  },
-  "marchingOrders/leftFaceTurn3fast": {
-    "offset": 0.045
-  },
-  "marchingOrders/march1": {
-    "offset": 0.015
-  },
-  "munchyMonk/one_1": {
-    "offset": -0.014
-  },
-  "munchyMonk/one_2": {
-    "offset": 0.019
-  },
-  "munchyMonk/three_1": {
-    "offset": -0.048
-  },
-  "munchyMonk/three_2": {
-    "offset": -0.021
-  },
-  "munchyMonk/three_3": {
-    "offset": 0.024
-  },
-  "munchyMonk/three_4": {
-    "offset": 0.01
-  },
-  "munchyMonk/two_1": {
-    "offset": 0.044
-  },
-  "munchyMonk/two_2": {
-    "offset": 0.033
-  },
-  "munchyMonk/two_3": {
-    "offset": -0.025
-  },
-  "munchyMonk/two_4": {
-    "offset": -0.013
-  },
-  "ringside/bigguy_var1_1": {
-    "offset": 0.052
-  },
-  "ringside/bigguy_var1_2": {
-    "offset": 0.04
-  },
-  "ringside/bigguy_var1_3": {
-    "offset": 0.048
-  },
-  "ringside/bigguy_var1_4": {
-    "offset": 0.012
-  },
-  "ringside/bigguy_var2_3": {
-    "offset": 0.032
-  },
-  "ringside/bigguy_var2_4": {
-    "offset": 0.034
-  },
-  "ringside/bigguy_var2_5": {
-    "offset": 0.029
-  },
-  "ringside/bigguy_var3_1": {
-    "offset": -0.037
-  },
-  "ringside/bigguy_var3_2": {
-    "offset": -0.026
-  },
-  "ringside/bigguy_var3_3": {
-    "offset": 0.046
-  },
-  "ringside/bigguy_var3_4": {
-    "offset": 0.035
-  },
-  "ringside/pose_var1_1": {
-    "offset": 0.022
-  },
-  "ringside/pose_var1_3": {
-    "offset": 0.041
-  },
-  "ringside/pose_var1_4": {
-    "offset": 0.016
-  },
-  "ringside/pose_var1_5": {
-    "offset": 0.019
-  },
-  "ringside/pose_var2_1": {
     "offset": 0.03
   },
-  "ringside/pose_var2_3": {
-    "offset": 0.026
+  "karateman/punchy2": {
+    "offset": -0.01
+  },
+  "karateman/punchy3": {
+    "offset": -0.01
+  },
+  "munchyMonk/two_1": {
+    "offset": 0.04
+  },
+  "ringside/bigguy_var1_1": {
+    "offset": 0.065
+  },
+  "ringside/bigguy_var1_2": {
+    "offset": 0.12
+  },
+  "ringside/bigguy_var2_3": {
+    "offset": 0.02
+  },
+  "ringside/bigguy_var2_4": {
+    "offset": 0.025
+  },
+  "ringside/bigguy_var3_1": {
+    "offset": 0.015
+  },
+  "ringside/bigguy_var3_2": {
+    "offset": 0.025
+  },
+  "ringside/bigguy_var3_4": {
+    "offset": 0.02
+  },
+  "ringside/pose_var1_1": {
+    "offset": 0.03
+  },
+  "ringside/pose_var1_3": {
+    "offset": 0.01
+  },
+  "ringside/pose_var1_4": {
+    "offset": 0.015
+  },
+  "ringside/pose_var1_5": {
+    "offset": 0.02
+  },
+  "ringside/pose_var2_1": {
+    "offset": 0.035
   },
   "ringside/pose_var2_4": {
-    "offset": 0.038
+    "offset": 0.025
   },
   "ringside/pose_var2_5": {
-    "offset": 0.011
-  },
-  "ringside/wubdub_var1_4": {
-    "offset": 0.014
-  },
-  "ringside/wubdub_var1_7": {
-    "offset": -0.027
-  },
-  "ringside/wubdub_var1_8": {
-    "offset": -0.017
-  },
-  "ringside/wubdub_var2_1": {
-    "offset": 0.013
-  },
-  "ringside/wubdub_var2_2": {
-    "offset": 0.018
-  },
-  "ringside/wubdub_var2_6": {
-    "offset": 0.017
-  },
-  "ringside/wubdub_var2_7": {
-    "offset": -0.02
-  },
-  "ringside/wubdub_var2_8": {
-    "offset": -0.032
-  },
-  "ringside/wubdub_var3_2": {
-    "offset": 0.016
-  },
-  "ringside/wubdub_var3_4": {
-    "offset": 0.017
-  },
-  "ringside/wubdub_var3_7": {
-    "offset": -0.024
-  },
-  "rockers/Cmon": {
-    "offset": -0.022
-  },
-  "samuraiSliceNtr/faster_normal": {
-    "offset": -0.031
-  },
-  "samuraiSliceNtr/faster_question": {
-    "offset": -0.053
-  },
-  "samuraiSliceNtr/faster_weird": {
-    "offset": -0.051
-  },
-  "seeSaw/otherVoiceLong1": {
-    "offset": 0.017
-  },
-  "seeSaw/otherVoiceShort1": {
-    "offset": -0.013
-  },
-  "seeSaw/otherVoiceShort2": {
-    "offset": -0.011
-  },
-  "seeSaw/ow": {
-    "offset": 0.027
-  },
-  "spaceSoccer/highkicktoe1": {
-    "offset": -0.028
-  },
-  "spaceSoccer/highkicktoe3": {
-    "offset": -0.025
+    "offset": 0.02
   },
   "splashdown/alleyOop1": {
     "offset": 0.015
-  },
-  "splashdown/alleyOop3": {
-    "offset": -0.046
-  },
-  "splashdown/yeah": {
-    "offset": -0.012
   },
   "tapTroupe/tapReady1": {
     "offset": 0.025
   },
   "tapTroupe/tapReady2": {
-    "offset": 0.046
-  },
-  "tapTroupe/tapvoice1": {
-    "offset": -0.022
-  },
-  "tapTroupe/tapvoice2": {
-    "offset": -0.014
-  },
-  "theDazzles/hold2": {
-    "offset": 0.027
+    "offset": 0.02
   },
   "theDazzles/hold3": {
-    "offset": -0.018
-  },
-  "theDazzles/holdDS2": {
-    "offset": 0.025
+    "offset": -0.015
   },
   "theDazzles/holdDS3": {
-    "offset": -0.024
-  },
-  "tunnel/one": {
-    "offset": -0.045
-  },
-  "tunnel/two": {
-    "offset": 0.01
+    "offset": -0.015
   },
   "warioDeMambo/four": {
-    "offset": 0.029
-  },
-  "warioDeMambo/memorize": {
-    "offset": -0.025
-  },
-  "warioDeMambo/memorize1": {
-    "offset": -0.024
+    "offset": 0.035
   },
   "warioDeMambo/memorize3": {
-    "offset": 0.031
+    "offset": 0.035
   },
   "warioDeMambo/three": {
-    "offset": -0.013
-  },
-  "frogHop/SE_NTR_FROG_EN_E_HAAI": {
-    "offset": -0.064
+    "offset": 0.035
   },
   "flipperFlop/flipperRollCount3": {
     "offset": 0.067
@@ -967,32 +542,92 @@
   "flipperFlop/nice": {
     "offset": 0.1
   },
-  "cheerReaders/itsUpToYouS5": {
-    "offset": -0.062
-  },
   "cheerReaders/oneTwoThreeS3": {
-    "offset": 0.098
+    "offset": 0.035
   },
   "cheerReaders/okItsOnS2": {
-    "offset": -0.103
+    "offset": -0.025
   },
   "airRally/nya_Farther": {
     "offset": 0.063
   },
-  "ringside/bigguy_var1_5": {
-    "offset": 0.062
-  },
   "ringside/bigguy_var2_1": {
-    "offset": 0.065
+    "offset": 0.08
   },
   "ringside/bigguy_var2_2": {
-    "offset": 0.07
+    "offset": 0.05
   },
   "ringside/bigguy_var3_5": {
-    "offset": 0.074
+    "offset": 0.03
   },
-  "ringside/wubdub_var3_8": {
-    "offset": -0.066
+  "//listened": "確認待ちだった29個は聞いて判定：18個は測った差どおり offset を付け、11個（ボサノバ8、エアボーダー、コロコロの thatsit1、マーチャの halt1）は調整前のまま",
+  "tapTroupe/startTap": {
+    "offset": 0.015
   },
-  "//listened": "確認待ちだった29個は聞いて判定：18個は測った差どおり offset を付け、11個（ボサノバ8、エアボーダー、コロコロの thatsit1、マーチャの halt1）は調整前のまま"
+  "cheerReaders/rahRahSisBoomBaBoomS1": {
+    "offset": -0.01
+  },
+  "cheerReaders/yayS": {
+    "offset": 0.025
+  },
+  "airRally/baBumBumBum_Farther3": {
+    "offset": 0.03
+  },
+  "blueBirds/beak": {
+    "offset": 0.01
+  },
+  "blueBirds/your": {
+    "offset": 0.015
+  },
+  "bossaNova/SE_BOSSA_EN_39": {
+    "offset": -0.025
+  },
+  "bossaNova/SE_BOSSA_EN_41": {
+    "offset": -0.025
+  },
+  "bossaNova/SE_BOSSA_EN_42": {
+    "offset": -0.025
+  },
+  "bossaNova/SE_BOSSA_EN_54": {
+    "offset": 0.045
+  },
+  "bossaNova/SE_BOSSA_EN_55": {
+    "offset": 0.025
+  },
+  "fillbots/fillErUp3": {
+    "offset": 0.01
+  },
+  "warioDeMambo/one": {
+    "offset": 0.035
+  },
+  "warioDeMambo/two": {
+    "offset": 0.03
+  },
+  "frogHop/SE_NTR_FROG_EN_E_KURU_2": {
+    "volume": 0.65
+  },
+  "frogHop/SE_NTR_FROG_EN_P_HA": {
+    "volume": 0.82
+  },
+  "frogHop/SE_NTR_FROG_EN_P_HAAI": {
+    "volume": 0.65
+  },
+  "frogHop/SE_NTR_FROG_EN_P_HAI": {
+    "volume": 0.83
+  },
+  "frogHop/SE_NTR_FROG_EN_P_KURU_2": {
+    "volume": 0.45
+  },
+  "frogHop/SE_NTR_FROG_EN_T_HAAI": {
+    "volume": 0.52
+  },
+  "frogHop/SE_NTR_FROG_EN_T_HAI": {
+    "volume": 0.73
+  },
+  "frogHop/SE_NTR_FROG_EN_T_KURU_1": {
+    "volume": 0.86
+  },
+  "frogHop/SE_NTR_FROG_EN_T_KURU_2": {
+    "volume": 0.42
+  }
 }
