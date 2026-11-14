@@ -613,14 +613,17 @@ namespace HeavenStudio
 
         public double GetUnSwingOffset(double beatFrac, float ratio, float division)
         {
+            // the inverse of GetSwingOffset: the swung half of the division ends at division / 2 (not at the ratio),
+            // otherwise a beat just after the offbeat lands late and jumps over the ones after it
             beatFrac %= division;
-            if (beatFrac <= ratio)
+            double halfDiv = division * 0.5;
+            if (beatFrac <= halfDiv)
             {
                 return 2 * ratio * beatFrac;
             }
             else
             {
-                return 2 * (beatFrac - 0.5f) * (1f - ratio) + ratio;
+                return ratio * division + 2 * (1 - ratio) * (beatFrac - halfDiv);
             }
         }
 
