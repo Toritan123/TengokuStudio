@@ -6,8 +6,8 @@ using UnityEditor.Build.Reporting;
 #endif
 
 public static class AppInfo {
-    public const string Version = "1.0.41";
-    public static readonly DateTime Date = new DateTime(2026, 11, 14, 07, 56, 53, 363, DateTimeKind.Utc);
+    public const string Version = "1.1.0";
+    public static readonly DateTime Date = new DateTime(2026, 11, 25, 15, 15, 11, 283, DateTimeKind.Utc);
 }
 
 
