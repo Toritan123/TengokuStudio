@@ -307,7 +307,7 @@ namespace HeavenStudio.Games
                 new BeatAction.Action(beat + 3f, delegate { 
                     TheEnd.SetActive(end);
                     TheEnd.transform.localPosition = theEndPosition;
-                    if (TheEnd.activeSelf) TheEndAnim.DoScaledAnimationAsync("English", 0.5f);
+                    if (TheEnd.activeSelf) TheEndAnim.DoScaledAnimationAsync("Japanese", 0.5f);  // the japanese edition shows おしまい
                 })
             });
         }
