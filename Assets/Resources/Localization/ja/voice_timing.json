@@ -256,8 +256,7 @@
     "beat": 1.0
   },
   "warioDeMambo/memorize2": {
-    "beat": -0.125,
-    "offset": 0.03
+    "beat": -0.125
   },
   "//beatPoint": "ここから下は自動で測った微調整：声の「拍に聞こえる点」（最初の音節が山の半分まで立ち上がった瞬間）を英語版と比べ、日本語版がずれているぶんだけ offset で早める（マイナスは遅らせる）。差が10ms未満は直さない。60msを超えるものは手で確かめる",
   "airRally/baBumBumBum_FarAlt3": {
@@ -509,15 +508,6 @@
   "theDazzles/holdDS3": {
     "offset": -0.015
   },
-  "warioDeMambo/four": {
-    "offset": 0.035
-  },
-  "warioDeMambo/memorize3": {
-    "offset": 0.035
-  },
-  "warioDeMambo/three": {
-    "offset": 0.035
-  },
   "flipperFlop/flipperRollCount3": {
     "offset": 0.067
   },
@@ -597,12 +587,6 @@
   "fillbots/fillErUp3": {
     "offset": 0.01
   },
-  "warioDeMambo/one": {
-    "offset": 0.035
-  },
-  "warioDeMambo/two": {
-    "offset": 0.03
-  },
   "frogHop/SE_NTR_FROG_EN_E_KURU_2": {
     "volume": 0.65
   },
@@ -629,5 +613,29 @@
   },
   "frogHop/SE_NTR_FROG_EN_T_KURU_2": {
     "volume": 0.42
+  },
+  "munchyMonkRvl/peasVoice1": {
+    "offset": 0.02
+  },
+  "munchyMonkRvl/peasVoice3": {
+    "offset": 0.02
+  },
+  "munchyMonkRvl/peasVoice4": {
+    "offset": 0.02
+  },
+  "tangotronic/Ready2": {
+    "offset": 0.03
+  },
+  "screwbotFactory/SE_ROBOT_EN_SCREW_SUCCESS1_PITCHSAME": {
+    "offset": 0.05
+  },
+  "screwbotFactory/SE_ROBOT_EN_SCREW_SUCCESS3_PITCHSAME": {
+    "offset": 0.05
+  },
+  "screwbotFactory/SE_ROBOT_EN_SCREW_SUCCESS_BIG1_PITCHSAME": {
+    "offset": 0.15
+  },
+  "screwbotFactory/SE_ROBOT_EN_SCREW_SUCCESS_BIG2_PITCHSAME": {
+    "offset": -0.05
   }
 }
