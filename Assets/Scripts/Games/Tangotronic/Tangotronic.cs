@@ -99,7 +99,7 @@ namespace HeavenStudio.Games.Loaders
             },
             new List<string>() { "ctr", "normal" },
             "ctrtango", "en",
-            new List<string>() { },
+            new List<string>() { "en", "jp" },
             chronologicalSortKey: 10,
             font : "KanTeiRyu"
             );

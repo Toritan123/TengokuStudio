@@ -133,6 +133,9 @@ MAPPINGS = {
     },
 
     # ---- 声が共通バンドルに入っていたゲーム（'split': 英語の声を <bundle>/locale の en に移してから日本語版を足す）
+    # ダンスホール（3DS）：Ready の掛け声
+    'Tangotronic': {'rhre': 'tangotronic3000', 'code': 'tangotronic', 'split': 'ctrtango',
+                    'files': {'Ready1': 'ready1', 'Ready2': 'ready2'}},
     'Airboarder': {'rhre': 'airboarder', 'code': 'airboarder', 'split': 'ntrairboarder',
                    'files': {'crouchvox': 'crouch', 'jumpvox': 'jump', 'start2': 'start2'}},
     'CatchOfTheDay': {'rhre': 'catchOfTheDay', 'code': 'catchOfTheDay', 'split': 'rvlfishing',
