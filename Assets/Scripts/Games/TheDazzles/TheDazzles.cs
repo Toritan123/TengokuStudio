@@ -259,7 +259,7 @@ namespace HeavenStudio.Games
         [Header("Variables")]
         bool canBop = true;
         bool doingPoses = false;
-        bool shouldHold = false;
+        bool isHolding = false;
         double crouchEndBeat;
         static List<QueuedPose> queuedPoses = new List<QueuedPose>();
         static List<QueuedCrouch> queuedCrouches = new List<QueuedCrouch>();
@@ -346,8 +346,9 @@ namespace HeavenStudio.Games
                     {
                         if (girl.currentEmotion != TheDazzlesGirl.Emotion.Ouch) girl.currentEmotion = TheDazzlesGirl.Emotion.Angry;
                     }
+                    isHolding = true;
                 }
-                if (PlayerInput.GetIsAction(InputAction_FlickRelease) && !IsExpectingInputNow(InputAction_FlickRelease))
+                if (PlayerInput.GetIsAction(InputAction_FlickRelease) && !IsExpectingInputNow(InputAction_FlickRelease) && isHolding)
                 {
                     if (doingPoses || PlayerInput.CurrentControlStyle == InputController.ControlStyles.Touch)
                     {
@@ -365,19 +366,19 @@ namespace HeavenStudio.Games
                     {
                         player.UnPrepare();
                     }
-                    shouldHold = false;
+                    isHolding = false;
                 }
                 if (PlayerInput.CurrentControlStyle == InputController.ControlStyles.Touch)
                 {
-                    if (PlayerInput.GetIsAction(InputAction_TouchRelease) && !gameManager.Autoplay)
+                    if (PlayerInput.GetIsAction(InputAction_TouchRelease) && isHolding && !gameManager.Autoplay)
                     {
                         player.UnPrepare();
-                        shouldHold = false;
+                        isHolding = false;
                     }
                 }
                 else
                 {
-                    if (PlayerInput.GetIsAction(InputAction_BasicRelease) && shouldHold && (!gameManager.Autoplay) && !IsExpectingInputNow(InputAction_FlickRelease))
+                    if (PlayerInput.GetIsAction(InputAction_BasicRelease) && isHolding && (!gameManager.Autoplay) && !IsExpectingInputNow(InputAction_FlickRelease))
                     {
                         if (doingPoses)
                         {
@@ -392,7 +393,7 @@ namespace HeavenStudio.Games
                         {
                             player.UnPrepare();
                         }
-                        shouldHold = false;
+                        isHolding = false;
                     }
                 }
             }
@@ -421,7 +422,7 @@ namespace HeavenStudio.Games
 
         public void ForceHold()
         {
-            shouldHold = true;
+            isHolding = true;
             foreach (var girl in npcGirls)
             {
                 girl.Prepare();
@@ -637,7 +638,7 @@ namespace HeavenStudio.Games
 
         void JustPose(PlayerActionEvent caller, float state)
         {
-            shouldHold = false;
+            isHolding = false;
             SoundByte.PlayOneShotGame("theDazzles/pose");
             SoundByte.PlayOneShotGame("theDazzles/posePlayer");
             if (state >= 1f || state <= -1f)
@@ -650,7 +651,7 @@ namespace HeavenStudio.Games
 
         void JustPoseStars(PlayerActionEvent caller, float state)
         {
-            shouldHold = false;
+            isHolding = false;
             SoundByte.PlayOneShotGame("theDazzles/pose");
             SoundByte.PlayOneShotGame("theDazzles/posePlayer");
             if (state >= 1f || state <= -1f)
@@ -663,7 +664,7 @@ namespace HeavenStudio.Games
 
         void JustPoseNoCheer(PlayerActionEvent caller, float state)
         {
-            shouldHold = false;
+            isHolding = false;
             SoundByte.PlayOneShotGame("theDazzles/pose");
             SoundByte.PlayOneShotGame("theDazzles/posePlayer");
             if (state >= 1f || state <= -1f)
@@ -676,7 +677,7 @@ namespace HeavenStudio.Games
 
         void JustPoseStarsNoCheer(PlayerActionEvent caller, float state)
         {
-            shouldHold = false;
+            isHolding = false;
             SoundByte.PlayOneShotGame("theDazzles/pose");
             SoundByte.PlayOneShotGame("theDazzles/posePlayer");
             if (state >= 1f || state <= -1f)

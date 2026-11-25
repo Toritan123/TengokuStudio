@@ -140,7 +140,8 @@ namespace HeavenStudio.Games.Loaders
             new List<string>() { "ntr", "keep" },
             "ntrpingpong", "en",
             new List<string>() { },
-            chronologicalSortKey: 6
+            chronologicalSortKey: 6,
+            font : "FOT-SlumpStd-DB SDF"
             );
         }
     }
@@ -326,7 +327,27 @@ namespace HeavenStudio.Games
                     }
                 }
 
-                ballShadow.transform.position = new Vector3(ball.transform.position.x, -0.399f, ball.transform.position.z);
+                if (ball.activeSelf)
+                {
+                    ballShadow.SetActive(true);
+                    
+                    if (Physics.Raycast(ball.transform.position, Vector3.down, out RaycastHit hit, 50f))
+                    {
+                        ballShadow.transform.position = hit.point + new Vector3(0, 0.01f, 0);
+                        ballShadow.transform.forward = -hit.normal; 
+                        ballShadow.transform.localScale = Vector3.one;
+                    }
+                    else
+                    {
+                        ballShadow.transform.position = new Vector3(ball.transform.position.x, -0.399f, ball.transform.position.z);
+                        ballShadow.transform.rotation = Quaternion.Euler(90f, 0f, 0f); 
+                        ballShadow.transform.localScale = Vector3.one;
+                    }
+                }
+                else
+                {
+                    ballShadow.SetActive(false);
+                }
 
                 var timeBeforeNextHit = hitBeat + beatDur1 + beatDur2 - currentBeat;
 
@@ -416,6 +437,12 @@ namespace HeavenStudio.Games
         public override void OnPlay(double beat)
         {
             EntityPreCheck(beat);
+            PersistBG(beat);
+        }
+
+        public override void OnGameSwitch(double beat)
+        {
+            PersistBG(beat);
         }
 
         void EntityPreCheck(double beat)
@@ -533,8 +560,11 @@ namespace HeavenStudio.Games
             }
 
             opponentAnim.DoScaledAnimationAsync("Swing", 0.5f);
-            MultiSound.Play(new MultiSound.Sound[] { new MultiSound.Sound("rhythmRally/Serve", serveBeat), new MultiSound.Sound("rhythmRally/ServeBounce", bounceBeat) });
-            paddlers.BounceFX(bounceBeat);
+            MultiSound.Play(new MultiSound.Sound[] 
+            { 
+                new MultiSound.Sound("rhythmRally/SE_PINPON_ATTACK_COM_m100p100", serveBeat, SoundByte.GetPitchFromCents(UnityEngine.Random.Range(-100, 100), false)), 
+                new MultiSound.Sound("rhythmRally/SE_PINPON_TABLE_PLAYER_m50p50", bounceBeat, SoundByte.GetPitchFromCents(UnityEngine.Random.Range(-50, 50), false)), 
+            });
 
             ScheduleInput(serveBeat, targetBeat, InputAction_FlickPress, paddlers.Just, paddlers.Miss, paddlers.Out);
         }
@@ -574,7 +604,7 @@ namespace HeavenStudio.Games
         {
             MultiSound.Play(new MultiSound.Sound[]
             {
-                new MultiSound.Sound("rhythmRally/Whistle", beat),
+                new MultiSound.Sound("rhythmRally/SE_PINPON_START", beat),
             }, forcePlay: true);
         }
 
@@ -638,7 +668,7 @@ namespace HeavenStudio.Games
             bool tink = false;
             for (float i = 0; i < length; i += 0.5f)
             {
-                soundsToPlay.Add(new MultiSound.Sound(tink ? "rhythmRally/Tink" : "rhythmRally/Tonk", beat + i));
+                soundsToPlay.Add(new MultiSound.Sound(tink ? "rhythmRally/SE_PINPON_HI_SPEED_READY_B" : "rhythmRally/SE_PINPON_HI_SPEED_READY_A", beat + i));
                 tink = !tink;
             }
             MultiSound.Play(soundsToPlay.ToArray(), forcePlay: true);
@@ -673,6 +703,15 @@ namespace HeavenStudio.Games
             }
 
             bgColorEase = new(beat, length, startColor, endColor, ease);
+        }
+
+        //call this in OnPlay(double beat) and OnGameSwitch(double beat)
+        private void PersistBG(double beat)
+        {
+            var e = GameManager.instance.Beatmap.Entities.FindLast(c => c.datamodel == "rhythmRally/bg" && c.beat < beat);
+            if (e != null) {
+                BGToggle(e.beat, e.length, e["void"], e["start"], e["end"], e["ease"]);
+            }
         }
     }
 }

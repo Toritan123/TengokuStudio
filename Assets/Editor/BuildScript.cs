@@ -24,6 +24,7 @@ namespace UnityBuilderAction
             string appName = PlayerSettings.productName;
             // Get filename.
             string path = EditorUtility.SaveFilePanel("Build out WINDOWS to...", "", appName, "exe");
+            if (string.IsNullOrEmpty(path)) return;
             Build( BuildTarget.StandaloneWindows64, 0, path);
         }
 
@@ -33,6 +34,7 @@ namespace UnityBuilderAction
             string appName = PlayerSettings.productName;
             // Get filename.
             string path = EditorUtility.SaveFilePanel("Build out LINUX to...", "", appName, "");
+            if (string.IsNullOrEmpty(path)) return;
             Build( BuildTarget.StandaloneLinux64, 0, path);
         }
 
@@ -42,6 +44,7 @@ namespace UnityBuilderAction
             string appName = PlayerSettings.productName;
             // Get filename.
             string path = EditorUtility.SaveFilePanel("Build out MAC to...", "", appName, "app");
+            if (string.IsNullOrEmpty(path)) return;
             Build( BuildTarget.StandaloneOSX, 0, path);
         }
 
@@ -221,27 +224,113 @@ namespace UnityBuilderAction
 #endif
             };
 
-            string buildDirectory = filePath.Substring(0, filePath.LastIndexOf('/')) + "/";
-            string assetBundleDirectory = buildDirectory + appName + dataPath + "StreamingAssets";
+            string streamingAssets = "Assets/StreamingAssets";
+            string assetBundleDirectory = GetAssetBundleDirectory(buildTarget);
+            string tempDirectory = "Assets/StreamingAssets_temp";
+            bool swappedStreamingAssets = false;
 
             var targetGroup = BuildPipeline.GetBuildTargetGroup(buildTarget);
             var currentBT = EditorUserBuildSettings.activeBuildTarget;
             var currentTG = BuildPipeline.GetBuildTargetGroup(currentBT);
 
-            if (currentBT != buildTarget)
+            try
             {
-                EditorUserBuildSettings.SwitchActiveBuildTarget(targetGroup, buildTarget);
+                if (currentBT != buildTarget)
+                {
+                    EditorUserBuildSettings.SwitchActiveBuildTarget(targetGroup, buildTarget);
+                }
+
+                if (!Directory.Exists(assetBundleDirectory))
+                {
+                    Directory.CreateDirectory(assetBundleDirectory);
+                }
+                BuildPipeline.BuildAssetBundles(assetBundleDirectory, BuildAssetBundleOptions.ChunkBasedCompression, buildTarget);
+
+                if (assetBundleDirectory != streamingAssets)
+                {
+                    if (Directory.Exists(streamingAssets))
+                    {
+                        Directory.Move(streamingAssets, tempDirectory);
+                    }
+
+                    Directory.Move(assetBundleDirectory, streamingAssets);
+
+                    swappedStreamingAssets = true;
+                }
+
+                AssetDatabase.Refresh();
+                USGUtility.ForceGenerateByType(typeof(Minigames));
+
+                BuildSummary buildSummary = BuildPipeline.BuildPlayer(buildPlayerOptions).summary;
+
+                ReportSummary(buildSummary);
+
+                if (!Application.isEditor)
+                    ExitWithResult(buildSummary.result);
             }
+            finally
+            {
+                if (swappedStreamingAssets)
+                {
+                    if (Directory.Exists(assetBundleDirectory))
+                    {
+                        Directory.Delete(assetBundleDirectory, true);
+                    }
 
-            AssetDatabase.Refresh();
-            USGUtility.ForceGenerateByType(typeof(Minigames));
+                    if (Directory.Exists(streamingAssets))
+                    {
+                        Directory.Move(streamingAssets, assetBundleDirectory);
+                    }
 
-            BuildSummary buildSummary = BuildPipeline.BuildPlayer(buildPlayerOptions).summary;
-            BuildPipeline.BuildAssetBundles(assetBundleDirectory, BuildAssetBundleOptions.ChunkBasedCompression, buildTarget); // moved here so they dont get overwritten
-            ReportSummary(buildSummary);
-            if (!Application.isEditor)
-                ExitWithResult(buildSummary.result);
-            EditorUserBuildSettings.SwitchActiveBuildTarget(currentTG, currentBT);   
+                    if (Directory.Exists(tempDirectory))
+                    {
+                        Directory.Move(tempDirectory, streamingAssets);
+                    }
+
+                    if (File.Exists(tempDirectory + ".meta"))
+                    {
+                        File.Delete(tempDirectory + ".meta");
+                    }
+
+                    AssetDatabase.Refresh();
+                }
+
+                if (currentBT != buildTarget)
+                {
+                    EditorUserBuildSettings.SwitchActiveBuildTarget(currentTG, currentBT);
+                }
+            }
+        }
+
+        private static string GetAssetBundleDirectory(BuildTarget buildTarget)
+        {
+            switch (buildTarget)
+            {
+                case BuildTarget.StandaloneWindows:
+                case BuildTarget.StandaloneWindows64:
+                    if (Application.platform == RuntimePlatform.WindowsEditor)
+                    {
+                        return "Assets/StreamingAssets";
+                    }
+                    return "Assets/StreamingAssets_Windows";
+
+                case BuildTarget.StandaloneLinux64:
+                    if (Application.platform == RuntimePlatform.LinuxEditor)
+                    {
+                        return "Assets/StreamingAssets";
+                    }
+                    return "Assets/StreamingAssets_Linux";
+
+                case BuildTarget.StandaloneOSX:
+                    if (Application.platform == RuntimePlatform.OSXEditor)
+                    {
+                        return "Assets/StreamingAssets";
+                    }
+                    return "Assets/StreamingAssets_Mac";
+
+                default:
+                    throw new ArgumentException($"Invalid build target {buildTarget}");
+            }
         }
 
         private static void ReportSummary(BuildSummary summary)

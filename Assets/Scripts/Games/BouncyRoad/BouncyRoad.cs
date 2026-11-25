@@ -24,13 +24,15 @@ namespace HeavenStudio.Games.Loaders
                     {
                         new Param("goal", true, "Play Goal Sound"),
                         new Param("color", Color.white, "Color", "Choose the color of the ball."),
+                        new Param("extraBounce", false, "Add Extra Bounce", "Toggle if the ball should bounce an extra time, for use during triplet notes."),
                         new Param("useCustomNotes", false, "Custom Notes", "Toggle if the ball should use custom notes.", new List<Param.CollapseParam>()
                         {
                             new Param.CollapseParam((x, _) => (bool)x, new string[] { "bounceNote", "rightNote", "leftNote", "goalNote", "separateBounceNotes"})
                         }),
                         new Param("separateBounceNotes", false, "Separate Bounce Notes", "Toggle if the ball should use separate notes for the each of the first 12 poles.", new List<Param.CollapseParam>()
                         {
-                            new Param.CollapseParam((x, _) => (bool)x, new string[] { "bounceNote2", "bounceNote3", "bounceNote4", "bounceNote5", "bounceNote6", "bounceNote7", "bounceNote8", "bounceNote9", "bounceNote10", "bounceNote11", "bounceNote12" })
+                            new Param.CollapseParam((x, _) => (bool)x, new string[] { "bounceNote2", "bounceNote3", "bounceNote4", "bounceNote5", "bounceNote6", "bounceNote7", "bounceNote8", "bounceNote9", "bounceNote10", "bounceNote11", "bounceNote12" }),
+                            new Param.CollapseParam((x, e) => (bool)x && (bool)e["extraBounce"], new string[] { "bounceNote13" })
                         }),
                         new Param("bounceNote", new EntityTypes.Note(0, 7, 4, "bouncyRoad/ballBounce"), "Bounce Note", "Choose the note the ball plays when bouncing on the first 12 poles or the first pole if using custom notes."),
                         new Param("bounceNote2", new EntityTypes.Note(0, 7, 4, "bouncyRoad/ballBounce"), "Bounce Note 2", "Choose the note the ball plays when bouncing on the second pole."),
@@ -44,6 +46,7 @@ namespace HeavenStudio.Games.Loaders
                         new Param("bounceNote10", new EntityTypes.Note(0, 7, 4, "bouncyRoad/ballBounce"), "Bounce Note 10", "Choose the note the ball plays when bouncing on the tenth pole."),
                         new Param("bounceNote11", new EntityTypes.Note(0, 7, 4, "bouncyRoad/ballBounce"), "Bounce Note 11", "Choose the note the ball plays when bouncing on the eleventh pole."),
                         new Param("bounceNote12", new EntityTypes.Note(0, 7, 4, "bouncyRoad/ballBounce"), "Bounce Note 12", "Choose the note the ball plays when bouncing on the twelfth pole."),
+                        new Param("bounceNote13", new EntityTypes.Note(0, 7, 4, "bouncyRoad/ballBounce"), "Bounce Note 13", "Choose the note the ball plays when bouncing on the thirteenth pole."),
                         new Param("rightNote", new EntityTypes.Note(0, 3, 4, "bouncyRoad/ballRight"), "A Note", "Choose the note the ball plays when it bounces on the A pole."),
                         new Param("leftNote", new EntityTypes.Note(0, 10, 4, "bouncyRoad/ballLeft"), "+ Note", "Choose the note the ball plays when it bounces on the + pole."),
                         new Param("goalNote", new EntityTypes.Note(0, 3, 5, "bouncyRoad/goal"), "Goal Note", "Choose the note the ball plays when it bounces on the last pole."),
@@ -119,6 +122,7 @@ namespace HeavenStudio.Games
             public double length;
             public bool goal;
             public Color color;
+            public bool extraBounce;
             public bool useCustomNotes;
             public bool seperateBounceNotes;
             public int[] bounceNotes;
@@ -241,10 +245,12 @@ namespace HeavenStudio.Games
                 if (e.length == 0) continue;
 
                 int[] bounceNotes = null;
-                if (e["separateBounceNotes"]) {
-                    bounceNotes = new int[12];
+                if (e["separateBounceNotes"]) 
+                {
+                    int bounces = e["extraBounce"] ? 13 : 12;
+                    bounceNotes = new int[bounces];
                     bounceNotes[0] = e["bounceNote"];
-                    for (int i = 1; i < 12; i++)
+                    for (int i = 1; i < bounces; i++)
                     {
                         bounceNotes[i] = e[$"bounceNote{i+1}"];
                     }
@@ -256,6 +262,7 @@ namespace HeavenStudio.Games
                     length = e.length,
                     goal = e["goal"],
                     color = e["color"],
+                    extraBounce = e["extraBounce"],
                     useCustomNotes = e["useCustomNotes"],
                     seperateBounceNotes = e["separateBounceNotes"],
                     bounceNotes = bounceNotes,
@@ -319,6 +326,7 @@ namespace HeavenStudio.Games
             newBall.lengthBeat = scheduledBall.length;
             newBall.goal = scheduledBall.goal;
             newBall.color = scheduledBall.color;
+            newBall.extraBounce = scheduledBall.extraBounce;
             newBall.useCustomNotes = scheduledBall.useCustomNotes;
             newBall.bounceNotes = scheduledBall.bounceNotes;
             newBall.bounceNote = scheduledBall.bounceNote;
@@ -339,27 +347,29 @@ namespace HeavenStudio.Games
         }
 
         List<double> bounceBeats = new();
-        public void PlayBounceSound(double beat, double length, float[] pitches, float singlePitch)
+        public void PlayBounceSound(double beat, double length, float[] pitches, float singlePitch, int addExtraBounce)
         {
             var sounds = new List<MultiSound.Sound>();
             float volume = .5f;
             float usedVolume = volume;
             float pan = -0.5f;
-            for (int i = 0; i < 12 ; i++) {
-                if (i >= 4)
+            for (int i = 0; i < 12 + addExtraBounce; i++) 
+            {
+                int bounce = i - addExtraBounce;
+                if (bounce >= 4)
                 {
                     volume += 0.0625f;
                 }
-                if (i >= 9)
+                if (bounce >= 9)
                 {
                     pan -= 0.16666f;
                 }
-                else
+                else if (bounce >= 0)
                 {
                     pan += 0.11111f;
                 }
 
-                var bounceBeat = beat + i * length;
+                var bounceBeat = beat + (i * length);
                 var soundBeat = bounceBeat;
                 if (bounceBeats.Any(b => System.Math.Abs(b - bounceBeat) < 0.001))
                 {

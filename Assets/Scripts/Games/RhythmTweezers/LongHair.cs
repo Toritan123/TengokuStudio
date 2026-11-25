@@ -80,6 +80,8 @@ namespace HeavenStudio.Games.Scripts_RhythmTweezers
             anim.Play("LoopPullReverse", 0, normalized);
             tweezers.anim.Play("Tweezers_Idle", 0, 0);
 
+            SoundByte.PlayOneShot("miss");
+
             if (pullSound != null)
                 pullSound.KillLoop();
 
@@ -92,9 +94,11 @@ namespace HeavenStudio.Games.Scripts_RhythmTweezers
             // don't count near misses
             if (state >= 1f || state <= -1f) {
                 pluckState = -1;
+                anim.DoScaledAnimationAsync("LoopPullReverse", 0.5f);
+                SoundByte.PlayOneShot("miss");
                 return; 
             }
-            pullSound = SoundByte.PlayOneShotGame($"rhythmTweezers/longPull{UnityEngine.Random.Range(1, 5)}");
+            pullSound = SoundByte.PlayOneShotGame($"rhythmTweezers/longPull{UnityEngine.Random.Range(1, 5)}", returnSound: true);
             pluckState = 1;
             endEvent = game.ScheduleInput(inputBeat, 0.5f, RhythmTweezers.InputAction_Release, EndJust, Out, Out);
         }

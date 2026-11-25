@@ -41,12 +41,13 @@ namespace HeavenStudio.Games.Loaders
                     preFunction = delegate {
                         var e = eventCaller.currentEntity;
                         if (eventCaller.gameManager.minigameObj.TryGetComponent(out LoveRap instance)) {
-                            instance.IntoYou(e.beat, e["heart"]);
+                            instance.IntoYou(e.beat, e["heart"], e["flash"]);
                         }
                     },
                     parameters = new List<Param>()
                     {
                         new Param("heart", false, "Heart", "Toggle if the cue's text should show a heart."),
+                        new Param("flash", true, "Headlights Flash", "Toggle if the car's headlights should flash on an input."),
                     },
                     preFunctionLength = 1f,
                     defaultLength = 2f,
@@ -56,8 +57,12 @@ namespace HeavenStudio.Games.Loaders
                     preFunction = delegate {
                         var e = eventCaller.currentEntity;
                         if (eventCaller.gameManager.minigameObj.TryGetComponent(out LoveRap instance)) {
-                            instance.CrazyIntoYou(e.beat);
+                            instance.CrazyIntoYou(e.beat, e["flash"]);
                         }
+                    },
+                    parameters = new List<Param>()
+                    {
+                        new Param("flash", true, "Headlights Flash", "Toggle if the car's headlights should flash on an input."),
                     },
                     preFunctionLength = 1f,
                     defaultLength = 3f,
@@ -67,8 +72,12 @@ namespace HeavenStudio.Games.Loaders
                     preFunction = delegate {
                         var e = eventCaller.currentEntity;
                         if (eventCaller.gameManager.minigameObj.TryGetComponent(out LoveRap instance)) {
-                            instance.FoSho(e.beat);
+                            instance.FoSho(e.beat, e["flash"]);
                         }
+                    },
+                    parameters = new List<Param>()
+                    {
+                        new Param("flash", true, "Headlights Flash", "Toggle if the car's headlights should flash on an input."),
                     },
                     preFunctionLength = 1f,
                     defaultLength = 1.5f,
@@ -78,8 +87,12 @@ namespace HeavenStudio.Games.Loaders
                     preFunction = delegate {
                         var e = eventCaller.currentEntity;
                         if (eventCaller.gameManager.minigameObj.TryGetComponent(out LoveRap instance)) {
-                            instance.AllAboutYou(e.beat);
+                            instance.AllAboutYou(e.beat, e["flash"]);
                         }
+                    },
+                    parameters = new List<Param>()
+                    {
+                        new Param("flash", true, "Headlights Flash", "Toggle if the car's headlights should flash on an input."),
                     },
                     preFunctionLength = 1f,
                     defaultLength = 2.5f,
@@ -162,15 +175,6 @@ namespace HeavenStudio.Games
         [SerializeField] SpriteRenderer bgSR;
         [SerializeField] SpriteRenderer bgWetSR;
 
-        /* input types:
-         * 1 = into you
-         * 2 = crazy into you
-         * 3 = crazy into you (offbeat)
-         * 4 = fo sho
-         * 5 = fo sho (offbeat)
-         * 6 = all about you
-        */
-        private int inputType;
         float voicePitch = 1f;
 
         void Awake()
@@ -216,16 +220,16 @@ namespace HeavenStudio.Games
                 switch (e.datamodel)
                 {
                     case "loveRap/intoYou":
-                        IntoYou(e.beat, e["heart"]);
+                        IntoYou(e.beat, e["heart"], e["flash"]);
                         break;
                     case "loveRap/crazyIntoYou":
-                        CrazyIntoYou(e.beat);
+                        CrazyIntoYou(e.beat, e["flash"]);
                         break;
                     case "loveRap/foSho":
-                        FoSho(e.beat);
+                        FoSho(e.beat, e["flash"]);
                         break;
                     case "loveRap/allAboutYou":
-                        AllAboutYou(e.beat);
+                        AllAboutYou(e.beat, e["flash"]);
                         break;
                 }
             }
@@ -259,10 +263,21 @@ namespace HeavenStudio.Games
             }
         }
 
-        public void IntoYou(double beat, bool heartCue)
+        
+        /* input types:
+         * 1 = into you
+         * 2 = crazy into you
+         * 3 = crazy into you (offbeat)
+         * 4 = fo sho
+         * 5 = fo sho (offbeat)
+         * 6 = all about you
+        */
+
+        public void IntoYou(double beat, bool heartCue, bool flash)
         {
             PrepareAnim(beat, 1);
             cpuSFX(beat + 1, 1);
+            int id = 1;
 
             
             string text = heartCue ? "Into you <color=#f20d7a>♥" : "Into you!";
@@ -276,9 +291,6 @@ namespace HeavenStudio.Games
 
             BeatAction.New(instance, new List<BeatAction.Action>()
             {
-                new BeatAction.Action(beat - 0.25, delegate { 
-                    inputType = 1;
-                }),
                 new BeatAction.Action(beat, delegate { 
                     PrepText(text); 
                     mcBubble.Play("Appear");
@@ -302,10 +314,10 @@ namespace HeavenStudio.Games
                 }),
             });
 
-            ScheduleInput(beat, 1, InputAction_BasicPress, Just, Miss, null);
+            ScheduleInput(beat, 1, InputAction_BasicPress, (c, s) => Just(c, s, id, flash), Miss, null);
         }
 
-        public void CrazyIntoYou(double beat)
+        public void CrazyIntoYou(double beat, bool flash)
         {
             PrepareAnim(beat, 2);
 
@@ -339,9 +351,6 @@ namespace HeavenStudio.Games
 
             BeatAction.New(instance, new List<BeatAction.Action>()
             {
-                new BeatAction.Action(beat - 0.25, delegate { 
-                    inputType = id;
-                }),
                 new BeatAction.Action(beat, delegate { 
                     PrepText("Crazy into you!"); 
                     mcBubble.Play("Appear");
@@ -365,10 +374,10 @@ namespace HeavenStudio.Games
                 }),
             });
 
-            ScheduleInput(beat, 1.5, InputAction_BasicPress, Just, Miss, null);
+            ScheduleInput(beat, 1.5, InputAction_BasicPress, (c, s) => Just(c, s, id, flash), Miss, null);
         }
 
-        public void FoSho(double beat)
+        public void FoSho(double beat, bool flash)
         {
             PrepareAnim(beat, 3);
 
@@ -396,10 +405,6 @@ namespace HeavenStudio.Games
 
             BeatAction.New(instance, new List<BeatAction.Action>()
             {
-                new BeatAction.Action(beat - 0.25, delegate { 
-                    inputType = id;
-
-                }),
                 new BeatAction.Action(beat, delegate { 
                     PrepText("Fo' sho'!");
                     mcBubble.Play("Appear");
@@ -424,13 +429,15 @@ namespace HeavenStudio.Games
                 }),
             });
 
-            ScheduleInput(beat, 0.75, InputAction_BasicPress, Just, Miss, null);
+            ScheduleInput(beat, 0.75, InputAction_BasicPress, (c, s) => Just(c, s, id, flash), Miss, null);
         }
 
-        public void AllAboutYou(double beat)
+        public void AllAboutYou(double beat, bool flash)
         {
             PrepareAnim(beat, 4);
             cpuSFX(beat + 1.25, 6);
+
+            int id = 6;
 
             MultiSound.Play(new MultiSound.Sound[]
             {
@@ -442,9 +449,6 @@ namespace HeavenStudio.Games
 
             BeatAction.New(instance, new List<BeatAction.Action>()
             {
-                new BeatAction.Action(beat - 0.25, delegate { 
-                    inputType = 6;
-                    }),
                 new BeatAction.Action(beat, delegate { 
                     PrepText("All about you!"); 
                     mcBubble.Play("Appear");
@@ -468,7 +472,7 @@ namespace HeavenStudio.Games
                 }),
             });
 
-            ScheduleInput(beat, 1.25, InputAction_BasicPress, Just, Miss, null);
+            ScheduleInput(beat, 1.25, InputAction_BasicPress, (c, s) => Just(c, s, id, flash), Miss, null);
         }
 
         public void PrepareAnim(double beat, int id)
@@ -592,19 +596,18 @@ namespace HeavenStudio.Games
             }
         }
 
-        public void Just(PlayerActionEvent caller, float state)
+        public void Just(PlayerActionEvent caller, float state, int id, bool flash)
         {
-            int id = inputType;
             var beat = caller.startBeat + caller.timer;
             if (state >= 1f || state <= -1f)
             {
                 if (state >= 1f)
                 {
-                    voicePitch = 0.8f;
+                    voicePitch = 1.2f;
                 }
                 else if (state <= -1f)
                 {
-                    voicePitch = 1.2f;
+                    voicePitch = 0.8f;
                 }
 
                 BeatAction.New(instance, new List<BeatAction.Action>()
@@ -625,9 +628,13 @@ namespace HeavenStudio.Games
                 {
                     new BeatAction.Action(beat, delegate { 
                         playerBubble.Play("Appear");
-                        playerFlash.DoScaledAnimationAsync("FadeOut", 0.5f);
-                        cpuFlash.DoScaledAnimationAsync("FadeOut", 0.5f);
-                        car_lights.DoScaledAnimationAsync("light", 0.5f);
+                        if (flash)
+                        {
+                            playerFlash.DoScaledAnimationAsync("FadeOut", 0.5f);
+                            cpuFlash.DoScaledAnimationAsync("FadeOut", 0.5f);
+                            car_lights.DoScaledAnimationAsync("light", 0.5f);
+                        }
+                        
                     }),
                     new BeatAction.Action(beat + 1, delegate { 
                         playerBubble.Play("Hide");

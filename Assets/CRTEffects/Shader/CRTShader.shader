@@ -42,9 +42,8 @@
             TEXTURE2D_SAMPLER2D(_MainTex, sampler_MainTex);
             
             float _Distort;
-            float _ScreenWidth;
-            float _ScreenHeight;
             float _RGBBlend;
+            float4 _MainTex_TexelSize;
             float _BottomCollapse;
             float _NoiseAmount;
 
@@ -82,12 +81,12 @@
                 color.b = (noisevalue > noiseCrit) ? rand(linecoord + float2(3,4)) : color.b;
                 
                 //rgb配列
-                float rgbmod = fmod((i.texcoord.x) * _ScreenWidth, 3);
+                float rgbmod = fmod((i.texcoord.x) * _MainTex_TexelSize.z, 3);
                 color.r *= max(rgbmod < 1, _RGBBlend);
                 color.g *= max(1 < rgbmod && rgbmod < 2, _RGBBlend);
                 color.b *= max(2 < rgbmod, _RGBBlend);
                 
-                rgbmod = fmod((i.texcoord.y) * _ScreenHeight, 4);
+                rgbmod = fmod((i.texcoord.y) * _MainTex_TexelSize.w, 4);
                 color.rgb *= rgbmod >= 1;
                 
                 //レンズ歪みの外側

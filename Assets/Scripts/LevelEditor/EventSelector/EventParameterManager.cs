@@ -7,6 +7,8 @@ using System.Linq;
 using System;
 using static HeavenStudio.EntityTypes;
 using HeavenStudio.Common;
+using HeavenStudio.Games;
+using HeavenStudio.Editor.Track;
 
 namespace HeavenStudio.Editor
 {
@@ -30,6 +32,8 @@ namespace HeavenStudio.Editor
 
 
         public RiqEntity entity;
+        public List<RiqEntity> entities = new();
+        private List<TimelineEventObj> markers = new();
 
         public bool active;
 
@@ -46,12 +50,6 @@ namespace HeavenStudio.Editor
         {
             instance = this;
 
-            if (PersistentDataManager.gameSettings.fontType == 1) Editor.instance.currentFont = "Rodin DB"; 
-            
-            
-            setFont = Editor.instance.currentFont;
-            Editor.instance.SetGameEventTitle($"<font={setFont}>{"Game Manager"}</font>");
-
             if (PropertyPrefabs == null)
             {
                 PropertyPrefabs = new() {
@@ -67,6 +65,8 @@ namespace HeavenStudio.Editor
                     { typeof(string), StringP },
                 };
             }
+
+            Editor.instance?.SetGameEventTitle("");
         }
 
         private void Start()
@@ -94,54 +94,69 @@ namespace HeavenStudio.Editor
             eventSelector.SetActive(true);
 
             DestroyParams();
-            if (PersistentDataManager.gameSettings.fontType == 1)
-            {
-                Editor.instance.currentFont = "Rodin DB";
-            }
-            else
-            {
-                Editor.instance.currentFont = GridGameSelector.instance.SelectedMinigame.font;
-            }
-            setFont = Editor.instance.currentFont;
-            // Editor.instance.SetGameEventTitle($"Select game event for {gridGameSelector.SelectedMinigame.displayName.Replace("\n", "")}");
+
+            SetFont(GridGameSelector.instance.SelectedMinigame);
+            
             Editor.instance?.SetGameEventTitle($"<font={setFont}>{gridGameSelector.SelectedMinigame.displayName.Replace("\n", "")}</font>");
         }
 
-        public void StartParams(RiqEntity entity)
+        public void StartParams(TimelineEventObj marker)
         {
             active = true;
-            AddParams(entity);
+            AddParams(marker);
         }
 
-        private void AddParams(RiqEntity entity)
+        private void AddParams(TimelineEventObj marker)
         {
+            var entity = marker.entity;
+
             string[] split = entity.datamodel.Split('/');
             var minigame = EventCaller.instance.GetMinigame(split[0]);
             Minigames.GameAction action = minigame.actions.Find(c => c.actionName == split[1]);
 
             if (action.parameters != null)
             {
+                DestroyParams();
+
                 eventSelector.SetActive(false);
                 this.entity = entity;
+                
+                this.markers.Clear();
+                this.entities.Clear();
 
-                string col = (int)entity["track"] switch
+                if (Selections.instance.eventsSelected.Count > 1 && Selections.instance.eventsSelected.Any(x => x.entity == entity))
                 {
-                    1 => EditorTheme.theme.properties.Layer2Col,
-                    2 => EditorTheme.theme.properties.Layer3Col,
-                    3 => EditorTheme.theme.properties.Layer4Col,
-                    4 => EditorTheme.theme.properties.Layer5Col,
-                    _ => EditorTheme.theme.properties.Layer1Col
-                };
+                    foreach (var m in Selections.instance.eventsSelected)
+                    {
+                        if (m.entity.datamodel == entity.datamodel)
+                        {
+                            this.markers.Add(m);
+                            this.entities.Add(m.entity);
+
+                            m.editingParams = true;
+                        }
+                    }
+                }
+                else
+                {
+                    this.markers.Add(marker);
+                    this.entities.Add(marker.entity);
+                    marker.editingParams = true;
+                }
+
+                string col = ColorUtility.ToHtmlStringRGB(EditorTheme.theme.LayerGradientIndex((int)entity["track"]));
 
                 string gameName = action.displayName;
                 const int cutOff = 20;
                 if (gameName.Length > (cutOff + 3)) {
                     gameName = gameName[..cutOff] + "...";
                 }
+                if (this.markers.Count > 1) {
+                    gameName += $" ({this.markers.Count})";
+                }
                 
-                Editor.instance.SetGameEventTitle(Localization.F("<color=#{0}>{1}</color> at ♪ {2:F2} on <color=#{0}>Track {3}</color>", col, gameName, entity.beat, (int)entity["track"] + 1));
-
-                DestroyParams();
+                SetFont(minigame);
+                Editor.instance.SetGameEventTitle(Localization.F("<color=#{0}>{1}</color> at ♪ {2:F2} on <color=#{0}>Track {3}</color>", col, $"<font={setFont}>{gameName}</font>", entity.beat, (int)entity["track"] + 1));
 
                 for (int i = 0; i < action.parameters.Count; i++)
                 {
@@ -219,7 +234,28 @@ namespace HeavenStudio.Editor
                 Destroy(transform.GetChild(i).gameObject);
             }
 
+            foreach (var m in markers)
+            {
+                if (m != null) m.editingParams = false;
+            }
+
+            this.markers.Clear();
+            this.entities.Clear();
+
             currentProperties.Clear();
+        }
+
+        private void SetFont(Minigames.Minigame mg)
+        {
+            if (PersistentDataManager.gameSettings.fontType == 1)
+            {
+                Editor.instance.currentFont = "Rodin DB";
+            }
+            else
+            {
+                Editor.instance.currentFont = mg.font;
+            }
+            setFont = Editor.instance.currentFont;
         }
     }
 }

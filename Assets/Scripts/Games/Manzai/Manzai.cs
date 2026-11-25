@@ -137,7 +137,7 @@ namespace HeavenStudio.Games.Loaders
                         new Param("loop", new EntityTypes.Integer(1, 16, 4), "Loop Interval (x4)", "How many quarter-beats the animation will wait before looping."),
                     },
                 }},
-                new List<string>() { "rvl", "normal" },
+                new List<string>() { "rvl", "normal", "endless" },
                 "rvlmanzai", "jp",
                 new List<string>() { "jp" },
                 chronologicalSortKey: 104,

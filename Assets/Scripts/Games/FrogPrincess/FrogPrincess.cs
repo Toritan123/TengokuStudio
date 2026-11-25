@@ -37,7 +37,7 @@ namespace HeavenStudio.Games.Loaders
                     }
                 },
             },
-            new List<string>() { "rvl", "normal" },
+            new List<string>() { "rvl", "normal", "endless" },
             "rvlfrog", "en",
             new List<string>() {},
             chronologicalSortKey: 106,
@@ -77,17 +77,14 @@ namespace HeavenStudio.Games
             {
                 if (PlayerInput.GetIsAction(InputAction_BasicPress) && !IsExpectingInputNow(InputAction_BasicPress))
                 {
-                    ScoreMiss();
                     HoldFastAnim(cond.songPositionInBeatsAsDouble);
                 }
                 if (PlayerInput.GetIsAction(InputAction_FlickRelease) && !IsExpectingInputNow(InputAction_FlickRelease))
                 {
-                    ScoreMiss();
                     JumpFastAnim(cond.songPositionInBeatsAsDouble);
                 }
                 if (PlayerInput.GetIsAction(InputAction_BasicRelease) && PlayerInput.PlayerHasControl() && PlayerInput.CurrentControlStyle is InputSystem.InputController.ControlStyles.Touch)
                 {
-                    ScoreMiss();
                     JumpFastAnim(cond.songPositionInBeatsAsDouble);
                 }
                 UpdateBackgroundColor();
@@ -216,6 +213,8 @@ namespace HeavenStudio.Games
         {
             if (!isHold && !isGone)
             {
+                ScoreMiss();
+
                 isGone = true;
                 isPrepare = false;
 
@@ -294,6 +293,8 @@ namespace HeavenStudio.Games
         {
             if (isHold && !isGone)
             {
+                ScoreMiss();
+                
                 isHold = false;
                 isGone = true;
 

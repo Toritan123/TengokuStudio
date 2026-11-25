@@ -15,7 +15,7 @@ namespace HeavenStudio.Games.Scripts_Spaceball
 
         public double startBeat;
 
-        public bool high, quick, offbeat;
+        public bool high;
         public bool isTacobell;
 
         public Transform Holder;
@@ -27,8 +27,6 @@ namespace HeavenStudio.Games.Scripts_Spaceball
 
         [SerializeField] private BezierCurve3D pitchLowCurve;
         [SerializeField] private BezierCurve3D pitchHighCurve;
-        [SerializeField] private BezierCurve3D pitchQuickCurve;
-        [SerializeField] private BezierCurve3D pitchOffbeatCurve;
 
         private bool hit;
         private double hitBeat;
@@ -52,14 +50,6 @@ namespace HeavenStudio.Games.Scripts_Spaceball
 		{
             	Spaceball.instance.ScheduleInput(startBeat, 2f, Spaceball.InputAction_BasicPress, Just, Miss, Out);
 		}
-		else if (quick)
-		{
-            	Spaceball.instance.ScheduleInput(startBeat, 0.5f, Spaceball.InputAction_BasicPress, Just, Miss, Out);
-		}
-		else if (offbeat)
-		{
-            	Spaceball.instance.ScheduleInput(startBeat, 1.5f, Spaceball.InputAction_BasicPress, Just, Miss, Out);
-		}
 		else
 		{
             	Spaceball.instance.ScheduleInput(startBeat, 1f, Spaceball.InputAction_BasicPress, Just, Miss, Out);
@@ -82,14 +72,6 @@ namespace HeavenStudio.Games.Scripts_Spaceball
 		{
 		beatLength = 2f; 
 		}
-		else if (quick)
-		{
-		beatLength = 0.5f; 
-		}
-		else if (offbeat)
-		{
-		beatLength = 1.5f; 
-		}
 		else
 		{
 		beatLength = 1f;
@@ -105,14 +87,6 @@ namespace HeavenStudio.Games.Scripts_Spaceball
 		if (high)
 		{
 		animCurve = pitchHighCurve; 
-		}
-		else if (quick)
-		{
-		animCurve = pitchQuickCurve; 
-		}
-		else if (offbeat)
-		{
-		animCurve = pitchOffbeatCurve; 
 		}
 		else
 		{

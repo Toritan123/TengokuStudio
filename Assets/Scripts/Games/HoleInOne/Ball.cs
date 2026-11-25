@@ -107,7 +107,7 @@ namespace HeavenStudio.Games.Scripts_HoleInOne
         {
             double beat = caller.startBeat + caller.timer;
 
-            if (state >= 0.8f || state <= -0.8f)
+            if (state >= 1f || state <= -1f)
             {
                 SoundByte.PlayOneShotGame("holeInOne/SE_GOLF_MISS_SHOT_LEFT");
                 SoundByte.PlayOneShotGame("holeInOne/SE_GOLF_WATER_IN_LEFT", beat + 1f);
@@ -166,7 +166,7 @@ namespace HeavenStudio.Games.Scripts_HoleInOne
             if (bigBallSR != null) bigBallSR.enabled = true;
             if (bigShadowSR != null) bigShadowSR.enabled = true;
 
-            if (state >= 0.8f || state <= -0.8f)
+            if (state >= 1f || state <= -1f)
             {
                 SoundByte.PlayOneShotGame("holeInOne/SE_GOLF_MISS_SHOT_LEFT");
                 SoundByte.PlayOneShotGame("holeInOne/SE_GOLF_WATER_IN_LEFT", beat + 1f);

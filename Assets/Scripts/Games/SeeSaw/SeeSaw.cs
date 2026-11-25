@@ -120,7 +120,7 @@ namespace HeavenStudio.Games.Loaders
                     }
                 }
             },
-            new List<string>() {"rvl", "normal", "keep"},
+            new List<string>() {"rvl", "normal"},
             "rvlseesaw", "en",
             new List<string>() { "en", "jp" },
             chronologicalSortKey: 3

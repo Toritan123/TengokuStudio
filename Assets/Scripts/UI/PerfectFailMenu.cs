@@ -78,7 +78,7 @@ namespace HeavenStudio.Common
             canSkip = true;
             if (!noSlam) yield return new WaitForSeconds(1.5f);
 
-            SoundByte.PlayOneShot("perfectFail");
+            SoundByte.PlayOneShot("perfectFail", ui: true);
             playedJingle = true;
             yield return new WaitForSeconds(0.136f);
 
@@ -107,12 +107,9 @@ namespace HeavenStudio.Common
         {
             if ((!instant) && (!Conductor.instance.isPaused)) return;
             // GameManager.instance.CircleCursor.LockCursor(true);
-            Conductor.instance.Play(pauseBeat);
 
             failTextAnimator.Play("idle");
             doorsAnimator.Play("doorIdle");
-
-
 
             isPaused = false;
             canPick = false;
@@ -166,7 +163,7 @@ namespace HeavenStudio.Common
                     canSkip = false;
                     StopCoroutine(perfectCoroutine);
 
-                    if (!playedJingle) SoundByte.PlayOneShot("perfectFail");
+                    if (!playedJingle) SoundByte.PlayOneShot("perfectFail", ui: true);
                     playedJingle = false;
 
                     failTextAnimator.Play("ArrowAnim");
@@ -243,7 +240,7 @@ namespace HeavenStudio.Common
             }
             optionHolder.transform.GetChild((int)option).transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
             if (sound)
-                SoundByte.PlayOneShot("ui/UIOption");
+                SoundByte.PlayOneShot("ui/UIOption", ui: true);
         }
 
         void UseOption(Options option)
@@ -255,7 +252,7 @@ namespace HeavenStudio.Common
                     break;
                 case Options.Settings:
                     OnSettings();
-                    SoundByte.PlayOneShot("ui/UISelect");
+                    SoundByte.PlayOneShot("ui/UISelect", ui: true);
                     break;
                 case Options.Quit:
                     OnQuit();
@@ -268,13 +265,13 @@ namespace HeavenStudio.Common
             UnPause(true);
             GlobalGameManager.ForceFade(0, 0f, -1f);
             GameManager.instance.Stop(0, true, 1f);
-            SoundByte.PlayOneShot("ui/UIEnter");
+            SoundByte.PlayOneShot("ui/UIEnter", ui: true);
         }
 
         void OnQuit()
         {
             isQuitting = true;
-            SoundByte.PlayOneShot("ui/PauseQuit");
+            SoundByte.PlayOneShot("ui/PauseQuit", ui: true);
             GameManager.instance.CircleCursor.LockCursor(false);
 
             GlobalGameManager.playbackSpeed = 1.0f;

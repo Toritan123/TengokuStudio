@@ -17,9 +17,13 @@ namespace HeavenStudio.Editor
         public bool colorTableActive;
         public ColorPreview colorPreview;
         public TMP_InputField hex;
+        public TMP_InputField opacity;
         public DisableSelectOnHover disableSelectOnHover;
 
         private Color _defaultColor;
+        private Color _previousColor;
+
+        private bool ignoreColorChange = false;
 
         public override void SetProperties(string propertyName, object type, string caption)
         {
@@ -31,16 +35,32 @@ namespace HeavenStudio.Editor
                 _ =>
                     Editor.instance.editingInputField = true
             );
+            opacity.onSelect.AddListener(
+                _ =>
+                    Editor.instance.editingInputField = true
+            );
             hex.onEndEdit.AddListener(
                 _ =>
                 {;
                     Editor.instance.editingInputField = false;
                 }
             );
+            opacity.onEndEdit.AddListener(
+                _ =>
+                {;
+                    Editor.instance.editingInputField = false;
+                }
+            );
+
+            ignoreColorChange = true;
+            colorPreview.ChangeColor(parameterManager.entity[propertyName]);
+            ColorTable.gameObject.SetActive(false);
+            ignoreColorChange = false;
 
             colorPreview.onColorUpdated += newColor =>
             {
-                parameterManager.entity[propertyName] = newColor;
+                if (ignoreColorChange) return;
+                foreach (var e in parameterManager.entities) e[propertyName] = newColor;
                 if (newColor != _defaultColor)
                 {
                     this.caption.text = _captionText + "*";
@@ -52,22 +72,27 @@ namespace HeavenStudio.Editor
             };
 
             _defaultColor = (Color)type;
+            _previousColor = colorPreview.currentColor;
 
             ColorBTN.onClick.AddListener(
                 () => {
                     ColorTable.gameObject.SetActive(true);
                     colorTableActive = true;
+                    ignoreColorChange = true;
                     colorPreview.ChangeColor(parameterManager.entity[propertyName]);
+                    ignoreColorChange = false;
                 }
             );
-
-            colorPreview.ChangeColor(parameterManager.entity[propertyName]);
-            ColorTable.gameObject.SetActive(false);
         }
 
         public void ResetValue()
         {
             colorPreview.ChangeColor(_defaultColor);
+        }
+
+        public void ResetToPrevious()
+        {
+            colorPreview.ChangeColor(_previousColor);
         }
 
         public override void SetCollapses(object type)

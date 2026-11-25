@@ -42,6 +42,7 @@ namespace HeavenStudio.Editor
         [SerializeField] public GameObject DividerP;
         [SerializeField] public GameObject HeaderP;
         [SerializeField] public GameObject SubHeaderP;
+        [SerializeField] public GameObject TagEditorP;
         [SerializeField] public GameObject ResultDialogP;
         [SerializeField] public GameObject IconDialogP;
 
@@ -124,6 +125,10 @@ namespace HeavenStudio.Editor
                     else if (property.tag == "subheader")
                     {
                         container.AddSubHeader(this, Localization.T(property.label));
+                    }
+                    else if (property.tag == "tageditor")
+                    {
+                        container.AddTagEditor(this);
                     }
                     else if (property.tag == "resultmessagediag")
                     {

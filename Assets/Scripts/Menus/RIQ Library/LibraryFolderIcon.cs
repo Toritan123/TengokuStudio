@@ -15,6 +15,7 @@ namespace HeavenStudio
 {
     public class LibraryFolderIcon : MonoBehaviour, IPointerExitHandler, IPointerEnterHandler
     {
+        [SerializeField] private GameObject iconHolder;
         [SerializeField] private Image[] recolorables;
         [SerializeField] public Image customIcon;
         [SerializeField] private TMP_Text folderNameLabel;
@@ -205,7 +206,7 @@ namespace HeavenStudio
             LibraryManager.instance.SelectFolder(folderPath);
             toast.transform.localPosition = new(toast.transform.localPosition.x, 20f, toast.transform.localPosition.z);
 
-            SoundByte.PlayOneShot("ui/Library/folder");
+            SoundByte.PlayOneShot("ui/Library/folder", ui: true);
         }
 
         public void Back()
@@ -215,6 +216,7 @@ namespace HeavenStudio
 
         public void LoadCustomIcon()
         {
+            if (loadedIcon) return;
             StartCoroutine(SetLevelCustomIcon());
         }
 
@@ -269,7 +271,7 @@ namespace HeavenStudio
         {
             if ((levelsInFolder == null) || (levelsInFolder.Count == 0))
             {
-                levelsInFolder = LibraryManager.instance.allIconInfo[folderPath].pathsInFolder.Where(path => !LibraryManager.instance.allIconInfo[path].isFolder).ToList();
+                levelsInFolder = LibraryManager.allIconInfo[folderPath].pathsInFolder.Where(path => !LibraryManager.allIconInfo[path].isFolder).ToList();
             }
         }
 
@@ -288,15 +290,12 @@ namespace HeavenStudio
             unhoverCoroutine = StartCoroutine(AnimateUnhover());
         }
 
-        public void OnNavigateTo(bool showInfo = true)
+        public void OnNavigateTo(bool showInfo = true, bool scroll = true)
         {
             OnHover();
             if (showInfo) LibraryManager.instance.infoPanel.ShowFolderInfo(folderPath);
 
-            if (!LibraryManager.instance.IsIconFullyOnscreen(gameObject.GetComponent<RectTransform>()))
-            {
-                LibraryManager.instance.ScrollToTarget(GetComponent<RectTransform>());
-            }
+            if (scroll) LibraryManager.instance.ScrollToTarget(iconHolder.GetComponent<RectTransform>());
 
             LibraryMenuCursor.instance.SetSelectable(selectable);
             LibraryMenuCursor.instance.gridSelectable = selectable;
@@ -380,13 +379,15 @@ namespace HeavenStudio
         {
             GameObject upGameObject = LibraryManager.instance.GetGridSelectableUp(folderPath);
 
-            if (upGameObject == null) return;
-
-            if (upGameObject.TryGetComponent(out LibraryLevelIcon levelIcon))
+            if (upGameObject == null) 
+            {
+                LibraryMenuCursor.instance.SetSelectableTo(0);
+            }
+            else if (upGameObject.TryGetComponent(out LibraryLevelIcon levelIcon))
             {
                 levelIcon.OnNavigateTo();
             }
-            if (upGameObject.TryGetComponent(out LibraryFolderIcon folderIcon))
+            else if (upGameObject.TryGetComponent(out LibraryFolderIcon folderIcon))
             {
                 folderIcon.OnNavigateTo();
             }
@@ -398,13 +399,15 @@ namespace HeavenStudio
         {
             GameObject downGameObject = LibraryManager.instance.GetGridSelectableDown(folderPath);
 
-            if (downGameObject == null) return;
-
-            if (downGameObject.TryGetComponent(out LibraryLevelIcon levelIcon))
+            if (downGameObject == null) 
+            {
+                LibraryMenuCursor.instance.SetSelectableTo(1);
+            }
+            else if (downGameObject.TryGetComponent(out LibraryLevelIcon levelIcon))
             {
                 levelIcon.OnNavigateTo();
             }
-            if (downGameObject.TryGetComponent(out LibraryFolderIcon folderIcon))
+            else if (downGameObject.TryGetComponent(out LibraryFolderIcon folderIcon))
             {
                 folderIcon.OnNavigateTo();
             }
@@ -473,11 +476,11 @@ namespace HeavenStudio
                 System.Random rand = new System.Random();
 
                 string randomLevelPath = levelsInFolder[rand.Next(levelsInFolder.Count)];
-                LibraryLevelIcon levelIcon = LibraryManager.instance.allIconInfo[randomLevelPath].levelIcon;
+                LibraryLevelIcon levelIcon = LibraryManager.allIconInfo[randomLevelPath].levelIcon;
 
                 toastBorder.sprite = levelIcon.border.sprite;
 
-                if (LibraryCacheManager.cache.cachedInfo[LibraryManager.instance.allIconInfo[randomLevelPath].hash].customIcon)
+                if (LibraryCacheManager.cache.cachedInfo[LibraryManager.allIconInfo[randomLevelPath].hash].customIcon)
                 {
                     toastCustomIcon.gameObject.SetActive(true);
                     if (levelIcon.loadedIcon)
@@ -486,7 +489,7 @@ namespace HeavenStudio
                     }
                     else
                     {
-                        UnityWebRequest www = UnityWebRequestTexture.GetTexture("file://" + Path.Combine(LibraryCacheManager.cachePath, "LevelIcons", LibraryManager.instance.allIconInfo[randomLevelPath].hash, "icon.png"));
+                        UnityWebRequest www = UnityWebRequestTexture.GetTexture("file://" + Path.Combine(LibraryCacheManager.cachePath, "LevelIcons", LibraryManager.allIconInfo[randomLevelPath].hash, "icon.png"));
                         yield return www.SendWebRequest();
 
                         if (www.result != UnityWebRequest.Result.Success)

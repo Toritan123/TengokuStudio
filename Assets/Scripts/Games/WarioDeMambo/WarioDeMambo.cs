@@ -338,7 +338,7 @@ namespace HeavenStudio.Games
         }
         protected static bool IA_BatonLeft(out double dt)
         {
-            return PlayerInput.GetBatonDown(InputController.ActionsBaton.West, out dt);
+            return PlayerInput.GetBatonDown(InputController.ActionsBaton.Face, out dt);
         }
         protected static bool IA_TouchLeft(out double dt)
         {
@@ -351,7 +351,7 @@ namespace HeavenStudio.Games
         }
         protected static bool IA_BatonRight(out double dt)
         {
-            return PlayerInput.GetBatonDown(InputController.ActionsBaton.East, out dt);
+            return PlayerInput.GetBatonDown(InputController.ActionsBaton.Face, out dt);
         }
         protected static bool IA_TouchRight(out double dt)
         {

@@ -190,7 +190,7 @@ namespace HeavenStudio.Games
             //Rocket
         }
         double lastBeat = Double.MinValue;
-        double lastBeat2 = Double.MinValue;
+        double lastIndividualBeat = Double.MinValue;
         List<RiqEntity> demonEntities;
         public List<double> boomBeats;
         public List<bool> enabledBooms;
@@ -419,6 +419,8 @@ namespace HeavenStudio.Games
         public int totalEvents = -1;
         int totalEvents2 = 0;
         public int whichDemon;
+
+        // if you're reading this code sorry
         public void SpawnDemon(double beat, bool auto, int count, bool autoBoom, float boomBeat, float flipback, bool enableBoom)
         {
             double inputBeat = beat + 2;
@@ -433,7 +435,11 @@ namespace HeavenStudio.Games
                 demonAnims = 0;
             }
 
-            if (lastBeat + 3 < beat)
+            if (autoCount >= 4 && auto) return; // prevent more than 4 auto demons, that breaks things
+
+
+
+            if (lastBeat + 3 <= beat || lastIndividualBeat + 2 < beat)
             {
                 lastBeat = beat;
 
@@ -455,17 +461,13 @@ namespace HeavenStudio.Games
 
                         3 => new List<double> { inputBeat + 2d, inputBeat + 2.5d, inputBeat + 3d },
 
-                        4 => new List<double> { inputBeat + 2d, inputBeat + 2.25d, inputBeat + 2.5d, inputBeat + 3d },
-
-                        _ => new List<double> { },
+                        _ => new List<double> { inputBeat + 2d, inputBeat + 2.25d, inputBeat + 2.5d, inputBeat + 3d }, // 4 should be the max possible so it caps here
                     };
-                    // failsafe
-                    if (boomBeats.Count == 0)
-                        autoBoom = false;
                 }
                 else currentAutoBoom = false;
             }
             enabledBooms.Add(enableBoom);
+            lastIndividualBeat = beat;
 
             if (!currentAutoBoom)
             {
@@ -519,6 +521,8 @@ namespace HeavenStudio.Games
                             FlipSamurai(beat + 2 + flipback, 0);
                         }
                         else { FlipSamurai(beat + 1, 0); }
+                        break;
+                    default:
                         break;
                 }
             }
@@ -579,6 +583,8 @@ namespace HeavenStudio.Games
                             FlipSamurai(beat + 2 + flipback, 0);
                         }
                         else { FlipSamurai(beat + 1, 0); }
+                        break;
+                    default:
                         break;
                 }
             }

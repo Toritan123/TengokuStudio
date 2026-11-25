@@ -35,6 +35,7 @@ namespace HeavenStudio.Editor
         public RectTransform GameSelectionRect;
         public RectTransform GameEventSelectorCanScroll;
         public TMP_InputField SearchBar;
+        public GridLayoutGroup GameIconLayout;
         private RectTransform GameEventSelectorRect;
         private RectTransform eventsParent;
 
@@ -68,11 +69,11 @@ namespace HeavenStudio.Editor
             showFanGames = PersistentDataManager.gameSettings.showFanGames;
             showAdvanced = PersistentDataManager.gameSettings.advancedFeatures;
 
-            GameEventSelectorRect = GameEventSelector.GetComponent<RectTransform>();
+            GameEventSelectorRect = (RectTransform) GameEventSelector.transform;
             selectorHeight = GameEventSelectorRect.rect.height;
-            eventSize = EventRef.GetComponent<RectTransform>().rect.height;
+            eventSize = ((RectTransform) EventRef.transform).rect.height;
 
-            eventsParent = EventRef.transform.parent.GetChild(2).GetComponent<RectTransform>();
+            eventsParent = (RectTransform) EventRef.transform.parent.GetChild(2).transform;
             StartCoroutine(StartDelayed());
 
             RefreshGamesList();
@@ -284,7 +285,7 @@ namespace HeavenStudio.Editor
                     label.text = "<color=#ff8>" + label.text;
 
                 if (action.parameters != null && action.parameters.Count > 0)
-                    g.transform.GetChild(0).GetChild(0).gameObject.SetActive(true);
+                    g.transform.GetChild(0).GetChild(1).GetChild(0).gameObject.SetActive(true); // Visual -> Text -> Icon
 
                 if (index - 1 == i)
                     label.color = EditorTheme.theme.properties.EventSelectedCol.Hex2RGB();
@@ -308,46 +309,46 @@ namespace HeavenStudio.Editor
 
         private void SetColors()
         {
-            //CurrentSelected.GetComponent<Image>().color = EditorTheme.theme.properties.EventSelectedCol.Hex2RGB();
-
             for (int i = 0; i < eventsParent.transform.childCount; i++)
             {
-                var eventTxt = eventsParent.GetChild(i).GetChild(0).GetComponent<TMP_Text>();
+                var visual = eventsParent.GetChild(i).GetChild(0).GetComponent<RectTransform>();
+                var eventTxt = visual.GetComponentInChildren<TMP_Text>();
                 var goalX = -25;
                 if (i == currentEventIndex)
                 {
-                    eventTxt.color = EditorTheme.theme.properties.EventSelectedCol.Hex2RGB();
+                    if (eventTxt != null) eventTxt.color = EditorTheme.theme.properties.EventSelectedCol.Hex2RGB();
                     goalX = 16;
                 }
                 else
                 {
-                    eventTxt.color = EditorTheme.theme.properties.EventNormalCol.Hex2RGB();
+                    if (eventTxt != null) eventTxt.color = EditorTheme.theme.properties.EventNormalCol.Hex2RGB();
                 }
-                eventTxt.rectTransform.anchoredPosition =
+                visual.anchoredPosition =
                     new Vector2(
-                        Mathf.Lerp(eventTxt.rectTransform.anchoredPosition.x, goalX, Time.deltaTime * 12f),
-                        eventTxt.rectTransform.anchoredPosition.y);
+                        Mathf.Lerp(visual.anchoredPosition.x, goalX, Time.deltaTime * 12f),
+                        visual.anchoredPosition.y);
             }
         }
 
         public void Zoom()
         {
             if (!Input.GetKey(InputKeyboard.MODIFIER)) return;
-            var glg = GetComponent<GridLayoutGroup>();
+
+
             int max = 20; // arbitrary
 
-            if (glg.constraintCount + 1 > max && Input.mouseScrollDelta.y < 0) return;
+            GameIconLayout.constraintCount += (Input.mouseScrollDelta.y > 0) ? -1 : 1;
+            GameIconLayout.constraintCount = Math.Clamp(GameIconLayout.constraintCount, 0, max);
 
-            glg.constraintCount += (Input.mouseScrollDelta.y > 0) ? -1 : 1;
-
-            // thanks to blank3times (tri) for helping me with this
-            var size = (1 / (0.00317 * glg.constraintCount)) - 4.75248;
+            // if this breaks, then use the general version below
+            float size = (315f / GameIconLayout.constraintCount) - 5f;
 
             // this, however, doesn't work
-            // var totalWidth = Editor.instance.GridGameSelectorRect.rect.width;
-            // var size = (totalWidth - glg.padding.right) * (glg.constraintCount + 1) / glg.constraintCount;
+            // yes it does, however, it is more expensive
+            // float totalWidth = ((RectTransform) this.transform).rect.width - ((RectTransform) Scrollbar.transform).rect.width;
+            // float size = (totalWidth - GameIconLayout.spacing.x * (GameIconLayout.constraintCount + 1)) / GameIconLayout.constraintCount;
 
-            glg.cellSize = Vector2.one * (float)size;
+            GameIconLayout.cellSize = Vector2.one * size;
         }
 
 
@@ -520,6 +521,8 @@ namespace HeavenStudio.Editor
             { "gba", "agb" },
             { "tengoku", "agb" },
             { "rhythm tengoku", "agb" },
+            { "silver", "agb" },
+            { "advance", "agb" },
 
             { "ds", "ntr" },
             { "nds", "ntr" },
@@ -541,6 +544,9 @@ namespace HeavenStudio.Editor
 
             { "warioware", "miw" },
             { "wario", "miw" },
+
+            { "beat city", "uni" },
+            { "crossover", "uni|miw" },
 
             { "fangame", "pco|mob" },
             { "fangames", "pco|mob" },
@@ -564,6 +570,23 @@ namespace HeavenStudio.Editor
             { "simon says", "repeat" },
 
             { "aim", "aim" },
+
+            // game types
+            { "endless", "endless" },
+            { "endless game", "endless" },
+            { "endless games", "endless" },
+
+            { "toy", "toy" },
+            { "toys", "toy" },
+            { "rhythm toy", "toy" },
+            { "rhythm toys", "toy" },
+
+            { "intro", "intro"},
+            { "introduction", "intro"},
+            { "test", "intro"},
+
+            { "extra", "endless|toy|intro" },
+            { "extras", "endless|toy|intro" },
         };
 
         public void Search()
@@ -648,6 +671,40 @@ namespace HeavenStudio.Editor
 
         private List<Minigames.GameAction> visibleActions;
 
+        public String GetCurrentEventName()
+        {
+            visibleActions = new List<Minigames.GameAction>();
+            foreach (Minigames.GameAction action in SelectedMinigame.actions)
+            {
+                if (!action.hidden)
+                {
+                    if (!(action.advanced && !PersistentDataManager.gameSettings.advancedFeatures))
+                        visibleActions.Add(action);
+                }
+            }
+
+            int index = currentEventIndex;
+
+            if (!EventCaller.FXOnlyGames().Contains(SelectedMinigame))
+            {
+                // regular game switches count toward the selector index but not the action list
+                index = currentEventIndex - 1;
+                if (index < 0)
+                {
+                    return $"gameManager/switchGame/{SelectedMinigame.name}";
+                }
+            }
+
+            if (SelectedMinigame.actions[index].actionName.Contains('/'))
+            {
+                return visibleActions[index].actionName;
+            }
+            else
+            {
+                return SelectedMinigame.name + "/" + visibleActions[index].actionName;
+            }
+        }
+
         public void Drag()
         {
             if (Conductor.instance.NotStopped() || Editor.instance.inAuthorativeMenu) {
@@ -663,60 +720,7 @@ namespace HeavenStudio.Editor
                 dragTimes++;
 
                 TimelineEventObj eventObj;
-
-                visibleActions = new List<Minigames.GameAction>();
-
-                foreach (Minigames.GameAction action in SelectedMinigame.actions)
-                {
-                    if (!action.hidden)
-                    {
-                        if (!(action.advanced && !PersistentDataManager.gameSettings.advancedFeatures))
-                            visibleActions.Add(action);
-                    }
-                }
-
-                if (currentEventIndex == 0)
-                {
-                    if (EventCaller.FXOnlyGames().Contains(SelectedMinigame))
-                    {
-                        int index = currentEventIndex + 1;
-                        if (currentEventIndex - 1 > visibleActions.Count)
-                        {
-                            index = currentEventIndex;
-                        }
-                        else if (currentEventIndex - 1 < 0)
-                        {
-                            if (visibleActions[0].actionName == "switchGame")
-                                index = 1;
-                            else
-                                index = 0;
-                        }
-
-                        eventObj = Timeline.instance.AddEventObject(SelectedMinigame.name + "/" + visibleActions[index].actionName, true, new Vector3(0, 0), null, true);
-                    }
-                    else
-                        eventObj = Timeline.instance.AddEventObject($"gameManager/switchGame/{SelectedMinigame.name}", true, new Vector3(0, 0), null, true);
-                }
-                else
-                {
-                    int index = currentEventIndex - 1;
-                    if (SelectedMinigame.actions[0].actionName == "switchGame")
-                    {
-                        index = currentEventIndex + 1;
-                    }
-                    else if (EventCaller.FXOnlyGames().Contains(SelectedMinigame) && visibleActions[0].actionName != "switchGame")
-                    {
-                        index = currentEventIndex;
-                    }
-
-
-                    if (SelectedMinigame.actions[index].actionName.Contains('/'))
-                    {
-                        eventObj = Timeline.instance.AddEventObject(visibleActions[index].actionName, true, new Vector3(0, 0), null, true);
-                    }
-                    else { eventObj = Timeline.instance.AddEventObject(SelectedMinigame.name + "/" + visibleActions[index].actionName, true, new Vector3(0, 0), null, true); }
-                }
-
+                eventObj = Timeline.instance.AddEventObject(GetCurrentEventName(), true, new Vector3(0, 0), null, true);
                 eventObj.isCreating = true;
 
                 // CommandManager.instance.Execute(new Commands.Place(eventObj));

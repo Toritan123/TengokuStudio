@@ -150,11 +150,11 @@ namespace HeavenStudio.Games.Loaders
                     defaultLength = 4f
                 }
             },
-            new List<string>() { "rvl", "repeat" },
+            new List<string>() { "rvl", "repeat", "toy" },
             "rvlversus", "en",
             new List<string>() { },
             chronologicalSortKey: 204,
-            font : "Comet"
+            font : "Fever UI"
             );
         }
     }

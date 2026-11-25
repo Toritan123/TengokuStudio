@@ -24,6 +24,10 @@ public class CreateAssetBundles
     static void BuildAllAssetBundlesWindows()
     {
         string assetBundleDirectory = "Assets/StreamingAssets";
+        if (Application.platform != RuntimePlatform.WindowsEditor)
+        {
+            assetBundleDirectory = "Assets/StreamingAssets_Windows";
+        }
         if (!Directory.Exists(assetBundleDirectory))
         {
             Directory.CreateDirectory(assetBundleDirectory);
@@ -37,6 +41,10 @@ public class CreateAssetBundles
     static void BuildAllAssetBundlesLinux()
     {
         string assetBundleDirectory = "Assets/StreamingAssets";
+        if (Application.platform != RuntimePlatform.LinuxEditor)
+        {
+            assetBundleDirectory = "Assets/StreamingAssets_Linux";
+        }
         if (!Directory.Exists(assetBundleDirectory))
         {
             Directory.CreateDirectory(assetBundleDirectory);
@@ -50,6 +58,10 @@ public class CreateAssetBundles
     static void BuildAllAssetBundlesMacOS()
     {
         string assetBundleDirectory = "Assets/StreamingAssets";
+        if (Application.platform != RuntimePlatform.OSXEditor)
+        {
+            assetBundleDirectory = "Assets/StreamingAssets_Mac";
+        }
         if (!Directory.Exists(assetBundleDirectory))
         {
             Directory.CreateDirectory(assetBundleDirectory);

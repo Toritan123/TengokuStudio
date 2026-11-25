@@ -408,7 +408,11 @@ MonoBehaviour:
       but serve as a great reference in the editor.
     rerollChance: 0
     type: 0
-  - hint: Recording a level? For a clean look, toggle off the Timing Display in Settings!
+  - hint: "Recording a level? For a clean look, toggle off the Timing Display in
+      Settings! In the Editor, click the \u2022\u2022\u2022 button!"
+    rerollChance: 0
+    type: 0
+  - hint: Go play Rhythm Heaven Groove!
     rerollChance: 0
     type: 0
   playTips:
@@ -457,6 +461,13 @@ MonoBehaviour:
     type: 1
   - hint: Shouting in Moai Doo-Wop is simple! A quick snap of the finger, and with
       practice, that's all there is to it.
+    rerollChance: 0
+    type: 1
+  - hint: The DS version of Samurai Slice starts with <sprite="Buttons" name="SouthOn">!
+    rerollChance: 0
+    type: 1
+  - hint: Deleted a level by accident? Your score is still saved -- just re-add the
+      RIQ!
     rerollChance: 0
     type: 1
   editorTips:
@@ -533,9 +544,6 @@ MonoBehaviour:
       your level be memorable!
     rerollChance: 0
     type: 2
-  - hint: It's usually advised not to use Mr. Downbeat without a good reason.
-    rerollChance: 0
-    type: 2
   - hint: Gotten the hang of everything? Want some more control? Switch on Advanced
       Editor Features in Settings!
     rerollChance: 0
@@ -580,6 +588,17 @@ MonoBehaviour:
       with the song offset!
     rerollChance: 0
     type: 2
+  - hint: Just here for the official minigames? You can turn off Fangames in Settings.
+    rerollChance: 0
+    type: 2
+  - hint: If you set your Decal's Display Layer to Game, it'll layer with the minigame's
+      sprites!
+    rerollChance: 0
+    type: 2
+  - hint: When searching for minigames, try typing in keywords like "fever", "keep
+      the beat", or "fangame"!
+    rerollChance: 0
+    type: 2
   sillyTips:
   - hint: Studio Dance\nWhere accreditation is to make Idols Dance,\nTenfold interactions
       with Icons makes one spawn
@@ -604,19 +623,30 @@ MonoBehaviour:
   - hint: Cut everything!
     rerollChance: 0
     type: 3
-  - hint: Sumo Brothers & Dog Ninja hide something wild...
+  - hint: Sumo Brothers, Dog Ninja, and Wario de Mambo hide something wild...
     rerollChance: 0
     type: 3
   - hint: When the Bobby is Build!
     rerollChance: 0.5
     type: 3
+  - hint: Close your eyes! That's called "night mode."
+    rerollChance: 0
+    type: 3
+  - hint: Mr. Downbeat is coming for you
+    rerollChance: 0
+    type: 3
+  - hint: Generate flow and power UFO!
+    rerollChance: 0
+    type: 3
+  - hint: ...Please find next piece of bus.
+    rerollChance: 0
+    type: 3
+  - hint: Nintendo, hire this man!
+    rerollChance: 0
+    type: 3
   factTips:
   - hint: Rhythm Tengoku was originally named Rhythm IQ while in development. R-IQ...
       That seems familiar, somehow.
-    rerollChance: 0
-    type: 4
-  - hint: Trick on the Class came from a Rhythm Heaven bootleg game for mobile, and
-      used Monkey Watch for its music.
     rerollChance: 0
     type: 4
   - hint: Nail Carpenter originally came from a fangame uploaded to the Japanese
@@ -648,10 +678,6 @@ MonoBehaviour:
       remember it only having 4!
     rerollChance: 0
     type: 4
-  - hint: A .wav file was accidentally copied into the Heaven Studio source code
-      more than 3 years ago, and it still remains there today!
-    rerollChance: 0
-    type: 4
   - hint: Wizard Waltz and Blue Bear are the only Rhythm Heaven levels in a 3/4 time
       signature!
     rerollChance: 0
@@ -672,7 +698,19 @@ MonoBehaviour:
       big deal in Japan, composing for many popular idol groups!"
     rerollChance: 0
     type: 4
-  - hint: Did you know that the host of Quiz Show is actually a demon named Q Maou?
+  - hint: Did you know that the host of Quiz Show is actually a demon?!
+    rerollChance: 0
+    type: 4
+  - hint: "Rhythm S\u014Dmen was originally a browser-based Rhythm Heaven fangame
+      dating back to 2013!"
+    rerollChance: 0
+    type: 4
+  - hint: Heaven Studio is completely open source! You can modify it and add your
+      own textures, minigames, features... you name it!
+    rerollChance: 0
+    type: 4
+  - hint: There's been an April Fools' Day build of Heaven Studio every year since
+      2023.
     rerollChance: 0
     type: 4
 --- !u!1 &1078288871804009099
@@ -837,6 +875,142 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1222348745952902471
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 699766927902073926}
+  - component: {fileID: 2217362667140211075}
+  - component: {fileID: 4073320470037798240}
+  m_Layer: 0
+  m_Name: LevelCacheText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &699766927902073926
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222348745952902471}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6699561459062169273}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 11}
+  m_SizeDelta: {x: 0, y: 60}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &2217362667140211075
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222348745952902471}
+  m_CullTransparentMesh: 1
+--- !u!114 &4073320470037798240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1222348745952902471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Loading levels, please wait...
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: e5f3069ff426f2546b8168857ad6e0d4, type: 2}
+  m_sharedMaterial: {fileID: 1618155055176292627, guid: e5f3069ff426f2546b8168857ad6e0d4, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 58.8
+  m_fontSizeBase: 58.8
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &1323854835484021605
 GameObject:
   m_ObjectHideFlags: 0
@@ -872,6 +1046,8 @@ RectTransform:
   - {fileID: 3667450265656160665}
   - {fileID: 1589008826174359305}
   - {fileID: 5540306190758867069}
+  - {fileID: 699766927902073926}
+  - {fileID: 4564994209583927706}
   m_Father: {fileID: 1841519332817814688}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3127,6 +3303,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeImage: {fileID: 4601285202933501097}
   loadingText: {fileID: 7511993328364652166}
+  levelCacheText: {fileID: 1222348745952902471}
+  hintText: {fileID: 7720454588933104277}
   adviceText: {fileID: 4097515378003900827}
   hintGiver: {fileID: 4907234715283401748}
   memPanel: {fileID: 3553279288615388537}
@@ -3139,7 +3317,6 @@ MonoBehaviour:
   errorLogButton: {fileID: 5723928714908954180}
   dialogProgress: {fileID: 6933230496934097465}
   DebugHolder: {fileID: 1877559640022990820}
-  mainMixer: {fileID: 24100000, guid: e76f74363e1893a42bd3ebe9643b7d12, type: 2}
 --- !u!1 &7708528282509202509
 GameObject:
   m_ObjectHideFlags: 0
@@ -3214,6 +3391,142 @@ MonoBehaviour:
   m_ChildScaleWidth: 0
   m_ChildScaleHeight: 1
   m_ReverseArrangement: 0
+--- !u!1 &7720454588933104277
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4564994209583927706}
+  - component: {fileID: 6383987882561264235}
+  - component: {fileID: 3004911226655816122}
+  m_Layer: 0
+  m_Name: HintText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &4564994209583927706
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7720454588933104277}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6699561459062169273}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -59}
+  m_SizeDelta: {x: 0, y: 60}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &6383987882561264235
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7720454588933104277}
+  m_CullTransparentMesh: 1
+--- !u!114 &3004911226655816122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7720454588933104277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: (It won't usually take this long!)
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 4810e200fa0cb24438bac52343d7674b, type: 2}
+  m_sharedMaterial: {fileID: 8580487687356851718, guid: 4810e200fa0cb24438bac52343d7674b, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4288980132
+  m_fontColor: {r: 0.6415094, g: 0.6415094, b: 0.6415094, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 32
+  m_fontSizeBase: 32
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_TextWrappingMode: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_ActiveFontFeatures: 6e72656b
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_EmojiFallbackSupport: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &7797643908597087981
 GameObject:
   m_ObjectHideFlags: 0

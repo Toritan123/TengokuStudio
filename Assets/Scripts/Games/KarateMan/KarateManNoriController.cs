@@ -134,7 +134,7 @@ namespace HeavenStudio.Games.Scripts_KarateMan
             }
         }
 
-        public void DoHit()
+        public void DoHit(double beat)
         {
             if (noriMode == (int) KarateMan.NoriMode.None) return;
             if (MaxNori <= 0) return;
@@ -161,7 +161,7 @@ namespace HeavenStudio.Games.Scripts_KarateMan
             if (KarateMan.instance.NoriPerformance >= 0.6f && oldNori / MaxNori < 0.6f && !playedJust)
             {
                 playedJust = true;
-                SoundByte.PlayOneShotGame("karateman/nori_just");
+                SoundByte.PlayOneShotGame("karateman/nori_just", beat:(beat + 0.5f));
             }
             UpdateHeartColours();
         }

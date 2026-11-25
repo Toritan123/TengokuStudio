@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using HeavenStudio.Util;
+using Jukebox;
 
 namespace HeavenStudio.Games.Loaders
 {
@@ -11,6 +12,25 @@ namespace HeavenStudio.Games.Loaders
     {
         public static Minigame AddGame(EventCaller eventCaller)
         {
+            //compat with feb 2025 recoloring
+            RiqEntity ColorUpdater(string datamodel, RiqEntity riq)
+            {
+                if (datamodel == "tapTrial/char color")
+                {
+                    if (!riq.dynamicData.ContainsKey("color7"))
+                    {
+                        riq.CreateProperty("color7", riq["color4"]);
+                    }
+                    if (!riq.dynamicData.ContainsKey("color8"))
+                    {
+                        riq.CreateProperty("color8", riq["color5"]);
+                    }
+                    return riq;
+                }
+                return null;
+            }
+            RiqBeatmap.OnUpdateEntity += ColorUpdater;
+
             return new Minigame("tapTrial", "Tap Trial", "94ffb5", false, false, new List<GameAction>()
             {
                 new GameAction("bop", "Bop")
@@ -95,7 +115,7 @@ namespace HeavenStudio.Games.Loaders
                     function = delegate {
                         var e = eventCaller.currentEntity;
                         if (eventCaller.gameManager.minigameObj.TryGetComponent(out TapTrial instance)) {
-                            instance.RecolorChars(e["color1"], e["color2"], e["color3"], e["color4"], e["color5"], e["color6"]);
+                            instance.RecolorChars(e["color1"], e["color2"], e["color3"], e["color4"], e["color5"], e["color6"], e["color7"], e["color8"]);
                         }
                     },
                     parameters = new List<Param>()
@@ -103,9 +123,11 @@ namespace HeavenStudio.Games.Loaders
                         new Param("color1", TapTrial.charColors[0], "Girl Skin Color", "The color to set Yuka's skin to."),
                         new Param("color2", TapTrial.charColors[1], "Girl Dress Color", "The color to set Yuka's dress and shoes to."),
                         new Param("color3", TapTrial.charColors[2], "Girl Blush Color", "The color to set Yuka's blush to."),
-                        new Param("color4", TapTrial.charColors[3], "Animal Color A", "The color to set the animals to."),
-                        new Param("color5", TapTrial.charColors[4], "Animal Color B", "The color to set the animals to."),
+                        new Param("color4", TapTrial.charColors[3], "Monkey Color A", "The color to set the monkeys to."),
+                        new Param("color5", TapTrial.charColors[4], "Monkey Color B", "The color to set the monkeys to."),
                         new Param("color6", TapTrial.charColors[5], "Monkey Blush Color", "The color to set the monkeys' blush to."),
+                        new Param("color7", TapTrial.charColors[3], "Giraffe Color A", "The color to set the giraffe to."),
+                        new Param("color8", TapTrial.charColors[4], "Giraffe Color B", "The color to set the giraffe to."),
                     },
                     defaultLength = 0.5f,
                 },
@@ -116,7 +138,7 @@ namespace HeavenStudio.Games.Loaders
                     parameters = new List<Param>()
                     {
                         new Param("toggle", TapTrial.GiraffeAnimation.Enter, "Animation", "Set the animation for the giraffe to perform."),
-                        new Param("instant", EasingFunction.Ease.Linear, "Ease", "Set the easing of the action.")
+                        new Param("instant", Util.EasingFunction.Ease.Linear, "Ease", "Set the easing of the action.")
                     },
                     defaultVersion = 1,
                 },
@@ -209,6 +231,7 @@ namespace HeavenStudio.Games
         [SerializeField] Material stageMaterial;
         [SerializeField] Material girlMaterial;
         [SerializeField] Material monkeyMaterial;
+        [SerializeField] Material giraffeMaterial;
 
         public static TapTrial instance;
 
@@ -248,7 +271,7 @@ namespace HeavenStudio.Games
 
         public override void OnGameSwitch(double beat)
         {
-            RecolorChars(charColors[0], charColors[1], charColors[2], charColors[3], charColors[4], charColors[5]);
+            RecolorChars(charColors[0], charColors[1], charColors[2], charColors[3], charColors[4], charColors[5], charColors[3], charColors[4]);
             BackgroundColor(beat, 0f, defaultColorA, defaultColorA, defaultColorB, defaultColorB, defaultColorC, defaultColorC, defaultColorStageA, defaultColorStageA, defaultColorStageB, defaultColorStageB, 1);
             PersistColor(beat);
         }
@@ -268,15 +291,18 @@ namespace HeavenStudio.Games
             flash.color = new Color(1, 1, 1, 0);
         }
 
-        public void RecolorChars(Color skinColor, Color dressColor, Color blushColor, Color orangeAnimalColor, Color whiteAnimalColor, Color blushAnimalColor)
+        public void RecolorChars(Color skinColor, Color dressColor, Color blushColor, Color orangeMonkColor, Color whiteMonkColor, Color blushMonkColor, Color orangeGifColor, Color whiteGifColor)
         {
             girlMaterial.SetColor("_ColorAlpha", dressColor);
             girlMaterial.SetColor("_ColorBravo", skinColor);
             girlMaterial.SetColor("_ColorDelta", blushColor);
 
-            monkeyMaterial.SetColor("_ColorAlpha", orangeAnimalColor);
-            monkeyMaterial.SetColor("_ColorBravo", whiteAnimalColor);
-            monkeyMaterial.SetColor("_ColorDelta", blushAnimalColor);
+            monkeyMaterial.SetColor("_ColorAlpha", orangeMonkColor);
+            monkeyMaterial.SetColor("_ColorBravo", whiteMonkColor);
+            monkeyMaterial.SetColor("_ColorDelta", blushMonkColor);
+
+            giraffeMaterial.SetColor("_ColorAlpha", orangeGifColor);
+            giraffeMaterial.SetColor("_ColorBravo", whiteGifColor);
         }
 
         public void BackgroundColor(double beat, float length, Color startA, Color endA, Color startB, Color endB, Color startC, Color endC, Color startStageA, Color endStageA, Color startStageB, Color endStageB, int ease)
@@ -353,7 +379,7 @@ namespace HeavenStudio.Games
             if (lastPersistEvent != null)
             {
                 var e = lastPersistEvent;
-                RecolorChars(e["color1"], e["color2"], e["color3"], e["color4"], e["color5"], e["color6"]);
+                RecolorChars(e["color1"], e["color2"], e["color3"], e["color4"], e["color5"], e["color6"], e["color7"], e["color8"]);
             }
 
             lastPersistEvent = eventsBefore.FindLast(e => e.datamodel == "tapTrial/giraffe events");
@@ -362,7 +388,7 @@ namespace HeavenStudio.Games
                 var e = lastPersistEvent;
                 if (e.version == 1 && e["toggle"] == (int)GiraffeAnimation.Exit)
                 {
-                    GiraffeAnims(beat, e.length, e["toggle"], (int)EasingFunction.Ease.Instant);
+                    GiraffeAnims(beat, e.length, e["toggle"], (int)Util.EasingFunction.Ease.Instant);
                 }
             }
         }
@@ -392,7 +418,7 @@ namespace HeavenStudio.Games
         private void GiraffeUpdate(Conductor cond)
         {
             float normalizedGiraffeBeat = cond.GetPositionFromBeat(animStartBeat, animLength);
-            EasingFunction.Function func = EasingFunction.GetEasingFunction(currentEase);
+            Util.EasingFunction.Function func = Util.EasingFunction.GetEasingFunction(currentEase);
 
             if (normalizedGiraffeBeat <= 1f && normalizedGiraffeBeat >= 0f)
             {
@@ -418,7 +444,7 @@ namespace HeavenStudio.Games
                 if (normalizedJumpBeat >= 0.5f)
                 {
                     float normalizedUp = cond.GetPositionFromBeat(jumpStartBeat, 0.5);
-                    EasingFunction.Function func = EasingFunction.GetEasingFunction(EasingFunction.Ease.EaseOutQuad);
+                    Util.EasingFunction.Function func = Util.EasingFunction.GetEasingFunction(Util.EasingFunction.Ease.EaseOutQuad);
                     float newPlayerY = func(0, jumpHeight, normalizedUp);
                     float newMonkeyY = func(0, monkeyJumpHeight, normalizedUp);
                     rootPlayer.localPosition = new Vector3(0, newPlayerY);
@@ -428,7 +454,7 @@ namespace HeavenStudio.Games
                 else
                 {
                     float normalizedDown = cond.GetPositionFromBeat(jumpStartBeat + 0.5, 0.5);
-                    EasingFunction.Function func = EasingFunction.GetEasingFunction(EasingFunction.Ease.EaseInQuad);
+                    Util.EasingFunction.Function func = Util.EasingFunction.GetEasingFunction(Util.EasingFunction.Ease.EaseInQuad);
                     float newPlayerY = func(jumpHeight, 0, normalizedDown);
                     float newMonkeyY = func(monkeyJumpHeight, 0, normalizedDown);
                     rootPlayer.localPosition = new Vector3(0, newPlayerY);
@@ -453,14 +479,14 @@ namespace HeavenStudio.Games
         private GiraffeAnimation currentAnim = GiraffeAnimation.Enter;
         private double animStartBeat = -1;
         private float animLength = 0;
-        private EasingFunction.Ease currentEase = EasingFunction.Ease.Linear;
+        private Util.EasingFunction.Ease currentEase = Util.EasingFunction.Ease.Linear;
 
         public void GiraffeAnims(double beat, float length, int type, int ease)
         {
             animStartBeat = beat;
             animLength = length;
             currentAnim = (GiraffeAnimation)type;
-            currentEase = (EasingFunction.Ease)ease;
+            currentEase = (Util.EasingFunction.Ease)ease;
             if (currentAnim == GiraffeAnimation.Blink) giraffe.DoScaledAnimationAsync("Blink", 0.5f);
         }
 

@@ -157,7 +157,9 @@ namespace HeavenStudio.Games.Loaders
                     }
                 }
             },
-            new List<string>() { "agb", "normal" }, "agbvirus", "en", new List<string>() { },
+            new List<string>() { "agb", "normal", "endless" }, 
+            "agbvirus", "en", 
+            new List<string>() { },
             chronologicalSortKey: 10,
             font : "FOT-SlumpStd-DB SDF"
             );
@@ -280,7 +282,7 @@ namespace HeavenStudio.Games
         }
         protected static bool IA_BatonRight(out double dt)
         {
-            return PlayerInput.GetBatonDown(InputController.ActionsBaton.East, out dt);
+            return PlayerInput.GetBatonDown(InputController.ActionsBaton.Face, out dt);
         }
         
         protected static bool IA_PadUp(out double dt)
@@ -289,7 +291,7 @@ namespace HeavenStudio.Games
         }
         protected static bool IA_BatonUp(out double dt)
         {
-            return PlayerInput.GetBatonDown(InputController.ActionsBaton.North, out dt);
+            return PlayerInput.GetBatonDown(InputController.ActionsBaton.Face, out dt);
         }
         
         protected static bool IA_PadLeft(out double dt)
@@ -298,7 +300,7 @@ namespace HeavenStudio.Games
         }
         protected static bool IA_BatonLeft(out double dt)
         {
-            return PlayerInput.GetBatonDown(InputController.ActionsBaton.West, out dt);
+            return PlayerInput.GetBatonDown(InputController.ActionsBaton.Face, out dt);
         }
         
         protected static bool IA_PadDown(out double dt)
@@ -307,7 +309,7 @@ namespace HeavenStudio.Games
         }
         protected static bool IA_BatonDown(out double dt)
         {
-            return PlayerInput.GetBatonDown(InputController.ActionsBaton.South, out dt);
+            return PlayerInput.GetBatonDown(InputController.ActionsBaton.Face, out dt);
         }
 
         public static PlayerInput.InputAction InputAction_Right =

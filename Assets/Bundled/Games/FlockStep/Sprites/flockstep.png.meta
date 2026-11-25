@@ -1,0 +1,831 @@
+fileFormatVersion: 2
+guid: 1602d4311df7d52479bf16327bbdbd79
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: flockstep_sprite_0
+      rect:
+        serializedVersion: 2
+        x: 3904
+        y: 1600
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 171e5367b8292d845bfa968a921b21bd
+      internalID: 2652472307547196223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flockstep_sprite_1
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 64
+        width: 640
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e55be8e049378d49a137c1af60fc4e0
+      internalID: -1252233950354119266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flockstep_sprite_2
+      rect:
+        serializedVersion: 2
+        x: 3264
+        y: 1472
+        width: 192
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef8c34c51481d4b4b92c4d65f764cbd0
+      internalID: 199982489067277960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flockstep_sprite_3
+      rect:
+        serializedVersion: 2
+        x: 3008
+        y: 1088
+        width: 128
+        height: 640
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1754d3762ef9fe8408cd0b15d442b25f
+      internalID: 8058148468716491882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flockstep_sprite_4
+      rect:
+        serializedVersion: 2
+        x: 2112
+        y: 1088
+        width: 128
+        height: 640
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0866e845e654d345afbd945cbf8a53b
+      internalID: 7932061827967460558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flockstep_sprite_5
+      rect:
+        serializedVersion: 2
+        x: 2368
+        y: 1088
+        width: 192
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ce6b28ec8f03394cae649b3fe2ad7e1
+      internalID: -6744110742123863675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flockstep_sprite_6
+      rect:
+        serializedVersion: 2
+        x: 2112
+        y: 3392
+        width: 896
+        height: 640
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd594a96ca009bd4ca96be4c21fcae41
+      internalID: -379896634785558457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flockstep_sprite_7
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 768
+        width: 320
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a661334501081a84f88abd8dca9010fb
+      internalID: 6440023210380568053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flockstep_sprite_8
+      rect:
+        serializedVersion: 2
+        x: 3264
+        y: 1088
+        width: 192
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0daccc3ea7901744afe92ebbe565383
+      internalID: -2809866693976613817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flockstep_sprite_9
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 3392
+        width: 896
+        height: 640
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87763ac4a93779442949d590a41b357f
+      internalID: -4284297987811981060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flockstep_sprite_10
+      rect:
+        serializedVersion: 2
+        x: 3136
+        y: 3392
+        width: 896
+        height: 640
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9821fd2af7462de48a71575382f5dba7
+      internalID: -5784437126909498189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flockstep_sprite_11
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 2624
+        width: 896
+        height: 640
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bb16b72973256f4ab966412161a136c
+      internalID: -5403323421301122006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flockstep_sprite_12
+      rect:
+        serializedVersion: 2
+        x: 2368
+        y: 1472
+        width: 192
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b019e48e31cc0bd488a26d04637aa210
+      internalID: 1080430746724158518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flockstep_sprite_13
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 3392
+        width: 896
+        height: 640
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f80c28e6ea9d39245974b7d407407361
+      internalID: 3486144651194388221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flockstep_sprite_14
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 2624
+        width: 896
+        height: 640
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 317ed295ad129c640b5636449ba3c2d2
+      internalID: -1906190485700649441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flockstep_sprite_15
+      rect:
+        serializedVersion: 2
+        x: 2112
+        y: 2624
+        width: 896
+        height: 640
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b3eacc3ec90e7d43a84b7d894e54d14
+      internalID: 7267013372167340881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flockstep_sprite_16
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 704
+        width: 320
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97d7608e0b60e464ab0446cbc323c050
+      internalID: 1865072657709172099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flockstep_sprite_17
+      rect:
+        serializedVersion: 2
+        x: 3136
+        y: 2624
+        width: 896
+        height: 640
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 970ccc361ca7b0046bf6542cb68b095c
+      internalID: 45857191090452252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flockstep_sprite_18
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 1088
+        width: 192
+        height: 640
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a3af521bb62df64083d593d2c897465
+      internalID: 5959607097748959896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flockstep_sprite_19
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 1088
+        width: 192
+        height: 640
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d975003b0296804185536282f348931
+      internalID: -5376860105205228167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flockstep_sprite_20
+      rect:
+        serializedVersion: 2
+        x: 2752
+        y: 704
+        width: 320
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf64d44d2b488c64a8c36456e1d0ee38
+      internalID: -3649077626518272205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flockstep_sprite_21
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 704
+        width: 320
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f90480c4bd19dad4588672afcba9dd82
+      internalID: -3634564730008173045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flockstep_sprite_22
+      rect:
+        serializedVersion: 2
+        x: 1856
+        y: 704
+        width: 320
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cc72afbe6c4df041a6214b50837afc7
+      internalID: -6992822998588941228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flockstep_sprite_23
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 704
+        width: 320
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc90078c77bf47e48b2e53a901a4c1e6
+      internalID: -6130141337648548251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flockstep_sprite_24
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1856
+        width: 896
+        height: 640
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53f89be80a9c27a4f800efcc310a02cd
+      internalID: 8128133098979447020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flockstep_sprite_25
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 1856
+        width: 896
+        height: 640
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e4547efbb5e8e348ba756c295f172e2
+      internalID: 4370715207460390716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flockstep_sprite_26
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 896
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 167a7722215b9c948bb8d05c4712a84b
+      internalID: -3323267722488113008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flockstep_sprite_27
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 1088
+        width: 896
+        height: 640
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cab5eb5b2a737fe4a87ad796814752fb
+      internalID: 43189882125227931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flockstep_sprite_28
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 1088
+        width: 896
+        height: 640
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 773420fbe2909f7439abdf4448ce9b47
+      internalID: -1180487721542956025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flockstep_sprite_29
+      rect:
+        serializedVersion: 2
+        x: 3136
+        y: 1856
+        width: 896
+        height: 640
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a33d795e1b7dac8499601bdf438885a9
+      internalID: -8414010191526457667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flockstep_sprite_30
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 768
+        width: 320
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d81ca63dafa6bb4c8fe1e95af8b0899
+      internalID: 3646535146538240266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flockstep_sprite_31
+      rect:
+        serializedVersion: 2
+        x: 2112
+        y: 1856
+        width: 896
+        height: 640
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53792d3d676d79e43a5dc4b2986db0f3
+      internalID: 5116166564008607171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      flockstep_sprite_0: 2652472307547196223
+      flockstep_sprite_1: -1252233950354119266
+      flockstep_sprite_10: -5784437126909498189
+      flockstep_sprite_11: -5403323421301122006
+      flockstep_sprite_12: 1080430746724158518
+      flockstep_sprite_13: 3486144651194388221
+      flockstep_sprite_14: -1906190485700649441
+      flockstep_sprite_15: 7267013372167340881
+      flockstep_sprite_16: 1865072657709172099
+      flockstep_sprite_17: 45857191090452252
+      flockstep_sprite_18: 5959607097748959896
+      flockstep_sprite_19: -5376860105205228167
+      flockstep_sprite_2: 199982489067277960
+      flockstep_sprite_20: -3649077626518272205
+      flockstep_sprite_21: -3634564730008173045
+      flockstep_sprite_22: -6992822998588941228
+      flockstep_sprite_23: -6130141337648548251
+      flockstep_sprite_24: 8128133098979447020
+      flockstep_sprite_25: 4370715207460390716
+      flockstep_sprite_26: -3323267722488113008
+      flockstep_sprite_27: 43189882125227931
+      flockstep_sprite_28: -1180487721542956025
+      flockstep_sprite_29: -8414010191526457667
+      flockstep_sprite_3: 8058148468716491882
+      flockstep_sprite_30: 3646535146538240266
+      flockstep_sprite_31: 5116166564008607171
+      flockstep_sprite_4: 7932061827967460558
+      flockstep_sprite_5: -6744110742123863675
+      flockstep_sprite_6: -379896634785558457
+      flockstep_sprite_7: 6440023210380568053
+      flockstep_sprite_8: -2809866693976613817
+      flockstep_sprite_9: -4284297987811981060
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: rvlbird/common
+  assetBundleVariant: 

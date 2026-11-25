@@ -16,6 +16,7 @@ namespace HeavenStudio.Games.Scripts_SamuraiSliceRvl
         [SerializeField] Animator MDemonAnim;
         [SerializeField] Animator LDemonAnim;
         [SerializeField] Animator XLDemonAnim;
+        [SerializeField] Animator XXLDemonAnim;
         public DemonType type;
 
         [Header("Sprites Renderers")]
@@ -23,6 +24,7 @@ namespace HeavenStudio.Games.Scripts_SamuraiSliceRvl
         public SpriteRenderer Mdemon;
         public SpriteRenderer Ldemon;
         public SpriteRenderer XLdemon;
+        public SpriteRenderer XXLdemon;
 
         [Header("Properties")]
         public double startBeat;
@@ -156,6 +158,7 @@ namespace HeavenStudio.Games.Scripts_SamuraiSliceRvl
                     Mdemon.enabled = false;
                     Ldemon.enabled = false;
                     XLdemon.enabled = false;
+                    XXLdemon.enabled = false;
                     break;
                 case DemonType.Medium:
                     MDemonAnim.DoScaledAnimationAsync($"Medium{anim}");
@@ -163,6 +166,7 @@ namespace HeavenStudio.Games.Scripts_SamuraiSliceRvl
                     Mdemon.enabled = true;
                     Ldemon.enabled = false;
                     XLdemon.enabled = false;
+                    XXLdemon.enabled = false;
                     break;
                 case DemonType.Big:
                     LDemonAnim.DoScaledAnimationAsync($"Large{anim}");
@@ -170,6 +174,7 @@ namespace HeavenStudio.Games.Scripts_SamuraiSliceRvl
                     Mdemon.enabled = false;
                     Ldemon.enabled = true;
                     XLdemon.enabled = false;
+                    XXLdemon.enabled = false;
                     break;
                 case DemonType.Huge:
                     XLDemonAnim.DoScaledAnimationAsync($"XL{anim}");
@@ -177,6 +182,15 @@ namespace HeavenStudio.Games.Scripts_SamuraiSliceRvl
                     Mdemon.enabled = false;
                     Ldemon.enabled = false;
                     XLdemon.enabled = true;
+                    XXLdemon.enabled = false;
+                    break;
+                case DemonType.Massive:
+                    XXLDemonAnim.DoScaledAnimationAsync($"XXL{anim}");
+                    Sdemon.enabled = false;
+                    Mdemon.enabled = false;
+                    Ldemon.enabled = false;
+                    XLdemon.enabled = false;
+                    XXLdemon.enabled = true;
                     break;
             }
         }

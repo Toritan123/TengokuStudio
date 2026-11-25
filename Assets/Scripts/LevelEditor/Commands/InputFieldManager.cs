@@ -573,7 +573,12 @@ namespace HeavenStudio.Editor
 
         public void ToggleRichText()
         {
-            isRichTextEnabled = !isRichTextEnabled;
+            SetRichText(!isRichTextEnabled);
+        }
+
+        public void SetRichText(bool enabled)
+        {
+            isRichTextEnabled = enabled;
             inputField.richText = isRichTextEnabled;
             
             if (isRichTextEnabled)

@@ -37,13 +37,14 @@ namespace HeavenStudio.Games.Loaders
                     function = delegate
                     {
                         var e = eventCaller.currentEntity;
-                        FreezeFrame.SlowCarCue(e.beat, e["variant"], e["mute"], e["clear"]);
+                        FreezeFrame.SlowCarCue(e.beat, e["variant"], e["clear"]);
                     },
-                    inactiveFunction = delegate
+                    preFunction = delegate
                     {
                         var e = eventCaller.currentEntity;
-                        if (!(bool)e["mute"]) FreezeFrame.SlowCarSFX();
+                        if (!(bool)e["mute"]) FreezeFrame.SlowCarSFX(e.beat);
                     },
+                    preFunctionLength = 1f,
                     defaultLength = 3f,
                     parameters = new List<Param>()
                     {
@@ -63,13 +64,14 @@ namespace HeavenStudio.Games.Loaders
                     function = delegate
                     {
                         var e = eventCaller.currentEntity;
-                        FreezeFrame.FastCarCue(e.beat, e["variant"], e["mute"], e["clear"]);
+                        FreezeFrame.FastCarCue(e.beat, e["variant"], e["clear"]);
                     },
-                    inactiveFunction = delegate
+                    preFunction = delegate
                     {
                         var e = eventCaller.currentEntity;
-                        if (!(bool)e["mute"]) FreezeFrame.FastCarSFX();
+                        if (!(bool)e["mute"]) FreezeFrame.FastCarSFX(e.beat);
                     },
+                    preFunctionLength = 1f,
                     defaultLength = 3f,
                     parameters = new List<Param>()
                     {
@@ -86,7 +88,7 @@ namespace HeavenStudio.Games.Loaders
                 },
                 new GameAction("showPhotos", "Show Photos")
                 {
-                    function = delegate { var e = eventCaller.currentEntity; FreezeFrame.ShowPhotos(e.beat, e.length, e["gradeType"], e["audience"], e["clearCache"]); },
+                    function = delegate { var e = eventCaller.currentEntity; FreezeFrame.Instance.ShowPhotos(e.beat, e.length, e["gradeType"], e["audience"], e["clearCache"]); },
                     defaultLength = 1,
                     resizable = true,
                     parameters = new List<Param>()
@@ -211,8 +213,8 @@ namespace HeavenStudio.Games.Loaders
 
                 new GameAction("clearPhotos", "Clear Photo Cache (DEPRECATED)")
                 {
-                    function = delegate { var e = eventCaller.currentEntity; FreezeFrame.ClearPhotos(); },
-                    inactiveFunction = delegate { var e = eventCaller.currentEntity; FreezeFrame.ClearPhotos(); },
+                    function = delegate { var e = eventCaller.currentEntity; FreezeFrame.Instance.ClearPhotos(); },
+                    inactiveFunction = delegate { var e = eventCaller.currentEntity; FreezeFrame.Instance.ClearPhotos(); },
                     defaultLength = 0.5f,
                     parameters = new List<Param>()
                     {
@@ -362,11 +364,13 @@ namespace HeavenStudio.Games
         public bool CameraManScaling { get; set; } = false;
         public CameraManScaleArgs CurrentCameraManScaleArgs;
 
-        public static List<PhotoArgs> PhotoList = new();
+        public List<PhotoArgs> PhotoList = new();
         public Dictionary<PlayerActionEvent, PhotoArgs> EventArgs = new();
         public bool IsShowingPhotos { get; set; } = false;
 
         public static Dictionary<RiqEntity, PersonDirection> WalkerDirections = new();
+
+        private List<RiqEntity> currentEntities;
 
         // UNITY BUILTIN METHODS
         void Start()
@@ -493,7 +497,6 @@ namespace HeavenStudio.Games
             {
                 evt.Disable();
             }
-            //if (PhotoList.Count > 0) PhotoList.Clear();
         }
 
         // MINIGAME METHODS
@@ -510,7 +513,6 @@ namespace HeavenStudio.Games
         }
         public override void OnPlay(double beat)
         {
-            if (PhotoList.Count > 0) PhotoList.Clear();
             OnGameSwitch(beat);
         }
         public override void OnGameSwitch(double beat)
@@ -521,9 +523,10 @@ namespace HeavenStudio.Games
 
             // calculation
             CarbageCollection();
-            CalculateAutoShowPhotos();
+            CalculateAutoShowPhotos(beat);
             CalculateCarSpawns();
             PreRandomizeWalkers();
+            GetCurrentEntities(beat, true);
 
             // setting local variables
             RiqEntity e = GetLastEntityOfType(beat, "bop");
@@ -620,16 +623,16 @@ namespace HeavenStudio.Games
             {
                 foreach (RiqEntity entity in eList)
                 {
-                    if (beat > entity.beat + 2 || beat <= entity.beat)
+                    if (beat > entity.beat + 2 || beat < entity.beat)
                         continue;
                     
                     if (entity.datamodel == "freezeFrame/slowCar")
                     {
-                        SlowCarCue(entity.beat, entity["variant"], true, entity["clear"]);
+                        SlowCarCue(entity.beat, entity["variant"], entity["clear"]);
                     }
                     if (entity.datamodel == "freezeFrame/fastCar")
                     {
-                        FastCarCue(entity.beat, entity["variant"], true, entity["clear"]);
+                        FastCarCue(entity.beat, entity["variant"], entity["clear"]);
                     }
                 }
             }
@@ -657,10 +660,8 @@ namespace HeavenStudio.Games
                 BeatAction.New(Instance, actions);
             }
         }
-        public static void SlowCarCue(double beat, int photoType, bool mute = false, bool clear = false)
+        public static void SlowCarCue(double beat, int photoType, bool clear = false)
         {
-            if (!mute) SlowCarSFX();
-
             if (Instance == null) return;
 
             Instance.EventArgs.Add(
@@ -668,27 +669,39 @@ namespace HeavenStudio.Games
                 new PhotoArgs(CarType.SlowCar, (PhotoType)photoType, 0f, clear)
             );
         }
-        public static void SlowCarSFX()
+        public static void SlowCarSFX(double beat)
         {
-            SoundByte.PlayOneShotGame("freezeFrame/slowCarFar", forcePlay: true);
+            float pitch = SoundByte.GetPitchFromCents(UnityEngine.Random.Range(-100, 101), false);
+            var nearbyCars = GetCurrentEntities(beat).FindAll(e => e.datamodel == "freezeFrame/slowCar" && Math.Abs(e.beat - beat) < 2);
+            bool multi = nearbyCars.Count >= 3 && Math.Abs(nearbyCars[nearbyCars.Count - 1].beat - nearbyCars[0].beat) < 2;
+            if (multi)
+            {
+                SoundByte.PlayOneShotGame("freezeFrame/ENGINE_FUKASI3", beat, offset: 0.008f, forcePlay: true);
+                SoundByte.PlayOneShotGame("freezeFrame/ENGINE_MULTI", beat + 2, pitch, offset: 1f, forcePlay: true);
+            }
+            else
+            {
+                SoundByte.PlayOneShotGame("freezeFrame/ENGINE_FUKASI", beat, forcePlay: true);
+                SoundByte.PlayOneShotGame("freezeFrame/ENGINE", beat + 2, pitch, offset: 1f, forcePlay: true);
+            } 
         }
-        public static void FastCarCue(double beat, int photoType, bool mute = false, bool clear = false)
-        {
-            if (!mute) FastCarSFX();
 
+        public static void FastCarCue(double beat, int photoType, bool clear = false)
+        {
             if (Instance == null) return;
 
             Instance.EventArgs.Add(
                 Instance.ScheduleInput(beat, 2f, InputAction_BasicPress, Instance.PhotoSuccess, Instance.PhotoMiss, Instance.PhotoEmpty),
                 new PhotoArgs(CarType.FastCar, (PhotoType)photoType, 0f, clear)
             );
-            SoundByte.PlayOneShotGame("freezeFrame/fastCarNear", beat + 2);
+            SoundByte.PlayOneShotGame("freezeFrame/ENGINE_FAST_BIG", beat + 2, offset: 0.069f);
         }
-        public static void FastCarSFX()
+        public static void FastCarSFX(double beat)
         {
-            SoundByte.PlayOneShotGame("freezeFrame/fastCarFar", forcePlay: true);
+            SoundByte.PlayOneShotGame("freezeFrame/ENGINE_FAST_SMALL", beat, offset: 0.05f, forcePlay: true);
         }
-        public static void ShowPhotos(double beat, float length, int gradeTypeI, bool audience, bool clearCache)
+
+        public void ShowPhotos(double beat, float length, int gradeTypeI, bool audience, bool clearCache)
         {
             if (Instance == null) return;
 
@@ -697,7 +710,7 @@ namespace HeavenStudio.Games
             if (PhotoList.Count <= 0)
                 return;
             
-            SoundByte.PlayOneShotGame("freezeFrame/pictureShow");
+            SoundByte.PlayOneShotGame("freezeFrame/PHOTO", pitch: SoundByte.GetPitchFromCents(UnityEngine.Random.Range(-100, 101), false));
 
             // 2 = Hi
             // 1 = OK
@@ -768,19 +781,19 @@ namespace HeavenStudio.Games
             {
                 case 2:
                     Instance.CameraMan.DoScaledAnimationAsync("Happy", 0.5f);
-                    SoundByte.PlayOneShotGame("freezeFrame/result_Hi");
+                    SoundByte.PlayOneShotGame("freezeFrame/GOOD");
                     if (audience)
                         break;
                     break;
                 case 1:
                     Instance.CameraMan.DoScaledAnimationAsync("Oops", 0.5f);
-                    SoundByte.PlayOneShotGame("freezeFrame/result_Ok");
+                    SoundByte.PlayOneShotGame("freezeFrame/TRIANGLE");
                     if (audience)
                         SoundByte.PlayOneShot("applause");
                     break;
                 case 0:
                     Instance.CameraMan.DoScaledAnimationAsync("Cry", 0.5f);
-                    SoundByte.PlayOneShotGame("freezeFrame/result_Ng");
+                    SoundByte.PlayOneShotGame("freezeFrame/BAD");
                     if (audience)
                         break;
                     break;
@@ -793,9 +806,9 @@ namespace HeavenStudio.Games
                 new BeatAction.Action(beat + length, delegate { Instance.HidePhotos(beat + length); })
             });
         }
-        public static void ClearPhotos()
+        public void ClearPhotos()
         {
-            PhotoList?.Clear();
+            PhotoList.Clear();
         }
         public static void SummonWalker(RiqEntity e)
         {
@@ -904,9 +917,9 @@ namespace HeavenStudio.Games
                 return;
 
             MultiSound.Play(new MultiSound.Sound[] {
-                new MultiSound.Sound("freezeFrame/beginningSignal1", beat),
-                new MultiSound.Sound("freezeFrame/beginningSignal1", beat + length),
-                new MultiSound.Sound("freezeFrame/beginningSignal2", beat + (length * 2)),
+                new MultiSound.Sound("freezeFrame/SIGNAL_READY", beat),
+                new MultiSound.Sound("freezeFrame/SIGNAL_READY", beat + length),
+                new MultiSound.Sound("freezeFrame/SIGNAL_GO",    beat + (length * 2)),
             }, forcePlay: true);
         }
         public static void ToggleOverlay(double beat, bool showOverlay, bool showCameraMan, bool followCamera)
@@ -1136,7 +1149,7 @@ namespace HeavenStudio.Games
         {
             Shutter.DoScaledAnimationAsync("Shut", 0.5f);
             CameraMan.DoScaledAnimationAsync("Flash", 0.5f);
-            SoundByte.PlayOneShotGame("freezeFrame/shutter"/*, pitch: (float)new System.Random().NextDouble() + 0.5f*/);
+            SoundByte.PlayOneShotGame("freezeFrame/CAMERA", pitch: SoundByte.GetPitchFromCents(UnityEngine.Random.Range(-50, 51), false));
         }
         public void PushPhoto(PhotoArgs args)
         {
@@ -1195,7 +1208,7 @@ namespace HeavenStudio.Games
                 return CrowdSprites[i % CrowdSprites.Length];
             }
         }
-        public void CalculateAutoShowPhotos()
+        public void CalculateAutoShowPhotos(double beat)
         {
             List<RiqEntity> allCars = EventCaller.GetAllInGameManagerList("freezeFrame", new string[] { "slowCar", "fastCar" });
 
@@ -1204,6 +1217,8 @@ namespace HeavenStudio.Games
 
             foreach (RiqEntity entity in allCars.Where(car => (bool)car["autoShowPhotos"]))
             {
+                if (entity.beat < beat) continue; // get rid of cars before the gameswitch
+
                 double showBeat = 3f;
                 if (allCars.Any(car => car.beat == entity.beat - 1f))
                     showBeat = 3.5f;
@@ -1218,7 +1233,7 @@ namespace HeavenStudio.Games
                     if (!beats.Any(b => showBeat >= b && showBeat < b + 2))
                     {
                         beats.Add(showBeat);
-                        actions.Add(new BeatAction.Action(showBeat, delegate { ShowPhotos(showBeat, 2, (int)entity["gradeType"], (bool)entity["audience"], false); }));
+                        actions.Add(new BeatAction.Action(showBeat, delegate { ShowPhotos(showBeat, 2, (int)entity["gradeType"], (bool)entity["audience"], true); }));
                     }
                 }
             }
@@ -1322,28 +1337,47 @@ namespace HeavenStudio.Games
         }
         public RiqEntity GetLastEntityOfType(double beat, string datamodel)
         {
-            foreach (RiqEntity e in EventCaller.GetAllInGameManagerList("freezeFrame", new string[] { datamodel }).OrderBy(e => -e.beat))
+            foreach (RiqEntity e in currentEntities.OrderBy(e => -e.beat))
             {
-                if (e.beat < beat)
+                if (e.beat < beat && e.datamodel == $"freezeFrame/{datamodel}")
                     return e;
             }
             return null;
         }
-        public List<RiqEntity> GetCurrentlyActiveEntities(double beat, string datamodel)
+        public List<RiqEntity> GetCurrentlyActiveEntities(double beat, string datamodel, float length = 0)
         {
             return GetCurrentlyActiveEntities(beat, new string[] { datamodel });
         }
-        public List<RiqEntity> GetCurrentlyActiveEntities(double beat, string[] datamodel)
+        public List<RiqEntity> GetCurrentlyActiveEntities(double beat, string[] datamodel, float length = 0)
         {
             List<RiqEntity> result = new();
-            foreach (RiqEntity e in EventCaller.GetAllInGameManagerList("freezeFrame", datamodel))
+            foreach (RiqEntity e in currentEntities)
             {
-                if (beat >= e.beat && beat <= e.beat + e.length)
-                    result.Add(e);
-                if (e.beat > beat)
+                if (e.beat > beat + length)
                     break;
+                if (beat >= e.beat - length && beat <= e.beat + e.length && Array.Exists(datamodel, d => e.datamodel == $"freezeFrame/{d}"))
+                    result.Add(e);
             }
             return result;
+        }
+
+        public static List<RiqEntity> GetCurrentEntities(double beat, bool force = false)
+        {
+            List<RiqEntity> entitiesList;
+            if (Instance == null || Instance.currentEntities == null || force)
+            {
+                double nextGameSwitchBeat = EventCaller.GetAllInGameManagerList("gameManager", new string[] { "switchGame", "end" }).Find(x => x.beat > beat)?.beat ?? double.MaxValue;
+                entitiesList = EventCaller.GetAllInGameManagerList("freezeFrame").FindAll(e => e.beat + e.length > beat && nextGameSwitchBeat > e.beat);
+                if (Instance != null) 
+                {
+                    Instance.currentEntities = entitiesList;
+                }
+            }
+            else
+            {
+                entitiesList = Instance.currentEntities;
+            }
+            return entitiesList;
         }
 
         // ENUMS

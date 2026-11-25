@@ -1,10 +1,11 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+using Jukebox;
+
 using HeavenStudio.Util;
 using HeavenStudio.InputSystem;
-using UnityEngine.Sprites;
+using System.Linq;
 
 namespace HeavenStudio.Games.Loaders
 {
@@ -13,7 +14,81 @@ namespace HeavenStudio.Games.Loaders
 {
     public static Minigame AddGame(EventCaller e)
     {
-        return new Minigame("loveLab", "Love Lab \n<color=#eb5454>[WIP]</color>", "b5ffff", false, false, new List<GameAction>()
+        RiqBeatmapData? ChartSystemUpdater(string riqVersion, RiqBeatmapData data)
+        {
+            List<RiqEntity> intervals = data.entities.FindAll(e => e.datamodel == "loveLab/beat intervals" && e.version == 0);
+            foreach (RiqEntity interval in intervals)
+            {
+                double flaskBeat = double.MinValue;
+                double flaskEndBeat = double.MinValue;
+                float addDelay = 1f;
+                int track = (int)interval["track"];
+                List<double> shakeStarts = new();
+                List<double> shakeEnds = new();
+
+                List<RiqEntity> events = data.entities.FindAll(e => e.beat >= interval.beat && e.beat < interval.beat + interval.length && e.datamodel == "loveLab/boy shakes").OrderBy(e => e.beat).ToList();
+                for (int i = 0; i < events.Count; i++)
+                {
+                    if (i == 0)
+                    {
+                        flaskBeat = events[i].beat;
+                        track = (int)events[i]["track"];
+                    }
+                    else
+                    {
+                        shakeEnds.Add(events[i].beat);
+                    }
+
+                    if (i == events.Count - 1)
+                    {
+                        flaskEndBeat = events[i].beat + events[i].length;
+                        switch ((int)events[i]["speed"])
+                        {
+                            case 1:
+                                addDelay = 2f;
+                                break;
+                            case 2:
+                                addDelay = 1.5f;
+                                break;
+                            default:
+                                break;
+                        }
+                        /* the old events were done in this order with these delays:
+                        fastFlask     | 1 beat delay
+                        slowFlask     | 2 beat delay
+                        midSlowFlask  | 1.5 beat delay
+                        */
+                    }
+                    else
+                    {
+                        shakeStarts.Add(events[i].beat + events[i].length);
+                    }
+
+                    data.entities.Remove(events[i]);
+                }
+
+                shakeEnds.Add(interval.beat + interval.length); // just in case. im not sure if we really need this...
+                interval.length += addDelay;
+                interval.version = 1;
+
+                if (flaskBeat != double.MinValue && flaskEndBeat != double.MinValue)
+                {
+                    RiqEntity e = new RiqEntity("riq__Entity", 0, "loveLab/flask", flaskBeat, (float)(flaskEndBeat - flaskBeat));
+                    e.CreateProperty("track", track);
+                    data.entities.Add(e);
+                }
+                for (int i = 0; i < shakeStarts.Count; i++)
+                {
+                    RiqEntity e = new RiqEntity("riq__Entity", 0, "loveLab/shake", shakeStarts[i], (float)(shakeEnds[i] - shakeStarts[i]));
+                    e.CreateProperty("track", track + 1);
+                    data.entities.Add(e);
+                }
+            }
+            return data;
+        }
+        RiqBeatmap.OnUpdateBeatmap += ChartSystemUpdater;
+
+        return new Minigame("loveLab", "Love Lab", "f2a900", false, false, new List<GameAction>()
             {
                 new GameAction("bop", "Bop")
                 {
@@ -29,23 +104,26 @@ namespace HeavenStudio.Games.Loaders
 
                 new GameAction("beat intervals", "Start Interval")
                 {
-                    preFunction = delegate { LoveLab.PreInterval(e.currentEntity.beat, e.currentEntity.length, e.currentEntity["auto"]);   },
-                    parameters = new List<Param>()
-                    {
-                        new Param("auto", true, "Auto Pass Turn", "Toggle if the turn should be passed automatically at the end of the start interval.")
-                    },
-                    preFunctionLength = .9f,
+                    preFunction = delegate { LoveLab.instance.PreInterval(e.currentEntity.beat, e.currentEntity.length, true);   },
+                    //parameters = new List<Param>()
+                    //{
+                    //   new Param("auto", true, "Auto Pass Turn", "Toggle if the turn should be passed automatically at the end of the start interval.")
+                    //},
+                    preFunctionLength = 1f,
                     defaultLength = 4f,
                     resizable = true,
                     priority = 2,
+                    defaultVersion = 1,
                 },
-                new GameAction("boy shakes", "Boy Shakes")
+                new GameAction("flask", "Catch/Throw Flask")
                 {
-                    parameters = new List<Param>()
-                    {
-                        new Param("speed", LoveLab.throwFlaskSpeedType.fastFlask, "Flask Speed", "How fast should the boy throw the flasks to the girl?")
-                    },
-                    defaultLength = 1f,
+                    defaultLength = 3f,
+                    resizable = true,
+                    priority = 1
+                },
+                new GameAction("shake", "Shake Flask")
+                {
+                    defaultLength = 0.25f,
                     resizable = true,
                     priority = 1
                 },
@@ -96,11 +174,11 @@ namespace HeavenStudio.Games.Loaders
                     defaultLength = .5f,
                     parameters = new List<Param>()
                     {
-                        new Param("type", LoveLab.timeOfDay.sunset, "Time", "Set the time of day")
+                        new Param("type", LoveLab.timeOfDay.Sunset, "Time", "Set the time of day.")
                     }
                 },
 
-                new GameAction("clouds", "Clouds")
+                new GameAction("clouds", "Toggle Clouds")
                 {
                     function = delegate { LoveLab.instance.cloudMove(e.currentEntity["toggle"]); },
                     defaultLength = .5f,
@@ -110,7 +188,7 @@ namespace HeavenStudio.Games.Loaders
                     }
                 },
 
-                new GameAction("spotlight", "Spotlight")
+                new GameAction("spotlight", "Toggle Spotlight")
                 {
                     function = delegate { LoveLab.instance.spotlight(e.currentEntity["toggle"], e.currentEntity["spotType"], e.currentEntity["posType"]); },
                     defaultLength = .5f,
@@ -135,16 +213,13 @@ namespace HeavenStudio.Games.Loaders
 
 namespace HeavenStudio.Games
 {
-    using DG.Tweening;
     using Jukebox;
     using Scripts_LoveLab;
-    using UnityEngine.UIElements;
 
     public class LoveLab : Minigame
     {
         public static LoveLab instance { get; set; }
 
-        #region varibles + components
         [Header("Lab Guy")]
         [SerializeField] Animator labGuy;
         [SerializeField] Animator labGuyHead;
@@ -169,9 +244,9 @@ namespace HeavenStudio.Games
         [SerializeField] Material flaskMatForBoy;
         [SerializeField] Material flaskMatForGirl;
         [SerializeField] Material flaskMatForWeird;
-        [SerializeField] Color boyLiquidColor = new Color(0.02909997f, 0.4054601f, 0.97f); //216, 97, 97   0868F8
-        [SerializeField] Color girlLiquidColor = new Color(0.972549f, 0.3764706f, 0.03137255f); //F86008 
-        [SerializeField] Color weirdLiquidColor = new Color(0.8313726f, 0.2039216f, 0.5058824f); //331, 75, 83   D43481
+        [SerializeField] Color boyLiquidColor = "0868F8".Hex2RGB();
+        [SerializeField] Color girlLiquidColor = "F86008".Hex2RGB();
+        [SerializeField] Color weirdLiquidColor = "D43481".Hex2RGB();
         [SerializeField] SpriteRenderer flaskSpriteRend;
         [SerializeField] SpriteRenderer girlFlaskSpriteRend;
         [SerializeField] SpriteRenderer weirdFlaskSpriteRend;
@@ -190,7 +265,6 @@ namespace HeavenStudio.Games
         [SerializeField] GameObject labGuyFlask;
         [SerializeField] GameObject labGirlFlask;
         public static List<QueuedFlask> queuedFlask = new List<QueuedFlask>();
-        //public List<GameObject> boyInstantiatedFlask = new List<GameObject>(); //blank to boy
         public List<LoveLabFlask> girlInstantiatedFlask = new List<LoveLabFlask>(); //boy to girl
         public List<LoveLabFlask> weirdInstantiatedFlask = new List<LoveLabFlask>(); //girl to weird
 
@@ -198,20 +272,13 @@ namespace HeavenStudio.Games
         public bool hasMissed = false;
         bool canBop = false;
         public bool bopRight = false;
-        public bool isHoldingWhiff = false;
-        bool isHoldingWhiffAlt = false;
-        bool isHoldingWhiffPressed = false;
-        public bool canCallForFlask = true;
-        bool isDay = false;
+        timeOfDay currentTime = timeOfDay.Sunset;
         bool hasStartedInterval;
         [SerializeField] bool isHolding;
         [SerializeField] bool isHoldingFlask;
         public int counter = 0;
-        bool isLong = false;
-        int isLongCount = 0;
         bool canCloudsMove = true;
         bool hasShakenUp = false;
-        public double startBeat;
         public PlayerActionEvent release;
 
         [Header("Clouds")]
@@ -222,18 +289,20 @@ namespace HeavenStudio.Games
         [Header("Time Of Day")]
         [SerializeField] GameObject sunsetBG;
         [SerializeField] GameObject dayBG;
+         [SerializeField] GameObject nightBG;
         [SerializeField] Material girlShader;
+        [SerializeField] SpriteRenderer girlHeader;
         [SerializeField] GameObject girlHeaderShader;
         [SerializeField] Material boyShader;
+        [SerializeField] SpriteRenderer boyHeader;
         [SerializeField] GameObject boyHeaderShader;
         [SerializeField] Material weirdShader;
+        [SerializeField] SpriteRenderer weirdHeader;
         [SerializeField] GameObject weirdHeaderShader;
 
         [Header("Hearts")]
         //public List<Sprite> warningSprites = new List<Sprite>();
-        public float speedForHearts = 0.00069f;
         public float speedForHeartsMultiplier = 3f;
-        public float speedForHeartsMinimizer = .001f;
         public List<heartDetails> reqHeartsContainer = new List<heartDetails>();
         [SerializeField] Transform heartHolder;
         [SerializeField] GameObject guyHeartObj;
@@ -242,80 +311,88 @@ namespace HeavenStudio.Games
         public List<LoveLabHearts> guyHearts;
         public List<LoveLabHearts> girlHearts;
         public List<LoveLabHearts> completeHearts;
-        List<PlayerActionEvent> currentEvents;
         [SerializeField] List<int> currentHearts;
         [SerializeField] Transform endPoint;
-        [SerializeField] Vector3 spawnPoint;
-        #endregion
+        
 
-
-        #region time of day
         public enum timeOfDay
         {
-            sunset,
-            day
+            Sunset,
+            Day
         }
 
         public void defaultShaders()
         {
             sunsetBG.SetActive(true);
             dayBG.SetActive(false);
+            nightBG.SetActive(false);
 
             getShaderColors(0);
 
             girlHeaderShader.SetActive(true);
-
             boyHeaderShader.SetActive(true);
-
             weirdHeaderShader.SetActive(true);
 
-            isDay = false;
+            girlHeader.color  = Color.white;
+            boyHeader.color   = Color.white;
+            weirdHeader.color = Color.white;
+
+            currentTime = timeOfDay.Sunset;
         }
 
         public void getShaderColors(int tod)
         {
-            float[,] wantShader;
+            Color[,] wantShader;
 
-            wantShader = (int)timeOfDay.sunset == tod ? shaderColorsForSunset : shaderColorsForDay;
+            switch ((timeOfDay)tod)
+            {
+                case timeOfDay.Sunset:
+                    wantShader = shaderColorsForSunset;
+                    break;
+                //case timeOfDay.Night:
+                //    wantShader = shaderColorsForNight;
+                //    break;
+                default:
+                    wantShader = shaderColorsForDay;
+                    break;
+            }
 
             for (int x = 0; x < 3; x++)
             {
-                girlShader.SetColor(shaderColorsDebug[x], new Color(wantShader[x, 0], wantShader[x, 1], wantShader[x, 2]));
-                boyShader.SetColor(shaderColorsDebug[x], new Color(wantShader[x + 3, 0], wantShader[x + 3, 1], wantShader[x + 3, 2]));
-                weirdShader.SetColor(shaderColorsDebug[x], new Color(wantShader[x + 6, 0], wantShader[x + 6, 1], wantShader[x + 6, 2]));
+                girlShader.SetColor(shaderColorsDebug[x], wantShader[0, x]);
+                boyShader.SetColor(shaderColorsDebug[x], wantShader[1, x]);
+                weirdShader.SetColor(shaderColorsDebug[x], wantShader[2, x]);
             }
         }
 
-        public float[,] shaderColorsForDay = new float[,]
+        public Color[,] shaderColorsForDay = new Color[,]
         {
-            //girl
-            { 0.8470589f, 0.9725491f, 0.8784314f },
-            { 0.01176471f, 0.7686275f, 0.2431373f },
-            { 0.9686275f, 0.7529413f, 0.654902f },
-            //boy
-            { 1f, 1f, 1f },
-            { 0.3921569f, 0.4039216f, 0.3921569f },
-            { 0.9686275f, 0.7254902f, 0.5686275f },
-            //weird
-            { 1f, 1f, 1f },
-            { 0.754717f, 0.5786163f, 0f },
-            { 0.9686275f, 0.3803922f, 0.03137255f },
+            // girl
+            { "#D8F8E0".Hex2RGB(), "#03C43E".Hex2RGB(), "#F8C0A8".Hex2RGB() },
+            // boy
+            { "#FFFFFF".Hex2RGB(), "#646765".Hex2RGB(), "#F8B890".Hex2RGB() },
+            // weird
+            { "#FFFFFF".Hex2RGB(), "#C08A00".Hex2RGB(), "#F86008".Hex2RGB() },
         };
 
-        public float[,] shaderColorsForSunset = new float[,]
+        public Color[,] shaderColorsForSunset = new Color[,]
         {
-            //girl
-            { 1f, 0.937255f, 0.3529412f },
-            { 0.01176471f, 0.7686275f, 0.2431373f },
-            { 0.9960785f, 0.6588235f, 0.5176471f },
-            //boy
-            { 1f, 0.8392158f, 0.4196079f },
-            { 0.6862745f, 0.4078432f, 0.4196079f },
-            { 0.8901961f, 0.4627451f, 0.2039216f },
-            //weird
-            { 0.9725491f, 0.7843138f, 0.4078432f },
-            { 0.972549f, 0.7529412f, 0.03137255f },
-            { 0.8941177f, 0.1882353f, 0f },
+            // girl
+            { "#FFE95A".Hex2RGB(), "#03C43E".Hex2RGB(), "#FEA884".Hex2RGB() },
+            // boy
+            { "#FFD66B".Hex2RGB(), "#AF686B".Hex2RGB(), "#E37634".Hex2RGB() },
+            // weird
+            { "#F8C868".Hex2RGB(), "#F8C008".Hex2RGB(), "#E43000".Hex2RGB() },
+        };
+
+        public Color[,] shaderColorsForNight = new Color[,]
+        {
+            // girl
+            { "#ACCCE9".Hex2RGB(), "#009847".Hex2RGB(), "#CC94B1".Hex2RGB() },
+            // boy
+            { "#D3D3FF".Hex2RGB(), "#383B6E".Hex2RGB(), "#CC8C99".Hex2RGB() },
+            // weird
+            { "#D3D3FF".Hex2RGB(), "#945E09".Hex2RGB(), "#CC3411".Hex2RGB() },
         };
 
         public string[] shaderColorsDebug = new string[]
@@ -327,30 +404,49 @@ namespace HeavenStudio.Games
 
         public void setTimeOfDay(int tod)
         {
-            if(tod == (int)timeOfDay.sunset)
+            currentTime = (timeOfDay)tod;
+            switch (currentTime)
             {
-                defaultShaders();
-                getShaderColors(tod);
-            }
-            else
-            {
-                sunsetBG.SetActive(false);
-                dayBG.SetActive(true);
+                case timeOfDay.Sunset:
+                    defaultShaders();
+                    getShaderColors(tod);
+                    break;
+                case timeOfDay.Day:
+                    sunsetBG.SetActive(false);
+                    dayBG.SetActive(true);
+                    nightBG.SetActive(false);
 
-                getShaderColors(tod);
+                    getShaderColors(tod);
 
-                girlHeaderShader.SetActive(false);
+                    girlHeader.color  = Color.white;
+                    boyHeader.color   = Color.white;
+                    weirdHeader.color = Color.white;
 
-                boyHeaderShader.SetActive(false);
+                    girlHeaderShader.SetActive(false);
+                    boyHeaderShader.SetActive(false);
+                    weirdHeaderShader.SetActive(false);
+                    break;
+                /*
+                case timeOfDay.Night:
+                    sunsetBG.SetActive(false);
+                    dayBG.SetActive(false);
+                    nightBG.SetActive(true);
 
-                weirdHeaderShader.SetActive(false);
+                    getShaderColors(tod);
 
-                isDay = true;
+                    girlHeader.color  = "#C9C9FF".Hex2RGB();
+                    boyHeader.color   = "#C9C9FF".Hex2RGB();
+                    weirdHeader.color = "#C9C9FF".Hex2RGB();
+
+                    girlHeaderShader.SetActive(false);
+                    boyHeaderShader.SetActive(false);
+                    weirdHeaderShader.SetActive(false);
+                    break;
+                */
             }
         }
-        #endregion
+        
 
-        #region intervals
         float smthPreteval;
         bool smthAutoPass;
 
@@ -382,10 +478,10 @@ namespace HeavenStudio.Games
 
         public void labGirlIdleState()
         {
-            instance.labGirlHead.Play("GirlIdleFace");
+            labGirlHead.Play("GirlIdleFace");
             if (instance.labGirlArm.IsAnimationNotPlaying())
             {
-                instance.labGirlArm.DoScaledAnimationAsync("ArmIdle");
+                labGirlArm.DoScaledAnimationAsync("ArmIdle");
             }
         }
         public void labWeirdEndState(double beat, float addBeat, GameObject flaskObj)
@@ -413,106 +509,63 @@ namespace HeavenStudio.Games
                 }),
             });
         }
-        public enum throwFlaskSpeedType
-        {
-            fastFlask,
-            slowFlask,
-            midSlowFlask
-        }
-        private struct queuedInterval
-        {
-            public double beat;
-            public float interval;
-            public bool autoPassTurn;
-        }
-        private static List<queuedInterval> queuedIntervals = new List<queuedInterval>();
 
-        public static void PreInterval(double beat, float interval, bool autoPassTurn)
+        private void DoInactiveInterval(double beat)
         {
-            instance.smthPreteval = interval;
-            instance.smthAutoPass = autoPassTurn;
+            RiqEntity intervalEntity = gameManager.Beatmap.Entities.FindLast(e => e.beat - 1 <= beat && e.beat >= beat && e.datamodel == "loveLab/beat intervals");
+            if (intervalEntity != null)
+            {
+                RiqEntity e = intervalEntity;
+                PreInterval(e.beat, e.length, true);
+            }
+        }
 
-            if (GameManager.instance.currentGame == "loveLab")
-            {
-                instance.SetIntervalStart(beat, interval, beat, autoPassTurn);
-            }
-            else
-            {
-                queuedIntervals.Add(new queuedInterval
-                {
-                    beat = beat,
-                    interval = interval,
-                    autoPassTurn = autoPassTurn
-                });    
-            }
+        public void PreInterval(double beat, float interval, bool autoPassTurn)
+        {
+            if (GameManager.instance.currentGame != "loveLab") return;
+            smthPreteval = interval;
+            smthAutoPass = autoPassTurn;
+            SetIntervalStart(beat, interval, beat, autoPassTurn);
         }
 
         private void SetIntervalStart(double beat, float interval, double gameSwitchBeat, bool autoPassTurn)
         {
-            //List<RiqEntity> shakeEvents = GetAllFlaskBetween(beat, beat + interval);
-            ////Debug.LogWarning(shakeEvents.Count);
-            //shakeEvents.Sort((x, y) => x.beat.CompareTo(y.beat));
+            RiqEntity flaskEvent = GetFlaskBetween(beat, beat + interval);
+            List<RiqEntity> reqShakeEvents = GetAllShakeBetween(flaskEvent.beat, flaskEvent.beat + flaskEvent.length);
 
+            if (flaskEvent == null) return;
 
-            //for (int x = 0; x < shakeEvents.Count; x++)
-            //{
-            //    var a = shakeEvents[x];
-            //    boyShake(a.beat, a.length, beat, beat + interval, interval, a["speed"]);
-            //}
-
-
-            //string reqArc = "";
-
-            //reqArc = shakeEvents[shakeEvents.Count - 1]["speed"] == 0 ? flaskArcToBoy[0] : flaskArcToBoy[1];
-
-            //spawnCustomFlask(shakeEvents[0].beat, reqArc);
-
-            //this.counter = shakeEvents.Count;
-
-            //List<BeatAction.Action> queuedFlasks = new()
-            //{
-            //    new BeatAction.Action(beat, delegate
-            //    {
-            //        instance.hasMissed = false;
-
-            //        if (autoPassTurn)
-            //        {
-            //            BoyPassToGirl(beat + interval, beat, beat + interval, 1, 0);
-            //        }
-            //    })
-            //};
-            //BeatAction.New(this, queuedFlasks);
-
-
-            #region stuff that worked
-            List<RiqEntity> reqShakeEvents = GetAllFlaskBetween(beat, beat + interval);
             reqShakeEvents.Sort((x, y) => x.beat.CompareTo(y.beat));
 
-            currentHearts.Add(reqShakeEvents.Count);
-            //howManyShakes.Add(reqShakeEvents.Count);
-            //howManyShakesCounter.Add(0);
-            instance.hasMissed = false;
+            currentHearts.Add(reqShakeEvents.Count + 1);
 
             string reqArc = "";
+            float flaskInterval = interval - flaskEvent.length;
 
-            reqArc = reqShakeEvents[reqShakeEvents.Count - 1]["speed"] == 0 ? flaskArcToBoy[0] : flaskArcToBoy[1];
+            reqArc = flaskInterval <= 1 ? flaskArcToBoy[0] : flaskArcToBoy[1];
 
-            spawnCustomFlask(reqShakeEvents[0].beat, reqArc);
+            spawnCustomFlask(flaskEvent.beat, reqArc);
+            boyFlask(flaskEvent.beat, flaskEvent.length, flaskInterval, interval);
 
             this.counter = reqShakeEvents.Count;
 
-            List<MultiSound.Sound> sounds = new();
+            List<MultiSound.Sound> sounds = new()
+            {
+                new("loveLab/leftCatch", flaskEvent.beat),
+                new("loveLab/leftThrow", flaskEvent.beat + flaskEvent.length)
+            };
+
             List<BeatAction.Action> queuedFlasks = new()
             {
                 new BeatAction.Action(beat, delegate
                 {
                     //initial shakes
-                    instance.hasMissed = false;
+                    hasMissed = false;
 
                     if (autoPassTurn)
                     {
                         //pass to girl
-                        BoyPassToGirl(beat + interval, beat, beat + interval, 1, 0);
+                        BoyPassToGirl(flaskEvent.beat + flaskEvent.length, beat, interval, flaskInterval, flaskEvent.length);
                     }
                 })
             };
@@ -524,66 +577,31 @@ namespace HeavenStudio.Games
                     queuedFlasks.Add(new BeatAction.Action(shakeEventToCheck.beat, delegate
                     {
                         //lab boy shake
-                        boyShake(shakeEventToCheck.beat, shakeEventToCheck.length, beat, beat + interval, interval, shakeEventToCheck["speed"]);
+                        boyShake(shakeEventToCheck.beat, shakeEventToCheck.length, beat, beat + interval, interval);
                     }));
 
-                    if (i == 0)
-                    {
-                        sounds.Add(new("loveLab/LeftCatch", shakeEventToCheck.beat));
-                    }
-                    else
-                    {
-                        sounds.Add(new("loveLab/shakeDown", shakeEventToCheck.beat));
-                    }
-
-                    if (shakeEventToCheck.beat + shakeEventToCheck.length == beat + interval)
-                    {
-                        sounds.Add(new("loveLab/leftThrow", shakeEventToCheck.beat + shakeEventToCheck.length));
-                    }
-                    else
-                    {
-                        sounds.Add(new("loveLab/shakeUp", shakeEventToCheck.beat + shakeEventToCheck.length));
-                    }
+                    sounds.Add(new("loveLab/shakeUp", shakeEventToCheck.beat));
+                    sounds.Add(new("loveLab/shakeDown", shakeEventToCheck.beat + shakeEventToCheck.length));
                 }
             }
             MultiSound.Play(sounds, forcePlay: true);
             BeatAction.New(this, queuedFlasks);
-            #endregion
+            
         }
 
-        private void PersistObjects(double beat)
+        private RiqEntity GetFlaskBetween(double beat, double endBeat)
         {
-            List<RiqEntity> allIntervals = EventCaller.GetAllInGameManagerList("loveLab", new string[] { "beat intervals" }).FindAll(x => x.beat < beat);
-            //List<RiqEntity> shakeEvents = EventCaller.GetAllInGameManagerList("loveLab", new string[] { "boy shakes" }).FindAll(x => x.beat < beat && x.beat + x.length > beat);
-            RiqEntity lastInterval = allIntervals[allIntervals.Count - 1];
-            Debug.LogWarning("Last Interval Beat: " + lastInterval.beat);
-            Debug.LogWarning("Last Interval Length: " + lastInterval.length);
-            List<RiqEntity> shakeEvents = GetAllFlaskBetween(beat, lastInterval.beat + lastInterval.length);
-
-            Debug.LogWarning("Shake Event Count: "+ shakeEvents.Count);
-
-
-            if(allIntervals.Count != 0)
-            {
-                hasStartedInterval = true;
-                Debug.LogWarning("pre existing intervals");
-            }
-
-            for (int x = 0; x < shakeEvents.Count; x++)
-            {
-                var a = shakeEvents[x];
-                boyShake(a.beat, a.length, beat, beat + lastInterval.length, lastInterval.length, a["speed"]);
-            }
+            return gameManager.Beatmap.Entities.Find(e => e.beat >= beat && e.beat + e.length < endBeat && e.datamodel == "loveLab/flask");
         }
 
-        private List<RiqEntity> GetAllFlaskBetween(double beat, double endBeat)
+        private List<RiqEntity> GetAllShakeBetween(double beat, double endBeat)
         {
-            List<RiqEntity> speakEvents = EventCaller.GetAllInGameManagerList("loveLab", new string[] { "boy shakes" });
+            List<RiqEntity> speakEvents = EventCaller.GetAllInGameManagerList("loveLab", new string[] { "shake" });
             List<RiqEntity> tempEvents = new();
 
             foreach (var entity in speakEvents)
             {
-                if (entity.beat >= beat && entity.beat < endBeat)
+                if (entity.beat > beat && entity.beat + entity.length < endBeat)
                 {
                     tempEvents.Add(entity);
                 }
@@ -608,69 +626,70 @@ namespace HeavenStudio.Games
             });
         }
 
-        private void boyShake(double beat, double length, double firstBeatOfInterval, double lastBeatOfInterval, double intervalLength, int speedType)
+        private void boyShake(double beat, double length, double firstBeatOfInterval, double lastBeatOfInterval, double intervalLength)
         {
-            #region debug stuff
-            //Debug.LogWarning("Beat: " + beat);
-            //Debug.LogWarning("Length: " + (beat + length));
-            //Debug.LogWarning("First Beat: " + firstBeatOfInterval);
-            //Debug.LogWarning("Last Beat: " + lastBeatOfInterval);
-            //Debug.LogWarning("Speed Type: " + speedType);
-            #endregion
-
             BeatAction.New(instance, new List<BeatAction.Action>()
             {
-                new BeatAction.Action(beat, delegate {                
-                    girlLook(beat, intervalLength);
-
-                    if (!hasStartedInterval)
-                    {
-            //            SoundByte.PlayOneShotGame("loveLab/LeftCatch", beat, forcePlay: true);
-                        labGuyArm.Play("GrabFlask");
-                        hasStartedInterval = true;
-                        LoveLabHearts bh = Instantiate(guyHeartObj, instance.heartHolder).GetComponent<LoveLabHearts>();
-                        bh.heartBeat = beat;
-                        bh.length = length;
-                        bh.heartCount = girlHearts.Count != 0 ? 0 : guyHearts.Count;
-                        bh.intervalSpeed = intervalLength;
-                        bh.addPos = length <= .5f && instance.currentHearts[instance.currentHearts.Count - 1] <= 1 ? 1.5f : 2.5f;    
-
-                        guyHearts.Add(bh);
-                        //spawnCustomFlask(beat);
-                    }
-                    else if(beat > firstBeatOfInterval)
-                    {
-            //            SoundByte.PlayOneShotGame("loveLab/shakeDown");
-                        labGuyArm.Play("ShakeFlaskDown");
-                    }
-                }),
-
-                new BeatAction.Action(beat + length, delegate {
+                new BeatAction.Action(beat, delegate {
                     if(lastBeatOfInterval > beat + length)
                     {
-            //            SoundByte.PlayOneShotGame("loveLab/shakeUp");
                         labGuyArm.Play("ShakeFlaskUp");
 
-                        LoveLabHearts bh = Instantiate(guyHeartObj, instance.heartHolder).GetComponent<LoveLabHearts>();
-                        bh.heartBeat = (beat + length);
+                        LoveLabHearts bh = Instantiate(guyHeartObj, heartHolder).GetComponent<LoveLabHearts>();
+                        bh.heartBeat = beat;
                         bh.length = length;
                         bh.heartCount = guyHearts.Count;
                         bh.intervalSpeed = intervalLength;
 
                         guyHearts.Add(bh);
-
                         heartUp(guyHearts);
                     }
-                    else
-                    {
-                    //    SoundByte.PlayOneShotGame("loveLab/leftThrow");
-                        labGuyArm.Play("ThrowFlask");
-                        spawnFlaskForGirlCustom((beat + length) + 1f, speedType);
+                }),
 
-                        foreach(LoveLabHearts h in guyHearts)
-                        {
-                            h.stop = true;
-                        }
+                new BeatAction.Action(beat + length, delegate {                
+                    if(beat > firstBeatOfInterval)
+                    {
+                        labGuyArm.Play("ShakeFlaskDown");
+                    }
+                }),
+            });
+        }
+
+        private void boyFlask(double beat, double length, double flaskInterval, double intervalLength)
+        {
+            BeatAction.New(instance, new List<BeatAction.Action>()
+            {
+                new BeatAction.Action(beat, delegate {                
+                    girlLook(beat, flaskInterval);
+                    labGuyArm.Play("GrabFlask");
+                    LoveLabHearts bh = Instantiate(guyHeartObj, heartHolder).GetComponent<LoveLabHearts>();
+                    bh.heartBeat = beat;
+                    bh.length = length;
+                    bh.heartCount = girlHearts.Count != 0 ? 0 : guyHearts.Count;
+                    bh.intervalSpeed = intervalLength;
+                    bh.addPos = length <= .5f && currentHearts[currentHearts.Count - 1] <= 1 ? 1.5f : 2.5f;    
+
+                    guyHearts.Add(bh);
+                    //heartUp(guyHearts);
+                }),
+
+                new BeatAction.Action(beat + length, delegate {
+                    labGuyArm.Play("ThrowFlask");
+                    int arc = 0;
+                    switch (intervalLength - length)
+                    {
+                        case >= 2:
+                            arc = 2;
+                            break;
+                        case > 1:
+                            arc = 1;
+                            break;
+                    }
+                    spawnFlaskForGirlCustom(beat + length + flaskInterval, arc, flaskInterval);
+
+                    foreach(LoveLabHearts h in guyHearts)
+                    {
+                        h.stop = true;
                     }
                 }),
             });
@@ -689,62 +708,25 @@ namespace HeavenStudio.Games
 
 
 
-        private void BoyPassToGirl(double beat, double intervalBeat, double endBeat, float length, int counter)
+        private void BoyPassToGirl(double beat, double intervalBeat, float intervalLength, float flaskInterval, float flaskLength)
         {
-            var inputs = GetAllFlaskBetween(intervalBeat, endBeat);
+            RiqEntity flaskInput = GetFlaskBetween(intervalBeat, intervalBeat + intervalLength);
+            List<RiqEntity> inputs = GetAllShakeBetween(flaskInput.beat, flaskInput.beat + flaskInput.length);
             inputs.Sort((x, y) => x.beat.CompareTo(y.beat));
 
             howManyShakes.Add(inputs.Count);
 
-            float addDelay = 0f;
-
-            inputs[0]["speed"] = inputs[inputs.Count - 1]["speed"];
-
-            #region debug stuff
-            //Debug.LogWarning("Beat: " + beat);
-            //Debug.LogWarning("Length: " + (beat + length));
-            //Debug.LogWarning("First Beat: " + intervalBeat);
-            //Debug.LogWarning("Last Beat: " + endBeat);
-            //Debug.LogWarning("Speed Type: " + speedType);
-            #endregion
-
-            if (inputs[0]["speed"] == 0)
-            {
-                addDelay = 0f;
-            }
-            else if (inputs[0]["speed"] == 2)
-            {
-                addDelay = .5f;
-            }
-            else
-            {
-                addDelay = 1f;
-            }
+            ScheduleInput(beat, flaskInterval, InputAction_BasicPress, (c, s) => onCatch(c, s, flaskLength, intervalLength), onCatchMiss, onEmpty);
+            release = ScheduleInput(beat, flaskInterval + flaskInput.length, IA_FlickRelease, onRelease, onMiss, onEmpty);
 
             for (int i = 0; i < inputs.Count; i++)
             {
                 var input = inputs[i];
-                double relativeBeat = input.beat - intervalBeat;
-                double addForEndBeat = (input.beat + input.length) - intervalBeat;
-                if(i == 0)
-                {
-                    ScheduleInput(beat, (length + relativeBeat) + addDelay, InputAction_BasicPress, onCatch, onCatchMiss, onEmpty);
-                }
-                else
-                {
-                    ScheduleAutoplayInput(beat, (length + relativeBeat) + addDelay, InputAction_Alt, onDownAuto, onMiss, onEmpty);
-                    //ScheduleUserInput(beat, (length + relativeBeat) + addDelay, IA_DPadRelease, onDownAuto, onMiss, onEmpty);
-                }
-
-                if ((inputs[i].beat + inputs[i].length) >= endBeat)
-                {
-                    release = ScheduleInput(beat, (length + addForEndBeat) + addDelay, IA_FlickRelease, onRelease, onMiss, onEmpty);
-                }
-                else
-                {
-                    ScheduleInput(beat, (length + addForEndBeat) + addDelay, IA_DPadPressing, onUp, onMiss, onEmpty);
-                }
-
+                double shakeUpBeat = input.beat - flaskInput.beat;
+                double shakeDownBeat = shakeUpBeat + input.length;
+                
+                ScheduleInput(beat, flaskInterval + shakeUpBeat, IA_DPadPressing, (c, s) => onUp(c, s, input.length), onMiss, onEmpty);
+                ScheduleAutoplayInput(beat, flaskInterval + shakeDownBeat, IA_DPadRelease, onDownAuto, onMiss, onEmpty);
             }
 
             BeatAction.New(this, new List<BeatAction.Action>()
@@ -754,7 +736,7 @@ namespace HeavenStudio.Games
                     hasMissed = false;
 
                 }),
-                new BeatAction.Action(endBeat + 1f, delegate
+                new BeatAction.Action(intervalBeat + intervalLength, delegate
                 {
                     labGuyHead.Play("GuyFaceIdle");
                     if (labGuyArm.IsAnimationNotPlaying())
@@ -766,31 +748,31 @@ namespace HeavenStudio.Games
         }
 
 
-        public static void onCatch(PlayerActionEvent caller, float beat)
+        public void onCatch(PlayerActionEvent caller, float beat, float length, float intervalLength)
         {
-            instance.labGirlHead.Play("GirlIdleFace");
-            LoveLabHearts gh = Instantiate(instance.girlHeartObj, instance.heartHolder).GetComponent<LoveLabHearts>();
+            labGirlHead.Play("GirlIdleFace");
+            LoveLabHearts gh = Instantiate(girlHeartObj, heartHolder).GetComponent<LoveLabHearts>();
             gh.heartBeat = (caller.startBeat + caller.timer);
-            gh.heartCount = instance.girlHearts.Count;
-            gh.length = instance.guyHearts[0].length;
-            gh.addPos = gh.length <= .5f && instance.currentHearts[instance.currentHearts.Count - 1] <= 1 ? 1.5f : 2.5f;
-            gh.intervalSpeed = instance.guyHearts[0].intervalSpeed;
+            gh.heartCount = girlHearts.Count;
+            gh.length = length;
+            if (currentHearts.Any()) gh.addPos = gh.length <= .5f && currentHearts[currentHearts.Count - 1] <= 1 ? 1.5f : 2.5f;
+            gh.intervalSpeed = intervalLength;
 
-            if (!instance.isHolding)
+            if (!isHolding)
             {
-                instance.isHolding = true;
-                instance.isHoldingFlask = true;
-                instance.girlHearts.Add(gh);
+                isHolding = true;
+                isHoldingFlask = true;
+                girlHearts.Add(gh);
                 SoundByte.PlayOneShotGame("loveLab/RightCatch");
-                instance.labGirlArm.DoScaledAnimationAsync("GrabFlask");
-                LoveLab.instance.girlInstantiatedFlask[0].GetComponent<LoveLabFlask>().destroyThisObj();
+                labGirlArm.DoScaledAnimationAsync("GrabFlask");
+                girlInstantiatedFlask[0].GetComponent<LoveLabFlask>().destroyThisObj();
             }
         }
 
         public void heartUp(List<LoveLabHearts> hearts)
         {
             var heartCount = hearts.Count;
-            var constant = 1.3f; //1.5f
+            var constant = 1.5f;
 
             if (hearts[heartCount - 1].getHeartType() == 1)
             {
@@ -821,19 +803,13 @@ namespace HeavenStudio.Games
                     hearts[x].onlyOne = false;
                     if (x == 0)
                     {
-                        //Debug.LogWarning((float)(guyHearts[max].nextHeartBeat));
-                        //Debug.LogWarning((float)(guyHearts[max].heartBeat));
                         if (hearts[max].nextHeartBeat == 0)
                         {
                             hearts[x].addPos += (float)(hearts[max].heartBeat - hearts[max].prevHeartBeat) * constant;
-                            //hearts[x]._step = (float)(hearts[max].heartBeat - hearts[max].prevHeartBeat);
-                            //hearts[x].updateBeat();
                         }
                         else
                         {
                             hearts[0].addPos += (float)(hearts[max].nextHeartBeat - hearts[max].heartBeat) * constant;
-                            //hearts[0]._step = (float)(hearts[max].nextHeartBeat - hearts[max].heartBeat);
-                            //hearts[x].updateBeat();
                         }
 
                     }
@@ -844,128 +820,111 @@ namespace HeavenStudio.Games
                     else
                     {
                         hearts[x].addPos += (float)(hearts[max].heartBeat - hearts[max].prevHeartBeat) * constant;
-                        //hearts[x]._step = (float)(hearts[max].heartBeat - hearts[max].prevHeartBeat);
-                        //hearts[x].updateBeat();
+
                     }
 
                     /*  4.5 //only in 0 (next heart - heart)
-                                4 (prev heart - heart)
-                                3.5 (prev heart - heart)
-                                2.5 (prev heart - heart)
-                                2 (nothing)
+                        4 (prev heart - heart)
+                        3.5 (prev heart - heart)
+                        2.5 (prev heart - heart)
+                        2 (nothing)
 
-                                should use the current heart spacing
-                            */
+                        should use the current heart spacing
+                    */
                 }
             }
         }
 
-        public static void onUp(PlayerActionEvent caller, float beat)
+        public void onUp(PlayerActionEvent caller, float beat, float length)
         {
-            if (GameManager.instance.Autoplay) instance.onWhiffUp();
+            if (GameManager.instance.Autoplay) onWhiffUp();
+            if (hasMissed) return;
 
-            LoveLabHearts gh = Instantiate(instance.girlHeartObj, instance.heartHolder).GetComponent<LoveLabHearts>();
+            LoveLabHearts gh = Instantiate(girlHeartObj, heartHolder).GetComponent<LoveLabHearts>();
             gh.heartBeat = (caller.startBeat + caller.timer);
-            gh.heartCount = instance.girlHearts.Count;
-            gh.length = instance.guyHearts[gh.heartCount].length;
-            instance.girlHearts.Add(gh);
-            instance.heartUp(instance.girlHearts);
+            gh.heartCount = girlHearts.Count;
+            gh.length = length;
+            girlHearts.Add(gh);
+            heartUp(girlHearts);
         }
 
-        public static void onDownAuto(PlayerActionEvent caller, float beat)
+        public void onDownAuto(PlayerActionEvent caller, float beat)
         {
-            instance.hasShakenUp = false;
+            hasShakenUp = false;
             SoundByte.PlayOneShotGame("loveLab/shakeDown");
-            instance.labGirlArm.DoScaledAnimationAsync("ShakeFlaskDown");
+            labGirlArm.DoScaledAnimationAsync("ShakeFlaskDown");
         }
 
-        public static void onRelease(PlayerActionEvent caller, float beat)
+        public void onRelease(PlayerActionEvent caller, float beat)
         {
-            instance.hasShakenUp = false;
-            instance.labGirlHead.DoScaledAnimationAsync("GirlIdleFace");
+            hasShakenUp = false;
+            labGirlHead.DoScaledAnimationAsync("GirlIdleFace");
             SoundByte.PlayOneShotGame("loveLab/rightThrowNoShake");
-            instance.labGirlArm.DoScaledAnimationAsync("ThrowFlask");
-            instance.isHolding = false;
-            instance.isHoldingFlask = false;
-            instance.hasStartedInterval = false;
-            instance.release = null;
+            labGirlArm.DoScaledAnimationAsync("ThrowFlask");
+            isHolding = false;
+            isHoldingFlask = false;
+            hasStartedInterval = false;
+            release = null;
 
-            //instance.clearShakeList();
+            bool miss = hasMissed;
 
-            foreach (LoveLabHearts h in instance.girlHearts)
+            //clearShakeList();
+
+            foreach (LoveLabHearts h in girlHearts)
             {
                 h.stop = true;
             }   
 
-            instance.spawnFlaskForWeird((caller.startBeat + caller.timer));
-
-            var lastCounter = instance.currentHearts[0];
+            spawnFlaskForWeird();
 
             BeatAction.New(instance, new List<BeatAction.Action>()
             {
                 new BeatAction.Action((caller.startBeat + caller.timer) + 1f, delegate
                 {
-                    instance.labGirlIdleState();
+                    labGirlIdleState();
+
+                    if (miss) return;
 
                     SoundByte.PlayOneShotGame("loveLab/heartsCombine");
 
-                     foreach(LoveLabHearts h in instance.girlHearts)
+                     foreach(LoveLabHearts h in girlHearts)
                     {
                         h.stop = true;
                     }
 
                     var additionalHearts = 0.063f;
 
-                    for(int x = 0; x < instance.currentHearts[0]; x++)
+                    for(int x = 0; x < currentHearts[0]; x++)
                     {
-                        instance.guyHearts[0].heartAnim.Play("HeartMerge");
-                        instance.girlHearts[0].heartAnim.Play("HeartGirlMerge");
+                        guyHearts[0].heartAnim.Play("HeartMerge");
+                        girlHearts[0].heartAnim.Play("HeartGirlMerge");
 
-                        LoveLabHearts a = Instantiate(instance.completeHeartObj, instance.heartHolder).GetComponent<LoveLabHearts>();
-                        a.transform.position = new Vector2(a.transform.position.x, instance.girlHearts[0].transform.position.y);
-                        var additionalHeartLength = (0.063f * instance.girlHearts.Count);
+                        LoveLabHearts a = Instantiate(completeHeartObj, heartHolder).GetComponent<LoveLabHearts>();
+                        a.transform.position = new Vector2(a.transform.position.x, girlHearts[0].transform.position.y);
+                        var additionalHeartLength = (additionalHearts * girlHearts.Count);
                         a.heartBeat = caller.startBeat + caller.timer + 1f;
                         a.dropStart = a.transform.position;
-                        a.end = instance.endPoint.position;
-                        instance.completeHearts.Add(a);
+                        a.end = endPoint.position;
+                        completeHearts.Add(a);
                         a.timer = (2.25f + additionalHeartLength);
                         a.isWaiting = false;
                         //a.goDown();
 
-                        instance.guyHearts.RemoveAt(0);
-                        instance.girlHearts.RemoveAt(0);
+                        guyHearts.RemoveAt(0);
+                        girlHearts.RemoveAt(0);
                     }
 
-                    instance.currentHearts.RemoveAt(0);
-
-
-
-                    //for(int x = 0; x < lastCounter, x++)
-                    //{
-                        //Debug.LogWarning(2.25f + (additionalHearts * x));
-                        //instance.completeHearts[x].dropStart = instance.completeHearts[x].transform.position;
-                        
-                        //instance.completeHearts[x].timer = (2.25f + (additionalHearts * x));
-                        //instance.completeHearts[x].isWaiting = false;
-                    //}
-                    
-
-                    
-                    //instance.currentHearts.Clear();
+                    currentHearts.RemoveAt(0);
                 }),
             });
 
+            var lastCounter = currentHearts.Count > 0 ? currentHearts[0] : -1;
+            if (lastCounter == -1) return;
+
             for (int x = 0; x < lastCounter; x++)
             {
-                #region debug stuff
-                //Debug.LogWarning("Add: " + (2.75f + (additionalHearts * (x))));
-                //Debug.LogWarning("Pitch: " + (1f + (pitchHearts * (x))));
-                //Debug.LogWarning("x: " + x);
-                #endregion
                 var additionalHearts = 0.063f;
                 var a = x;
-
-                
 
                 BeatAction.New(instance, new List<BeatAction.Action>()
                 {
@@ -974,11 +933,11 @@ namespace HeavenStudio.Games
                         if(lastCounter == 1)
                         {
                             SoundByte.PlayOneShotGame("loveLab/bagHeartLast");
-                            instance.heartBox.DoScaledAnimationAsync("HeartBoxSquish");
+                            heartBox.DoScaledAnimationAsync("HeartBoxSquish");
                         }
                         else
                         {
-                            instance.bagHeartSound(a);
+                            bagHeartSound(a);
                         }
                     })
 
@@ -986,66 +945,69 @@ namespace HeavenStudio.Games
             }
         }
 
-        public static void onMiss(PlayerActionEvent caller)
+        public void onMiss(PlayerActionEvent caller = null)
         {
             //SoundByte.PlayOneShot("miss");
-            if (instance.hasMissed) return;
+            if (hasMissed) return;
 
-            instance.labGuyHead.DoScaledAnimationAsync("GuyIdleFace");
-            instance.hasShakenUp = false;
-            instance.hasMissed = true;
-            instance.hasStartedInterval = false;
+            labGuyHead.DoScaledAnimationAsync("GuyIdleFace");
+            hasShakenUp = false;
+            hasMissed = true;
+            hasStartedInterval = false;
 
-            foreach (LoveLabHearts bh in instance.guyHearts)
+            foreach (LoveLabHearts bh in guyHearts)
             {
                 bh.deadHeart();
             }
 
-            if (instance.girlHearts.Count != 0)
+            if (girlHearts.Count != 0)
             {
-                foreach (LoveLabHearts gh in instance.girlHearts)
+                foreach (LoveLabHearts gh in girlHearts)
                 {
                     gh.deadHeart();
                 }
             }
 
-            if (instance.reqHeartsContainer.Count > 0)
+            if (reqHeartsContainer.Count > 0)
             {
-                instance.reqHeartsContainer.RemoveAt(0);
+                reqHeartsContainer.RemoveAt(0);
             }
 
-            for (int i = 0; i < instance.currentHearts[0]; i++)
+            if (currentHearts.Count > 0)
             {
-                if (instance.guyHearts.Count != 0)
+                for (int i = 0; i < currentHearts[0]; i++)
                 {
-                    instance.guyHearts.RemoveAt(0);
+                    if (guyHearts.Count != 0)
+                    {
+                        guyHearts.RemoveAt(0);
+                    }
+
+                    if (girlHearts.Count != 0)
+                    {
+                        girlHearts.RemoveAt(0);
+                    }
                 }
 
-                if (instance.girlHearts.Count != 0)
-                {
-                    instance.girlHearts.RemoveAt(0);
-                }
+                currentHearts.RemoveAt(0);
             }
-
-            instance.currentHearts.RemoveAt(0);
         }
 
-        public static void onCatchMiss(PlayerActionEvent caller)
+        public void onCatchMiss(PlayerActionEvent caller)
         {
-            if (!instance.isHoldingFlask)
+            if (!isHoldingFlask)
             {
-                instance.release.CanHit(false);
+                release.CanHit(false);
             }
-            instance.boyFlaskBreak.Play();
-            LoveLab.instance.girlInstantiatedFlask[0].GetComponent<LoveLabFlask>().destroyThisObj();
+            boyFlaskBreak.Play();
+            girlInstantiatedFlask[0].GetComponent<LoveLabFlask>().destroyThisObj();
             onMiss(caller);
         }
 
-        public static void onMissWhenHold(PlayerActionEvent caller)
+        public void onMissWhenHold(PlayerActionEvent caller)
         {
             Debug.LogWarning(caller.timer);
-            instance.reqHeartsContainer.RemoveAt(0);
-            LoveLabFlask spawnedFlask = Instantiate(instance.labGirlFlaskObj, instance.transform).AddComponent<LoveLabFlask>();
+            reqHeartsContainer.RemoveAt(0);
+            LoveLabFlask spawnedFlask = Instantiate(labGirlFlaskObj, transform).AddComponent<LoveLabFlask>();
             spawnedFlask.onMissWhenHold((caller.startBeat + caller.timer) + 1f);
         }
 
@@ -1058,7 +1020,7 @@ namespace HeavenStudio.Games
         {
             var pitchHearts = 0.14f;
             SoundByte.PlayOneShotGame("loveLab/bagHeart", pitch: 1f + (pitchHearts * x));
-            instance.heartBox.DoScaledAnimationAsync("HeartBoxSquish");
+            heartBox.DoScaledAnimationAsync("HeartBoxSquish");
         }
 
         public void onDownFlaskCustom() //for the player not autoplay
@@ -1067,21 +1029,21 @@ namespace HeavenStudio.Games
             labGirlArm.DoScaledAnimationAsync("ShakeFlaskDown");
         }
 
-        public void spawnFlaskForGirlCustom(double beat, int flaskHeart) //boy to girl
+        public void spawnFlaskForGirlCustom(double beat, int flaskHeart, double flaskInterval) //boy to girl
         {
-            //flaskMatForBoy.SetColor("_ColorAlpha", instance.boyLiquidColor);
-            LoveLabFlask spawnedFlask = Instantiate(labFlaskObj, instance.transform).AddComponent<LoveLabFlask>();
+            //flaskMatForBoy.SetColor("_ColorAlpha", boyLiquidColor);
+            LoveLabFlask spawnedFlask = Instantiate(labFlaskObj, transform).AddComponent<LoveLabFlask>();
 
             switch (flaskHeart)
             {
                 case 0:
-                    spawnedFlask.girlArc(beat, flaskArcToGirl[0]);
+                    spawnedFlask.girlArc(beat, flaskArcToGirl[0], flaskInterval);
                     break;
                 case 1:
-                    spawnedFlask.girlArc(beat, flaskArcToGirl[1]);
+                    spawnedFlask.girlArc(beat, flaskArcToGirl[1], flaskInterval);
                     break;
                 case 2:
-                    spawnedFlask.girlArc(beat, flaskArcToGirl[2]);
+                    spawnedFlask.girlArc(beat, flaskArcToGirl[2], flaskInterval);
                     break;
             }
 
@@ -1090,7 +1052,7 @@ namespace HeavenStudio.Games
 
         public void spawnCustomFlask(double beat, string reqArc) //wall to boy
         {
-            LoveLabFlask spawnedFlask = Instantiate(labFlaskObj, instance.transform).AddComponent<LoveLabFlask>();
+            LoveLabFlask spawnedFlask = Instantiate(labFlaskObj, transform).AddComponent<LoveLabFlask>();
             spawnedFlask.customShakes(beat, reqArc);
         }
 
@@ -1098,49 +1060,7 @@ namespace HeavenStudio.Games
         {
             canCloudsMove = canMove;
         }
-        #endregion
-
-        //make a smooth transition to day to sunset and vice versa
-
-        /*
-         * would be nice if there were visual warnings for the next game
-         * head of dj and student for the hearts
-         * balls of munchy monk
-         * fruits for catchy tune
-         * balls for double date
-         * pots for karate man
-         * shuttlecock for air rally
-         * farmer head for second contact
-         * etc.
-         * 
-         */
-
-        /* generic's girl blush logic
-         * during shake down girl will look at guy
-         * before the end of the shakedown (.5f) girl goes idle look 
-         * 
-         * original girl blush logic
-         * random blushes and/or force a look blush
-         */
-
-        /*
-         * particle effect
-         * when someone grabs a flask do an arc with either 2/3/4 hearts popping both left and right
-         * 
-         */
-
-        /*
-         * box guy
-         * sleeves are not tinted for sunset
-         * 
-         */
-
-        /*
-         * bops
-         * check for offbeat bops (auto)
-         * beat 0 weird bug
-         */
-
+        
         public void girlBlush(bool autoBlush)
         {
             if (!autoBlush)
@@ -1203,14 +1123,15 @@ namespace HeavenStudio.Games
             girlLiquidColor = liquid2Col;
             weirdLiquidColor = liquid3Col;
 
-            LoveLab.instance.flaskMatForBoy.SetColor("_ColorAlpha", boyLiquidColor);
-            LoveLab.instance.flaskMatForGirl.SetColor("_ColorAlpha", girlLiquidColor);
-            LoveLab.instance.flaskMatForWeird.SetColor("_ColorAlpha", weirdLiquidColor);
+            flaskMatForBoy.SetColor("_ColorAlpha", boyLiquidColor);
+            flaskMatForGirl.SetColor("_ColorAlpha", girlLiquidColor);
+            flaskMatForWeird.SetColor("_ColorAlpha", weirdLiquidColor);
         }
 
         public override void OnGameSwitch(double beat)
         {
             preChecks(beat);
+            DoInactiveInterval(beat);
             //PersistObjects(beat);
         }
 
@@ -1277,26 +1198,22 @@ namespace HeavenStudio.Games
 
 
 
-        #region IA
-        const int IA_AltPress = IAMAXCAT;
+        const int IAAltPressCat = IAMAXCAT + 1;
+        const int IAAltReleaseCat = IAMAXCAT + 2;
 
-        public static PlayerInput.InputAction IA_FlickPress =
-            new("NtrLabFlickPress", new int[] { IAPressCat, IAFlickCat, IAPressCat },
-            IA_PadBasicPress, IA_TouchBasicPressing, IA_BatonBasicPress);
         public static PlayerInput.InputAction IA_FlickRelease =
             new("NtrLabFlickRelease", new int[] { IAReleaseCat, IAFlickCat, IAReleaseCat },
             IA_PadBasicRelease, IA_TouchFlick, IA_BatonBasicRelease);
         public static PlayerInput.InputAction IA_DPadRelease =
-            new("NtrLabDPadRelease", new int[] { IAReleaseCat, IAFlickCat, IAReleaseCat },
+            new("NtrLabDPadRelease", new int[] { IAAltReleaseCat, IAFlickCat, IAReleaseCat },
                 IA_PadAnyUp, IA_TouchDpadRelease, IA_BatonBasicRelease);
         public static PlayerInput.InputAction IA_DPadPressing =
-            new("NtrLabDPadPress", new int[] { IAReleaseCat, IAFlickCat, IAReleaseCat },
+            new("NtrLabDPadPress", new int[] { IAAltPressCat, IAFlickCat, IAReleaseCat },
                 IA_PadAnyPressingDown, IA_TouchDpadPress, IA_BatonBasicPressing);
 
         protected static bool IA_TouchNrmPress(out double dt)
         {
-            return PlayerInput.GetTouchDown(InputController.ActionsTouch.Tap, out dt)
-                && !instance.IsExpectingInputNow(InputAction_Alt);
+            return PlayerInput.GetTouchDown(InputController.ActionsTouch.Tap, out dt);
         }
 
         protected static bool IA_PadAnyDown(out double dt)
@@ -1324,78 +1241,6 @@ namespace HeavenStudio.Games
                     || PlayerInput.GetPadDown(InputController.ActionsPad.Left)
                     || PlayerInput.GetPadDown(InputController.ActionsPad.Right);
         }
-
-
-        protected static bool IA_PadNorthDown(out double dt)
-        {
-            dt = 0;
-            return PlayerInput.GetPadDown(InputController.ActionsPad.Up);
-        }
-
-        protected static bool IA_PadSouthDown(out double dt)
-        {
-            dt = 0;
-            return PlayerInput.GetPadDown(InputController.ActionsPad.Down);
-        }
-
-        //make a down and up stuff for shake
-
-        protected static bool IA_PadAltPress(out double dt)
-        {
-            return PlayerInput.GetPadDown(InputController.ActionsPad.South, out dt);
-        }
-        protected static bool IA_BatonAltPress(out double dt)
-        {
-            return PlayerInput.GetSqueezeDown(out dt);
-        }
-        protected static bool IA_TouchAltPress(out double dt)
-        {
-            return PlayerInput.GetTouchDown(InputController.ActionsTouch.Tap, out dt)
-                && instance.IsExpectingInputNow(InputAction_Alt);
-        }
-
-        protected static bool IA_PadAltPressing(out double dt)
-        {
-            dt = 0;
-            return PlayerInput.GetPad(InputController.ActionsPad.South);
-        }
-        protected static bool IA_TouchAltPressing(out double dt)
-        {
-            dt = 0;
-            return PlayerInput.GetTouch(InputController.ActionsTouch.Tap);
-        }
-        protected static bool IA_BatonAltPressing(out double dt)
-        {
-            dt = 0;
-            return PlayerInput.GetBaton(InputController.ActionsBaton.Face);
-        }
-
-        public static PlayerInput.InputAction InputAction_TouchRelease =
-            new("NtrLabRelease", new int[] { IAEmptyCat, IAReleaseCat, IAEmptyCat },
-            IA_Empty, IA_TouchBasicRelease, IA_Empty);
-
-
-        public static PlayerInput.InputAction InputAction_Nrm =
-            new("NtrLabAlt", new int[] { IAPressCat, IAPressCat, IAPressCat },
-            IA_PadBasicPress, IA_TouchNrmPress, IA_BatonBasicPress);
-        public static PlayerInput.InputAction InputAction_Alt =
-            new("NtrLabAlt", new int[] { IA_AltPress, IA_AltPress, IA_AltPress },
-            IA_PadAltPress, IA_TouchAltPress, IA_BatonAltPress);
-        public static PlayerInput.InputAction InputAction_AltPressing =
-            new("NtrLabAlt", new int[] { IA_AltPress, IA_AltPress, IA_AltPress },
-                IA_PadAltPressing, IA_TouchAltPressing, IA_BatonAltPressing);
-        public static PlayerInput.InputAction InputAction_DPad =
-            new("NtrLabAlt", new int[] { IAPressCat, IAPressCat, IAPressCat },
-                IA_PadAnyDown, IA_TouchNrmPress, IA_BatonBasicPress);
-
-        public static PlayerInput.InputAction InputAction_DPadNorth =
-            new("NtrLabAlt", new int[] { IAPressCat, IAPressCat, IAPressCat },
-                IA_PadNorthDown, IA_TouchNrmPress, IA_BatonBasicPress);
-        public static PlayerInput.InputAction InputAction_DPadSouth =
-            new("NtrLabAlt", new int[] { IAPressCat, IAPressCat, IAPressCat },
-                IA_PadSouthDown, IA_TouchNrmPress, IA_BatonBasicPress);
-
-        #endregion
 
         private void Awake()
         {
@@ -1445,7 +1290,6 @@ namespace HeavenStudio.Games
             return default(SuperCurveObject.Path);
         }
 
-        #region Spawn Flasks
         public enum flaskHeart
         {
             oneHeart,
@@ -1467,37 +1311,25 @@ namespace HeavenStudio.Games
             public int heartCounter;
         }
 
-        public void spawnFlaskForWeird(double beat)
+        public void spawnFlaskForWeird()
         {
-            LoveLabFlask spawnedFlask = Instantiate(labGirlFlaskObj, instance.transform).AddComponent<LoveLabFlask>();
+            double beat = conductor.unswungSongPositionInBeatsAsDouble;
+
+            LoveLabFlask spawnedFlask = Instantiate(labGirlFlaskObj, transform).AddComponent<LoveLabFlask>();
             spawnedFlask.ForWeirdInit(beat + 1f);
             weirdInstantiatedFlask.Add(spawnedFlask.GetComponent<LoveLabFlask>());
         }
-        #endregion
+        
 
         private void Update()
         {
             var cond = Conductor.instance;
-            var songPos = cond.songPositionInBeatsAsDouble;
-
-            float normalizedBeat = Conductor.instance.GetPositionFromBeat(startBeat, 5f);
-
-            if (!cond.isPlaying)
-            {
-                preChecks(songPos);
-            }
-
+            var songPos = cond.unswungSongPositionInBeatsAsDouble;
+            
             if (cond.isPlaying && !cond.isPaused)
             {
                 if (queuedFlask.Count != 0)
                 {
-                    foreach (QueuedFlask flask in queuedFlask)
-                    {
-                        //switch (flask.type)
-                        //{
-                        //
-                        //}
-                    }
                     queuedFlask.Clear();
                 }
             }
@@ -1509,38 +1341,30 @@ namespace HeavenStudio.Games
                 }
             }
 
-            #region whiff grab
             if (PlayerInput.GetIsAction(InputAction_BasicPress) && !IsExpectingInputNow(InputAction_BasicPress) && !isHolding)
             {
-                Debug.LogWarning("whiff");
                 labGirlArm.DoScaledAnimationAsync("WhiffGrab");
                 
                 isHolding = true;
-
-                
             }
             else if (PlayerInput.GetIsAction(InputAction_BasicRelease) && (!IsExpectingInputNow(InputAction_BasicRelease)))
             {
                 labGirlArm.DoScaledAnimationAsync("ArmIdle");
                 if (isHoldingFlask) 
                 {
-                    instance.hasShakenUp = false;
-                    LoveLabFlask spawnedFlask = Instantiate(instance.labGirlFlaskObj, instance.transform).AddComponent<LoveLabFlask>();
+                    hasShakenUp = false;
+                    LoveLabFlask spawnedFlask = Instantiate(labGirlFlaskObj, transform).AddComponent<LoveLabFlask>();
                     spawnedFlask.onMissWhenHold(songPos + 1f);
-                    if (instance.release != null)
+                    if (release != null)
                     {
-                        instance.release.CanHit(false);
+                        release.CanHit(false);
                     }
+                    onMiss();
                 }
                 isHolding = false;
                 isHoldingFlask = false;
             }
 
-            #endregion
-
-                
-
-            #region control up and down
             if (PlayerInput.GetIsAction(IA_DPadPressing) && PlayerInput.GetIsAction(InputAction_BasicPressing))
             {
                 onWhiffUp();
@@ -1549,13 +1373,12 @@ namespace HeavenStudio.Games
             {
                 onWhiffDown();
             }
-            #endregion
+            
 
             if (canCloudsMove) clouds.transform.position = Vector3.left * ((Time.realtimeSinceStartup * cloudSpeed) % cloudDistance);
             else clouds.transform.position = new Vector2(0, 0);
         }
 
-        #region Bops
         public void Bopping()
         {
             if (bopRight && labGuy.IsAnimationNotPlaying())
@@ -1616,9 +1439,8 @@ namespace HeavenStudio.Games
             }
         }
 
-        #endregion
+        
 
-        #region Box Guy
 
         public enum boxGuyAction
         {
@@ -1632,7 +1454,7 @@ namespace HeavenStudio.Games
         {
             Animator box;
 
-            if (!isDay)
+            if (currentTime == timeOfDay.Sunset)
             {
                 box = boxPerson;
             }
@@ -1662,9 +1484,8 @@ namespace HeavenStudio.Games
         }
 
 
-        #endregion
+        
 
-        #region Lab Girl Actions
         public void onWhiffUp()
         {
             if (hasShakenUp) return;
@@ -1692,7 +1513,5 @@ namespace HeavenStudio.Games
             }
             labGirlArm.DoScaledAnimationAsync("WhiffDown", 0.75f);
         }
-
-        #endregion
     }
 }

@@ -158,15 +158,25 @@ namespace HeavenStudio.Games.Scripts_WorkingDough
                 currentState = State.Barely;
                 SoundByte.PlayOneShot("miss");
                 if (big)
-                {
-                    SoundByte.PlayOneShotGame("workingDough/bigPlayer");
-                    game.doughDudesPlayer.GetComponent<Animator>().DoScaledAnimationAsync("BigDoughJump", 0.5f);
-                }
-                else
-                {
-                    SoundByte.PlayOneShotGame("workingDough/smallPlayer");
-                    game.doughDudesPlayer.GetComponent<Animator>().DoScaledAnimationAsync("SmallDoughJump", 0.5f);
-                }
+            {
+                SoundByte.PlayOneShotGame("workingDough/bigPlayer");
+                SoundByte.PlayOneShotGame("workingDough/hitBigPlayer");
+                game.playerBigAnim.DoScaledAnimationAsync("bun_00_bun_jump_L", 0.5f);
+                
+                if (!game.playerSmallAnim.GetCurrentAnimatorStateInfo(0).IsName("bun_00_bun_wait_S"))
+                    game.playerSmallAnim.DoScaledAnimationAsync("bun_00_bun_wait_S", 0.5f);
+                
+                WorkingDough.instance.FlashColor(beat, color1, color2);
+            }
+            else
+            {
+                SoundByte.PlayOneShotGame("workingDough/smallPlayer");
+                SoundByte.PlayOneShotGame("workingDough/hitSmallPlayer");
+                game.playerSmallAnim.DoScaledAnimationAsync("bun_00_bun_jump_S", 0.5f);
+                
+                if (!game.playerBigAnim.GetCurrentAnimatorStateInfo(0).IsName("bun_00_bun_wait_L"))
+                    game.playerBigAnim.DoScaledAnimationAsync("bun_00_bun_wait_L", 0.5f);
+            }
                 Update();
                 return;
             }
@@ -175,21 +185,22 @@ namespace HeavenStudio.Games.Scripts_WorkingDough
             {
                 SoundByte.PlayOneShotGame("workingDough/bigPlayer");
                 SoundByte.PlayOneShotGame("workingDough/hitBigPlayer");
-                game.doughDudesPlayer.GetComponent<Animator>().DoScaledAnimationAsync("BigDoughJump", 0.5f);
+                game.playerBigAnim.DoScaledAnimationAsync("bun_00_bun_jump_L", 0.5f);
+                    game.playerSmallAnim.DoScaledAnimationAsync("bun_00_bun_wait_S", 0.5f);
                 WorkingDough.instance.FlashColor(beat, color1, color2);
             }
             else
             {
                 SoundByte.PlayOneShotGame("workingDough/smallPlayer");
                 SoundByte.PlayOneShotGame("workingDough/hitSmallPlayer");
-                game.doughDudesPlayer.GetComponent<Animator>().DoScaledAnimationAsync("SmallDoughJump", 0.5f);
+                game.playerSmallAnim.DoScaledAnimationAsync("bun_00_bun_jump_S", 0.5f);
+                    game.playerBigAnim.DoScaledAnimationAsync("bun_00_bun_wait_L", 0.5f);
             }
             bool hasGandw = false;
             if (gandw != null) hasGandw = gandw.activeSelf;
             BeatAction.New(game, new List<BeatAction.Action>()
             {
-                new BeatAction.Action(beat + 0.9, delegate { game.arrowSRRightPlayer.sprite = game.redArrowSprite; }),
-                new BeatAction.Action(beat + 1, delegate { game.arrowSRRightPlayer.sprite = game.whiteArrowSprite; }),
+                new BeatAction.Action(beat + 0.9, delegate { game.arrowAnimRightPlayer.Play("bun_00_arrow_out", 0, 0); }),
                 new BeatAction.Action(beat + 2, delegate { game.SpawnBGBall(beat + 2f, big, hasGandw); }),
             });
             Update();
@@ -214,7 +225,8 @@ namespace HeavenStudio.Games.Scripts_WorkingDough
             {
                 currentState = State.Weak;
                 startBeat = beat;
-                game.doughDudesPlayer.GetComponent<Animator>().DoScaledAnimationAsync("SmallDoughJump", 0.5f);
+                game.playerSmallAnim.DoScaledAnimationAsync("bun_00_bun_jump_S", 0.5f);
+                    game.playerBigAnim.DoScaledAnimationAsync("bun_00_bun_wait_L", 0.5f);
                 SoundByte.PlayOneShotGame("workingDough/smallPlayer");
                 SoundByte.PlayOneShotGame("workingDough/tooBig");
                 Update();
@@ -222,12 +234,14 @@ namespace HeavenStudio.Games.Scripts_WorkingDough
             else
             {
                 GameObject.Instantiate(game.breakParticleEffect, game.breakParticleHolder);
-                game.doughDudesPlayer.GetComponent<Animator>().DoScaledAnimationAsync("BigDoughJump", 0.5f);
+                game.playerBigAnim.DoScaledAnimationAsync("bun_00_bun_jump_L", 0.5f);
+                    game.playerSmallAnim.DoScaledAnimationAsync("bun_00_bun_wait_S", 0.5f);
                 SoundByte.PlayOneShotGame("workingDough/bigPlayer");
                 SoundByte.PlayOneShotGame("workingDough/tooSmall");
                 Destroy(gameObject);
             }
             game.ScoreMiss();
+            game.TriggerGandWMiss(); //Ok
         }
 
         private void Miss(PlayerActionEvent caller)
@@ -242,6 +256,7 @@ namespace HeavenStudio.Games.Scripts_WorkingDough
                 new BeatAction.Action(beat + 0.25f, delegate { SoundByte.PlayOneShotGame("workingDough/BallMiss"); }),
                 new BeatAction.Action(beat + 0.35f, delegate { game.missImpact.SetActive(false); }),
             });
+            game.TriggerGandWMiss();
         }
 
         private void Empty(PlayerActionEvent caller) { }

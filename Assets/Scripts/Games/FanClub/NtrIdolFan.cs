@@ -27,6 +27,7 @@ namespace HeavenStudio.Games.Scripts_FanClub
         bool stopBeat = false;
         bool stopCharge = false;
         bool hasJumped = false;
+        bool isHolding = false;
 
         double clappingStartTime = double.MinValue;
 
@@ -56,23 +57,31 @@ namespace HeavenStudio.Games.Scripts_FanClub
         {
             bool auto = GameManager.instance.Autoplay;
             ClapStart(state < 1f && state > -1f, false, auto ? 0.1f : 0f);
+
+            isHolding = true;
         }
 
         public void ChargeClapJust(PlayerActionEvent caller, float state)
         {
             bool auto = GameManager.instance.Autoplay;
             ClapStart(state < 1f && state > -1f, true, auto ? 1f : 0f);
+
+            isHolding = true;
         }
 
         public void LongClapJust(PlayerActionEvent caller, float state)
         {
             bool auto = GameManager.instance.Autoplay;
             ClapStart(state < 1f && state > -1f, false, auto ? 1f : 0f);
+
+            isHolding = true;
         }
 
         public void JumpJust(PlayerActionEvent caller, float state)
         {
             JumpStart(state < 1f && state > -1f);
+
+            isHolding = false;
         }
 
         public void ClapThrough(PlayerActionEvent caller) {
@@ -112,9 +121,10 @@ namespace HeavenStudio.Games.Scripts_FanClub
                             ClapStart(false);
                             FanClub.instance.ScoreMiss();
                         }
+                        isHolding = true;
                     }
                 }
-                if (PlayerInput.GetIsAction(FanClub.InputAction_BasicPressing))
+                if (PlayerInput.GetIsAction(FanClub.InputAction_BasicPressing) && isHolding)
                 {
                     if (clappingStartTime != double.MinValue && cond.unswungSongPositionInBeatsAsDouble > clappingStartTime + 2f && !stopCharge)
                     {
@@ -123,7 +133,7 @@ namespace HeavenStudio.Games.Scripts_FanClub
                         stopCharge = true;
                     }
                 }
-                if (PlayerInput.GetIsAction(FanClub.InputAction_FlickRelease))
+                if (PlayerInput.GetIsAction(FanClub.InputAction_FlickRelease) && isHolding)
                 {
                     float nonTouchDelay = 2f;
                     if (PlayerInput.CurrentControlStyle == InputController.ControlStyles.Touch)
@@ -151,6 +161,7 @@ namespace HeavenStudio.Games.Scripts_FanClub
                         stopBeat = false;
                         clappingStartTime = double.MinValue;
                     }
+                    isHolding = false;
                 }
                 if (PlayerInput.GetIsAction(FanClub.InputAction_TouchRelease))
                 {

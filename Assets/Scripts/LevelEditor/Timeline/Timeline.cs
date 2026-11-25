@@ -83,40 +83,6 @@ namespace HeavenStudio.Editor.Track
             public bool musicVolume { get { return currentState == State.MusicVolume; } }
             public bool chartSection { get { return currentState == State.ChartSection; } }
 
-            public void SetState(bool selected, bool tempoChange, bool musicVolume)
-            {
-                if (Conductor.instance.NotStopped()) return;
-
-                if (selected)
-                {
-                    currentState = State.Selection;
-                    instance.SelectionsBTN.transform.GetChild(0).GetComponent<Image>().color = Color.white;
-                    instance.SelectionsBTN.GetComponent<TabButton>().Invoke("OnClick", 0);
-                    TimelineCover(true, false);
-                }
-                else
-                    instance.SelectionsBTN.transform.GetChild(0).GetComponent<Image>().color = Color.gray;
-                if (tempoChange)
-                {
-                    currentState = State.TempoChange;
-                    instance.TempoChangeBTN.transform.GetChild(0).GetComponent<Image>().color = Color.white;
-                    instance.TempoChangeBTN.GetComponent<TabButton>().Invoke("OnClick", 0);
-                    TimelineCover(false, true);
-                }
-                else
-                    instance.TempoChangeBTN.transform.GetChild(0).GetComponent<Image>().color = Color.gray;
-                if (musicVolume)
-                {
-                    currentState = State.MusicVolume;
-                    instance.MusicVolumeBTN.transform.GetChild(0).GetComponent<Image>().color = Color.white;
-                    instance.MusicVolumeBTN.GetComponent<TabButton>().Invoke("OnClick", 0);
-                    TimelineCover(false, true);
-                }
-                else
-                    instance.MusicVolumeBTN.transform.GetChild(0).GetComponent<Image>().color = Color.gray;
-
-            }
-
             public void SetState(State state)
             {
                 if (Conductor.instance.NotStopped()) return;
@@ -170,6 +136,9 @@ namespace HeavenStudio.Editor.Track
                 }
                 else
                     instance.ChartSectionBTN.transform.GetChild(0).GetComponent<Image>().color = Color.gray;
+
+
+                if (SpecialTimeline.instance != null) SpecialTimeline.instance.FixObjectsVisibility();
             }
 
             public void TimelineCover(bool coverTop, bool coverBottom)
@@ -662,7 +631,7 @@ namespace HeavenStudio.Editor.Track
 
             SliderControl();
 
-            if ((Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1)) && !cond.isPlaying && Editor.MouseInRectTransform(TimelineGridSelect))
+            if ((Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1)) && !cond.isPlaying && Editor.MouseInRectTransform(TimelineGridSelect) && Editor.instance.isShortcutsEnabled)
             {
                 if (canMovePlayback)
                 {
@@ -776,7 +745,7 @@ namespace HeavenStudio.Editor.Track
                 {
                     if (Conductor.instance.isPaused)
                     {
-                        Play(false, Conductor.instance.songPositionInBeats);
+                        Play(false, Conductor.instance.songPositionInBeats, true);
                     }
                     else
                     {
@@ -790,15 +759,24 @@ namespace HeavenStudio.Editor.Track
             }
         }
 
-        public void Play(bool fromStart, double time)
+        public void Play(bool fromStart, double time, bool unpause = false)
         {
+            if (unpause)
+            {
+                GameManager.instance.Play(time, 0);
+            }
+            else {
             GameManager.instance.SafePlay(time, 0, false);
+            }
+
             if (!Conductor.instance.isPaused)
             {
                 TimelineSongPosLineRef.transform.localPosition = new Vector3((float)time * PixelsPerBeat, TimelineSongPosLineRef.transform.localPosition.y);
             }
 
             wholeTimelineCover.enabled = true;
+
+            if (EventParameterManager.instance.active) EventParameterManager.instance.Disable();
 
             SetTimeButtonColors(false, true, true);
         }
@@ -1001,7 +979,7 @@ namespace HeavenStudio.Editor.Track
                                 EntityTypes.Float floatVal => floatVal.val,
                                 EntityTypes.Button buttonVal => buttonVal.defaultLabel,
                                 EntityTypes.Dropdown ddVal => new EntityTypes.DropdownObj(ddVal),
-                                EntityTypes.Asset assVal => GameManager.instance.ImportedSprites.Keys.FirstOrDefault() ?? "",
+                                EntityTypes.Asset => "", // gets set when the block is modified
                                 EntityTypes.NoteSampleDropdown noteDDVal => (int)noteDDVal.defaultValue,
                                 _ => ep[i].parameter,
                             };

@@ -58,10 +58,9 @@ namespace HeavenStudio.Games.Loaders
                 {
                     parameters = new List<Param>()
                     {
-                        new Param("set", true, "Double Speed", "Toggle if the game should use the legacy, faster cue speed.")
+                        new Param("set", true, "Double Speed", "Toggle if the game should use the original faster cue speed.")
                     },
                     defaultLength = 0.5f,
-                    advanced = true,
                 },
                 new GameAction("puddingNail", "Pudding Nail (Legacy)")
                 {

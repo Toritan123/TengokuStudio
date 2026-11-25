@@ -498,12 +498,12 @@ namespace HeavenStudio.Games
 
         public static void HaiSound(double beat)
         {
-            SoundByte.PlayOneShot("games/lockstep/hai", beat, 1, 1, false, null, 0.018);
+            SoundByte.PlayOneShotGame("lockstep/hai", beat, 1, 1, false, false, 0.018);
         }
 
         public static void HoSound(double beat)
         {
-            SoundByte.PlayOneShot("games/lockstep/ho", beat, 1, 1, false, null, 0.015);
+            SoundByte.PlayOneShotGame("lockstep/ho", beat, 1, 1, false, false, 0.015);
         }
 
         public static void OnbeatSwitchSound(double beat, int hais, bool sound)

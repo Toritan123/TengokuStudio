@@ -40,7 +40,7 @@ namespace HeavenStudio.InputSystem
 #endif
         private static readonly KeyCode[] keyCodes = Enum.GetValues(typeof(KeyCode))
         .Cast<KeyCode>()
-        .Where(k => ((int)k < (int)KeyCode.Mouse0))
+        .Where(k => ((int)k < (int)KeyCode.JoystickButton0))
         .ToArray();
 
         static ControlBindings defaultBindings
@@ -55,17 +55,37 @@ namespace HeavenStudio.InputSystem
                         (int)KeyCode.S,
                         (int)KeyCode.A,
                         (int)KeyCode.D,
+                        (int)KeyCode.K,
+                        (int)KeyCode.J,
+                        (int)KeyCode.I,
+                        (int)KeyCode.U,
+                        (int)KeyCode.E,
+                        (int)KeyCode.O,
+                        (int)KeyCode.Escape,
+                    },
+                    Baton = new int[]
+                    {
+                        (int)KeyCode.W,
+                        (int)KeyCode.S,
+                        (int)KeyCode.A,
+                        (int)KeyCode.D,
                         (int)KeyCode.J,
                         (int)KeyCode.K,
                         (int)KeyCode.U,
                         (int)KeyCode.I,
                         (int)KeyCode.E,
-                        (int)KeyCode.O,
                         (int)KeyCode.Escape,
                     },
                     PointerSensitivity = 3,
                 };
             }
+        }
+
+        private int[] GetBindings(ControlStyles style)
+        {
+            return style == ControlStyles.Baton
+                ? currentBindings.Baton
+                : currentBindings.Pad;
         }
 
         InputDirection hatDirectionCurrent;
@@ -93,7 +113,7 @@ namespace HeavenStudio.InputSystem
 
         public override string[] GetButtonNames()
         {
-            string[] names = new string[(int)KeyCode.Mouse0];
+            string[] names = new string[(int)KeyCode.JoystickButton0];
             for (int i = 0; i < keyCodes.Length; i++)
             {
                 names[(int)keyCodes[i]] = keyCodes[i].ToString();
@@ -155,7 +175,7 @@ namespace HeavenStudio.InputSystem
         {
             if (Input.anyKeyDown)
             {
-                for (KeyCode i = keyCodes[1]; i <= KeyCode.Menu; i++)
+                for (KeyCode i = keyCodes[1]; i <= KeyCode.JoystickButton0; i++)
                 {
                     if (Input.GetKeyDown(i))
                         return (int)i;
@@ -166,9 +186,11 @@ namespace HeavenStudio.InputSystem
 
         public override int GetLastActionDown()
         {
-            for (int i = 0; i < currentBindings.Pad.Length; i++)
+            var bindings = GetBindings(PlayerInput.CurrentControlStyle);
+
+            for (int i = 0; i < bindings.Length; i++)
             {
-                if (Input.GetKeyDown((KeyCode)currentBindings.Pad[i]))
+                if (Input.GetKeyDown((KeyCode)bindings[i]))
                     return i;
             }
             return -1;
@@ -176,22 +198,28 @@ namespace HeavenStudio.InputSystem
 
         public override bool GetAction(ControlStyles style, int button)
         {
+            var bindings = GetBindings(style);
+
             if (button < 0) return false;
-            return Input.GetKey((KeyCode)currentBindings.Pad[button]);
+            return Input.GetKey((KeyCode)bindings[button]);
         }
 
         public override bool GetActionDown(ControlStyles style, int button, out double dt)
         {
             dt = 0;
+            var bindings = GetBindings(style);
+
             if (button < 0) return false;
-            return Input.GetKeyDown((KeyCode)currentBindings.Pad[button]);
+            return Input.GetKeyDown((KeyCode)bindings[button]);
         }
 
         public override bool GetActionUp(ControlStyles style, int button, out double dt)
         {
             dt = 0;
+            var bindings = GetBindings(style);
+            
             if (button < 0) return false;
-            return Input.GetKeyUp((KeyCode)currentBindings.Pad[button]);
+            return Input.GetKeyUp((KeyCode)bindings[button]);
         }
 
         public override float GetAxis(InputAxis axis)
@@ -247,7 +275,7 @@ namespace HeavenStudio.InputSystem
 
         public override bool GetCurrentStyleSupported()
         {
-            return PlayerInput.CurrentControlStyle is ControlStyles.Pad; // or ControlStyles.Baton
+            return PlayerInput.CurrentControlStyle is ControlStyles.Pad or ControlStyles.Baton;
         }
 
         public override ControlStyles GetDefaultStyle()
@@ -283,6 +311,10 @@ namespace HeavenStudio.InputSystem
         public override bool GetPointerLeftRight()
         {
             return false;
+        }
+
+        public override void Rumble(float seconds = 0.1F)
+        {
         }
     }
 }

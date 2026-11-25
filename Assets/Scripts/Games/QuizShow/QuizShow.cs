@@ -116,7 +116,7 @@ namespace HeavenStudio.Games.Loaders
                     }
                 }
             },
-            new List<string>() {"agb", "repeat"},
+            new List<string>() {"agb", "repeat", "endless"},
             "agbquiz", "en",
             new List<string>() {},
             chronologicalSortKey: 19
@@ -365,7 +365,7 @@ namespace HeavenStudio.Games
                     buttonEntities.Add(new RiqEntity(new RiqEntityData()
                     {
                         beat = spawnBeat,
-                        datamodel = dpad ? "dPad" : "aButton"
+                        datamodel = dpad ? "quizShow/dPad" : "quizShow/aButton"
                     }));
                 }
             }
@@ -397,7 +397,7 @@ namespace HeavenStudio.Games
                     buttonEntities.Add(new RiqEntity(new RiqEntityData()
                     {
                         beat = spawnBeat,
-                        datamodel = dpad ? "dPad" : "aButton"
+                        datamodel = dpad ? "quizShow/dPad" : "quizShow/aButton"
                     }));
                     pressAmount--;
                 }
@@ -772,7 +772,7 @@ namespace HeavenStudio.Games
             }
             else
             {
-                ScoreMiss();
+                if (gameManager.canInput) ScoreMiss();
                 SoundByte.PlayOneShotGame("quizShow/incorrect");
                 contesteeHead.Play("ContesteeSad", -1, 0);
                 hostHead.Play("HostSad", -1, 0);

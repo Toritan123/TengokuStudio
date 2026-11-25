@@ -807,7 +807,7 @@ namespace HeavenStudio.Games.Scripts_KarateMan
                 ItemHitEffect(straight);
                 status = FlyStatus.Hit;
                 KarateMan.instance.SeriousBGA.DoScaledAnimationAsync("SeriousHit", 0.5f);
-                KarateMan.instance.Nori.DoHit();
+                KarateMan.instance.Nori.DoHit(startBeat);
             }
         }
 
@@ -902,7 +902,7 @@ namespace HeavenStudio.Games.Scripts_KarateMan
             else
             {
                 ItemHitEffect();
-                KarateMan.instance.Nori.DoHit();
+                KarateMan.instance.Nori.DoHit(startBeat);
             }
         }
 
@@ -990,7 +990,7 @@ namespace HeavenStudio.Games.Scripts_KarateMan
             {
                 DoHitExpression(startBeat + 1.5f);
                 ItemHitEffect();
-                KarateMan.instance.Nori.DoHit();
+                KarateMan.instance.Nori.DoHit(startBeat);
             }
         }
 
@@ -1078,7 +1078,7 @@ namespace HeavenStudio.Games.Scripts_KarateMan
                 joe.StartKickCharge(startBeat + 1.25f);
                 ItemHitEffect();
                 status = FlyStatus.Hit;
-                KarateMan.instance.Nori.DoHit();
+                KarateMan.instance.Nori.DoHit(startBeat);
             }
         }
 
@@ -1148,7 +1148,7 @@ namespace HeavenStudio.Games.Scripts_KarateMan
                 CurrentCurve = ItemCurves[7];
                 startBeat = Conductor.instance.unswungSongPositionInBeatsAsDouble;
                 curveTargetBeat = 3f;
-                KarateMan.instance.Nori.DoHit();
+                KarateMan.instance.Nori.DoHit(startBeat);
             }
         }
 

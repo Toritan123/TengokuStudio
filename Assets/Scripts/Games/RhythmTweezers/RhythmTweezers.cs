@@ -173,16 +173,16 @@ namespace HeavenStudio.Games.Loaders
                         new Param("colorG", RhythmTweezers.defaultBulbColor, "Lightbulb Color", "The default color of the Lightbulbs.")
                     }
                 },
-                new GameAction("altSmile", "Use Alt Smile")
+                new GameAction("altSmile", "Change Success Smile")
                 {
                     function = delegate
                     {
-                    var e = eventCaller.currentEntity; 
-		    RhythmTweezers.instance.SetSmile(e.beat, e["type"]);
+                        var e = eventCaller.currentEntity; 
+                        RhythmTweezers.instance.SetSmile(e.beat, e["type"]);
                     },
                     parameters = new List<Param>()
                     {
-                        new Param("type", RhythmTweezers.SmileType.Default, "Smile Type", "Set the smile to set for the vegatables."),
+                        new Param("type", RhythmTweezers.SmileType.Alt, "Smile Type", "Set the smile to set for the vegatables."),
                     },
                     defaultLength = 0.5f
                 },
@@ -249,7 +249,7 @@ namespace HeavenStudio.Games
         {
             Default,
             Tengoku,
-            Alt
+            Alt,
         }
 
         [Header("References")]
@@ -1024,13 +1024,17 @@ namespace HeavenStudio.Games
                 BackgroundColor(e.beat, e.length, e["colorA"], e["colorB"], e["ease"]);
             }
             var lastVeggieEvent = allEventsBeforeBeat.FindLast(x => x.datamodel == "rhythmTweezers/set veggie color");
-            if (lastVeggieEvent !=null)
+            if (lastVeggieEvent != null)
             {
                 var ex = lastVeggieEvent;
                 DefaultVeggieColor(ex.beat, ex["colorA"], ex["colorB"], ex["colorC"], ex["colorD"], ex["colorE"], ex["colorF"], ex["colorG"]);
             }
-            var allAltFaceEventsBeforeBeat = allEventsBeforeBeat.FindAll(x => x.datamodel == "rhythmTweezers/altSmile");
-            VegetableAnimator.SetBool("UseAltSmile", allAltFaceEventsBeforeBeat.Count % 2 == 1);
+            var lastAltSmileEvent = allEventsBeforeBeat.FindLast(x => x.datamodel == "rhythmTweezers/altSmile");
+            if (lastAltSmileEvent != null)
+            {
+                var es = lastAltSmileEvent;
+                SetSmile(es.beat, es["type"]);
+            }
         }
 
         public static void PreNoPeeking(double beat, float length, int type)
@@ -1132,17 +1136,19 @@ namespace HeavenStudio.Games
 	{
 		switch (type)
 		{
-			case 1:
-			VegetableAnimator.SetBool("UseAltSmile", false);
-			VegetableAnimator.SetBool("UseOpenEyeSmile", true);
+			case 1: // Tengoku-style
+                VegetableAnimator.SetBool("UseAltSmile", false);
+                VegetableAnimator.SetBool("UseOpenEyeSmile", true);
 			break;
-			case 2:
-			VegetableAnimator.SetBool("UseAltSmile", true);
-			VegetableAnimator.SetBool("UseOpenEyeSmile", false);
+
+			case 2: // Alt
+                VegetableAnimator.SetBool("UseAltSmile", true);
+                VegetableAnimator.SetBool("UseOpenEyeSmile", false);
 			break;
-			default:
-			VegetableAnimator.SetBool("UseAltSmile", false);
-			VegetableAnimator.SetBool("UseOpenEyeSmile", false);
+
+			default: // Megamix-style
+                VegetableAnimator.SetBool("UseAltSmile", false);
+                VegetableAnimator.SetBool("UseOpenEyeSmile", false);
 			break;
 		}
 	}

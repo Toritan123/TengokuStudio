@@ -484,5 +484,9 @@ namespace HeavenStudio.InputSystem
         {
             return rawPointerPos.x > ScreenBounds.x * 0.5f;
         }
+
+        public override void Rumble(float seconds = 0.1F)
+        {
+        }
     }
 }

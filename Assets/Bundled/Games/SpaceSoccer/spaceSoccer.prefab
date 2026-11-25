@@ -1087,6 +1087,7 @@ MonoBehaviour:
   player: 0
   ball: {fileID: 0}
   enterExitAnim: {fileID: 4407928154025069004}
+  canToe: 0
 --- !u!95 &2873739330524721184
 Animator:
   serializedVersion: 5
@@ -1384,6 +1385,7 @@ MonoBehaviour:
   player: 1
   ball: {fileID: 0}
   enterExitAnim: {fileID: 4619565792654871070}
+  canToe: 0
 --- !u!95 &8083744449129749329
 Animator:
   serializedVersion: 5
@@ -2687,7 +2689,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c20be2758e14cd748a9733a57db326fc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -109,6 +109,8 @@ namespace HeavenStudio.Games
         private NtrSynchrette player;
         private double _gameSwitchBeat = -1;
 
+        public bool isHolding = false;
+
         private void Awake()
         {
             instance = this;
@@ -139,15 +141,18 @@ namespace HeavenStudio.Games
                     SoundByte.PlayOneShotGame("splashdown/downPlayer");
                     player.GoDown();
                     ScoreMiss();
+                    isHolding = true;
                 }
 
-                if ((PlayerInput.GetIsAction(InputAction_BasicRelease) && !IsExpectingInputNow(InputAction_BasicRelease))
-                    || (PlayerInput.GetIsAction(InputAction_FlickRelease) && !IsExpectingInputNow(InputAction_FlickRelease)))
+                if ((PlayerInput.GetIsAction(InputAction_BasicRelease) && !IsExpectingInputNow(InputAction_BasicRelease) && isHolding)
+                    || (PlayerInput.GetIsAction(InputAction_FlickRelease) && !IsExpectingInputNow(InputAction_FlickRelease) && isHolding))
                 {
                     SoundByte.PlayOneShot("miss");
                     player.Appear(true);
                     SoundByte.PlayOneShotGame("splashdown/upPlayer");
                     ScoreMiss();
+
+                    isHolding = false;
                 }
             }
         }
@@ -226,6 +231,8 @@ namespace HeavenStudio.Games
                     synchrette.GoDown(false);
                     player.GoDown(false);
                 }
+
+            isHolding = true;
         }
 
         public void GoDown(double beat, float length)
@@ -383,6 +390,8 @@ namespace HeavenStudio.Games
             {
                 SoundByte.PlayOneShot("miss");
             }
+
+            isHolding = true;
         }
 
         private void JustUp1(PlayerActionEvent caller, float state)
@@ -395,6 +404,8 @@ namespace HeavenStudio.Games
                 return;
             }
             player.Appear(false, 1);
+
+            isHolding = false;
         }
 
         private void JustUp2(PlayerActionEvent caller, float state)
@@ -407,6 +418,8 @@ namespace HeavenStudio.Games
                 return;
             }
             player.Appear(false, 2);
+
+            isHolding = false;
         }
 
         private void JustUp3(PlayerActionEvent caller, float state)
@@ -419,6 +432,8 @@ namespace HeavenStudio.Games
                 return;
             }
             player.Appear(false, 3);
+
+            isHolding = false;
         }
 
         private void JustJump(PlayerActionEvent caller, float state)
@@ -438,6 +453,8 @@ namespace HeavenStudio.Games
                 new BeatAction.Action(diveBeat + 1.75, delegate { crowdAnim.DoScaledAnimationAsync("CrowdCheer", 0.5f); }),
                 new BeatAction.Action(diveBeat + 4, delegate { crowdAnim.Play("CrowdIdle", 0, 0); })
             });
+
+            isHolding = false;
         }
 
         private void JustJumpNoRollSound(PlayerActionEvent caller, float state)
@@ -456,6 +473,8 @@ namespace HeavenStudio.Games
                 new BeatAction.Action(diveBeat + 1.75, delegate { crowdAnim.DoScaledAnimationAsync("CrowdCheer", 0.5f); }),
                 new BeatAction.Action(diveBeat + 4, delegate { crowdAnim.Play("CrowdIdle", 0, 0); })
             });
+
+            isHolding = false;
         }
 
         private void Out(PlayerActionEvent caller) { }

@@ -26,6 +26,7 @@ namespace HeavenStudio
 
         [Header("Info Elements")]
         [SerializeField] private TMP_Text levelTitle;
+        [SerializeField] private LibraryLevelIcon levelIcon;
         [SerializeField] private TMP_Text levelCharter;
         [SerializeField] private TMP_Text songArtist;
         [SerializeField] private TMP_Text levelDesc;
@@ -37,21 +38,24 @@ namespace HeavenStudio
         [SerializeField] private Image skillStar;
         [SerializeField] private LibraryMods mods;
         [SerializeField] private LibraryPopup morePopup;
+        [SerializeField] private Transform tagsHolder;
+        [SerializeField] private LibraryTag tagPrefab;
+        [SerializeField] private GameObject tagsSection;
+        [SerializeField] private GameObject tagButton;
+        [SerializeField] private List<ContentSizeFitter> tagPopupRects;
 
         [Header("Tempo")]
-        [SerializeField] private TMP_Text bpmButtonText;
-        [SerializeField] private TMP_Text startBpmText;
-        [SerializeField] private TMP_Text minBpmText;
-        [SerializeField] private TMP_Text maxBpmText;
-        [SerializeField] private LibraryPopup bpmPopup;
+        [SerializeField] private TMP_Text bpmText;
 
         [Header("Buttons")]
         [SerializeField] public LibrarySelectable playButton;
-        [SerializeField] private LibrarySelectable moreButton; 
-        [SerializeField] private LibrarySelectable openInEditorButton; 
-        [SerializeField] private LibrarySelectable tempoInfo; 
+        [SerializeField] public Button perfectOnButton;
+        [SerializeField] public Button perfectOffButton;
+        [SerializeField] private Button modsButton;
+        [SerializeField] private LibrarySelectable openInEditorButton;
         [SerializeField] private TMP_Text reccomendedControlsText;
         [SerializeField] private GameObject warningButton;
+        [SerializeField] private List<Button> tagsTargetButtons;
 
         [Header("Vars")]
         [SerializeField] private bool animating;
@@ -66,7 +70,29 @@ namespace HeavenStudio
         [SerializeField] private GameObject medalDisabledTemplate;
         [SerializeField] private Sprite skillStarInactive;
         [SerializeField] private Sprite skillStarActive;
-        [SerializeField] private bool moreBpm = false;
+        [SerializeField] private Image perfectIcon;
+        [SerializeField] private Sprite perfectIconInactive;
+        [SerializeField] private Sprite perfectIconActive;
+
+        [Header("Play Button")]
+        [SerializeField] private Image playButtonBackground;
+        [SerializeField] private Image playButtonIcon;
+        [SerializeField] private TMP_Text playButtonText;
+        [SerializeField] private TMP_Text playButtonTextShadow;
+        private Coroutine perfectEnableCoroutine;
+        private Coroutine perfectDisableCoroutine;
+        [SerializeField] private Sprite playButtonNormalIcon;
+        [SerializeField] private Color playButtonNormalBgColor = Color.white;
+        [SerializeField] private Color playButtonNormalTextColor = Color.white;
+        [SerializeField] private Color playButtonNormalShadowColor = Color.white;
+
+        [SerializeField] private Sprite playButtonPerfectIcon;
+        [SerializeField] private Color playButtonPerfectBgColor = Color.white;
+        [SerializeField] private Color playButtonPerfectTextColor = Color.white;
+        [SerializeField] private Color playButtonPerfectShadowColor = Color.white;
+
+        [SerializeField] private Sprite autoplayEnable;
+        [SerializeField] private bool autoplayOn = false;
 
         [Header("IMPORT INFO")]
         [SerializeField] public TMP_Text pathText;
@@ -99,30 +125,41 @@ namespace HeavenStudio
 
             topRect = levelTitle.transform.parent.GetComponent<RectTransform>();
             bottomRect = playButton.transform.parent.GetComponent<RectTransform>();
-
-            topRect.gameObject.SetActive(false);
-            bottomRect.gameObject.SetActive(false);
+            if (levelIcon != null) levelIcon.interactable = false;
         }
 
         public void ShowLevelInfo(string hash)
         {
             CachedLevelInfo info = LibraryCacheManager.cache.cachedInfo[hash];
 
+            ShowMainLayout();
+
             levelTitle.text = info.levelName;
-            levelCharter.text = info.levelCharter;
+            levelCharter.text = string.IsNullOrWhiteSpace(info.levelCharter) ? "???" : info.levelCharter;
             levelDesc.text = info.description;
+
+            if (levelIcon != null)
+            {
+                levelIcon.gameObject.SetActive(true);
+                levelIcon.StopAllCoroutines();
+                levelIcon.loadedIcon = false;
+                levelIcon.SetIconInfo(LibraryManager.instance.selectedLevelPath, hash);
+                levelIcon.LoadCustomIcon();
+            }
+
+            string artistDisplay = string.IsNullOrWhiteSpace(info.songArtist) ? "???" : info.songArtist;
 
             if (info.songName.Equals(info.levelName) || string.IsNullOrWhiteSpace(info.songName) || info.songName.Equals("Song Name"))
             {
-                songArtist.text = "♪ " + info.songArtist;
+                songArtist.text = artistDisplay;
             }
             else
             {
-                songArtist.text = "♪ " + info.songName + " - " + info.songArtist;
+                songArtist.text = info.songName + " - " + artistDisplay;
             }
 
-            reccomendedControlsText.text = Localization.F("Recommended Control Style: {0}", info.controlStyle);
             controlStyle.SetActive(info.controlStyle != "Any");
+            reccomendedControlsText.text = Localization.T(info.controlStyle);
             flashWarning.SetActive(info.flashWarning);
 
             SetBpms(info);
@@ -130,12 +167,12 @@ namespace HeavenStudio
             if (info.warnings.Count > 0)
             {
                 songLength.gameObject.SetActive(false);
-                warningButton.SetActive(true);
+                // warningButton.SetActive(true);
             }
             else
             {
                 songLength.gameObject.SetActive(true);
-                warningButton.SetActive(false);
+                // warningButton.SetActive(false);
                 songLength.text = FormatTime(info.length);
             }
 
@@ -146,12 +183,84 @@ namespace HeavenStudio
 
             LoadSavedSataForLevel(hash, info);
 
-            ShowMainLayout();
+            bool hasTags = !string.IsNullOrEmpty(info.tags);
+            GameObject tagsToggleTarget = tagsSection != null ? tagsSection : tagButton;
+            tagsToggleTarget.SetActive(hasTags);
+
+            Button tagNavTarget = null;
+            if (hasTags)
+            {
+                tagButton.SetActive(true);
+
+                if (tagsHolder != null && tagPrefab != null)
+                {
+                    print("updating tags");
+                    UpdateTags(info.tags);
+                }
+
+                // tagPopup.GetComponent<ContentSizeFitter>().
+                Canvas.ForceUpdateCanvases();
+                foreach (ContentSizeFitter rect in tagPopupRects)
+                {
+                    rect.SetLayoutVertical();
+                }
+
+                tagNavTarget = tagButton.GetComponent<Button>();
+            }
+
+            foreach (Button button in tagsTargetButtons)
+            {
+                Navigation nav = button.navigation;
+                nav.mode = Navigation.Mode.Explicit;
+                nav.selectOnUp = tagNavTarget;
+                button.navigation = nav;
+            }
+        }
+
+        void UpdateTags(string tagString)
+        {
+            foreach (Transform child in tagsHolder.transform)
+            {
+                Destroy(child.gameObject);
+            }
+
+            SortedSet<string> currentTags = LibraryTag.ParseTagString(tagString);
+
+            foreach (string tag in currentTags)
+            {
+                InitTagObject(tag, tagsHolder.transform);
+            }
+
+            SortChildren(tagsHolder.transform);
+        }
+
+        private void InitTagObject(string tag, Transform parent)
+        {
+            LibraryTag newTag = Instantiate(tagPrefab, parent);
+            newTag.SetTagText(tag);
+            newTag.transform.localScale = new(0.5f, 0.5f);
+        }
+
+        private void SortChildren(Transform transform)
+        {
+            List<Transform> children = new();
+
+            foreach (Transform child in transform)
+            {
+                children.Add(child);
+            }
+
+            children = children.OrderBy(t => t.gameObject.name).ToList();
+
+            for (int i = 0; i < children.Count; i++)
+            {
+                children[i].SetSiblingIndex(i);
+            }
         }
 
         public void ShowFolderInfo(string path)
         {
-            LibraryFolderIcon folderIcon = LibraryManager.instance.allIconInfo[path].folderIcon;
+            LibraryFolderIcon folderIcon = LibraryManager.allIconInfo[path].folderIcon;
 
             folderName.text = folderIcon.folderName;
 
@@ -168,9 +277,9 @@ namespace HeavenStudio
 
             foreach (string levelPath in folderIcon.levelsInFolder)
             {
-                if (LibrarySaveManager.savedata.levelInfo.ContainsKey(LibraryManager.instance.allIconInfo[levelPath].hash))
+                if (LibrarySaveManager.savedata.levelInfo.ContainsKey(LibraryManager.allIconInfo[levelPath].hash))
                 {
-                    int levelScore = LibrarySaveManager.savedata.levelInfo[LibraryManager.instance.allIconInfo[levelPath].hash].score;
+                    int levelScore = LibrarySaveManager.savedata.levelInfo[LibraryManager.allIconInfo[levelPath].hash].score;
 
                     totalScore += levelScore;
 
@@ -218,24 +327,10 @@ namespace HeavenStudio
 
         private void SetBpms(CachedLevelInfo info)
         {
-            string firstBPM = info.firstBpm.ToString();
-            string minBPM = info.lowBpm.ToString();
-            string maxBPM = info.highBpm.ToString();
+            string minBPM = info.lowBpm.ToString("0.##");
+            string maxBPM = info.highBpm.ToString("0.##");
 
-            if ((info.lowBpm != info.firstBpm) || (info.highBpm != info.firstBpm))
-            {
-                bpmButtonText.text = firstBPM + " •••";
-                moreBpm = true;
-            }
-            else
-            {
-                bpmButtonText.text = firstBPM;
-                moreBpm = false;
-            }
-
-            startBpmText.text = firstBPM;
-            minBpmText.text = minBPM;
-            maxBpmText.text = maxBPM;
+            bpmText.text = minBPM != maxBPM ? $"{minBPM} - {maxBPM} BPM" : $"{minBPM} BPM";
         }
 
         private void LoadSavedSataForLevel(string hash, CachedLevelInfo info)
@@ -281,6 +376,18 @@ namespace HeavenStudio
                 skillStar.gameObject.SetActive(false);
             }
 
+            if (perfectIcon != null)
+            {
+                if (hasSavedData)
+                {
+                    perfectIcon.sprite = LibrarySaveManager.savedata[hash].perfect ? perfectIconActive : perfectIconInactive;
+                    perfectIcon.gameObject.SetActive(LibrarySaveManager.savedata[hash].perfect);
+                }
+                else
+                {
+                    perfectIcon.gameObject.SetActive(false);
+                }
+            }
         }
 
         private void SetScoreColors(int score)
@@ -309,9 +416,9 @@ namespace HeavenStudio
         public void DeleteLevel()
         {
             LibraryManager.instance.DeleteIconAndFile(LibraryManager.instance.selectedLevelPath);
-            LibraryManager.instance.SelectFolder(LibraryManager.instance.currentFolder);
+            LibraryManager.instance.SelectFolder(LibraryManager.currentFolder);
 
-            SoundByte.PlayOneShot("ui/Library/delete");
+            SoundByte.PlayOneShot("ui/Library/delete", ui: true);
 
             morePopup.HidePopup();
         }
@@ -328,17 +435,7 @@ namespace HeavenStudio
         {
             LibraryManager.instance.DeleteSaveDataForLevel(LibraryManager.instance.selectedLevelPath);
             LibraryMenuCursor.instance.CursorBack();
-            ShowLevelInfo(LibraryManager.instance.allIconInfo[LibraryManager.instance.selectedLevelPath].hash);
-        }
-
-        public void ShowBpmPopup()
-        {
-            if (moreBpm) bpmPopup.ShowPopup();
-        }
-
-        public void HideBpmPopup()
-        {
-            if (moreBpm) bpmPopup.HidePopup();
+            ShowLevelInfo(LibraryManager.allIconInfo[LibraryManager.instance.selectedLevelPath].hash);
         }
 
         public void ShowMainLayout()
@@ -464,77 +561,11 @@ namespace HeavenStudio
 
         private IEnumerator AnimateTitleIn()
         {
-            animating = true;
-
-            float time = 0;
-            float normalizedTime = 0;
-
-            Util.EasingFunction.Function easeFunction = Util.EasingFunction.GetEasingFunction(Util.EasingFunction.Ease.EaseOutQuint);
-            float topYEnd = -6.5f;
-            float bottomYEnd = 5f;
-
-            topRect.gameObject.SetActive(true);
-            bottomRect.gameObject.SetActive(true);
-
-            while (normalizedTime < 1f)
-            {
-                normalizedTime = Mathf.InverseLerp(0f, animationLength, time);
-
-                float newYTop = easeFunction(100f, topYEnd, normalizedTime);
-                float newYBottom = easeFunction(-90f, bottomYEnd, normalizedTime);
-
-                topRect.anchoredPosition = new(0f, newYTop);
-                bottomRect.anchoredPosition = new(0f, newYBottom);
-
-                time += Time.deltaTime;
-                yield return null;
-            }
-
-            topRect.anchoredPosition = new(0f, topYEnd);
-            bottomRect.anchoredPosition = new(0f, bottomYEnd);
-
-            animating = false;
             yield return null;
         }
 
         private IEnumerator AnimateTitleOut()
         {
-            animating = true;
-
-            float time = 0;
-            float normalizedTime = 0;
-
-            Util.EasingFunction.Function easeFunction = Util.EasingFunction.GetEasingFunction(Util.EasingFunction.Ease.EaseOutQuint);
-            float topYEnd = 100f;
-            float bottomYEnd = -90f;
-
-            float topYStart = topRect.anchoredPosition.y;
-            float bottomYStart = bottomRect.anchoredPosition.y;
-
-            topRect.gameObject.SetActive(true);
-            bottomRect.gameObject.SetActive(true);
-
-            while (normalizedTime < 1f)
-            {
-                normalizedTime = Mathf.InverseLerp(0f, animationLength, time);
-
-                float newYTop = easeFunction(topYStart, topYEnd, normalizedTime);
-                float newYBottom = easeFunction(topYEnd, bottomYEnd, normalizedTime);
-
-                topRect.anchoredPosition = new(0f, newYTop);
-                bottomRect.anchoredPosition = new(0f, newYBottom);
-
-                time += Time.deltaTime;
-                yield return null;
-            }
-
-            topRect.anchoredPosition = new(0f, topYEnd);
-            bottomRect.anchoredPosition = new(0f, bottomYEnd);
-
-            topRect.gameObject.SetActive(false);
-            bottomRect.gameObject.SetActive(false);
-
-            animating = false;
             yield return null;
         }
 
@@ -542,7 +573,7 @@ namespace HeavenStudio
         {
             if (LibraryManager.instance.exiting) return;
             LibraryManager.instance.exiting = true;
-            SoundByte.PlayOneShot("ui/UIEnter");
+            SoundByte.PlayOneShot("ui/UIEnter", ui: true);
             PersistentDataManager.SaveSettings();
 
             try
@@ -554,11 +585,12 @@ namespace HeavenStudio
                 RiqBeatmap beatmap = RiqFileHandler.ReadRiq();
                 Minigames.PreProcessBeatmap(beatmap.data);
                 GlobalGameManager.PlayOpenFilePath = LibraryManager.instance.selectedLevelPath;
-                GlobalGameManager.PlayOpenFileHash = LibraryManager.instance.allIconInfo[LibraryManager.instance.selectedLevelPath].hash;
+                GlobalGameManager.PlayOpenFileHash = LibraryManager.allIconInfo[LibraryManager.instance.selectedLevelPath].hash;
                 GlobalGameManager.returnToLibrary = true;
                 GlobalGameManager.playbackSpeed = mods.tempoMult / 100f;
                 GlobalGameManager.autoplay = mods.autoplayOn;
-                LibraryManager.lastFolder = LibraryManager.instance.currentFolder;
+                GlobalGameManager.lastScore = LibraryManager.GetLevelScore(GlobalGameManager.PlayOpenFileHash);
+                LibraryManager.lastFolder = LibraryManager.currentFolder;
                 LibraryManager.lastScroll = LibraryManager.instance.levelsScrollRect.verticalNormalizedPosition;
                 LibraryManager.instance.SavePathsAndHashes();
 
@@ -581,7 +613,7 @@ namespace HeavenStudio
         {
             if (LibraryManager.instance.exiting) return;
             LibraryManager.instance.exiting = true;
-            SoundByte.PlayOneShot("ui/UIEnter");
+            SoundByte.PlayOneShot("ui/UIEnter", ui: true);
             PersistentDataManager.SaveSettings();
 
             Editor.Editor.loadFromLibrary = true;
@@ -595,7 +627,7 @@ namespace HeavenStudio
 
         public void NoAction()
         {
-            
+
         }
 
         #region Song Length
@@ -680,6 +712,244 @@ namespace HeavenStudio
 
         #endregion
 
+        #region Perfect Buttons
+        public void EnableChallenge()
+        {
+            if (perfectDisableCoroutine != null)
+            {
+                StopCoroutine(perfectDisableCoroutine);
+                perfectDisableCoroutine = null;
+            }
+
+            perfectEnableCoroutine = StartCoroutine(AnimatePerfectEnable());
+
+            Button playButtonButton = playButton.GetComponent<Button>();
+            playButtonButton.navigation = new()
+            {
+                mode = Navigation.Mode.Explicit,
+                selectOnUp = playButtonButton.navigation.selectOnUp,
+                selectOnDown = playButtonButton.navigation.selectOnDown,
+                selectOnLeft = perfectOffButton,
+                selectOnRight = modsButton,
+            };
+
+            modsButton.navigation = new()
+            {
+                mode = Navigation.Mode.Explicit,
+                selectOnUp = modsButton.navigation.selectOnUp,
+                selectOnDown = modsButton.navigation.selectOnDown,
+                selectOnLeft = playButtonButton,
+                selectOnRight = modsButton.navigation.selectOnRight,
+            };
+
+            if (!LibraryMenuCursor.usingMouse)
+            {
+                LibraryMenuCursor.instance.CursorSelect(playButton, false);
+            }
+
+            GlobalGameManager.perfectCampaign = true;
+        }
+
+        public void DisableChallenge()
+        {
+            if (perfectEnableCoroutine != null)
+            {
+                StopCoroutine(perfectEnableCoroutine);
+                perfectEnableCoroutine = null;
+            }
+
+            perfectDisableCoroutine = StartCoroutine(AnimatePerfectDisable());
+
+            Button playButtonButton = playButton.GetComponent<Button>();
+            playButtonButton.navigation = new()
+            {
+                mode = Navigation.Mode.Explicit,
+                selectOnUp = playButtonButton.navigation.selectOnUp,
+                selectOnDown = playButtonButton.navigation.selectOnDown,
+                selectOnLeft = null,
+                selectOnRight = perfectOnButton,
+            };
+
+            modsButton.navigation = new()
+            {
+                mode = Navigation.Mode.Explicit,
+                selectOnUp = modsButton.navigation.selectOnUp,
+                selectOnDown = modsButton.navigation.selectOnDown,
+                selectOnLeft = perfectOnButton,
+                selectOnRight = modsButton.navigation.selectOnRight,
+            };
+
+            if (!LibraryMenuCursor.usingMouse)
+            {
+                LibraryMenuCursor.instance.CursorSelect(playButton, false);
+            }
+
+            GlobalGameManager.perfectCampaign = false;
+        }
+
+        private IEnumerator AnimatePerfectEnable()
+        {
+            float time = 0;
+            float normalizedTime = 0;
+
+            Util.EasingFunction.Function easeFunction = Util.EasingFunction.GetEasingFunction(Util.EasingFunction.Ease.EaseOutQuint);
+
+            Color bgStart = playButtonBackground.color;
+            Color textStart = playButtonText.color;
+            Color shadowStart = playButtonTextShadow.color;
+
+            Color bgEnd = playButtonPerfectBgColor;
+            Color textEnd = playButtonPerfectTextColor;
+            Color shadowEnd = playButtonPerfectShadowColor;
+
+            RectTransform playButtonRect = playButtonBackground.GetComponent<RectTransform>();
+
+            SetPivot(playButtonRect, new(1, 0.5f));
+
+            Vector3 oldPos = playButtonRect.position;
+
+            playButtonRect.anchorMin = new(1, 0.5f);
+            playButtonRect.anchorMax = new(1, 0.5f);
+
+
+            playButtonRect.position = oldPos;
+
+            float startX = playButtonRect.anchoredPosition.x;
+            float endX = 0;
+
+            playButtonIcon.sprite = playButtonPerfectIcon;
+            if (autoplayOn) playButtonIcon.sprite = autoplayEnable;
+
+            while (normalizedTime < 1f)
+            {
+                normalizedTime = Mathf.InverseLerp(0f, 0.5f, time);
+
+                float newX = easeFunction(startX, endX, normalizedTime);
+
+                float newBgR = easeFunction(bgStart.r, bgEnd.r, normalizedTime);
+                float newBgG = easeFunction(bgStart.g, bgEnd.g, normalizedTime);
+                float newBgB = easeFunction(bgStart.b, bgEnd.b, normalizedTime);
+
+                float newTextR = easeFunction(textStart.r, textEnd.r, normalizedTime);
+                float newTextG = easeFunction(textStart.g, textEnd.g, normalizedTime);
+                float newTextB = easeFunction(textStart.b, textEnd.b, normalizedTime);
+
+                float newShadowR = easeFunction(shadowStart.r, shadowEnd.r, normalizedTime);
+                float newShadowG = easeFunction(shadowStart.g, shadowEnd.g, normalizedTime);
+                float newShadowB = easeFunction(shadowStart.b, shadowEnd.b, normalizedTime);
+
+                playButtonRect.anchoredPosition = new(newX, playButtonRect.anchoredPosition.y);
+                playButtonBackground.color = new(newBgR, newBgG, newBgB);
+                playButtonText.color = new(newTextR, newTextG, newTextB);
+                playButtonTextShadow.color = new(newShadowR, newShadowG, newShadowB);
+
+                time += Time.deltaTime;
+                yield return null;
+            }
+
+            playButtonBackground.color = bgEnd;
+            playButtonText.color = textEnd;
+            playButtonTextShadow.color = shadowEnd;
+
+            playButtonRect.anchoredPosition = new(endX, playButtonRect.anchoredPosition.y);
+
+            perfectEnableCoroutine = null;
+
+            yield return null;
+        }
+
+        private IEnumerator AnimatePerfectDisable()
+        {
+            float time = 0;
+            float normalizedTime = 0;
+
+            Util.EasingFunction.Function easeFunction = Util.EasingFunction.GetEasingFunction(Util.EasingFunction.Ease.EaseOutQuint);
+
+            Color bgStart = playButtonBackground.color;
+            Color textStart = playButtonText.color;
+            Color shadowStart = playButtonTextShadow.color;
+
+            Color bgEnd = playButtonNormalBgColor;
+            Color textEnd = playButtonNormalTextColor;
+            Color shadowEnd = playButtonNormalShadowColor;
+
+            RectTransform playButtonRect = playButtonBackground.GetComponent<RectTransform>();
+
+            SetPivot(playButtonRect, new(0, 0.5f));
+
+            Vector3 oldPos = playButtonRect.position;
+
+            playButtonRect.anchorMin = new(0, 0.5f);
+            playButtonRect.anchorMax = new(0, 0.5f);
+
+            playButtonRect.position = oldPos;
+
+            float startX = playButtonRect.anchoredPosition.x;
+            float endX = 0;
+
+            playButtonIcon.sprite = playButtonNormalIcon;
+            if (autoplayOn) playButtonIcon.sprite = autoplayEnable;
+
+            while (normalizedTime < 1f)
+            {
+                normalizedTime = Mathf.InverseLerp(0f, 0.5f, time);
+
+                float newX = easeFunction(startX, endX, normalizedTime);
+
+                float newBgR = easeFunction(bgStart.r, bgEnd.r, normalizedTime);
+                float newBgG = easeFunction(bgStart.g, bgEnd.g, normalizedTime);
+                float newBgB = easeFunction(bgStart.b, bgEnd.b, normalizedTime);
+
+                float newTextR = easeFunction(textStart.r, textEnd.r, normalizedTime);
+                float newTextG = easeFunction(textStart.g, textEnd.g, normalizedTime);
+                float newTextB = easeFunction(textStart.b, textEnd.b, normalizedTime);
+
+                float newShadowR = easeFunction(shadowStart.r, shadowEnd.r, normalizedTime);
+                float newShadowG = easeFunction(shadowStart.g, shadowEnd.g, normalizedTime);
+                float newShadowB = easeFunction(shadowStart.b, shadowEnd.b, normalizedTime);
+
+                playButtonRect.anchoredPosition = new(newX, playButtonRect.anchoredPosition.y);
+                playButtonBackground.color = new(newBgR, newBgG, newBgB);
+                playButtonText.color = new(newTextR, newTextG, newTextB);
+                playButtonTextShadow.color = new(newShadowR, newShadowG, newShadowB);
+
+                time += Time.deltaTime;
+                yield return null;
+            }
+
+            playButtonBackground.color = bgEnd;
+            playButtonText.color = textEnd;
+            playButtonTextShadow.color = shadowEnd;
+
+            playButtonRect.anchoredPosition = new(endX, playButtonRect.anchoredPosition.y);
+
+            perfectEnableCoroutine = null;
+
+            yield return null;
+        }
+
+        public void SetAutoplay(bool enable)
+        {
+            autoplayOn = enable;
+            if (autoplayOn) playButtonIcon.sprite = autoplayEnable;
+            else if (GlobalGameManager.perfectCampaign) playButtonIcon.sprite = playButtonPerfectIcon;
+            else playButtonIcon.sprite = playButtonNormalIcon;
+        }
+
+        // https://discussions.unity.com/t/set-a-recttranforms-pivot-without-changing-its-position/139741/2
+        public static void SetPivot(RectTransform rectTransform, Vector2 pivot)
+        {
+            if (rectTransform == null) return;
+
+            Vector3 scale = rectTransform.localScale;
+            Vector2 size = rectTransform.rect.size;
+            Vector2 deltaPivot = rectTransform.pivot - pivot;
+            Vector3 deltaPosition = new Vector3(deltaPivot.x * size.x * scale.x, deltaPivot.y * size.y * scale.y);
+            rectTransform.pivot = pivot;
+            rectTransform.localPosition -= deltaPosition;
+        }
+
+
         public enum WarningTypes
         {
             NoEnd
@@ -693,3 +963,4 @@ namespace HeavenStudio
         }
     }
 }
+#endregion

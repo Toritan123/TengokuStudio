@@ -33,6 +33,7 @@ namespace HeavenStudio.Editor
         private GameInitializer Initializer;
 
         [SerializeField] public Canvas MainCanvas;
+        private CanvasScaler MainCanvasScaler;
         [SerializeField] public Camera EditorCamera;
 
         [Header("Rect")]
@@ -71,6 +72,8 @@ namespace HeavenStudio.Editor
         [SerializeField] private Button _quitNo;
         [SerializeField] private GameObject _confirmSaveMain;
         [SerializeField] private Toggle _confirmSaveShowToggle;
+        [SerializeField] private GameObject _confirmLoadAutosaveMain;
+        [SerializeField] private TMP_Text _confirmLoadAutosaveLabel;
         private string _confirmSavePath;
         public static bool hideSavePopUp = false;
 
@@ -87,6 +90,7 @@ namespace HeavenStudio.Editor
         //private bool changedMusic = false;    Unused value - Marc
         //private bool loadedMusic = false;    Unused value - Marc
         public string currentRemixPath = "";
+        public float autosaveTimer = 0;
         private string remixName = "";
         public bool fullscreen;
         public bool discordDuringTesting = false;
@@ -116,6 +120,7 @@ namespace HeavenStudio.Editor
         private void Start()
         {
             Initializer = GetComponent<GameInitializer>();
+            MainCanvasScaler = MainCanvas.GetComponent<CanvasScaler>();
             canSelect = true;
         }
 
@@ -126,7 +131,7 @@ namespace HeavenStudio.Editor
             GlobalGameManager.perfectCampaign = false;
             Screen.texture = ScreenRenderTexture;
 
-            
+            GlobalGameManager.ResetGameRenderTexture(0.5f);
 
             GameManager.instance.Init();
             Timeline.Init();
@@ -134,20 +139,29 @@ namespace HeavenStudio.Editor
             InitIcons();
 
             UpdateEditorStatus(true);
+
 #if HEAVENSTUDIO_PROD
             BuildDateDisplay.text = GlobalGameManager.friendlyReleaseName;
 #else
             BuildDateDisplay.text = GlobalGameManager.buildTime;
 #endif
-            isCursorEnabled = PersistentDataManager.gameSettings.editorCursorEnable;
-            isDiscordEnabled = PersistentDataManager.gameSettings.discordRPCEnable;
+
+            var settings = PersistentDataManager.gameSettings;
+            isCursorEnabled = settings.editorCursorEnable;
+            isDiscordEnabled = settings.discordRPCEnable;
             GameManager.instance.CursorCam.enabled = isCursorEnabled;
-            
-            if (!PersistentDataManager.gameSettings.hasOpenedEditor)
+
+            if (!settings.hasOpenedEditor)
             {
                 GlobalGameManager.ShowErrorMessage("Welcome to the Editor!", $"<size=110%>Are you ready to make your own levels?\nTo start, pick a game and <u>drag</u> the <i>Switch Game</i> to the timeline.\n\nFor more information, click the Help button in the top right.\n\nHave fun!");
-                PersistentDataManager.gameSettings.hasOpenedEditor = true;
+                settings.hasOpenedEditor = true;
                 PersistentDataManager.SaveSettings();
+            }
+
+            if (!settings.autosaveSetToDefault)
+            {
+                settings.autosaveInterval = 5;
+                settings.autosaveSetToDefault = true;
             }
 
             if (loadFromLibrary)
@@ -156,9 +170,13 @@ namespace HeavenStudio.Editor
                 returnToLibrary = true;
                 StartCoroutine(OpenLibraryLevel());
             }
+            else if (settings.lastAutoSave > settings.lastManualSave && !string.IsNullOrEmpty(settings.lastAutoSavePath))
+            {
+                ShowAutosaveDialog();
+            }
         }
 
-        public void InitIcons ()
+        public void InitIcons()
         {
             foreach (var minigame in EventCaller.instance.minigames.Values)
                 AddIcon(minigame);
@@ -194,7 +212,6 @@ namespace HeavenStudio.Editor
             if (_confirmSaveShowToggle.isOn) hideSavePopUp = true;
             _confirmSaveMain.SetActive(show);
             SetAuthoritiveMenu(show);
-            
         }
 
         public void SaveLibraryLevel(bool save)
@@ -213,14 +230,35 @@ namespace HeavenStudio.Editor
 
         public void Update()
         {
-            
-           
-            
-            
-            if (!PersistentDataManager.gameSettings.scaleWScreenSize)
-                MainCanvas.scaleFactor = 1.0f + (0.25f * PersistentDataManager.gameSettings.editorScale);
+            if (PersistentDataManager.gameSettings.autosaveInterval > 0)
+            {
+                string path = currentRemixPath;
+                if (string.IsNullOrEmpty(path)) path = Application.persistentDataPath + "/Unsaved level";
 
-            MainCanvas.GetComponent<CanvasScaler>().uiScaleMode = (PersistentDataManager.gameSettings.scaleWScreenSize) ? CanvasScaler.ScaleMode.ScaleWithScreenSize : CanvasScaler.ScaleMode.ConstantPixelSize;
+                autosaveTimer += Time.deltaTime;
+                if ((autosaveTimer >= PersistentDataManager.gameSettings.autosaveInterval * 60) && !Conductor.instance.isPlaying)
+                {
+                    if (GameManager.instance.Beatmap.Entities.Count > 0)
+                    {
+                        SaveRemixFile(path + ".bak", true, true, true);
+                    }
+                    autosaveTimer = 0;
+                }
+            }
+
+            if (PersistentDataManager.gameSettings.scaleWScreenSize)
+            {
+                MainCanvasScaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
+                float scaleFactor = 1.0f - (0.125f * PersistentDataManager.gameSettings.editorScale);
+                MainCanvasScaler.referenceResolution = new Vector2(1920, 1080) * scaleFactor;
+                MainCanvasScaler.matchWidthOrHeight = 1f;
+            }
+            else
+            {
+                MainCanvasScaler.uiScaleMode = CanvasScaler.ScaleMode.ConstantPixelSize;
+                float scaleFactor = 1.0f + (0.25f * PersistentDataManager.gameSettings.editorScale);
+                MainCanvas.scaleFactor = scaleFactor;
+            }
         }
 
         public void LateUpdate()
@@ -239,13 +277,18 @@ namespace HeavenStudio.Editor
                     Fullscreen();
                 }
 
-                if ((Input.GetKeyDown(KeyCode.Delete) || Input.GetKeyDown(KeyCode.Backspace)) && !fullscreen)
+                if (Input.GetKeyDown(KeyCode.Escape) && fullscreen)
+                {
+                    Fullscreen(); // Esc can only exit fullscreen, not enter it
+                }
+
+                if ((Input.GetKeyDown(KeyCode.Delete) || Input.GetKeyDown(KeyCode.Backspace)) && !fullscreen && !EventParameterManager.instance.active)
                 {
                     CommandManager.Instance.AddCommand(new Commands.Delete(Selections.instance.eventsSelected.Select(c => c.entity.guid).ToList()));
                     GridGameSelector.instance.Sort(PersistentDataManager.gameSettings.sortMode);
                 }
 
-                if (Input.GetKey(InputKeyboard.MODIFIER) && !fullscreen)
+                if (Input.GetKey(InputKeyboard.MODIFIER) && !fullscreen && !EventParameterManager.instance.active)
                 {
                     if (Input.GetKeyDown(KeyCode.Z))
                     {
@@ -326,7 +369,7 @@ namespace HeavenStudio.Editor
 
             // Copy+Paste
             CopyBTN.transform.GetChild(0).GetComponent<Image>().color = Selections.instance.eventsSelected.Count > 0 ? Color.white : Color.gray;
-            PasteBTN.transform.GetChild(0).GetComponent<Image>().color =  Timeline.instance.CopiedEntities.Count > 0 ? Color.white : Color.gray;
+            PasteBTN.transform.GetChild(0).GetComponent<Image>().color = Timeline.instance.CopiedEntities.Count > 0 ? Color.white : Color.gray;
         }
 
         public static Sprite GameIcon(string name)
@@ -341,13 +384,13 @@ namespace HeavenStudio.Editor
             }
 
             if (PersistentDataManager.gameSettings.simpleIcons) return Resources.Load<Sprite>($"Sprites/Editor/SimpleIcons/{name}") ?? Resources.Load<Sprite>($"Sprites/Editor/SimpleIcons/noGame");
-            else {return Resources.Load<Sprite>($"Sprites/Editor/GameIcons/{name}") ?? Resources.Load<Sprite>($"Sprites/Editor/GameIcons/noGame");}
+            else { return Resources.Load<Sprite>($"Sprites/Editor/GameIcons/{name}") ?? Resources.Load<Sprite>($"Sprites/Editor/GameIcons/noGame"); }
         }
 
         public static Texture GameIconMask(string name)
         {
             if (PersistentDataManager.gameSettings.simpleIcons) return Resources.Load<Texture>($"Sprites/Editor/SimpleIcons/null_mask");
-            else {return Resources.Load<Texture>($"Sprites/Editor/GameIcons/{name}_mask");}
+            else { return Resources.Load<Texture>($"Sprites/Editor/GameIcons/{name}_mask"); }
         }
 
         #region Dialogs
@@ -468,7 +511,7 @@ namespace HeavenStudio.Editor
             });
         }
 
-        private void SaveRemixFile(string path, bool force = false)
+        private void SaveRemixFile(string path, bool force = false, bool silent = false, bool async = false)
         {
             if (!String.IsNullOrEmpty(PersistentDataManager.gameSettings.libLevelsDirectory) && !hideSavePopUp)
             {
@@ -480,18 +523,30 @@ namespace HeavenStudio.Editor
                 }
             }
             try
+            {
+                RiqFileHandler.WriteRiq(GameManager.instance.Beatmap);
+                if (async) Task.Run(() => RiqFileHandler.PackRiq(path, false));
+                else RiqFileHandler.PackRiq(path, false);
+                Debug.Log("Packed RIQ successfully!\nPath: " + path);
+
+                if (!silent) 
                 {
-                    RiqFileHandler.WriteRiq(GameManager.instance.Beatmap);
-                    RiqFileHandler.PackRiq(path, true);
-                    Debug.Log("Packed RIQ successfully!");
-                    SoundByte.PlayOneShot("save");
-                    return;
+                    SoundByte.PlayOneShot("save", ui: true);
+                    PersistentDataManager.gameSettings.lastManualSave = DateTime.Now;
                 }
-                catch (System.Exception e)
+                else
                 {
-                    Debug.Log($"Error packing RIQ: {e.Message}");
-                    return;
+                    PersistentDataManager.gameSettings.lastAutoSave = DateTime.Now;
+                    PersistentDataManager.gameSettings.lastAutoSavePath = path;
                 }
+
+                return;
+            }
+            catch (System.Exception e)
+            {
+                Debug.Log($"Error packing RIQ: {e.Message}");
+                return;
+            }
         }
 
         public void NewRemix()
@@ -523,10 +578,15 @@ namespace HeavenStudio.Editor
         {
             if (fullscreen) Fullscreen();
             GameManager.instance.Stop(0);
+
             var extensions = new[]
             {
-                new ExtensionFilter("Heaven Studio Remix File ", new string[] { "riq" }),
-                new ExtensionFilter("Heaven Studio Backup File ", new string[] { "riq.bak" }),
+                #if UNITY_EDITOR_OSX || UNITY_STANDALONE_OSX
+                new ExtensionFilter("Heaven Studio Remix File", "riq", "bak"),
+                #else
+                new ExtensionFilter("Heaven Studio Remix File", "riq", "riq.bak"),
+                #endif
+                new ExtensionFilter("All Files", "*"),
             };
 
             FileBrowserOpener.OpenFilePanelAsync("Open Remix", "", extensions, false, (string[] paths) =>
@@ -552,11 +612,12 @@ namespace HeavenStudio.Editor
 
                 if (path.EndsWith(".bak", System.StringComparison.OrdinalIgnoreCase))
                 {
-                    currentRemixPath = null; // couldve made it remove the .bak part and just save over the .riq but i think that'd cause people to unknowingly erase their stuff so
+                    currentRemixPath = path[..^4];
                     CommandManager.Instance.Clear();
                     return;
                 }
                 currentRemixPath = path;
+                autosaveTimer = 0;
                 CommandManager.Instance.Clear();
                 //    remixName = Path.GetFileName(path);
                 //    UpdateEditorStatus(false);
@@ -600,6 +661,7 @@ namespace HeavenStudio.Editor
 
                 GameManager.instance.CursorCam.rect = new Rect(0, 0, 1, 1);
                 fullscreen = true;
+                GlobalGameManager.ResetGameRenderTexture(1f);
             }
             else
             {
@@ -609,13 +671,13 @@ namespace HeavenStudio.Editor
                 GameManager.instance.CursorCam.enabled = true && isCursorEnabled;
                 GameManager.instance.CursorCam.targetTexture = ScreenRenderTexture;
                 fullscreen = false;
+                GlobalGameManager.ResetGameRenderTexture(0.5f);
 
                 GameCamera.instance.camera.rect = new Rect(0, 0, 1, 1);
                 GameManager.instance.CursorCam.rect = new Rect(0, 0, 1, 1);
                 GameManager.instance.OverlayCamera.rect = new Rect(0, 0, 1, 1);
                 EditorCamera.rect = new Rect(0, 0, 1, 1);
             }
-            GlobalGameManager.ResetGameRenderTexture();
             GameManager.instance.CircleCursor.LockCursor(fullscreen);
             Timeline.AutoBtnUpdate();
         }
@@ -646,6 +708,58 @@ namespace HeavenStudio.Editor
                 GlobalGameManager.LoadScene("Title", callback: GameManager.instance.EndRemixEvents);
             }
         }
+        
+        public void ShowAutosaveDialog(bool show = true)
+        {
+            _confirmLoadAutosaveMain.SetActive(show);
+            SetAuthoritiveMenu(show);
+            if (show)
+            {
+                string levelName = Path.GetFileNameWithoutExtension(PersistentDataManager.gameSettings.lastAutoSavePath);
+                string manualSave = PersistentDataManager.gameSettings.lastManualSave.ToString();
+                string autoSave = PersistentDataManager.gameSettings.lastAutoSave.ToString();
+
+                if (PersistentDataManager.gameSettings.lastAutoSavePath.Contains(Application.persistentDataPath))
+                {
+                    manualSave = "N/A";
+                }
+                
+                _confirmLoadAutosaveLabel.text = $"Level: {levelName}\nLast manual save: {manualSave}\nLast autosave: {autoSave}";
+            }
+        }
+
+        public void LoadAutosave()
+        {
+            string path = PersistentDataManager.gameSettings.lastAutoSavePath;
+            Debug.Log("autosave load for " + path + " now");
+            if (string.IsNullOrEmpty(path)) return;
+
+            try
+            {
+                string tmpDir = RiqFileHandler.ExtractRiq(path);
+                Debug.Log("Imported RIQ successfully!");
+                LoadRemix();
+            }
+            catch (System.Exception e)
+            {
+                Debug.Log($"Error importing RIQ: {e.Message}");
+                Debug.LogException(e);
+                GlobalGameManager.ShowErrorMessage("Error Loading RIQ", e.Message + "\n\n" + e.StackTrace);
+                return;
+            }
+            StartCoroutine(LoadMusic());
+            currentRemixPath = libraryLevelPath;
+            CommandManager.Instance.Clear();
+
+            ClearAutosavePath();
+        }
+
+        public void ClearAutosavePath()
+        {
+            PersistentDataManager.gameSettings.lastAutoSavePath = "";
+            PersistentDataManager.SaveSettings();
+        }
+
 
         public void SetAuthoritiveMenu(bool state)
         {

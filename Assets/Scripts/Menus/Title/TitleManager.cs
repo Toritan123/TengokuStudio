@@ -65,6 +65,8 @@ namespace HeavenStudio
         [SerializeField] private Selectable websiteButton;
         [SerializeField] private Selectable quitButton;
 
+        [SerializeField] public Coroutine fadeOutCoroutine;
+        [SerializeField] float fadeTime;
         private AudioSource musicSource;
 
         private double songPosBeat;
@@ -156,7 +158,7 @@ namespace HeavenStudio
 
                             menuAnim.Play("Revealed", 0, 0);
                             pressAnyKeyAnim.Play("PressKeyFadeOut", 0, 0);
-                            SoundByte.PlayOneShot("ui/UIEnter");
+                            SoundByte.PlayOneShot("ui/UIEnter", ui: true);
 
                             var nextController = newController;
                             var lastController = PlayerInput.GetInputController(1);
@@ -307,6 +309,28 @@ namespace HeavenStudio
             if (firstPress) firstPress = false;
         }
 
+        public IEnumerator FadeOutMusic()
+        {
+            float normalizedTime = 0;
+            float currentVolume = musicSource.volume;
+            float timeStart = (float)AudioSettings.dspTime;
+
+            while (normalizedTime < 1f)
+            {
+                normalizedTime = Mathf.InverseLerp(timeStart, timeStart + fadeTime, (float)AudioSettings.dspTime);
+
+                float newVol = Mathf.Lerp(currentVolume, 0, normalizedTime);
+
+                musicSource.volume = newVol;
+
+                yield return null;
+            }
+
+            musicSource.volume = 0;
+
+            yield return null;
+        }
+
         void UpdateSelectable(InputController controller)
         {
             selectableLerpTimer += Time.deltaTime;
@@ -356,11 +380,11 @@ namespace HeavenStudio
                                 currentSelectable = currentSelectable.FindSelectableOnUp();
                                 currentSelectable.Select();
                                 SetSelectableRectTarget(currentSelectable);
-                                SoundByte.PlayOneShot("ui/UIOption");
+                                SoundByte.PlayOneShot("ui/UIOption", ui: true);
                             }
                             else
                             {
-                                // SoundByte.PlayOneShot("ui/UISelect");
+                                // SoundByte.PlayOneShot("ui/UISelect", ui: true);
                             }
                         }
                         break;
@@ -378,11 +402,11 @@ namespace HeavenStudio
                                 currentSelectable = currentSelectable.FindSelectableOnDown();
                                 currentSelectable.Select();
                                 SetSelectableRectTarget(currentSelectable);
-                                SoundByte.PlayOneShot("ui/UIOption");
+                                SoundByte.PlayOneShot("ui/UIOption", ui: true);
                             }
                             else
                             {
-                                // SoundByte.PlayOneShot("ui/UISelect");
+                                // SoundByte.PlayOneShot("ui/UISelect", ui: true);
                             }
                         }
                         break;
@@ -400,11 +424,11 @@ namespace HeavenStudio
                                 currentSelectable = currentSelectable.FindSelectableOnLeft();
                                 currentSelectable.Select();
                                 SetSelectableRectTarget(currentSelectable);
-                                SoundByte.PlayOneShot("ui/UIOption");
+                                SoundByte.PlayOneShot("ui/UIOption", ui: true);
                             }
                             else
                             {
-                                // SoundByte.PlayOneShot("ui/UISelect");
+                                // SoundByte.PlayOneShot("ui/UISelect", ui: true);
                             }
                         }
                         break;
@@ -422,11 +446,11 @@ namespace HeavenStudio
                                 currentSelectable = currentSelectable.FindSelectableOnRight();
                                 currentSelectable.Select();
                                 SetSelectableRectTarget(currentSelectable);
-                                SoundByte.PlayOneShot("ui/UIOption");
+                                SoundByte.PlayOneShot("ui/UIOption", ui: true);
                             }
                             else
                             {
-                                // SoundByte.PlayOneShot("ui/UISelect");
+                                // SoundByte.PlayOneShot("ui/UISelect", ui: true);
                             }
                         }
                         break;
@@ -451,7 +475,7 @@ namespace HeavenStudio
                     {
                         currentSelectable = selectable;
                         SetSelectableRectTarget(currentSelectable);
-                        SoundByte.PlayOneShot("ui/UIOption");
+                        SoundByte.PlayOneShot("ui/UIOption", ui: true);
                         break;
                     }
                 }
@@ -510,19 +534,23 @@ namespace HeavenStudio
             if (exiting) return;
             exiting = true;
             GlobalGameManager.instance.ClearOpenFile();
+            fadeOutCoroutine = StartCoroutine(FadeOutMusic());
             GlobalGameManager.LoadScene("Editor");
-            SoundByte.PlayOneShot("ui/UIEnter");
+            SoundByte.PlayOneShot("ui/UIEnter", ui: true);
         }
 
         public void PlayPressed()
         {
-            SoundByte.PlayOneShot("ui/UIEnter");
+            if (exiting) return;
+            exiting = true;
+            SoundByte.PlayOneShot("ui/UIEnter", ui: true);
+            fadeOutCoroutine = StartCoroutine(FadeOutMusic());
             GlobalGameManager.LoadScene("Library");
         }
 
         public void QuickplayPressed()
         {
-            SoundByte.PlayOneShot("ui/UISelect");
+            SoundByte.PlayOneShot("ui/UISelect", ui: true);
             // temp: open file browser then go into quickplay
             OpenQuickplayFileDialog();
             // go into the play mode menu
@@ -540,7 +568,7 @@ namespace HeavenStudio
                 var path = Path.Combine(paths);
                 if (path == string.Empty)
                 {
-                    SoundByte.PlayOneShot("ui/UICancel");
+                    SoundByte.PlayOneShot("ui/UICancel", ui: true);
                     return;
                 }
 
@@ -598,7 +626,7 @@ namespace HeavenStudio
                     playPanelRevealTime = Time.realtimeSinceStartup + 0.5f;
                     playPanel.SetActive(true);
                     playMenuRevealed = true;
-                    SoundByte.PlayOneShot("ui/UISelect");
+                    SoundByte.PlayOneShot("ui/UISelect", ui: true);
                 }
                 catch (System.Exception e)
                 {
@@ -615,7 +643,8 @@ namespace HeavenStudio
             if (playPanelRevealTime > Time.realtimeSinceStartup) return;
             if (exiting) return;
             exiting = true;
-            SoundByte.PlayOneShot("ui/UIEnter");
+            fadeOutCoroutine = StartCoroutine(FadeOutMusic());
+            SoundByte.PlayOneShot("ui/UIEnter", ui: true);
             PersistentDataManager.SaveSettings();
             GlobalGameManager.LoadScene("Game", 0.35f, -1, continueLoading: true);
         }
@@ -623,7 +652,7 @@ namespace HeavenStudio
         public void PlayPanelBack()
         {
             RiqFileHandler.ClearCache();
-            SoundByte.PlayOneShot("ui/UICancel");
+            SoundByte.PlayOneShot("ui/UICancel", ui: true);
             PersistentDataManager.SaveSettings();
             playPanel.SetActive(false);
             playMenuRevealed = false;
@@ -632,7 +661,7 @@ namespace HeavenStudio
 
         public void ToggleCampaign()
         {
-            SoundByte.PlayOneShot("ui/UIOption");
+            SoundByte.PlayOneShot("ui/UIOption", ui: true);
             if (GlobalGameManager.perfectCampaign)
             {
                 GlobalGameManager.perfectCampaign = false;
@@ -647,7 +676,7 @@ namespace HeavenStudio
 
         public void SocialsPressed()
         {
-            SoundByte.PlayOneShot("ui/UISelect");
+            SoundByte.PlayOneShot("ui/UISelect", ui: true);
             Application.OpenURL("https://sites.google.com/view/hsbobbybuild/");
         }
 
@@ -655,9 +684,10 @@ namespace HeavenStudio
         {
             if (exiting) return;
             exiting = true;
+            fadeOutCoroutine = StartCoroutine(FadeOutMusic());
             GlobalGameManager.instance.ClearOpenFile();
             GlobalGameManager.LoadScene("Credits");
-            SoundByte.PlayOneShot("ui/UIEnter");
+            SoundByte.PlayOneShot("ui/UIEnter", ui: true);
         }
 
         public void SettingsPressed()
@@ -665,7 +695,7 @@ namespace HeavenStudio
             if (!settingsPanel.IsOpen)
             {
                 settingsPanel.SwitchSettingsDialog();
-                SoundByte.PlayOneShot("ui/UISelect");
+                SoundByte.PlayOneShot("ui/UISelect", ui: true);
             }
             // notes:
             //  gameplay settings currently don't work due to the overlay preview requiring the screen composition setup from a gameplay prefab
@@ -677,13 +707,13 @@ namespace HeavenStudio
             if (settingsPanel.IsOpen)
             {
                 settingsPanel.SwitchSettingsDialog();
-                SoundByte.PlayOneShot("ui/UICancel");
+                SoundByte.PlayOneShot("ui/UICancel", ui: true);
             }
         }
 
         public void QuitPressed()
         {
-            SoundByte.PlayOneShot("ui/PauseQuit");
+            SoundByte.PlayOneShot("ui/PauseQuit", ui: true);
             PersistentDataManager.SaveSettings();
             Application.Quit();
         }

@@ -1,0 +1,841 @@
+fileFormatVersion: 2
+guid: 76140b58efc304c4facfa808d1f36d19
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MunchyMonkRvl_BG 1_sprite_0
+      rect:
+        serializedVersion: 2
+        x: 3968
+        y: 3808
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f367b95ff713e4742abacba9b770873e
+      internalID: -1004000867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MunchyMonkRvl_BG 1_sprite_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 1696
+        height: 1792
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3561d13d1e93c5249bd53e83a37a13f0
+      internalID: 629192705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MunchyMonkRvl_BG 1_sprite_2
+      rect:
+        serializedVersion: 2
+        x: 1856
+        y: 64
+        width: 512
+        height: 2144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f558467b3b4a1c49af24bb16d1389f4
+      internalID: -975422969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MunchyMonkRvl_BG 1_sprite_3
+      rect:
+        serializedVersion: 2
+        x: 3744
+        y: 3840
+        width: 64
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca8e02d73ff991440984080185fec5f7
+      internalID: 1376887599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MunchyMonkRvl_BG 1_sprite_4
+      rect:
+        serializedVersion: 2
+        x: 3520
+        y: 3360
+        width: 544
+        height: 352
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d97d2148db25cb41a5aceedc43965d4
+      internalID: -2084449804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MunchyMonkRvl_BG 1_sprite_5
+      rect:
+        serializedVersion: 2
+        x: 3424
+        y: 256
+        width: 640
+        height: 544
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 300762c1b4e8a7d4aaa3e7d4d106a54b
+      internalID: -1442757053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MunchyMonkRvl_BG 1_sprite_6
+      rect:
+        serializedVersion: 2
+        x: 3040
+        y: 864
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82fd3ac77678dc644b04506521f32cd0
+      internalID: 179458873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MunchyMonkRvl_BG 1_sprite_7
+      rect:
+        serializedVersion: 2
+        x: 2720
+        y: 256
+        width: 640
+        height: 544
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 476db911692497d4f9e993649c017e6e
+      internalID: -2096941032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MunchyMonkRvl_BG 1_sprite_8
+      rect:
+        serializedVersion: 2
+        x: 3040
+        y: 1440
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98a6855ad217aca4d8e220afac006f58
+      internalID: 2056070203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MunchyMonkRvl_BG 1_sprite_9
+      rect:
+        serializedVersion: 2
+        x: 3104
+        y: 2688
+        width: 448
+        height: 608
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d932667842018342b72e9f334db7731
+      internalID: -770460238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MunchyMonkRvl_BG 1_sprite_10
+      rect:
+        serializedVersion: 2
+        x: 3552
+        y: 864
+        width: 512
+        height: 1088
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 330dc1af56b64284183a69828ff235ae
+      internalID: -47656777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MunchyMonkRvl_BG 1_sprite_11
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 3712
+        width: 320
+        height: 352
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 823ad3f53259305408c07dba80b58715
+      internalID: 319297003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MunchyMonkRvl_BG 1_sprite_12
+      rect:
+        serializedVersion: 2
+        x: 3104
+        y: 2016
+        width: 448
+        height: 608
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7199a305a5e61334081f085c2723071a
+      internalID: -31597845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MunchyMonkRvl_BG 1_sprite_13
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 3712
+        width: 288
+        height: 352
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82b95cd9bfbb0054e93b3e6b1f80825f
+      internalID: -1305163068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MunchyMonkRvl_BG 1_sprite_14
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 3712
+        width: 288
+        height: 352
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b12c90fd5d388e4f9a669c61e77236d
+      internalID: 117614041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MunchyMonkRvl_BG 1_sprite_15
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 3712
+        width: 352
+        height: 352
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d35d57ee205a82409521b5cac3123f7
+      internalID: 312352333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MunchyMonkRvl_BG 1_sprite_16
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 3712
+        width: 320
+        height: 352
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b466dc1f3d7f9f4eaba666584bbe91b
+      internalID: -303549756
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MunchyMonkRvl_BG 1_sprite_17
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1952
+        width: 640
+        height: 352
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d280b15aaac6e0648a9be1965814e446
+      internalID: 1895029350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MunchyMonkRvl_BG 1_sprite_18
+      rect:
+        serializedVersion: 2
+        x: 2496
+        y: 1280
+        width: 480
+        height: 384
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e291621cb7e19049b42b8e09eaa4f3b
+      internalID: -1940730928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MunchyMonkRvl_BG 1_sprite_19
+      rect:
+        serializedVersion: 2
+        x: 2496
+        y: 1728
+        width: 288
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3efbc50f0d19ff043b4802027f44f57d
+      internalID: 1508905231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MunchyMonkRvl_BG 1_sprite_20
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 1952
+        width: 544
+        height: 480
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec0fa2e76fb6c324faf99b88dada2198
+      internalID: -374717362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MunchyMonkRvl_BG 1_sprite_21
+      rect:
+        serializedVersion: 2
+        x: 2336
+        y: 2464
+        width: 704
+        height: 832
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b47928fce13e47f4890f6d095025f2eb
+      internalID: -9879868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MunchyMonkRvl_BG 1_sprite_22
+      rect:
+        serializedVersion: 2
+        x: 2496
+        y: 2048
+        width: 224
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91f5ab8cca72bbf42a366331646941c2
+      internalID: 1876120013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MunchyMonkRvl_BG 1_sprite_23
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 2272
+        width: 352
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 878e1226d30774e4db4ef27e854e4c9f
+      internalID: 798225524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MunchyMonkRvl_BG 1_sprite_24
+      rect:
+        serializedVersion: 2
+        x: 2496
+        y: 864
+        width: 480
+        height: 352
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 791e09ba1d8deda46aed0595ea028cdb
+      internalID: -32475222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MunchyMonkRvl_BG 1_sprite_25
+      rect:
+        serializedVersion: 2
+        x: 2720
+        y: 3840
+        width: 64
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d402bbf7fc9e5b8428a52a98516f07d7
+      internalID: 1415737577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MunchyMonkRvl_BG 1_sprite_26
+      rect:
+        serializedVersion: 2
+        x: 2432
+        y: 3840
+        width: 192
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2accb741b4ec4624bb1ee9640c22a938
+      internalID: 221921806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MunchyMonkRvl_BG 1_sprite_27
+      rect:
+        serializedVersion: 2
+        x: 3552
+        y: 3968
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84618f71803dd374199a90fbd941fcb0
+      internalID: -1602770464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MunchyMonkRvl_BG 1_sprite_28
+      rect:
+        serializedVersion: 2
+        x: 2944
+        y: 3584
+        width: 448
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f83b38864f25b3f40af0544322016ef2
+      internalID: -2026547123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MunchyMonkRvl_BG 1_sprite_29
+      rect:
+        serializedVersion: 2
+        x: 2272
+        y: 3968
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f79dfa236a3a00c4794ab76c6d568c2f
+      internalID: 424139864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MunchyMonkRvl_BG_0
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 1985
+        width: 386
+        height: 365
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35aa37583135bad42abd4ab87f29cc75
+      internalID: -774841407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: MunchyMonkRvl_BG_1
+      rect:
+        serializedVersion: 2
+        x: 2358
+        y: 3552
+        width: 249
+        height: 181
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 342133c2d2113f14b8c15a1075f02c52
+      internalID: -6701795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      MunchyMonkRvl_BG_0: -774841407
+      MunchyMonkRvl_BG_1: -6701795
+      MunchyMonkRvl_BG_10: 1132961822
+      MunchyMonkRvl_BG_11: -1210884471
+      MunchyMonkRvl_BG_12: -1832955499
+      MunchyMonkRvl_BG_13: 753969622
+      MunchyMonkRvl_BG_14: -265804678
+      MunchyMonkRvl_BG_15: -632193003
+      MunchyMonkRvl_BG_16: 1302684299
+      MunchyMonkRvl_BG_17: 1433092964
+      MunchyMonkRvl_BG_18: 467298434
+      MunchyMonkRvl_BG_19: -2067190819
+      MunchyMonkRvl_BG_2: -2011401067
+      MunchyMonkRvl_BG_20: 1675748362
+      MunchyMonkRvl_BG_21: 638734182
+      MunchyMonkRvl_BG_22: -1211144704
+      MunchyMonkRvl_BG_23: -1148489968
+      MunchyMonkRvl_BG_24: -2008611869
+      MunchyMonkRvl_BG_25: 857372556
+      MunchyMonkRvl_BG_26: -1547072387
+      MunchyMonkRvl_BG_27: 1084829882
+      MunchyMonkRvl_BG_28: 7518181
+      MunchyMonkRvl_BG_29: -666869757
+      MunchyMonkRvl_BG_3: -84719814
+      MunchyMonkRvl_BG_30: -753208872
+      MunchyMonkRvl_BG_31: -778390910
+      MunchyMonkRvl_BG_32: -1628862152
+      MunchyMonkRvl_BG_33: 663070784
+      MunchyMonkRvl_BG_34: -1065526233
+      MunchyMonkRvl_BG_35: 140310675
+      MunchyMonkRvl_BG_36: -682529796
+      MunchyMonkRvl_BG_37: -1173954707
+      MunchyMonkRvl_BG_38: -1628629707
+      MunchyMonkRvl_BG_39: 216964382
+      MunchyMonkRvl_BG_4: -2023998227
+      MunchyMonkRvl_BG_40: -1086368225
+      MunchyMonkRvl_BG_41: -677031600
+      MunchyMonkRvl_BG_5: -501385691
+      MunchyMonkRvl_BG_6: -1323754784
+      MunchyMonkRvl_BG_7: -693325100
+      MunchyMonkRvl_BG_8: 751683166
+      MunchyMonkRvl_BG_9: 1301092992
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: rvleatmen/common
+  assetBundleVariant: 

@@ -47,20 +47,26 @@ namespace HeavenStudio.Games.Scripts_OctopusMachine
                     OctoAction("Squeeze", Conductor.instance.songPositionInBeatsAsDouble);
                     SoundByte.PlayOneShotGame("nearMiss");
                     game.hasMissed = true;
+
+                    game.isHolding = true;
                 }
 
-                if (PlayerInput.GetIsAction(OctopusMachine.InputAction_BasicRelease) && !game.IsExpectingInputNow(OctopusMachine.InputAction_BasicRelease))
+                if (PlayerInput.GetIsAction(OctopusMachine.InputAction_BasicRelease) && !game.IsExpectingInputNow(OctopusMachine.InputAction_BasicRelease) && game.isHolding)
                 {
                     OctoAction("Release", Conductor.instance.songPositionInBeatsAsDouble);
                     SoundByte.PlayOneShotGame("nearMiss");
                     game.hasMissed = true;
+
+                    game.isHolding = false;
                 }
                 else if (PlayerInput.CurrentControlStyle == InputController.ControlStyles.Touch
-                    && PlayerInput.GetIsAction(OctopusMachine.InputAction_FlickRelease) && !game.IsExpectingInputNow(OctopusMachine.InputAction_FlickRelease))
+                    && PlayerInput.GetIsAction(OctopusMachine.InputAction_FlickRelease) && !game.IsExpectingInputNow(OctopusMachine.InputAction_FlickRelease) && game.isHolding)
                 {
                     OctoAction("Pop", Conductor.instance.songPositionInBeatsAsDouble);
                     SoundByte.PlayOneShotGame("nearMiss");
                     game.hasMissed = true;
+
+                    game.isHolding = false;
                 }
             }
         }

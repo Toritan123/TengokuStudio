@@ -104,13 +104,25 @@ Shader "Sprites/CellAnime_Mapped"
             fixed4 frag(v2f IN) : SV_Target
             {
                 half4 color = (tex2D(_MainTex, IN.texcoord) + _TextureSampleAdd) * IN.color;
-                half4 mappedColor = _ColorAlpha * color.r + _ColorBravo * color.g + _ColorDelta * color.b;
-                
-                half rA = lerp(color.a, _ColorAlpha.a * color.a, color.r);
-                half gA = lerp(color.a, _ColorBravo.a * color.a, color.g);
-                half bA = lerp(color.a, _ColorDelta.a * color.a, color.b);
+                bool isGrayscale = abs(color.r - color.g) < 0.001 && abs(color.g - color.b) < 0.001;
 
-                half a = rA * gA * bA;
+                half4 mappedColor;
+                half a;
+
+                if (isGrayscale) // don't remap colors if they're grayscale so that white can be left on the spritesheets
+                {
+                    mappedColor = color;
+                    a = color.a;
+                }
+                else
+                {
+                    mappedColor = _ColorAlpha * color.r + _ColorBravo * color.g + _ColorDelta * color.b;
+                    
+                    half rA = lerp(color.a, _ColorAlpha.a * color.a, color.r);
+                    half gA = lerp(color.a, _ColorBravo.a * color.a, color.g);
+                    half bA = lerp(color.a, _ColorDelta.a * color.a, color.b);
+                    a = rA * gA * bA;
+                }
 
                 fixed4 screen = 1.0 - (1.0 - _AddColor.rgba) * (1.0 - mappedColor.rgba);
                 color = screen * _Color.rgba;

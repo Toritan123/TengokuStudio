@@ -107,7 +107,7 @@ namespace HeavenStudio
             {
                 if (newController.GetLastButtonDown(true) > 0 && !exiting)
                 {
-                    SoundByte.PlayOneShot("ui/PauseQuit");
+                    SoundByte.PlayOneShot("ui/PauseQuit", ui: true);
                     GlobalGameManager.LoadScene("Title");
                     musicSource.mute = true;
                     exiting = true;

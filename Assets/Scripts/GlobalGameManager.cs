@@ -1,4 +1,4 @@
-﻿using System.IO;
+using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +10,7 @@ using TMPro;
 
 using HeavenStudio.Common;
 using HeavenStudio.Util;
+using System.Threading.Tasks;
 
 namespace HeavenStudio
 {
@@ -20,6 +21,8 @@ namespace HeavenStudio
         [Header("Loading Screen")]
         [SerializeField] Image fadeImage;
         [SerializeField] TMP_Text loadingText;
+        [SerializeField] GameObject levelCacheText;
+        [SerializeField] GameObject hintText;
 		[SerializeField] TMP_Text adviceText;
         [SerializeField] HintGiver hintGiver;
         [SerializeField] GameObject memPanel;
@@ -46,6 +49,7 @@ namespace HeavenStudio
         public static string PlayOpenFileHash = null;
         public static bool returnToLibrary = false;
         public static bool transitioningToLibraryFromGameplay = false;
+        public static int lastScore = -1;
         public static float playbackSpeed = 1.0f;
         public static bool autoplay = false;
         public static bool perfectCampaign = false;
@@ -103,7 +107,7 @@ namespace HeavenStudio
         }
 
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-        public static void Init()
+        public static async Task Init()
         {
             HasShutDown = false;
             Application.wantsToQuit += WantsToQuit;
@@ -121,6 +125,19 @@ namespace HeavenStudio
 
             PersistentDataManager.LoadSettings();
             Localization.Init();
+
+            buildInt = AppInfo.Date.Day + (AppInfo.Date.Month * 100) + (AppInfo.Date.Year * 10000);
+
+            string levelsPath = PersistentDataManager.gameSettings.libLevelsDirectory;
+            bool levelsDirExists = Directory.Exists(levelsPath);
+            bool updatedBuild = PersistentDataManager.gameSettings.lastLibraryOpenedBuild < buildInt;
+            
+            if (!levelsDirExists || (updatedBuild && newPackins))
+            {
+                PersistentDataManager.gameSettings.lastLibraryOpenedBuild = buildInt;
+                LibraryManager.SetupLibrary(levelsPath, false);
+            }
+            
             LibraryCacheManager.LoadCache();
 
             ScreenSizeIndex = PersistentDataManager.gameSettings.resolutionIndex;
@@ -138,6 +155,8 @@ namespace HeavenStudio
             AudioConfiguration config = AudioSettings.GetConfiguration();
             config.dspBufferSize = currentDspSize;
             config.sampleRate = currentSampleRate;
+            config.numRealVoices = 64;
+            config.numVirtualVoices = 256;
             AudioSettings.Reset(config);
 
             QualitySettings.vSyncCount = 0;
@@ -177,10 +196,11 @@ namespace HeavenStudio
             buildTime = Application.buildGUID.Substring(0, 8) + " " + AppInfo.Date.ToString("dd/MM/yyyy hh:mm:ss");
 #endif
 
-            buildInt = AppInfo.Date.Day + (AppInfo.Date.Month * 100) + (AppInfo.Date.Year * 10000);
-
             Debug.Log($"Started Heaven Studio {buildTime} on {Application.platform}");
             Debug.Log($"We hope you enjoy as much as we did making it!");
+
+            // cache levels!
+            await LibraryManager.Refresh(skipMenuStuff: true);
         }
 
         private static IEnumerator InitVolumes()
@@ -195,12 +215,19 @@ namespace HeavenStudio
             FileBrowserOpener.Initialize(this);
         }
 
+        private void SetLevelCacheUI(bool showCacheText)
+        {
+            if (levelCacheText != null) levelCacheText.SetActive(showCacheText);
+            if (hintText != null) hintText.SetActive(false);
+        }
+
         public void Awake()
         {
             DontDestroyOnLoad(this.gameObject);
             instance = this;
             fadeImage.gameObject.SetActive(false);
             loadingText.enabled = false;
+            SetLevelCacheUI(false);
             instance.adviceText.text = "";
             memPanel.SetActive(false);
 
@@ -219,7 +246,7 @@ namespace HeavenStudio
             PlayOpenFileHash = null;
         }
 
-        IEnumerator LoadSceneAsync(string scene, float fadeOut, bool continueLoading)
+        IEnumerator LoadSceneAsync(string scene, float fadeOut, bool continueLoading, bool waitForLibraryCache = false)
         {
             Application.backgroundLoadingPriority = ThreadPriority.Normal;
 
@@ -231,6 +258,23 @@ namespace HeavenStudio
 
             yield return new WaitForSeconds(0.5f);
 
+            if (waitForLibraryCache)
+            {
+                float cacheWaitElapsed = 0f;
+                while (!LibraryManager.refreshComplete)
+                {
+                    if (hintText != null && !hintText.activeSelf)
+                    {
+                        cacheWaitElapsed += Time.unscaledDeltaTime;
+                        if (cacheWaitElapsed >= 20f) //20s before hint appears
+                        {
+                            hintText.SetActive(true);
+                        }
+                    }
+                    yield return null;
+                }
+            }
+
             asyncLoad = SceneManager.LoadSceneAsync(scene);
             while (!asyncLoad.isDone)
             {
@@ -241,6 +285,7 @@ namespace HeavenStudio
             {
                 instance.fadeImage.DOKill();
                 instance.loadingText.enabled = false;
+                instance.SetLevelCacheUI(false);
                 instance.adviceText.text = "";
                 memPanel.SetActive(false);
 
@@ -270,6 +315,7 @@ namespace HeavenStudio
             }
             instance.fadeImage.DOKill();
             instance.loadingText.enabled = false;
+            instance.SetLevelCacheUI(false);
 			instance.adviceText.text = "";
             memPanel.SetActive(false);
             instance.fadeImage.DOFade(0, fadeOut).OnComplete(() =>
@@ -309,7 +355,7 @@ namespace HeavenStudio
         }
 
         public delegate void OnLoadSceneFadeInComplete();
-        public static void LoadScene(string scene, float fadeIn = 0.35f, float fadeOut = 0.35f, OnLoadSceneFadeInComplete callback = null, bool continueLoading = false)
+        public static void LoadScene(string scene, float fadeIn = 0.35f, float fadeOut = 0.35f, OnLoadSceneFadeInComplete callback = null, bool continueLoading = false, bool waitForLibraryCache = false)
         {
             if (scene == loadedScene)
                 return;
@@ -319,6 +365,7 @@ namespace HeavenStudio
             instance.fadeImage.DOKill();
             instance.fadeImage.gameObject.SetActive(true);
             // instance.loadingText.enabled = true;
+            instance.SetLevelCacheUI(waitForLibraryCache && !LibraryManager.refreshComplete);
 			instance.adviceText.text = instance.hintGiver.GenerateHint();
 			instance.adviceText.enabled = true;
             instance.memPanel.SetActive(true);
@@ -328,7 +375,7 @@ namespace HeavenStudio
                 instance.fadeImage.color = new Color(0, 0, 0, 1);
                 callback?.Invoke();
                 AssetBundle.UnloadAllAssetBundles(true);
-                instance.StartCoroutine(instance.LoadSceneAsync(scene, fadeOut, continueLoading));
+                instance.StartCoroutine(instance.LoadSceneAsync(scene, fadeOut, continueLoading, waitForLibraryCache));
             }
             else
             {
@@ -337,7 +384,7 @@ namespace HeavenStudio
                 {
                     callback?.Invoke();
                     AssetBundle.UnloadAllAssetBundles(true);
-                    instance.StartCoroutine(instance.LoadSceneAsync(scene, fadeOut, continueLoading));
+                    instance.StartCoroutine(instance.LoadSceneAsync(scene, fadeOut, continueLoading, waitForLibraryCache));
                 });
             }
         }
@@ -347,6 +394,7 @@ namespace HeavenStudio
             instance.fadeImage.DOKill();
             instance.fadeImage.gameObject.SetActive(true);
             instance.loadingText.enabled = false;
+            instance.SetLevelCacheUI(false);
 			instance.adviceText.text = "";
             instance.memPanel.SetActive(false);
             if (fadeIn > 0)
@@ -459,10 +507,10 @@ namespace HeavenStudio
             }
         }
 
-        public static void ResetGameRenderTexture(float widthRatio = 16f, float heightRatio = 9f)
+        public static void ResetGameRenderTexture(float scale = 1f, float widthRatio = 16f, float heightRatio = 9f)
         {
             // keep aspect ratio (16:9 by default)
-            float resScale = PersistentDataManager.gameSettings.resScale;
+            float resScale = PersistentDataManager.gameSettings.resScale * scale;
 
             int width = Screen.width;
             int height = Screen.height;

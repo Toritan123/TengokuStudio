@@ -167,7 +167,7 @@ namespace HeavenStudio.Editor
                     SettingsDialog.instance.SwitchSettingsDialog();
                 }
 
-                _ = LibraryManager.instance.Refresh();
+                _ = LibraryManager.Refresh();
             }
         }
 
@@ -176,7 +176,7 @@ namespace HeavenStudio.Editor
             note.SetActive(true);
             noteText.text = Localization.T("Copying levels...\nThis may take a while.");
             yield return null;
-            LibraryManager.instance.SetupLibrary();
+            LibraryManager.SetupLibrary(LibraryManager.levelsPath, false);
             note.SetActive(false);
         }
     }

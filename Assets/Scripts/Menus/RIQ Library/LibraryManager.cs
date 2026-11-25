@@ -25,16 +25,16 @@ namespace HeavenStudio
     {
         public static LibraryManager instance;
         [Header("Paths")]
-        [SerializeField] public string levelsPath;
+        [SerializeField] public static string levelsPath;
         [SerializeField] public string selectedLevelPath;
 
         [Header("Selector")]
         [SerializeField] private GameObject levelIconPrefab;
         [SerializeField] private GameObject folderIconPrefab;
         [SerializeField] private GridLayoutGroup levelsGrid;
-        [SerializeField] public Dictionary<string, IconInfo> allIconInfo = new();
+        [SerializeField] public static Dictionary<string, IconInfo> allIconInfo = new();
         [SerializeField] private int zoomLevel = 3;
-        [SerializeField] public string currentFolder;
+        [SerializeField] public static string currentFolder;
         [SerializeField] private LibraryFolderIcon favoritesFolderIcon;
         [SerializeField] public ScrollRect levelsScrollRect;
         public static string lastFolder;
@@ -42,6 +42,7 @@ namespace HeavenStudio
         public List<string> sortedPaths;
         public List<string> visibleLevelPaths;
         public List<GameObject> visibleIcons;
+        private Coroutine scrollCo;
 
         [Header("Main Content")]
         [SerializeField] public LibraryInfoPanel infoPanel;
@@ -94,21 +95,21 @@ namespace HeavenStudio
         [SerializeField] private TMP_Text setupStatusLabel;
         [SerializeField] private Slider setupProgressSlider;
         [SerializeField] private LibrarySelectable setupCloseButton;
-        [SerializeField] public int refreshStatus = -1;
+        [SerializeField] public static int refreshStatus = -1;
         private bool setupFailed = false;
 
         [Header("Data")]
-        [SerializeField] private bool refreshComplete;
-        [SerializeField] private int filesToProcess;
-        [SerializeField] private int filesProcessed;
-        [SerializeField] private int iconsToProcess;
-        [SerializeField] private int iconsProcessed;
+        public static bool refreshComplete = false;
+        [SerializeField] private static int filesToProcess;
+        [SerializeField] private static int filesProcessed;
+        [SerializeField] private static int iconsToProcess;
+        [SerializeField] private static int iconsProcessed;
         [SerializeField] private int filesToMove;
         [SerializeField] private int filesMoved;
         [SerializeField] private List<string> movedFilePaths;
-        private Dictionary<string, string> currentPathsAndHashes = new();
-        private ConcurrentBag<KeyValuePair<string, string>> concurrentPathsAndHashes = new();
-        private ConcurrentBag<KeyValuePair<string, CachedLevelInfo>> concurrentTempCache = new();
+        private static Dictionary<string, string> currentPathsAndHashes = new();
+        private static ConcurrentBag<KeyValuePair<string, string>> concurrentPathsAndHashes = new();
+        private static ConcurrentBag<KeyValuePair<string, CachedLevelInfo>> concurrentTempCache = new();
         [SerializeField] private float downloadPercent;
         public static Dictionary<string, string> savedPathsAndHashes;
         public List<string> hashesPresent => allIconInfo.Values.Where(iconInfo => !iconInfo.isFolder).Select(iconInfo => iconInfo.hash).ToList();
@@ -141,13 +142,10 @@ namespace HeavenStudio
 
             if (string.IsNullOrEmpty(PersistentDataManager.gameSettings.libLevelsDirectory))
             {
-                string documentsPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);
-
-                PersistentDataManager.gameSettings.libLevelsDirectory = Application.platform is not RuntimePlatform.WindowsPlayer and not RuntimePlatform.WindowsEditor
-                    ? Path.Combine(documentsPath, "Documents", PersistentDataManager.LevelsFolderName)
-                    : Path.Combine(documentsPath, PersistentDataManager.LevelsFolderName);
+                PersistentDataManager.gameSettings.libLevelsDirectory = SetDefaultLibraryPath();
             }
-                
+
+
             zoomLevel = PersistentDataManager.gameSettings.libZoomLevel;
             levelsPath = PersistentDataManager.gameSettings.libLevelsDirectory;
 
@@ -156,7 +154,7 @@ namespace HeavenStudio
                 _ = InitializeLibrary();
 
                 bgmSource.clip = music;
-            //    fadeInCoroutine = StartCoroutine(FadeInMusic());
+                //    fadeInCoroutine = StartCoroutine(FadeInMusic());
                 bgmSource.Play();
             }
             else
@@ -165,23 +163,26 @@ namespace HeavenStudio
             }
         }
 
+        public static string SetDefaultLibraryPath()
+        {
+            string documentsPath = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);
+
+            return Application.platform is not RuntimePlatform.WindowsPlayer and not RuntimePlatform.WindowsEditor
+                ? Path.Combine(documentsPath, "Documents", PersistentDataManager.LevelsFolderName)
+                : Path.Combine(documentsPath, PersistentDataManager.LevelsFolderName);
+        }
+
+
         private async Task InitializeLibrary()
         {
             bool levelsDirExists = Directory.Exists(levelsPath);
 
             if (!levelsDirExists)
             {
-                SetupLibrary();
+                SetupLibrary(levelsPath, false);
             }
 
-            if (PersistentDataManager.gameSettings.lastLibraryOpenedBuild < GlobalGameManager.buildInt)
-            {
-                PersistentDataManager.gameSettings.lastLibraryOpenedBuild = GlobalGameManager.buildInt;
-                if (GlobalGameManager.newPackins)
-                {
-                    SetupLibrary();
-                }
-            }
+            // Packin update has been moved to GlobalGameManager init
 
             if (GlobalGameManager.transitioningToLibraryFromGameplay)
             {
@@ -206,61 +207,39 @@ namespace HeavenStudio
 
                 if (icon.isFolder)
                 {
-                    icon.folderIcon.OnNavigateTo();
+                    icon.folderIcon.OnNavigateTo(true, false);
                 }
                 else
                 {
-                    icon.levelIcon.OnNavigateTo();
+                    icon.levelIcon.OnNavigateTo(true, false);
                 }
             }
             else
             {
                 IconInfo icon = GetFirstVisibleIcon();
 
-                if (PersistentDataManager.gameSettings.hasOpenedLibrary)
+                if (icon == null)
                 {
-                    if (icon == null)
-                    {
-                        LibraryMenuCursor.instance.SetSelectable(LibraryMenuCursor.instance.defaultToolbarSelectable);
-                        LibraryMenuCursor.instance.levelsInGrid = false;
-                    }
-                    else if (LibraryMenuCursor.usingMouse)
-                    {
-                        LibraryMenuCursor.instance.SetSelectable(LibraryMenuCursor.instance.defaultToolbarSelectable);
-                        LibraryMenuCursor.instance.levelsInGrid = true;
-                    }
-                    else if (icon.isFolder)
-                    {
-                        icon.folderIcon.OnNavigateTo(false);
-                        LibraryMenuCursor.instance.levelsInGrid = true;
-                    }
-                    else
-                    {
-                        icon.levelIcon.OnNavigateTo(false);
-                        LibraryMenuCursor.instance.levelsInGrid = true;
-                    }
+                    LibraryMenuCursor.instance.SetSelectable(LibraryMenuCursor.instance.defaultToolbarSelectable);
+                    LibraryMenuCursor.instance.levelsInGrid = false;
+                }
+                else if (LibraryMenuCursor.usingMouse)
+                {
+                    LibraryMenuCursor.instance.SetSelectable(LibraryMenuCursor.instance.defaultToolbarSelectable);
+                    LibraryMenuCursor.instance.levelsInGrid = true;
+                }
+                else if (icon.isFolder)
+                {
+                    icon.folderIcon.OnNavigateTo(false);
+                    LibraryMenuCursor.instance.levelsInGrid = true;
                 }
                 else
                 {
-                    if (icon == null)
-                    {
-                        LibraryMenuCursor.instance.levelsInGrid = false;
-                    }
-                    else if (icon.isFolder)
-                    {
-                        LibraryMenuCursor.instance.gridSelectable = icon.folderIcon.GetComponent<LibrarySelectable>();
-                        LibraryMenuCursor.instance.levelsInGrid = true;
-                    }
-                    else
-                    {
-                        LibraryMenuCursor.instance.gridSelectable = icon.levelIcon.GetComponent<LibrarySelectable>();
-                        LibraryMenuCursor.instance.levelsInGrid = true;
-                    }
-
-                    LibraryMenuCursor.instance.CursorSelect(folderInfoButton, false);
-                    PersistentDataManager.gameSettings.hasOpenedLibrary = true;
-
+                    icon.levelIcon.OnNavigateTo(false);
+                    LibraryMenuCursor.instance.levelsInGrid = true;
                 }
+
+                if (!PersistentDataManager.gameSettings.hasOpenedLibrary) PersistentDataManager.gameSettings.hasOpenedLibrary = true;
             }
 
 
@@ -298,7 +277,43 @@ namespace HeavenStudio
             return allIconInfo[firstVisiblePath];
         }
 
-        public async Task Refresh(Dictionary<string, string> pathsAndHashesOverride = null)
+        public static async Task Refresh(Dictionary<string, string> pathsAndHashesOverride = null, bool skipMenuStuff = false)
+        {
+            refreshComplete = false;
+            SetupForCaching(skipMenuStuff);
+
+            await ProcessPathsTask(pathsAndHashesOverride, skipMenuStuff);
+
+            await SetupIconInfoTask();
+
+            Task staleCacheTask = CreateStaleCacheTask();
+
+            iconsToProcess = currentPathsAndHashes.Count;
+            iconsProcessed = 0;
+
+            refreshStatus = 2;
+
+            SpawnGridObjects(skipMenuStuff); // not async
+
+            await staleCacheTask;
+
+            refreshStatus = -1;
+
+            if ((instance != null) && !skipMenuStuff)
+            {
+                instance.setupPanel.SetActive(false);
+            }
+
+            refreshComplete = true;
+
+        }
+
+        /// <summary>
+        /// Sets the levels path, resets the current folder to the top-level,
+        /// clears allIconInfo and currentPathsAndHashes, and removes all gameobjects
+        /// in the selection grid.
+        /// </summary>
+        private static void SetupForCaching(bool skipMenuStuff = false)
         {
             try
             {
@@ -308,27 +323,42 @@ namespace HeavenStudio
                 levelsPath = PersistentDataManager.gameSettings.libLevelsDirectory;
                 currentFolder = levelsPath;
 
-                ClearLevels();
+                ClearLevels(skipMenuStuff);
                 currentPathsAndHashes.Clear();
 
-                infoPanel.ShowHelpAndStats();
+                if ((instance != null) && !skipMenuStuff)
+                {
+                    instance.infoPanel.ShowHelpAndStats();
 
-                setupPanel.SetActive(true);
-                refreshStatus = 0;
-                setupHeader.text = Localization.T("Please Wait...");
-                setupStatusLabel.gameObject.SetActive(true);
-                setupStatusLabel.text = Localization.T("Getting file paths");
-                setupProgressSlider.gameObject.SetActive(false);
-                setupProgressSlider.value = 0;
-                setupCloseButton.gameObject.SetActive(false);
-                LibraryMenuCursor.instance.HideCursor();
+                    if (!GlobalGameManager.transitioningToLibraryFromGameplay)
+                    {
+                        instance.setupPanel.SetActive(true);
+                        refreshStatus = 0;
+                        instance.setupHeader.text = Localization.T("Please Wait...");
+                        instance.setupStatusLabel.gameObject.SetActive(true);
+                        instance.setupStatusLabel.text = Localization.T("Getting file paths");
+                        instance.setupProgressSlider.gameObject.SetActive(false);
+                        instance.setupProgressSlider.value = 0;
+                        instance.setupCloseButton.gameObject.SetActive(false);
+                        LibraryMenuCursor.instance.HideCursor();
+                    }
+                }
             }
             catch (Exception e)
             {
                 Debug.LogError($"Refresh failed in block 1: {e}");
             }
+        }
 
 
+        /// <summary>
+        /// Go through all paths in the library folder, cache all levels,
+        /// and set up all folders. Also sets up the list of paths and hashes in the library.
+        /// </summary>
+        /// <param name="pathsAndHashesOverride">Skip processing if provided, and just use the provided paths and hashes.</param>
+        /// <returns></returns>
+        private static async Task ProcessPathsTask(Dictionary<string, string> pathsAndHashesOverride, bool skipMenuStuff = false)
+        {
             if (pathsAndHashesOverride == null)
             {
                 string[] filePaths = Directory.GetFiles(levelsPath, "*", new EnumerationOptions() { RecurseSubdirectories = true });
@@ -338,70 +368,181 @@ namespace HeavenStudio
                 filesProcessed = 0;
 
                 refreshStatus = 1;
-                setupProgressSlider.gameObject.SetActive(true);
+
+                if ((instance != null) && !skipMenuStuff)
+                {
+                    instance.setupProgressSlider.gameObject.SetActive(true);
+                }
 
                 concurrentPathsAndHashes = new();
                 concurrentTempCache = new();
 
-                Task folderPathsTask = Task.Run(() =>
-                {
-                    try
-                    {
-                        currentPathsAndHashes.Add(levelsPath, null);
-                        currentPathsAndHashes.Add("Favorites", null);
+                Task folderPathsTask = CreateFolderPathsTask(folderPaths);
+                Task cacheLevelsTask = CreateCacheLevelsTask(filePaths);
 
-                        foreach (string currentFolderPath in folderPaths)
-                        {
-                            currentPathsAndHashes.Add(currentFolderPath, null);
-                        }
-                    }
-                    catch (Exception e)
-                    {
-                        Debug.LogError($"Refresh failed in block 2: {e}");
-                    }
-                });
+                await Task.WhenAll(cacheLevelsTask, folderPathsTask);
 
-
-                Task cacheTask = Task.Run(() => Parallel.ForEach(filePaths, filePath =>
-                {
-                    try
-                    {
-                        CacheProcess(filePath);
-                    }
-                    catch (Exception e)
-                    {
-                        Debug.LogError($"Refresh failed in block 3: {e}");
-                    }
-                }));
-
-                await Task.WhenAll(cacheTask, folderPathsTask);
-
-
-                try
-                {
-                    concurrentPathsAndHashes.ToList().ForEach(kvp => currentPathsAndHashes.Add(kvp.Key, kvp.Value));
-
-                    foreach (KeyValuePair<string, CachedLevelInfo> tempCacheEntry in concurrentTempCache)
-                    {
-                        if (!LibraryCacheManager.cache.cachedInfo.ContainsKey(tempCacheEntry.Key))
-                        {
-                            LibraryCacheManager.cache.cachedInfo.Add(tempCacheEntry.Key, tempCacheEntry.Value);
-                        }
-
-                    }
-
-                }
-                catch (Exception e)
-                {
-                    Debug.LogError($"Refresh failed in block 4: {e}");
-                }
-
+                UpdatePathsAndHashesAndCache();
             }
             else
             {
                 currentPathsAndHashes = pathsAndHashesOverride;
             }
+        }
 
+
+        /// <summary>
+        /// Transfers data from concurrentPathsAndHashes to currentPathsAndHashes,
+        /// and updates the LibraryCache with the data from concurrentTempCache.
+        /// </summary>
+        private static void UpdatePathsAndHashesAndCache()
+        {
+            try
+            {
+                concurrentPathsAndHashes.ToList().ForEach(kvp => currentPathsAndHashes.Add(kvp.Key, kvp.Value));
+
+                foreach (KeyValuePair<string, CachedLevelInfo> tempCacheEntry in concurrentTempCache)
+                {
+                    LibraryCacheManager.AddCacheEntry(tempCacheEntry.Key, tempCacheEntry.Value);
+                }
+
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"Refresh failed in block 4: {e}");
+            }
+        }
+
+
+        private static Task CreateFolderPathsTask(string[] folderPaths)
+        {
+            return Task.Run(() =>
+            {
+                try
+                {
+                    currentPathsAndHashes.Add(levelsPath, null);
+                    currentPathsAndHashes.Add("Favorites", null);
+
+                    foreach (string currentFolderPath in folderPaths)
+                    {
+                        currentPathsAndHashes.Add(currentFolderPath, null);
+                    }
+                }
+                catch (Exception e)
+                {
+                    Debug.LogError($"Refresh failed in block 2: {e}");
+                }
+            });
+        }
+
+
+        private static Task CreateCacheLevelsTask(string[] filePaths)
+        {
+            return Task.Run(() => Parallel.ForEach(filePaths, filePath =>
+            {
+                try
+                {
+                    CacheProcess(filePath);
+                }
+                catch (Exception e)
+                {
+                    Debug.LogError($"Refresh failed in block 3: {e}");
+                }
+            }));
+        }
+
+
+        /// <summary>
+        /// Returns a Task that removes cache entries where
+        /// the hash isn't present in allIconInfo.
+        /// </summary>
+        /// <returns></returns>
+        private static Task CreateStaleCacheTask()
+        {
+            return Task.Run(() =>
+            {
+                try
+                {
+                    List<string> hashesPresent = allIconInfo.Values.Where(iconInfo => !iconInfo.isFolder).Select(iconInfo => iconInfo.hash).ToList();
+                    List<string> hashesMissing = LibraryCacheManager.cache.cachedInfo.Keys.Where(hash => !hashesPresent.Contains(hash)).ToList();
+
+                    foreach (string hash in hashesMissing)
+                    {
+                        LibraryCacheManager.RemoveCacheEntry(hash);
+                    }
+                }
+                catch (Exception e)
+                {
+                    Debug.LogError($"Refresh failed in block 6: {e}");
+                }
+            });
+        }
+
+
+        /// <summary>
+        /// For each entry in allIconInfo, spawns a
+        /// folder gameobject or an icon gameobject
+        /// and updates allIconInfo with a reference
+        /// to that gameobject.
+        /// </summary>
+        private static void SpawnGridObjects(bool skipMenuStuff = false)
+        {
+            try
+            {
+                int spawnCount = 0;
+                foreach (KeyValuePair<string, string> fileAndHash in currentPathsAndHashes)
+                {
+                    string path = fileAndHash.Key;
+                    IconInfo iconInfo = allIconInfo[path];
+                    try
+                    {
+                        if ((instance != null) && !skipMenuStuff)
+                        {
+                            if (iconInfo.isFolder)
+                            {
+                                instance.CreateFolder(path);
+                            }
+                            else
+                            {
+                                instance.CreateIcon(path, iconInfo.hash);
+                            }
+                        }
+
+                        iconsProcessed++;
+
+                        if (allIconInfo.ContainsKey(Path.GetDirectoryName(path))) allIconInfo[Path.GetDirectoryName(path)].pathsInFolder.Add(fileAndHash.Key);
+                    }
+                    catch (Exception e)
+                    {
+                        Debug.LogError($"Refresh failed in block 7: {e}");
+                    }
+
+                    spawnCount++;
+                }
+
+                if ((instance != null) && !skipMenuStuff)
+                {
+                    instance.AutoSort();
+                    instance.StartCoroutine(instance.Zoom(true));
+
+                    instance.SelectFolder(levelsPath, false);
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"Refresh failed in block 8: {e}");
+            }
+        }
+
+        /// <summary>
+        /// Creates the allIconInfo dictionary based on the
+        /// present files, and marks them as being folders
+        /// or their hashes, but does not fill the rest
+        /// of the icon info.
+        /// </summary>
+        /// <returns></returns>
+        private static async Task SetupIconInfoTask()
+        {
             Task iconInfoTask = Task.Run(() =>
             {
                 try
@@ -427,75 +568,8 @@ namespace HeavenStudio
             });
 
             await iconInfoTask;
-
-            Task staleCacheTask = Task.Run(() =>
-            {
-                try
-                {
-                    List<string> hashesPresent = allIconInfo.Values.Where(iconInfo => !iconInfo.isFolder).Select(iconInfo => iconInfo.hash).ToList();
-                    List<string> hashesMissing = LibraryCacheManager.cache.cachedInfo.Keys.Where(hash => !hashesPresent.Contains(hash)).ToList();
-
-                    foreach (string hash in hashesMissing)
-                    {
-                        LibraryCacheManager.RemoveCacheEntry(hash);
-                    }
-                }
-                catch (Exception e)
-                {
-                    Debug.LogError($"Refresh failed in block 6: {e}");
-                }
-            }); 
-
-            iconsToProcess = currentPathsAndHashes.Count;
-            iconsProcessed = 0;
-
-            refreshStatus = 2;
-
-            try
-            {
-                foreach (KeyValuePair<string, string> fileAndHash in currentPathsAndHashes)
-                {
-
-                    string path = fileAndHash.Key;
-                    IconInfo iconInfo = allIconInfo[path];
-                    try
-                    {
-                        if (iconInfo.isFolder)
-                        {
-                            CreateFolder(path);
-                        }
-                        else
-                        {
-                            CreateIcon(path, iconInfo.hash);
-                        }
-
-                        if (allIconInfo.ContainsKey(Path.GetDirectoryName(path))) allIconInfo[Path.GetDirectoryName(path)].pathsInFolder.Add(fileAndHash.Key);
-                    }
-                    catch (Exception e)
-                    {
-                        Debug.LogError($"Refresh failed in block 7: {e}");
-                    }
-
-                }
-
-                AutoSort();
-                StartCoroutine(Zoom(true));
-
-                SelectFolder(levelsPath, false);
-            }
-            catch (Exception e)
-            {
-                Debug.LogError($"Refresh failed in block 8: {e}");
-            }
-
-            await staleCacheTask;
-
-            refreshStatus = -1;
-            setupPanel.SetActive(false);
-
-            refreshComplete = true;
-
         }
+
 
         public async Task ImportProcess(string[] paths, bool filesAlreadyMoved = false, bool deleteOriginal = false)
         {
@@ -577,11 +651,7 @@ namespace HeavenStudio
             concurrentPathsAndHashes.ToList().ForEach(kvp => currentPathsAndHashes.Add(kvp.Key, kvp.Value));
             foreach (KeyValuePair<string, CachedLevelInfo> tempCacheEntry in concurrentTempCache)
             {
-                if (!LibraryCacheManager.cache.cachedInfo.ContainsKey(tempCacheEntry.Key))
-                {
-                    LibraryCacheManager.cache.cachedInfo.Add(tempCacheEntry.Key, tempCacheEntry.Value);
-                }
-
+                LibraryCacheManager.AddCacheEntry(tempCacheEntry.Key, tempCacheEntry.Value);
             }
 
 
@@ -610,6 +680,7 @@ namespace HeavenStudio
 
             refreshStatus = 2;
 
+            int spawnCount = 0;
             foreach (KeyValuePair<string, string> fileAndHash in currentPathsAndHashes)
             {
                 string path = fileAndHash.Key;
@@ -632,6 +703,7 @@ namespace HeavenStudio
                     Debug.LogError($"Couldnt create icon {fileAndHash.Key}: {e}");
                 }
 
+                spawnCount++;
             }
 
             AutoSort();
@@ -660,46 +732,63 @@ namespace HeavenStudio
             refreshComplete = true;
         }
 
-        private void CacheProcess(string path)
+        private static void CacheProcess(string path)
         {
             if (string.Equals(Path.GetExtension(path), ".riq", StringComparison.OrdinalIgnoreCase))
             {
-                using (FileStream fileStream = new FileStream(path, FileMode.Open))
-                {
-                    StringBuilder hashBuilder = new();
-                    using (SHA256 sha256 = SHA256.Create())
-                    {
-                        byte[] hashBytes = sha256.ComputeHash(fileStream);
-                        foreach (Byte b in hashBytes)
-                        {
-                            hashBuilder.Append(b.ToString("X2"));
-                        }
-                    }
+                FileInfo fileInfo = new FileInfo(path);
+                string fileName = fileInfo.Name;
+                long lastModified = fileInfo.LastWriteTimeUtc.Ticks;
 
-                    if (!LibraryCacheManager.cache.cachedInfo.ContainsKey(hashBuilder.ToString()))
+                var cachedMatch = LibraryCacheManager.cache.cachedInfo.FirstOrDefault(c => c.Value.fileName == fileName && c.Value.lastModified == lastModified);
+
+                if (cachedMatch.Key != null)
+                {
+                    concurrentPathsAndHashes.Add(new KeyValuePair<string, string>(path, cachedMatch.Key));
+                }
+                else
+                {
+                    using (FileStream fileStream = new FileStream(path, FileMode.Open))
                     {
-                        try
+                        StringBuilder hashBuilder = new();
+                        using (SHA256 sha256 = SHA256.Create())
                         {
-                            CacheLevel(hashBuilder.ToString(), path, fileStream);
+                            byte[] hashBytes = sha256.ComputeHash(fileStream);
+                            foreach (Byte b in hashBytes)
+                            {
+                                hashBuilder.Append(b.ToString("X2"));
+                            }
+                        }
+
+                        if (!LibraryCacheManager.cache.cachedInfo.ContainsKey(hashBuilder.ToString()))
+                        {
+                            try
+                            {
+                                CacheLevel(hashBuilder.ToString(), path, fileStream);
+                                concurrentPathsAndHashes.Add(new KeyValuePair<string, string>(path, hashBuilder.ToString()));
+                            }
+                            catch (Exception e)
+                            {
+                                Debug.LogError($"{path} could not be cached\n{e}");
+                            }
+                        }
+                        else
+                        {
+                            CachedLevelInfo updatedInfo = LibraryCacheManager.cache.cachedInfo[hashBuilder.ToString()];
+                            updatedInfo.fileName = fileName;
+                            updatedInfo.lastModified = lastModified;
+                            concurrentTempCache.Add(new(hashBuilder.ToString(), updatedInfo));
+
                             concurrentPathsAndHashes.Add(new KeyValuePair<string, string>(path, hashBuilder.ToString()));
                         }
-                        catch (Exception e)
-                        {
-                            Debug.LogError($"{path} could not be cached\n{e}");
-                        }
                     }
-                    else
-                    {
-                        concurrentPathsAndHashes.Add(new KeyValuePair<string, string>(path, hashBuilder.ToString()));
-                    }
-
                 }
             }
 
             filesProcessed++;
         }
 
-        private void CacheLevel(string levelHash, string path, FileStream fileStream)
+        private static void CacheLevel(string levelHash, string path, FileStream fileStream)
         {
             using (ZipArchive archive = new ZipArchive(fileStream, ZipArchiveMode.Read))
             {
@@ -712,8 +801,12 @@ namespace HeavenStudio
                     beatmap = new RiqBeatmap(beatmapText);
                 }
 
+                FileInfo fileInfo = new FileInfo(path);
+
                 CachedLevelInfo cachedLevelInfo = new()
                 {
+                    fileName = fileInfo.Name,
+                    lastModified = fileInfo.LastWriteTimeUtc.Ticks,
                     levelName = beatmap.data.properties.ContainsKey("remixtitle") ? (string)beatmap["remixtitle"] : "New Remix",
                     icons = new string[4] { "noGame", "noGame", "noGame", "noGame" },
                     customIcon = false,
@@ -747,7 +840,7 @@ namespace HeavenStudio
 
                 ZipArchiveEntry customLevelIcon = archive.GetEntry("Resources/Images/LibraryIcon/LibraryLevelIcon.png");
                 if (customLevelIcon == null) customLevelIcon = archive.GetEntry("Resources/Images/LibraryIcon/LibraryLevelIcon.jpg");
-                
+
                 if (customLevelIcon != null)
                 {
                     string iconDirectory = Path.Combine(LibraryCacheManager.cachePath, "LevelIcons", levelHash);
@@ -823,20 +916,15 @@ namespace HeavenStudio
 
         private void CreateIcon(string path, string hash)
         {
-            Debug.Log($"Creating icon for {path}");
             LibraryLevelIcon level = Instantiate(levelIconPrefab, levelsGrid.transform).GetComponent<LibraryLevelIcon>();
             allIconInfo[path].levelIcon = level;
 
             level.SetIconInfo(path, hash);
-
-            iconsProcessed++;
         }
 
 
         private void CreateFolder(string path)
         {
-            Debug.Log($"Creating folder for {path}");
-
             LibraryFolderIcon folder;
 
             if (path == levelsPath)
@@ -867,19 +955,24 @@ namespace HeavenStudio
                 folder.SetFolderInfo(path);
 
             }
-
-            iconsProcessed++;
         }
 
-        private void ClearLevels()
+        /// <summary>
+        /// Destroys all folder and level gameobjects,
+        /// then clears allIconInfo.
+        /// </summary>
+        private static void ClearLevels(bool skipMenuStuff = false)
         {
-            foreach (IconInfo iconInfo in allIconInfo.Values)
+            if ((instance != null) && !skipMenuStuff)
             {
-                if ((iconInfo.levelIcon != null) || (iconInfo.folderIcon != null))
+                foreach (IconInfo iconInfo in allIconInfo.Values)
                 {
-                    if (!(iconInfo.isFolder && (iconInfo.folderIcon.folderPath == "Favorites")))
+                    if ((iconInfo.levelIcon != null) || (iconInfo.folderIcon != null))
                     {
-                        Destroy(iconInfo.gameObject);
+                        if (!(iconInfo.isFolder && (iconInfo.folderIcon.folderPath == "Favorites")))
+                        {
+                            Destroy(iconInfo.gameObject);
+                        }
                     }
                 }
             }
@@ -971,18 +1064,8 @@ namespace HeavenStudio
             }
         }
 
-        public void SetupLibrary()
+        public static void SetupLibrary(string levelsPath, bool setupFailedOnce)
         {
-            setupPanel.SetActive(true);
-
-            setupHeader.text = Localization.T("Setting Up Library...");
-            setupStatusLabel.gameObject.SetActive(true);
-            setupProgressSlider.gameObject.SetActive(false);
-            setupCloseButton.gameObject.SetActive(false);
-
-
-            setupStatusLabel.SetText("Creating levels directory");
-
             try
             {
                 Debug.Log("Creating directory");
@@ -995,7 +1078,6 @@ namespace HeavenStudio
                 if (!packInsDirExists)
                 {
                     Debug.LogWarning("Set up the Library with no pack-ins!");
-                    setupPanel.SetActive(false);
                     return;
                 }
 
@@ -1019,26 +1101,24 @@ namespace HeavenStudio
             catch (Exception ex)
             {
                 Debug.LogError($"Error setting up Library: {ex}");
-                if (!setupFailed)
+                if (!setupFailedOnce)
                 {
                     Debug.LogWarning($"Trying again in: {Application.persistentDataPath}");
                     PersistentDataManager.gameSettings.libLevelsDirectory = Path.Combine(Application.persistentDataPath, PersistentDataManager.LevelsFolderName);
-                    setupFailed = true;
-                    SetupLibrary();
+                    SetupLibrary(PersistentDataManager.gameSettings.libLevelsDirectory, true);  // retry in the new place, not the one that failed
                     return;
                 }
                 else
                 {
-                    setupStatusLabel.SetText($"An error occurred setting up the Library. Please report this bug if you encounter it!\n\n{ex}");
+                    Debug.LogError($"An error occurred setting up the Library. Please report this bug if you encounter it!\n\n{ex}");
                 }
             }
 
             Debug.Log("Library setup complete");
-            setupPanel.SetActive(false);
         }
 
         //https://learn.microsoft.com/en-us/dotnet/standard/io/how-to-copy-directories
-        private void CopyDirectory(string sourceDir, string destinationDir, bool recursive)
+        private static void CopyDirectory(string sourceDir, string destinationDir, bool recursive)
         {
             // Get information about the source directory
             var dir = new DirectoryInfo(sourceDir);
@@ -1121,7 +1201,7 @@ namespace HeavenStudio
         private IEnumerator Zoom(bool sfx = false)
         {
             yield return null;
-            if (!sfx) SoundByte.PlayOneShot("ui/Library/zoom");
+            if (!sfx) SoundByte.PlayOneShot("ui/Library/zoom", ui: true);
 
             zoomLevel = Math.Clamp(zoomLevel, 2, 6);
 
@@ -1155,6 +1235,7 @@ namespace HeavenStudio
         private IEnumerator ScrollToPosition(float normalizedPos)
         {
             yield return null;
+            Canvas.ForceUpdateCanvases();
             levelsScrollRect.verticalNormalizedPosition = normalizedPos;
         }
 
@@ -1381,7 +1462,7 @@ namespace HeavenStudio
 
             infoPanel.ShowLevelInfo(allIconInfo[path].hash);
 
-            SoundByte.PlayOneShot("ui/UISelect");
+            SoundByte.PlayOneShot("ui/UISelect", ui: true);
 
             if (moveCursor) LibraryMenuCursor.instance.CursorSelect(infoPanel.playButton, addToCursorStack);
         }
@@ -1410,7 +1491,9 @@ namespace HeavenStudio
             {
                 if (kvp.Value.levelIcon != null || kvp.Value.folderIcon != null)
                 {
-                    if (allIconInfo[currentFolder].pathsInFolder.Contains(kvp.Key))
+                    bool shouldBeActive = allIconInfo[currentFolder].pathsInFolder.Contains(kvp.Key);
+
+                    if (shouldBeActive)
                     {
                         if (kvp.Key == "Favorites")
                         {
@@ -1418,7 +1501,7 @@ namespace HeavenStudio
                         }
                         else
                         {
-                            kvp.Value.gameObject.SetActive(true);
+                            if (!kvp.Value.gameObject.activeSelf) kvp.Value.gameObject.SetActive(true);
                             if (kvp.Value.isFolder)
                             {
                                 kvp.Value.folderIcon.LoadCustomIcon();
@@ -1431,7 +1514,7 @@ namespace HeavenStudio
                     }
                     else
                     {
-                        kvp.Value.gameObject.SetActive(false);
+                        if (kvp.Value.gameObject.activeSelf) kvp.Value.gameObject.SetActive(false);
                     }
                 }
             }
@@ -1451,6 +1534,8 @@ namespace HeavenStudio
             AutoSort();
 
             IconInfo icon = GetFirstVisibleIcon();
+
+            StartCoroutine(ScrollToPosition(1f));
             if (selectFirstIcon)
             {
                 if (icon == null)
@@ -1465,12 +1550,12 @@ namespace HeavenStudio
                 }
                 else if (icon.isFolder)
                 {
-                    icon.folderIcon.OnNavigateTo();
+                    icon.folderIcon.OnNavigateTo(true, false);
                     LibraryMenuCursor.instance.levelsInGrid = true;
                 }
                 else
                 {
-                    icon.levelIcon.OnNavigateTo();
+                    icon.levelIcon.OnNavigateTo(true, false);
                     LibraryMenuCursor.instance.levelsInGrid = true;
                 }
             }
@@ -1530,32 +1615,52 @@ namespace HeavenStudio
 
         public void ScrollToTarget(RectTransform target)
         {
-            // https://stackoverflow.com/a/37280809
-            Vector3[] corners = new Vector3[4];
-            target.GetWorldCorners(corners);
+            RectTransform viewport = levelsScrollRect.viewport;
 
-            var objTopPosition = (Vector2)levelsScrollRect.transform.InverseTransformPoint(corners[1]);
-            var objBottomPosition = (Vector2)levelsScrollRect.transform.InverseTransformPoint(corners[0]);
+            Vector3[] targetCorners = new Vector3[4];
+            target.GetWorldCorners(targetCorners);
 
-            var scrollHeight = levelsScrollRect.GetComponent<RectTransform>().rect.height;
-            var objHeight = target.rect.height;
+            Vector3[] viewportCorners = new Vector3[4];
+            viewport.GetWorldCorners(viewportCorners);
 
-            Vector2 gridPos = levelsGrid.GetComponent<RectTransform>().localPosition;
+            float targetTop = targetCorners[1].y;
+            float targetBottom = targetCorners[0].y;
 
-            if (objTopPosition.y > scrollHeight / 2)
+            float viewportTop = viewportCorners[1].y;
+            float viewportBottom = viewportCorners[0].y;
+
+            float offset = 0f;
+
+            if (targetTop > viewportTop)
             {
-                gridPos = new Vector2(gridPos.x,
-                gridPos.y - objHeight - levelsGrid.padding.bottom);
+                // scroll up
+                offset = viewportTop - targetTop;
+            }
+            else if (targetBottom < viewportBottom)
+            {
+                // scroll down
+                offset = viewportBottom - targetBottom;
             }
 
-            if (objBottomPosition.y < -scrollHeight / 2)
-            {
-                gridPos = new Vector2(gridPos.x,
-                gridPos.y + objHeight + levelsGrid.padding.bottom);
-            }
+            Canvas.ForceUpdateCanvases();
+            Vector3 pos = levelsScrollRect.content.position;
 
-            levelsGrid.GetComponent<RectTransform>().localPosition = gridPos;
-            levelsScrollRect.verticalNormalizedPosition = Mathf.Clamp(levelsScrollRect.verticalNormalizedPosition, 0, 1);
+            if (scrollCo != null) StopCoroutine(scrollCo);
+            scrollCo = StartCoroutine(ScrollEase(0.25f, pos, pos.y + offset));
+        }
+
+        private IEnumerator ScrollEase(float duration, Vector3 startPos, float endPos)
+        {
+            float time = 0f;
+            while (time < duration)
+            {
+                time += Time.deltaTime;
+                float pos = Util.EasingFunction.EaseOutQuint(startPos.y, endPos, time / duration);
+                levelsScrollRect.content.position = new Vector3(startPos.x, pos, startPos.z);
+                yield return null;
+            }
+            levelsScrollRect.content.position = new Vector3(startPos.x, endPos, startPos.z);
+            yield return null;
         }
 
         public GameObject GetGridSelectableLeft(string path)
@@ -1850,7 +1955,7 @@ namespace HeavenStudio
 
             if (currentFolder == levelsPath)
             {
-                SoundByte.PlayOneShot("ui/Error");
+                SoundByte.PlayOneShot("ui/Error", ui: true);
                 return;
             }
             else if (currentFolder == "Favorites")
@@ -1863,12 +1968,12 @@ namespace HeavenStudio
             }
 
             SelectFolder(targetPath);
-            SoundByte.PlayOneShot("ui/Library/folderBack", volume: 0.75f);
+            SoundByte.PlayOneShot("ui/Library/folderBack", volume: 0.75f, ui: true);
         }
 
         public void NewFolder()
         {
-            SoundByte.PlayOneShot("ui/Library/newFolder");
+            SoundByte.PlayOneShot("ui/Library/newFolder", ui: true);
             bool folderMade = false;
             string name = "New folder";
             int i = 0;
@@ -1901,7 +2006,7 @@ namespace HeavenStudio
             {
                 if (!folderEditor.gameObject.activeSelf)
                 {
-                    SoundByte.PlayOneShot("ui/Library/button");
+                    SoundByte.PlayOneShot("ui/Library/button", ui: true);
                     folderEditor.StartEditing(allIconInfo[currentFolder].folderIcon);
                     infoPanel.ShowFolderEditLayout();
                 }
@@ -1921,14 +2026,14 @@ namespace HeavenStudio
         public void ButtonSound(string soundEffect)
         {
             if (String.IsNullOrEmpty(soundEffect)) soundEffect = "ui/Library/button";
-            SoundByte.PlayOneShot(soundEffect);
+            SoundByte.PlayOneShot(soundEffect, ui: true);
         }
 
         public void ExitToTitle()
         {
             if (exiting) return;
             exiting = true;
-            SoundByte.PlayOneShot("ui/Exit");
+            SoundByte.PlayOneShot("ui/Exit", ui: true);
             PersistentDataManager.SaveSettings();
 
             fadeOutCoroutine = StartCoroutine(FadeOutMusic());
@@ -1960,7 +2065,7 @@ namespace HeavenStudio
                 levelIcon.SetIconInfo(levelIcon.levelPath, allIconInfo[levelIcon.levelPath].hash);
             }
 
-            SoundByte.PlayOneShot("ui/Library/delete");
+            SoundByte.PlayOneShot("ui/Library/delete", ui: true);
 
             SelectLevel(path, false);
         }
@@ -1974,7 +2079,7 @@ namespace HeavenStudio
                 LibrarySaveManager.DeleteLevelSaveData(hash);
             }
 
-            SoundByte.PlayOneShot("ui/Library/delete");
+            SoundByte.PlayOneShot("ui/Library/delete", ui: true);
 
             LibrarySaveManager.SaveSaveData();
         }
@@ -2189,9 +2294,11 @@ namespace HeavenStudio
                 orderedList.Reverse();
             }
 
-            for (int i = 0; i < orderedList.Count; i++)
+            List<LibraryLevelIcon> activeIcons = orderedList.Where(icon => allIconInfo[currentFolder].pathsInFolder.Contains(icon.levelPath)).ToList();
+
+            for (int i = 0; i < activeIcons.Count; i++)
             {
-                orderedList[i].transform.SetSiblingIndex(i + folderIconCount);
+                activeIcons[i].transform.SetSiblingIndex(i + folderIconCount);
             }
 
             currentSortType = sortType;
@@ -2311,6 +2418,11 @@ namespace HeavenStudio
             string hash = allIconInfo[level.levelPath].hash;
             return LibrarySaveManager.savedata.levelInfo.ContainsKey(hash) ? LibrarySaveManager.savedata[hash].score : -1;
         }
+        public static int GetLevelScore(string hash)
+        {
+            return LibrarySaveManager.savedata.levelInfo.ContainsKey(hash) ? LibrarySaveManager.savedata[hash].score : -1;
+        }
+
         private DateTime GetLevelLastPlayedTime(LibraryLevelIcon level)
         {
             string hash = allIconInfo[level.levelPath].hash;

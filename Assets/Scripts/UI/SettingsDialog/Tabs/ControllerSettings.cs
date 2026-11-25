@@ -234,6 +234,7 @@ namespace HeavenStudio.Editor
             InputController lastController = PlayerInput.GetInputController(1);
             lastController.SaveBindings();
             InputController newController = PlayerInput.GetInputControllers()[controllersDropdown.value];
+            PlayerInput.CurrentControlStyle = (InputController.ControlStyles)stylesDropdown.value;
 
             AssignController(newController, lastController);
         }
@@ -255,13 +256,13 @@ namespace HeavenStudio.Editor
             switch (PlayerInput.CurrentControlStyle)
             {
                 case InputController.ControlStyles.Touch:
-                    currentControllerLabel.text = Localization.F("Now Binding: {0}", (InputController.ActionsTouch)bt);
+                    currentControllerLabel.text = Localization.F("Press any button for: {0}", (InputController.ActionsTouch)bt);
                     break;
                 case InputController.ControlStyles.Baton:
-                    currentControllerLabel.text = Localization.F("Now Binding: {0}", (InputController.ActionsBaton)bt);
+                    currentControllerLabel.text = Localization.F("Press any button for: {0}", (InputController.ActionsBaton)bt);
                     break;
                 default:
-                    currentControllerLabel.text = Localization.F("Now Binding: {0}", (InputController.ActionsPad)bt);
+                    currentControllerLabel.text = Localization.F("Press any button for: {0}", (InputController.ActionsPad)bt);
                     break;
             }
         }
@@ -473,6 +474,7 @@ namespace HeavenStudio.Editor
         public override void OnOpenTab()
         {
             CancelBind();
+            SearchAndConnectControllers();
         }
 
         public override void OnCloseTab()

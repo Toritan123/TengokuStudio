@@ -137,7 +137,8 @@ namespace HeavenStudio.Games.Loaders
             new List<string>() { "ctr", "normal" },
             "ctrfruitbasket", "en",
             new List<string>() { },
-            chronologicalSortKey: 2
+            chronologicalSortKey: 2,
+            font: "Comet"
             );
         }
     }

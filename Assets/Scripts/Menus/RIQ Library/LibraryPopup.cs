@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using HeavenStudio.Util;
+using UnityEngine.UI;
 
 namespace HeavenStudio
 {
@@ -34,7 +35,7 @@ namespace HeavenStudio
             }
         }
 
-        
+
 
         public void TogglePopup()
         {
@@ -68,6 +69,9 @@ namespace HeavenStudio
 
             main.gameObject.SetActive(true);
 
+            Canvas.ForceUpdateCanvases();
+            LayoutRebuilder.MarkLayoutForRebuild(main);
+            
             while (normalizedTime < 1f)
             {
                 normalizedTime = Mathf.InverseLerp(0f, animationLength, time);

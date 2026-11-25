@@ -165,22 +165,6 @@ namespace HeavenStudio.Games.Scripts_Fillbots
                 })
             });
 
-            string sizePrefix = size switch
-            {
-                BotSize.Small => "small",
-                BotSize.Medium => "medium",
-                BotSize.Large => "big",
-                _ => throw new System.NotImplementedException()
-            };
-
-            List<MultiSound.Sound> sounds = new();
-            float normalizedBeat = Conductor.instance.GetPositionFromBeat(startBeat, 1);
-            for (int i = (int)Mathf.Ceil(Mathf.Max(normalizedBeat-0.1f, 0)); i <= 2; i++)
-            {
-                sounds.Add(new("fillbots/" + sizePrefix + "Fall", startBeat + i));
-            }
-            if (sounds.Count > 0) MultiSound.Play(sounds.ToArray(), true, true);
-
             game.ScheduleInput(startBeat, 4, Fillbots.InputAction_BasicPress, JustHold, Empty, Empty);
 
             game.currentBots.Add(this);
@@ -195,6 +179,8 @@ namespace HeavenStudio.Games.Scripts_Fillbots
             Material botMaterial;
             
             botMaterial = head.GetComponent<SpriteRenderer>().material;
+            botMaterial.SetColor("_ColorAlpha", lampColorOff);
+            botMaterial = body.GetComponent<SpriteRenderer>().material;
             botMaterial.SetColor("_ColorAlpha", lampColorOff);
 
             fuelFill.color = fuelColor;
@@ -336,6 +322,7 @@ namespace HeavenStudio.Games.Scripts_Fillbots
             beepEvent.enabled = false;
             _botState = BotState.Ng;
             game.fillerHolding = false;
+            game.isHolding = false;
             normalizedFill = normalizedBeat;
             if (conveyerRestartLength >= 0)
             {
@@ -375,6 +362,7 @@ namespace HeavenStudio.Games.Scripts_Fillbots
             transform.position = new Vector3(0, transform.position.y, 0);
             _botState = BotState.Holding;
             game.fillerHolding = true;
+            game.isHolding = true;
             fullBody.DoScaledAnimationAsync("Hold", 1f);
             SoundByte.PlayOneShotGame("fillbots/beep");
 
@@ -471,6 +459,7 @@ namespace HeavenStudio.Games.Scripts_Fillbots
             }
 
             game.fillerHolding = false;
+            game.isHolding = false;
             game.filler.DoScaledAnimationAsync("Release" + sizeSuffix, 0.5f);
             SoundByte.PlayOneShotGame("fillbots/armRetraction");
             fullBody.DoScaledAnimationAsync("Release", 1f);

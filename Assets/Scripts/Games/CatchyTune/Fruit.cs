@@ -82,7 +82,7 @@ namespace HeavenStudio.Games.Scripts_CatchyTune
             }
         }
 
-        public static void PlaySound(double startBeat, bool side, bool isPineapple)
+        public static void PlaySound(double startBeat, bool side, bool isPineapple, float offset)
         {
             string soundText = "catchyTune/";
 
@@ -112,18 +112,18 @@ namespace HeavenStudio.Games.Scripts_CatchyTune
             {
                 sound = new MultiSound.Sound[]
                 {
-                    new MultiSound.Sound(soundText, startBeat + 2f),
-                    new MultiSound.Sound(soundText, startBeat + 4f),
-                    new MultiSound.Sound(soundText, startBeat + 6f)
+                    new MultiSound.Sound(soundText, startBeat + 2f, offset: offset),
+                    new MultiSound.Sound(soundText, startBeat + 4f, offset: offset),
+                    new MultiSound.Sound(soundText, startBeat + 6f, offset: offset)
                 };
             }
             else
             {
                 sound = new MultiSound.Sound[]
                 {
-                    new MultiSound.Sound(soundText, startBeat + 1f),
-                    new MultiSound.Sound(soundText, startBeat + 2f),
-                    new MultiSound.Sound(soundText, startBeat + 3f)
+                    new MultiSound.Sound(soundText, startBeat + 1f, offset: offset),
+                    new MultiSound.Sound(soundText, startBeat + 2f, offset: offset),
+                    new MultiSound.Sound(soundText, startBeat + 3f, offset: offset)
                 };
             }
 

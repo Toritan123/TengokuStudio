@@ -491,5 +491,9 @@ namespace HeavenStudio.InputSystem
         public override void UpdateState()
         {
         }
+
+        public override void Rumble(float seconds = 0.1F)
+        {
+        }
     }
 }

@@ -11,30 +11,32 @@ namespace HeavenStudio.Editor
     public class EditorSettings : TabsContent
     {
         [SerializeField] Toggle cursorCheckbox;
-        [SerializeField] Toggle discordRPCCheckbox;
         [SerializeField] Button editorScaleDecre, editorScaleIncre;
         [SerializeField] Toggle scaleWSS;
+        [SerializeField] TMP_Dropdown autosaveDropdown;
         [SerializeField] TMP_Dropdown paramTooltipsDropdown;
         [SerializeField] Toggle previewNoteSoundsToggle;
-        [SerializeField] Toggle simpleIconsToggle;
+        [SerializeField] Toggle previewRichTextToggle;
         [SerializeField] Toggle showFanGamesToggle;
         [SerializeField] Toggle advancedFeaturesToggle;
         [SerializeField] Toggle minigameColorToggle;
         [SerializeField] TMP_Dropdown fontDropdown;
+        [SerializeField] TMP_Dropdown iconDropdown;
 
         // [SerializeField] Toggle cornerTooltipsToggle;
 
         private void Start()
         {
             cursorCheckbox.isOn = PersistentDataManager.gameSettings.editorCursorEnable;
-            discordRPCCheckbox.isOn = PersistentDataManager.gameSettings.discordRPCEnable;
             scaleWSS.isOn = PersistentDataManager.gameSettings.scaleWScreenSize;
+            autosaveDropdown.value = PersistentDataManager.gameSettings.autosaveInterval;
             paramTooltipsDropdown.value = PersistentDataManager.gameSettings.showParamTooltips;
             previewNoteSoundsToggle.isOn = PersistentDataManager.gameSettings.previewNoteSounds;
-            simpleIconsToggle.isOn = PersistentDataManager.gameSettings.simpleIcons;
+            previewRichTextToggle.isOn = PersistentDataManager.gameSettings.previewRichText;
             showFanGamesToggle.isOn = PersistentDataManager.gameSettings.showFanGames;
             minigameColorToggle.isOn = PersistentDataManager.gameSettings.editorMinigameColorEvents;
             fontDropdown.value = PersistentDataManager.gameSettings.fontType;
+            iconDropdown.value = PersistentDataManager.gameSettings.simpleIcons ? 1 : 0;
             advancedFeaturesToggle.isOn = PersistentDataManager.gameSettings.advancedFeatures;
 
             SetDecreIncreInteractable();
@@ -48,12 +50,6 @@ namespace HeavenStudio.Editor
             {
                 GameManager.instance.CursorCam.enabled = Editor.instance.isCursorEnabled;
             }
-        }
-
-        public void OnRPCCheckboxChanged()
-        {
-            PersistentDataManager.gameSettings.discordRPCEnable = discordRPCCheckbox.isOn;
-            Editor.instance.isDiscordEnabled = discordRPCCheckbox.isOn;
         }
 
         public void OnShowFangamesChanged()
@@ -91,6 +87,12 @@ namespace HeavenStudio.Editor
             scaleWSS.isOn = PersistentDataManager.gameSettings.scaleWScreenSize;
         }
 
+        public void OnAutosaveIntervalChanged()
+        {
+            PersistentDataManager.gameSettings.autosaveInterval = autosaveDropdown.value;
+            Editor.instance.autosaveTimer = 0;
+        }
+
         public void OnParamTooltipsChanged()
         {
             // tooltip types: 0 = only corner, 1 = delayed on mouse, 2 = instant on mouse
@@ -106,13 +108,18 @@ namespace HeavenStudio.Editor
 
         public void OnIconTypeChanged()
         {
-            PersistentDataManager.gameSettings.simpleIcons = simpleIconsToggle.isOn;
+            PersistentDataManager.gameSettings.simpleIcons = iconDropdown.value == 1;
             GridGameSelector.instance.RefreshIcons();
         }
 
         public void OnPreviewNoteSoundsChanged()
         {
             PersistentDataManager.gameSettings.previewNoteSounds = previewNoteSoundsToggle.isOn;
+        }
+
+        public void OnPreviewRichTextChanged()
+        {
+            PersistentDataManager.gameSettings.previewRichText = previewRichTextToggle.isOn;
         }
 
         // public void OnCornerTooltipsChanged()
@@ -145,7 +152,5 @@ namespace HeavenStudio.Editor
             editorScaleDecre.interactable = PersistentDataManager.gameSettings.editorScale > -3; // hardcoded? We might not change.
             editorScaleIncre.interactable = PersistentDataManager.gameSettings.editorScale < 5;
         }
-
-
     }
 }

@@ -1,0 +1,2050 @@
+fileFormatVersion: 2
+guid: de52df81f1165eb43ab7d89db46beaae
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_0
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 3008
+        width: 192
+        height: 352
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffbc2cfbb302a3247b663ed7b853b5ae
+      internalID: 2644789883463030038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 3424
+        width: 256
+        height: 352
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 171c7885e46d9424ea5001de0d12cac7
+      internalID: -1192412258631638452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_2
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 3936
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 051f88d8d5f093a448c1f6fdc61a2ac4
+      internalID: 4427960476522268660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 2816
+        width: 192
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82dc30d5373b0224e84402d747ffbc53
+      internalID: -1772293830566030219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_4
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 3840
+        width: 192
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 490ab85bebe3b414fb8ef1a5b8c19c96
+      internalID: -876179827512689874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_5
+      rect:
+        serializedVersion: 2
+        x: 1824
+        y: 3840
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 459ebd63850b78b4097c0e2e4ec1661e
+      internalID: 5042597874333115574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_6
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 768
+        width: 160
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5cfd4597c0826c14b93d7dfac30b7cdb
+      internalID: -9110673530816599002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_7
+      rect:
+        serializedVersion: 2
+        x: 2176
+        y: 2304
+        width: 256
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfaf972182e89d94c906d9b777271f89
+      internalID: 2101401342111568923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_8
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 1056
+        width: 256
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 659b0fbb0184a744695ff3a1345ec878
+      internalID: 4473711452891272310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_9
+      rect:
+        serializedVersion: 2
+        x: 2976
+        y: 3936
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c56e118d3aa18e4aad9b63733469dbc
+      internalID: 3547945415825711382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_10
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 3840
+        width: 192
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d294a4acd7b1b684290fd71b29abe7e9
+      internalID: 8039324654927968693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_11
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 1088
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5937919e206ad34789be7092e4e717f
+      internalID: 4334802164939206326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_12
+      rect:
+        serializedVersion: 2
+        x: 3904
+        y: 4032
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a64896ece07811646aa0558d49180211
+      internalID: -6884217854245844580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_13
+      rect:
+        serializedVersion: 2
+        x: 1696
+        y: 1728
+        width: 320
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f795c9981bfa204691689e744a6425c
+      internalID: -814381975467384731
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_14
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 2912
+        width: 288
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f07e54208a60034f86f6c5d83a0b438
+      internalID: 5136734335882215304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_15
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 3424
+        width: 256
+        height: 352
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3344000423887694b8e7594c1f739d92
+      internalID: -2923326254556401539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_16
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 2912
+        width: 288
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac686285a8940174a9ce1007c58c133a
+      internalID: 4840820072587123750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_17
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 3424
+        width: 256
+        height: 352
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8a4081ea2d7a194292cd6438458e64f
+      internalID: 9087642674757847288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_18
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 3008
+        width: 192
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bac456629923b88439b0dc5a7f38f6b7
+      internalID: 7105353710812756067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_19
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 2912
+        width: 192
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 576faff2f32c5bc46a1e5f14894931c5
+      internalID: -4498322568693064618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_20
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 3424
+        width: 256
+        height: 352
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26558e9a6751c974fbd88452c425876b
+      internalID: 1058104762101996015
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_21
+      rect:
+        serializedVersion: 2
+        x: 1312
+        y: 3392
+        width: 288
+        height: 384
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a37f4bc3d109e164b9c699b094547b88
+      internalID: 3915202072537248863
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_22
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 3040
+        width: 320
+        height: 736
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a937b0675f314614c9d80ec3e3ab1fdf
+      internalID: 7627917976492167064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_23
+      rect:
+        serializedVersion: 2
+        x: 2592
+        y: 3936
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 953aa4be587e85446b7a06347e61b503
+      internalID: 4919217676597423350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_24
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 1120
+        width: 320
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e069a6f15867e44c9fe28c8fd679990
+      internalID: 2289601820198989103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_25
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 3040
+        width: 320
+        height: 736
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 973e591b3e7ab174d9088bb20db4bf7f
+      internalID: 5445741907428212592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_26
+      rect:
+        serializedVersion: 2
+        x: 2432
+        y: 3040
+        width: 384
+        height: 736
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 098a1547130d6e3439ec4eb8472c973c
+      internalID: 4079097024418671464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_27
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 2976
+        width: 288
+        height: 384
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cb61344baf4ae04ea74ae2050dca3b6
+      internalID: 4826272865299972166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_28
+      rect:
+        serializedVersion: 2
+        x: 3232
+        y: 2976
+        width: 352
+        height: 384
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca7d0ef4a909c41458069e3005012c98
+      internalID: 2498562773490442647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_29
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 3424
+        width: 704
+        height: 352
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff35c5c61dc661348a233c5ce14b1fdb
+      internalID: 8952994177131850178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_30
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 1952
+        width: 320
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa137545346f3584bae528895803a978
+      internalID: 251759760286861757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_31
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1952
+        width: 352
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c99dfe2e93108db418b27f370e97d652
+      internalID: 1140063216097592671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_32
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 2304
+        width: 352
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dec5d165e7d072d46ae653f9acfebad0
+      internalID: -7962879512479804203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_33
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1728
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1eaf29f6df4134d45bccb4bdd555ea56
+      internalID: 930109265052097564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_34
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 1952
+        width: 288
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e56e9a3a761064742b25a1d7ca652112
+      internalID: 3351632950877814648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_35
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 1952
+        width: 320
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52b4b989536300a46996b05653a91900
+      internalID: -7783306512827567504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_36
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 3840
+        width: 192
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b18529434669604a9d5ef2e33d4c3cd
+      internalID: -3941747301844779056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_37
+      rect:
+        serializedVersion: 2
+        x: 2112
+        y: 3840
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44a69cf7b44903d4b90eb2beb017261c
+      internalID: 4970728365054357692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_38
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 576
+        height: 736
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f815d1327c06ca4c9ce33b3bb56e27c
+      internalID: -4240503508284698712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_39
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 1664
+        width: 288
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88c0cbf282267ba4180ed8f2bd0e86ed
+      internalID: -8092965945932844378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_40
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 2304
+        width: 384
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56a9e29a1f94fba4ea4de12df219bd28
+      internalID: -6173020847350998514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_41
+      rect:
+        serializedVersion: 2
+        x: 1952
+        y: 1952
+        width: 320
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3795502ae02345e41bdd2043e8b4c48b
+      internalID: 7353594583092349208
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_42
+      rect:
+        serializedVersion: 2
+        x: 1568
+        y: 1952
+        width: 320
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43b6a21ccabb3314eadf03179fa56ec2
+      internalID: -1482965665531158356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_43
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 2304
+        width: 416
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7af6abe2454bf634a845f5d7bbe1f895
+      internalID: 4868762551301881922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_44
+      rect:
+        serializedVersion: 2
+        x: 2336
+        y: 1888
+        width: 288
+        height: 352
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 096c53bf675189f4da87abe315df19a3
+      internalID: 1949161762017515202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_45
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 1888
+        width: 192
+        height: 352
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f6b36049dc67934ab7ee6bb90845d8c
+      internalID: -538418840031863318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_46
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 1696
+        width: 288
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f02fdf4bd9c273241bd0a67b5203d6a2
+      internalID: -8970650706725458435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_47
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 1696
+        width: 224
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b1e62e61b3b64f40910a78c5f34bd0f
+      internalID: 1775824943683882622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_48
+      rect:
+        serializedVersion: 2
+        x: 1376
+        y: 2304
+        width: 352
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad6077471f4b51547a749d1a5dedfd2e
+      internalID: -1884108759744499715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_49
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 1760
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e3f6315d5220aa4d8cb795f36da5172
+      internalID: 1136705738482904647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_50
+      rect:
+        serializedVersion: 2
+        x: 3232
+        y: 1856
+        width: 256
+        height: 384
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc73412a34f0a1e45a0baf162e253dcd
+      internalID: -6369948459764704167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_51
+      rect:
+        serializedVersion: 2
+        x: 2944
+        y: 1856
+        width: 224
+        height: 384
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9c9ced8eb6720243861f6cd43d5afd0
+      internalID: 8223574175255378085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_52
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 1568
+        width: 192
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b0c67c6399b63544b5ddeefd70e2759
+      internalID: 3742713288120659407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_53
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 2304
+        width: 320
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89fe1984c7ffe6249b89fd81ace0ffa4
+      internalID: -6445305092003853486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_54
+      rect:
+        serializedVersion: 2
+        x: 1696
+        y: 1440
+        width: 256
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e71b36b6c78d49146843ccef625d931d
+      internalID: -8343602000853768987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_55
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 2304
+        width: 288
+        height: 352
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9891a23ad7843a747863a9da25008235
+      internalID: 4231633461019448562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_56
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 480
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 051d5a23965e2c4439bdee37affc1ad5
+      internalID: -3217290835014042591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_57
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 768
+        width: 160
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e97af6bde0d09604dbd35441d99d32d6
+      internalID: -4880522285220019179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_58
+      rect:
+        serializedVersion: 2
+        x: 2784
+        y: 2304
+        width: 224
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f7af0010f875f14da963968dd15bfef
+      internalID: 2927651783031492243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_59
+      rect:
+        serializedVersion: 2
+        x: 2496
+        y: 2304
+        width: 224
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3a789caf7dfbba4cbf7ac9a7481c720
+      internalID: -7123178116829031099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_60
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 480
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bb973ed17412634c85fb9167bbe345c
+      internalID: 6712796756355670420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_61
+      rect:
+        serializedVersion: 2
+        x: 1504
+        y: 768
+        width: 224
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b79ea424282fa0499ff08a6bbd3d96e
+      internalID: -6078987733942720410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_62
+      rect:
+        serializedVersion: 2
+        x: 1472
+        y: 384
+        width: 224
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9452836587ffdff4abf292d4dd15b72d
+      internalID: -6784125034309677759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_63
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 3840
+        width: 192
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b99b31700ffa2041bf3ea6e582c5ef5
+      internalID: 8042443081830739112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_64
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 3840
+        width: 192
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd8e70baf66be7b4bac31d2d15f64db5
+      internalID: 4223785294683072844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_65
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 3840
+        width: 192
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 890f1756a7a3d0b4a9b4948262d0996d
+      internalID: 863617535507006315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_66
+      rect:
+        serializedVersion: 2
+        x: 1312
+        y: 3840
+        width: 192
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85c625908dfccb94091e0c04f19d9238
+      internalID: 5521458745509007944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_67
+      rect:
+        serializedVersion: 2
+        x: 4032
+        y: 3968
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f568efc1484551c49aba9195092f799c
+      internalID: -6226097064563845814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_68
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 832
+        width: 128
+        height: 768
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04bb7775cce16a0418fd1eb08e1aeb1a
+      internalID: 3482671880494036426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_69
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 832
+        width: 384
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe94e12fd9500424d937eed71a75bac4
+      internalID: -4152911755591127241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_70
+      rect:
+        serializedVersion: 2
+        x: 3776
+        y: 2656
+        width: 288
+        height: 1120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4d9fc31a12da594c86e52cf40abc063
+      internalID: 7884588650953690870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_71
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 1408
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a11e88929e5be6498756d3a5c19e9a4
+      internalID: -2243372118403365089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_72
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 1472
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27ffe55d78db22a4fb7feab8dc02d508
+      internalID: -1816934185278072294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_73
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 1216
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed84bfb5409e2084696af146cd281fb8
+      internalID: 5695760182755716188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_74
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1376
+        width: 320
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48f670f53c2602d46a1214bc8ad8a687
+      internalID: -5505557605026717025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_75
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 704
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c3837c118842b3488c28d962c3e18ad
+      internalID: 4554898281557186520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_76
+      rect:
+        serializedVersion: 2
+        x: 1440
+        y: 128
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87c42700496bc7e418d5c6be234991a2
+      internalID: -1078668577859839764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_77
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1088
+        width: 320
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f95d775af5a6c0045930d0219c71d68c
+      internalID: -8008559904824100794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_78
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 896
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7576f230697614d42bfec5d93cecd39a
+      internalID: -4218436065362547815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_79
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 480
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46b62e3a7f504f147963e41841afed22
+      internalID: -6448057931071943467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_80
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 1376
+        width: 320
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9231911caded1b44cb7c57cf4c6826ba
+      internalID: -4059494333074218911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_81
+      rect:
+        serializedVersion: 2
+        x: 1696
+        y: 128
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91e448e3ee8b63a4e949492dd20d9d90
+      internalID: -2804308929114285120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_82
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 192
+        width: 320
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 755081b3ea15e3a4a92b3c158180594d
+      internalID: -8575501744032117132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_83
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 160
+        width: 320
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd1b9e0d1716f4d45aa4948b09e57a00
+      internalID: 164956233939325988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_84
+      rect:
+        serializedVersion: 2
+        x: 3360
+        y: 288
+        width: 704
+        height: 1504
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 077ef823080f94f4bb6787b4a0532f1c
+      internalID: -2322107683527798481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_85
+      rect:
+        serializedVersion: 2
+        x: 3488
+        y: 3840
+        width: 352
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08b0c1e4528dc2744921328729307c2d
+      internalID: -3674249557971802728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_86
+      rect:
+        serializedVersion: 2
+        x: 2016
+        y: 32
+        width: 1280
+        height: 800
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40d14eeba4d784d4eab44f7b07417a6c
+      internalID: 8919005875767860501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_pitcher_sprite_87
+      rect:
+        serializedVersion: 2
+        x: 2016
+        y: 896
+        width: 1280
+        height: 736
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d85a5ca166d657d4897f578d9b75949c
+      internalID: -8265173574171346176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      ex_pitcher_sprite_0: 2644789883463030038
+      ex_pitcher_sprite_1: -1192412258631638452
+      ex_pitcher_sprite_10: 8039324654927968693
+      ex_pitcher_sprite_11: 4334802164939206326
+      ex_pitcher_sprite_12: -6884217854245844580
+      ex_pitcher_sprite_13: -814381975467384731
+      ex_pitcher_sprite_14: 5136734335882215304
+      ex_pitcher_sprite_15: -2923326254556401539
+      ex_pitcher_sprite_16: 4840820072587123750
+      ex_pitcher_sprite_17: 9087642674757847288
+      ex_pitcher_sprite_18: 7105353710812756067
+      ex_pitcher_sprite_19: -4498322568693064618
+      ex_pitcher_sprite_2: 4427960476522268660
+      ex_pitcher_sprite_20: 1058104762101996015
+      ex_pitcher_sprite_21: 3915202072537248863
+      ex_pitcher_sprite_22: 7627917976492167064
+      ex_pitcher_sprite_23: 4919217676597423350
+      ex_pitcher_sprite_24: 2289601820198989103
+      ex_pitcher_sprite_25: 5445741907428212592
+      ex_pitcher_sprite_26: 4079097024418671464
+      ex_pitcher_sprite_27: 4826272865299972166
+      ex_pitcher_sprite_28: 2498562773490442647
+      ex_pitcher_sprite_29: 8952994177131850178
+      ex_pitcher_sprite_3: -1772293830566030219
+      ex_pitcher_sprite_30: 251759760286861757
+      ex_pitcher_sprite_31: 1140063216097592671
+      ex_pitcher_sprite_32: -7962879512479804203
+      ex_pitcher_sprite_33: 930109265052097564
+      ex_pitcher_sprite_34: 3351632950877814648
+      ex_pitcher_sprite_35: -7783306512827567504
+      ex_pitcher_sprite_36: -3941747301844779056
+      ex_pitcher_sprite_37: 4970728365054357692
+      ex_pitcher_sprite_38: -4240503508284698712
+      ex_pitcher_sprite_39: -8092965945932844378
+      ex_pitcher_sprite_4: -876179827512689874
+      ex_pitcher_sprite_40: -6173020847350998514
+      ex_pitcher_sprite_41: 7353594583092349208
+      ex_pitcher_sprite_42: -1482965665531158356
+      ex_pitcher_sprite_43: 4868762551301881922
+      ex_pitcher_sprite_44: 1949161762017515202
+      ex_pitcher_sprite_45: -538418840031863318
+      ex_pitcher_sprite_46: -8970650706725458435
+      ex_pitcher_sprite_47: 1775824943683882622
+      ex_pitcher_sprite_48: -1884108759744499715
+      ex_pitcher_sprite_49: 1136705738482904647
+      ex_pitcher_sprite_5: 5042597874333115574
+      ex_pitcher_sprite_50: -6369948459764704167
+      ex_pitcher_sprite_51: 8223574175255378085
+      ex_pitcher_sprite_52: 3742713288120659407
+      ex_pitcher_sprite_53: -6445305092003853486
+      ex_pitcher_sprite_54: -8343602000853768987
+      ex_pitcher_sprite_55: 4231633461019448562
+      ex_pitcher_sprite_56: -3217290835014042591
+      ex_pitcher_sprite_57: -4880522285220019179
+      ex_pitcher_sprite_58: 2927651783031492243
+      ex_pitcher_sprite_59: -7123178116829031099
+      ex_pitcher_sprite_6: -9110673530816599002
+      ex_pitcher_sprite_60: 6712796756355670420
+      ex_pitcher_sprite_61: -6078987733942720410
+      ex_pitcher_sprite_62: -6784125034309677759
+      ex_pitcher_sprite_63: 8042443081830739112
+      ex_pitcher_sprite_64: 4223785294683072844
+      ex_pitcher_sprite_65: 863617535507006315
+      ex_pitcher_sprite_66: 5521458745509007944
+      ex_pitcher_sprite_67: -6226097064563845814
+      ex_pitcher_sprite_68: 3482671880494036426
+      ex_pitcher_sprite_69: -4152911755591127241
+      ex_pitcher_sprite_7: 2101401342111568923
+      ex_pitcher_sprite_70: 7884588650953690870
+      ex_pitcher_sprite_71: -2243372118403365089
+      ex_pitcher_sprite_72: -1816934185278072294
+      ex_pitcher_sprite_73: 5695760182755716188
+      ex_pitcher_sprite_74: -5505557605026717025
+      ex_pitcher_sprite_75: 4554898281557186520
+      ex_pitcher_sprite_76: -1078668577859839764
+      ex_pitcher_sprite_77: -8008559904824100794
+      ex_pitcher_sprite_78: -4218436065362547815
+      ex_pitcher_sprite_79: -6448057931071943467
+      ex_pitcher_sprite_8: 4473711452891272310
+      ex_pitcher_sprite_80: -4059494333074218911
+      ex_pitcher_sprite_81: -2804308929114285120
+      ex_pitcher_sprite_82: -8575501744032117132
+      ex_pitcher_sprite_83: 164956233939325988
+      ex_pitcher_sprite_84: -2322107683527798481
+      ex_pitcher_sprite_85: -3674249557971802728
+      ex_pitcher_sprite_86: 8919005875767860501
+      ex_pitcher_sprite_87: -8265173574171346176
+      ex_pitcher_sprite_9: 3547945415825711382
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

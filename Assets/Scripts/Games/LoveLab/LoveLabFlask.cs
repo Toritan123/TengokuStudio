@@ -14,6 +14,7 @@ namespace HeavenStudio.Games.Scripts_LoveLab
         private double pathStartBeat = double.MinValue;
         private Conductor conductor;
         public LoveLab.flaskHeart heartType;
+        public double flaskInterval = 1f;
 
         void Awake()
         {
@@ -23,11 +24,10 @@ namespace HeavenStudio.Games.Scripts_LoveLab
 
         void Update()
         {
-            double beat = conductor.songPositionInBeatsAsDouble;
-            double height = 0f;
+            double beat = conductor.unswungSongPositionInBeatsAsDouble;
             if (pathStartBeat > double.MinValue)
             {
-                Vector3 pos = GetPathPositionFromBeat(path, Math.Max(beat, pathStartBeat), out height, pathStartBeat);
+                Vector3 pos = GetPathPositionFromBeat(path, Math.Max(beat, pathStartBeat), out _, pathStartBeat);
                 transform.position = pos;
                 float rot = GetPathValue("rot");
                 transform.rotation = Quaternion.Euler(0f, 0f, transform.rotation.eulerAngles.z - (rot * Time.deltaTime * (1f / conductor.pitchedSecPerBeat)));
@@ -54,11 +54,15 @@ namespace HeavenStudio.Games.Scripts_LoveLab
             });
         }
 
-        public void girlArc(double beat, string reqArc)
+        public void girlArc(double beat, string reqArc, double setFlaskInterval)
         {
             path = game.GetPath(reqArc);
             UpdateLastRealPos();
-            pathStartBeat = beat - 1f;
+            flaskInterval = setFlaskInterval;
+            pathStartBeat = beat - flaskInterval;
+
+            path.positions[0].duration = (float)flaskInterval;
+            
 
             Vector3 pos = GetPathPositionFromBeat(path, pathStartBeat, pathStartBeat);
             transform.position = pos;
@@ -103,7 +107,7 @@ namespace HeavenStudio.Games.Scripts_LoveLab
         public void destroyThisObj()
         {
             LoveLab.instance.girlInstantiatedFlask.RemoveAt(0);
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 }

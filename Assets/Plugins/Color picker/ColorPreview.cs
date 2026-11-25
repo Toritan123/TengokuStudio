@@ -14,6 +14,7 @@ public class ColorPreview : MonoBehaviour
     public Slider alphaPicker;
 
     public TMP_InputField hex;
+    public TMP_InputField opacity;
 
     public event Action<Color> onColorUpdated;
 
@@ -32,6 +33,7 @@ public class ColorPreview : MonoBehaviour
         currentColor = c;
         alphaPicker.value = c.a;
         hex.text = Color2Hex(c);
+        if (opacity != null) opacity.text = (c.a * 100).ToString("F1") + "%";
         c.a = 1;
         colorPicker.color = c;
     }
@@ -43,6 +45,7 @@ public class ColorPreview : MonoBehaviour
         currentColor = c;
         previewGraphic.color = c;
         hex.text = Color2Hex(c);
+        if (opacity != null) opacity.text = (c.a * 100).ToString("F1") + "%";
 
         onColorUpdated.Invoke(currentColor);
     }
@@ -52,6 +55,7 @@ public class ColorPreview : MonoBehaviour
         currentColor.a = alphaPicker.normalizedValue;
         previewGraphic.color = currentColor;
         hex.text = Color2Hex(currentColor);
+        if (opacity != null) opacity.text = (currentColor.a * 100).ToString("F1") + "%";
 
         onColorUpdated.Invoke(currentColor);
     }
@@ -72,6 +76,24 @@ public class ColorPreview : MonoBehaviour
     public void SetColorFromTMP()
     {
         SetColorFromHex(hex.text);
+    }
+
+    public void SetOpacityFromTMP()
+    {
+        string input = opacity.text;
+        if (input.EndsWith("%"))
+        {
+            input = input[..^1]; 
+        }
+
+        if (float.TryParse(input, out float alpha))
+        {
+            alphaPicker.value = alpha / 100;
+        }
+        else
+        {
+            opacity.text = (currentColor.a * 100).ToString("F1") + "%";
+        }
     }
 
     static string Color2Hex(Color color)

@@ -27,7 +27,7 @@ public class NotePropertyPrefab : NumberPropertyPrefab
             {
                 int trueSemitones = (int)slider.value + offsetFromC;
                 inputField.text = slider.value.ToString();
-                parameterManager.entity[propertyName] = trueSemitones;
+                foreach (var e in parameterManager.entities) e[propertyName] = trueSemitones;
                 if (slider.value != _defaultValue)
                 {
                     this.caption.text = _captionText + "*";
@@ -55,7 +55,7 @@ public class NotePropertyPrefab : NumberPropertyPrefab
                 
                 int trueSemitones = (int)slider.value + offsetFromC;
                 
-                parameterManager.entity[propertyName] = trueSemitones;
+                foreach (var e in parameterManager.entities) e[propertyName] = trueSemitones;
                 Editor.instance.editingInputField = false;
                 if (slider.value != _defaultValue)
                 {
@@ -79,6 +79,7 @@ public class NotePropertyPrefab : NumberPropertyPrefab
 
         slider.minValue = note.min;
         slider.maxValue = note.max;
+        _defaultValue = note.val;
 
         slider.wholeNumbers = true;
 
@@ -90,10 +91,10 @@ public class NotePropertyPrefab : NumberPropertyPrefab
         }
 
         int lastValue = (int)slider.value;
-        slider.value = Convert.ToSingle(parameterManager.entity[propertyName]) - offsetFromC;
-        _defaultValue = slider.value;
+        slider.SetValueWithoutNotify(Convert.ToSingle(parameterManager.entity[propertyName]) - offsetFromC);
+        _previousValue = slider.value;
         
-        inputField.text = slider.value.ToString();
+        inputField.SetTextWithoutNotify(slider.value.ToString());
         UpdateNoteText((int)slider.value + offsetFromC);
         
         if((int)slider.value == lastValue && playPreview)

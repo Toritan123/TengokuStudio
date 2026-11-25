@@ -54,6 +54,7 @@ namespace HeavenStudio.Games.Loaders
                     preFunctionLength = 4f,
                     preFunction = delegate {
                         var e = eventCaller.currentEntity;
+                        if (GameManager.instance.currentGame != "valiantVolley") return;
                         ValiantVolley.instance.PreInterval(e.beat, e.length, true, -1);
                     },
                     defaultLength = 2f,
@@ -77,7 +78,7 @@ namespace HeavenStudio.Games.Loaders
                     preFunctionLength = 2f,
                     preFunction = delegate {
                         var e = eventCaller.currentEntity;
-                        //ValiantVolley.instance.SpawnObject(e.beat - e.length, 0, e.length);
+                        if (GameManager.instance.currentGame != "valiantVolley") return;
                         ValiantVolley.instance.PreInterval(e.beat, e.length, false, 0);
                         if (e["shouldPrep"]) ValiantVolley.queuePrepare = e.beat - e["prepBeats"];
                     },
@@ -100,7 +101,7 @@ namespace HeavenStudio.Games.Loaders
                     preFunctionLength = 2f,
                     preFunction = delegate {
                         var e = eventCaller.currentEntity;
-                        //ValiantVolley.instance.SpawnObject(e.beat - e.length, 1, e.length);
+                        if (GameManager.instance.currentGame != "valiantVolley") return;
                         ValiantVolley.instance.PreInterval(e.beat, e.length, false, 1);
                         if (e["shouldPrep"]) ValiantVolley.queuePrepare = e.beat - e["prepBeats"];
                     },
@@ -133,28 +134,6 @@ namespace HeavenStudio.Games
         [SerializeField] Material mat;
         [SerializeField] public Ant[] ants;
         [SerializeField] VolleyObject volleyObject;
-
-        private struct QueuedSpawn
-        {
-            public double beat;
-            public int objectType;
-            public double length;
-            public bool beingJuggled;
-            public List<float> juggleLengths;
-            public double lastJuggle;
-            public double lastJuggleLength;
-        }
-
-        private static List<QueuedSpawn> queuedSpawns = new();
-
-        private struct QueuedInterval
-        {
-            public double beat;
-            public float length;
-            public bool isMultiInput;
-        }
-
-        private static List<QueuedInterval> queuedIntervals = new();
 
         public static double queuePrepare = double.MaxValue;
 
@@ -229,7 +208,6 @@ namespace HeavenStudio.Games
             if (queuedDirts.Count > 0) queuedDirts.Clear();
             if (queuedFruits.Count > 0) queuedFruits.Clear();
             if (activeObjects.Count > 0) activeObjects.Clear();
-            if (queuedSpawns.Count > 0) queuedSpawns.Clear();
             queuePrepare = double.MaxValue;
 
             foreach (var evt in scheduledInputs)
@@ -262,100 +240,13 @@ namespace HeavenStudio.Games
         {
             if (queuePrepare <= Conductor.instance.songPositionInBeatsAsDouble)
             {
-
                 foreach (var bug in ants) bug.queuePrepare = queuePrepare;
-
-                //if (Text.text is "Wrong! Try Again!" or "Good!") Text.text = "";
                 queuePrepare = double.MaxValue;
-            }
-
-            if (queuedSpawns.Count > 0)
-            {
-                foreach (var spawn in queuedSpawns)
-                {
-                    if (!spawn.beingJuggled) SpawnObject(spawn.beat, spawn.objectType, spawn.length);
-                    else
-                    {
-                        
-                        queuedDirtEntities = gameManager.Beatmap.Entities.FindAll(e => e.datamodel == "valiantVolley/dirtHit"
-                        && e.beat >= multiIntervalStartBeat && e.beat < multiIntervalStartBeat + multiIntervalLength);
-                        queuedFruitEntities = gameManager.Beatmap.Entities.FindAll(e => e.datamodel == "valiantVolley/fruitHit"
-                                    && e.beat >= multiIntervalStartBeat && e.beat < multiIntervalStartBeat + multiIntervalLength);
-
-                        List<double> intervalInputList = new();
-
-                        List<float> juggleLengths = new();
-                        double lastJuggle = 0;
-                        double lastJuggleLength = 0;
-
-                        List<int> types = new();
-                        foreach (var i in spawnedObjects) types.Add(i.objectType);
-
-                        if (spawn.objectType == 0)
-                        {
-                            foreach (var j in queuedDirtEntities)
-                            {
-                                juggleLengths.Add(j.length);
-
-                                if (j.beat + j.length == multiIntervalStartBeat + multiIntervalLength)
-                                {
-                                    //print("Last juggle beat:" + j.beat);
-                                    lastJuggle = j.beat;
-                                    lastJuggleLength = j.length;
-                                }
-                            }
-                        }
-                        else
-                        {
-                            foreach (var j in queuedFruitEntities)
-                            {
-                                juggleLengths.Add(j.length);
-
-                                if (j.beat + j.length == multiIntervalStartBeat + multiIntervalLength)
-                                {
-                                    //print("Last juggle beat:" + j.beat);
-                                    lastJuggle = j.beat;
-                                    lastJuggleLength = j.length;
-                                }
-                            }
-                        }
-
-                        if (spawn.objectType == 0)
-                        {
-                            foreach (var j in queuedDirtEntities)
-                            {
-                                if (j.beat < multiIntervalStartBeat + multiIntervalLength) intervalInputList.Add(j.beat);
-                            }
-                            intervalInputList.RemoveAt(0);
-                            //foreach (var x in intervalInputList0) print("Tha beat: " + x);
-                        }
-                        else if (spawn.objectType == 1)
-                        {
-                            foreach (var j in queuedFruitEntities)
-                            {
-                                if (j.beat < multiIntervalStartBeat + multiIntervalLength) intervalInputList.Add(j.beat);
-                            }
-                            intervalInputList.RemoveAt(0);
-                        }
-
-                        SpawnObject(spawn.beat, spawn.objectType, spawn.length, true, juggleLengths, lastJuggle, lastJuggleLength, intervalInputList);
-                    }
-                }
-                queuedSpawns.Clear();
             }
         }
 
         public void AntAction(double beat, float length, string action)
         {
-            //if (action != "dirtHit") return;
-
-            //if (!intervalStarted) PreInterval(beat, length);
-            //ants[0].AntAction(action, hitPitch);
-
-            // var queuedList = queuedDirts;
-            // if (action == "Release") queuedList = queuedFruits;
-            // else if (action == "Pop") queuedList = queuedPops;
-
             var queuedList = action switch
             {
                 "fruitHit" => queuedFruits,
@@ -364,40 +255,30 @@ namespace HeavenStudio.Games
 
             queuedList.Add(beat - intervalStartBeat);
         }
-        public void SpawnObject(double beat, int objectType, double distance, bool beingJuggled = false,
+        public VolleyObject SpawnObject(double beat, int objectType, double distance, bool beingJuggled = false,
             List<float> juggleLengths = null, double lastJuggle = 0, double lastJuggleLength = 0, List<double> intervalInputList = null) // objectType 0 => Dirt || 1 => Fruit
         {
-            BeatAction.New(instance, new List<BeatAction.Action>()
-            {
-                new BeatAction.Action(beat, delegate
-                {
-                    //Debug.Log("Volley object: " + volleyObject);
-                    VolleyObject newObject = Instantiate(volleyObject, transform);
-                    newObject.startBeat = beat;
-                    newObject.isEntering = true;
-                    newObject.objectType = objectType;
-                    newObject.distance = distance;
-                    newObject.beingJuggled = beingJuggled;
-                    activeObjects.Add(newObject);
-                    newObject.juggleLengths = juggleLengths;
-                    newObject.lastJuggle = lastJuggle;
-                    newObject.lastJuggleLength = lastJuggleLength;
-                    newObject.intervalInputList = intervalInputList;
+            VolleyObject newObject = Instantiate(volleyObject, transform);
+            newObject.startBeat = beat;
+            newObject.isEntering = true;
+            newObject.objectType = objectType;
+            newObject.distance = distance;
+            newObject.beingJuggled = beingJuggled;
+            activeObjects.Add(newObject);
+            newObject.juggleLengths = juggleLengths;
+            newObject.lastJuggle = lastJuggle;
+            newObject.lastJuggleLength = lastJuggleLength;
+            newObject.intervalInputList = intervalInputList;
 
-                    newObject.gameObject.SetActive(true);
+            newObject.gameObject.SetActive(true);
 
-                    //if (beingJuggled) spawnedObjects.Add(newObject);
-
-                    //Debug.Log("New object: " + newObject);
-                })
-            });
+            return newObject;
         }
 
         public void Bop(double length, int whichBop, bool singleBop, bool keepBop)
         {
             foreach (var bug in ants)
             {
-                //Debug.Log("what bug:" + bug);
                 if (singleBop) bug.PlayAnimation(whichBop);
                 if (keepBop) bopStatus = whichBop;
             }
@@ -408,8 +289,6 @@ namespace HeavenStudio.Games
 
             if (queuedDirts.Count > 0) queuedDirts.Clear();
             if (queuedFruits.Count > 0) queuedFruits.Clear();
-            if (queuedIntervals.Count > 0) queuedIntervals.Clear();
-            if (queuedSpawns.Count > 0) queuedSpawns.Clear();
             if (queuedDirtEntities.Count > 0) queuedDirtEntities.Clear();
             if (queuedFruitEntities.Count > 0) queuedFruitEntities.Clear();
             if (activeObjects.Count > 0) activeObjects.Clear();
@@ -419,217 +298,143 @@ namespace HeavenStudio.Games
             multiInputInterval = false;
             multiIntervalLength = 0;
             multiIntervalStartBeat = double.MaxValue;
-
-            //DoInactiveStartInterval(beat, true);
         }
 
         public override void OnGameSwitch(double beat)
         {
-            
+            DoInactiveInterval(beat);
+        }
 
-            if (queuedIntervals.Count > 0)
+        private void DoInactiveInterval(double beat)
+        {
+            RiqEntity intervalEntity = gameManager.Beatmap.Entities.Find(e => e.beat - 4 <= beat && e.beat >= beat && e.datamodel == "valiantVolley/startInterval");
+            if (intervalEntity != null)
             {
-                foreach (var interval in queuedIntervals)
-                {
-                    StartInterval(interval.beat, interval.length, interval.beat, interval.isMultiInput);
-                }
-                queuedIntervals.Clear();
+                RiqEntity e = intervalEntity;
+                PreInterval(e.beat, e.length, true, -1);
+            }
+
+            List<RiqEntity> objectEntities = gameManager.Beatmap.Entities.FindAll(e => e.beat - 2 <= beat && e.beat + (e.length * 2) >= beat && (e.datamodel is "valiantVolley/dirtHit" or "valiantVolley/fruitHit"));
+            foreach (RiqEntity e in objectEntities)
+            {
+                PreInterval(e.beat, e.length, false, e.datamodel == "valiantVolley/dirtHit" ? 0 : 1);
+                if (e["shouldPrep"]) queuePrepare = e.beat - e["prepBeats"];
             }
         }
 
         public void PreInterval(double beat, float length, bool isMultiInput = false, int objectType = 0)
         {
-            //print("ismultiinput: " + isMultiInput);
-            if (isMultiInput) multiIntervalLength = length;
+            if (isMultiInput)
+            {
+                multiIntervalStartBeat = beat;
+                multiIntervalLength = length;
+            }
 
             if (isMultiInput || (beat >= multiIntervalStartBeat && beat < multiIntervalStartBeat + multiIntervalLength)) multiInputInterval = true;
 
-            //print("multiintervallength: " + multiIntervalLength);
-            if (GameManager.instance.currentGame == "valiantVolley")
+            if (objectType != -1)
             {
-                if (objectType != -1)
+                if (!multiInputInterval || beat < multiIntervalStartBeat || beat >= multiIntervalStartBeat + multiIntervalLength)
                 {
-                    if (!multiInputInterval || beat < multiIntervalStartBeat || beat >= multiIntervalStartBeat + multiIntervalLength)
+                    instance.SpawnObject(beat - length, objectType, length);
+                }
+                else
+                {
+                    List<RiqEntity> dirtEntities = gameManager.Beatmap.Entities.FindAll(e => e.datamodel == "valiantVolley/dirtHit"
+                    && e.beat >= multiIntervalStartBeat && e.beat < multiIntervalStartBeat + multiIntervalLength);
+                    List<RiqEntity> fruitEntities = gameManager.Beatmap.Entities.FindAll(e => e.datamodel == "valiantVolley/fruitHit"
+                    && e.beat >= multiIntervalStartBeat && e.beat < multiIntervalStartBeat + multiIntervalLength);
+
+                    List<double> intervalInputList = new();
+
+                    List<float> juggleLengths = new();
+                    double lastJuggle = 0;
+                    double lastJuggleLength = 0;
+
+                    List<int> types = new();
+
+                    foreach (var i in spawnedObjects)
                     {
-                        instance.SpawnObject(beat - length, objectType, length);
-                        //print("oioi");
-                        //spawnedObjects.Clear();
-                        //intervalInputList0.Clear();
-                        //intervalInputList1.Clear();
+                        if (i.startBeat + multiIntervalLength < multiIntervalStartBeat) spawnedObjects.Remove(i);
+                        types.Add(i.objectType);
+                    }
+
+                    if (objectType == 0)
+                    {
+                        List<double> juggleTimes = new();
+                        foreach (var j in dirtEntities)
+                        {
+                            juggleTimes.Add(conductor.GetSongPosFromBeat(j.beat));
+
+                            if (j.beat + j.length == multiIntervalStartBeat + multiIntervalLength)
+                            {
+                                lastJuggle = j.beat;
+                                lastJuggleLength = j.length;
+                            }
+                        }
+                        for (int i = 0; i < juggleTimes.Count; i++) 
+                        {
+                            if (i + 1 != juggleTimes.Count) juggleLengths.Add((float)(conductor.GetRestFromRealTime((juggleTimes[i + 1] - juggleTimes[i]))));
+                        }
                     }
                     else
                     {
-                        //print("misb:" + multiIntervalStartBeat);
-                        //print("beat:" + beat);
-
-                        List<RiqEntity> dirtEntities = gameManager.Beatmap.Entities.FindAll(e => e.datamodel == "valiantVolley/dirtHit"
-                        && e.beat >= multiIntervalStartBeat && e.beat < multiIntervalStartBeat + multiIntervalLength);
-                        List<RiqEntity> fruitEntities = gameManager.Beatmap.Entities.FindAll(e => e.datamodel == "valiantVolley/fruitHit"
-                        && e.beat >= multiIntervalStartBeat && e.beat < multiIntervalStartBeat + multiIntervalLength);
-
-                        List<double> intervalInputList = new();
-
-                        List<float> juggleLengths = new();
-                        double lastJuggle = 0;
-                        double lastJuggleLength = 0;
-
-                        List<int> types = new();
-
-                        foreach (var i in spawnedObjects)
+                        List<double> juggleTimes = new();
+                        foreach (var j in fruitEntities)
                         {
-                            print("spawned objects beat:" + (i.startBeat + multiIntervalLength));
-                            if (i.startBeat + multiIntervalLength < multiIntervalStartBeat) spawnedObjects.Remove(i);
-                            print("misb:" + multiIntervalStartBeat);
-                            types.Add(i.objectType);
-                        }
+                            juggleTimes.Add(conductor.GetSongPosFromBeat(j.beat));
 
+                            if (j.beat + j.length == multiIntervalStartBeat + multiIntervalLength)
+                            {
+                                lastJuggle = j.beat;
+                                lastJuggleLength = j.length;
+                            }
+                        }
+                        for (int i = 0; i < juggleTimes.Count; i++)
+                        {
+                            if (i + 1 != juggleTimes.Count) juggleLengths.Add((float)(conductor.GetRestFromRealTime((juggleTimes[i + 1] - juggleTimes[i]))));
+                        }
+                    }
+
+                    if (!types.Contains(objectType))
+                    {
+                        
                         if (objectType == 0)
                         {
                             foreach (var j in dirtEntities)
                             {
-                                juggleLengths.Add(j.length);
-
-                                if (j.beat + j.length == multiIntervalStartBeat + multiIntervalLength)
-                                {
-                                    //print("Last juggle beat:" + j.beat);
-                                    lastJuggle = j.beat;
-                                    lastJuggleLength = j.length;
-                                }
+                                if (j.beat < multiIntervalStartBeat + multiIntervalLength) intervalInputList.Add(j.beat);
                             }
+
+                            if (intervalInputList.Count > 0) intervalInputList.RemoveAt(0);
                         }
-                        else
+                        if (objectType == 1)
                         {
                             foreach (var j in fruitEntities)
                             {
-                                juggleLengths.Add(j.length);
-
-                                if (j.beat + j.length == multiIntervalStartBeat + multiIntervalLength)
-                                {
-                                    //print("Last juggle beat:" + j.beat);
-                                    lastJuggle = j.beat;
-                                    lastJuggleLength = j.length;
-                                }
+                                if (j.beat < multiIntervalStartBeat + multiIntervalLength) intervalInputList.Add(j.beat);
                             }
+                            if (intervalInputList.Count > 0) intervalInputList.RemoveAt(0);
                         }
 
-                        if (!types.Contains(objectType))
-                        {
-                            
-                            //spawnedObjects.Add(objectType);
-                            if (objectType == 0)
-                            {
-                                foreach (var j in dirtEntities)
-                                {
-                                    if (j.beat < multiIntervalStartBeat + multiIntervalLength) intervalInputList.Add(j.beat);
-                                    //print("dirt beat: " + j.beat);
-                                }
-
-                                if (intervalInputList.Count > 0) intervalInputList.RemoveAt(0);
-                            }
-                            //foreach (var x in intervalInputList0) print("Tha beat: " + x);
-                            if (objectType == 1)
-                            {
-                                foreach (var j in fruitEntities)
-                                {
-                                    if (j.beat < multiIntervalStartBeat + multiIntervalLength) intervalInputList.Add(j.beat);
-                                    //print("fruit beat: " + j.beat);
-                                }
-                                if (intervalInputList.Count > 0) intervalInputList.RemoveAt(0);
-                            }
-
-                            instance.SpawnObject(beat - multiIntervalLength, objectType, multiIntervalLength, true,
-                                juggleLengths, lastJuggle, lastJuggleLength + beat - multiIntervalStartBeat, intervalInputList);
-                            /*if (objectType == 0)
-                            {
-                                foreach (var j in dirtEntities)
-                                {
-                                    intervalInputList0.Add(j.beat);
-                                }
-                                intervalInputList0.Remove(beat);
-                                //foreach (var x in intervalInputList0) print("Tha beat: " + x);
-                            }
-                            else if (objectType == 1)
-                            {
-                                foreach (var j in fruitEntities)
-                                {
-                                    intervalInputList1.Add(j.beat);
-                                }
-                                intervalInputList1.Remove(beat);
-                            }*/
-                        }
+                        VolleyObject obj = instance.SpawnObject(beat - multiIntervalLength, objectType, multiIntervalLength, true,
+                            juggleLengths, lastJuggle, lastJuggleLength + beat - multiIntervalStartBeat, intervalInputList);
+                        spawnedObjects.Add(obj);
                     }
                 }
-                if (multiInputInterval)
-                {
-                    instance.StartInterval(beat, multiIntervalLength, beat, isMultiInput);
-                }
-                else
-                {
-                    instance.StartInterval(beat, length, beat, isMultiInput);
-                }
-                //Debug.Log("multiInputInterval: " + multiInputInterval);
-                //Debug.Log("yes it is");
+            }
+            if (multiInputInterval)
+            {
+                instance.StartInterval(beat, multiIntervalLength, beat, isMultiInput);
             }
             else
             {
-                if (!multiInputInterval && objectType != -1)
-                {
-                    queuedSpawns.Add(new QueuedSpawn()
-                    {
-                        beat = beat - length,
-                        objectType = objectType,
-                        length = length,
-                        beingJuggled = false,
-                        juggleLengths = null,
-                        lastJuggle = 0,
-                        lastJuggleLength = 0
-                });
-                }
-                if (multiInputInterval)
-                {
-                    queuedIntervals.Add(new QueuedInterval()
-                    {
-                        beat = beat,
-                        length = length,
-                        isMultiInput = isMultiInput,
-                    });
-
-                    if (objectType != -1)
-                    {
-                        bool alreadyQueued = false;
-                        foreach (var spawn in queuedSpawns)
-                        {
-                            if (spawn.objectType == objectType) alreadyQueued = true;
-                        }
-
-                        if (!alreadyQueued)
-                        {
-                            queuedSpawns.Add(new QueuedSpawn()
-                            {
-                                beat = beat - multiIntervalLength,
-                                objectType = objectType,
-                                length = multiIntervalLength,
-                                beingJuggled = true,
-                                juggleLengths = null,
-                                lastJuggle = double.MaxValue,
-                                lastJuggleLength = double.MaxValue
-                            });
-                        }
-                        else
-                        {
-                            /*if (objectType == 0) intervalInputList0.Add(beat);
-                            else intervalInputList1.Add(beat);*/
-
-                        }
-                    }
-                }
-                //instance.StartInterval(beat, multiIntervalLength, beat, isMultiInput);
+                instance.StartInterval(beat, length, beat, isMultiInput);
             }
         }
 
         public void StartInterval(double beat, float length, double gameSwitchBeat, bool isMultiInput = false)
         {
-            //Debug.Log("Interval started at beat: " + beat);
             intervalStartBeat = beat;
             beatInterval = length;
             intervalStarted = true;
@@ -641,7 +446,6 @@ namespace HeavenStudio.Games
                 multiIntervalLength = length;
             }
 
-            //Debug.Log("Multi input interval:" + multiInputInterval);
             BeatAction.New(this, new List<BeatAction.Action>() {
                 new BeatAction.Action(beat + length, delegate {
                     PassTurn(beat + length, length, isMultiInput);
@@ -651,47 +455,33 @@ namespace HeavenStudio.Games
 
         public void PassTurn(double beat, double intervalLength, bool wasMultiInput = false)
         {
-            //Debug.Log("Passed Turn");
             intervalStarted = false;
             
             if (wasMultiInput)
             {
-                print("pass beat: " + beat);
-                print("len: " + intervalInputList0.Count);
-                //foreach (var i in intervalInputList0) print("input: " + i);
-                //intervalInputList0.Clear();
-                //intervalInputList1.Clear();
-
-                //foreach (var i in intervalInputList0) if (i < beat) intervalInputList0.Remove(i);
-                //foreach (var i in intervalInputList1) if (i < beat) intervalInputList1.Remove(i);
-
                 spawnedObjects.Clear();
                 multiInputInterval = false;
-                //multiIntervalLength = 0;
             }
             else
             {
-                //print("beat:" + beat);
+                
             }
 
             var queuedInputs = new List<BeatAction.Action>();
-            //Debug.Log("This beat is:" + beat);
-            //Debug.Log("This interval length is:" + intervalLength);
+
             foreach (var volley in queuedDirts)
             {
-                //print("this beat: " + beat);
-                //queuedInputs.Add(new BeatAction.Action(beat + volley, delegate { ants[1].AntAction("dirtHit"); }));
+                
                 queuedInputs.Add(new BeatAction.Action(beat - 0.5f + intervalLength * 2, delegate { 
                     foreach (var thisAnt in ants) thisAnt.justHit = false; }));
-                //ScheduleInput(beat, beatInterval + volley, InputAction_BasicPress, VolleyHit, Miss, Miss);
+                
             }
             foreach (var fruit in queuedFruits)
             {
-                //print("this beat: " + beat);
-                //queuedInputs.Add(new BeatAction.Action(beat + fruit, delegate { ants[1].AntAction("fruitHit"); }));
+                
                 queuedInputs.Add(new BeatAction.Action(beat - 0.5f + intervalLength * 2, delegate {
                     foreach (var thisAnt in ants) thisAnt.justHit = false; }));
-                //ScheduleInput(beat, beatInterval + fruit, InputAction_AltPress, FruitHit, Miss, Miss);
+                
             }
 
             queuedDirts.Clear();
@@ -734,7 +524,7 @@ namespace HeavenStudio.Games
 
         public void Miss(PlayerActionEvent caller)
         {
-            //hasMissed = true;
+            
         }
 
     }

@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 using HeavenStudio.Util;
+using System;
 
 namespace HeavenStudio.Games
 {
     public class SoundEffects : MonoBehaviour
     {
         public enum CountNumbers { One, Two, Three, Four }
-        public readonly static string[] countNames = { "one", "two", "one", "two", "three", "four" };
-        public readonly static float[] timings     = {  0f,    2f,    4f,    5f,    6f,      7f    };
+        public readonly static CountNumbers[] countNames = {  CountNumbers.One,  CountNumbers.Two,  CountNumbers.One,  CountNumbers.Two,  CountNumbers.Three,  CountNumbers.Four };
+        public readonly static float[] timings           = {                0f,                2f,                4f,                5f,                  6f,                 7f };
 
         public enum CountInType 
         { 
@@ -20,7 +21,7 @@ namespace HeavenStudio.Games
             GBA,
             DSMale,
             DSFemale,
-//            Plus
+            Plus
         }
 
         public static string GetCountInSound(int type)
@@ -39,8 +40,23 @@ namespace HeavenStudio.Games
                 CountInType.GBA         => "gba/",
                 CountInType.DSMale      => "dsmale/",
                 CountInType.DSFemale    => "dsfemale/",
-//                CountInType.Plus        => "plus,",
+                CountInType.Plus        => "plus/",
                 _ => "",
+            };
+        }
+
+        public static double GetCountInOffset(int count, int type)
+        {
+            return (count + 4 * type) switch {
+                (int)CountNumbers.Four  + 4 * (int)CountInType.GBA       => 0.050,
+                (int)CountNumbers.One   + 4 * (int)CountInType.DSMale    => 0.028,
+                (int)CountNumbers.Three + 4 * (int)CountInType.DSMale    => 0.033,
+                (int)CountNumbers.Four  + 4 * (int)CountInType.DSMale    => 0.034,
+                (int)CountNumbers.One   + 4 * (int)CountInType.Plus      => 0.014,
+                (int)CountNumbers.Two   + 4 * (int)CountInType.Plus      => 0.014,
+                (int)CountNumbers.Three + 4 * (int)CountInType.Plus      => 0.025,
+                (int)CountNumbers.Four  + 4 * (int)CountInType.Plus      => 0.036,
+                _ => 0,
             };
         }
 
@@ -71,10 +87,13 @@ namespace HeavenStudio.Games
             for (int i = 0; i < countNames.Length; i++) {
                 if (startBeat + timings[i] >= beat) {
                     string countName = cowbell ? countType : countNames[i] + countType;
-                    sfx.Add(new MultiSound.Sound("count-ins/" + countFolder + countName, startBeat + timings[i]));
+                    sfx.Add(new MultiSound.Sound("count-ins/" + countFolder + countName, startBeat + timings[i], offset: GetCountInOffset((int)countNames[i], type)));
                 }
             }
-            if (go && !cowbell) sfx[^1].name = "count-ins/" + countFolder + "go" + countType;
+            if (go && !cowbell) {
+                sfx[^1].name = "count-ins/" + countFolder + "go" + countType;
+                sfx[^1].offset = 0f;
+            }
             MultiSound.Play(sfx, false);
         }
 
@@ -91,9 +110,12 @@ namespace HeavenStudio.Games
             for (int i = 0; i < 2; i++)
             {
                 string countName = cowbell ? countType : countNames[i + 4] + countType;
-                sfx.Add(new MultiSound.Sound("count-ins/" + countFolder + countName, beat + (i * length)));
+                sfx.Add(new MultiSound.Sound("count-ins/" + countFolder + countName, beat + (i * length), offset: GetCountInOffset((int)countNames[i + 4], type)));
             }
-            if (go && !cowbell) sfx[^1].name = "count-ins/" + countFolder + "go" + countType;
+            if (go && !cowbell) {
+                sfx[^1].name = "count-ins/" + countFolder + "go" + countType;
+                sfx[^1].offset = 0f;
+            }
             MultiSound.Play(sfx, false);
         }
 
@@ -109,9 +131,12 @@ namespace HeavenStudio.Games
             }
             for (int i = 0; i < 4; i++) {
                 string countName = cowbell ? countType : countNames[i + 2] + countType;
-                sfx.Add(new MultiSound.Sound("count-ins/" + countName, beat + (i * length)));
+                sfx.Add(new MultiSound.Sound("count-ins/" + countFolder + countName, beat + (i * length), offset: GetCountInOffset((int)countNames[i + 2], type)));
             }
-            if (go && !cowbell) sfx[^1].name = "count-ins/" + countFolder + "go" + countType;
+            if (go && !cowbell) {
+                sfx[^1].name = "count-ins/" + countFolder + "go" + countType;
+                sfx[^1].offset = 0f;
+            }
             MultiSound.Play(sfx, false);
         }
 
@@ -127,18 +152,22 @@ namespace HeavenStudio.Games
             }
             for (int i = 0; i < countNames.Length; i++) {
                 string countName = cowbell ? countType : countNames[i] + countType;
-                sfx.Add(new MultiSound.Sound("count-ins/" + countName, beat + (timings[i] * length)));
+                sfx.Add(new MultiSound.Sound("count-ins/" + countFolder + countName, beat + (timings[i] * length), offset: GetCountInOffset((int)countNames[i], type)));
             }
-            if (go && !cowbell) sfx[^1].name = "count-ins/" + countFolder + "go" + countType;
+            if (go && !cowbell) {
+                sfx[^1].name = "count-ins/" + countFolder + "go" + countType;
+                sfx[^1].offset = 0f;
+            }
             MultiSound.Play(sfx, false);
         }
 
-        public static void Count(int count, int type)
+        public static void Count(double beat, int count, int type)
         {
             string countType = GetCountInSound(type);
             string countFolder = GetCountInFolder(type);
 
-            SoundByte.PlayOneShot("count-ins/" + countFolder + (CountNumbers)count + countType);
+            string countName = countType == "cowbell" ? countType : (CountNumbers)count + countType;
+            SoundByte.PlayOneShot("count-ins/" + countFolder + countName, beat, offset: GetCountInOffset(count, type));
         }
 
         public static void Cowbell()

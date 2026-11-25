@@ -978,7 +978,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.5, y: 0.5}
-  m_SizeDelta: {x: 10.5, y: 1}
+  m_SizeDelta: {x: 10.95, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8468014778772203477
 CanvasRenderer:
@@ -1037,18 +1037,18 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   m_fontSize: 0.72
-  m_fontSizeBase: 0.75
+  m_fontSizeBase: 0.72
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 0
   m_fontSizeMax: 0.72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 512
+  m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: -130
+  m_lineSpacing: -72
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 50
@@ -1628,7 +1628,7 @@ RectTransform:
   m_GameObject: {fileID: 3302073984345696212}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: -1, z: 1}
+  m_LocalScale: {x: 1.25, y: -1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5646803380626983938}
@@ -1636,7 +1636,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -0.25, y: 0.2}
-  m_SizeDelta: {x: 10.95, y: 2}
+  m_SizeDelta: {x: 8.76, y: 2}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8750633935354000014
 CanvasRenderer:
@@ -1666,10 +1666,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u79C1\u306F\u65E5\u672C\u8A9E\u3092\u8A71\u305B\u307E\u3059\uFF01"
+  m_text: Guess who I am?
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8c9e1511ab160ed418f79cac07d8e3a1, type: 2}
-  m_sharedMaterial: {fileID: 8229366223414090439, guid: 8c9e1511ab160ed418f79cac07d8e3a1, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: e2b3555a5505063428750dc0ab926baa, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1703,7 +1703,7 @@ MonoBehaviour:
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
-  m_characterSpacing: 0
+  m_characterSpacing: -10
   m_wordSpacing: 0
   m_lineSpacing: -72
   m_lineSpacingMax: 0

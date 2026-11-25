@@ -48,7 +48,7 @@ namespace HeavenStudio.Games.Scripts_RhythmRally
             }
             if (PlayerInput.GetIsAction(RhythmRally.InputAction_FlickPress) && !game.IsExpectingInputNow(RhythmRally.InputAction_FlickPress))
             {
-                // Play "whoosh" sound here
+                SoundByte.PlayOneShotGame("rhythmRally/SE_PINPON_SWING");
                 playerAnim.DoScaledAnimationAsync("Swing", 0.5f);
                 playerDown = false;
             }
@@ -73,8 +73,12 @@ namespace HeavenStudio.Games.Scripts_RhythmRally
 
             playerAnim.DoScaledAnimationAsync("Swing", 0.5f);
             playerDown = false;
-            MultiSound.Play(new MultiSound.Sound[] { new MultiSound.Sound("rhythmRally/Return", hitBeat), new MultiSound.Sound("rhythmRally/ReturnBounce", bounceBeat) });
-            BounceFX(bounceBeat);
+            MultiSound.Play(new MultiSound.Sound[] 
+            { 
+                new MultiSound.Sound("rhythmRally/SE_PINPON_ATTACK_PLAYER_m100p100", hitBeat, SoundByte.GetPitchFromCents(UnityEngine.Random.Range(-100, 101), false)), 
+                new MultiSound.Sound("rhythmRally/SE_PINPON_TABLE_COM_m50p50", bounceBeat, SoundByte.GetPitchFromCents(UnityEngine.Random.Range(-50, 51), false)), 
+            });
+
             game.ball.SetActive(true);
         }
 
@@ -107,20 +111,9 @@ namespace HeavenStudio.Games.Scripts_RhythmRally
                 whistleBeat = game.serveBeat + game.targetBeat + 0.5f;
             }
 
-            MultiSound.Play(new MultiSound.Sound[] { new MultiSound.Sound("rhythmRally/Whistle", whistleBeat) });
-        }
-
-        public void BounceFX(double bounceBeat)
-        {
-            BeatAction.New(this, new List<BeatAction.Action>()
-            {
-                new BeatAction.Action(bounceBeat, delegate
-                {
-                    GameObject ballHitFX2 = Instantiate(RhythmRally.instance.ballHitFX.gameObject, RhythmRally.instance.gameObject.transform);
-                    ballHitFX2.SetActive(true);
-                    ballHitFX2.transform.position = new Vector3(ballHitFX2.transform.position.x, ballHitFX2.transform.position.y, RhythmRally.instance.ball.transform.position.z);
-                    ballHitFX2.GetComponent<SpriteRenderer>().DOColor(new Color(0, 0, 0, 0), 0.65f).SetEase(Ease.OutExpo).OnComplete(delegate { Destroy(ballHitFX2); });
-                })
+            MultiSound.Play(new MultiSound.Sound[] 
+            { 
+                new MultiSound.Sound("rhythmRally/SE_PINPON_START", whistleBeat) 
             });
         }
 

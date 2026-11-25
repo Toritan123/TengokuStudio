@@ -15,17 +15,21 @@ namespace HeavenStudio.Editor
         public Toggle toggle;
 
         private bool _defaultValue;
+        private bool _previousValue;
 
         public override void SetProperties(string propertyName, object type, string caption)
         {
             base.SetProperties(propertyName, type, caption);
 
             _defaultValue = (bool)type;
-            toggle.isOn = Convert.ToBoolean(entity[propertyName]);
+            toggle.SetIsOnWithoutNotify(Convert.ToBoolean(entity[propertyName]));
+            _previousValue = toggle.isOn;
 
             toggle.onValueChanged.AddListener(_ =>
             {
-                entity[propertyName] = toggle.isOn;
+                foreach (var e in parameterManager.entities) {
+                    e[propertyName] = toggle.isOn;
+                }
                 this.caption.text = (toggle.isOn != _defaultValue) ? (_captionText + "*") : _captionText;
             });
         }
@@ -33,6 +37,11 @@ namespace HeavenStudio.Editor
         public void ResetValue()
         {
             toggle.isOn = _defaultValue;
+        }
+
+        public void ResetToPrevious()
+        {
+            toggle.isOn = _previousValue;
         }
 
         public override void SetCollapses(object type)

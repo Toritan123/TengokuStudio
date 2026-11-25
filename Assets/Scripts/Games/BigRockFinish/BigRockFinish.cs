@@ -16,6 +16,18 @@ namespace HeavenStudio.Games.Loaders
     {
         public static Minigame AddGame(EventCaller eventCaller)
         {
+            RiqEntity DrumUpdater(string datamodel, RiqEntity e)
+            {
+                if (datamodel == "bigRockFinish/drum" && e.dynamicData.ContainsKey("drumType") && !e.dynamicData.ContainsKey("drumAnimType"))
+                {
+                    e.CreateProperty("drumAnimType", (int)e["drumType"] + ((int) e["drumType"] <= (int) BigRockFinish.DrumType.Snare ? 0 : 1));
+                    e.dynamicData.Remove("drumType");
+                    return e;
+                }
+                return null;
+            }
+            RiqBeatmap.OnUpdateEntity += DrumUpdater;
+
             return new Minigame("bigRockFinish", "Big Rock Finish", "019B95", false, false, new List<GameAction>()
             {
                 new GameAction("bop", "Bop")
@@ -39,13 +51,13 @@ namespace HeavenStudio.Games.Loaders
                 {
                     function = delegate {
                         var e = eventCaller.currentEntity;
-                        BigRockFinish.instance.PlayDrums(e.beat, e["drumType"]);
+                        BigRockFinish.instance.PlayDrums(e.beat, e["drumAnimType"]);
                     },
                     resizable = false,
                     defaultLength = 0.25f,
                     parameters = new List<Param>()
                     {
-                        new Param("drumType", BigRockFinish.DrumType.Kick, "Drum Type", "Pick the drum that Spooky plays.")
+                        new Param("drumAnimType", BigRockFinish.DrumAnimType.Kick, "Drum Type", "Pick the drum that Spooky plays.")
                     }
                 },
                 new GameAction("spotlight", "Spotlight Animation")
@@ -74,7 +86,12 @@ namespace HeavenStudio.Games.Loaders
                 //},
                 new GameAction("countin2", "Big Rock Finish")
                 {
-                    function = delegate { var e = eventCaller.currentEntity; BigRockFinish.instance.CountinLong(e.beat, e.length, e["note1"], e["note2"], e["note3"], e["note4"], e["short"], e["alt"], e["whiff"], e["cheer"], e["crowdBop"], e["flash"]);},
+                    preFunction = delegate { 
+                        var e = eventCaller.currentEntity; 
+                        if (GameManager.instance.currentGame != "bigRockFinish") return;
+                        BigRockFinish.instance.CountinLong(e.beat, e.length, e["note1"], e["note2"], e["note3"], e["note4"], e["short"], e["alt"], e["whiff"], e["cheer"], e["crowdBop"], e["flash"]);
+                    },
+                    preFunctionLength = 1f,
                     defaultLength = 8f,
                     resizable = true,
                     parameters = new List<Param>()
@@ -94,7 +111,12 @@ namespace HeavenStudio.Games.Loaders
                 },
                 new GameAction("countin1", "Big Rock Finish (Fast)")
                 {
-                    function = delegate { var e = eventCaller.currentEntity; BigRockFinish.instance.Countin(e.beat, e.length, e["note1"], e["note2"], e["note3"], e["note4"], e["alt"], e["whiff"], e["cheer"], e["crowdBop"], e["flash"]);},
+                    preFunction = delegate { 
+                        var e = eventCaller.currentEntity; 
+                        if (GameManager.instance.currentGame != "bigRockFinish") return;
+                        BigRockFinish.instance.Countin(e.beat, e.length, e["note1"], e["note2"], e["note3"], e["note4"], e["alt"], e["whiff"], e["cheer"], e["crowdBop"], e["flash"]);
+                    },
+                    preFunctionLength = 1f,
                     defaultLength = 4f,
                     resizable = true,
                     parameters = new List<Param>()
@@ -121,7 +143,7 @@ namespace HeavenStudio.Games.Loaders
                     }
                 }
             },
-            new List<string>() { "ntr", "aim" },
+            new List<string>() { "ntr", "normal" },
             "ntrshortlive", "en",
             new List<string>() { },
             chronologicalSortKey: 22,
@@ -170,6 +192,17 @@ namespace HeavenStudio.Games
             TomRight = 3,
             HiHat = 4,
             Cymbal = 5
+        }
+
+        public enum DrumAnimType
+        {
+            Kick = 0,
+            SnareLeft = 1,
+            SnareRight = 2,
+            TomLeft = 3,
+            TomRight = 4,
+            HiHat = 5,
+            Cymbal = 6
         }
 
         public enum SpotlightType
@@ -350,8 +383,6 @@ namespace HeavenStudio.Games
 
         public void Countin(double beat, float length, int noteOne, int noteTwo, int noteThree, int noteFour, bool alt, int whiff, bool cheer, bool crowdBop, bool flash)
         {
-
-
             float interval = (float)(beat + length);
             float noteTwoTime = length + (length*.1875f);
             float noteThreeTime = length + (length*0.375f);
@@ -360,31 +391,25 @@ namespace HeavenStudio.Games
 
             whiffPitch = whiff;
 
-            
-            
-            
-
-            
-
             if (alt)
             {
                 MultiSound.Play(new MultiSound.Sound[]
-                    {
-                        new MultiSound.Sound("bigRockFinish/countinOneFast", beat),
-                        new MultiSound.Sound("bigRockFinish/countinTwoFast", beat + (length*.25)),
-                        new MultiSound.Sound("bigRockFinish/countinThreeFast", beat + (length*.5)),
-                        new MultiSound.Sound("bigRockFinish/comeOn", beat + (length*.75)),
-                    }, forcePlay: true);
+                {
+                    new MultiSound.Sound("bigRockFinish/countinOneFast", beat, offset: 0.051f),
+                    new MultiSound.Sound("bigRockFinish/countinTwoFast", beat + (length*.25)),
+                    new MultiSound.Sound("bigRockFinish/countinThreeFast", beat + (length*.5), offset: 0.055f),
+                    new MultiSound.Sound("bigRockFinish/comeOn", beat + (length*.75)),
+                }, forcePlay: true);
             }
             else
             {
                 MultiSound.Play(new MultiSound.Sound[]
-                    {
-                        new MultiSound.Sound("bigRockFinish/countinOne", beat),
-                        new MultiSound.Sound("bigRockFinish/countinTwo", beat + (length*.25)),
-                        new MultiSound.Sound("bigRockFinish/countinThree", beat + (length*.5)),
-                        new MultiSound.Sound("bigRockFinish/countInFour", beat + (length*.75)),
-                    }, forcePlay: true);
+                {
+                    new MultiSound.Sound("bigRockFinish/countinOne", beat, offset: 0.07f),
+                    new MultiSound.Sound("bigRockFinish/countinTwo", beat + (length*.25)),
+                    new MultiSound.Sound("bigRockFinish/countinThree", beat + (length*.5), offset: 0.091f),
+                    new MultiSound.Sound("bigRockFinish/countInFour", beat + (length*.75)),
+                }, forcePlay: true);
             }
 
             
@@ -415,7 +440,6 @@ namespace HeavenStudio.Games
             ScheduleInput(beat, noteTwoTime, InputAction_FlickPress, strumSuccessTwo, strumMiss, null);
             ScheduleInput(beat, noteThreeTime, InputAction_FlickPress, strumSuccessThree, strumMiss, null);
             ScheduleInput(beat, noteFourTime, InputAction_FlickPress, strumSuccessFour, strumMissLast, null);
-
         }
 
         public void CheckCrowdInputBop()
@@ -454,16 +478,16 @@ namespace HeavenStudio.Games
                     {
                         MultiSound.Play(new MultiSound.Sound[]
                     {
-                        new MultiSound.Sound("bigRockFinish/countinOneFast", beat),
+                        new MultiSound.Sound("bigRockFinish/countinOneFast", beat, offset: 0.051f),
                         new MultiSound.Sound("bigRockFinish/countinTwoFast", beat + (length*.25)),
                     }, forcePlay: true);
                     }
 
                     MultiSound.Play(new MultiSound.Sound[]
                     {
-                        new MultiSound.Sound("bigRockFinish/countinOneFast", beat + (length*.5)),
+                        new MultiSound.Sound("bigRockFinish/countinOneFast", beat + (length*.5), offset: 0.051f),
                         new MultiSound.Sound("bigRockFinish/countinTwoFast", beat + (length*.625)),
-                        new MultiSound.Sound("bigRockFinish/countinThreeFast", beat + (length*.75)),
+                        new MultiSound.Sound("bigRockFinish/countinThreeFast", beat + (length*.75), offset: 0.055f),
                         new MultiSound.Sound("bigRockFinish/comeOn", beat + (length*.875)),
                     }, forcePlay: true);
             }
@@ -473,16 +497,16 @@ namespace HeavenStudio.Games
                     {
                         MultiSound.Play(new MultiSound.Sound[]
                     {
-                        new MultiSound.Sound("bigRockFinish/countinOne", beat),
+                        new MultiSound.Sound("bigRockFinish/countinOne", beat, offset: 0.07f),
                         new MultiSound.Sound("bigRockFinish/countinTwo", beat + (length*.25)),
                     }, forcePlay: true);
                     }
 
                     MultiSound.Play(new MultiSound.Sound[]
                     {
-                        new MultiSound.Sound("bigRockFinish/countinOne", beat + (length*.5)),
+                        new MultiSound.Sound("bigRockFinish/countinOne", beat + (length*.5), offset: 0.07f),
                         new MultiSound.Sound("bigRockFinish/countinTwo", beat + (length*.625)),
-                        new MultiSound.Sound("bigRockFinish/countinThree", beat + (length*.75)),
+                        new MultiSound.Sound("bigRockFinish/countinThree", beat + (length*.75), offset: 0.091f),
                         new MultiSound.Sound("bigRockFinish/countinFour", beat + (length*.875)),
                     }, forcePlay: true);
             }
@@ -560,27 +584,31 @@ namespace HeavenStudio.Games
         {
             switch (drum)
                         {
-                            case (int) DrumType.Kick:
+                            case (int) DrumAnimType.Kick:
                                 drummerGhost.DoScaledAnimationAsync("Beat", 0.5f);
                                 Bass.DoScaledAnimationAsync("Hit", 0.5f);
                                 break;
-                            case (int) DrumType.Snare:
+                            case (int) DrumAnimType.SnareLeft:
                                 ghostHandL.DoScaledAnimationAsync("Hit01", 0.5f);
                                 Snare.DoScaledAnimationAsync("Hit", 0.5f);
                                 break;
-                            case (int) DrumType.TomLeft:
+                            case (int) DrumAnimType.SnareRight:
+                                ghostHandR.DoScaledAnimationAsync("Hit01", 0.5f);
+                                Snare.DoScaledAnimationAsync("Hit", 0.5f);
+                                break;
+                            case (int) DrumAnimType.TomLeft:
                                 ghostHandL.DoScaledAnimationAsync("Hit01", 0.5f);
                                 TomL.DoScaledAnimationAsync("Hit", 0.5f);
                                 break;
-                            case (int) DrumType.TomRight:
+                            case (int) DrumAnimType.TomRight:
                                 ghostHandR.DoScaledAnimationAsync("Hit01", 0.5f);
                                 TomR.DoScaledAnimationAsync("Hit", 0.5f);
                                 break;
-                            case (int) DrumType.Cymbal:
+                            case (int) DrumAnimType.Cymbal:
                                 ghostHandR.DoScaledAnimationAsync("Hit02", 0.5f);
                                 Cymbal.DoScaledAnimationAsync("Hit", 0.5f);
                                 break;
-                            case (int) DrumType.HiHat:
+                            case (int) DrumAnimType.HiHat:
                                 ghostHandL.DoScaledAnimationAsync("Hit02", 0.5f);
                                 Hihat.DoScaledAnimationAsync("Hit", 0.5f);
                                 break;
@@ -800,5 +828,24 @@ namespace HeavenStudio.Games
                 });
         }
         public void Empty(PlayerActionEvent caller) {}
+        public override void OnGameSwitch(double beat)
+        {
+            DoInactiveCues(beat);
+        }
+
+        private void DoInactiveCues(double beat)
+        {
+            RiqEntity e = gameManager.Beatmap.Entities.FindLast(e => e.beat - 1 < beat && e.beat >= beat && e.datamodel == "bigRockFinish/countin1");
+            if (e != null)
+            {
+                Countin(e.beat, e.length, e["note1"], e["note2"], e["note3"], e["note4"], e["alt"], e["whiff"], e["cheer"], e["crowdBop"], e["flash"]);
+            }
+
+            e = gameManager.Beatmap.Entities.FindLast(e => e.beat - 1 < beat && e.beat >= beat && e.datamodel == "bigRockFinish/countin2");
+            if (e != null)
+            {
+                CountinLong(e.beat, e.length, e["note1"], e["note2"], e["note3"], e["note4"], e["short"], e["alt"], e["whiff"], e["cheer"], e["crowdBop"], e["flash"]);
+            }
+        }
     }
 }

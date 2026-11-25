@@ -58,7 +58,6 @@ namespace HeavenStudio.Games.Scripts_ValiantVolley
         {
             if (!anim.IsPlayingAnimationNames("AntBop", "AntHappy", "AntAngry", "AntOops") && !isPreparing && !justHit && !cantBop)
             {
-                //if (game.bopStatus == 2 && player) print("gummy bear :)");
                 PlayAnimation(game.bopStatus);
             }
             else if (game.bopStatus == 2)
@@ -80,26 +79,18 @@ namespace HeavenStudio.Games.Scripts_ValiantVolley
                 3 => "AntOops",
                 _ => "AntBop"
             }, 0.5f);
-            //isPreparing = false;
             justHit = false;
 
-            //Debug.Log("Bop: " + whichBop);
-
             if ((whichBop == 1 || whichBop == 3) && player) game.bopStatus = 0;
-            //isSqueezed = false;
         }
 
         public void AntAction(string action, float pitch = 1)
         {
-            //Debug.Log(action);
             if ((Conductor.instance.songPositionInBeatsAsDouble - lastVolleyBeat) > 0.15f)
                 if  (antNum != 2 || ((action == "dirtHit") && game.IsExpectingInputNow(ValiantVolley.InputAction_BasicPress))
                     || ((action == "fruitHit") && game.IsExpectingInputNow(ValiantVolley.InputAction_AltPress)))
-                        //SoundByte.PlayOneShotGame($"valiantVolley/{action.ToLower()}", -1, pitch);
                         justHit = true;
             if (action == "dirtHit" || action == "fruitHit") lastVolleyBeat = Conductor.instance.songPositionInBeatsAsDouble;
-
-            SoundByte.PlayOneShotGame("valiantVolley/woosh");
 
             anim.DoScaledAnimationAsync("Volley", 0.5f);
             isPreparing = false;

@@ -98,7 +98,7 @@ namespace HeavenStudio.Games.Loaders
                     },
                 },
             },
-            new List<string>() { "ntr", "repeat" },
+            new List<string>() { "ntr", "repeat", "toy" },
             "ntrslotmonster", "en",
             new List<string>() {},
             chronologicalSortKey: 203

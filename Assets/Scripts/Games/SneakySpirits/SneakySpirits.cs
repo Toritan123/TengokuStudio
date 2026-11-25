@@ -103,8 +103,7 @@ namespace HeavenStudio.Games.Loaders
             new List<string>() {"agb", "aim"},
             "agbghost", "en",
             new List<string>() {},
-            chronologicalSortKey: 7,
-            font : "FOT-SlumpStd-DB SDF"
+            chronologicalSortKey: 7
             );
         }
     }

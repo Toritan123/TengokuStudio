@@ -17,6 +17,7 @@ namespace HeavenStudio.Editor
         public TMP_InputField inputField;
         
         protected float _defaultValue;
+        protected float _previousValue;
 
         public override void SetProperties(string propertyName, object type, string caption)
         {
@@ -37,14 +38,15 @@ namespace HeavenStudio.Editor
                     if (integer.limitless) sliderGO.SetActive(false);
 
                     slider.wholeNumbers = true;
-                    slider.value = Convert.ToSingle(parameterManager.entity[propertyName]);
-                    inputField.text = slider.value.ToString();
+                    slider.SetValueWithoutNotify(Convert.ToSingle(parameterManager.entity[propertyName]));
+                    inputField.SetTextWithoutNotify(slider.value.ToString());
+                    _previousValue = slider.value;
 
                     slider.onValueChanged.AddListener(
                         _ =>
                         {
                             inputField.text = slider.value.ToString();
-                            parameterManager.entity[propertyName] = (int) slider.value;
+                            foreach (var e in parameterManager.entities) e[propertyName] = (int) slider.value;
                             if (slider.value != _defaultValue)
                             {
                                 this.caption.text = _captionText + "*";
@@ -65,7 +67,7 @@ namespace HeavenStudio.Editor
                         _ =>
                         {
                             slider.value = Convert.ToSingle(inputField.text);
-                            parameterManager.entity[propertyName] = (int) slider.value;
+                            foreach (var e in parameterManager.entities) e[propertyName] = (int) slider.value;
                             Editor.instance.editingInputField = false;
                             if (slider.value != _defaultValue)
                             {
@@ -91,15 +93,16 @@ namespace HeavenStudio.Editor
                     }
                     if (fl.limitless) sliderGO.SetActive(false);
 
-                    slider.value = Convert.ToSingle(parameterManager.entity[propertyName]);
-                    inputField.text = slider.value.ToString("G");
+                    slider.SetValueWithoutNotify(Convert.ToSingle(parameterManager.entity[propertyName]));
+                    _previousValue = slider.value;
+                    inputField.SetTextWithoutNotify(slider.value.ToString("G"));
 
                     slider.onValueChanged.AddListener(
                         _ =>
                         {
                             var newValue = (float) Math.Round(slider.value, 4);
                             inputField.text = newValue.ToString("G");
-                            parameterManager.entity[propertyName] = newValue;
+                            foreach (var e in parameterManager.entities) e[propertyName] = newValue;
                             if (newValue != _defaultValue)
                             {
                                 this.caption.text = _captionText + "*";
@@ -120,7 +123,7 @@ namespace HeavenStudio.Editor
                         _ =>
                         {
                             slider.value = (float) Math.Round(Convert.ToSingle(inputField.text), 4);
-                            parameterManager.entity[propertyName] = slider.value;
+                            foreach (var e in parameterManager.entities) e[propertyName] = slider.value;
                             Editor.instance.editingInputField = false;
                             if (slider.value != _defaultValue)
                             {
@@ -146,6 +149,11 @@ namespace HeavenStudio.Editor
         public void ResetValue()
         {
             slider.value = _defaultValue;
+        }
+
+        public void ResetToPrevious()
+        {
+            slider.value = _previousValue;
         }
 
         public override void SetCollapses(object type)

@@ -10,6 +10,7 @@ using UnityEngine.Networking;
 using UnityEngine.UI;
 using HeavenStudio.Util;
 using HeavenStudio.Common;
+using System;
 
 namespace HeavenStudio
 {
@@ -108,13 +109,13 @@ namespace HeavenStudio
 
             editingIcon.TryGetCustomSort(out List<string> customSortList);
 
-            List<LibraryLevelIcon> allLevelIcons = LibraryManager.instance.allIconInfo.Values.Where(iconInfo => !iconInfo.isFolder).Select(iconInfo => iconInfo.levelIcon).ToList();
+            List<LibraryLevelIcon> allLevelIcons = LibraryManager.allIconInfo.Values.Where(iconInfo => !iconInfo.isFolder).Select(iconInfo => iconInfo.levelIcon).ToList();
 
-            List<LibraryLevelIcon> customSortedIcons = allLevelIcons.Where(level => LibraryManager.instance.allIconInfo[editingIcon.folderPath].pathsInFolder.Contains(level.levelPath))
+            List<LibraryLevelIcon> customSortedIcons = allLevelIcons.Where(level => LibraryManager.allIconInfo[editingIcon.folderPath].pathsInFolder.Contains(level.levelPath))
                                                                         .Where(level => customSortList.Contains(Path.GetFileNameWithoutExtension(level.fileName)))
                                                                         .ToList();
 
-            List<LibraryLevelIcon> notSortedIcons = allLevelIcons.Where(level => LibraryManager.instance.allIconInfo[editingIcon.folderPath].pathsInFolder.Contains(level.levelPath) && !customSortList.Contains(Path.GetFileNameWithoutExtension(level.fileName)))
+            List<LibraryLevelIcon> notSortedIcons = allLevelIcons.Where(level => LibraryManager.allIconInfo[editingIcon.folderPath].pathsInFolder.Contains(level.levelPath) && !customSortList.Contains(Path.GetFileNameWithoutExtension(level.fileName)))
                                                                  .ToList();
 
             customSortedIcons = customSortedIcons.OrderBy(level => customSortList.IndexOf(Path.GetFileNameWithoutExtension(level.fileName))).ToList();
@@ -306,10 +307,14 @@ namespace HeavenStudio
                     {
                         foreach (string levelPath in Directory.GetFiles(editingIcon.folderPath, "*", new EnumerationOptions() { RecurseSubdirectories = true }))
                         {
+                            string ext = Path.GetExtension(levelPath);
+                            // Debug.Log($"{levelPath}'s extension is {ext}");
+                            if (ext != ".riq" && ext != ".json" && ext != ".png" && ext != ".jpg") continue; // keep non level files out of level packs, including baks
+
                             archive.CreateEntryFromFile(levelPath, Path.Combine(editingIcon.folderName, Path.GetFileName(levelPath)));
                         }
                     }
-                    SoundByte.PlayOneShot("save");
+                    SoundByte.PlayOneShot("save", ui: true);
                 }
             });
         }
@@ -324,9 +329,18 @@ namespace HeavenStudio
             }
             else
             {
-                Directory.Delete(editingIcon.folderPath, true);
-                SoundByte.PlayOneShot("ui/Library/delete");
-                _ = LibraryManager.instance.Refresh();
+                try
+                {
+                    Directory.Delete(editingIcon.folderPath, true);
+                    SoundByte.PlayOneShot("ui/Library/delete", ui: true);
+                    _ = LibraryManager.Refresh();
+                }
+                catch (Exception e)
+                {
+                    deleteText.text = "Delete folder";
+                    deletePossible = false;
+                    GlobalGameManager.ShowErrorMessage("Error", "An error occurred deleting this folder:\n\n" + e.Message);
+                }
             }
         }
 
@@ -338,7 +352,7 @@ namespace HeavenStudio
 
             changedIcon = false;
 
-            SoundByte.PlayOneShot("ui/ExitSmall");
+            SoundByte.PlayOneShot("ui/ExitSmall", ui: true);
         }
 
         #endregion

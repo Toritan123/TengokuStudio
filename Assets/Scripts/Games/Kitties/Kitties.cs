@@ -3,6 +3,7 @@ using HeavenStudio.InputSystem;
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Jukebox;
 
 namespace HeavenStudio.Games.Loaders
 {
@@ -11,12 +12,42 @@ namespace HeavenStudio.Games.Loaders
     {
         public static Minigame AddGame(EventCaller eventCaller)
         {
+            RiqEntity ClapUpdater(string datamodel, RiqEntity entity)
+            {
+                if (datamodel == "kitties/clap")
+                {
+                    if (entity["toggle2"] == null) return null;
+
+                    entity.CreateProperty("despawn", entity["toggle2"] ? 2 : 1);
+
+                    entity.dynamicData.Remove("toggle2");
+                    return entity;
+                }
+                return null;
+            }
+            RiqBeatmap.OnUpdateEntity += ClapUpdater;
+
+            RiqEntity RollUpdater(string datamodel, RiqEntity entity)
+            {
+                if (datamodel == "kitties/roll")
+                {
+                    if (entity["toggle"] == null) return null;
+
+                    entity.CreateProperty("despawn", entity["toggle"] ? 2 : 1);
+
+                    entity.dynamicData.Remove("toggle");
+                    return entity;
+                }
+                return null;
+            }
+            RiqBeatmap.OnUpdateEntity += RollUpdater;
+
             return new Minigame("kitties", "Kitties!", "ffffff", false, false, new List<GameAction>()
             {
                 new GameAction("clap", "Cat Clap")
                 {
-                    function = delegate { Kitties.instance.Clap(eventCaller.currentEntity["toggle"], eventCaller.currentEntity["toggle1"], eventCaller.currentEntity["toggle2"],
-                        eventCaller.currentEntity.beat,  eventCaller.currentEntity["type"]); },
+                    function = delegate { Kitties.instance.Clap(eventCaller.currentEntity["toggle"], eventCaller.currentEntity["toggle1"], eventCaller.currentEntity["despawn"],
+                        eventCaller.currentEntity.beat, eventCaller.currentEntity["type"], eventCaller.currentEntity["end"]); },
 
                     defaultLength = 4f,
                     parameters = new List<Param>()
@@ -24,29 +55,34 @@ namespace HeavenStudio.Games.Loaders
                         new Param("type", Kitties.SpawnType.Straight, "Direction", "Choose the direction that the kitties will spawn in."),
                         new Param("toggle", false, "Mice", "Toggle if the non-player kitties should be replaced with mice."),
                         new Param("toggle1", false, "Invert Direction", "Toggle if the spawn direction should be inverted."),
-                        new Param("toggle2", false, "Keep Cats Spawned", "Toggle if the kitties should stay spawned after their cue. This is required for some other events."),
+                        new Param("end", false, "The End", "Toggle if the \"The End\" text will display."),
+                        new Param("despawn", Kitties.DespawningType.Auto, "Despawn Cats", "Change if the kitties automatically despawn, don't despawn, or are forced to despawn."),
                     }
                 },
 
-                new GameAction("roll", "Roll")
+                new GameAction("roll", "Group Spin")
                     {
-                        function = delegate { Kitties.instance.Roll(eventCaller.currentEntity["toggle"], eventCaller.currentEntity.beat);  },
+                        function = delegate { Kitties.instance.Roll(eventCaller.currentEntity["despawn"], eventCaller.currentEntity.beat);  },
 
                         defaultLength = 4f,
 
                         parameters = new List<Param>()
                         {
-                            new Param("toggle", false, "Keep Cats Spawned", "Toggle if the kitties should stay spawned after their cue. This is required for some other events."),
+                            new Param("despawn", Kitties.DespawningType.Auto, "Despawn Cats", "Change if the kitties automatically despawn, don't despawn, or are forced to despawn."),
                         }
                     },
 
                 new GameAction ("fish", "Fish")
                 {
-                    function = delegate { Kitties.instance.CatchFish(eventCaller.currentEntity.beat); },
+                    function = delegate { Kitties.instance.CatchFish(eventCaller.currentEntity["despawn"], eventCaller.currentEntity.beat); },
+                    parameters = new List<Param>()
+                    {
+                        new Param("despawn", Kitties.DespawningType.Auto, "Despawn Cats", "Change if the kitties automatically despawn, don't despawn, or are forced to despawn."),
+                    },
                     defaultLength = 4f,
                 },
 
-                new GameAction("instantSpawn", "Instant Spawn")
+                new GameAction("instantSpawn", "Force Spawn")
                 {
                     function = delegate { Kitties.instance.InstantSpawn(eventCaller.currentEntity["toggle"], eventCaller.currentEntity["toggle1"],
                         eventCaller.currentEntity.beat,  eventCaller.currentEntity["type"]); },
@@ -57,8 +93,8 @@ namespace HeavenStudio.Games.Loaders
                         new Param("type", Kitties.SpawnType.Straight, "Direction", "Choose the direction that the kitties will spawn in."),
                         new Param("toggle", false, "Mice", "Toggle if the non-player kitties should be replaced with mice."),
                         new Param("toggle1", false, "Invert Direction", "Toggle if the spawn direction should be inverted."),
-                        new Param("toggle2", false, "Keep Cats Spawned", "Toggle if the kitties should stay spawned after their cue. This is required for some other events."),
-                    }
+                    },
+                    advanced = true,
                 },
 
                 new GameAction("bgcolor", "Background Appearance")
@@ -89,6 +125,7 @@ namespace HeavenStudio.Games.Loaders
 }
 namespace HeavenStudio.Games
 {
+    using Jukebox;
     using Scripts_Kitties;
     public class Kitties : Minigame
     {
@@ -97,10 +134,13 @@ namespace HeavenStudio.Games
         public GameObject[] Cats;
 
         public GameObject Fish;
+        public GameObject TheEnd;
+        public Animator TheEndAnim;
         public bool isInverted;
         public SpriteRenderer background;
 
         public Vector3[] positions;
+        public Vector3 theEndPosition;
         public float[] rotationAngles;
 
         public enum SpawnType
@@ -110,6 +150,15 @@ namespace HeavenStudio.Games
             UpDiagonal,
             CloseUp
         }
+
+        public enum DespawningType
+        {
+            Auto,
+            DespawnAfterCue,
+            KeepSpawned
+        }
+
+        private List<RiqEntity> currentEntities;
 
         public static Kitties instance;
 
@@ -152,6 +201,8 @@ namespace HeavenStudio.Games
         void Awake()
         {
             instance = this;
+            Fish.SetActive(false);
+            TheEnd.SetActive(false);
             BackgroundColorUpdate();
         }
 
@@ -161,97 +212,107 @@ namespace HeavenStudio.Games
             BackgroundColorUpdate();
         }
 
-        public void Clap(bool isMice, bool isInverse, bool keepSpawned, double beat, int type)
+        public void Clap(bool isMice, bool isInverse, int despawnType, double beat, int type, bool end)
         {
+            Fish.SetActive(false);
             player.ScheduleClap(beat, type);
             MultiSound.Play(new MultiSound.Sound[] {
                 new MultiSound.Sound($"kitties/nya1_{UnityEngine.Random.Range(1, 3)}", beat),
                 new MultiSound.Sound($"kitties/nya2_{UnityEngine.Random.Range(1, 3)}", beat + .75f),
                 new MultiSound.Sound($"kitties/nya3_{UnityEngine.Random.Range(1, 3)}", beat + 1.5f),
-                new MultiSound.Sound("kitties/ClapMiss1", beat + 2.5f),
-                new MultiSound.Sound("kitties/ClapMiss2", beat + 3f)
+                
+                new MultiSound.Sound("kitties/CLAP_OTHER_FIRST", beat + 2.5f),
+                new MultiSound.Sound("kitties/CLAP_OTHER_SECOND", beat + 3f)
             });
 
             if (type == 3)
             {
                 BeatAction.New(instance, new List<BeatAction.Action>()
-            {
+                {
                     new BeatAction.Action(beat, delegate { Spawn(type, 0, isMice, isInverse, true, false);}),
-                    new BeatAction.Action(beat + 2.5f, delegate { kitties[0].Play("FaceClap", 0, 0);}),
-                    new BeatAction.Action(beat + 3f, delegate { kitties[0].Play("FaceClap", 0, 0);}),
+                    new BeatAction.Action(beat + 2.5f, delegate { kitties[0].DoScaledAnimationAsync("FaceClap", 0.5f);}),
+                    new BeatAction.Action(beat + 3f, delegate { kitties[0].DoScaledAnimationAsync("FaceClap", 0.5f);}),
                 });
 
                 BeatAction.New(instance, new List<BeatAction.Action>()
-            {
-                new BeatAction.Action(beat + .75f, delegate { Spawn(type, 1, isMice, isInverse, false, false);}),
-                new BeatAction.Action(beat + 2.5f, delegate { kitties[1].Play("FaceClap", 0, 0);}),
-                new BeatAction.Action(beat + 3f, delegate { kitties[1].Play("FaceClap", 0, 0);}),
+                {
+                    new BeatAction.Action(beat + .75f, delegate { Spawn(type, 1, isMice, isInverse, false, false);}),
+                    new BeatAction.Action(beat + 2.5f, delegate { kitties[1].DoScaledAnimationAsync("FaceClap", 0.5f);}),
+                    new BeatAction.Action(beat + 3f, delegate { kitties[1].DoScaledAnimationAsync("FaceClap", 0.5f);}),
                 });
 
                 BeatAction.New(instance, new List<BeatAction.Action>()
-            {
-                new BeatAction.Action(beat + 1.5f, delegate { Spawn(type, 2, isMice, isInverse, false, false);}),
-                new BeatAction.Action(beat + 1.5f, delegate { player.canClap = true;}),
+                {
+                    new BeatAction.Action(beat + 1.5f, delegate { Spawn(type, 2, isMice, isInverse, false, false);}),
+                    new BeatAction.Action(beat + 1.5f, delegate { player.canClap = true;}),
                 });
             }
 
             else if (!isMice)
             {
                 BeatAction.New(instance, new List<BeatAction.Action>()
-            {
+                {
                     new BeatAction.Action(beat, delegate { Spawn(type, 0, isMice, isInverse, true, false);}),
-                    new BeatAction.Action(beat + 2.5f, delegate { kitties[0].Play("Clap1", 0, 0);}),
-                    new BeatAction.Action(beat + 3f, delegate { kitties[0].Play("Clap2", 0, 0);}),
+                    new BeatAction.Action(beat + 2.5f, delegate { kitties[0].DoScaledAnimationAsync("Clap1", 0.5f);}),
+                    new BeatAction.Action(beat + 3f, delegate { kitties[0].DoScaledAnimationAsync("Clap2", 0.5f);}),
                 });
 
                 BeatAction.New(instance, new List<BeatAction.Action>()
-            {
-                new BeatAction.Action(beat + .75f, delegate { Spawn(type, 1, isMice, isInverse, false, false);}),
-                new BeatAction.Action(beat + 2.5f, delegate { kitties[1].Play("Clap1", 0, 0);}),
-                new BeatAction.Action(beat + 3f, delegate { kitties[1].Play("Clap2", 0, 0);}),
+                {
+                    new BeatAction.Action(beat + .75f, delegate { Spawn(type, 1, isMice, isInverse, false, false);}),
+                    new BeatAction.Action(beat + 2.5f, delegate { kitties[1].DoScaledAnimationAsync("Clap1", 0.5f);}),
+                    new BeatAction.Action(beat + 3f, delegate { kitties[1].DoScaledAnimationAsync("Clap2", 0.5f);}),
                 });
 
                 BeatAction.New(instance, new List<BeatAction.Action>()
-            {
-                new BeatAction.Action(beat + 1.5f, delegate { Spawn(type, 2, isMice, isInverse, false, false);}),
-                new BeatAction.Action(beat + 1.5f, delegate { player.canClap = true;}),
+                {
+                    new BeatAction.Action(beat + 1.5f, delegate { Spawn(type, 2, isMice, isInverse, false, false);}),
+                    new BeatAction.Action(beat + 1.5f, delegate { player.canClap = true;}),
                 });
-
             }
             else
             {
                 BeatAction.New(instance, new List<BeatAction.Action>()
-            {
+                {
                     new BeatAction.Action(beat, delegate { Spawn(type, 0, isMice, isInverse, true, false);}),
-                    new BeatAction.Action(beat + 2.5f, delegate { kitties[0].Play("MiceClap1", 0, 0);}),
-                    new BeatAction.Action(beat + 3f, delegate { kitties[0].Play("MiceClap2", 0, 0);}),
+                    new BeatAction.Action(beat + 2.5f, delegate { kitties[0].DoScaledAnimationAsync("MiceClap1", 0.5f);}),
+                    new BeatAction.Action(beat + 3f, delegate { kitties[0].DoScaledAnimationAsync("MiceClap2", 0.5f);}),
                 });
 
                 BeatAction.New(instance, new List<BeatAction.Action>()
-            {
-                new BeatAction.Action(beat + .75f, delegate { Spawn(type, 1, isMice, isInverse, false, false);}),
-                new BeatAction.Action(beat + 2.5f, delegate { kitties[1].Play("MiceClap1", 0, 0);}),
-                new BeatAction.Action(beat + 3f, delegate { kitties[1].Play("MiceClap2", 0, 0);}),
+                {
+                    new BeatAction.Action(beat + .75f, delegate { Spawn(type, 1, isMice, isInverse, false, false);}),
+                    new BeatAction.Action(beat + 2.5f, delegate { kitties[1].DoScaledAnimationAsync("MiceClap1", 0.5f);}),
+                    new BeatAction.Action(beat + 3f, delegate { kitties[1].DoScaledAnimationAsync("MiceClap2", 0.5f);}),
                 });
 
                 BeatAction.New(instance, new List<BeatAction.Action>()
-            {
-                new BeatAction.Action(beat + 1.5f, delegate { Spawn(type, 2, isMice, isInverse, false, false);}),
-                new BeatAction.Action(beat + 1.5f, delegate { player.canClap = true;}),
+                {
+                    new BeatAction.Action(beat + 1.5f, delegate { Spawn(type, 2, isMice, isInverse, false, false);}),
+                    new BeatAction.Action(beat + 1.5f, delegate { player.canClap = true;}),
                 });
 
             }
 
-            if (!keepSpawned)
+            if (despawnType != (int)DespawningType.KeepSpawned)
             {
                 BeatAction.New(instance, new List<BeatAction.Action>()
-            {
-                    new BeatAction.Action(beat + 3.5f, delegate { RemoveCats(false);})
+                {
+                    new BeatAction.Action(beat + 3.5f, delegate { RemoveCats(beat + 3.5f, false, despawnType);})
                 });
             }
+
+            BeatAction.New(instance, new List<BeatAction.Action>()
+            {
+                new BeatAction.Action(beat + 3f, delegate { 
+                    TheEnd.SetActive(end);
+                    TheEnd.transform.localPosition = theEndPosition;
+                    if (TheEnd.activeSelf) TheEndAnim.DoScaledAnimationAsync("English", 0.5f);
+                })
+            });
         }
 
-        public void Roll(bool keepSpawned, double beat)
+        public void Roll(int despawnType, double beat)
         {
             if (!player.canClap)
                 return;
@@ -275,42 +336,42 @@ namespace HeavenStudio.Games
             });
             BeatAction.New(instance, new List<BeatAction.Action>()
                 {
-                    new BeatAction.Action(beat, delegate { kitties[0].Play("RollStart", 0, 0); }),
-                    new BeatAction.Action(beat + .5f, delegate { kitties[0].Play("RollStart", 0, 0); }),
-                    new BeatAction.Action(beat + 1f, delegate { kitties[0].Play("RollStart", 0, 0); }),
-                    new BeatAction.Action(beat + 1.5f, delegate { kitties[0].Play("RollStart", 0, 0); }),
-                    new BeatAction.Action(beat + 2f, delegate { kitties[0].Play("Rolling", 0, 0); }),
-                    new BeatAction.Action(beat + 2.75f, delegate { kitties[0].Play("RollEnd", 0, 0); })
+                    new BeatAction.Action(beat, delegate { kitties[0].DoScaledAnimationAsync("RollStart", 0.5f); }),
+                    new BeatAction.Action(beat + .5f, delegate { kitties[0].DoScaledAnimationAsync("RollStart", 0.5f); }),
+                    new BeatAction.Action(beat + 1f, delegate { kitties[0].DoScaledAnimationAsync("RollStart", 0.5f); }),
+                    new BeatAction.Action(beat + 1.5f, delegate { kitties[0].DoScaledAnimationAsync("RollStart", 0.5f); }),
+                    new BeatAction.Action(beat + 2f, delegate { kitties[0].DoScaledAnimationAsync("Rolling", 0.5f); }),
+                    new BeatAction.Action(beat + 2.75f, delegate { kitties[0].DoScaledAnimationAsync("RollEnd", 0.5f); })
                 });
 
             BeatAction.New(instance, new List<BeatAction.Action>()
                 {
-                    new BeatAction.Action(beat, delegate { kitties[1].Play("RollStart", 0, 0); }),
-                    new BeatAction.Action(beat + .5f, delegate { kitties[1].Play("RollStart", 0, 0); }),
-                    new BeatAction.Action(beat + 1f, delegate { kitties[1].Play("RollStart", 0, 0); }),
-                    new BeatAction.Action(beat + 1.5f, delegate { kitties[1].Play("RollStart", 0, 0); }),
-                    new BeatAction.Action(beat + 2f, delegate { kitties[1].Play("Rolling", 0, 0); }),
-                    new BeatAction.Action(beat + 2.75f, delegate { kitties[1].Play("RollEnd", 0, 0); })
+                    new BeatAction.Action(beat, delegate { kitties[1].DoScaledAnimationAsync("RollStart", 0.5f); }),
+                    new BeatAction.Action(beat + .5f, delegate { kitties[1].DoScaledAnimationAsync("RollStart", 0.5f); }),
+                    new BeatAction.Action(beat + 1f, delegate { kitties[1].DoScaledAnimationAsync("RollStart", 0.5f); }),
+                    new BeatAction.Action(beat + 1.5f, delegate { kitties[1].DoScaledAnimationAsync("RollStart", 0.5f); }),
+                    new BeatAction.Action(beat + 2f, delegate { kitties[1].DoScaledAnimationAsync("Rolling", 0.5f); }),
+                    new BeatAction.Action(beat + 2.75f, delegate { kitties[1].DoScaledAnimationAsync("RollEnd", 0.5f); })
                     });
 
             BeatAction.New(instance, new List<BeatAction.Action>()
                 {
-                    new BeatAction.Action(beat, delegate { kitties[2].Play("RollStart", 0, 0); }),
-                    new BeatAction.Action(beat + .5f, delegate { kitties[2].Play("RollStart", 0, 0); }),
-                    new BeatAction.Action(beat + 1f, delegate { kitties[2].Play("RollStart", 0, 0); }),
-                    new BeatAction.Action(beat + 1.5f, delegate { kitties[2].Play("RollStart", 0, 0); })
+                    new BeatAction.Action(beat, delegate { kitties[2].DoScaledAnimationAsync("RollStart", 0.5f); }),
+                    new BeatAction.Action(beat + .5f, delegate { kitties[2].DoScaledAnimationAsync("RollStart", 0.5f); }),
+                    new BeatAction.Action(beat + 1f, delegate { kitties[2].DoScaledAnimationAsync("RollStart", 0.5f); }),
+                    new BeatAction.Action(beat + 1.5f, delegate { kitties[2].DoScaledAnimationAsync("RollStart", 0.5f); })
                 });
 
-            if (!keepSpawned)
+            if (despawnType != (int)DespawningType.KeepSpawned)
             {
                 BeatAction.New(instance, new List<BeatAction.Action>()
-            {
-                    new BeatAction.Action(beat + 3.5f, delegate { RemoveCats(false);})
+                {
+                    new BeatAction.Action(beat + 3.5f, delegate { RemoveCats(beat + 3.5f, false, despawnType);})
                 });
             }
         }
 
-        public void CatchFish(double beat)
+        public void CatchFish(int despawnType, double beat)
         {
             //if (!player.canClap)
             //    return;
@@ -331,17 +392,18 @@ namespace HeavenStudio.Games
                         Fish.transform.localScale = new Vector3(1f, 1f, 1f); }),
                 new BeatAction.Action(beat, delegate { Fish.SetActive(true); }),
                 new BeatAction.Action(beat, delegate { Fish.GetComponent<Animator>().DoScaledAnimationAsync("FishDangle", 0.5f); }),
-                new BeatAction.Action(beat + 2f, delegate { kitties[0].Play("FishNotice", 0, 0);  }),
-                new BeatAction.Action(beat + 2.25f, delegate { kitties[1].Play("FishNotice2", 0, 0);  }),
-                new BeatAction.Action(beat + 2.5f, delegate { kitties[2].Play("FishNotice3", 0, 0);  })
+                new BeatAction.Action(beat + 2f, delegate { kitties[0].DoScaledAnimationAsync("FishNotice", 0.5f);  }),
+                new BeatAction.Action(beat + 2.25f, delegate { kitties[1].DoScaledAnimationAsync("FishNotice2", 0.5f);  }),
+                new BeatAction.Action(beat + 2.5f, delegate { kitties[2].DoScaledAnimationAsync("FishNotice3", 0.5f);  })
                 });
 
-            BeatAction.New(instance, new List<BeatAction.Action>()
+            if (despawnType != (int)DespawningType.KeepSpawned)
             {
-                    new BeatAction.Action(beat + 4f, delegate { Fish.SetActive(false);})
+                BeatAction.New(instance, new List<BeatAction.Action>()
+                {
+                    new BeatAction.Action(beat + 4f, delegate { RemoveCats(beat + 3.5f, true, despawnType);})
                 });
-
-
+            }
         }
 
         public void Spawn(int pos, int catNum, bool isMice, bool isInverse, bool firstSpawn, bool instant)
@@ -350,9 +412,9 @@ namespace HeavenStudio.Games
             if (firstSpawn)
             {
                 isInverted = isInverse;
-                switch (pos)
+                switch ((SpawnType)pos)
                 {
-                    case 0:
+                    case SpawnType.Straight:
 
                         if (!isInverse)
                         {
@@ -366,47 +428,53 @@ namespace HeavenStudio.Games
                             positions[1] = new Vector3(.32f, -1.25f, 0f);
                             positions[2] = new Vector3(-5.11f, -1.5f, 0f);
                         }
+                        theEndPosition = new Vector3(0f, 3.12f, 0f);
                         break;
 
-                    case 1:
+                    case SpawnType.DownDiagonal:
 
                         if (!isInverse)
                         {
                             positions[0] = new Vector3(-6.61f, 1.75f, 6f);
                             positions[1] = new Vector3(.32f, -.25f, 2f);
                             positions[2] = new Vector3(4.25f, -1.75f, -2f);
+                            theEndPosition = new Vector3(-2.95f, -3.77f, 0f);
                         }
                         else
                         {
                             positions[0] = new Vector3(6.61f, 1.75f, 6f);
                             positions[1] = new Vector3(.32f, -.25f, 2f);
                             positions[2] = new Vector3(-4.25f, -1.75f, -2f);
+                            theEndPosition = new Vector3(3.35f, -3.77f, 0f);
                         }
                         break;
 
-                    case 2:
+                    case SpawnType.UpDiagonal:
 
                         if (!isInverse)
                         {
                             positions[0] = new Vector3(4.25f, -1.75f, -2f);
                             positions[1] = new Vector3(.32f, -.25f, 2f);
                             positions[2] = new Vector3(-6.61f, 1.75f, 6f);
+                            theEndPosition = new Vector3(-2.95f, -3.77f, 0f);
                         }
                         else
                         {
                             positions[0] = new Vector3(-4.25f, -1.75f, -2f);
                             positions[1] = new Vector3(.32f, -.25f, 2f);
                             positions[2] = new Vector3(6.61f, 1.75f, 6f);
+                            theEndPosition = new Vector3(3.35f, -3.77f, 0f);
                         }
                         break;
 
-                    case 3:
+                    case SpawnType.CloseUp:
                         if (firstSpawn)
                         {
                             rotationAngles = new float[] { -135f, 135f, 0f };
                             positions[0] = new Vector3(-8.21f, 3.7f, 0f);
                             positions[1] = new Vector3(7.51f, 4.2f, 0f);
                             positions[2] = new Vector3(.32f, -4.25f, 0f);
+                            theEndPosition = Vector3.zero;
                         }
                         break;
 
@@ -438,27 +506,27 @@ namespace HeavenStudio.Games
             {
                 if (pos == 3)
                 {
-                    kitties[catNum].Play("FacePopIn", 0, 0);
+                    kitties[catNum].DoScaledAnimationAsync("FacePopIn", 0.5f);
                 }
                 else if (!isMice)
-                    kitties[catNum].Play("PopIn", 0, 0);
+                    kitties[catNum].DoScaledAnimationAsync("PopIn", 0.5f);
                 else if (catNum < 2)
                 {
-                    kitties[catNum].Play("MicePopIn", 0, 0);
+                    kitties[catNum].DoScaledAnimationAsync("MicePopIn", 0.5f);
                 }
                 else
-                    kitties[catNum].Play("PopIn", 0, 0);
+                    kitties[catNum].DoScaledAnimationAsync("PopIn", 0.5f);
             }
             else
             {
                 if (pos == 3)
-                    kitties[catNum].Play("FaceIdle", 0, 0);
+                    kitties[catNum].DoScaledAnimationAsync("FaceIdle", 0.5f);
                 else if (!isMice)
-                    kitties[catNum].Play("Idle", 0, 0);
+                    kitties[catNum].DoScaledAnimationAsync("Idle", 0.5f);
                 else if (catNum < 2)
-                    kitties[catNum].Play("MiceIdle", 0, 0);
+                    kitties[catNum].DoScaledAnimationAsync("MiceIdle", 0.5f);
                 else
-                    kitties[catNum].Play("Idle", 0, 0);
+                    kitties[catNum].DoScaledAnimationAsync("Idle", 0.5f);
             }
         }
 
@@ -469,8 +537,14 @@ namespace HeavenStudio.Games
             Cats[catNum].transform.rotation = Quaternion.Euler(rotationVector);
         }
 
-        public void RemoveCats(bool fishing)
+        public void RemoveCats(double beat, bool fishing, int despawnType)
         {
+            if (despawnType == (int)DespawningType.KeepSpawned) return;
+            if (despawnType == (int)DespawningType.Auto && beat > 0)
+            {
+                if (NextEntity(beat) is "kitties/roll" or "kitties/fish" or null) return;
+            }
+
             if (!fishing)
             {
                 for (int x = 0; x < 3; x++)
@@ -479,19 +553,39 @@ namespace HeavenStudio.Games
                 }
             }
             else
+            {
                 Fish.SetActive(false);
+            }
+
+            TheEnd.SetActive(false);
             player.canClap = false;
         }
 
         public void InstantSpawn(bool isMice, bool isInverse, double beat, int pos)
         {
-            BeatAction.New(instance, new List<BeatAction.Action>()
-                {
-                new BeatAction.Action(beat, delegate { Spawn(pos, 0, isMice, isInverse, true, true); }),
-                new BeatAction.Action(beat, delegate { Spawn(pos, 1, isMice, isInverse, true, true); }),
-                new BeatAction.Action(beat, delegate { Spawn(pos, 2, isMice, isInverse, true, true); })
-            });
+            Spawn(pos, 0, isMice, isInverse, true, true);
+            Spawn(pos, 1, isMice, isInverse, true, true);
+            Spawn(pos, 2, isMice, isInverse, true, true);
             player.canClap = true;
+        }
+
+        public void GetCurrentEntities(double beat)
+        {
+            List<RiqEntity> entitiesList;
+            double currentGameSwitchBeat = EventCaller.GetAllInGameManagerList("gameManager", new string[] { "switchGame", "end" }).Find(x => x.beat <= beat)?.beat ?? 0;
+            double nextGameSwitchBeat = EventCaller.GetAllInGameManagerList("gameManager", new string[] { "switchGame", "end" }).Find(x => x.beat > beat)?.beat ?? double.MaxValue;
+            entitiesList = EventCaller.GetAllInGameManagerList("kitties").FindAll(e => e.beat >= currentGameSwitchBeat && nextGameSwitchBeat > e.beat);
+            currentEntities = entitiesList;
+        }
+
+        public string NextEntity(double beat)
+        {
+            return currentEntities.Find(e => e.beat >= beat)?.datamodel;
+        }
+
+        public RiqEntity PreviousEntity(double beat)
+        {
+            return currentEntities.FindLast(e => e.beat < beat && e.datamodel == "kitties/clap");
         }
 
         private ColorEase bgColorEase = new(Color.white);
@@ -521,12 +615,25 @@ namespace HeavenStudio.Games
 
         public override void OnPlay(double beat)
         {
-            PersistColor(beat);
+            OnGameSwitch(beat);
         }
 
         public override void OnGameSwitch(double beat)
         {
             PersistColor(beat);
+            GetCurrentEntities(beat);
+            if (NextEntity(beat) is "kitties/roll" or "kitties/fish")
+            {
+                RiqEntity e = PreviousEntity(beat);
+                if (e != null)
+                {
+                    InstantSpawn(e["toggle"], e["toggle1"], beat,  e["type"]); 
+                }
+                else
+                {
+                    InstantSpawn(false, false, beat, (int)SpawnType.Straight);
+                }
+            }
         }
     }
 }

@@ -86,7 +86,7 @@ namespace HeavenStudio.Games.Loaders
                     resizable = true
                 },
             },
-            new List<string>() {"agb", "normal"},
+            new List<string>() {"agb", "normal", "endless"},
             "agbmannequin", "en",
             new List<string>() {},
             chronologicalSortKey: 104,

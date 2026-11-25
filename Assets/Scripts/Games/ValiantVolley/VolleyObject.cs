@@ -20,8 +20,6 @@ namespace HeavenStudio.Games.Scripts_ValiantVolley
 
         public Animator anim;
 
-        //public GameObject Shadow;
-        //private GameObject ShadowInstance;
         private SpriteRenderer shadowRenderer;
 
         public SpriteRenderer objectSprite;
@@ -50,8 +48,6 @@ namespace HeavenStudio.Games.Scripts_ValiantVolley
         public List<double> intervalInputList = new();
         public List<float> juggleLengths = new();
 
-        //private float floorHeight = -3f;
-
         public ValiantVolley game;
 
         void Awake()
@@ -66,11 +62,6 @@ namespace HeavenStudio.Games.Scripts_ValiantVolley
                 objectSprite.sprite = fruitSprite;
                 game.ScheduleInput(startBeat + distance, distance * 2, ValiantVolley.InputAction_AltPress, Hit, Miss, null);
             }
-
-            if (beingJuggled) game.spawnedObjects.Add(this);
-            if (beingJuggled) foreach (var i in intervalInputList) print("Input list:" + i);
-            //print("dist:" + distance);
-            //print("Distance1: " + distance.ToString() + ", beat: " + startBeat.ToString());
         }
 
         // Start is called before the first frame update
@@ -82,15 +73,6 @@ namespace HeavenStudio.Games.Scripts_ValiantVolley
         // Update is called once per frame
         void Update()
         {
-            //print("The last juggle: " + lastJuggle);
-            //print("Jugge lengths count:" + juggleLengths.Count);
-
-            //bool hasDoneQueued = false;
-            /*if (!barely)
-            {
-                if (objectType == 1) transform.rotation = Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z + (-600f * Time.deltaTime));
-                else transform.rotation = Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z + (-120f * Time.deltaTime));
-            }*/
 
             if (objectType == 1) transform.rotation = Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z + (-600f * Time.deltaTime));
             else transform.rotation = Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z + (-120f * Time.deltaTime));
@@ -103,19 +85,15 @@ namespace HeavenStudio.Games.Scripts_ValiantVolley
 
                 if (objectType == 0)
                 {
-                    //print("qtos inputos: " + game.intervalInputList0.Count);
                     if (intervalInputList.Count > 0)
                     {
                         var queuedInputs = new List<double>();
                         foreach (var input in intervalInputList)
                         {
-                            //Debug.Log("I1: " + input);
                             if (input > startBeat) queuedInputs.Add(input);
                         }
                         foreach (var input in queuedInputs)
                         {
-                            //print("Distance2: " + distance.ToString() + ", beat: " + startBeat.ToString());
-                            //print("da input:" + input);
 
                             if (input == lastJuggle)
                             {
@@ -125,12 +103,14 @@ namespace HeavenStudio.Games.Scripts_ValiantVolley
 
                                 queuedActions.Add(new BeatAction.Action(input + 0.0001f, delegate { currentJuggle = 0; }));
                                 queuedActions.Add(new BeatAction.Action(input + distance + 0.0001f, delegate { currentJuggle = 0; }));
-                                //print("sim" + input);
+                                SoundByte.PlayOneShotGame("valiantVolley/dirtHit", input, 1f, 2.3f, false, false, 0f, false, false, -0.2f);
+                                SoundByte.PlayOneShotGame("valiantVolley/dirtHit", input + distance, 1f, 2f);
                             }
                             else
                             {
-                                queuedActions.Add(new BeatAction.Action(input, delegate { anim.DoScaledAnimationAsync("ObjectJuggle", 1/juggleLengths[currentJuggle] * 0.5f); }));
-                                queuedActions.Add(new BeatAction.Action(input + distance, delegate { anim.DoScaledAnimationAsync("ObjectJuggle", 1/juggleLengths[currentJuggle] * 0.5f); }));
+                                
+                                queuedActions.Add(new BeatAction.Action(input, delegate { anim.DoScaledAnimationAsync("ObjectJuggle", 1/ juggleLengths[currentJuggle] * 0.5f * Conductor.instance.SongPitch); }));
+                                queuedActions.Add(new BeatAction.Action(input + distance, delegate { anim.DoScaledAnimationAsync("ObjectJuggle", 1/ juggleLengths[currentJuggle] * 0.5f * Conductor.instance.SongPitch); }));
 
                                 queuedActions.Add(new BeatAction.Action(input - 0.0001f, delegate { hitPitch = 0.8f; }));
                                 queuedActions.Add(new BeatAction.Action(input + distance - 0.0001f, delegate { hitPitch = 0.8f; }));
@@ -138,19 +118,17 @@ namespace HeavenStudio.Games.Scripts_ValiantVolley
 
                                 queuedActions.Add(new BeatAction.Action(input + 0.0001f, delegate { currentJuggle += 1; }));
                                 queuedActions.Add(new BeatAction.Action(input + distance + 0.0001f, delegate { currentJuggle += 1; }));
-
-                                //print("não");
+                                
+                                SoundByte.PlayOneShotGame("valiantVolley/dirtHit", input, 0.7f, 2.3f, false, false, 0f, false, false, -0.2f);
+                                SoundByte.PlayOneShotGame("valiantVolley/dirtHit", input + distance, 0.7f, 2f);
                             }
 
                             queuedActions.Add(new BeatAction.Action(input, delegate { thisBeat = input; }));
                             queuedActions.Add(new BeatAction.Action(input + distance, delegate { thisBeat = input + distance; }));
                             queuedActions.Add(new BeatAction.Action(input + distance * 2 - 0.0001f, delegate { thisBeat = input + distance * 2; }));
                             queuedJuggles.Add(game.ScheduleInput(input, distance * 2, Minigame.InputAction_BasicPress, Hit, Miss, null));
-                            //float thisHitPitch = hitPitch;
                             queuedActions.Add(new BeatAction.Action(input, delegate { game.ants[0].AntAction("dirtHit", hitPitch); }));
-                            queuedActions.Add(new BeatAction.Action(input, delegate { SoundByte.PlayOneShotGame("valiantVolley/dirtHit", -1, hitPitch); }));
                             queuedActions.Add(new BeatAction.Action(input + distance, delegate { game.ants[1].AntAction("dirtHit", hitPitch); }));
-                            queuedActions.Add(new BeatAction.Action(input + distance, delegate { SoundByte.PlayOneShotGame("valiantVolley/dirtHit", -1, hitPitch); }));
                             intervalInputList.Remove(input);
                         }
                     }
@@ -162,18 +140,18 @@ namespace HeavenStudio.Games.Scripts_ValiantVolley
                         var queuedInputs = new List<double>();
                         foreach (var input in intervalInputList)
                         {
-                            //Debug.Log("I1: " + input);
                             queuedInputs.Add(input);
                         }
                         foreach (var input in queuedInputs)
                         {
                             
-                            //queuedActions.Add(new BeatAction.Action(input, delegate { game.ants[0].AntAction("fruitHit"); }));
                             if (input == lastJuggle)
                             {
                                 queuedActions.Add(new BeatAction.Action(input - 0.0001f, delegate { hitPitch = 1f; }));
                                 queuedActions.Add(new BeatAction.Action(input + distance - 0.0001f, delegate { hitPitch = 1f; }));
                                 queuedActions.Add(new BeatAction.Action(input + distance * 2 - 0.0001f, delegate { hitPitch = 1f; }));
+                                SoundByte.PlayOneShotGame("valiantVolley/fruitVolley", input, 1, 3f, false, false, 0f, false, false, -0.2f);
+                                SoundByte.PlayOneShotGame("valiantVolley/fruitVolley", input + distance, 1, 2f);
 
                                 queuedActions.Add(new BeatAction.Action(input + 0.0001f, delegate { currentJuggle = 0; }));
                                 queuedActions.Add(new BeatAction.Action(input + distance + 0.0001f, delegate { currentJuggle = 0; }));
@@ -189,30 +167,31 @@ namespace HeavenStudio.Games.Scripts_ValiantVolley
 
                                 queuedActions.Add(new BeatAction.Action(input + 0.0001f, delegate { currentJuggle += 1; }));
                                 queuedActions.Add(new BeatAction.Action(input + distance + 0.0001f, delegate { currentJuggle += 1; }));
+
+                                SoundByte.PlayOneShotGame("valiantVolley/fruitJuggle", input, 1f, 3f, false, false, 0f, false, false, -0.2f);
+                                SoundByte.PlayOneShotGame("valiantVolley/fruitJuggle", input + distance, 1f, 2f);
                             }
 
                             queuedActions.Add(new BeatAction.Action(input, delegate { thisBeat = input; }));
                             queuedActions.Add(new BeatAction.Action(input + distance, delegate { thisBeat = input + distance; }));
                             queuedActions.Add(new BeatAction.Action(input + distance * 2 - 0.0001f, delegate { thisBeat = input + distance * 2; }));
                             queuedJuggles.Add(game.ScheduleInput(input, distance * 2, ValiantVolley.InputAction_AltPress, Hit, Miss, null));
-                            //float thisHitPitch = hitPitch;
                             queuedActions.Add(new BeatAction.Action(input, delegate { game.ants[0].AntAction("fruitHit", hitPitch); }));
-                            queuedActions.Add(new BeatAction.Action(input, delegate { SoundByte.PlayOneShotGame("valiantVolley/fruitHit", -1, hitPitch); }));
+                            
                             queuedActions.Add(new BeatAction.Action(input + distance, delegate { game.ants[1].AntAction("fruitHit", hitPitch); }));
-                            queuedActions.Add(new BeatAction.Action(input + distance, delegate { SoundByte.PlayOneShotGame("valiantVolley/fruitHit", -1, hitPitch); }));
+                            
                             intervalInputList.Remove(input);
                         }
                     }
                 }
             }
 
-            //anim.DoScaledAnimationAsync("ObjectHit", 0.5f);
             if (isEntering)
             {
-                
-                float flyPos = game.conductor.GetPositionFromBeat(startBeat, distance); 
 
-                //Debug.Log("FlyPos: " + flyPos);
+                float flyPos = 0;
+                if (flyPos < 1f) flyPos = game.conductor.GetPositionFromBeat(startBeat, distance, true, false);
+
                 if (flyPos < 1f && currentAnt == 0)
                 {
                     if (queuedActions.Count > 0) game.hitPitch = 0.8f;
@@ -224,8 +203,6 @@ namespace HeavenStudio.Games.Scripts_ValiantVolley
                     {
                         queuedActions.Sort((s1, s2) => s1.beat.CompareTo(s2.beat));
                         BeatAction.New(this, queuedActions);
-                        //if (objectType == 0) game.ants[0].AntAction("dirtHit");
-                        //else game.ants[0].AntAction("fruitHit");
 
                         transform.rotation = Quaternion.Euler(0, 0, 0);
                         if ((thisBeat == lastJuggle && thisBeat != 0) || queuedActions.Count == 0)
@@ -237,29 +214,43 @@ namespace HeavenStudio.Games.Scripts_ValiantVolley
                         else
                         {
                             hitPitch = 0.8f;
-                            anim.DoScaledAnimationAsync("ObjectJuggle", 1 / juggleLengths[currentJuggle] * 0.5f);
+                            anim.DoScaledAnimationAsync("ObjectJuggle", 1 / juggleLengths[currentJuggle] * 0.5f * Conductor.instance.SongPitch);
                             
                             currentJuggle += 1;
                         }
                         if (objectType == 0)
                         {
                             game.ants[0].AntAction("dirtHit", hitPitch);
-                            SoundByte.PlayOneShotGame("valiantVolley/dirtHit", -1, hitPitch);
+                            if ((thisBeat == lastJuggle && thisBeat != 0) || queuedActions.Count == 0)
+                            {
+                                SoundByte.PlayOneShotGame("valiantVolley/dirtHit", -1, 1f, 2.3f, false, false, 0f, false, false, -0.2f);
+                            }
+                            else
+                            {
+                                SoundByte.PlayOneShotGame("valiantVolley/dirtHit", -1, 0.7f, 2.3f, false, false, 0f, false, false, -0.2f);
+                            }
                         }
                         else
                         {
                             game.ants[0].AntAction("fruitHit", hitPitch);
-                            SoundByte.PlayOneShotGame("valiantVolley/fruitHit", -1, hitPitch);
+                            if ((thisBeat == lastJuggle && thisBeat != 0) || queuedActions.Count == 0)
+                            {
+                                SoundByte.PlayOneShotGame("valiantVolley/fruitVolley", -1, 1, 2.6f, false, false, 0f, false, false, -0.2f);
+                            }
+                            else
+                            {
+                                SoundByte.PlayOneShotGame("valiantVolley/fruitJuggle", -1, 1, 2.6f, false, false, 0f, false, false, -0.2f);
+                            }
+                            
                         }
                     }
                     if (flyPos >= 1) currentAnt = 1;
 
-                    flyPos = game.conductor.GetPositionFromBeat(startBeat + distance, distance);
+                    flyPos = game.conductor.GetPositionFromBeat(startBeat + distance, distance, true, false);
 
                     if (thisBeat == lastJuggle && thisBeat != 0)
                     {
-                        flyPos = game.conductor.GetPositionFromBeat(lastJuggle, lastJuggleLength);
-                        //print("Last juggle length: " + lastJuggleLength);
+                        flyPos = game.conductor.GetPositionFromBeat(lastJuggle, lastJuggleLength, true, false);
                         transform.position = bounceCurve1.GetPoint(flyPos);
                     }
                     else if (queuedActions.Count == 0)
@@ -270,16 +261,23 @@ namespace HeavenStudio.Games.Scripts_ValiantVolley
                     if (flyPos > 1f)
                     {
                         if (queuedActions.Count > 0) hitPitch = 0.8f;
-                        //Debug.Log("CurAnim:" + anim.GetCurrentAnimatorClipInfo(0));
                         if (objectType == 0)
                         {
                             game.ants[1].AntAction("dirtHit", hitPitch);
-                            SoundByte.PlayOneShotGame("valiantVolley/dirtHit", -1, hitPitch);
+                            if ((thisBeat == lastJuggle + distance && thisBeat != 0) || queuedActions.Count == 0)
+                            {
+                                SoundByte.PlayOneShotGame("valiantVolley/dirtHit", -1, 1f, 1.2f); 
+                            }
+                            else SoundByte.PlayOneShotGame("valiantVolley/dirtHit", -1, 0.7f, 1.2f);
                         }
                         else
                         {
                             game.ants[1].AntAction("fruitHit", hitPitch);
-                            SoundByte.PlayOneShotGame("valiantVolley/fruitHit", -1, hitPitch);
+                            if ((thisBeat == lastJuggle + distance && thisBeat != 0) || queuedActions.Count == 0)
+                            {
+                                SoundByte.PlayOneShotGame("valiantVolley/fruitVolley", -1, 1, 1.5f); 
+                            }
+                            else SoundByte.PlayOneShotGame("valiantVolley/fruitJuggle", -1, 1, 1.5f);
                         }
                         currentAnt = 2;
                         transform.rotation = Quaternion.Euler(0, 0, 0);
@@ -290,63 +288,45 @@ namespace HeavenStudio.Games.Scripts_ValiantVolley
                         }
                         else
                         {
-                            //print("Current juggle: " + currentJuggle);
                             currentJuggle = 0;
-                            anim.DoScaledAnimationAsync("ObjectJuggle", 1 / juggleLengths[currentJuggle] * 0.5f);
+                            anim.DoScaledAnimationAsync("ObjectJuggle", 1 / juggleLengths[currentJuggle] * 0.5f * Conductor.instance.SongPitch);
                             
                             currentJuggle += 1;
                         }
 
 
-                        //foreach (var i in queuedActions) Debug.Log("QActions: " + i);
                     }
                 }
                 else
                 {
-                    flyPos = game.conductor.GetPositionFromBeat(startBeat + distance * 2, distance);
+                    flyPos = game.conductor.GetPositionFromBeat(startBeat + distance * 2, distance, true, false);
                     if (thisBeat == lastJuggle + distance && thisBeat != 0)
                     {
-                        flyPos = game.conductor.GetPositionFromBeat(lastJuggle + distance, lastJuggleLength); // + startBeat + 2 - game.multiIntervalStartBeat
-                        transform.position = bounceCurve2.GetPoint(flyPos);
+                        flyPos = game.conductor.GetPositionFromBeat(lastJuggle + distance, lastJuggleLength, true, false);
+                        if (flyPos < 1f) transform.position = bounceCurve2.GetPoint(flyPos);
                     }
                     else if (queuedActions.Count == 0)
                     {
-                        transform.position = bounceCurve2.GetPoint(flyPos);
+                        if (flyPos < 1f) transform.position = bounceCurve2.GetPoint(flyPos);
                     }
 
                     if (flyPos > 1f)
                     {
-                        //transform.rotation = Quaternion.Euler(0, 0, 0);
-                        /*if (!barely && !missed)
-                            anim.DoScaledAnimationAsync("ObjectHit", 0.5f);*/
-                        //isEntering = false;
-                        //isHit = true;
+
                     }
                 }
-
-                //Debug.Log("Anim:" + anim.IsAnimationNotPlaying());
-
-                //if (flyPos == 1);
-
-                /*
-                if (flyPos > 1f)
-                {
-                    isEntering = false;
-                    isHit = true;
-                }
-                */
             }
             else
             {
-                //transform.rotation = Quaternion.Euler(0, 0, transform.rotation.eulerAngles.z + (360f * Time.deltaTime));
+                
             }
             if (isHit && !missed)
             {
                 barely = false;
                 game.bopStatus = 1;
                 float flyPos;
-                if (thisBeat == lastJuggle + distance * 2 && thisBeat != 0) flyPos = game.conductor.GetPositionFromBeat(lastJuggle + distance * 2, lastJuggleLength);
-                else flyPos = game.conductor.GetPositionFromBeat(startBeat + distance * 3, distance);
+                if (thisBeat == lastJuggle + distance * 2 && thisBeat != 0) flyPos = game.conductor.GetPositionFromBeat(lastJuggle + distance * 2, lastJuggleLength, true, false);
+                else flyPos = game.conductor.GetPositionFromBeat(startBeat + distance * 3, distance, true, false);
 
                 if ((thisBeat == lastJuggle + distance * 2 && thisBeat != 0) || queuedActions.Count == 0) transform.position = hitCurve.GetPoint(flyPos);
 
@@ -372,18 +352,16 @@ namespace HeavenStudio.Games.Scripts_ValiantVolley
             {
                 isHit = false;
                 game.bopStatus = 2;
-                //Destroy(gameObject);
-                float flyPos = game.conductor.GetPositionFromBeat(startBeat + distance * 3, distance);
+                float flyPos = game.conductor.GetPositionFromBeat(startBeat + distance * 3, distance, true, false);
                 if (thisBeat == lastJuggle + distance * 2 && thisBeat != 0)
                 {
-                    flyPos = game.conductor.GetPositionFromBeat(lastJuggle + distance * 2, lastJuggleLength);
+                    flyPos = game.conductor.GetPositionFromBeat(lastJuggle + distance * 2, lastJuggleLength, true, false);
                     transform.position = barelyCurve.GetPoint(flyPos);
                 }
                 else if (queuedActions.Count == 0)
                 {
                     transform.position = barelyCurve.GetPoint(flyPos);
                 }
-                //transform.rotation = Quaternion.Euler(0, 0, 0);
 
                 if (anim.IsAnimationNotPlaying() && flyPos <= 0.1f)
                 {
@@ -402,7 +380,6 @@ namespace HeavenStudio.Games.Scripts_ValiantVolley
                 transform.rotation = Quaternion.Euler(0, 0, 0);
                 Destroy(gameObject);
             }
-            //print("Animation playing: " + anim.IsPlayingAnimationNames("ObjectJuggle"));
         }
 
         private void Hit(PlayerActionEvent caller, float state)
@@ -410,12 +387,11 @@ namespace HeavenStudio.Games.Scripts_ValiantVolley
             if (caller.startBeat + distance * 2 != lastJuggle + distance * 2 && thisBeat != 0)
             {
                 hitPitch = 0.8f;
-                anim.DoScaledAnimationAsync("ObjectJuggle", 1 / juggleLengths[currentJuggle] * 0.5f);
+                anim.DoScaledAnimationAsync("ObjectJuggle", 1 / juggleLengths[currentJuggle] * 0.5f * Conductor.instance.SongPitch);
                 currentJuggle += 1;
             }
             else hitPitch = 1f;
 
-            //print("hitpItch:" + hitPitch);
             if (state >= 1f || state <= -1f)
             {
                 isEntering = false;
@@ -430,12 +406,26 @@ namespace HeavenStudio.Games.Scripts_ValiantVolley
                 if (objectType == 0)
                 {
                     game.VolleyHit(caller, state, hitPitch);
-                    SoundByte.PlayOneShotGame("valiantVolley/dirtHit", -1, hitPitch);
+                    if (caller.startBeat + distance * 2 != lastJuggle + distance * 2 && thisBeat != 0)
+                    {
+                        SoundByte.PlayOneShotGame("valiantVolley/dirtHit", -1, 0.7f, 2.3f, false, false, 0f, false, false, 0.2f);
+                    }
+                    else
+                    {
+                        SoundByte.PlayOneShotGame("valiantVolley/dirtHit", -1, 1f, 2.3f, false, false, 0f, false, false, 0.2f);
+                    }
                 }
                 else
                 {
                     game.FruitHit(caller, state, hitPitch);
-                    SoundByte.PlayOneShotGame("valiantVolley/fruitHit", -1, hitPitch);
+                    if (caller.startBeat + distance * 2 != lastJuggle + distance * 2 && thisBeat != 0)
+                    {
+                        SoundByte.PlayOneShotGame("valiantVolley/fruitJuggle", -1, 1, 2.6f, false, false, 0f, false, false, 0.2f);
+                    }
+                    else
+                    {
+                        SoundByte.PlayOneShotGame("valiantVolley/fruitVolley", -1, 1, 2.6f, false, false, 0f, false, false, 0.2f);
+                    }
                 }
             }
         }
@@ -446,14 +436,13 @@ namespace HeavenStudio.Games.Scripts_ValiantVolley
             missImpact.transform.parent = game.transform;
             Destroy(missImpact, 0.08f);
             objectSprite.enabled = false;
-            //print("tchau");
             if (objectType == 0)
             {
-                SoundByte.PlayOneShotGame("valiantVolley/dirtMiss");
+                SoundByte.PlayOneShotGame("valiantVolley/dirtMiss", -1, 1, 1.5f, false, false, 0f, false, false, 0.2f);
             }
             else
             {
-                SoundByte.PlayOneShotGame("valiantVolley/fruitMiss");
+                SoundByte.PlayOneShotGame("valiantVolley/fruitMiss", -1, 1, 1.5f, false, false, 0f, false, false, 0.2f);
             }
 
             game.bopStatus = 2;

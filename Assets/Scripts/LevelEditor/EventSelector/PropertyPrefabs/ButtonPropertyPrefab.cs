@@ -40,9 +40,16 @@ namespace HeavenStudio.Editor
 
         public void OnClick()
         {
-            string text = button.onClick.Invoke(entity);
+            string text = null;
+            foreach (var e in parameterManager.entities) {
+                string currentText = button.onClick.Invoke(e);
+                if (currentText != null) {
+                    e[propertyName] = currentText;
+                    text = currentText; // Last one sets the text
+                }
+            }
             if (text != null) {
-                buttonText.text = entity[propertyName] = text;
+                buttonText.text = text;
             }
             UpdateCollapse(entity[propertyName]);
         }
@@ -60,7 +67,8 @@ namespace HeavenStudio.Editor
 
         public void ResetValue()
         {
-            buttonText.text = entity[propertyName] = button.defaultLabel;
+            buttonText.text = button.defaultLabel;
+            foreach (var e in parameterManager.entities) e[propertyName] = button.defaultLabel;
         }
 
         public override void SetCollapses(object type)

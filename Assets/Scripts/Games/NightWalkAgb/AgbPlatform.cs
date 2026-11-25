@@ -369,7 +369,7 @@ namespace HeavenStudio.Games.Scripts_AgbNightWalk
                 return;
             }
             game.playYan.Roll(Conductor.instance.songPositionInBeats);
-            SoundByte.PlayOneShot("games/nightWalkRvl/highJump5");
+            SoundByte.PlayOneShotGame("nightWalkAgb/highJump5");
             anim.DoScaledAnimationAsync("Flower", 0.5f);
         }
 
@@ -481,7 +481,7 @@ namespace HeavenStudio.Games.Scripts_AgbNightWalk
                 if (!isEndEvent) rollPlatform.DoScaledAnimationAsync("UmbrellaBarely", 0.5f);
                 return;
             }
-            SoundByte.PlayOneShot("games/nightWalkRvl/highJump7");
+            SoundByte.PlayOneShotGame("nightWalkAgb/highJump7");
             if (!isEndEvent) rollPlatform.DoScaledAnimationAsync("Umbrella", 0.5f);
             game.starHandler.Evolve(game.evolveAmount * 2);
             game.hitJumps += 2;

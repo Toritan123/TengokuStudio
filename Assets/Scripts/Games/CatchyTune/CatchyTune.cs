@@ -135,7 +135,7 @@ namespace HeavenStudio.Games
         }
         protected static bool IA_BatonLeft(out double dt)
         {
-            return PlayerInput.GetBatonDown(InputController.ActionsBaton.West, out dt);
+            return PlayerInput.GetBatonDown(InputController.ActionsBaton.Face, out dt);
         }
         protected static bool IA_TouchLeft(out double dt)
         {
@@ -156,7 +156,7 @@ namespace HeavenStudio.Games
         }
         protected static bool IA_BatonRight(out double dt)
         {
-            return PlayerInput.GetBatonDown(InputController.ActionsBaton.East, out dt);
+            return PlayerInput.GetBatonDown(InputController.ActionsBaton.Face, out dt);
         }
         protected static bool IA_TouchRight(out double dt)
         {
@@ -301,13 +301,15 @@ namespace HeavenStudio.Games
                 });
             }
 
+            float offset = side == (int)Side.Both ? 0.001f : 0f;
+
             if (side == (int)Side.Left || side == (int)Side.Both)
             {
-                Fruit.PlaySound(beat, false, isPineapple);
+                Fruit.PlaySound(beat, false, isPineapple, -offset);
             }
             if (side == (int)Side.Right || side == (int)Side.Both)
             {
-                Fruit.PlaySound(beat, true, isPineapple);
+                Fruit.PlaySound(beat, true, isPineapple, offset);
             }
         }
 

@@ -9,6 +9,8 @@ namespace HeavenStudio.Editor
 {
     public abstract class TabsContent : MonoBehaviour
     {
+        public bool hasDescriptions = false;
+
         public abstract void OnOpenTab();
         public abstract void OnCloseTab();
     }

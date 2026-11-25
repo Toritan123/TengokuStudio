@@ -64,7 +64,7 @@ namespace HeavenStudio.Games.Loaders
                 },
                 new GameAction("flipperRolling", "Flipper Rolling")
                 {
-                    preFunction = delegate {var e = eventCaller.currentEntity; FlipperFlop.Flipping(e.beat, e.length, true, e["uh"], e["thatsIt"], e["appreciation"], e["heart"], e["barber"]); },
+                    preFunction = delegate {var e = eventCaller.currentEntity; FlipperFlop.Flipping(e.beat, e.length, true, e["uh"], e["thatsIt"], e["appreciation"], e["heart"], e["barber"], e["muteCount"]); },
                     parameters = new List<Param>()
                     {
                         new Param("uh", new EntityTypes.Integer(0, 3, 0), "Grunt Count", "Choose how many grunts Captain Tuck should say after the flipper-rolls."),
@@ -72,6 +72,7 @@ namespace HeavenStudio.Games.Loaders
                         {
                             new Param.CollapseParam((x, _) => (int)x != (int)FlipperFlop.AppreciationType.None, new string[] { "heart" })
                         }),
+                        new Param("muteCount", false, "Mute Counting", "Mute the counting Captain Tuck does during the flipper rolls."),
                         new Param("heart", false, "Hearts", "Toggle if Captain Tuck should blush and make hearts appear when he expresses his appreciation."),
                         new Param("thatsIt", false, "That's it!", "Toggle if Captain Tuck should say \"That's it!\" after the flipper-rolls. This is usually used for the end of a level or segment.", new List<Param.CollapseParam>()
                         {
@@ -153,6 +154,7 @@ namespace HeavenStudio.Games
             public int appreciation;
             public bool heart;
             public bool thatsItBarberShop;
+            public bool muteCount;
         }
         public struct QueuedAttention
         {
@@ -398,7 +400,6 @@ namespace HeavenStudio.Games
             {
                 case CaptainTuckBopType.Normal:
                     captainTuckAnim.DoScaledAnimationAsync("CaptainBop", 0.5f);
-
                     break;
                 case CaptainTuckBopType.Roll:
                     captainTuckAnim.DoScaledAnimationAsync("CaptainRoll", 0.5f);
@@ -421,19 +422,19 @@ namespace HeavenStudio.Games
             walkLength = length;
         }
 
-        public static void Flipping(double beat, float length, bool roll, int uh = 0, bool thatsIt = false, int appreciation = 0, bool heart = false, bool thatsItBarberShop = false)
+        public static void Flipping(double beat, float length, bool roll, int uh = 0, bool thatsIt = false, int appreciation = 0, bool heart = false, bool thatsItBarberShop = false, bool muteCount = false)
         {
             if (GameManager.instance.currentGame == "flipperFlop")
             {
-                FlipperFlop.instance.QueueFlips(beat, length, roll, uh, thatsIt, appreciation, heart, thatsItBarberShop);
+                FlipperFlop.instance.QueueFlips(beat, length, roll, uh, thatsIt, appreciation, heart, thatsItBarberShop, muteCount);
             }
             else
             {
-                queuedInputs.Add(new QueuedFlip { beat = beat, length = length, roll = roll, uh = uh, thatsIt = thatsIt, appreciation = appreciation, heart = heart, thatsItBarberShop = thatsItBarberShop });
+                queuedInputs.Add(new QueuedFlip { beat = beat, length = length, roll = roll, uh = uh, thatsIt = thatsIt, appreciation = appreciation, heart = heart, thatsItBarberShop = thatsItBarberShop, muteCount = muteCount });
             }
         }
 
-        public void QueueFlips(double beat, float length, bool roll, int uh = 0, bool thatsIt = false, int appreciation = 0, bool heart = false, bool thatsItBarberShop = false)
+        public void QueueFlips(double beat, float length, bool roll, int uh = 0, bool thatsIt = false, int appreciation = 0, bool heart = false, bool thatsItBarberShop = false, bool muteCount = false)
         {
             // pick the random line now: the voice is scheduled a little before the face animation
             if (appreciation == (int)AppreciationType.Random) appreciation = UnityEngine.Random.Range(1, 6);
@@ -457,7 +458,6 @@ namespace HeavenStudio.Games
                             new BeatAction.Action(beat + i, delegate { flipper.Flip(roll, true);})
                         });
                     }
-
                     string soundToPlay = $"flipperFlop/count/flopCount{flopCount}";
 
                     if (recounts == 1)
@@ -523,7 +523,7 @@ namespace HeavenStudio.Games
                         {
                             // decide the count line a little before its beat and schedule it, so a japanese voice can start early
                             new BeatAction.Action(countBeat - SoundByte.VoiceLead, delegate {
-                                SoundByte.PlayOneShotGame(missed ? failingSoundToPlay : soundToPlay, countBeat, forcePlay: true);
+                                if (!muteCount) SoundByte.PlayOneShotGame(missed ? failingSoundToPlay : soundToPlay, countBeat, forcePlay: true);
                             }),
                             new BeatAction.Action(beat + i, delegate {
                                 string voiceLine = soundToPlay;

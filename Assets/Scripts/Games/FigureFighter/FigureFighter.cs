@@ -73,7 +73,7 @@ namespace HeavenStudio.Games.Loaders
                     preFunction = delegate
                     {
                         var e = eventCaller.currentEntity;
-                        FigureFighter.instance.JabAnd(e.beat, e["and"]);
+                        FigureFighter.JabAnd(e.beat, e["and"]);
                     },
                     parameters = new List<Param>()
                     {
@@ -91,7 +91,7 @@ namespace HeavenStudio.Games.Loaders
                     preFunction = delegate
                     {
                         var e = eventCaller.currentEntity;
-                        FigureFighter.instance.JabAnd(e.beat, e["and"]);
+                        FigureFighter.JabAnd(e.beat, e["and"]);
                     },
                     parameters = new List<Param>()
                     {
@@ -109,7 +109,7 @@ namespace HeavenStudio.Games.Loaders
                     preFunction = delegate
                     {
                         var e = eventCaller.currentEntity;
-                        FigureFighter.instance.OneTwoAnd(e.beat, e["and"]);
+                        FigureFighter.OneTwoAnd(e.beat, e["and"]);
                     },
                     parameters = new List<Param>()
                     {
@@ -127,7 +127,7 @@ namespace HeavenStudio.Games.Loaders
                     preFunction = delegate
                     {
                         var e = eventCaller.currentEntity;
-                        FigureFighter.instance.OneTwoAnd(e.beat, e["and"]);
+                        FigureFighter.OneTwoAnd(e.beat, e["and"]);
                     },
                     parameters = new List<Param>()
                     {
@@ -363,7 +363,7 @@ namespace HeavenStudio.Games
             }
         }
 
-        public void JabAnd(double beat, bool and)
+        public static void JabAnd(double beat, bool and)
         {
             if (and)
             {
@@ -374,7 +374,7 @@ namespace HeavenStudio.Games
             }
         }
 
-        public void OneTwoAnd(double beat, bool and)
+        public static void OneTwoAnd(double beat, bool and)
         {
             if (and)
             {

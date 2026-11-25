@@ -12,7 +12,6 @@ namespace HeavenStudio.Common
     {
         [SerializeField] private Event[] _events;
         [Header("Components")]
-        [SerializeField] private Transform _masterTrans;
         [SerializeField] private RectTransform _dropDown;
 
         private Button _dropDownButton;
@@ -21,19 +20,27 @@ namespace HeavenStudio.Common
 
         private bool _beingHovered;
 
+        private Transform _masterTrans;
+
+        public static RightClickDropdownObject instance;
+
         private void Awake()
         {
             _dropDownButton = _dropDown.GetChild(0).GetChild(0).GetComponent<Button>();
+            _masterTrans = Editor.Editor.instance.MainCanvas?.transform;
+
+            if (instance != null) instance.DestroyDropdown();
+            instance = this;
         }
 
         private void OnDestroy()
         {
-            if (_currentDropDown != null) Destroy(_currentDropDown.gameObject);
+            DestroyDropdown();
         }
 
         private void OnDisable()
         {
-            if (_currentDropDown != null) Destroy(_currentDropDown.gameObject);
+            DestroyDropdown();
         }
 
         private void Update()
@@ -42,7 +49,7 @@ namespace HeavenStudio.Common
 
             if (Input.GetMouseButtonDown(0) || Input.GetMouseButtonDown(1))
             {
-                if (_currentDropDown != null) Destroy(_currentDropDown.gameObject);
+                DestroyDropdown();
             }
         }
 
@@ -57,7 +64,7 @@ namespace HeavenStudio.Common
                 spawnedButton.onClick.AddListener(new UnityAction(() => 
                 { 
                     e.action.Invoke();
-                    if (_currentDropDown != null) Destroy(_currentDropDown.gameObject);
+                    DestroyDropdown();
                 }));
                 spawnedButton.transform.GetChild(0).GetComponent<TMP_Text>().text = Localization.T(e.name);
                 spawnedButton.gameObject.SetActive(true);
@@ -73,6 +80,11 @@ namespace HeavenStudio.Common
                 exit.callback.AddListener(new UnityAction<BaseEventData>((BaseEventData e) => { _beingHovered = false; }));
                 eventTrigger.triggers.Add(exit);
             }
+        }
+
+        private void DestroyDropdown()
+        {
+            if (_currentDropDown != null) Destroy(_currentDropDown.gameObject);
         }
 
         [System.Serializable]

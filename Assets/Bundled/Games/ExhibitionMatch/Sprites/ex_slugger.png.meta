@@ -1,0 +1,1368 @@
+fileFormatVersion: 2
+guid: 2d9555a8af4b4e94d90329bb72ee780a
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ex_slugger_sprite_0
+      rect:
+        serializedVersion: 2
+        x: 3904
+        y: 1760
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0420d0905faa3394eb2b8aeed7bcb496
+      internalID: -7894674072262634198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_1
+      rect:
+        serializedVersion: 2
+        x: 3680
+        y: 1952
+        width: 384
+        height: 384
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed9f3c73abada334fbdb6786fa173a4b
+      internalID: 6686344935973489806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_2
+      rect:
+        serializedVersion: 2
+        x: 3616
+        y: 1504
+        width: 416
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 773f62242df6a504bb5d2f05be892323
+      internalID: -56233355817749458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_3
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 3776
+        width: 224
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d278847f407c86446bdcd7751506b278
+      internalID: 5367146446844195068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_4
+      rect:
+        serializedVersion: 2
+        x: 3936
+        y: 3392
+        width: 128
+        height: 672
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56a84e0d95fc79249b15a3862538a8b7
+      internalID: -4927794533142429888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_5
+      rect:
+        serializedVersion: 2
+        x: 3712
+        y: 3232
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b3339b2d671bdd41b53cabe9841a64b
+      internalID: -4743908626685685687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_6
+      rect:
+        serializedVersion: 2
+        x: 3712
+        y: 3008
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33d0a233fe8cfa94398158e724736803
+      internalID: 3906984551177580720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_7
+      rect:
+        serializedVersion: 2
+        x: 3712
+        y: 3680
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 105b121bd9f97b24e9beb78ff3d75235
+      internalID: 6190727076057226995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_8
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 3328
+        width: 416
+        height: 384
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b0c2714df80f3d48bfea20155a7e147
+      internalID: 7544150539035546463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_9
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1600
+        width: 416
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb3e93a4492eeaf4aa1a08b38c013d14
+      internalID: -1837708542717064591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_10
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 2176
+        width: 416
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ebf7b1238288af46860d24c100456b5
+      internalID: -6021120914743324643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_11
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 2752
+        width: 416
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91b515e2e3cfa6847b9ee5908467f071
+      internalID: 1774706033801944497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_12
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 224
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29ae664858133f4468d1caa8ac67b770
+      internalID: 4413488933709585350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_13
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 32
+        width: 224
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8419cbb219ac30f42b9a90abd4fb9525
+      internalID: -8137689503786224323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_14
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 3328
+        width: 384
+        height: 384
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 660dd35fdef59cb45895c8e1e21f2606
+      internalID: 3734503971494733934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_15
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 2752
+        width: 384
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86ec392338c4b6b409e69a98a38344fa
+      internalID: 4413593162238490266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_16
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 3360
+        width: 352
+        height: 352
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4aac19dfa84a9014d8c9f7626a132c31
+      internalID: 4014770244765283451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_17
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 2784
+        width: 352
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 429a6131b992bf74bb4cfb913a586cf1
+      internalID: -5712902040001187459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_18
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 2208
+        width: 352
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c230519e40385e94b882117af05e4656
+      internalID: 5686596591558527559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_19
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 1216
+        width: 352
+        height: 352
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39881f58c1c831044a2a9c9fb99ca08b
+      internalID: -6047096229752394076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_20
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 800
+        width: 352
+        height: 352
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 847e1e6750f2cbc42970789939f91755
+      internalID: 2885175881716969859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_21
+      rect:
+        serializedVersion: 2
+        x: 3424
+        y: 1760
+        width: 192
+        height: 576
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf8ef15d139f10e4b997a4344224637a
+      internalID: 7980404148942745860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_22
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 1632
+        width: 352
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b53888dd1faaa74a85e2fc94e7a8e5d
+      internalID: 5928301424407158022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_23
+      rect:
+        serializedVersion: 2
+        x: 1472
+        y: 3776
+        width: 224
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2366968d7c48f8140bebe2e6cb026135
+      internalID: 62428126550387033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_24
+      rect:
+        serializedVersion: 2
+        x: 1760
+        y: 3776
+        width: 224
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31a70e07f7fcc5a45bb3a5f3d2382ea1
+      internalID: 3398311680214804826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_25
+      rect:
+        serializedVersion: 2
+        x: 2336
+        y: 3776
+        width: 224
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ca3f7ce2e11c2c4e82a11ef54d1f142
+      internalID: -5796337215725016291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_26
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 3776
+        width: 224
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f81d9cb4819ea404bb80f7bea81e475e
+      internalID: 9010204333187421615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_27
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 3776
+        width: 224
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec7cd69fd295c1344a7fdb870ccad24b
+      internalID: -6476474768468299116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_28
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 3776
+        width: 224
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cefb63520275ff4c98ce17a15bb6054
+      internalID: -3260859566959994979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_29
+      rect:
+        serializedVersion: 2
+        x: 3680
+        y: 704
+        width: 384
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8614f0e7cbdba3f488daf844fb1ce1c2
+      internalID: -1567323575409336068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_30
+      rect:
+        serializedVersion: 2
+        x: 1376
+        y: 2656
+        width: 352
+        height: 608
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39ea0d3add79af444965aab0f5b84fe9
+      internalID: 6440480508346667818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_31
+      rect:
+        serializedVersion: 2
+        x: 1376
+        y: 3328
+        width: 352
+        height: 384
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff08a37b9529cd446ac6b370faeab983
+      internalID: -5308679865378163423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_32
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 3328
+        width: 352
+        height: 384
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b400a78aa34d85e4d8b64aaa7f41b3f7
+      internalID: -2133870640420526786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_33
+      rect:
+        serializedVersion: 2
+        x: 3712
+        y: 3904
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 021c192992e4a2b4586ff05c4b901e2b
+      internalID: 967227594695874278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_34
+      rect:
+        serializedVersion: 2
+        x: 3424
+        y: 2400
+        width: 640
+        height: 352
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2662cc0cf0ee8af48917d56d52f8cb41
+      internalID: -4333408171243820235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_35
+      rect:
+        serializedVersion: 2
+        x: 3232
+        y: 3840
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 544df458052ea8c4bb205c588d492357
+      internalID: -6999835749392660157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_36
+      rect:
+        serializedVersion: 2
+        x: 3616
+        y: 960
+        width: 448
+        height: 480
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3354a7a1abeef84ab9f1c2c4a4949e7
+      internalID: 2961816932846062470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_37
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 3776
+        width: 288
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96da16ee1a0d50442abf73f766ef40bd
+      internalID: 2415968216192092244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_38
+      rect:
+        serializedVersion: 2
+        x: 2208
+        y: 3328
+        width: 416
+        height: 384
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9c807f5259d6be45bd8ddb9dc0d7e49
+      internalID: -5356733073060299273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_39
+      rect:
+        serializedVersion: 2
+        x: 2208
+        y: 2784
+        width: 320
+        height: 480
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c17dc0e054ed62940bf44640b7b887c5
+      internalID: -7802262074401095805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_40
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 3776
+        width: 224
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a50b664ae7a2984c9f53fb9c6031bc1
+      internalID: 3476606209368202211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_41
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 3328
+        width: 416
+        height: 384
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b2f8d313158203429f30ff8a439efea
+      internalID: -1721851007761136578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_42
+      rect:
+        serializedVersion: 2
+        x: 2592
+        y: 2752
+        width: 352
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c76b1a2d3089fcf4bacca9e5384d48ee
+      internalID: -3523505732103981462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_43
+      rect:
+        serializedVersion: 2
+        x: 3008
+        y: 2816
+        width: 384
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9fdb9ebb6521a24bbbf80a0827203b5
+      internalID: -7830463639326020420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_44
+      rect:
+        serializedVersion: 2
+        x: 2976
+        y: 2272
+        width: 384
+        height: 416
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7f7d9df2a821644ba2d54b8ccc12c7c
+      internalID: -214298225246609815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_45
+      rect:
+        serializedVersion: 2
+        x: 3456
+        y: 3040
+        width: 192
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfcc0b5a349be5c4aa12b59c5673a301
+      internalID: -7138574905002000000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_46
+      rect:
+        serializedVersion: 2
+        x: 1376
+        y: 2176
+        width: 352
+        height: 416
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c832be1a5799134f89f65b2e7f3b7df
+      internalID: -99729574604125033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_47
+      rect:
+        serializedVersion: 2
+        x: 1376
+        y: 1632
+        width: 512
+        height: 480
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9fd57594bd8d4f40a54ffd343465d01
+      internalID: -2941139730596833989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_48
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 3776
+        width: 224
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4080798a30151d24993bccee43f59eb5
+      internalID: 4385931203385420384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_49
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 2176
+        width: 352
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 027cf3b59485e43428964d5d039ec6d8
+      internalID: 4428814726625916954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_50
+      rect:
+        serializedVersion: 2
+        x: 1952
+        y: 1600
+        width: 448
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e43c24441fb3d4846930a9aec4134339
+      internalID: -7761021221524956481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_51
+      rect:
+        serializedVersion: 2
+        x: 2464
+        y: 1600
+        width: 320
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 986a4fc71a6de94429f9f3c4771137ee
+      internalID: 8654771067898186514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_52
+      rect:
+        serializedVersion: 2
+        x: 3392
+        y: 1184
+        width: 160
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee50263cc78e98a40b14bdd46a9d0bb2
+      internalID: 9111955731694103587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_53
+      rect:
+        serializedVersion: 2
+        x: 2208
+        y: 2176
+        width: 320
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af5feb379df27a348905334261a7a50d
+      internalID: -4488386337442680175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_54
+      rect:
+        serializedVersion: 2
+        x: 1376
+        y: 1056
+        width: 384
+        height: 512
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1a3f0c36755acb41bb2585937e306af
+      internalID: 6932819444662921141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_55
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 2688
+        width: 352
+        height: 576
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f3f4f20f758b7041b68e0c7e0eb409c
+      internalID: -6155024208215212670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ex_slugger_sprite_56
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 2144
+        width: 384
+        height: 544
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2432ef82bd152c64188695965954f865
+      internalID: -5659483485431474824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      ex_slugger_sprite_0: -7894674072262634198
+      ex_slugger_sprite_1: 6686344935973489806
+      ex_slugger_sprite_10: -6021120914743324643
+      ex_slugger_sprite_11: 1774706033801944497
+      ex_slugger_sprite_12: 4413488933709585350
+      ex_slugger_sprite_13: -8137689503786224323
+      ex_slugger_sprite_14: 3734503971494733934
+      ex_slugger_sprite_15: 4413593162238490266
+      ex_slugger_sprite_16: 4014770244765283451
+      ex_slugger_sprite_17: -5712902040001187459
+      ex_slugger_sprite_18: 5686596591558527559
+      ex_slugger_sprite_19: -6047096229752394076
+      ex_slugger_sprite_2: -56233355817749458
+      ex_slugger_sprite_20: 2885175881716969859
+      ex_slugger_sprite_21: 7980404148942745860
+      ex_slugger_sprite_22: 5928301424407158022
+      ex_slugger_sprite_23: 62428126550387033
+      ex_slugger_sprite_24: 3398311680214804826
+      ex_slugger_sprite_25: -5796337215725016291
+      ex_slugger_sprite_26: 9010204333187421615
+      ex_slugger_sprite_27: -6476474768468299116
+      ex_slugger_sprite_28: -3260859566959994979
+      ex_slugger_sprite_29: -1567323575409336068
+      ex_slugger_sprite_3: 5367146446844195068
+      ex_slugger_sprite_30: 6440480508346667818
+      ex_slugger_sprite_31: -5308679865378163423
+      ex_slugger_sprite_32: -2133870640420526786
+      ex_slugger_sprite_33: 967227594695874278
+      ex_slugger_sprite_34: -4333408171243820235
+      ex_slugger_sprite_35: -6999835749392660157
+      ex_slugger_sprite_36: 2961816932846062470
+      ex_slugger_sprite_37: 2415968216192092244
+      ex_slugger_sprite_38: -5356733073060299273
+      ex_slugger_sprite_39: -7802262074401095805
+      ex_slugger_sprite_4: -4927794533142429888
+      ex_slugger_sprite_40: 3476606209368202211
+      ex_slugger_sprite_41: -1721851007761136578
+      ex_slugger_sprite_42: -3523505732103981462
+      ex_slugger_sprite_43: -7830463639326020420
+      ex_slugger_sprite_44: -214298225246609815
+      ex_slugger_sprite_45: -7138574905002000000
+      ex_slugger_sprite_46: -99729574604125033
+      ex_slugger_sprite_47: -2941139730596833989
+      ex_slugger_sprite_48: 4385931203385420384
+      ex_slugger_sprite_49: 4428814726625916954
+      ex_slugger_sprite_5: -4743908626685685687
+      ex_slugger_sprite_50: -7761021221524956481
+      ex_slugger_sprite_51: 8654771067898186514
+      ex_slugger_sprite_52: 9111955731694103587
+      ex_slugger_sprite_53: -4488386337442680175
+      ex_slugger_sprite_54: 6932819444662921141
+      ex_slugger_sprite_55: -6155024208215212670
+      ex_slugger_sprite_56: -5659483485431474824
+      ex_slugger_sprite_6: 3906984551177580720
+      ex_slugger_sprite_7: 6190727076057226995
+      ex_slugger_sprite_8: 7544150539035546463
+      ex_slugger_sprite_9: -1837708542717064591
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

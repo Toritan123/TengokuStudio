@@ -109,7 +109,10 @@ namespace HeavenStudio.Editor.Track
                 if (line.transform.childCount == 0) continue;
 
                 var newNum = Mathf.RoundToInt((rectTransform.anchoredPosition.x / Timeline.instance.PixelsPerBeat) + ((i) / snap));
-                line.transform.GetChild(0).GetComponent<TMP_Text>().text = newNum.ToString(CultureInfo.CurrentCulture);
+
+                string label = newNum.ToString(CultureInfo.CurrentCulture);
+                if (Timeline.instance.Zoom <= 0.5 && newNum % 2 != 0) label = ""; 
+                line.transform.GetChild(0).GetComponent<TMP_Text>().text = label;
             }
         }
     }

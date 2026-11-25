@@ -64,7 +64,7 @@ namespace HeavenStudio.Games.Loaders
                     //resizable = false,
                 //}
             },
-            new List<string>() { "pco", "normal" },
+            new List<string>() { "pco", "aim", "mistake" },
             "pcowaffle", "en",
             new List<string>() {  },
             chronologicalSortKey: 20220401,
@@ -180,10 +180,10 @@ namespace HeavenStudio.Games
         {
             List<MultiSound.Sound> sounds = new();
 
-            if (!mute1) sounds.Add(new("fallingWaffle/one", beat, offset: 0.028f));
-            if (!mute2) sounds.Add(new("fallingWaffle/two", beat + 2f, offset: 0.064f));
-            if (!mute3) sounds.Add(new("fallingWaffle/three", beat + 4f, offset: 0.082f));
-            if (!mute4) sounds.Add(new("fallingWaffle/four", beat + 6f));
+            if (!mute1) sounds.Add(new("fallingWaffle/one", beat, offset: 0.014f));
+            if (!mute2) sounds.Add(new("fallingWaffle/two", beat + 2f, offset: 0.014f));
+            if (!mute3) sounds.Add(new("fallingWaffle/three", beat + 4f, offset: 0.025f));
+            if (!mute4) sounds.Add(new("fallingWaffle/four", beat + 6f, offset: 0.036f));
 
             _ = MultiSound.Play(sounds, forcePlay: true);
         }
@@ -193,16 +193,16 @@ namespace HeavenStudio.Games
             switch (numbr)
             {
                 case 1:
-                    SoundByte.PlayOneShotGame("fallingWaffle/one", beat, forcePlay: true, offset: 0.028f);
+                    SoundByte.PlayOneShotGame("fallingWaffle/one", beat, forcePlay: true, offset: 0.014f);
                     break;
                 case 2:
-                    SoundByte.PlayOneShotGame("fallingWaffle/two", beat, forcePlay: true, offset: 0.064f);
+                    SoundByte.PlayOneShotGame("fallingWaffle/two", beat, forcePlay: true, offset: 0.014f);
                     break;
                 case 3:
-                    SoundByte.PlayOneShotGame("fallingWaffle/three", beat, forcePlay: true, offset: 0.082f);
+                    SoundByte.PlayOneShotGame("fallingWaffle/three", beat, forcePlay: true, offset: 0.025f);
                     break;
                 case 4:
-                    SoundByte.PlayOneShotGame("fallingWaffle/four", beat, forcePlay: true);
+                    SoundByte.PlayOneShotGame("fallingWaffle/four", beat, forcePlay: true, offset: 0.036f);
                     break;
             }
         }

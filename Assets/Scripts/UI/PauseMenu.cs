@@ -5,6 +5,7 @@ using TMPro;
 
 using HeavenStudio.Util;
 using HeavenStudio.InputSystem;
+using UnityEngine.UI;
 
 namespace HeavenStudio.Common
 {
@@ -27,8 +28,11 @@ namespace HeavenStudio.Common
         [SerializeField] TMP_Text chartTitleText;
         [SerializeField] TMP_Text chartArtistText;
         [SerializeField] TMP_Text chartCurrentBpm;
+        [SerializeField] TMP_Text chartTempoXX;
         [SerializeField] GameObject optionArrow;
         [SerializeField] GameObject optionHolder;
+        [SerializeField] GameObject tempoXXHolder;
+        [SerializeField] Image tempoXXGraphic;
 
         [SerializeField] RectTransform patternL;
         [SerializeField] RectTransform patternR;
@@ -41,6 +45,9 @@ namespace HeavenStudio.Common
         private bool isQuitting = false;
         private int optionSelected = 0;
 
+        private Color tempoUpColor = "#EC7479".Hex2RGB();
+        private Color tempoDownColor = "#7484FB".Hex2RGB();
+
         int btPause, btUp, btDown, btConfirm;
 
         void Pause()
@@ -48,13 +55,18 @@ namespace HeavenStudio.Common
             if (GlobalGameManager.IsShowingDialog) return;
             if (!Conductor.instance.isPlaying) return;
             GameManager.instance.CircleCursor.LockCursor(true);
-            Conductor.instance.Pause();
+            GameManager.instance.Pause();
             pauseBeat = Conductor.instance.songPositionInBeatsAsDouble;
             chartTitleText.text = GameManager.instance.Beatmap["remixtitle"].ToString();
             chartArtistText.text = GameManager.instance.Beatmap["remixauthor"].ToString();
             chartCurrentBpm.text = $"\u266A={Conductor.instance.songBpm.ToString()}";
+
+            tempoXXGraphic.color = GlobalGameManager.playbackSpeed > 1f ? tempoUpColor : tempoDownColor;
+            chartTempoXX.text = Mathf.RoundToInt(GlobalGameManager.playbackSpeed * 100).ToString() + "%";
+            tempoXXHolder.gameObject.SetActive(GlobalGameManager.playbackSpeed != 1f);
+
             animator.Play("PauseShow");
-            SoundByte.PlayOneShot("ui/PauseIn");
+            SoundByte.PlayOneShot("ui/PauseIn", ui: true);
 
             isPaused = true;
             canPick = false;
@@ -65,8 +77,14 @@ namespace HeavenStudio.Common
         void UnPause(bool instant = false)
         {
             if ((!instant) && (!Conductor.instance.isPaused)) return;
+            StartCoroutine(UnPauseCo(instant));
+        }
+
+        IEnumerator UnPauseCo(bool instant = false)
+        {
+            yield return null; // wait a frame so the unpause input doesn't also input in-game
+            
             // GameManager.instance.CircleCursor.LockCursor(true);
-            Conductor.instance.Play(pauseBeat);
             if (instant)
             {
                 animator.Play("NoPose");
@@ -74,7 +92,8 @@ namespace HeavenStudio.Common
             else
             {
                 animator.Play("PauseHide");
-                SoundByte.PlayOneShot("ui/PauseOut");
+                SoundByte.PlayOneShot("ui/PauseOut", ui: true);
+                GameManager.instance.Play(pauseBeat);
             }
 
             isPaused = false;
@@ -197,7 +216,7 @@ namespace HeavenStudio.Common
             }
             optionHolder.transform.GetChild((int)option).transform.localScale = new Vector3(1.2f, 1.2f, 1.2f);
             if (sound)
-                SoundByte.PlayOneShot("ui/UIOption");
+                SoundByte.PlayOneShot("ui/UIOption", ui: true);
         }
 
         void UseOption(Options option)
@@ -212,7 +231,7 @@ namespace HeavenStudio.Common
                     break;
                 case Options.Settings:
                     OnSettings();
-                    SoundByte.PlayOneShot("ui/UISelect");
+                    SoundByte.PlayOneShot("ui/UISelect", ui: true);
                     break;
                 case Options.Quit:
                     OnQuit();
@@ -227,16 +246,16 @@ namespace HeavenStudio.Common
 
         void OnRestart()
         {
-            UnPause(true);
             GlobalGameManager.ForceFade(0, 0f, -1f);
             GameManager.instance.Stop(0, true, 1f);
-            SoundByte.PlayOneShot("ui/UIEnter");
+            SoundByte.PlayOneShot("ui/UIEnter", ui: true);
+            UnPause(true);
         }
 
         void OnQuit()
         {
             isQuitting = true;
-            SoundByte.PlayOneShot("ui/PauseQuit");
+            SoundByte.PlayOneShot("ui/PauseQuit", ui: true);
             GameManager.instance.CircleCursor.LockCursor(false);
 
             GlobalGameManager.playbackSpeed = 1.0f;

@@ -61,12 +61,20 @@ namespace HeavenStudio.Games.Loaders
                             new Param.CollapseParam((x, _) => (int)x == (int)Rockers.PremadeSamples.None, new string[] { "1S", "2S", "3S", "4S", "5S", "6S", "gcS" }),
                             new Param.CollapseParam((x, _) => (int)x != (int)Rockers.PremadeSamples.None, new string[] { "pitchSampleS" })
                         }),
-                        new Param("1S", new EntityTypes.Note(-1, 24, 0, 7, 2, offsetToC: false), "E2 String (Soshi)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
-                        new Param("2S", new EntityTypes.Note(-1, 24, 0, 0, 2, offsetToC: false), "A2 String (Soshi)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
-                        new Param("3S", new EntityTypes.Note(-1, 24, 0, 5, 3, offsetToC: false), "D3 String (Soshi)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
-                        new Param("4S", new EntityTypes.Note(-1, 24, 0, 10, 3, offsetToC: false), "G3 String (Soshi)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
-                        new Param("5S", new EntityTypes.Note(-1, 24, 0, 2, 3, offsetToC: false), "B3 String (Soshi)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
-                        new Param("6S", new EntityTypes.Note(-1, 24, 0, 7, 4, offsetToC: false), "E4 String (Soshi)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
+
+                        new Param("1S", new EntityTypes.Note(-1, 24, 0, 7, 2, "rockers/strings/normal/normal1", false), 
+                        "E2 String (Soshi)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
+                        new Param("2S", new EntityTypes.Note(-1, 24, 0, 0, 2, "rockers/strings/normal/normal2", false), 
+                        "A2 String (Soshi)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
+                        new Param("3S", new EntityTypes.Note(-1, 24, 0, 5, 3, "rockers/strings/normal/normal3", false), 
+                        "D3 String (Soshi)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
+                        new Param("4S", new EntityTypes.Note(-1, 24, 0, 10, 3, "rockers/strings/normal/normal4", false), 
+                        "G3 String (Soshi)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
+                        new Param("5S", new EntityTypes.Note(-1, 24, 0, 2, 3, "rockers/strings/normal/normal5", false), 
+                        "B3 String (Soshi)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
+                        new Param("6S", new EntityTypes.Note(-1, 24, 0, 7, 4, "rockers/strings/normal/normal6", false), 
+                        "E4 String (Soshi)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
+
                         new Param("pitchSampleS", new EntityTypes.Note(offsetToC: false), "Sample Semitones (Soshi)", "Set how many semitones the premade sample should be pitched up."),
                         new Param("gcS", false, "Glee Club Guitar (Soshi)", "Toggle if Soshi should use the same guitar as in the Glee Club guitar lessons in DS.")
                     }
@@ -224,7 +232,7 @@ namespace HeavenStudio.Games.Loaders
                                 offSet = 0.034f;
                                 break;
                         }
-                        SoundByte.PlayOneShot($"games/rockers/count/count{e["count"]}", e.beat, 1, 1, false, null, offSet);
+                        SoundByte.PlayOneShotGame($"rockers/count/count{e["count"]}", e.beat, 1, 1, false, false, offSet);
                     }
                 },
                 new GameAction("voiceLine", "Together Voice Line")
@@ -235,7 +243,7 @@ namespace HeavenStudio.Games.Loaders
                     },
                     preFunction = delegate
                     {
-                        SoundByte.PlayOneShot(eventCaller.currentEntity["cmon"] ? "games/rockers/Cmon" : "games/rockers/LastOne", eventCaller.currentEntity.beat);
+                        SoundByte.PlayOneShotGame(eventCaller.currentEntity["cmon"] ? "rockers/Cmon" : "rockers/LastOne", eventCaller.currentEntity.beat);
                     }
                 },
                 new GameAction("prepareTogether", "Custom Together Prepare")
@@ -262,25 +270,39 @@ namespace HeavenStudio.Games.Loaders
                             new Param.CollapseParam((x, _) => (int)x == (int)Rockers.PremadeSamples.None, new string[] { "1JJ", "2JJ", "3JJ", "4JJ", "5JJ", "6JJ", "gcJJ" }),
                             new Param.CollapseParam((x, _) => (int)x != (int)Rockers.PremadeSamples.None, new string[] { "pitchSampleJJ" })
                         }),
-                        new Param("1JJ", new EntityTypes.Note(-1, 24, 0, 7, 2, offsetToC: false), "E2 String (JJ)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
-                        new Param("2JJ", new EntityTypes.Note(-1, 24, 0, 0, 2, offsetToC: false), "A2 String (JJ)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
-                        new Param("3JJ", new EntityTypes.Note(-1, 24, 0, 5, 3, offsetToC: false), "D3 String (JJ)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
-                        new Param("4JJ", new EntityTypes.Note(-1, 24, 0, 10, 3, offsetToC: false), "G3 String (JJ)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
-                        new Param("5JJ", new EntityTypes.Note(-1, 24, 0, 2, 3, offsetToC: false), "B3 String (JJ)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
-                        new Param("6JJ", new EntityTypes.Note(-1, 24, 0, 7, 4, offsetToC: false), "E4 String (JJ)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
+
+                        new Param("1JJ", new EntityTypes.Note(-1, 24, 0, 7, 2, "rockers/strings/normal/normal1", false), 
+                        "E2 String (JJ)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
+                        new Param("2JJ", new EntityTypes.Note(-1, 24, 0, 0, 2, "rockers/strings/normal/normal2", false), 
+                        "A2 String (JJ)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
+                        new Param("3JJ", new EntityTypes.Note(-1, 24, 0, 5, 3, "rockers/strings/normal/normal3", false), 
+                        "D3 String (JJ)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
+                        new Param("4JJ", new EntityTypes.Note(-1, 24, 0, 10, 3, "rockers/strings/normal/normal4", false), 
+                        "G3 String (JJ)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
+                        new Param("5JJ", new EntityTypes.Note(-1, 24, 0, 2, 3, "rockers/strings/normal/normal5", false), 
+                        "B3 String (JJ)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
+                        new Param("6JJ", new EntityTypes.Note(-1, 24, 0, 7, 4, "rockers/strings/normal/normal6", false), 
+                        "E4 String (JJ)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
                         new Param("pitchSampleJJ", new EntityTypes.Note(offsetToC: false), "Sample Semitones (JJ)", "Set how many semitones the premade sample should be pitched up."),
                         new Param("gcJJ", false, "Glee Club Guitar (JJ)", "Toggle if JJ should use the same guitar as in the Glee Club guitar lessons in DS."),
+                        
                         new Param("sampleS", new EntityTypes.NoteSampleDropdown(Rockers.PremadeSamples.ChordA, Rockers.GetSample, "pitchSampleS"), "Premade Sample (Soshi)", "Set if this riff should use a premade sample.", new List<Param.CollapseParam>()
                         {
                             new Param.CollapseParam((x, _) => (int)x == (int)Rockers.PremadeSamples.None, new string[] { "1S", "2S", "3S", "4S", "5S", "6S", "gcS" }),
                             new Param.CollapseParam((x, _) => (int)x != (int)Rockers.PremadeSamples.None, new string[] { "pitchSampleS" })
                         }),
-                        new Param("1S", new EntityTypes.Note(-1, 24, 0, 7, 2, offsetToC: false), "E2 String (Soshi)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
-                        new Param("2S", new EntityTypes.Note(-1, 24, 0, 0, 2, offsetToC: false), "A2 String (Soshi)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
-                        new Param("3S", new EntityTypes.Note(-1, 24, 0, 5, 3, offsetToC: false), "D3 String (Soshi)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
-                        new Param("4S", new EntityTypes.Note(-1, 24, 0, 10, 3, offsetToC: false), "G3 String (Soshi)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
-                        new Param("5S", new EntityTypes.Note(-1, 24, 0, 2, 3, offsetToC: false), "B3 String (Soshi)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
-                        new Param("6S", new EntityTypes.Note(-1, 24, 0, 7, 4, offsetToC: false), "E4 String (Soshi)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
+                        new Param("1S", new EntityTypes.Note(-1, 24, 0, 7, 2, "rockers/strings/normal/normal1", false), 
+                        "E2 String (Soshi)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
+                        new Param("2S", new EntityTypes.Note(-1, 24, 0, 0, 2, "rockers/strings/normal/normal2", false), 
+                        "A2 String (Soshi)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
+                        new Param("3S", new EntityTypes.Note(-1, 24, 0, 5, 3, "rockers/strings/normal/normal3", false), 
+                        "D3 String (Soshi)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
+                        new Param("4S", new EntityTypes.Note(-1, 24, 0, 10, 3, "rockers/strings/normal/normal4", false), 
+                        "G3 String (Soshi)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
+                        new Param("5S", new EntityTypes.Note(-1, 24, 0, 2, 3, "rockers/strings/normal/normal5", false), 
+                        "B3 String (Soshi)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
+                        new Param("6S", new EntityTypes.Note(-1, 24, 0, 7, 4, "rockers/strings/normal/normal6", false), 
+                        "E4 String (Soshi)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
                         new Param("pitchSampleS", new EntityTypes.Note(offsetToC: false), "Sample Semitones (Soshi)", "Set how many semitones the premade sample should be pitched up."),
                         new Param("gcS", false, "Glee Club Guitar (Soshi)", "Toggle if Soshi should use the same guitar as in the Glee Club guitar lessons in DS.")
                     }
@@ -295,25 +317,38 @@ namespace HeavenStudio.Games.Loaders
                             new Param.CollapseParam((x, _) => (int)x == (int)Rockers.PremadeSamples.None, new string[] { "1JJ", "2JJ", "3JJ", "4JJ", "5JJ", "6JJ", "gcJJ" }),
                             new Param.CollapseParam((x, _) => (int)x != (int)Rockers.PremadeSamples.None, new string[] { "pitchSampleJJ" })
                         }),
-                        new Param("1JJ", new EntityTypes.Note(-1, 24, 0, 7, 2, offsetToC: false), "E2 String (JJ)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
-                        new Param("2JJ", new EntityTypes.Note(-1, 24, 0, 0, 2, offsetToC: false), "A2 String (JJ)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
-                        new Param("3JJ", new EntityTypes.Note(-1, 24, 0, 5, 3, offsetToC: false), "D3 String (JJ)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
-                        new Param("4JJ", new EntityTypes.Note(-1, 24, 0, 10, 3, offsetToC: false), "G3 String (JJ)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
-                        new Param("5JJ", new EntityTypes.Note(-1, 24, 0, 2, 3, offsetToC: false), "B3 String (JJ)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
-                        new Param("6JJ", new EntityTypes.Note(-1, 24, 0, 7, 4, offsetToC: false), "E4 String (JJ)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
+                        new Param("1JJ", new EntityTypes.Note(-1, 24, 0, 7, 2, "rockers/strings/normal/normal1", false), 
+                        "E2 String (JJ)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
+                        new Param("2JJ", new EntityTypes.Note(-1, 24, 0, 0, 2, "rockers/strings/normal/normal2", false), 
+                        "A2 String (JJ)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
+                        new Param("3JJ", new EntityTypes.Note(-1, 24, 0, 5, 3, "rockers/strings/normal/normal3", false), 
+                        "D3 String (JJ)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
+                        new Param("4JJ", new EntityTypes.Note(-1, 24, 0, 10, 3, "rockers/strings/normal/normal4", false), 
+                        "G3 String (JJ)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
+                        new Param("5JJ", new EntityTypes.Note(-1, 24, 0, 2, 3, "rockers/strings/normal/normal5", false), 
+                        "B3 String (JJ)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
+                        new Param("6JJ", new EntityTypes.Note(-1, 24, 0, 7, 4, "rockers/strings/normal/normal6", false), 
+                        "E4 String (JJ)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
                         new Param("pitchSampleJJ", new EntityTypes.Note(offsetToC: false), "Sample Semitones (JJ)", "Set how many semitones the premade sample should be pitched up."),
                         new Param("gcJJ", false, "Glee Club Guitar (JJ)", "Toggle if JJ should use the same guitar as in the Glee Club guitar lessons in DS."),
+                        
                         new Param("sampleS", new EntityTypes.NoteSampleDropdown(Rockers.PremadeSamples.ChordA, Rockers.GetSample, "pitchSampleS"), "Premade Sample (Soshi)", "Set if this riff should use a premade sample.", new List<Param.CollapseParam>()
                         {
                             new Param.CollapseParam((x, _) => (int)x == (int)Rockers.PremadeSamples.None, new string[] { "1S", "2S", "3S", "4S", "5S", "6S", "gcS" }),
                             new Param.CollapseParam((x, _) => (int)x != (int)Rockers.PremadeSamples.None, new string[] { "pitchSampleS" })
                         }),
-                        new Param("1S", new EntityTypes.Note(-1, 24, 0, 7, 2, offsetToC: false), "E2 String (Soshi)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
-                        new Param("2S", new EntityTypes.Note(-1, 24, 0, 0, 2, offsetToC: false), "A2 String (Soshi)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
-                        new Param("3S", new EntityTypes.Note(-1, 24, 0, 5, 3, offsetToC: false), "D3 String (Soshi)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
-                        new Param("4S", new EntityTypes.Note(-1, 24, 0, 10, 3, offsetToC: false), "G3 String (Soshi)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
-                        new Param("5S", new EntityTypes.Note(-1, 24, 0, 2, 3, offsetToC: false), "B3 String (Soshi)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
-                        new Param("6S", new EntityTypes.Note(-1, 24, 0, 7, 4, offsetToC: false), "E4 String (Soshi)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
+                        new Param("1S", new EntityTypes.Note(-1, 24, 0, 7, 2, "rockers/strings/normal/normal1", false), 
+                        "E2 String (Soshi)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
+                        new Param("2S", new EntityTypes.Note(-1, 24, 0, 0, 2, "rockers/strings/normal/normal2", false), 
+                        "A2 String (Soshi)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
+                        new Param("3S", new EntityTypes.Note(-1, 24, 0, 5, 3, "rockers/strings/normal/normal3", false), 
+                        "D3 String (Soshi)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
+                        new Param("4S", new EntityTypes.Note(-1, 24, 0, 10, 3, "rockers/strings/normal/normal4", false), 
+                        "G3 String (Soshi)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
+                        new Param("5S", new EntityTypes.Note(-1, 24, 0, 2, 3, "rockers/strings/normal/normal5", false), 
+                        "B3 String (Soshi)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
+                        new Param("6S", new EntityTypes.Note(-1, 24, 0, 7, 4, "rockers/strings/normal/normal6", false), 
+                        "E4 String (Soshi)", "Set how many semitones up the current string will be pitched. If this is left at -1, this string will not play."),
                         new Param("pitchSampleS", new EntityTypes.Note(offsetToC: false), "Sample Semitones (Soshi)", "Set how many semitones the premade sample should be pitched up."),
                         new Param("gcS", false, "Glee Club Guitar (Soshi)", "Toggle if Soshi should use the same guitar as in the Glee Club guitar lessons in DS.")
                     }

@@ -12,11 +12,13 @@ namespace HeavenStudio
     public class LibraryMenuCursor : MonoBehaviour
     {
         public static LibraryMenuCursor instance;
-        [SerializeField] public LibrarySelectable[] toolbarSelectables;
+        [SerializeField] public LibrarySelectable[] topToolbarSelectables;
+        [SerializeField] public LibrarySelectable[] bottomToolbarSelectables;
         [SerializeField] public bool canAct;
         [SerializeField] public bool editingText;
         [SerializeField] private RectTransform selectedDisplayRect;
         public LibrarySelectable defaultToolbarSelectable;
+        public LibrarySelectable defaultToolbarSelectableBottom;
 
         [SerializeField] public LibrarySelectable gridSelectable;
         [SerializeField] public LibraryPopup currentPopup;
@@ -184,7 +186,7 @@ namespace HeavenStudio
             //         {
             //             currentSelectable = selectable;
             //             SetSelectableRectTarget(currentSelectable);
-            //             // SoundByte.PlayOneShot("ui/UIOption");
+            //             // SoundByte.PlayOneShot("ui/UIOption", ui: true);
             //             break;
             //         }
             //     }
@@ -273,7 +275,7 @@ namespace HeavenStudio
                 }
                 else
                 {
-                    // SoundByte.PlayOneShot("ui/UISelect");
+                    // SoundByte.PlayOneShot("ui/UISelect", ui: true);
                 }
             }
         }
@@ -292,12 +294,21 @@ namespace HeavenStudio
                 selectableStack.Remove(currentSelectable);
                 currentSelectable.OnUnhover();
             }
-            SoundByte.PlayOneShot("ui/ExitSmall");
+            else
+            {
+                SetSelectable(gridSelectable);
+                currentSelectable.OnUnhover();
+            }
+            SoundByte.PlayOneShot("ui/ExitSmall", ui: true);
         }
 
         public void ToggleToolbar()
         {
-            if (toolbarSelectables.Contains(currentSelectable) && levelsInGrid)
+            if (topToolbarSelectables.Contains(currentSelectable) && levelsInGrid)
+            {
+                SetSelectable(defaultToolbarSelectableBottom);
+            }
+            else if (bottomToolbarSelectables.Contains(currentSelectable) && levelsInGrid)
             {
                 SetSelectable(gridSelectable);
             }
@@ -305,7 +316,22 @@ namespace HeavenStudio
             {
                 SetSelectable(defaultToolbarSelectable);
             }
+        }
 
+        public void SetSelectableTo(int selectable)
+        {
+            switch (selectable)
+            {
+                case 0:
+                    SetSelectable(defaultToolbarSelectable);
+                    break;
+                case 1:
+                    SetSelectable(defaultToolbarSelectableBottom);
+                    break;
+                default:
+                    SetSelectable(gridSelectable);
+                    break;
+            }
         }
 
         public void MoveLeft()
@@ -319,11 +345,11 @@ namespace HeavenStudio
                     // currentSelectable.GetComponent<Selectable>()?.Select();
                     SetSelectableRectTarget(currentSelectable);
                     currentSelectable.OnHover();
-                    SoundByte.PlayOneShot("ui/UIOption");
+                    SoundByte.PlayOneShot("ui/UIOption", ui: true);
                 }
                 else
                 {
-                    // SoundByte.PlayOneShot("ui/UISelect");
+                    // SoundByte.PlayOneShot("ui/UISelect", ui: true);
                 }
             }
         }
@@ -339,11 +365,11 @@ namespace HeavenStudio
                     // currentSelectable.GetComponent<Selectable>()?.Select();
                     SetSelectableRectTarget(currentSelectable);
                     currentSelectable.OnHover();
-                    SoundByte.PlayOneShot("ui/UIOption");
+                    SoundByte.PlayOneShot("ui/UIOption", ui: true);
                 }
                 else
                 {
-                    // SoundByte.PlayOneShot("ui/UISelect");
+                    // SoundByte.PlayOneShot("ui/UISelect", ui: true);
                 }
             }
         }
@@ -359,11 +385,11 @@ namespace HeavenStudio
                     // currentSelectable.GetComponent<Selectable>()?.Select();
                     SetSelectableRectTarget(currentSelectable);
                     currentSelectable.OnHover();
-                    SoundByte.PlayOneShot("ui/UIOption");
+                    SoundByte.PlayOneShot("ui/UIOption", ui: true);
                 }
                 else
                 {
-                    // SoundByte.PlayOneShot("ui/UISelect");
+                    // SoundByte.PlayOneShot("ui/UISelect", ui: true);
                 }
             }
         }
@@ -379,11 +405,11 @@ namespace HeavenStudio
                     // currentSelectable.GetComponent<Selectable>()?.Select();
                     SetSelectableRectTarget(currentSelectable);
                     currentSelectable.OnHover();
-                    SoundByte.PlayOneShot("ui/UIOption");
+                    SoundByte.PlayOneShot("ui/UIOption", ui: true);
                 }
                 else
                 {
-                    // SoundByte.PlayOneShot("ui/UISelect");
+                    // SoundByte.PlayOneShot("ui/UISelect", ui: true);
                 }
             }
         }

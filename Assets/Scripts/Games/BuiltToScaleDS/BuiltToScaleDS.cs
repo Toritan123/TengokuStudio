@@ -1,12 +1,11 @@
+using DG.Tweening;
+using HeavenStudio.Util;
+using Jukebox;
+using NaughtyBezierCurves;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using NaughtyBezierCurves;
-using DG.Tweening;
-using System;
-
-using HeavenStudio.Util;
-using Jukebox;
 
 namespace HeavenStudio.Games.Loaders
 {
@@ -47,13 +46,24 @@ namespace HeavenStudio.Games.Loaders
                 },
                 new GameAction("color", "Color Palette")
                 {
-                    function = delegate { var e = eventCaller.currentEntity; BuiltToScaleDS.instance.UpdateMappingColors(e["object"], e["shooter"], e["bg"]); },
+                    function = delegate { var e = eventCaller.currentEntity; BuiltToScaleDS.instance.UpdateMappingColors(e["object"], e["shooter"], e["bg"], e["useCustomDark"], e["darkBG"], e["useCustomOutlines"], e["objectOutline"], e["shooterOutline"]); },
                     defaultLength = 0.5f,
                     parameters = new List<Param>()
                     {
                         new Param("object", Color.white, "Widget Color", "Choose the color of the widgets & rods."),
                         new Param("shooter", Color.white, "Paddle Color", "Choose the color of the launch paddle."),
-                        new Param("bg", new Color(0, 1, 0, 1), "Environment Color", "Choose the color of the environment.")
+                        new Param("bg", new Color(0, 1, 0, 1), "Environment Color", "Choose the main color of the environment."),
+                        new Param("useCustomDark", false, "Custom Dark Color", "Toggle if a custom darker color for the environment gradient should be used.", new List<Param.CollapseParam>()
+                        {
+                            new Param.CollapseParam((x, _) => (bool)x, new string[] { "darkBG" })
+                        }),
+                        new Param("darkBG", new Color(0, .35f, 0, 1), "Dark Color", "Choose the darker color of the environment gradient."),
+                        new Param("useCustomOutlines", false, "Custom Outline Colors", "Toggle if custom outline colors for objects should be used.", new List<Param.CollapseParam>()
+                        {
+                            new Param.CollapseParam((x, _) => (bool)x, new string[] { "objectOutline", "shooterOutline" })
+                        }),
+                        new Param("objectOutline", new Color(0, 0, 0, 1), "Widget Outline Color", "Choose the outline color of the widgets & rods."),
+                        new Param("shooterOutline", new Color(0, 0, 0, 1), "Paddle Outline Color", "Choose the outline color of the launch paddle."),
                     }
                 },
                 new GameAction("lights", "Lights")
@@ -116,12 +126,14 @@ namespace HeavenStudio.Games
         public Animator elevatorAnim;
 
         [SerializeField] private Material shooterMaterial;
+        [SerializeField] private Material shooterOutlineMaterial;
         [SerializeField] private Material objectMaterial;
         [SerializeField] private Material gridPlaneMaterial;
         [SerializeField] private Material elevatorMaterial;
         [SerializeField] private Material beltMaterial;
-        [SerializeField] private Material[] firstPatternLights;
-        [SerializeField] private Material[] secondPatternLights;
+        [SerializeField] private Material[] objOutlineMaterials;
+        [SerializeField] private Material firstPatternLights;
+        [SerializeField] private Material secondPatternLights;
 
         [Header("Properties")]
         [SerializeField] float beltSpeed = 1f;
@@ -138,7 +150,12 @@ namespace HeavenStudio.Games
         private static Color currentObjectColor = Color.white;
         private static Color currentShooterColor = Color.white;
         private static Color currentEnvironmentColor = new Color(0, 1, 0, 1);
-        
+        private static Color currentDarkEnvironmentColor = new Color(0, .35f, 0, 1);
+        private static bool useCustomDarkEnvColor = false;
+        private static bool useCustomOutlineColors = false;
+        private static Color currentObjectOutlineColor = Color.black;
+        private static Color currentShooterOutlineColor = Color.black;
+
         public static BuiltToScaleDS instance;
 
         private GameEvent lightBeat = new GameEvent();
@@ -157,53 +174,6 @@ namespace HeavenStudio.Games
             GameCamera.AdditionalRotEuler = camPos.eulerAngles;
             GameCamera.AdditionalFoV = cameraFoV;
 
-            // environmentMaterials = environmentRenderer.materials;
-            // elevatorMaterials = elevatorRenderer.materials;
-            // beltMaterial = Instantiate(environmentMaterials[8]);
-            // environmentMaterials[8] = beltMaterial;
-            // elevatorObjectMats = new Material[]
-            // {
-            //     Instantiate(elevatorMaterials[0]),
-            //     Instantiate(elevatorMaterials[1]),
-            //     Instantiate(elevatorMaterials[2]),
-            // };
-            // elevatorMaterials[0] = elevatorObjectMats[0];
-            // elevatorMaterials[1] = elevatorObjectMats[1];
-            // elevatorMaterials[2] = elevatorObjectMats[2];
-            // elevatorMaterial = Instantiate(elevatorMaterials[3]);
-            // elevatorMaterials[3] = elevatorMaterial;
-            // gridMaterials = new Material[]
-            // {
-            //     Instantiate(environmentMaterials[9]),
-            //     Instantiate(environmentMaterials[11]),
-            //     Instantiate(environmentMaterials[12]),
-            //     Instantiate(environmentMaterials[13]),
-            //     Instantiate(environmentMaterials[14]),
-            // };
-            // environmentMaterials[9] = gridMaterials[0];
-            // environmentMaterials[11] = gridMaterials[1];
-            // environmentMaterials[12] = gridMaterials[2];
-            // environmentMaterials[13] = gridMaterials[3];
-            // environmentMaterials[14] = gridMaterials[4];
-
-            // firstPatternLights = new Material[]
-            // {
-            //     Instantiate(environmentMaterials[1]),
-            //     Instantiate(environmentMaterials[2]),
-            //     Instantiate(environmentMaterials[4]),
-            // };
-            // environmentMaterials[1] = firstPatternLights[0];
-            // environmentMaterials[2] = firstPatternLights[1];
-            // environmentMaterials[4] = firstPatternLights[2];
-
-            // secondPatternLights = new Material[]
-            // {
-            //     Instantiate(environmentMaterials[0]),
-            //     Instantiate(environmentMaterials[3])
-            // };
-            // environmentMaterials[0] = secondPatternLights[0];
-            // environmentMaterials[3] = secondPatternLights[1];
-
             elevatorAnim.Play("MakeRod", 0, 1f);
             UpdateColors();
         }
@@ -213,6 +183,11 @@ namespace HeavenStudio.Games
             currentObjectColor = Color.white;
             currentShooterColor = Color.white;
             currentEnvironmentColor = new Color(0, 1, 0, 1);
+            currentDarkEnvironmentColor = new Color(0, .35f, 0, 1);
+            useCustomDarkEnvColor = false;
+            useCustomOutlineColors = false;
+            currentObjectOutlineColor = Color.black;
+            currentShooterOutlineColor = Color.black;
             UpdateColors();
             foreach (var evt in scheduledInputs)
             {
@@ -220,11 +195,16 @@ namespace HeavenStudio.Games
             }
         }
 
-        public void UpdateMappingColors(Color objectColor, Color shooterColor, Color environmentColor)
+        public void UpdateMappingColors(Color objectColor, Color shooterColor, Color environmentColor, bool useCustomDark, Color darkEnvColor, bool useCustomOutlines, Color objectOutlineColor, Color shooterOutlineColor)
         {
             currentObjectColor = objectColor;
             currentShooterColor = shooterColor;
             currentEnvironmentColor = environmentColor;
+            currentDarkEnvironmentColor = darkEnvColor;
+            useCustomDarkEnvColor = useCustomDark;
+            useCustomOutlineColors = useCustomOutlines;
+            currentObjectOutlineColor = objectOutlineColor;
+            currentShooterOutlineColor = shooterOutlineColor;
             UpdateColors();
         }
 
@@ -235,7 +215,7 @@ namespace HeavenStudio.Games
             {
                 allEventsBeforeBeat.Sort((x, y) => x.beat.CompareTo(y.beat));
                 var lastEvent = allEventsBeforeBeat[^1];
-                UpdateMappingColors(lastEvent["object"], lastEvent["shooter"], lastEvent["bg"]);
+                UpdateMappingColors(lastEvent["object"], lastEvent["shooter"], lastEvent["bg"], lastEvent["useCustomDark"], lastEvent["darkBG"], lastEvent["useCustomOutlines"], lastEvent["objectOutline"], lastEvent["shooterOutline"]);
             }
         }
 
@@ -314,16 +294,40 @@ namespace HeavenStudio.Games
             beltMaterial.SetColor("_Color", currentEnvironmentColor);
             gridPlaneMaterial.SetColor("_Color", currentEnvironmentColor);
             elevatorMaterial.SetColor("_Color", currentEnvironmentColor);
-            if (!lighting)
-            {
-                foreach (var mat in firstPatternLights)
-                {
-                    mat.SetColor("_Color", currentEnvironmentColor);
-                }
-                foreach (var mat in secondPatternLights)
-                {
-                    mat.SetColor("_Color", currentEnvironmentColor);
-                }
+
+            int useEndColor = useCustomDarkEnvColor ? 1 : 0;
+            gridPlaneMaterial.SetInt("_UseCustomEndColor", useEndColor);
+            elevatorMaterial.SetInt("_UseCustomEndColor", useEndColor);
+            firstPatternLights.SetInt("_UseCustomEndColor", useEndColor);
+            secondPatternLights.SetInt("_UseCustomEndColor", useEndColor);
+
+            if(useCustomDarkEnvColor) {
+                gridPlaneMaterial.SetColor("_EndColor", currentDarkEnvironmentColor);
+                elevatorMaterial.SetColor("_EndColor", currentDarkEnvironmentColor);
+                firstPatternLights.SetColor("_EndColor", currentDarkEnvironmentColor);
+                secondPatternLights.SetColor("_EndColor", currentDarkEnvironmentColor);
+                // The belt gets the darker color when using a custom gradient, to match better with more drastic hue changes and such
+                // normally it uses the main color because that seems to be more accurate to the original game
+                beltMaterial.SetColor("_Color", currentDarkEnvironmentColor);
+            }
+
+            foreach (var mat in objOutlineMaterials) {
+                mat.SetInt("_UseDirectColor", useCustomOutlineColors ? 1 : 0);
+                mat.SetColor("_Color", useCustomOutlineColors ? currentObjectOutlineColor : currentObjectColor);
+            }
+            shooterOutlineMaterial.SetInt("_UseDirectColor", useCustomOutlineColors ? 1 : 0);
+            shooterOutlineMaterial.SetColor("_Color", useCustomOutlineColors ? currentShooterOutlineColor : currentShooterColor);
+
+            firstPatternLights.SetColor("_Color", currentEnvironmentColor);
+            if (!lighting) {
+                firstPatternLights.DOKill();
+                SetLightValue(firstPatternLights, 0);
+            }
+
+            secondPatternLights.SetColor("_Color", currentEnvironmentColor);
+            if (!lighting) {
+                secondPatternLights.DOKill();
+                SetLightValue(secondPatternLights, 0);
             }
         }
 
@@ -420,14 +424,8 @@ namespace HeavenStudio.Games
                     lighting = false;
                     actions.Add(new BeatAction.Action(beat + length, delegate
                     {
-                        foreach (var lightMat in firstPatternLights)
-                        {
-                            lightMat.DOColor(currentEnvironmentColor, 0.2f);
-                        }
-                        foreach (var lightMat in secondPatternLights)
-                        {
-                            lightMat.DOColor(currentEnvironmentColor, 0.2f);
-                        }
+                        TweenLightToValue(firstPatternLights, 0);
+                        TweenLightToValue(secondPatternLights, 0);
                     }));
                 }
                 BeatAction.New(instance, actions);
@@ -435,14 +433,8 @@ namespace HeavenStudio.Games
             if (!autoLights && !shouldLights)
             {
                 lighting = false;
-                foreach (var lightMat in firstPatternLights)
-                {
-                    lightMat.DOColor(currentEnvironmentColor, 0.2f);
-                }
-                foreach (var lightMat in secondPatternLights)
-                {
-                    lightMat.DOColor(currentEnvironmentColor, 0.2f);
-                }
+                TweenLightToValue(firstPatternLights, 0);
+                TweenLightToValue(secondPatternLights, 0);
             }
         }
 
@@ -450,27 +442,23 @@ namespace HeavenStudio.Games
         {
             if (firstLight)
             {
-                foreach (var lightMat in firstPatternLights)
-                {
-                    lightMat.DOColor(Color.white, 0.2f);
-                }
-                foreach (var lightMat in secondPatternLights)
-                {
-                    lightMat.DOColor(currentEnvironmentColor, 0.2f);
-                }
+                TweenLightToValue(firstPatternLights, 1);
+                TweenLightToValue(secondPatternLights, 0);
             }
             else
             {
-                foreach (var lightMat in firstPatternLights)
-                {
-                    lightMat.DOColor(currentEnvironmentColor, 0.2f);
-                }
-                foreach (var lightMat in secondPatternLights)
-                {
-                    lightMat.DOColor(Color.white, 0.2f);
-                }
+                TweenLightToValue(firstPatternLights, 0);
+                TweenLightToValue(secondPatternLights, 1);
             }
             firstLight = !firstLight;
+        }
+
+        private void SetLightValue(Material lightMat, float value) {
+            lightMat.SetFloat("_Lighting", value);
+        }
+
+        private void TweenLightToValue(Material lightMat, float value) {
+            DOTween.To(() => lightMat.GetFloat("_Lighting"), amt => lightMat.SetFloat("_Lighting", amt), value, 0.2f);
         }
 
         public void SpawnBlocks(double beat, float length, int hitNote, bool staccato, bool silent)

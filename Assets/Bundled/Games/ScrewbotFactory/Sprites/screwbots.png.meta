@@ -1,0 +1,3095 @@
+fileFormatVersion: 2
+guid: eb65f2f5c8dfd2549ac73b60b2efd3e3
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 0
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: screwbots_sprite_0
+      rect:
+        serializedVersion: 2
+        x: 3040
+        y: 3040
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5ca61534204e814b9b718f05bdda224
+      internalID: 1879493921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_1
+      rect:
+        serializedVersion: 2
+        x: 2976
+        y: 3040
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87baa0f4c7dc9e54483a75dd8949ee08
+      internalID: 1278259144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_2
+      rect:
+        serializedVersion: 2
+        x: 3008
+        y: 3040
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21069ca792feee047a2a12d6087cd165
+      internalID: 1422900800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_3
+      rect:
+        serializedVersion: 2
+        x: 3168
+        y: 3040
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7684653d98fa42a49890bf74d196ba8e
+      internalID: -1291642438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_4
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1280
+        width: 2368
+        height: 352
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a17fd7048195004fb7e0cc416e3c8f4
+      internalID: 407604312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_5
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 864
+        width: 2368
+        height: 352
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54180701d1affba4c8aa9049ecf5bd3a
+      internalID: -1318248018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_6
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 448
+        width: 2368
+        height: 352
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb08177214e4fef498f7febc452c79cd
+      internalID: 198460599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_7
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 2368
+        height: 352
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b37564ac626acde4fbbd8acd0e143415
+      internalID: -1629070190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_8
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 2560
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b84887466caae1c4b8debad943d57304
+      internalID: -1425071982
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_9
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 2016
+        width: 1280
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5d2a1fd6e7a14c4c96c0c28f426ebfe
+      internalID: -1329674359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_10
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 2240
+        width: 416
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6e6c7efac5656344a32d1ef03113634
+      internalID: -2008384798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_11
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 1952
+        width: 224
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa8f2f82f02b9a545b013b9b5f135d3a
+      internalID: -2028859840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_12
+      rect:
+        serializedVersion: 2
+        x: 1377
+        y: 2016
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc080f71bd697d142926a94935624897
+      internalID: 859532237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_13
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 2208
+        width: 544
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 764c31e30b9dd334085a10fac6de4c46
+      internalID: 1752970927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_14
+      rect:
+        serializedVersion: 2
+        x: 1728
+        y: 3168
+        width: 416
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01a8afa70d53cfd4b9d30b0128789894
+      internalID: -1278430755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_15
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 3168
+        width: 384
+        height: 320
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eadeeeda45fbf2c43b9dbb9fbed2c412
+      internalID: 413906814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_16
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 2688
+        width: 288
+        height: 416
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e2eed2df28199b44a7a706ba75921d1
+      internalID: 1281206470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_17
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 2688
+        width: 352
+        height: 416
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2027f1d3e048582449076af15b02318b
+      internalID: -1506896923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_18
+      rect:
+        serializedVersion: 2
+        x: 1120
+        y: 2208
+        width: 288
+        height: 416
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c4d134661259f34cbc1c93c1ee9182b
+      internalID: 487424085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_19
+      rect:
+        serializedVersion: 2
+        x: 1472
+        y: 2208
+        width: 288
+        height: 416
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15e2fb4cc37dff54e856ed95d268f462
+      internalID: -851290006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_20
+      rect:
+        serializedVersion: 2
+        x: 2176
+        y: 2208
+        width: 224
+        height: 416
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0414d5bdf50efe748a2bffdd1c1082de
+      internalID: -988157378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_21
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 2688
+        width: 352
+        height: 416
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef9b26e37cb2846489ef9265eb3d78bb
+      internalID: -717125361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_22
+      rect:
+        serializedVersion: 2
+        x: 1824
+        y: 2208
+        width: 288
+        height: 416
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b651efd99c770c489b2a5f85efc875f
+      internalID: 1596412339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_23
+      rect:
+        serializedVersion: 2
+        x: 2208
+        y: 3072
+        width: 288
+        height: 384
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f8067247f7c82e4b8103c1bb067c0df
+      internalID: -1052705372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_24
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 3840
+        width: 416
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d9de2dfecb95d74d947f7aa9e4f563a
+      internalID: -1785391439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_25
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 3840
+        width: 416
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2e83225385a0a44a8961d98e91227e9
+      internalID: -43471562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_26
+      rect:
+        serializedVersion: 2
+        x: 1472
+        y: 3840
+        width: 416
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc8268dd9e6b5d6428174aafaf2e8ce0
+      internalID: 1231270426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_27
+      rect:
+        serializedVersion: 2
+        x: 1952
+        y: 3840
+        width: 416
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b462ee9f0eb62446a750e20478eecea
+      internalID: -89320462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_28
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 3840
+        width: 416
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a3f1679f2f57784ca40e0aabafa1f3f
+      internalID: -1464287524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_29
+      rect:
+        serializedVersion: 2
+        x: 2432
+        y: 3840
+        width: 416
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14aca706635a19c41886dc8de30a2b6d
+      internalID: 1885944472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_30
+      rect:
+        serializedVersion: 2
+        x: 2944
+        y: 32
+        width: 416
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c678248b66e448479af73ee6e463f0d
+      internalID: -1677970877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_31
+      rect:
+        serializedVersion: 2
+        x: 3424
+        y: 32
+        width: 416
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89e69e8e5ce66464d8d65e9240c6d2ab
+      internalID: -1701897408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_32
+      rect:
+        serializedVersion: 2
+        x: 2464
+        y: 320
+        width: 416
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b9d2cfe4aa2f3b4a9c0303d8f121eb7
+      internalID: 1963521555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_33
+      rect:
+        serializedVersion: 2
+        x: 2944
+        y: 320
+        width: 416
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3fbf5a4b8330e44c828be6b77aef263
+      internalID: 696905206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_34
+      rect:
+        serializedVersion: 2
+        x: 2464
+        y: 32
+        width: 416
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79a61251bccd18b41b71b016117584e3
+      internalID: 1784186636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_35
+      rect:
+        serializedVersion: 2
+        x: 3424
+        y: 320
+        width: 416
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a75e76729aa2344293e56fe4e69d349
+      internalID: -1194902525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_36
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 3296
+        width: 96
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4821c83a08014d4faf6bd4a91292d0c
+      internalID: 20559006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_37
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 3200
+        width: 128
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b164eeff9866c64e855d3cecaf3f6b5
+      internalID: -792117472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_38
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 3232
+        width: 160
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b76f81cd111db145beed09a0217809a
+      internalID: 134446287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_39
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 3072
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52b6faede14e5f84eb0eb3d31e087ed1
+      internalID: 2018752392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_40
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 2816
+        width: 96
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 288f1b27e6bf7954ab449d2d05252f9f
+      internalID: 1502319126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_41
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 3552
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c7a7b7ff9aab234f9d503d9df2f0b12
+      internalID: -788520648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_42
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 3360
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b647eff4178f6d24eaf78c1dae39b7a4
+      internalID: 999816802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_43
+      rect:
+        serializedVersion: 2
+        x: 3424
+        y: 608
+        width: 128
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04c26954f7d37ce41b2f928df23501ee
+      internalID: -788296907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_44
+      rect:
+        serializedVersion: 2
+        x: 3904
+        y: 32
+        width: 160
+        height: 352
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42c0996edbbdaa141b8a45e99540928b
+      internalID: 984404301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_45
+      rect:
+        serializedVersion: 2
+        x: 2720
+        y: 960
+        width: 192
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d54c0216f5a26c446bf6306f6c369964
+      internalID: -1416320642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_46
+      rect:
+        serializedVersion: 2
+        x: 2464
+        y: 1920
+        width: 96
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2152a8afbcc8c2c44a25ce4d17087e97
+      internalID: 465850628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_47
+      rect:
+        serializedVersion: 2
+        x: 2624
+        y: 1920
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d744be37df679dd49af67d0a4169232f
+      internalID: 886073549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_48
+      rect:
+        serializedVersion: 2
+        x: 2368
+        y: 2688
+        width: 96
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96c3ed51860b1f74ca29b9e34d8b7b6e
+      internalID: -91962011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_49
+      rect:
+        serializedVersion: 2
+        x: 2336
+        y: 2880
+        width: 96
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37167479cfda42f43876dfb06e773cf2
+      internalID: -93742758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_50
+      rect:
+        serializedVersion: 2
+        x: 2944
+        y: 3168
+        width: 160
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30f6919919806e3439e0744eeb413309
+      internalID: 1952254327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_51
+      rect:
+        serializedVersion: 2
+        x: 3168
+        y: 3168
+        width: 160
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 774b7e5ceb4a1fa449cf9f4f7da43821
+      internalID: 813881142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_52
+      rect:
+        serializedVersion: 2
+        x: 3680
+        y: 2048
+        width: 160
+        height: 352
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e6e518bf78a9a64eab9930e8e34ad36
+      internalID: 1275346932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_53
+      rect:
+        serializedVersion: 2
+        x: 3904
+        y: 2048
+        width: 160
+        height: 352
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c44f7f3706a93b46903ffb546c66f4d
+      internalID: 1834230426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_54
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 3552
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ea2a2e797c670d478f2da1b7a6352de
+      internalID: -1197483755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_55
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 3072
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a614012a54ab875469a2ba3a1514612f
+      internalID: -1167991336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_56
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 2816
+        width: 128
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c14ce09eacc7afb4ba7dcafec1c943f7
+      internalID: 805443741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_57
+      rect:
+        serializedVersion: 2
+        x: 3648
+        y: 2720
+        width: 416
+        height: 416
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54713847c6dc5274aad8c2c2ac05f286
+      internalID: -277926643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_58
+      rect:
+        serializedVersion: 2
+        x: 3392
+        y: 3328
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35799ced578188d4fa84e6717e39a1a9
+      internalID: -702425194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_59
+      rect:
+        serializedVersion: 2
+        x: 3648
+        y: 768
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3423765c918c10a49b2114e85834bff5
+      internalID: 808525014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_60
+      rect:
+        serializedVersion: 2
+        x: 3552
+        y: 1920
+        width: 128
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6de5104abc2a60442ba3539fd6827e3d
+      internalID: -192940246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_61
+      rect:
+        serializedVersion: 2
+        x: 2464
+        y: 960
+        width: 192
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66bccc285ee7663499df6cdbcedee301
+      internalID: -1320055630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_62
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 2944
+        width: 96
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75887a256e690014b930c44d67288ff1
+      internalID: 1987769724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_63
+      rect:
+        serializedVersion: 2
+        x: 3744
+        y: 1920
+        width: 96
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93980f7fcd431ac428aa7407c52e5041
+      internalID: 347412199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_64
+      rect:
+        serializedVersion: 2
+        x: 3808
+        y: 768
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b42f96ee398cce4eaf35e246887ed2e
+      internalID: 516774579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_65
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 3360
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 127e024e4143c124782d040af62d1aff
+      internalID: 1467016213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_66
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 3360
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4920beda4da30df46bce31d66d4e8b5e
+      internalID: -997475656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_67
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 3552
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06114d8efbbb095449e515a9df4cc62d
+      internalID: 881231718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_68
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 2912
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaae51e60ca874d4fad39f0e853337ad
+      internalID: -403191003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_69
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 3072
+        width: 96
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61d594f5b84c3b047a041a67c1b9aa6e
+      internalID: -1657432286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_70
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 3552
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10ed244d4eddc4b459aaf31dbbd4c3b0
+      internalID: 1611064571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_71
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 2912
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b27b82c5f5a21845a8297a15728e75c
+      internalID: -913866136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_72
+      rect:
+        serializedVersion: 2
+        x: 3008
+        y: 1920
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d0fbb25b6e6de44fbe7d9bc9cedaffb
+      internalID: -1366699291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_73
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 1920
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2d4bc0d4044da3469de35114021d821
+      internalID: -1741569764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_74
+      rect:
+        serializedVersion: 2
+        x: 3232
+        y: 960
+        width: 192
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71d17d6f3071f614688ddd5d2d5e1b56
+      internalID: 189464932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_75
+      rect:
+        serializedVersion: 2
+        x: 3808
+        y: 608
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5550a9f8f9295c64686c19702900217f
+      internalID: 1212677410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_76
+      rect:
+        serializedVersion: 2
+        x: 3392
+        y: 2048
+        width: 96
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab9a9146d05bb814eaea4667f933ba88
+      internalID: 663896486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_77
+      rect:
+        serializedVersion: 2
+        x: 2976
+        y: 960
+        width: 192
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90f89b894e0ebcc48a564ced50461045
+      internalID: 1236433652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_78
+      rect:
+        serializedVersion: 2
+        x: 3968
+        y: 608
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d35c34329309e3c4a892ba07453c520c
+      internalID: 2021651190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_79
+      rect:
+        serializedVersion: 2
+        x: 2912
+        y: 3776
+        width: 416
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0919a9a332f5a6f4f85d178629905d3a
+      internalID: -889601174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_80
+      rect:
+        serializedVersion: 2
+        x: 1184
+        y: 3552
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62446eb438a44b14a9ce68e38d590e3a
+      internalID: -1907845841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_81
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 3200
+        width: 128
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05d0cf293cadc7b49be910915e8df1ea
+      internalID: 1888086227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_82
+      rect:
+        serializedVersion: 2
+        x: 3392
+        y: 3776
+        width: 416
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00051bba0f51d084faca836bf2f6f15a
+      internalID: -1398778692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_83
+      rect:
+        serializedVersion: 2
+        x: 1472
+        y: 3552
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 118c76cdfcbfd83488fd51b8e29be390
+      internalID: 263335764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_84
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 3168
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d54c00c8bf1251542b79a4ebcd8b7ce0
+      internalID: -734999660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_85
+      rect:
+        serializedVersion: 2
+        x: 2464
+        y: 608
+        width: 416
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d271606b5441f214582921e1e4bec0a1
+      internalID: -730690805
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_86
+      rect:
+        serializedVersion: 2
+        x: 3488
+        y: 960
+        width: 192
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75949f61da5ff604aa1ffd3f61d414b5
+      internalID: -1712299070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_87
+      rect:
+        serializedVersion: 2
+        x: 3616
+        y: 608
+        width: 128
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62325a34cd489be45a9c68f309dfca11
+      internalID: -1828708749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_88
+      rect:
+        serializedVersion: 2
+        x: 3744
+        y: 960
+        width: 192
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 281729191fadd434db8bdbfdf60393a9
+      internalID: -1564122043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_89
+      rect:
+        serializedVersion: 2
+        x: 2944
+        y: 608
+        width: 416
+        height: 288
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aad461f9d794d9b49afcc31cf8b6d652
+      internalID: 1704890813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_90
+      rect:
+        serializedVersion: 2
+        x: 3424
+        y: 768
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39f5b9382dff8834395f51f4273986ff
+      internalID: -1017461448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_91
+      rect:
+        serializedVersion: 2
+        x: 1760
+        y: 3552
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d91ae41f6d5a2b4f9b3fe23a27414d4
+      internalID: 1848564048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_92
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 3552
+        width: 192
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 119eadc713a6d29499dccd599b1ae72e
+      internalID: 2098062744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_93
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 3552
+        width: 96
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54005b2d136b186418fd29bf700f017f
+      internalID: 1312248250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_94
+      rect:
+        serializedVersion: 2
+        x: 2464
+        y: 3552
+        width: 192
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9decf15db75691438309e7a8d861cea
+      internalID: 1057302013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_95
+      rect:
+        serializedVersion: 2
+        x: 2720
+        y: 3488
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53e7b563453569845ad2bbd823056b66
+      internalID: -290806778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_96
+      rect:
+        serializedVersion: 2
+        x: 3008
+        y: 3488
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 506b4daa6c0d92c4195e7dc0963713e3
+      internalID: 114961323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_97
+      rect:
+        serializedVersion: 2
+        x: 3296
+        y: 3488
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fad3a8e20caace146aedc7d6fd7f2131
+      internalID: 1749109170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_98
+      rect:
+        serializedVersion: 2
+        x: 3584
+        y: 3488
+        width: 192
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03184f3ac4d684c4e89a04e34c36756f
+      internalID: -1645472674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_99
+      rect:
+        serializedVersion: 2
+        x: 3872
+        y: 3776
+        width: 192
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8687a8f7d4c71ed4e837f3aff02992e1
+      internalID: -1501615220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_100
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 3488
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea985917acc70284b87ed9cb8dc35fc6
+      internalID: -909453085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_101
+      rect:
+        serializedVersion: 2
+        x: 2464
+        y: 1280
+        width: 192
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07d77f00f98ebbe43ab5693c3a4c948d
+      internalID: 868049123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_102
+      rect:
+        serializedVersion: 2
+        x: 2720
+        y: 1280
+        width: 192
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8b6d7bb434bf2a46b928ce7a5d37068
+      internalID: 288542972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_103
+      rect:
+        serializedVersion: 2
+        x: 2976
+        y: 1280
+        width: 192
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1f0154cff68e9c41a2204a15ad9e7e4
+      internalID: -984980696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_104
+      rect:
+        serializedVersion: 2
+        x: 3232
+        y: 1280
+        width: 192
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 870251a7a72c9754982d7e5a69253762
+      internalID: -760579647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_105
+      rect:
+        serializedVersion: 2
+        x: 3488
+        y: 1280
+        width: 192
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af2dec284f99be84398f3951b81a18bb
+      internalID: 1036965234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_106
+      rect:
+        serializedVersion: 2
+        x: 3744
+        y: 1280
+        width: 192
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cd2ef1dad710394886b0ac1ef4b821f
+      internalID: -1898500097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_107
+      rect:
+        serializedVersion: 2
+        x: 2464
+        y: 1600
+        width: 192
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f51b5f11559861429cdc3e5c3c95ed4
+      internalID: 1072573691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_108
+      rect:
+        serializedVersion: 2
+        x: 2720
+        y: 1600
+        width: 192
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d925c70bab25444592bcfdbf89ee98b
+      internalID: -1438511456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_109
+      rect:
+        serializedVersion: 2
+        x: 2976
+        y: 1600
+        width: 192
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 614b7068a023ccd4fac133d27a6a2cb0
+      internalID: 356825736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_110
+      rect:
+        serializedVersion: 2
+        x: 3232
+        y: 1600
+        width: 192
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73e79ac1af3e12d47a6af9a12cceb477
+      internalID: 1477010128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_111
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 2912
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce81964fd42c17a40a70bcb6c0c4c15e
+      internalID: -871115595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_112
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 2944
+        width: 128
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa76133c72a5e604eb592116dd1979c5
+      internalID: 497783726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_113
+      rect:
+        serializedVersion: 2
+        x: 992
+        y: 3360
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbecd08f9938a4f449955d49b836a851
+      internalID: -429753969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_114
+      rect:
+        serializedVersion: 2
+        x: 3552
+        y: 3200
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c3b0eede1a1a904786f7f26c0ad0ade
+      internalID: 1590188668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_115
+      rect:
+        serializedVersion: 2
+        x: 3840
+        y: 3200
+        width: 224
+        height: 224
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 917ce35f9065fb042bc8e32118dfa3dc
+      internalID: 936189335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_116
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 1920
+        width: 128
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3ae03d7d720d134a84badb6aa0cb9f9
+      internalID: -969983494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_117
+      rect:
+        serializedVersion: 2
+        x: 2464
+        y: 2176
+        width: 160
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61f27bcdcb10eb54c9baa776fb765018
+      internalID: -1308503343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_118
+      rect:
+        serializedVersion: 2
+        x: 3904
+        y: 448
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ac094a031553264e9d6f11fda55fe0f
+      internalID: -271929227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_119
+      rect:
+        serializedVersion: 2
+        x: 3904
+        y: 1920
+        width: 128
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16f894f91a56375429933b7582753d07
+      internalID: 92941150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_120
+      rect:
+        serializedVersion: 2
+        x: 3488
+        y: 1600
+        width: 192
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 821c7cabd0a22b24cbe73b8e949474a7
+      internalID: 1050102416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_121
+      rect:
+        serializedVersion: 2
+        x: 3744
+        y: 1600
+        width: 192
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b50eaac5f2aae794baae8755ec1f9959
+      internalID: 955377489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_122
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 3008
+        width: 320
+        height: 416
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b72be0c5754a1064589c3fda8001b1e9
+      internalID: -1192326815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_123
+      rect:
+        serializedVersion: 2
+        x: 3968
+        y: 768
+        width: 96
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3aa2c7241b4d2434892dc50edbc638ec
+      internalID: -1082807149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_124
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 2112
+        width: 320
+        height: 416
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56f907a6593b6ac4f8564914f5523870
+      internalID: 142238448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_125
+      rect:
+        serializedVersion: 2
+        x: 3072
+        y: 2112
+        width: 128
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45a7f8f31a6621d4793a77c91f9681c5
+      internalID: 1996790223
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_126
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 2688
+        width: 256
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8a92da6160e1f54b9aeaf07ff8e45bd
+      internalID: 574075539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_127
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 2560
+        width: 224
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f36a8e22a4e39f44ad71b8163e107a8
+      internalID: 1562346132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_128
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 2880
+        width: 224
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d1f6b96324bf4d4d9ef8fc1655e018f
+      internalID: -1182194585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_129
+      rect:
+        serializedVersion: 2
+        x: 2528
+        y: 2816
+        width: 800
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37678ab9d8101db469f48a5c467a3d79
+      internalID: -1895306288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_130
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 2560
+        width: 224
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef8cb78e8acd8f64a80f15f4eeef87f3
+      internalID: 1830618018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_131
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 1952
+        width: 256
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fedab9e35f184be49a38a95b5c040ef6
+      internalID: 1262724046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_132
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 1696
+        width: 800
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9909694b963094e499a08c7d47a83b66
+      internalID: 1873761685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_133
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 1696
+        width: 1504
+        height: 256
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09894dd4ad13bff4b9c9ce17f9bdc1fa
+      internalID: -160153894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: screwbots_sprite_134
+      rect:
+        serializedVersion: 2
+        x: 2208
+        y: 1952
+        width: 192
+        height: 192
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94c97b4248e3de34299d1d608422c003
+      internalID: 1613730027
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Screwbot_0: -1167422891
+      Screwbot_1: 2145644308
+      Screwbot_10: 312427088
+      Screwbot_100: 1104623442
+      Screwbot_101: 1684131957
+      Screwbot_102: 27375746
+      Screwbot_103: -730996031
+      Screwbot_104: 1849330936
+      Screwbot_105: 562614968
+      Screwbot_106: -1463366020
+      Screwbot_107: -2002698123
+      Screwbot_108: -1673811850
+      Screwbot_109: -103628608
+      Screwbot_11: 1802726193
+      Screwbot_110: -981015419
+      Screwbot_111: -215892507
+      Screwbot_112: -1400175289
+      Screwbot_113: 213899335
+      Screwbot_114: 2015530531
+      Screwbot_115: 1939434566
+      Screwbot_116: -970474607
+      Screwbot_117: 1458171216
+      Screwbot_118: 1296965903
+      Screwbot_119: 1596864740
+      Screwbot_12: -376254931
+      Screwbot_120: -1415321080
+      Screwbot_121: 962222587
+      Screwbot_122: -1025979754
+      Screwbot_123: 476094823
+      Screwbot_124: -67481163
+      Screwbot_125: 2048240029
+      Screwbot_126: 45839440
+      Screwbot_127: -1999780383
+      Screwbot_128: -1025976745
+      Screwbot_129: 1032820565
+      Screwbot_13: -24625585
+      Screwbot_130: -1223173600
+      Screwbot_131: -172358536
+      Screwbot_132: -607780578
+      Screwbot_14: 428344294
+      Screwbot_15: 1024158916
+      Screwbot_16: -833832364
+      Screwbot_17: -389121300
+      Screwbot_18: 465893431
+      Screwbot_19: 1504118251
+      Screwbot_2: -1567462318
+      Screwbot_20: -1098005332
+      Screwbot_21: -1733533971
+      Screwbot_22: -873936598
+      Screwbot_23: 1871912216
+      Screwbot_24: 1326296359
+      Screwbot_25: 1433202278
+      Screwbot_26: 33980814
+      Screwbot_27: 1608301313
+      Screwbot_28: -1917369512
+      Screwbot_29: -2076198799
+      Screwbot_3: -1560654267
+      Screwbot_30: 889887845
+      Screwbot_31: -961962120
+      Screwbot_32: 1156121402
+      Screwbot_33: -348717496
+      Screwbot_34: -1094830519
+      Screwbot_35: 865576195
+      Screwbot_36: 1891183491
+      Screwbot_37: 907362702
+      Screwbot_38: -2026408061
+      Screwbot_39: -253377087
+      Screwbot_4: 1813880668
+      Screwbot_40: -841610570
+      Screwbot_41: 131634482
+      Screwbot_42: 1585880128
+      Screwbot_43: -1437680165
+      Screwbot_44: 354370858
+      Screwbot_45: -427194408
+      Screwbot_46: -1977946406
+      Screwbot_47: 498897038
+      Screwbot_48: 477077329
+      Screwbot_49: 1845542296
+      Screwbot_5: 1456445609
+      Screwbot_50: -908552349
+      Screwbot_51: -2029226276
+      Screwbot_52: 135078613
+      Screwbot_53: 907386763
+      Screwbot_54: 194786840
+      Screwbot_55: -21322414
+      Screwbot_56: -605581258
+      Screwbot_57: -1594699126
+      Screwbot_58: -927124905
+      Screwbot_59: 1596639482
+      Screwbot_6: 1315666008
+      Screwbot_60: -976298597
+      Screwbot_61: 1454123804
+      Screwbot_62: 1865616059
+      Screwbot_63: -1524015199
+      Screwbot_64: 2065884898
+      Screwbot_65: 2139250925
+      Screwbot_66: 732429298
+      Screwbot_67: 1555497670
+      Screwbot_68: 194597136
+      Screwbot_69: 171679703
+      Screwbot_7: -209410748
+      Screwbot_70: -1161121156
+      Screwbot_71: -693435923
+      Screwbot_72: -1921430718
+      Screwbot_73: 224453070
+      Screwbot_74: 863974926
+      Screwbot_75: 1306404081
+      Screwbot_76: 1276985309
+      Screwbot_77: -1585650868
+      Screwbot_78: -1473344055
+      Screwbot_79: -816334254
+      Screwbot_8: 1157193421
+      Screwbot_80: 320536419
+      Screwbot_81: -121049950
+      Screwbot_82: 225618060
+      Screwbot_83: 2057287692
+      Screwbot_84: -1915071966
+      Screwbot_85: 1199351389
+      Screwbot_86: 949708202
+      Screwbot_87: 723798755
+      Screwbot_88: -1411113493
+      Screwbot_89: -596685800
+      Screwbot_9: -939939187
+      Screwbot_90: 1688463080
+      Screwbot_91: 893776047
+      Screwbot_92: 938985859
+      Screwbot_93: -737674576
+      Screwbot_94: -1624086162
+      Screwbot_95: 2090586652
+      Screwbot_96: 622110390
+      Screwbot_97: -1963849520
+      Screwbot_98: -689502965
+      Screwbot_99: 1008695832
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: rvlrobot/common
+  assetBundleVariant: 

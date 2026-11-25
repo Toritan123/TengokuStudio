@@ -22,6 +22,7 @@ namespace HeavenStudio.Editor
 
         public int[] values;
         private int defaultValue;
+        private int previousValue;
         private int lastValue = -1;
         private Array enumValues;
         private object type;
@@ -56,14 +57,14 @@ namespace HeavenStudio.Editor
 
                     selected = dropdownObj.value;
                     dropdown.AddOptions(dropdownObj.Values.Select(Localization.T).ToList());
-                    dropdown.onValueChanged.AddListener(newVal => dropdownObj.value = newVal);
+                    dropdown.onValueChanged.AddListener(newVal => { foreach (var e in parameterManager.entities) { EntityTypes.DropdownObj d = e[propertyName]; d.value = newVal; } });
                     dropdownObj.onValueChanged = new Action<List<string>>(newValues =>
                     {
                         if (dropdown == null) return;
                         dropdown.ClearOptions();
                         dropdown.AddOptions(newValues.Select(Localization.T).ToList());
                         dropdown.enabled = newValues.Count > 0;
-                        dropdownObj.value = defaultValue;
+                        foreach (var e in parameterManager.entities) { EntityTypes.DropdownObj d = e[propertyName]; d.value = defaultValue; }
                     });
                     break;
                 case Enum enumEntity:
@@ -74,7 +75,7 @@ namespace HeavenStudio.Editor
                     selected = Array.FindIndex(values, val => val == (int)entity[propertyName]);
 
                     dropdown.AddOptions(Localization.EnumNames(enumType));
-                    dropdown.onValueChanged.AddListener(val => entity[propertyName] = values[val]);
+                    dropdown.onValueChanged.AddListener(val => { foreach (var e in parameterManager.entities) e[propertyName] = values[val]; });
                     break;
                 case EntityTypes.NoteSampleDropdown noteDropdown:
                     Type noteEnumType = noteDropdown.defaultValue.GetType();
@@ -87,7 +88,7 @@ namespace HeavenStudio.Editor
                     dropdown.AddOptions(Localization.EnumNames(noteEnumType));
                     dropdown.onValueChanged.AddListener(val =>
                     {
-                        entity[propertyName] = values[val];
+                        foreach (var e in parameterManager.entities) e[propertyName] = values[val];
                         UpdateNoteProperty(noteDropdown, enumValues.GetValue(values[val]));
                         
                         lastValue = values[val];
@@ -96,8 +97,9 @@ namespace HeavenStudio.Editor
                 default: break;
             }
 
-            dropdown.value = selected;
+            dropdown.SetValueWithoutNotify(selected);
             dropdown.enabled = dropdown.options.Count > 0;
+            previousValue = dropdown.value;
 
             dropdown.onValueChanged.AddListener(newValue =>
             {
@@ -108,6 +110,11 @@ namespace HeavenStudio.Editor
         public void ResetValue()
         {
             dropdown.value = defaultValue;
+        }
+
+        public void ResetToPrevious()
+        {
+            dropdown.value = previousValue;
         }
 
         public override void SetCollapses(object type)
@@ -167,7 +174,7 @@ namespace HeavenStudio.Editor
             bool switched = false;
             if ((int)newSampleEnum != lastValue || forceSwitchCheck) {
                 // Keep the semitones value if the note is the same, otherwise reset it
-                if(sample.note != noteProperty.note.sampleNote) parameterManager.entity[noteDropdown.semisProp] = 0;
+                if(sample.note != noteProperty.note.sampleNote) foreach (var e in parameterManager.entities) e[noteDropdown.semisProp] = 0;
                 switched = true;
             }
             noteProperty.SetNote(new EntityTypes.Note(0, sample.note, sample.octave, sample.sample, offsetToC: false), switched);

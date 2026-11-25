@@ -9,7 +9,7 @@ namespace HeavenStudio.Editor.Track
         public Vector3 Scale => _scale;
 
         [SerializeField] private float minScale = 0.5f;
-        [SerializeField] private float maxScale => float.MaxValue;
+        [SerializeField] private float maxScale = 200; // used to be float.MaxValue. but then you could zoom in forever... that had problems...
         [SerializeField] private Vector2 initialScale = Vector2.one;
 
         private Vector3 _scale;
@@ -92,14 +92,14 @@ namespace HeavenStudio.Editor.Track
 
         public void Zoom(float incre, Vector2 relativeMousePosition, bool horiz)
         {
-            if (!(_scale.x < maxScale)) return;
-
             if (horiz)
             {
+                float oldScale = _scale.x;
                 float newScale = Mathf.Clamp(_scale.x + incre, minScale, maxScale);
+
                 _scale.Set(newScale, _scale.y, 1);
                 relativeMousePosition = new Vector2(relativeMousePosition.x, 0);
-                relMousePos -= relativeMousePosition * incre;
+                relMousePos -= relativeMousePosition * (newScale - oldScale);
 
                 rectTransform.localScale = _scale;
                 rectTransform.anchoredPosition = relMousePos;

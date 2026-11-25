@@ -149,9 +149,16 @@ namespace HeavenStudio.Games
 
             PlayerActionEvent evt = evtObj.AddComponent<PlayerActionEvent>();
 
-            if (ignoreSwing) evt.startBeat = Conductor.instance.GetSwungBeat(startBeat);
-            else evt.startBeat = startBeat;
-            evt.timer = timer;
+            if (ignoreSwing) 
+            {
+                evt.timer = Conductor.instance.GetSwungBeat(startBeat + timer) - startBeat;
+                evt.startBeat = Conductor.instance.GetSwungBeat(startBeat); 
+            }
+            else 
+            {
+                evt.startBeat = startBeat;
+                evt.timer = timer;
+            }
             evt.InputAction = inputAction;
             evt.OnHit = OnHit;
             evt.OnMiss = OnMiss;
@@ -260,6 +267,7 @@ namespace HeavenStudio.Games
         {
             PlayerActionEvent input = GetClosestScheduledInput(wantActionCategory);
             if (input == null) return false;
+            if (!input.canHit) return false;
             return input.IsExpectingInputNow(conductor);
         }
 

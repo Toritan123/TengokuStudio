@@ -6,7 +6,7 @@ using System;
 using System.Linq;
 using TMPro;
 using HeavenStudio.Util;
-using HeavenStudio.Editor;
+using HeavenStudio.Common;
 using HeavenStudio.Editor.Commands;
 using System.Text.RegularExpressions;
 using UnityEngine.EventSystems;
@@ -41,6 +41,7 @@ namespace HeavenStudio.Editor
         private float currFontSize = 10.0f;
         private float realFontSize = 10.0f * 10; //x10 multiplyer to feel traditional to Word fonts
         private string _defaultValue;
+        private string _previousValue;
         private InputFieldManager inputFieldManager;
         private static readonly Regex regexFloatPattern = new Regex(@"^(\d{1,3}(\.\d{0,2})?)?$");
         private int storedSelectionStart;
@@ -53,7 +54,8 @@ namespace HeavenStudio.Editor
 
             _defaultValue = (string)type;
             _defaultColor = Color.black;
-            inputFieldString.text = (string)entity[propertyName];
+            inputFieldString.SetTextWithoutNotify((string)entity[propertyName]);
+            _previousValue = inputFieldString.text;
             inputFieldManager = new InputFieldManager(inputFieldString, this);
             fontSizeInput.text = FormatFontSize(currFontSize);
 
@@ -68,7 +70,7 @@ namespace HeavenStudio.Editor
 
             inputFieldString.onValueChanged.AddListener(_ =>
                 {
-                    entity[propertyName] = inputFieldString.text;
+                    foreach (var e in parameterManager.entities) e[propertyName] = inputFieldString.text;
                     this.caption.text = (inputFieldString.text != _defaultValue) ? (_captionText + "*") : _captionText;
                 }
             );
@@ -125,12 +127,19 @@ namespace HeavenStudio.Editor
             colorPreview.ChangeColor(_defaultColor);
             ColorTable.gameObject.SetActive(false);
             fontSizeMenu.gameObject.SetActive(false);
+
+            inputFieldManager.SetRichText(PersistentDataManager.gameSettings.previewRichText);
         }
 
         public void ResetValue()
         {
             inputFieldString.text = _defaultValue;
             colorPreview.ChangeColor(_defaultColor);
+        }
+
+        public void ResetToPrevious()
+        {
+            inputFieldString.text = _previousValue;
         }
 
         public override void SetCollapses(object type)
@@ -297,6 +306,11 @@ namespace HeavenStudio.Editor
             notifMessage2.SetActive(false);
             colorTableActive = false;
             Editor.instance.editingInputField = false;
+        }
+
+        public void RemoveRichText()
+        {
+            inputFieldString.text = inputFieldString.textComponent.GetParsedText();
         }
 
         private string FormatFontSize(float fontSize)

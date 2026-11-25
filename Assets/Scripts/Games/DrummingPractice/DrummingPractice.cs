@@ -76,7 +76,7 @@ namespace HeavenStudio.Games.Loaders
                     }
                 }
             },
-            new List<string>() {"ctr", "normal"},
+            new List<string>() {"ctr", "normal", "intro"},
             "ctrintro", "en",
             new List<string>() {},
             chronologicalSortKey: 0
@@ -106,7 +106,15 @@ namespace HeavenStudio.Games
             Marshal,
             Senior,
             Tibby,
-            Error
+            Error,
+            DefaultMale,
+            DefaultFemale,
+            Brawler,
+            BrawlerUltimate,
+            Gunner,
+            GunnerUltimate,
+            Swordfighter,
+            SwordfighterUltimate
         }
 
         [Header("References")]
@@ -244,9 +252,9 @@ namespace HeavenStudio.Games
             {
                 do
                 {
-                    player.mii = UnityEngine.Random.Range(0, player.miiFaces.Count-1);
+                    player.mii = UnityEngine.Random.Range(0, player.miiFaces.Count);
                 }
-                while (player.mii == leftFace || player.mii == rightFace);
+                while (player.mii == leftFace || player.mii == rightFace || player.mii == (int)MiiType.Error);
             }
             else
                 player.mii = playerFace;
@@ -264,7 +272,7 @@ namespace HeavenStudio.Games
                     {
                         leftDrummer.mii = UnityEngine.Random.Range(0, player.miiFaces.Count-1);
                     }
-                    while (leftDrummer.mii == player.mii);
+                    while (leftDrummer.mii == player.mii || leftDrummer.mii == (int)MiiType.Error);
                 }
                 else
                     leftDrummer.mii = leftFace;
@@ -275,7 +283,7 @@ namespace HeavenStudio.Games
                     {
                         rightDrummer.mii = UnityEngine.Random.Range(0, player.miiFaces.Count-1);
                     }
-                    while (rightDrummer.mii == leftDrummer.mii || rightDrummer.mii == player.mii);
+                    while (rightDrummer.mii == leftDrummer.mii || rightDrummer.mii == player.mii || rightDrummer.mii == (int)MiiType.Error);
                 }
                 else
                     rightDrummer.mii = rightFace;

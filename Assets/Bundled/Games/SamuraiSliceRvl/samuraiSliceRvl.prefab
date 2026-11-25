@@ -830,6 +830,7 @@ Transform:
   - {fileID: 6261530717480056711}
   - {fileID: 5537837982197078115}
   - {fileID: 954794320901359849}
+  - {fileID: 96101170703339622}
   m_Father: {fileID: 8977249582956798414}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!210 &7515277727174877779
@@ -861,11 +862,13 @@ MonoBehaviour:
   MDemonAnim: {fileID: 7712742652481505606}
   LDemonAnim: {fileID: 6518640453463775035}
   XLDemonAnim: {fileID: 3048973490214654730}
+  XXLDemonAnim: {fileID: 2489858888965839074}
   type: 0
   Sdemon: {fileID: 1458628336537457214}
   Mdemon: {fileID: 6520359226766638056}
   Ldemon: {fileID: 4868039730848928965}
   XLdemon: {fileID: 8789587150694989303}
+  XXLdemon: {fileID: 8947931321852151531}
   startBeat: 0
   isSpawning: 0
   spawnCurve: {fileID: 0}
@@ -1543,6 +1546,38 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1474991743875694389
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 96101170703339622}
+  m_Layer: 0
+  m_Name: XXLDemonParent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &96101170703339622
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1474991743875694389}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.33, y: -0.34, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4785521873494531994}
+  m_Father: {fileID: 117548959991062377}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1510643436008232540
 GameObject:
   m_ObjectHideFlags: 0
@@ -5821,6 +5856,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SoundSequences: []
   SamuraiAnim: {fileID: 1175383438658455981}
+  thunderflash: 1
   fgHolder: {fileID: 2055222570607461175}
   demonholder: {fileID: 4600429361093108723}
   flashholder: {fileID: 9021691876828804249}
@@ -5829,6 +5865,7 @@ MonoBehaviour:
   - {fileID: 7745701009433316575, guid: 6d4af6fe439d80b4a8dd3bf30712ef87, type: 3}
   - {fileID: 143318725761678557, guid: ed08254a0948c4045843358f7239d93b, type: 3}
   - {fileID: 6880944048579400444, guid: 6329924d600b58744a386795877d0716, type: 3}
+  - {fileID: 6880944048579400444, guid: 1a9fc22bac11cd74baa4d1e9b66d3838, type: 3}
   hordeSlicedPrefab: {fileID: 8981327928461306005, guid: 1a4f98d8868385d44bed477779d6be6b, type: 3}
   smogEffectPrefab: {fileID: 8010135346781812917, guid: 8adb8f3be5c5129459841efb5cef3dbb, type: 3}
   hordeDemonPrefab: {fileID: 7349488693917848003, guid: 211891178921d13418310c2392058be7, type: 3}
@@ -5844,6 +5881,112 @@ MonoBehaviour:
   - {x: 4.13, y: -1.01}
   - {x: 1.39, y: -0.76}
   - {x: 3.83, y: 0.39}
+--- !u!1 &7013055230974863272
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4785521873494531994}
+  - component: {fileID: 8947931321852151531}
+  - component: {fileID: 2489858888965839074}
+  m_Layer: 0
+  m_Name: XXLDemon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4785521873494531994
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7013055230974863272}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 96101170703339622}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &8947931321852151531
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7013055230974863272}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 5
+  m_Sprite: {fileID: -2139356925, guid: 3f6696569d1b6194295bb4c1781f63eb, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 3.76, y: 3.33}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!95 &2489858888965839074
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7013055230974863272}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f4bf8fec6cce737449456b5626ce5e56, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7030614828986755718
 GameObject:
   m_ObjectHideFlags: 0

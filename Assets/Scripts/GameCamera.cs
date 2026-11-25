@@ -40,10 +40,10 @@ namespace HeavenStudio
             camera's current transformation
         **/
         private static Vector3 _position;
-        private static Vector3 Position
+        public static Vector3 Position
         {
             get => _position;
-            set
+            private set
             {
                 _position = value;
                 instance.ApplyCameraValues();

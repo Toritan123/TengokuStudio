@@ -403,12 +403,14 @@ namespace HeavenStudio.Games
         {
             StoreAllCallEntities();
             CheckMonsters(beat);
+            PersistEvents(beat);
         }
 
         public override void OnPlay(double beat)
         {
             StoreAllCallEntities();
             CheckMonsters(beat);
+            PersistEvents(beat);
         }
 
         private void StoreAllCallEntities()
@@ -601,6 +603,41 @@ namespace HeavenStudio.Games
             SoundByte.PlayOneShotGame("magicGirl/doingoing");
 
             MonsterHands.DoScaledAnimationAsync("Attack", 0.5f);
+        }
+
+        private void PersistEvents(double beat)
+        {
+            double startBeat = -1;
+            int tempPhase = transformPhase;
+            
+            var e = GameManager.instance.Beatmap.Entities.FindLast(c => c.datamodel == "magicGirl/set outfit" && c.beat < beat);
+            if (e != null) {
+                startBeat = e.beat;
+                tempPhase = e["outfit"];
+            }
+
+            List<RiqEntity> relevantProgressEvents = GetAllInBetweenBeat(startBeat, beat);
+            foreach (var evt in relevantProgressEvents)
+            {
+                if (tempPhase < 5) tempPhase++;
+            }
+
+            SetOutfit(beat, tempPhase);
+        }
+
+        private static List<RiqEntity> GetAllInBetweenBeat(double beat, double endBeat)
+        {
+            List<RiqEntity> transformEvents = EventCaller.GetAllInGameManagerList("magicGirl", new string[] { "progress"});
+            List<RiqEntity> tempEvents = new();
+
+            foreach (var entity in transformEvents)
+            {
+                if (entity.beat >= beat && entity.beat < endBeat)
+                {
+                    tempEvents.Add(entity);
+                }
+            }
+            return tempEvents;
         }
 
         public void ProgressTransform(double beat)

@@ -59,7 +59,7 @@ namespace HeavenStudio.Games.Loaders
                     resizable = true,
                     parameters = new List<Param>()
                     {
-                        new Param("who", TossBoys.KidChoice.Akachan, "Target", "Set who will receive the ball.")
+                        new Param("who", TossBoys.KidChoice.Aokun, "Target", "Set who will receive the ball.")
                     }
                 },
                 new GameAction("high", "High Toss")
@@ -616,7 +616,10 @@ namespace HeavenStudio.Games
             lastReceiver = currentReceiver;
             if (passBallDict.TryGetValue(beat, out var receiver))
             {
-                if (receiver.datamodel != "tossBoys/blur") currentReceiver = (WhichTossKid)receiver["who"];
+                if (receiver.datamodel != "tossBoys/blur" && receiver.datamodel != "tossBoys/pop") 
+                {
+                    currentReceiver = (WhichTossKid)receiver["who"];
+                }
                 currentPassType = receiver.datamodel;
                 currentEventLength = receiver.length;
             }

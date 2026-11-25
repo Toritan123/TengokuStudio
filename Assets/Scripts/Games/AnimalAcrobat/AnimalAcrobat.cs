@@ -171,7 +171,7 @@ namespace HeavenStudio.Games
         
         public double LastMissBeat = double.MinValue; 
         public double RecoverStartBeat = double.MinValue;
-        private double _nextGameSwitchBeat = double.MaxValue; 
+        public double nextGameSwitchBeat = double.MaxValue; 
 
         public static AnimalAcrobat instance;
 
@@ -543,7 +543,7 @@ namespace HeavenStudio.Games
                 _currentGorillaLandTarget = animal.transform.Find("Land");
 
                 // hide gorilla on gameswitch 
-                if (currentAnimal.startBeat >= _nextGameSwitchBeat)
+                if (currentAnimal.startBeat >= nextGameSwitchBeat)
                 {
                     var renderers = animal.GetComponentsInChildren<SpriteRenderer>();
                     foreach (var r in renderers) r.enabled = false;
@@ -620,7 +620,7 @@ namespace HeavenStudio.Games
             MonkeyMissed = false;
             LastMissBeat = double.MinValue; 
             RecoverStartBeat = double.MinValue; 
-            _nextGameSwitchBeat = double.MaxValue; 
+            nextGameSwitchBeat = double.MaxValue; 
 
             if (_partyPoppers != null) _partyPoppers.SetActive(false);
 
@@ -646,12 +646,12 @@ namespace HeavenStudio.Games
             if (_gorilla != null) _pooledGorillas.Add(Instantiate(_gorilla, _scroll));
 
             var allGameSwitches = EventCaller.GetAllInGameManagerList("gameManager", new string[] { "switchGame" }).FindAll(x => x.beat > beat);
-            if (allGameSwitches.Count > 0) _nextGameSwitchBeat = allGameSwitches[0].beat;
+            if (allGameSwitches.Count > 0) nextGameSwitchBeat = allGameSwitches[0].beat;
 
             var allAnimals = EventCaller.GetAllInGameManagerList("animalAcrobat", new string[]
             {
                 "elephant", "giraffe", "monkeys", "monkeyLong", "monkeyShort"
-            }).FindAll(x => x.beat >= beat && x.beat < _nextGameSwitchBeat);
+            }).FindAll(x => x.beat >= beat && x.beat < nextGameSwitchBeat + 2); // +2 to allow for fakeouts
             
             if (allAnimals.Count > 0)
             {

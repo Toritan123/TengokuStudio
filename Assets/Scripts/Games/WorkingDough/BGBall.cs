@@ -33,7 +33,7 @@ namespace HeavenStudio.Games.Scripts_WorkingDough
                     Vector3 pos = GetPathPositionFromBeat(path, Math.Max(startBeat, beat), startBeat);
                     transform.position = pos;
                     transform.rotation = Quaternion.Euler(0f, 0f, transform.rotation.eulerAngles.z - (-90 * Time.deltaTime * (1f / Conductor.instance.pitchedSecPerBeat)));
-                    if (beat >= startBeat + 9) Destroy(gameObject);
+                    if (beat >= startBeat + 13) Destroy(gameObject);
                 }
             }
         }

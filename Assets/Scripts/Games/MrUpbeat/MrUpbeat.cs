@@ -129,7 +129,8 @@ namespace HeavenStudio.Games.Loaders
                 },
                 new GameAction("countOffbeat", "Count")
                 {
-                    inactiveFunction = delegate { MrUpbeat.Count(eventCaller.currentEntity["number"]); },
+                    preFunction = delegate { MrUpbeat.Count(eventCaller.currentEntity.beat, eventCaller.currentEntity["number"]); },
+                    preFunctionLength = 1f,
                     parameters = new List<Param>()
                     {
                         new Param("number", MrUpbeat.Counts.One, "Type", "Set the number to say."),
@@ -145,7 +146,7 @@ namespace HeavenStudio.Games.Loaders
                     resizable = true,
                 },
             },
-            new List<string>() { "agb", "keep" },
+            new List<string>() { "agb", "keep", "endless" },
             "agboffbeat", "en",
             new List<string>() { },
             chronologicalSortKey: 101,
@@ -412,9 +413,9 @@ namespace HeavenStudio.Games
             man.blipLength = blipLength;
         }
 
-        public static void Count(int number)
+        public static void Count(double beat, int number)
         {
-            SoundByte.PlayOneShotGame("mrUpbeat/" + (number < 4 ? number + 1 : "a"), forcePlay: true);
+            SoundByte.PlayOneShotGame("mrUpbeat/" + (number < 4 ? number + 1 : "a"), beat, offset: (number == 3) ? 0.05 : 0, forcePlay: true);
         }
 
         public static void CountIn(double beat, float length, bool a)

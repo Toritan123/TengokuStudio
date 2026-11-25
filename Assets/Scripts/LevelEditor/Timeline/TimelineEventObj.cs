@@ -8,6 +8,7 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using HeavenStudio.Common;
+using Riten.Native.Cursors;
 
 namespace HeavenStudio.Editor.Track
 {
@@ -38,6 +39,7 @@ namespace HeavenStudio.Editor.Track
         [NonSerialized] public bool resizable;
         [NonSerialized] public bool moving;
         [NonSerialized] public bool isCreating;
+        [NonSerialized] public bool editingParams = false;
         [NonSerialized] public Timeline.EventVisibility visibility;
         [NonSerialized] public string[] split;
 
@@ -182,7 +184,11 @@ namespace HeavenStudio.Editor.Track
 
         public void UpdateMarker()
         {
-            if (selected)
+            if (editingParams)
+            {
+                outline.color = Color.yellow;
+            }
+            else if (selected)
             {
                 if (TimelineBlockManager.Instance.MovingAnyEvents)
                 {
@@ -280,7 +286,7 @@ namespace HeavenStudio.Editor.Track
             // should consider adding this someday
             // else if (moving && selected || mouseHovering && selected)
             // {
-            //     Cursor.SetCursor(Resources.Load<Texture2D>("Cursors/move"), new Vector2(8, 8), CursorMode.Auto);
+            //     NativeCursor.SetCursor(NTCursors.Arrow);
             // }
 
             zPriority = entity.length;
@@ -554,7 +560,7 @@ namespace HeavenStudio.Editor.Track
             }
             else if (Input.GetMouseButton(1))
             {
-                EventParameterManager.instance.StartParams(entity);
+                EventParameterManager.instance.StartParams(this);
             }
             else if (Input.GetMouseButton(2))
             {
@@ -589,7 +595,8 @@ namespace HeavenStudio.Editor.Track
 
             inResizeRegion = true;
 
-            Cursor.SetCursor(Timeline.instance.resizeCursor, new Vector2(14, 14), CursorMode.Auto);
+            NativeCursor.SetCursor(NTCursors.ResizeHorizontal);
+
             foreach (var marker in Selections.instance.eventsSelected)
             {
                 marker.SetInitialResize();
@@ -601,7 +608,7 @@ namespace HeavenStudio.Editor.Track
             inResizeRegion = false;
 
             if (!resizing)
-                Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+                NativeCursor.ResetCursor();
         }
 
         public void OnLeftDown()
@@ -626,7 +633,7 @@ namespace HeavenStudio.Editor.Track
             if (resizable && resizingLeft)
             {
                 ResetResize();
-                Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+                NativeCursor.ResetCursor();
 
                 CommandManager.Instance.AddCommand(new Commands.Resize(Selections.instance.eventsSelected.Select(c => c.entity).ToList(), originalBeats, originalLengths));
 
@@ -656,7 +663,7 @@ namespace HeavenStudio.Editor.Track
             if (resizable && resizingRight)
             {
                 ResetResize();
-                Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+                NativeCursor.ResetCursor();
 
                 CommandManager.Instance.AddCommand(new Commands.Resize(Selections.instance.eventsSelected.Select(c => c.entity).ToList(), originalBeats, originalLengths));
 

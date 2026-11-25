@@ -116,6 +116,7 @@ namespace HeavenStudio
         [SerializeField] Sprite epilogueNg, epilogueOk, epilogueHi;
         [SerializeField] Sprite epilogueFrmNg, epilogueFrmOk, epilogueFrmHi;
         [SerializeField] GameObject noMissComment;
+        [SerializeField] GameObject highScoreComment;
         [SerializeField] GameObject starComment;
 
         [SerializeField] Image tempoMultComment;
@@ -157,6 +158,7 @@ namespace HeavenStudio
             justOk.gameObject.SetActive(false);
 
             noMissComment.SetActive(false);
+            highScoreComment.SetActive(false);
             starComment.SetActive(false);
 
             tempoMultComment.gameObject.SetActive(false);
@@ -752,11 +754,24 @@ namespace HeavenStudio
                         audioSource.PlayOneShot(starSound);
                     }
 
+                    bool ratingSound = false;
                     if (judgementInfo.noMiss)
                     {
                         noMissComment.SetActive(true);
-                        audioSource.PlayOneShot(noMissSound);
+                        ratingSound = true;
                     }
+                    if ((GlobalGameManager.playbackSpeed == 1.0f) && !GlobalGameManager.autoplay)
+                    {
+                        int savedScore = GlobalGameManager.lastScore;
+                        Debug.Log(savedScore);
+
+                        if (savedScore >= 0 && savedScore < (int)(judgementInfo.finalScore * 100))
+                        {
+                            highScoreComment.SetActive(true);
+                            ratingSound = true;
+                        }
+                    }
+                    if (ratingSound) audioSource.PlayOneShot(noMissSound);
 
                     if (GlobalGameManager.playbackSpeed != 1f)
                     {
@@ -788,7 +803,6 @@ namespace HeavenStudio
                     }
                 }
             }
-
         }
     }
 }

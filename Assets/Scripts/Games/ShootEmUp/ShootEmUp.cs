@@ -97,7 +97,9 @@ namespace HeavenStudio.Games.Loaders
                     }
                 },
             },
-            new List<string>() { "ntr", "repeat" }, "ntrshooting", "en", new List<string>() { },
+            new List<string>() { "ntr", "repeat", "endless" }, 
+            "ntrshooting", "en", 
+            new List<string>() { },
             chronologicalSortKey: 7
             );
         }

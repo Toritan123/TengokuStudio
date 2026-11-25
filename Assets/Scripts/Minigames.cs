@@ -51,8 +51,8 @@ namespace HeavenStudio
 
         public enum DisplayLayer
         {
-            Background = -1,
-            Game,
+            ViewportBackground = -1,
+            Minigame,
             Decal,
             Overlay,
         }
@@ -77,7 +77,12 @@ namespace HeavenStudio
             ComicSansMS,
             Papyrus,
             CourierNew,
-            Comet
+            Comet,
+            PopHappiness,
+            WarioWare,
+            FeverUI,
+            HeavenlyCustard,
+            Humming
         }
 
         public static void InitPreprocessor()
@@ -143,6 +148,8 @@ namespace HeavenStudio
             {"epilogue_ng_res", new EntityTypes.Resource(EntityTypes.Resource.ResourceType.Image, "Images/Epilogue/", "Ng")},   // epilogue "Try Again" image resource path
 
             {"libraryicontitle", true},                                                                                         // use the level title in the library icon
+
+            {"program_chart_ver", 1},                                                                                           // the default version of the chart. used in case the chart must be updated
         };
 
         readonly static Dictionary<string, object> tempoChangeModel = new()
@@ -263,17 +270,38 @@ namespace HeavenStudio
                 foreach (var e in data.entities)
                 {
                     split = e.datamodel.Split('/');
-                    var gameName = split[0];
-                    var actionName = split[1];
+                    string gameName = split[0];
+                    string actionName = split[1];
+
                     game = EventCaller.instance.GetMinigame(gameName);
-                    if (game == null)
+
+                    if (split.Length > 2) // switch game check
                     {
-                        Debug.LogWarning($"Unknown game {gameName} found in remix.json! Adding game...");
-                        game = new Minigame(gameName, gameName.DisplayName() + " \n<color=#eb5454>[inferred from remix.json]</color>", "", false, false, new List<GameAction>(), inferred: true);
-                        EventCaller.instance.minigames.Add(gameName, game);
-                        if (Editor.Editor.instance != null)
-                            Editor.Editor.instance.AddIcon(game);
+                        string switchGameName = split[2];
+                        Minigame switchGame = EventCaller.instance.GetMinigame(switchGameName);
+
+                        if (switchGame == null) // straight up copypasted this code for switch games so they infer properly there has to be a better way please help me
+                        {
+                            Debug.LogWarning($"Unknown game {switchGameName} found in remix.json! Adding game...");
+                            switchGame = new Minigame(switchGameName, switchGameName.DisplayName() + " \n<color=#eb5454>[inferred from level]</color>", "#eb5454", false, false, new List<GameAction>(), inferred: true);
+                            EventCaller.instance.minigames.Add(switchGameName, switchGame);
+                            if (Editor.Editor.instance != null)
+                                Editor.Editor.instance.AddIcon(switchGame);
+                        }
                     }
+                    else
+                    {
+                        if (game == null)
+                        {
+                            Debug.LogWarning($"Unknown game {gameName} found in remix.json! Adding game...");
+                            game = new Minigame(gameName, gameName.DisplayName() + " \n<color=#eb5454>[inferred from level]</color>", "#eb5454", false, false, new List<GameAction>(), inferred: true);
+                            EventCaller.instance.minigames.Add(gameName, game);
+                            if (Editor.Editor.instance != null)
+                                Editor.Editor.instance.AddIcon(game);
+                        }
+                    }
+
+                    
                     action = EventCaller.instance.GetGameAction(game, actionName);
                     if (action == null)
                     {
@@ -291,7 +319,7 @@ namespace HeavenStudio
                                 value = new EntityTypes.Integer(int.MinValue, int.MaxValue, (int)value);
                             else if (value.GetType() == typeof(double))
                                 value = new EntityTypes.Float(float.NegativeInfinity, float.PositiveInfinity, (float)value);
-                            parameters.Add(new Param(item.Key, value, item.Key.DisplayName(), "[inferred from remix.json]"));
+                            parameters.Add(new Param(item.Key, value, item.Key.DisplayName(), "[inferred from level]"));
                         }
                         action = new GameAction(actionName, actionName.DisplayName(), "Events", e.length, true, parameters);
                         game.actions.Add(action);
@@ -861,7 +889,8 @@ namespace HeavenStudio
                             {
                                 new Param("toggle", true, "Black Flash", "Toggle if there should be a black flash before the game is switched. You should only disable this if you know what you're doing.")
                             },
-                        inactiveFunction: delegate { var e = eventCaller.currentEntity; GameManager.instance.SwitchGame(eventCaller.currentSwitchGame, eventCaller.currentEntity.beat, e["toggle"]); }
+                        inactiveFunction: delegate { var e = eventCaller.currentEntity; GameManager.instance.SwitchGame(eventCaller.currentSwitchGame, eventCaller.currentEntity.beat, e["toggle"]); },
+                        hidden: true
                     ),
                     new GameAction("end", "End Remix", "", 0.5f,
                         function: delegate {
@@ -956,7 +985,7 @@ namespace HeavenStudio
                         },
                         delegate {
                             var e = eventCaller.currentEntity;
-                            SoundEffects.Count(e["type"], e["countType"]);
+                            SoundEffects.Count(e.beat, e["type"], e["countType"]);
                         }
                     ),
                     new GameAction("cowbell", "Cowbell", "Single",
@@ -985,11 +1014,9 @@ namespace HeavenStudio
                         {
                             new Param("colorA", Color.white, "Start Color", "Set the color and opacity at the start of the event."),
                             new Param("colorB", new Color(1, 1, 1, 0), "End Color", "Set the color and opacity at the end of the event."),
-                            // new Param("valA", new EntityTypes.Float(0, 1, 1), "Start Opacity", "Set the opacity at the start of the event."),
-                            // new Param("valB", new EntityTypes.Float(0, 1, 0), "End Opacity", "Set the opacity at the end of the event."),
                             new Param("ease", Util.EasingFunction.Ease.Linear, "Ease", "Set the easing of the action.", new()
                             {
-                                new((x, y) => (Util.EasingFunction.Ease)x != Util.EasingFunction.Ease.Instant, new string[] { "colorA", "valA" })
+                                new((x, y) => (Util.EasingFunction.Ease)x != Util.EasingFunction.Ease.Instant, new string[] { "colorA" })
                             })
                         },
                         defaultVersion = 1,
@@ -1092,8 +1119,9 @@ namespace HeavenStudio
                             {
                                 new((x, y) => (Util.EasingFunction.Ease)x != Util.EasingFunction.Ease.Instant, new string[] { "x1", "y1" })
                             }),
-                            new Param("axis", GameCamera.CameraAxis.All, "Axis", "Set if only a specific axis should be modified.")
-                        }
+                            new Param("axis", GameCamera.CameraAxis.All, "Axis", "Set if only a specific axis should be modified."),
+                        },
+                        advanced = true
                     },
                     new GameAction("fitScreen", "(Deprecated) Force Game Stretching To Window", "Camera") // Rest in piss you will not be missed
                     {
@@ -1171,20 +1199,20 @@ namespace HeavenStudio
                         parameters = new List<Param>()
                         {
                             new Param("sprite", new EntityTypes.Asset(EntityTypes.Asset.AssetType.Sprite), "Sprite", "Set sprite to use for the decal."),
-                            new Param("filter", FilterMode.Bilinear, "Filter Mode", "Set the filtering for the decal.", advanced: true),
+                            new Param("filter", FilterMode.Bilinear, "Filter Mode", "Set the filtering for the decal."),
                             new Param("ease", Util.EasingFunction.Ease.Instant, "Ease", "Set the ease to use for the position and size.", new() {
                                 new((x, _) => (int)x != (int)Util.EasingFunction.Ease.Instant, "sX", "sY", "sZ", "sWidth", "sHeight", "sRot", "sColor"),
                             }),
                             new Param("layer", new EntityTypes.Integer(-32768, 32767, 0, true), "Layer", "Set the sorting layer between other decals. Higher in front, lower behind."),
                             new Param("displayLayer", DisplayLayer.Decal, "Display Layer", "Set what layer of the camera the decals will appear on. Game layer can appear between game assets, while overlay layer can appear past the game crop.", new List<Param.CollapseParam>()
                             {
-                                new Param.CollapseParam((x, y) => (DisplayLayer)x == DisplayLayer.Game, new string[] { "sZ", "eZ", "sticky" })
-                            }, advanced: true),
-                            new Param("sticky", false, "Follow Camera", "Choose if the decal on the Game layer should still follow the camera.", advanced: true),
+                                new Param.CollapseParam((x, y) => (DisplayLayer)x == DisplayLayer.Minigame, new string[] { "sZ", "eZ", "sticky" })
+                            }),
+                            new Param("sticky", false, "Follow Camera", "Choose if the decal on the Game layer should still follow the camera."),
 
                             new Param("sX", new EntityTypes.Float(-100, 100, 0), "Start X", "Set the start x of the decal."),
                             new Param("sY", new EntityTypes.Float(-100, 100, 0), "Start Y", "Set the start y of the decal."),
-                            new Param("sZ", new EntityTypes.Float(-100, 100, 0), "Start Z", "Set the start z of the decal. Usually, you'll want to use Scale instead.", advanced: true),
+                            new Param("sZ", new EntityTypes.Float(-100, 100, 0), "Start Z", "Set the start z of the decal."),
                             new Param("sWidth", new EntityTypes.Float(-20, 20, 1), "Start Width", "Set the start width of the decal."),
                             new Param("sHeight", new EntityTypes.Float(-20, 20, 1), "Start Height", "Set the start height of the decal."),
                             new Param("sRot", new EntityTypes.Float(-360, 360, 0), "Start Rotation", "Set the start rotation of the decal."),
@@ -1192,7 +1220,7 @@ namespace HeavenStudio
 
                             new Param("eX", new EntityTypes.Float(-100, 100, 0), "End X", "Set the end x of the decal."),
                             new Param("eY", new EntityTypes.Float(-100, 100, 0), "End Y", "Set the end y of the decal."),
-                            new Param("eZ", new EntityTypes.Float(-100, 100, 0), "End Z", "Set the end z of the decal. Usually, you'll want to use Scale instead.", advanced: true),
+                            new Param("eZ", new EntityTypes.Float(-100, 100, 0), "End Z", "Set the end z of the decal."),
                             new Param("eWidth", new EntityTypes.Float(-20, 20, 1), "End Width", "Set the end width of the decal."),
                             new Param("eHeight", new EntityTypes.Float(-20, 20, 1), "End Height", "Set the end height of the decal."),
                             new Param("eRot", new EntityTypes.Float(-360, 360, 0), "End Rotation", "Set the end rotation of the decal."),
@@ -2018,6 +2046,17 @@ namespace HeavenStudio
                         function : delegate {
                             var e = eventCaller.currentEntity;
                             GameManager.instance.SetAnimationMultiplier(e["mult"]);
+                        },
+                        advanced: true
+                    ),
+                    new GameAction("detune", "Global Pitched Cue Detune", "Play", 0.5f, false,
+                        new List<Param>()
+                        {
+                            new Param("cents", new EntityTypes.Integer(-100, 100, 0), "Detune (Cents)", "The amount of cents to detune all pitched cues by."),
+                        },
+                        function : delegate {
+                            var e = eventCaller.currentEntity;
+                            GameManager.instance.SetPitchDetune(e["cents"]);
                         },
                         advanced: true
                     ),

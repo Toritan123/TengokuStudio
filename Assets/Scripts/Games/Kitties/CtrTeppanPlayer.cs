@@ -41,9 +41,9 @@ namespace HeavenStudio.Games.Scripts_Kitties
                 {
                     SoundByte.PlayOneShot("miss");
                     if (spawnType != 3)
-                        anim.Play("ClapFail", 0, 0);
+                        anim.DoScaledAnimationAsync("ClapFail", 0.5f);
                     else
-                        anim.Play("FaceClapFail", 0, 0);
+                        anim.DoScaledAnimationAsync("FaceClapFail", 0.5f);
                 }
             }
 
@@ -85,12 +85,12 @@ namespace HeavenStudio.Games.Scripts_Kitties
                 if (state >= 1f || state <= -1f)
                 {  //todo: proper near miss feedback
                     SoundByte.PlayOneShotGame("kitties/tink");
-                    anim.Play("ClapMiss", 0, 0);
+                    anim.DoScaledAnimationAsync("ClapMiss", 0.5f);
                 }
                 else
                 {
-                    SoundByte.PlayOneShotGame("kitties/ClapPlayer1");
-                    anim.Play("Clap1", 0, 0);
+                    SoundByte.PlayOneShotGame("kitties/CLAP_PLAYER_FIRST");
+                    anim.DoScaledAnimationAsync("Clap1", 0.5f);
                 }
             }
             else
@@ -98,11 +98,11 @@ namespace HeavenStudio.Games.Scripts_Kitties
                 if (state >= 1f || state <= -1f)
                 {  //todo: proper near miss feedback
                     SoundByte.PlayOneShotGame("kitties/tink");
-                    anim.Play("FaceClapFail", 0, 0);
+                    anim.DoScaledAnimationAsync("FaceClapFail", 0.5f);
                 }
 
-                SoundByte.PlayOneShotGame("kitties/ClapPlayer1");
-                anim.Play("FaceClap", 0, 0);
+                SoundByte.PlayOneShotGame("kitties/CLAP_PLAYER_FIRST");
+                anim.DoScaledAnimationAsync("FaceClap", 0.5f);
             }
         }
         public void ClapMissOne(PlayerActionEvent Caller)
@@ -121,12 +121,12 @@ namespace HeavenStudio.Games.Scripts_Kitties
                 if (state >= 1f || state <= -1f)
                 {  //todo: proper near miss feedback
                     SoundByte.PlayOneShotGame("kitties/tink");
-                    anim.Play("ClapMiss", 0, 0);
+                    anim.DoScaledAnimationAsync("ClapMiss", 0.5f);
                 }
                 else
                 {
-                    SoundByte.PlayOneShotGame("kitties/ClapPlayer2");
-                    anim.Play("Clap2", 0, 0);
+                    SoundByte.PlayOneShotGame("kitties/CLAP_PLAYER_SECOND");
+                    anim.DoScaledAnimationAsync("Clap2", 0.5f);
                 }
             }
             else
@@ -134,11 +134,11 @@ namespace HeavenStudio.Games.Scripts_Kitties
                 if (state >= 1f || state <= -1f)
                 {  //todo: proper near miss feedback
                     SoundByte.PlayOneShotGame("kitties/tink");
-                    anim.Play("FaceClapFail", 0, 0);
+                    anim.DoScaledAnimationAsync("FaceClapFail", 0.5f);
                 }
 
-                SoundByte.PlayOneShotGame("kitties/ClapPlayer2");
-                anim.Play("FaceClap", 0, 0);
+                SoundByte.PlayOneShotGame("kitties/CLAP_PLAYER_SECOND");
+                anim.DoScaledAnimationAsync("FaceClap", 0.5f);
             }
         }
 
@@ -151,7 +151,7 @@ namespace HeavenStudio.Games.Scripts_Kitties
         {
             hasSpun = true;
             var beat = caller.startBeat + caller.timer;
-            nyaPlay = SoundByte.PlayOneShotGame("kitties/spinnya", beat, UnityEngine.Random.Range(0.95f, 1.05f), 0.85f, true);
+            nyaPlay = SoundByte.PlayOneShotGame("kitties/VOICE_NYAGO_NYA_VOICE", beat, UnityEngine.Random.Range(0.95f, 1.05f), 0.85f, true);
             MultiSound.Play(new MultiSound.Sound[] {
                 new MultiSound.Sound("kitties/spinplayer1", beat),
                 new MultiSound.Sound("kitties/spinplayer2", beat + .15f, ignoreSwing: true),
@@ -159,7 +159,7 @@ namespace HeavenStudio.Games.Scripts_Kitties
                 new MultiSound.Sound("kitties/spinplayer4", beat + .45f, ignoreSwing: true),
                 new MultiSound.Sound("kitties/spinplayer5", beat + .60f, ignoreSwing: true)
             });
-            anim.Play("Rolling", 0, 0);
+            anim.DoScaledAnimationAsync("Rolling", 0.5f);
             ScheduleRollFinish(caller.startBeat);
 
         }
@@ -173,7 +173,7 @@ namespace HeavenStudio.Games.Scripts_Kitties
                 nyaPlay = null;
             }
             SoundByte.PlayOneShotGame("kitties/roll6");
-            anim.Play("RollEnd", 0, 0);
+            anim.DoScaledAnimationAsync("RollEnd", 0.5f);
             hasSpun = false;
         }
 
@@ -206,22 +206,22 @@ namespace HeavenStudio.Games.Scripts_Kitties
                 nyaPlay = null;
             }
             SoundByte.PlayOneShot("miss");
-            anim.Play("RollFail", 0, 0);
+            anim.DoScaledAnimationAsync("RollFail", 0.5f);
             hasSpun = false;
         }
 
         public void FishSuccess(PlayerActionEvent caller, float beat)
         {
-            Kitties.instance.RemoveCats(false);
+            Kitties.instance.RemoveCats(-1, false, 1);
             SoundByte.PlayOneShotGame("kitties/fish4");
-            fish.Play("CaughtSuccess", 0, 0);
+            fish.DoScaledAnimationAsync("CaughtSuccess", 0.5f);
         }
 
         public void FishMiss(PlayerActionEvent caller)
         {
-            Kitties.instance.RemoveCats(false);
-            SoundByte.PlayOneShot("miss");
-            fish.Play("CaughtFail", 0, 0);
+            Kitties.instance.RemoveCats(-1, false, 1);
+            SoundByte.PlayOneShotGame("kitties/CATCH_MISS");
+            fish.DoScaledAnimationAsync("CaughtFail", 0.5f);
         }
 
         public void FishEmpty(PlayerActionEvent caller)

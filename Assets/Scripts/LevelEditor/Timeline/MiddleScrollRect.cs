@@ -1,5 +1,6 @@
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using Riten.Native.Cursors;
 
 namespace HeavenStudio.Editor.Track
 {
@@ -10,6 +11,8 @@ namespace HeavenStudio.Editor.Track
             if (Conductor.instance.isPlaying) return;
             if (eventData.button != PointerEventData.InputButton.Middle) return;
             eventData.button = PointerEventData.InputButton.Left;
+
+            NativeCursor.SetCursor(NTCursors.ResizeAll);
             base.OnBeginDrag(eventData);
         }
 
@@ -18,6 +21,8 @@ namespace HeavenStudio.Editor.Track
             if (Conductor.instance.isPlaying) return;
             if (eventData.button != PointerEventData.InputButton.Middle) return;
             eventData.button = PointerEventData.InputButton.Left;
+
+            NativeCursor.ResetCursor();
             base.OnEndDrag(eventData);
         }
 
@@ -26,6 +31,8 @@ namespace HeavenStudio.Editor.Track
             if (Conductor.instance.isPlaying) return;
             if (eventData.button != PointerEventData.InputButton.Middle) return;
             eventData.button = PointerEventData.InputButton.Left;
+
+            NativeCursor.SetCursor(NTCursors.ResizeAll);
             base.OnDrag(eventData);
         }
     }

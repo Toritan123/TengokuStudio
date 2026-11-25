@@ -138,6 +138,8 @@ namespace HeavenStudio.Games.Scripts_SuperSamuraiSlice
                         case 3:
                             Explode3.Play();
                             break;
+                        default:
+                            break;
                     }
                 }),
                 new BeatAction.Action(game.boomBeats[whichDemon] + 16, delegate {

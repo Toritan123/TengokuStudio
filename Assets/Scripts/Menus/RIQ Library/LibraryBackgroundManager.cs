@@ -16,6 +16,7 @@ namespace HeavenStudio
         [SerializeField] private Color gradientBottomColorStart;
         [SerializeField] private float gradientHueShiftSpeed;
         [SerializeField] private float puffsSpeed;
+        [SerializeField] private float puffsSpinSpeed = 1f;
 
 
         [Header("Widths")]
@@ -25,12 +26,17 @@ namespace HeavenStudio
         [SerializeField] private float time = 0f;
         [SerializeField] private Vector3 puffsStartPos = new();
 
+        private Transform spinHolder;
+        private List<float> spinDirs = new List<float>();
+
         void Start()
         {
             puffsStartPos = puffsHolder.localPosition;
 
             gradientMat.SetColor("_ColorAlpha", gradientTopColorStart);
             gradientMat.SetColor("_ColorBravo", gradientBottomColorStart);
+
+            spinHolder = puffsHolder.Find("Spin");
         }
 
         // Update is called once per frame
@@ -42,6 +48,7 @@ namespace HeavenStudio
             // MoveBottomWave();
             MoveWaves();
             MovePuffs();
+            SpinPuffs();
 
             ShiftGradientHue();
         }
@@ -88,6 +95,22 @@ namespace HeavenStudio
             }
 
             puffsHolder.localPosition = new(puffsX, puffsY);
+        }
+
+        private void SpinPuffs()
+        {
+            if (spinHolder != null)
+            {
+                while (spinDirs.Count < spinHolder.childCount)
+                {
+                    spinDirs.Add(Random.value > 0.5f ? 1f : -1f);
+                }
+
+                for (int i = 0; i < spinHolder.childCount; i++)
+                {
+                    spinHolder.GetChild(i).Rotate(0, 0, spinDirs[i] * puffsSpinSpeed * Time.deltaTime);
+                }
+            }
         }
 
         private void ShiftGradientHue()

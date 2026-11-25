@@ -455,8 +455,8 @@ namespace HeavenStudio.Games
         private Dictionary<int, string> WomanDesukaAD = new Dictionary<int, string>
         {
             [1] = "It's snack time, |huh?",
-            [2] = "It's 10 AM, |right?",
-            [3] = "Who's to know, |right?",
+            [2] = "It's 10 AM, |huh?",
+            [3] = "Who's to know, |huh?",
         };
 
         // Kamone

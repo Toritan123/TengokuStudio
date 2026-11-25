@@ -69,6 +69,23 @@ namespace HeavenStudio.Games.Loaders
                         new Param("player", true, "Player Spotlight", "Toggle if the player's spotlight should be turned on or off."),
                     }
                 },
+                new GameAction("setColors", "Set Tapper Colors")
+                {
+                    function = delegate {
+                        var e = eventCaller.currentEntity; 
+                        TapTroupe.instance.SetTapperColor(e["BaseColor"], e["BowColor"], e["ShoeColor"], e["BlushColor"], e["TongueColor"], e["ShadowColor"]); 
+                    },
+                    defaultLength = 0.5f,
+                    parameters = new List<Param>()
+                    {
+                        new Param("BaseColor", "#828282".Hex2RGB(), "Base Color", "Sets the base color."),
+                        new Param("BowColor", "#FF4A4A".Hex2RGB(), "Bowtie Color", "Sets the bowtie color."),
+                        new Param("ShoeColor", "#E75252".Hex2RGB(), "Shoe Color", "Sets the shoe line color."),
+                        new Param("BlushColor", "#FF7373".Hex2RGB(), "Blush Color", "Sets the bowtie color."),
+                        new Param("TongueColor", "#FF7373".Hex2RGB(), "Tongue Color", "Sets the tongue color."),
+                        new Param("ShadowColor", "#CED6EF".Hex2RGB(), "Shadow Color", "Sets the shadow color."),
+                    }
+                },
                 new GameAction("zoomOut", "Zoom Out")
                 {
                     function = delegate { TapTroupe.instance.ToggleZoomOut(); },
@@ -114,6 +131,8 @@ namespace HeavenStudio.Games
         [SerializeField] GameObject spotlightMiddleRight;
         [SerializeField] GameObject spotlightLeftMost;
         [SerializeField] GameObject darkness;
+        [SerializeField] Color defaultTapperBase, defaultTapperBlush, defaultTapperTongue, defaultTapperBow, defaultTapperShoes, defaultTapperShadow;
+        [SerializeField] Material BowMat, BaseMat, ShadowMat;
         private Animator zoomOutAnim;
         [Header("Properties")]
         private double currentZoomCamBeat;
@@ -205,6 +224,19 @@ namespace HeavenStudio.Games
 
             UpdateCameraZoom();
         }
+
+        public override void OnPlay(double beat) => EntityPreCheck(beat);
+        public override void OnGameSwitch(double beat) => EntityPreCheck(beat);
+
+        private void EntityPreCheck(double beat)
+        {
+            var obj = GameManager.instance.Beatmap.Entities.FindLast(c => c.datamodel == "tapTroupe/setColors" && c.beat < beat);
+            if (obj != null) {
+                SetTapperColor(obj["BaseColor"], obj["BowColor"], obj["ShoeColor"], obj["BlushColor"], obj["TongueColor"], obj["ShadowColor"]);
+            } else {
+                SetTapperColor(defaultTapperBase, defaultTapperBow, defaultTapperShoes, defaultTapperBlush, defaultTapperTongue, defaultTapperShadow);
+            }
+	    }
 
         void Update()
         {
@@ -822,5 +854,17 @@ namespace HeavenStudio.Games
         }
 
         void Nothing(PlayerActionEvent caller) { }
+
+
+        public void SetTapperColor(Color BaseColor, Color BowColor, Color ShoeColor, Color BlushColor, Color TongueColor, Color ShadowColor)
+        {
+            BaseMat.SetColor("_ColorAlpha", BlushColor);
+            BaseMat.SetColor("_ColorBravo", TongueColor);
+            BaseMat.SetColor("_ColorDelta", BaseColor);
+            BowMat.SetColor("_ColorAlpha", BowColor);
+            BowMat.SetColor("_ColorBravo", ShoeColor);
+            BowMat.SetColor("_ColorDelta", BaseColor);
+            ShadowMat.SetColor("_Color", ShadowColor);
+        }
     }
 }

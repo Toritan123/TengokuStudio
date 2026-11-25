@@ -139,7 +139,7 @@ namespace HeavenStudio.Games.Loaders
                     hidden = true
                 },
             },
-            new List<string>() { "ntr", "normal" },
+            new List<string>() { "ntr", "normal", "endless" },
             "ntrsamurai", "en",
             new List<string>() { "en", "jp" },
             chronologicalSortKey: 104,

@@ -72,8 +72,8 @@ TextureImporter:
     maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
+    textureCompression: 2
+    compressionQuality: 100
     crunchedCompression: 1
     allowsAlphaSplitting: 0
     overridden: 0
@@ -101,6 +101,19 @@ TextureImporter:
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 1
     allowsAlphaSplitting: 0
     overridden: 0
     ignorePlatformSupport: 0
@@ -218,9 +231,9 @@ TextureImporter:
       name: packingpests_5
       rect:
         serializedVersion: 2
-        x: 1671
+        x: 1669
         y: 3797
-        width: 551
+        width: 555
         height: 236
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1323,6 +1336,27 @@ TextureImporter:
       bones: []
       spriteID: 42a4d7e887fa6414f9704810303edb07
       internalID: 1335500922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: packingpests_6
+      rect:
+        serializedVersion: 2
+        x: 3645
+        y: 3248
+        width: 377
+        height: 301
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c916569ac657da4784a34f979b238ef
+      internalID: 73832685
       vertices: []
       indices: 
       edges: []

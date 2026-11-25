@@ -27,7 +27,7 @@ namespace HeavenStudio.Editor.Track
             rectTransform = GetComponent<RectTransform>();
         }
 
-        public void Create(double beat, float length, int layer, bool selected)
+        public void Create(double beat, float length, int layer, bool selected, Color? color = null)
         {
             started = true;
             deleteTime = Time.time;
@@ -39,7 +39,9 @@ namespace HeavenStudio.Editor.Track
 
             rectTransform.anchoredPosition = new Vector2((float)eBeat * Timeline.instance.PixelsPerBeat, -eLayer * Timeline.instance.LayerHeight());
             rectTransform.sizeDelta = new Vector2(eLength * Timeline.instance.PixelsPerBeat, Timeline.instance.LayerHeight());
-            color = EditorTheme.theme.LayerGradientIndex(eLayer);
+
+            if (color == null) color = EditorTheme.theme.LayerGradientIndex(layer);
+            this.color = (Color)color;
 
             Destroy(this.gameObject, 0.714f);
 

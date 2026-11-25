@@ -64,7 +64,7 @@ namespace HeavenStudio.Games.Loaders
                 },
                 new GameAction("sigh", "Sigh")
                 {
-                    function = delegate { SoundByte.PlayOneShot("games/forkLifter/sigh"); }
+                    function = delegate { SoundByte.PlayOneShotGame("forkLifter/sigh"); }
                 },
                 new GameAction("color", "Background Appearance")
                 {

@@ -18,6 +18,17 @@ public class TempoDialog : Dialog
     [SerializeField] Slider swingSlider;
     [SerializeField] Toggle swingDivisionToggle;
 
+    [SerializeField] Image noteEquals;
+    [SerializeField] Image swingNote;
+
+    [SerializeField] Sprite eighthEqualsSprite;
+    [SerializeField] Sprite sixteenthEqualsSprite;
+    [SerializeField] List<Sprite> swingNoteSprites;
+    [SerializeField] TMP_Text straightTxt;
+    [SerializeField] TMP_Text lightTxt;
+    [SerializeField] TMP_Text standardTxt;
+    [SerializeField] TMP_Text heavyTxt;
+
     public void SwitchTempoDialog()
     {
         if (dialog.activeSelf)
@@ -101,6 +112,52 @@ public class TempoDialog : Dialog
     {
         swingInput.text = (tempoObj.chartEntity["swing"] * 100 + 50).ToString("F");
         swingSlider.value = tempoObj.chartEntity["swing"];
+
+        noteEquals.sprite = swingDivisionToggle.isOn ? sixteenthEqualsSprite : eighthEqualsSprite;
+        int index = swingDivisionToggle.isOn ? 4 : 0;
+        switch (swingSlider.value)
+        {
+            case 0f: // 50%, Straight
+                swingNote.sprite = swingNoteSprites[index + 0];
+                
+                straightTxt.alpha = 1f;
+                lightTxt.alpha = 0.5f;
+                standardTxt.alpha = 0.5f;
+                heavyTxt.alpha = 0.5f;
+                break;
+            case 0.1f: // 60%, Light
+                swingNote.sprite = swingNoteSprites[index + 1];
+                
+                straightTxt.alpha = 0.5f;
+                lightTxt.alpha = 1f;
+                standardTxt.alpha = 0.5f;
+                heavyTxt.alpha = 0.5f;
+                break;
+            case 0.1667f: // 66.67%, Standard / Triplet
+                swingNote.sprite = swingNoteSprites[index + 2];
+                
+                straightTxt.alpha = 0.5f;
+                lightTxt.alpha = 0.5f;
+                standardTxt.alpha = 1f;
+                heavyTxt.alpha = 0.5f;
+                break;
+            case 0.25f: // 75%, Heavy
+                swingNote.sprite = swingNoteSprites[index + 3];
+                
+                straightTxt.alpha = 0.5f;
+                lightTxt.alpha = 0.5f;
+                standardTxt.alpha = 0.5f;
+                heavyTxt.alpha = 1f;
+                break;
+            default:
+                swingNote.sprite = swingNoteSprites[swingNoteSprites.Count - 1];
+                
+                straightTxt.alpha = 0.5f;
+                lightTxt.alpha = 0.5f;
+                standardTxt.alpha = 0.5f;
+                heavyTxt.alpha = 0.5f;
+                break;
+        }
     }
 
     public void SwingSliderUpdate()
@@ -180,6 +237,7 @@ public class TempoDialog : Dialog
         if (tempoObj != null)
         {
             tempoObj.SetSwingDivision(swingDivisionToggle.isOn);
+            RefreshSwingUI();
         }
     }
 }

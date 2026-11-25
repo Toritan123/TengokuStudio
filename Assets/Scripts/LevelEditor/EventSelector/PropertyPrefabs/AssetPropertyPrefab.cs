@@ -21,6 +21,7 @@ namespace HeavenStudio.Editor
         public DisableSelectOnHover disableSelectOnHover;
 
         private bool openedDropdown = false;
+        private int _previousValue;
 
         public override void SetProperties(string propertyName, object parameter, string caption)
         {
@@ -39,16 +40,18 @@ namespace HeavenStudio.Editor
             };
             dropdown.options = dropdownValues.Select(n => new TMP_Dropdown.OptionData(n)).ToList();
             if (string.IsNullOrEmpty(entity[propertyName]) && dropdown.options.Count > 0) {
-                entity[propertyName] = dropdown.options[0].text;
+                foreach (var e in parameterManager.entities) e[propertyName] = dropdown.options[0].text;
+                dropdown.SetValueWithoutNotify(0);
             } else {
-                dropdown.value = dropdown.options.FindIndex(x => x.text == entity[propertyName]);
+                dropdown.SetValueWithoutNotify(dropdown.options.FindIndex(x => x.text == entity[propertyName]));
             }
 
+            _previousValue = dropdown.value;
             dropdown.enabled = dropdown.options.Count > 0;
 
             dropdown.onValueChanged.AddListener(newValue =>
             {
-                entity[propertyName] = dropdown.options[newValue].text;
+                foreach (var e in parameterManager.entities) e[propertyName] = dropdown.options[newValue].text;
                 // Debug.Log("dropdown.options[newValue].text : " + dropdown.options[newValue].text);
             });
         }
@@ -56,6 +59,11 @@ namespace HeavenStudio.Editor
         public void ResetValue()
         {
             dropdown.value = 0;
+        }
+
+        public void ResetToPrevious()
+        {
+            dropdown.value = dropdown.options.Count > _previousValue ? _previousValue : 0;
         }
 
         public override void SetCollapses(object type)

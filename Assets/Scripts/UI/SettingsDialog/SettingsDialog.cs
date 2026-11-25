@@ -4,18 +4,23 @@ using UnityEngine.UI;
 using TMPro;
 
 using HeavenStudio.Editor;
+using System.Collections.Generic;
+using NUnit.Framework;
 
 namespace HeavenStudio.Common 
 {
     public class SettingsDialog : Dialog
     {
         [SerializeField] private TMP_Text BuildDateDisplay;
+        [SerializeField] public TMP_Text DescriptionDisplay;
+        [SerializeField] public string defaultDescription;
         [SerializeField] private TabsManager tabsManager;
         [SerializeField] private TabsManager.TabsEntry[] tabs;
+        [SerializeField] private GameObject descriptionGO;
         public static SettingsDialog instance;
         public bool active = false;
 
-        private void Start()
+        private void Awake()
         {
             instance = this;
             active = dialog.activeSelf;
@@ -46,6 +51,7 @@ namespace HeavenStudio.Common
                 tabsManager.GenerateTabs(tabs);
 
                 BuildDateDisplay.text = GlobalGameManager.buildTime;
+                DescriptionDisplay.text = defaultDescription;
 
 
                 if (GameManager.instance != null && GameManager.instance.CircleCursor != null && GameManager.instance.playMode)
@@ -57,6 +63,11 @@ namespace HeavenStudio.Common
                 Editor.Editor.instance.canSelect = false;
                 Editor.Editor.instance.inAuthorativeMenu = true;
             }
+        }
+
+        public void ToggleDescriptions(bool enabled)
+        {
+            descriptionGO.SetActive(enabled);
         }
 
         private void Update() {}

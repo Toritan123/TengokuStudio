@@ -28,6 +28,8 @@ namespace HeavenStudio.Games.Scripts_GleeClub
 
         public void Just(PlayerActionEvent caller, float state)
         {
+            game.isHolding = false;
+
             if (!game.playerChorusKid.singing)
             {
                 game.playerChorusKid.currentPitch = pitch;
@@ -38,6 +40,8 @@ namespace HeavenStudio.Games.Scripts_GleeClub
 
         public void JustClose(PlayerActionEvent caller, float state)
         {
+            game.isHolding = true;
+
             game.playerChorusKid.StopSinging();
             CleanUp();
         }

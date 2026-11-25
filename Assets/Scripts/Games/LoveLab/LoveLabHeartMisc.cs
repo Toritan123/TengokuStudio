@@ -10,10 +10,9 @@ namespace HeavenStudio.Games.Scripts_LoveLab
     {
         [SerializeField] GameObject heart;
         [SerializeField] GameObject completeHeart;
-        public async void destroyObj()
-        {         
-            await Task.Delay(100);       
-            Destroy(heart);
+        public void destroyObj()
+        {            
+            Destroy(heart, 0.1f);
         } 
 
         public void createHeart()

@@ -28,10 +28,15 @@ namespace HeavenStudio.Games.Scripts_SamuraiSliceRvl
                 return;
             }
             game = SamuraiSliceRvl.instance;
-            FlashEffect.gameObject.SetActive(true);
+
+            if (game.thunderflash) 
+            {
+                FlashEffect.gameObject.SetActive(true);
+                FlashAnim.DoScaledAnimationAsync("Flash");
+            }
             Lightning.enabled = true;
-            FlashAnim.DoScaledAnimationAsync("Flash");
             LightningAnim.DoScaledAnimationAsync($"LightningStrike{strikeNumber}");
+
             BeatAction.New(this, new List<BeatAction.Action>() {
                 new BeatAction.Action(startBeat + 1, () => {
                     if(FlashAnim.IsAnimationNotPlaying() && LightningAnim.IsAnimationNotPlaying())

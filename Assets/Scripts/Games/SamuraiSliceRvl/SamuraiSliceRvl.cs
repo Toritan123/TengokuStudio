@@ -78,11 +78,15 @@ namespace HeavenStudio.Games.Loaders
                 {
                     function = delegate {
                         var e = eventCaller.currentEntity;
-                        SamuraiSliceRvl.instance.Thunder(e.beat, e["thunder"]);
+                        SamuraiSliceRvl.instance.Thunder(e.beat, e["thunder"], e["flash"]);
                     },
                     parameters = new List<Param>()
                     {
-                        new Param("thunder", true, "Enable Thunder", "If this is enabled, thunder will appear on each slice."),
+                        new Param("thunder", true, "Enable Thunder", "If this is enabled, thunder will appear on each slice.", new List<Param.CollapseParam>()
+                        {
+                            new Param.CollapseParam((x, _) => (bool)x, new string[] { "flash" }),
+                        }),
+                        new Param("flash", true, "Enable Screen Flash", "Toggles whether the white screen flash will occur during the thunder strikes."),
                     },
                     defaultLength = 0.5f,
                 },
@@ -138,7 +142,8 @@ namespace HeavenStudio.Games
         Small,
         Medium,
         Big,
-        Huge
+        Huge,
+        Massive
     }
     /// This class handles the minigame logic.
     /// Minigame inherits directly from MonoBehaviour, and adds Heaven Studio specific methods to override.
@@ -154,6 +159,7 @@ namespace HeavenStudio.Games
         private bool isDemonSuccess = false;
 
         private bool thundereffect = false;
+        public bool thunderflash = true;
         public bool IsReady { get; private set; } = false;
         public bool IsHolding { get; private set; } = false;
         private int nextPrepareBeat = 1;
@@ -684,7 +690,7 @@ namespace HeavenStudio.Games
                     sounds.Add(new MultiSound.Sound("samuraiSliceRvl/demon2_3", beat + 1f));
                     break;
 
-                case DemonType.Big:
+                case DemonType.Big or DemonType.Massive:
                     sounds.Add(new MultiSound.Sound("samuraiSliceRvl/demon3_1", beat));
                     sounds.Add(new MultiSound.Sound("samuraiSliceRvl/demon3_2", beat + 0.5f));
                     sounds.Add(new MultiSound.Sound("samuraiSliceRvl/demon3_3", beat + 1f));
@@ -797,9 +803,10 @@ namespace HeavenStudio.Games
                 SamuraiAnim.DoScaledAnimationAsync("SamuraiReady", 1.0f);
             }
         }
-        public void Thunder(double beat, bool thunder)
+        public void Thunder(double beat, bool thunder, bool flash)
         {
             thundereffect = thunder;
+            thunderflash = flash;
         }
     }
 }

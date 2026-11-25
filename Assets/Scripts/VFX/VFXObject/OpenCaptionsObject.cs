@@ -16,8 +16,8 @@ namespace HeavenStudio.VFX
         {
             base.UpdateObject(e);
 
-            Label.text = e["text1"];
-
+            if (Label.text != e["text1"]) Label.text = e["text1"];
+            
             LabelRect.sizeDelta = new Vector2(18f * e["valA"], 2.5f * e["valB"]);
 
             if ((TextboxAnchor)e["type"] == TextboxAnchor.Custom)

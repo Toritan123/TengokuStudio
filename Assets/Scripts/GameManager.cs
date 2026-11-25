@@ -65,7 +65,8 @@ namespace HeavenStudio
 
         public int MarkerCategory { get; private set; }
 
-        public float animMult { get; private set; }
+        public float animMult { get; private set; } = 1f;
+        public int detuneCents { get; private set; } = 0;
 
         public bool playMode { get; private set; }
         public bool Autoplay => userAutoplay || scheduledAutoplay;
@@ -103,6 +104,7 @@ namespace HeavenStudio
             return Beatmap.Entities.Count + Beatmap.TempoChanges.Count + Beatmap.VolumeChanges.Count + Beatmap.SectionMarkers.Count;
         }
 
+        public List<Animator> _disabledAnimators;
         public static GameManager instance { get; private set; }
         private EventCaller eventCaller;
         [NonSerialized] public Conductor conductor;
@@ -896,6 +898,11 @@ namespace HeavenStudio
             animMult = mult;
         }
 
+        public void SetPitchDetune(int cents)
+        {
+            detuneCents = cents;
+        }
+
         #region Play Events
 
         private double _playStartBeat = 0;
@@ -1007,6 +1014,7 @@ namespace HeavenStudio
             else
             {
                 onUnPause?.Invoke(beat);
+                PauseAnimators(true);
             }
 
             if (playMode)
@@ -1020,9 +1028,36 @@ namespace HeavenStudio
         public void Pause()
         {
             conductor.Pause();
-            Util.SoundByte.PauseOneShots();
+            PauseAnimators();
             onPause?.Invoke(conductor.songPositionInBeatsAsDouble);
             canInput = false;
+        }
+
+        public void PauseAnimators(bool unpause = false)
+        {
+            foreach (Animator animator in minigameObj.GetComponentsInChildren<Animator>())
+            {
+                if (unpause)
+                {
+                    if (!_disabledAnimators.Contains(animator))
+                    {
+                        animator.enabled = true;
+                    }
+                }
+                else
+                {
+                    if (animator.enabled == false)
+                    {
+                        _disabledAnimators.Add(animator);
+                    }
+                    else 
+                    {
+                        animator.enabled = false;
+                    }
+                }
+            }
+
+            if (unpause) _disabledAnimators.Clear();
         }
 
         public void Stop(double beat, bool restart = false, float restartDelay = 0f)
@@ -1297,7 +1332,7 @@ namespace HeavenStudio
                     }
                 }
 
-                if (!GetGameInfo(newGame).fxOnly)
+                if (GetGameInfo(newGame) != null && !GetGameInfo(newGame).fxOnly)
                 {
                     if (canPreload)
                     {
@@ -1318,7 +1353,9 @@ namespace HeavenStudio
             }
             else
             {
+                NoGame.currentError = NoGame.Error.None;
                 SetGame("noGame");
+                
                 endBeat = conductor.SongLengthInBeatsAsDouble();
             }
 
@@ -1373,15 +1410,11 @@ namespace HeavenStudio
             var allEvents = Beatmap.Entities.FindAll(e => e.datamodel.Split('/')[0] is "advanced");
             var eventsBefore = allEvents.FindAll(e => e.beat < beat);
 
-            var lastPersistEvent = eventsBefore.FindLast(e => e.datamodel == "advanced/anim speed");
-            if (lastPersistEvent != null)
-            {
-                animMult = lastPersistEvent["mult"];
-            }
-            else
-            {
-                animMult = 1f;
-            }
+            var _lastAnimSpeedEvent = eventsBefore.FindLast(e => e.datamodel == "advanced/anim speed");
+            animMult = _lastAnimSpeedEvent != null ? _lastAnimSpeedEvent["mult"] : 1f;
+
+            var _lastDetuneEvent = eventsBefore.FindLast(e => e.datamodel == "advanced/detune");
+            detuneCents = _lastDetuneEvent != null ? (int)_lastDetuneEvent["cents"] : 0;
 
             preload.AddRange(SeekAheadAndPreload(beat));
             return preload;
@@ -1505,6 +1538,7 @@ namespace HeavenStudio
         public void DestroyGame()
         {
             SoundByte.UnloadAudioClips();
+            NoGame.currentError = NoGame.Error.None;
             SetGame("noGame");
         }
 
@@ -1517,6 +1551,7 @@ namespace HeavenStudio
         {
             if (name is null or "" or "noGame")
             {
+                NoGame.currentError = NoGame.Error.None;
                 return Resources.Load<GameObject>($"Games/noGame");
             }
 
@@ -1531,6 +1566,8 @@ namespace HeavenStudio
                     }
                     else
                     {
+                        NoGame.currentError = NoGame.Error.GameNotInBuild;
+                        NoGame.gameName = gameInfo.name.DisplayName();
                         return Resources.Load<GameObject>($"Games/noGame");
                     }
                 }
@@ -1548,7 +1585,11 @@ namespace HeavenStudio
                             break;
                         }
                     }
-                    if (gameInfo == null) return Resources.Load<GameObject>($"Games/noGame");
+                    if (gameInfo == null) 
+                    {
+                        NoGame.currentError = NoGame.Error.Unknown;
+                        return Resources.Load<GameObject>($"Games/noGame");
+                    }
                 }
 
                 GameObject prefab;
@@ -1566,6 +1607,8 @@ namespace HeavenStudio
                     else
                     {
                         Debug.LogWarning($"Game {name} not found, using noGame");
+                        NoGame.currentError = NoGame.Error.FailedToLoadGame;
+                        NoGame.gameName = gameInfo.displayName;
                         return Resources.Load<GameObject>($"Games/noGame");
                     }
                 }
@@ -1578,12 +1621,16 @@ namespace HeavenStudio
                 else
                 {
                     Debug.LogWarning($"Game {name} not found, using noGame");
+                    NoGame.currentError = NoGame.Error.FailedToLoadGame;
+                    NoGame.gameName = gameInfo.displayName;
                     return Resources.Load<GameObject>($"Games/noGame");
                 }
             }
             else
             {
-                Debug.LogWarning($"Game {name} not found, using noGame");
+                Debug.LogWarning($"Game {name} not present in build, using noGame");
+                NoGame.currentError = NoGame.Error.GameNotInBuild;
+                NoGame.gameName = name.DisplayName();
                 return Resources.Load<GameObject>($"Games/noGame");
             }
         }

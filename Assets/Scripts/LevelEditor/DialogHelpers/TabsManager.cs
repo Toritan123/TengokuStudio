@@ -6,26 +6,48 @@ using HeavenStudio.Editor.Track;
 using HeavenStudio.Common;
 
 using TMPro;
+using HeavenStudio.Common;
 
 namespace HeavenStudio.Editor 
 {
     public class TabsManager : MonoBehaviour
     {
         [SerializeField] GameObject activeContent;
+        [SerializeField] GameObject activeButton;
         [SerializeField] public Transform contentHolder;
         [SerializeField] public Transform buttonsHolder;
         [SerializeField] private GameObject buttonPrefab;
 
-        public void SetActiveContent(GameObject content)
+        public void SetActiveContent(GameObject content, GameObject button)
         {
             if (activeContent != null)
             {
                 activeContent.GetComponent<TabsContent>().OnCloseTab();
                 activeContent.SetActive(false);
             }
+            if (activeButton != button)
+            {
+                if (activeButton != null)
+                {
+                    activeButton.GetComponent<TabButton>().Lower();
+                }
+                button.GetComponent<TabButton>().Raise();
+            }
             activeContent = content;
+            activeButton = button;
             activeContent.SetActive(true);
-            activeContent.GetComponent<TabsContent>().OnOpenTab();
+            
+            var tabsContent = activeContent.GetComponent<TabsContent>();
+            if (tabsContent != null) tabsContent.OnOpenTab();
+            
+            if (SettingsDialog.instance != null)
+            {
+                if (tabsContent != null)
+                {
+                    SettingsDialog.instance.ToggleDescriptions(tabsContent.hasDescriptions);
+                }
+                else SettingsDialog.instance.ToggleDescriptions(false);
+            }
         }
 
         public void OpenContent()
@@ -60,7 +82,7 @@ namespace HeavenStudio.Editor
                 if(!madeFirst)
                 {
                     madeFirst = true;
-                    SetActiveContent(tabContent);
+                    SetActiveContent(tabContent, button);
                 }
                 else
                 {

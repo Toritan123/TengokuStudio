@@ -199,7 +199,7 @@ namespace HeavenStudio.Editor
                 confirmErase = true;
                 return;
             }
-            PersistentDataManager.CreateDefaultSettings();
+            PersistentDataManager.LoadSettings(true);
             OnOpenTab();
             resetSettingsText.text = Localization.T("Reset!");
         }
@@ -231,8 +231,8 @@ namespace HeavenStudio.Editor
 
             dspSizeDropdown.ClearOptions();
             sampleRateDropdown.ClearOptions();
-            dspSizeDropdown.AddOptions(GlobalGameManager.DSP_BUFFER_SIZES.Select(x => x.ToString()).ToList());
-            sampleRateDropdown.AddOptions(GlobalGameManager.SAMPLE_RATES.Select(x => x.ToString()).ToList());
+            dspSizeDropdown.AddOptions(GlobalGameManager.DSP_BUFFER_SIZES.Select(x => x.ToString() + " ms").ToList());
+            sampleRateDropdown.AddOptions(GlobalGameManager.SAMPLE_RATES.Select(x => x.ToString() + " Hz").ToList());
             dspSizeDropdown.value = GlobalGameManager.DSP_BUFFER_SIZES.ToList().IndexOf(GlobalGameManager.currentDspSize);
             sampleRateDropdown.value = GlobalGameManager.SAMPLE_RATES.ToList().IndexOf(GlobalGameManager.currentSampleRate);
 

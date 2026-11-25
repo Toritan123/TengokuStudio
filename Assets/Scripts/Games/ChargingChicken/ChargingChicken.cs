@@ -263,7 +263,7 @@ namespace HeavenStudio.Games.Loaders
                     defaultLength = 0.5f,
                 },
                 },
-                new List<string>() { "ctr", "aim" },
+                new List<string>() { "ctr", "aim", "endless" },
                 "ctrchicken", "en",
                 new List<string>() { "en" },
                 chronologicalSortKey : 7,

@@ -107,14 +107,14 @@ namespace HeavenStudio.InputSystem
         //buttons used in Heaven Studio gameplay ("Form Baton" / WiiMote Style)
         public enum ActionsBaton : int
         {
-            North = 0,      //-- all these...
-            South = 1,      // |
-            West = 2,       // |
-            East = 3,       //--
-            Trigger = 4,    // < ...are also equivalent to this, but with added directionality
-            Face = 5,
-            Down = 6,     // Wiimote 1
-            Up = 7,   // Wiimote 2
+            Up = 0,        // All DPad inputs will also map to Trigger in-game
+            Down = 1,
+            Left = 2,
+            Right = 3,
+            Face = 4,      // Wiimote A
+            Trigger = 5,   // Wiimote B
+            North = 6,     // Wiimote 1
+            South = 7,     // Wiimote 2
             Pause = 8,
         }
 
@@ -334,5 +334,6 @@ namespace HeavenStudio.InputSystem
 
         public abstract bool GetCurrentStyleSupported();
         public abstract ControlStyles GetDefaultStyle();
+        public abstract void Rumble(float seconds = 0.1f);
     }
 }

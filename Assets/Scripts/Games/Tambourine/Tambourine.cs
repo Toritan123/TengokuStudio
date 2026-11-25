@@ -12,6 +12,21 @@ namespace HeavenStudio.Games.Loaders
     {
         public static Minigame AddGame(EventCaller eventCaller)
         {
+            RiqEntity IntervalAutoSuccessUpdater(string datamodel, RiqEntity entity)
+            {
+                if (datamodel == "tambourine/beat intervals")
+                {
+                    if (entity.version >= 1) return entity;
+
+                    entity.CreateProperty("autoSuccess", false);
+                    entity.version = 1;
+
+                    return entity;
+                }
+                return null;
+            }
+            RiqBeatmap.OnUpdateEntity += IntervalAutoSuccessUpdater;
+
             return new Minigame("tambourine", "Tambourine", "388cd0", false, false, new List<GameAction>()
             {
                 new GameAction("bop", "Bop")
@@ -27,13 +42,15 @@ namespace HeavenStudio.Games.Loaders
                 },
                 new GameAction("beat intervals", "Start Interval")
                 {
-                    preFunction = delegate {var e = eventCaller.currentEntity; Tambourine.PreInterval(e.beat, e.length, e["auto"]); },
+                    preFunction = delegate {var e = eventCaller.currentEntity; Tambourine.PreInterval(e.beat, e.length, e["auto"], e["autoSuccess"]); },
                     defaultLength = 7f,
                     resizable = true,
                     parameters = new List<Param>()
                     {
-                        new Param("auto", true, "Auto Pass Turn", "Toggle if the turn should be passed automatically at the end of the start interval.")
-                    }
+                        new Param("auto", true, "Auto Pass Turn", "Toggle if the turn should be passed automatically at the end of the start interval."),
+                        new Param("autoSuccess", true, "Auto Success Reaction", "Toggle if the monkey should automatically react to a successful interval.")
+                    },
+                    defaultVersion = 1
                 },
                 new GameAction("shake", "Shake")
                 {
@@ -213,11 +230,11 @@ namespace HeavenStudio.Games
             return EventCaller.GetAllInGameManagerList("tambourine", new string[] { "shake", "hit" }).FindAll(x => x.beat >= beat && x.beat < endBeat);
         }
 
-        public static void PreInterval(double beat, float interval, bool autoPassTurn)
+        public static void PreInterval(double beat, float interval, bool autoPassTurn, bool autoSuccess)
         {
             if (GameManager.instance.currentGame == "tambourine")
             {
-                instance.StartInterval(beat, interval, beat, autoPassTurn);
+                instance.StartInterval(beat, interval, beat, autoPassTurn, autoSuccess);
             }
             else
             {
@@ -225,7 +242,8 @@ namespace HeavenStudio.Games
                 {
                     beat = beat,
                     interval = interval,
-                    autoPassTurn = autoPassTurn
+                    autoPassTurn = autoPassTurn,
+                    autoSuccess = autoSuccess
                 });
             }
         }
@@ -236,7 +254,7 @@ namespace HeavenStudio.Games
             {
                 foreach (var interval in queuedIntervals)
                 {
-                    StartInterval(interval.beat, interval.interval, beat, interval.autoPassTurn);
+                    StartInterval(interval.beat, interval.interval, beat, interval.autoPassTurn, interval.autoSuccess);
                 }
                 queuedIntervals.Clear();
             }
@@ -248,11 +266,12 @@ namespace HeavenStudio.Games
             public double beat;
             public float interval;
             public bool autoPassTurn;
+            public bool autoSuccess;
         }
 
         private static List<QueuedInterval> queuedIntervals = new();
 
-        private void StartInterval(double beat, float interval, double gameSwitchBeat, bool autoPassTurn)
+        private void StartInterval(double beat, float interval, double gameSwitchBeat, bool autoPassTurn, bool autoSuccess)
         {
             List<BeatAction.Action> actions = new()
             {
@@ -288,6 +307,14 @@ namespace HeavenStudio.Games
             if (autoPassTurn)
             {
                 PassTurn(beat + interval, beat, interval, 1);
+                if (autoSuccess)
+                {
+                    double successBeat = beat + interval + 1 + interval;
+                    BeatAction.New(instance, new List<BeatAction.Action>()
+                    {
+                        new BeatAction.Action(successBeat, delegate { SuccessFace(successBeat); }),
+                    });
+                }
             }
         }
 

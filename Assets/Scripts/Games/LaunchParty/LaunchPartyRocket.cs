@@ -45,13 +45,14 @@ namespace HeavenStudio.Games.Scripts_LaunchParty
         {
             game.ScheduleInput(beat, 3f, LaunchParty.InputAction_BasicPress, JustFamilyRocket, Miss, Nothing);
 
+            SoundByte.PlayOneShotGame("launchParty/rocket_prepare", beat);
+
             MultiSound.Play(new MultiSound.Sound[]
             {
-                new MultiSound.Sound("launchParty/rocket_prepare", beat),
                 new MultiSound.Sound("launchParty/rocket_note", beat, pitches[0]),
                 new MultiSound.Sound("launchParty/rocket_note", beat + 1, pitches[1]),
                 new MultiSound.Sound("launchParty/rocket_note", beat + 2, pitches[2]),
-            }, forcePlay: true);
+            }, forcePlay: true, cutOffTime: 0);
 
             BeatAction.New(this, new List<BeatAction.Action>()
             {
@@ -69,15 +70,16 @@ namespace HeavenStudio.Games.Scripts_LaunchParty
         {
             game.ScheduleInput(beat, 2f, LaunchParty.InputAction_BasicPress, JustPartyCracker, Miss, Nothing);
 
+            SoundByte.PlayOneShotGame("launchParty/rocket_prepare", beat);
+
             MultiSound.Play(new MultiSound.Sound[]
             {
-                new MultiSound.Sound("launchParty/rocket_prepare", beat),
                 new MultiSound.Sound("launchParty/popper_note", beat, pitches[0]),
                 new MultiSound.Sound("launchParty/popper_note", beat + 0.66f, pitches[1], ignoreSwing: true),
                 new MultiSound.Sound("launchParty/popper_note", beat + 1, pitches[2], ignoreSwing: true),
                 new MultiSound.Sound("launchParty/popper_note", beat + 1.33f, pitches[3], ignoreSwing: true),
                 new MultiSound.Sound("launchParty/popper_note", beat + 1.66f, pitches[4], ignoreSwing: true),
-            }, forcePlay: true);
+            }, forcePlay: true, cutOffTime: 0);
 
             BeatAction.New(this, new List<BeatAction.Action>()
             {
@@ -97,9 +99,10 @@ namespace HeavenStudio.Games.Scripts_LaunchParty
         {
             game.ScheduleInput(beat, 2f, LaunchParty.InputAction_BasicPress, JustBell, Miss, Nothing);
 
+            SoundByte.PlayOneShotGame("launchParty/rocket_prepare", beat);
+
             MultiSound.Play(new MultiSound.Sound[]
             {
-                new MultiSound.Sound("launchParty/rocket_prepare", beat),
                 new MultiSound.Sound("launchParty/bell_note", beat, pitches[0]),
                 new MultiSound.Sound("launchParty/bell_short", beat + 1f, pitches[1], ignoreSwing: true),
                 new MultiSound.Sound("launchParty/bell_short", beat + 1.16f, pitches[2], ignoreSwing: true),
@@ -107,7 +110,7 @@ namespace HeavenStudio.Games.Scripts_LaunchParty
                 new MultiSound.Sound("launchParty/bell_short", beat + 1.5f, pitches[4], ignoreSwing: true),
                 new MultiSound.Sound("launchParty/bell_short", beat + 1.66f, pitches[5], ignoreSwing: true),
                 new MultiSound.Sound("launchParty/bell_short", beat + 1.83f, pitches[6], ignoreSwing: true),
-            }, forcePlay: true);
+            }, forcePlay: true, cutOffTime: 0);
 
             BeatAction.New(this, new List<BeatAction.Action>()
             {
@@ -133,6 +136,10 @@ namespace HeavenStudio.Games.Scripts_LaunchParty
             {
                 new MultiSound.Sound("launchParty/rocket_pin_prepare", beat),
                 new MultiSound.Sound("launchParty/pin", beat, pitches[0]),
+            }, forcePlay: true);
+
+            MultiSound.Play(new MultiSound.Sound[]
+            {
                 new MultiSound.Sound("launchParty/flute", beat, pitches[1], 0.02f, ignoreSwing: true),
                 new MultiSound.Sound("launchParty/flute", beat + 0.16f, pitches[2], 0.02f, ignoreSwing: true),
                 new MultiSound.Sound("launchParty/flute", beat + 0.33f, pitches[3], 0.06f, ignoreSwing: true),
@@ -145,7 +152,7 @@ namespace HeavenStudio.Games.Scripts_LaunchParty
                 new MultiSound.Sound("launchParty/flute", beat + 1.5f, pitches[10], 0.75f, ignoreSwing: true),
                 new MultiSound.Sound("launchParty/flute", beat + 1.66f, pitches[11], 0.89f, ignoreSwing: true),
                 new MultiSound.Sound("launchParty/flute", beat + 1.83f, pitches[12], ignoreSwing: true),
-            }, forcePlay: true);
+            }, forcePlay: true, cutOffTime: 0.1f);
 
             BeatAction.New(this, new List<BeatAction.Action>()
             {

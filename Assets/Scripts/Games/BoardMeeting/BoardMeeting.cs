@@ -64,6 +64,48 @@ namespace HeavenStudio.Games.Loaders
                     {
                         new Param("amount", new EntityTypes.Integer(3, 5, 4), "Pigs", "Set how many pigs there will be. The player is always the rightmost pig.")
                     }
+                },
+                new GameAction("bgAppear", "Background Appearance")
+                {
+                    function = delegate {var e = eventCaller.currentEntity; BoardMeeting.instance.BGColor
+                    (e.beat, e.length, e["startCarp"], e["endCarp"], e["startWoodB"], e["endWoodB"], e["startWoodI"], e["endWoodI"], e["startWood"], e["endWood"], e["startWoodT"], e["endWoodT"], 
+                    e["startWall"], e["endWall"], e["startWallB"], e["endWallB"], e["ease"]); },
+                    defaultLength = 4f,
+                    resizable = true,
+                    parameters = new List<Param>()
+                    {
+                        new Param("startCarp",  BoardMeeting.carpetColor, "Start Color (Carpet)",   "Set the color at the start of the event."),
+                        new Param("endCarp",    BoardMeeting.carpetColor, "End Color (Carpet)",     "Set the color at the end of the event."),
+
+                        new Param("startWoodB",  BoardMeeting.woodBColor, "Start Color (Wood)",   "Set the color at the start of the event."),
+                        new Param("endWoodB",    BoardMeeting.woodBColor, "End Color (Wood)",     "Set the color at the end of the event."),
+                        new Param("startWoodI",  BoardMeeting.woodIColor, "Start Color (Wood)",   "Set the color at the start of the event."),
+                        new Param("endWoodI",    BoardMeeting.woodIColor, "End Color (Wood)",     "Set the color at the end of the event."),
+                        new Param("startWood",  BoardMeeting.woodColor, "Start Color (Wood)",   "Set the color at the start of the event."),
+                        new Param("endWood",    BoardMeeting.woodColor, "End Color (Wood)",     "Set the color at the end of the event."),
+                        new Param("startWoodT",  BoardMeeting.woodTColor, "Start Color (Wood)",   "Set the color at the start of the event."),
+                        new Param("endWoodT",    BoardMeeting.woodTColor, "End Color (Wood)",     "Set the color at the end of the event."),
+
+                        new Param("startWall",  BoardMeeting.wallColor, "Start Color (Wall)",   "Set the color at the start of the event."),
+                        new Param("endWall",    BoardMeeting.wallColor, "End Color (Wall)",     "Set the color at the end of the event."),
+                        new Param("startWallB",  BoardMeeting.wallBColor, "Start Color (Wall)",   "Set the color at the start of the event."),
+                        new Param("endWallB",    BoardMeeting.wallBColor, "End Color (Wall)",     "Set the color at the end of the event."),
+
+                        new Param("ease",           Util.EasingFunction.Ease.Linear,    "Ease", "Set the easing of the action.", new List<Param.CollapseParam>()
+                        {
+                            new Param.CollapseParam((x, _) => (int)x != (int)Util.EasingFunction.Ease.Instant, new string[] { "startCarp", "startWoodB", "startWoodI", "startWood", "startWoodT", "startWall", "startWallB", }),
+                        }),
+                    }
+                },
+                new GameAction("chairColor", "Chair Appearance")
+                {
+                    function = delegate {var e = eventCaller.currentEntity; BoardMeeting.instance.ChairColor(e["chair"], e["legs"]); },
+                    parameters = new List<Param>()
+                    {
+                        new Param("chair", BoardMeeting.chairColor, "Chair Color", "Set the color of the executives' chairs."),
+                        new Param("legs", BoardMeeting.legsColor, "Legs Color", "Set the color of the legs of the executives' chairs."),
+                    },
+                    defaultLength = 0.5f,
                 }
             },
             new List<string>() { "rvl", "normal" },
@@ -99,6 +141,34 @@ namespace HeavenStudio.Games
         int missCounter = 0;
         private Tween shakeTween;
 
+        public Material Chair;
+
+        [Header("BG")]
+        public Material Carpet;
+        public Material Wood;
+        public Material WoodGrain;
+        public Material Wall;
+
+        public static Color carpetColor = "FF0000".Hex2RGB();
+        private ColorEase carpetEase = new(carpetColor);
+
+        public static Color woodBColor = "7B4200".Hex2RGB(); //border
+        private ColorEase woodBEase = new(woodBColor);
+        public static Color woodIColor = "A55A00".Hex2RGB(); //in-border
+        private ColorEase woodIEase = new(woodIColor);
+        public static Color woodColor = "C66B00".Hex2RGB();
+        private ColorEase woodEase = new(woodColor);
+        public static Color woodTColor = "C66300".Hex2RGB(); //texture
+        private ColorEase woodTEase = new(woodTColor);
+
+        public static Color wallColor = "E7DEDE".Hex2RGB();
+        private ColorEase wallEase = new(wallColor);
+        public static Color wallBColor = "C6C6C6".Hex2RGB(); //border
+        private ColorEase wallBEase = new(wallBColor);
+
+        public static Color chairColor = "3942FF".Hex2RGB();
+        public static Color legsColor = "8C8C8C".Hex2RGB();
+
         public static BoardMeeting instance;
 
         private void Awake()
@@ -126,13 +196,14 @@ namespace HeavenStudio.Games
 
         private void Update()
         {
+            UpdateBGColor();
             var cond = Conductor.instance;
             voiceCues ??= new VoiceLeadCues("boardMeeting", e => { SoundByte.PlayOneShotGame("boardMeeting/one", e.beat); return true; }, "assStop");
             voiceCues.Update();
 
             if (cond.isPlaying && !cond.isPaused)
             {
-                if (PlayerInput.GetIsAction(InputAction_BasicPressing) && !IsExpectingInputNow(InputAction_BasicPress))
+                if (PlayerInput.GetIsAction(InputAction_BasicPress) && !IsExpectingInputNow(InputAction_BasicPress))
                 {
                     if (executives[executiveCount - 1].spinning)
                     {
@@ -149,6 +220,17 @@ namespace HeavenStudio.Games
         {
             if (!BeatIsInBopRegion(beat)) return;
             SingleBop();
+        }
+
+        public override void OnPlay(double beat)
+        {
+            UpdateBGColor();
+            PersistBGColor(beat);
+        }
+
+        public override void OnGameSwitch(double beat)
+        {
+            OnPlay(beat);
         }
 
         void SingleBop()
@@ -492,6 +574,71 @@ namespace HeavenStudio.Games
         }
 
         void Empty(PlayerActionEvent caller) { }
+
+        public void BGColor(double beat, float length, Color sCarp, Color eCarp, Color sWoodB, Color eWoodB, Color sWoodI, Color eWoodI, Color sWood, Color eWood, Color sWoodT, Color eWoodT,
+                            Color sWall, Color eWall, Color sWallB, Color eWallB, int ease)
+        {
+            carpetEase = new ColorEase(beat, length, sCarp, eCarp, ease);
+            woodBEase = new ColorEase(beat, length, sWoodB, eWoodB, ease);
+            woodIEase = new ColorEase(beat, length, sWoodI, eWoodI, ease);
+            woodEase = new ColorEase(beat, length, sWood, eWood, ease);
+            woodTEase = new ColorEase(beat, length, sWoodT, eWoodT, ease);
+            wallEase = new ColorEase(beat, length, sWall, eWall, ease);
+            wallBEase = new ColorEase(beat, length, sWallB, eWallB, ease);
+        }
+
+        private void UpdateBGColor()
+        {
+            Carpet.SetColor("_Color", carpetEase.GetColor());
+            Wood.SetColor("_ColorAlpha", woodBEase.GetColor());
+            Wood.SetColor("_ColorBravo", woodIEase.GetColor());
+            //two below share exact same space
+            Wood.SetColor("_ColorDelta", woodEase.GetColor());
+            WoodGrain.SetColor("_ColorDelta", woodEase.GetColor());
+            //
+            WoodGrain.SetColor("_ColorBravo", woodTEase.GetColor());
+            Wall.SetColor("_ColorAlpha", wallEase.GetColor());
+            Wall.SetColor("_ColorBravo", wallBEase.GetColor());
+        }
+
+        private void PersistBGColor(double beat)
+        {
+            var allEventsBeforeBeat = EventCaller.GetAllInGameManagerList("boardMeeting", new string[] { "bgAppear" }).FindAll(x => x.beat < beat);
+            if (allEventsBeforeBeat.Count > 0)
+            {
+                allEventsBeforeBeat.Sort((x, y) => x.beat.CompareTo(y.beat)); //just in case
+                var lastEvent = allEventsBeforeBeat[^1];
+                BGColor(lastEvent.beat, lastEvent.length, 
+                lastEvent["startCarp"], lastEvent["endCarp"], 
+                lastEvent["startWoodB"], lastEvent["endWoodB"], 
+                lastEvent["startWoodI"], lastEvent["endWoodI"], 
+                lastEvent["startWood"], lastEvent["endWood"], 
+                lastEvent["startWoodT"], lastEvent["endWoodT"], 
+                lastEvent["startWall"], lastEvent["endWall"], 
+                lastEvent["startWallB"], lastEvent["endWallB"], 
+                lastEvent["ease"]);
+            }
+
+            allEventsBeforeBeat = EventCaller.GetAllInGameManagerList("boardMeeting", new string[] { "chairColor" }).FindAll(x => x.beat < beat);
+            if (allEventsBeforeBeat.Count > 0)
+            {
+                allEventsBeforeBeat.Sort((x, y) => x.beat.CompareTo(y.beat)); //just in case
+                var lastEvent = allEventsBeforeBeat[^1];
+                ChairColor(lastEvent["chair"], lastEvent["legs"]);
+            }
+            else
+            {
+                ChairColor(chairColor, legsColor);
+            }
+
+            UpdateBGColor();
+        }
+
+        public void ChairColor(Color chairC, Color legsC)
+        {
+            Chair.SetColor("_ColorDelta", chairC);
+            Chair.SetColor("_ColorAlpha", legsC);            
+        }
     }
 }
 

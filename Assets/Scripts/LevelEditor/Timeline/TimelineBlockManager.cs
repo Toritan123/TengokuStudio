@@ -7,6 +7,7 @@ using Jukebox;
 using HeavenStudio.Util;
 using System.Linq;
 using BurstLinq;
+using HeavenStudio.Common;
 
 namespace HeavenStudio.Editor.Track
 {
@@ -121,19 +122,23 @@ namespace HeavenStudio.Editor.Track
 
                 var containsMarker = EntityMarkers.ContainsKey(entity.guid);
 
+                bool isLongEvent =
+                    entity.datamodel.StartsWith("gameManager/switchGame") ||
+                    entity.datamodel == "gameManager/end" ||
+                    entity.datamodel == "gameManager/startSong";
+
                 if (containsMarker)
                 {
                     var marker = EntityMarkers[entity.guid];
                     if (marker.selected || marker.moving) active = true;
                 }
 
-                string[] split = entity.datamodel.Split('/');
                 if (active)
                 {
                     if (!containsMarker)
                     {
                         entityToSet = entity;
-                        if (split[0] == "gameManager" && (split[1] == "switchGame" || split[1] == "end" || split[1] == "startSong"))
+                        if (isLongEvent)
                         {
                             LongEventsPool.Get();
                         }
@@ -148,7 +153,7 @@ namespace HeavenStudio.Editor.Track
                 {
                     if (containsMarker)
                     {
-                        if (split[0] == "gameManager" && (split[1] == "switchGame" || split[1] == "end" || split[1] == "startSong"))
+                        if (isLongEvent)
                         {
                             LongEventsPool.Release(EntityMarkers[entity.guid] as TimelineGameSwitch);
                         }
@@ -252,15 +257,18 @@ namespace HeavenStudio.Editor.Track
                 if (split[1] == "switchGame")
                 {
                     deleteFX.Create(entity.beat, StringUtils.Hex2RGB(EventCaller.instance.GetMinigame(split[2]).color));
+                    return;
                 }
                 else if (split[1] == "end" || split[1] == "startSong")
                 {
                     deleteFX.Create(entity.beat, Color.white);
+                    return;
                 }
-                else
-                {
-                    deleteFX.Create(entity.beat, entity.length, (int)entity["track"], selected);
-                }
+            }
+            
+            if (PersistentDataManager.gameSettings.editorMinigameColorEvents)
+            {
+                deleteFX.Create(entity.beat, entity.length, (int)entity["track"], selected, StringUtils.Hex2RGB(EventCaller.instance.GetMinigame(split[0]).color));
             }
             else
             {

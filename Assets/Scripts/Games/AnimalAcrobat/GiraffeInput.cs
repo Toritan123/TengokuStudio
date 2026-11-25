@@ -148,14 +148,14 @@ namespace HeavenStudio.Games.Scripts_AnimalAcrobat
 
             List<MultiSound.Sound> sounds = new List<MultiSound.Sound>();
 
-            if (eek1 >= currentSongTime) 
+            if (eek1 >= currentSongTime && _game.nextGameSwitchBeat > eek1)
                 sounds.Add(new MultiSound.Sound("animalAcrobat/eek", eek1));
-            else if (eek1 >= currentSongTime - 1.0) 
+            else if (eek1 >= currentSongTime - 1.0 && _game.nextGameSwitchBeat > eek1)
                 SoundByte.PlayOneShotGame("animalAcrobat/eek", forcePlay: true);
 
-            if (eek2 >= currentSongTime)
+            if (eek2 >= currentSongTime && _game.nextGameSwitchBeat > eek2)
                 sounds.Add(new MultiSound.Sound("animalAcrobat/eek", eek2));
-            else if (eek2 >= currentSongTime - 1.0)
+            else if (eek2 >= currentSongTime - 1.0 && _game.nextGameSwitchBeat > eek2)
                 SoundByte.PlayOneShotGame("animalAcrobat/eek", forcePlay: true);
 
             if (sounds.Count > 0) MultiSound.Play(sounds.ToArray());

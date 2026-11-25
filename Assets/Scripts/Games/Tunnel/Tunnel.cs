@@ -52,7 +52,7 @@ namespace HeavenStudio.Games.Loaders
                     }
                 }
             },
-            new List<string>() { "ntr", "keep" },
+            new List<string>() { "ntr", "keep", "endless" },
             "ntrtunnel", "en",
             new List<string>() { "en", "jp" },
             chronologicalSortKey: 103,

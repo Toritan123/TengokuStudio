@@ -165,19 +165,31 @@ namespace HeavenStudio.Games
         {
             return PlayerInput.GetPadDown(InputController.ActionsPad.East, out dt);
         }
+
+        protected static bool IA_PadAnyPress(out double dt)
+        {
+            return PlayerInput.GetPadDown(InputController.ActionsPad.Up, out dt)
+                    || PlayerInput.GetPadDown(InputController.ActionsPad.Down, out dt)
+                    || PlayerInput.GetPadDown(InputController.ActionsPad.Left, out dt)
+                    || PlayerInput.GetPadDown(InputController.ActionsPad.Right, out dt)
+                    || PlayerInput.GetPadDown(InputController.ActionsPad.East, out dt);
+        }
+        
         protected static bool IA_TouchPress(out double dt)
         {
             return PlayerInput.GetSlide(out dt);
         }
 
         public static PlayerInput.InputAction InputAction_Nrm =
-            new ("NtrGuiroEast", new int[] { IAPressCat, IAPressCat, IAPressCat
-    },
+            new ("NtrGuiroEast", new int[] { IAPressCat, IAPressCat, IAPressCat },
             IA_PadEastPress, IA_TouchPress, IA_BatonBasicPress);
         public static PlayerInput.InputAction InputAction_Pad =
-            new ("NtrGuiroPad", new int[] { IAPressCat, IAPressCat, IAPressCat
-},
+            new ("NtrGuiroPad", new int[] { IAPressCat, IAPressCat, IAPressCat },
             IA_PadDPadPress, IA_TouchPress, IA_BatonBasicPress);
+
+        public static PlayerInput.InputAction InputAction_Any =
+            new ("NtrGuiroPad", new int[] { IAPressCat, IAPressCat, IAPressCat },
+            IA_PadAnyPress, IA_TouchPress, IA_BatonBasicPress);
 
 void Awake()
 {
@@ -203,7 +215,8 @@ public void Update()
 {
     BackgroundColorUpdate();
 
-    if (PlayerInput.GetIsAction(InputAction_Nrm) && !IsExpectingInputNow(InputAction_Nrm) && !dPad && femaleToggle && PlayerInput.CurrentControlStyle != InputController.ControlStyles.Touch)
+    // pad
+    if (PlayerInput.GetIsAction(InputAction_Any) && !IsExpectingInputNow(InputAction_Any) && !dPad && femaleToggle && PlayerInput.CurrentControlStyle != InputController.ControlStyles.Touch)
     {
         FemaleLizard.DoScaledAnimationAsync("FemaleLizardSlideUp", 0.5f, animLayer: 1);
         FemaleLizard.DoScaledAnimationAsync("FemaleLizardMouthUp", 0.5f, animLayer: 3);
@@ -213,7 +226,7 @@ public void Update()
         SetInputs(true);
         hasMissed = true;
     }
-    if (PlayerInput.GetIsAction(InputAction_Pad) && !IsExpectingInputNow(InputAction_Pad) && dPad && femaleToggle && PlayerInput.CurrentControlStyle != InputController.ControlStyles.Touch)
+    else if (PlayerInput.GetIsAction(InputAction_Any) && !IsExpectingInputNow(InputAction_Any) && dPad && femaleToggle && PlayerInput.CurrentControlStyle != InputController.ControlStyles.Touch)
     {
         FemaleLizard.DoScaledAnimationAsync("FemaleLizardSlideDown", 0.5f, animLayer: 1);
         FemaleLizard.DoScaledAnimationAsync("FemaleLizardMouthDown", 0.5f, animLayer: 3);
@@ -223,7 +236,9 @@ public void Update()
         SetInputs(false);
         hasMissed = true;
     }
-    if (PlayerInput.GetIsAction(InputAction_Nrm) && !IsExpectingInputNow(InputAction_Nrm) && !IsExpectingInputNow(InputAction_Pad) && femaleToggle && PlayerInput.CurrentControlStyle == InputController.ControlStyles.Touch)
+
+    // touch
+    if (PlayerInput.GetIsAction(InputAction_Any) && !IsExpectingInputNow(InputAction_Any) && femaleToggle && PlayerInput.CurrentControlStyle == InputController.ControlStyles.Touch)
     {
         FemaleLizard.DoScaledAnimationAsync(dPad ? "FemaleLizardSlideDown" : "FemaleLizardSlideUp", 0.5f, animLayer: 1);
         FemaleLizard.DoScaledAnimationAsync(dPad ? "FemaleLizardMouthDown" : "FemaleLizardMouthUp", 0.5f, animLayer: 3);
@@ -426,10 +441,10 @@ public void Dance(double beat, bool toggle, bool react)
 
     if (femaleToggle)
     {
-        var inputType = dPad ? InputAction_Pad : InputAction_Nrm;
+        var inputType = InputAction_Any;
         nrmEvents.Add(ScheduleInput(beat, 1, inputType, OnHit, OnMiss, null, ignoreSwing: toggle));
-        nrmEvents.Add(ScheduleInput(beat, toggle ? 1.33 : 1.25, inputType, OnHit, OnMiss, null, ignoreSwing: toggle));
-        nrmEvents.Add(ScheduleInput(beat, toggle ? 1.67 : 1.5, inputType, OnHit, OnMiss, null, ignoreSwing: toggle));
+        nrmEvents.Add(ScheduleInput(beat, toggle ? 1.3333 : 1.25, inputType, OnHit, OnMiss, null, ignoreSwing: toggle));
+        nrmEvents.Add(ScheduleInput(beat, toggle ? 1.6667 : 1.5, inputType, OnHit, OnMiss, null, ignoreSwing: toggle));
         nrmEvents.Add(ScheduleInput(beat, toggle ? 2 : 1.75, inputType, OnHit, OnMiss, null, ignoreSwing: toggle));
 
         actions.Add(new (beat + (toggle ? 3 : 2.5), () =>
@@ -453,7 +468,9 @@ public void ToggleFemale(bool toggle)
 
 private void SetInputs(bool setDPad)
 {
+    
     dPad = setDPad;
+    /* Currently going unused as the control style no longer requires alternating
     if (nrmEvents.Count == 0) return;
     if (setDPad)
     {
@@ -469,6 +486,7 @@ private void SetInputs(bool setDPad)
             input.SetInputAction(InputAction_Nrm);
         }
     }
+    */ 
 }
 
 public void MaleReact()

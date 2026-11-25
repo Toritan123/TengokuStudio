@@ -22,7 +22,7 @@ namespace HeavenStudio.Util
         public double fadeTime;
         bool loopDone;
 
-        private AudioSource audioSource;
+        public AudioSource audioSource;
         private Conductor cond;
 
         public bool ignoreConductorPause = false;
@@ -32,6 +32,7 @@ namespace HeavenStudio.Util
         public double beat;
         public double offset;
         public float scheduledPitch = 1f;
+        public int soundId = 0;
 
         bool playInstant = false;
         bool played = false;
@@ -72,6 +73,7 @@ namespace HeavenStudio.Util
                 return;
             }
 
+            soundId++;
             CancelFadeRoutine();
 
             audioSource = GetComponent<AudioSource>();
@@ -168,14 +170,12 @@ namespace HeavenStudio.Util
                                 if (queued)
                                 {
                                     audioSource.Pause();
-                                    audioSource.enabled = false;
                                 }
                             }
                             else
                             {
                                 if (scheduledPitch == 0)
                                 {
-                                    audioSource.enabled = true;
                                     audioSource.UnPause();
                                 }
                                 scheduledPitch = cond.SongPitch;
@@ -207,7 +207,6 @@ namespace HeavenStudio.Util
                     {
                         // Debug.Log($"Pausing {gameObject.name}");
                         audioSource.Pause();
-                        audioSource.enabled = false;
                         paused = true;
                     }
                 }
@@ -216,7 +215,6 @@ namespace HeavenStudio.Util
                     if (paused)
                     {
                         // Debug.Log($"Unpausing {gameObject.name}");
-                        audioSource.enabled = true;
                         audioSource.UnPause();
                         paused = false;
                     }
@@ -348,9 +346,10 @@ namespace HeavenStudio.Util
         ///    Leave fadeTime at 0 to stop the sound instantly.
         ///    You should use this for stopping sounds early, not <see cref="Stop"/>.
         /// </summary>
-        public void KillLoop(double fadeTime = 0)
+        public void KillLoop(double fadeTime = 0, bool force = false)
         {
             if (!gameObject.activeSelf) return;
+            if (!played && !force) return;
 
             CancelFadeRoutine();
 

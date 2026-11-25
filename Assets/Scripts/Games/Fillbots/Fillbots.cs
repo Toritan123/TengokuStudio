@@ -205,6 +205,7 @@ namespace HeavenStudio.Games
         [NonSerialized] public double conveyerStartBeat = -1;
 
         [NonSerialized] public float conveyerNormalizedOffset;
+        public bool isHolding = false;
 
         private ColorEase[] colorEases = new ColorEase[7];
         private int toggleGlobal = 0;
@@ -309,8 +310,9 @@ namespace HeavenStudio.Games
                     };
                     filler.DoScaledAnimationAsync("Hold" + sizeSuffix, 0.5f);
                     SoundByte.PlayOneShotGame("fillbots/armExtension");
+                    isHolding = true;
                 }
-                if (PlayerInput.GetIsAction(InputAction_BasicRelease) && !IsExpectingInputNow(InputAction_BasicRelease))
+                if (PlayerInput.GetIsAction(InputAction_BasicRelease) && !IsExpectingInputNow(InputAction_BasicRelease) && isHolding)
                 {
                     string sizeSuffix = fillerPosition switch
                     {
@@ -322,6 +324,7 @@ namespace HeavenStudio.Games
                     filler.DoScaledAnimationAsync("ReleaseWhiff" + sizeSuffix, 0.5f);
                     SoundByte.PlayOneShotGame("fillbots/armRetractionWhiff");
                     if (fillerHolding) SoundByte.PlayOneShotGame("fillbots/armRetractionPop");
+                    isHolding = false;
                 }
 
                 UpdateConveyerBelt(conveyerStartBeat, conveyerNormalizedOffset);
@@ -329,8 +332,28 @@ namespace HeavenStudio.Games
             }
         }
 
+        public static void PlayFillbotSfx(double beat, int size)
+        {
+            string sizePrefix = size switch
+            {
+                (int)BotSize.Small => "small",
+                (int)BotSize.Medium => "medium",
+                (int)BotSize.Large => "big",
+                _ => throw new System.NotImplementedException()
+            };
+
+            List<MultiSound.Sound> sounds = new();
+            for (int i = 0; i <= 2; i++)
+            {
+                sounds.Add(new("fillbots/" + sizePrefix + "Fall", beat + i));
+            }
+            if (sounds.Count > 0) MultiSound.Play(sounds.ToArray(), true, true);
+        }
+
         public static void PreSpawnFillbot(double beat, double holdLength, int size, Color fuelColor, Color lampColorOff, Color lampColorOn, int endAnim, bool altOK, bool stop, bool color)
         {
+            PlayFillbotSfx(beat, size);
+            
             if (GameManager.instance.currentGame == "fillbots")
             {
                 instance.SpawnFillbot(beat, holdLength, (BotSize)size, fuelColor, lampColorOff, lampColorOn, (EndAnim)endAnim, altOK, stop, color);
@@ -409,7 +432,7 @@ namespace HeavenStudio.Games
 
             actions.Add(new BeatAction.Action(beat + 3, delegate
             {
-                if (!PlayerInput.GetIsAction(InputAction_BasicPressing) && !fillerHolding) filler.DoScaledAnimationAsync("FillerPrepare", 0.5f);
+                if (!PlayerInput.GetIsAction(InputAction_BasicPressing) && !isHolding) filler.DoScaledAnimationAsync("FillerPrepare", 0.5f);
                 conveyerStartBeat = beat + 3;
                 fillerPosition = size;
             }));

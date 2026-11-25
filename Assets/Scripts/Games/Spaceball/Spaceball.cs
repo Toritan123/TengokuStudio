@@ -15,7 +15,7 @@ namespace HeavenStudio.Games.Loaders
             {
                 new GameAction("shoot", "Pitch Ball")
                 {
-                    function = delegate { Spaceball.instance.Shoot(eventCaller.currentEntity.beat, false, false, false, eventCaller.currentEntity["type"]); },
+                    function = delegate { Spaceball.instance.Shoot(eventCaller.currentEntity.beat, false, eventCaller.currentEntity["type"]); },
                     preFunction = delegate { Spaceball.instance.PrepareDispenser(); },
                     preFunctionLength = 1,
                     defaultLength = 2, 
@@ -24,36 +24,12 @@ namespace HeavenStudio.Games.Loaders
                         new Param("type", Spaceball.BallType.Baseball, "Type", "Set the object to shoot.") 
                     } 
                 },
-                new GameAction("shootFast", "Pitch Fast Ball")
-                {
-                    function = delegate { Spaceball.instance.Shoot(eventCaller.currentEntity.beat, false, true, false, eventCaller.currentEntity["type"]); },
-                    preFunction = delegate { Spaceball.instance.PrepareDispenser(); },
-                    preFunctionLength = 1,
-                    defaultLength = 1, 
-                    hidden = true,
-                    parameters = new List<Param>()
-                    {
-                        new Param("type", Spaceball.BallType.Baseball, "Type", "Set the object to shoot.") 
-                    } 
-                },
 				new GameAction("shootHigh", "Pitch High Ball")
                 {
-                    function = delegate { Spaceball.instance.Shoot(eventCaller.currentEntity.beat, true, false, false, eventCaller.currentEntity["type"]); },
+                    function = delegate { Spaceball.instance.Shoot(eventCaller.currentEntity.beat, true, eventCaller.currentEntity["type"]); },
                     preFunction = delegate { Spaceball.instance.PrepareDispenser(); },
                     preFunctionLength = 1,
                     defaultLength = 3,
-                    parameters = new List<Param>()
-                    {
-                        new Param("type", Spaceball.BallType.Baseball, "Type", "Set the object to shoot.") 
-                    } 
-                },
-				new GameAction("shootOff", "Pitch Offbeat Ball")
-                {
-                    function = delegate { Spaceball.instance.Shoot(eventCaller.currentEntity.beat, false, false, true, eventCaller.currentEntity["type"]); },
-                    preFunction = delegate { Spaceball.instance.PrepareDispenser(); },
-                    preFunctionLength = 1,
-                    defaultLength = 2f,
-                    hidden = true,
                     parameters = new List<Param>()
                     {
                         new Param("type", Spaceball.BallType.Baseball, "Type", "Set the object to shoot.") 
@@ -298,7 +274,7 @@ namespace HeavenStudio.Games
             }
         }
 
-        public void Shoot(double beat, bool high, bool quick, bool offbeat, int type)
+        public void Shoot(double beat, bool high, int type)
         {
             GameObject ball = Instantiate(Ball);
             ball.transform.parent = Ball.transform.parent;
@@ -309,16 +285,6 @@ namespace HeavenStudio.Games
             {
                 ball.GetComponent<SpaceballBall>().high = true;
                 SoundByte.PlayOneShotGame("spaceball/longShoot");
-            }
-            else if (offbeat)
-            {
-                ball.GetComponent<SpaceballBall>().offbeat = true;
-                SoundByte.PlayOneShotGame("spaceball/longShoot", -1, 0.5f);
-            }
-            if (quick)
-            {
-                ball.GetComponent<SpaceballBall>().quick = true;
-                SoundByte.PlayOneShotGame("spaceball/longShoot" , -1, 1.5f);
             }
             else
             {

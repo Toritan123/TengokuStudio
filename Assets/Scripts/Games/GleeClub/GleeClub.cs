@@ -185,6 +185,8 @@ namespace HeavenStudio.Games
 
         int startIntervalIndex;
 
+        public bool isHolding = true;
+
         [SerializeField] Material kidMaterial;
         [SerializeField] Material bgMaterial;
 
@@ -233,12 +235,7 @@ namespace HeavenStudio.Games
 
         void Start()
         {
-            if (!PlayerInput.GetIsAction(InputAction_BasicPressing) && Conductor.instance.isPlaying && !GameManager.instance.Autoplay)
-            {
-                playerChorusKid.StartSinging();
-                leftChorusKid.MissPose();
-                middleChorusKid.MissPose();
-            }
+
         }
 
         void OnDestroy()
@@ -256,33 +253,60 @@ namespace HeavenStudio.Games
 
         public override void OnPlay(double beat)
         {
-            PersistColor(beat);
+            OnGameSwitch(beat);
         }
 
         public override void OnGameSwitch(double beat)
         {
             PersistColor(beat);
+
+            bool waitForForce = false;
+            var forceSings = GameManager.instance.Beatmap.Entities.Find(e => e.datamodel is "gleeClub/forceSing" && e.beat > beat);
+            if (forceSings != null && forceSings.beat <= beat + 0.5)
+            {
+                waitForForce = true;
+            }
+            else
+            {
+                var sings = GameManager.instance.Beatmap.Entities.Find(e => e.datamodel is "gleeClub/sing" or "gleeClub/togetherNow" && e.beat > beat);
+                if (sings != null)
+                {
+                    SetWhiffNote(sings["semiTonesPlayer"]);
+                }
+            }
+            
+
+            if (!PlayerInput.GetIsAction(InputAction_BasicPressing) && Conductor.instance.isPlaying && !GameManager.instance.Autoplay && !waitForForce)
+            {
+                playerChorusKid.StartSinging();
+                leftChorusKid.MissPose();
+                middleChorusKid.MissPose();
+            }
         }
 
         void Update()
         {
             if (!playerChorusKid.disappeared)
             {
-                if (PlayerInput.GetIsAction(InputAction_BasicPress) && !IsExpectingInputNow(InputAction_BasicPress))
+                if (PlayerInput.GetIsAction(InputAction_BasicPress) && !IsExpectingInputNow(InputAction_BasicPress) && !isHolding)
                 {
                     playerChorusKid.StopSinging();
                     leftChorusKid.MissPose();
                     middleChorusKid.MissPose();
                     ScoreMiss();
+
+                    isHolding = true;
                 }
-                if (PlayerInput.GetIsAction(InputAction_BasicRelease) && !IsExpectingInputNow(InputAction_BasicRelease))
+                if (PlayerInput.GetIsAction(InputAction_BasicRelease) && !IsExpectingInputNow(InputAction_BasicRelease) && isHolding)
                 {
                     playerChorusKid.StartSinging();
                     leftChorusKid.MissPose();
                     middleChorusKid.MissPose();
                     ScoreMiss();
+
+                    isHolding = false;
                 }
-                if (PlayerInput.GetIsAction(InputAction_FlickRelease) && !IsExpectingInputNow(InputAction_FlickRelease))
+                if (PlayerInput.GetIsAction(InputAction_FlickRelease) && !IsExpectingInputNow(InputAction_FlickRelease) && isHolding)
                 {
                     if (PlayerInput.CurrentControlStyle == InputController.ControlStyles.Touch)
                     {
@@ -290,6 +314,8 @@ namespace HeavenStudio.Games
                         leftChorusKid.MissPose();
                         middleChorusKid.MissPose();
                         ScoreMiss();
+
+                        isHolding = false;
                     }
                 }
             }
@@ -323,7 +349,7 @@ namespace HeavenStudio.Games
 
             }
 
-            if (!Conductor.instance.isPlaying || Conductor.instance.isPaused)
+            if (!Conductor.instance.isPlaying && !Conductor.instance.isPaused)
             {
                 if (queuedSingings.Count > 0) queuedSingings.Clear();
                 if (queuedBatons.Count > 0) queuedBatons.Clear();
@@ -345,6 +371,11 @@ namespace HeavenStudio.Games
             playerChorusKid.gameSwitchFadeOutTime = fadeOutPlayer;
         }
 
+        public void SetWhiffNote(int semitones)
+        {
+            playerChorusKid.currentPitch = SoundByte.GetPitchFromSemiTones(semitones, true);
+        }
+
         public void ForceSing(int semiTones, int semiTones1, int semiTonesPlayer)
         {
             leftChorusKid.currentPitch = SoundByte.GetPitchFromSemiTones(semiTones, true);
@@ -352,6 +383,9 @@ namespace HeavenStudio.Games
             playerChorusKid.currentPitch = SoundByte.GetPitchFromSemiTones(semiTonesPlayer, true);
             leftChorusKid.StartSinging(true);
             middleChorusKid.StartSinging(true);
+
+            isHolding = false;
+
             if (!PlayerInput.GetIsAction(InputAction_BasicPressing) || GameManager.instance.Autoplay) playerChorusKid.StartSinging(true);
             else missed = true;
         }
@@ -402,11 +436,15 @@ namespace HeavenStudio.Games
         {
             playerChorusKid.currentPitch = currentYellPitch;
             playerChorusKid.StartYell();
+
+            isHolding = false;
         }
 
         void JustTogetherNowClose(PlayerActionEvent caller, float state)
         {
             playerChorusKid.StopSinging(true);
+
+            isHolding = true;
         }
 
         public void StartInterval(double beat, float length)
@@ -425,7 +463,11 @@ namespace HeavenStudio.Games
             }
             BeatAction.New(instance, new List<BeatAction.Action>()
             {
-                new BeatAction.Action(beat, delegate { if (closeMouth != (int)MouthOpenClose.OnlyClose) leftChorusKid.currentPitch = pitch; leftChorusKid.StartSinging(); }),
+                new BeatAction.Action(beat, delegate { 
+                    if (closeMouth != (int)MouthOpenClose.OnlyClose) leftChorusKid.currentPitch = pitch; 
+                    leftChorusKid.StartSinging(); 
+                    SetWhiffNote(semiTonesPlayer);
+                }),
                 new BeatAction.Action(beat + length, delegate { if (closeMouth != (int)MouthOpenClose.OnlyOpen) leftChorusKid.StopSinging(); }),
             });
             queuedSingings.Add(new QueuedSinging
@@ -551,6 +593,8 @@ namespace HeavenStudio.Games
         {
             playerChorusKid.StopSinging();
             ShowHeart(caller.timer + caller.startBeat + 1f);
+
+            isHolding = true;
         }
 
         void MissBaton(PlayerActionEvent caller)

@@ -3,6 +3,7 @@ using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 using HeavenStudio.Util;
 using HeavenStudio.InputSystem;
@@ -36,6 +37,16 @@ namespace HeavenStudio.Games.Loaders
         {
             return new Minigame("noGame", "No Game", "272727", true, false, new List<GameAction>()
             {
+                new GameAction("setText", "Set Text")
+                {
+                    function = delegate {
+                        var e = eventCaller.currentEntity;
+                        NoGame.instance.ChangeText(e["text"]);
+                    },
+                    parameters = new List<Param>() {
+                        new Param("text", "No Game", "Text", "Set the text on the screen."),
+                    },
+                },
             },
             font : "Roboto"
             );
@@ -49,5 +60,52 @@ namespace HeavenStudio.Games
     /// Minigame inherits directly from MonoBehaviour, and adds Heaven Studio specific methods to override.
     public class NoGame : Minigame
     {
+        [SerializeField] TMP_Text Text;
+        [SerializeField] TMP_Text ErrorText;
+        public static NoGame instance;
+
+        public enum Error
+        {
+            None = 0,
+            GameNotInBuild = 1,
+            FailedToLoadGame = 2,
+            Unknown = 99
+        }
+
+        public static Error currentError = 0;
+        public static string gameName = "";
+
+        void Awake()
+        {
+            instance = this;
+            SetError();
+        }
+
+        public void ChangeText(string text)
+        {
+            Text.text = text;
+        }
+
+        private void SetError()
+        {
+            switch (currentError)
+            {
+                case Error.None:
+                    ErrorText.text = "";
+                    break;
+                case Error.GameNotInBuild:
+                    ErrorText.text = $"The minigame \"{gameName}\" is not present in this build.\nPlease make sure your game is up-to-date.";
+                    break;
+                case Error.FailedToLoadGame:
+                    ErrorText.text = $"Failed to load the minigame \"{gameName}\".";
+                    break;
+                default:
+                    ErrorText.text = "An unknown error occurred.";
+                    break;
+            }
+
+            currentError = Error.None;
+            gameName = "";
+        }
     }
 }

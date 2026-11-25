@@ -124,7 +124,7 @@ namespace HeavenStudio
             }
             else
             {
-                GlobalGameManager.LoadScene("Title", fadeDuration, fadeDuration);
+                GlobalGameManager.LoadScene("Title", fadeDuration, fadeDuration, waitForLibraryCache: true);
             }
         }
     }

@@ -31,6 +31,7 @@ namespace HeavenStudio
         [SerializeField] private float heartInAnimationTime;
         [SerializeField] private float heartOutAnimationTime;
         [SerializeField] public bool needsIcon;
+        public bool interactable = true;
 
         [Space]
         [SerializeField] private Sprite unplayedBorder;
@@ -73,16 +74,19 @@ namespace HeavenStudio
         /// <param name="name">The name to set. This should be "Level Name" in the chart properties.</param>
         public void SetLevelName(string name, bool useName)
         {
-            if (name == "New Remix" || string.IsNullOrEmpty(name))
+            if (levelName != null)
             {
-                levelName.text = fileName;
-            }
-            else
-            {
-                levelName.text = name;
-            }
+                if (name == "New Remix" || string.IsNullOrEmpty(name))
+                {
+                    levelName.text = fileName;
+                }
+                else
+                {
+                    levelName.text = name;
+                }
 
-            levelName.gameObject.SetActive(useName);
+                levelName.gameObject.SetActive(useName);
+            }
         }
 
         /// <summary>
@@ -90,24 +94,32 @@ namespace HeavenStudio
         /// <para>"noGame" will use a blank square.</para>
         /// </summary>
         /// <param name="icons">4-long string array of game names</param>
+        /// Sorry about null check city
         public void SetLevelIcons(string[] icons)
         {
-            if (icons[1] == "noGame")
+            if (icon1 != null)
             {
-                icon1.sprite = GetIcon(icons[0], false);
-                icon1.rectTransform.localScale = new Vector3(2, 2, 2);
-                icon2.gameObject.SetActive(false);
-                icon3.gameObject.SetActive(false);
-                icon4.gameObject.SetActive(false);
+                if (icons[1] == "noGame")
+                {
+                    icon1.sprite = GetIcon(icons[0], false);
+                    icon1.rectTransform.localScale = new Vector3(2, 2, 2);
+                    if (icon2 != null) icon2.gameObject.SetActive(false);
+                    if (icon3 != null) icon3.gameObject.SetActive(false);
+                    if (icon4 != null) icon4.gameObject.SetActive(false);
+                }
+                else
+                {
+                    icon1.sprite = GetIcon(icons[0]);
+                    icon1.rectTransform.localScale = Vector3.one;
+                    if (icon2 != null) icon2.gameObject.SetActive(true);
+                    if (icon3 != null) icon3.gameObject.SetActive(true);
+                    if (icon4 != null) icon4.gameObject.SetActive(true);
+                }
             }
-            else
-            {
-                icon1.sprite = GetIcon(icons[0]);
-            }
-            icon2.sprite = GetIcon(icons[1]);
-            icon3.sprite = GetIcon(icons[2]);
-            icon4.sprite = GetIcon(icons[3]);
-
+            
+            if (icon2 != null) icon2.sprite = GetIcon(icons[1]);
+            if (icon3 != null) icon3.sprite = GetIcon(icons[2]);
+            if (icon4 != null) icon4.sprite = GetIcon(icons[3]);
         }
 
         public static Sprite GetIcon(string name, bool simple = true)
@@ -134,59 +146,63 @@ namespace HeavenStudio
                 int score = LibrarySaveManager.savedata[hash].score;
                 if (LibrarySaveManager.savedata[hash].perfect)
                 {
-                    border.sprite = perfectBorder;
-                    medal.sprite = perfectMedal;
-                    medal.gameObject.SetActive(true);
+                    if (border != null) border.sprite = perfectBorder;
+                    if (medal != null) { medal.sprite = perfectMedal; medal.gameObject.SetActive(true); }
                 }
                 else if (score < Games.Minigame.rankOkThreshold * 100)
                 {
-                    border.sprite = tryAgainBorder;
-                    medal.gameObject.SetActive(false);
+                    if (border != null) border.sprite = tryAgainBorder;
+                    if (medal != null) medal.gameObject.SetActive(false);
                 }
                 else if (score < Games.Minigame.rankHiThreshold * 100)
                 {
-                    border.sprite = okBorder;
-                    medal.gameObject.SetActive(false);
+                    if (border != null) border.sprite = okBorder;
+                    if (medal != null) medal.gameObject.SetActive(false);
                 }
                 else
                 {
-                    border.sprite = superbBorder;
-                    medal.sprite = superbMedal;
-                    medal.gameObject.SetActive(true);
+                    if (border != null) border.sprite = superbBorder;
+                    if (medal != null) { medal.sprite = superbMedal; medal.gameObject.SetActive(true); }
                 }
             }
             else
             {
-                border.sprite = unplayedBorder;
-                medal.gameObject.SetActive(false);
+                if (border != null) border.sprite = unplayedBorder;
+                if (medal != null) medal.gameObject.SetActive(false);
             }
 
-            if (hasSkillStar)
+            if (miniSkillStar != null)
             {
-                miniSkillStar.gameObject.SetActive(true);
-                if (hasSavedData)
+                if (hasSkillStar)
                 {
-                    miniSkillStar.sprite = LibrarySaveManager.savedata[hash].skillStar ? skillStarActive : skillStarInactive;
+                    miniSkillStar.gameObject.SetActive(true);
+                    if (hasSavedData)
+                    {
+                        miniSkillStar.sprite = LibrarySaveManager.savedata[hash].skillStar ? skillStarActive : skillStarInactive;
+                    }
+                    else
+                    {
+                        miniSkillStar.sprite = skillStarInactive;
+                    }
                 }
                 else
                 {
-                    miniSkillStar.sprite = skillStarInactive;
+                    miniSkillStar.gameObject.SetActive(false);
                 }
             }
-            else
-            {
-                miniSkillStar.gameObject.SetActive(false);
-            }
 
-            if (LibraryCacheManager.cache.favorites.Contains(levelPath))
+            if (heart != null)
             {
-                heart.SetActive(true);
-                heart.transform.localScale = Vector3.one;
-            }
-            else
-            {
-                heart.SetActive(false);
-                heart.transform.localScale = Vector3.zero;
+                if (LibraryCacheManager.cache.favorites.Contains(levelPath))
+                {
+                    heart.SetActive(true);
+                    heart.transform.localScale = Vector3.one;
+                }
+                else
+                {
+                    heart.SetActive(false);
+                    heart.transform.localScale = Vector3.zero;
+                }
             }
         }
 
@@ -197,35 +213,55 @@ namespace HeavenStudio
                 yield break;
             }
 
-            if (!useCustomIcon)
+            if (customIcon != null)
             {
                 customIcon.sprite = null;
                 customIcon.gameObject.SetActive(false);
+            }
+
+            if (!useCustomIcon)
+            {
                 loadedIcon = true;
             }
             else
             {
-                iconHolder.gameObject.SetActive(false);
+                if (iconHolder != null) iconHolder.gameObject.SetActive(false);
 
-                UnityWebRequest www = UnityWebRequestTexture.GetTexture("file://" + Path.Combine(LibraryCacheManager.cachePath, "LevelIcons", levelHash, "icon.png"));
-                yield return www.SendWebRequest();
-
-                if (www.result != UnityWebRequest.Result.Success)
+                if (!interactable)
                 {
-                    Debug.Log(www.error);
-                    customIcon.sprite = null;
-                    customIcon.gameObject.SetActive(false);
-                    Debug.LogError($"Custom level icon download failed");
+                    string iconPath = Path.Combine(LibraryCacheManager.cachePath, "LevelIcons", levelHash, "icon.png");
+                    if (File.Exists(iconPath))
+                    {
+                        byte[] bytes = File.ReadAllBytes(iconPath);
+                        Texture2D texture = new Texture2D(2, 2);
+                        texture.LoadImage(bytes);
+                        Sprite customIconSprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
+                        if (customIcon != null) customIcon.sprite = customIconSprite;
+                        if (customIcon != null) customIcon.gameObject.SetActive(true);
+                    }
                 }
                 else
                 {
-                    Texture2D texture = DownloadHandlerTexture.GetContent(www);
-                    Sprite customIconSprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
-                    customIcon.sprite = customIconSprite;
-                    customIcon.gameObject.SetActive(true);
+                    UnityWebRequest www = UnityWebRequestTexture.GetTexture("file://" + Path.Combine(LibraryCacheManager.cachePath, "LevelIcons", levelHash, "icon.png"));
+                    yield return www.SendWebRequest();
 
+                    if (www.result != UnityWebRequest.Result.Success)
+                    {
+                        Debug.Log(www.error);
+                        if (customIcon != null) customIcon.sprite = null;
+                        if (customIcon != null) customIcon.gameObject.SetActive(false);
+                        Debug.LogError($"Custom level icon download failed");
+                    }
+                    else
+                    {
+                        Texture2D texture = DownloadHandlerTexture.GetContent(www);
+                        Sprite customIconSprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
+                        if (customIcon != null) customIcon.sprite = customIconSprite;
+                        if (customIcon != null) customIcon.gameObject.SetActive(true);
+                    }
                 }
-                iconHolder.gameObject.SetActive(true);
+                
+                if (iconHolder != null) iconHolder.gameObject.SetActive(true);
                 loadedIcon = true;
             }
         }
@@ -252,7 +288,8 @@ namespace HeavenStudio
 
         public void LoadCustomIcon()
         {
-            string hash = LibraryManager.instance.allIconInfo[levelPath].hash;
+            if (loadedIcon) return;
+            string hash = LibraryManager.allIconInfo[levelPath].hash;
 
             StartCoroutine(SetLevelCustomIcon(hash, LibraryCacheManager.cache.cachedInfo[hash].customIcon));
         }
@@ -279,7 +316,7 @@ namespace HeavenStudio
 
         public void ToggleFavorite()
         {
-            if (LibraryManager.instance.allIconInfo["Favorites"].pathsInFolder.Contains(levelPath))
+            if (LibraryManager.allIconInfo["Favorites"].pathsInFolder.Contains(levelPath))
             {
                 LibraryManager.instance.RemoveFromFavorites(levelPath);
                 audioSource.PlayOneShot(unfavorite);
@@ -351,6 +388,8 @@ namespace HeavenStudio
 
         public void OnPointerClick(PointerEventData pointerEventData)
         {
+            if (!interactable) return;
+
             if (pointerEventData.button == PointerEventData.InputButton.Right)
             {
                 ToggleFavorite();
@@ -362,16 +401,13 @@ namespace HeavenStudio
             }
         }
 
-        public void OnNavigateTo(bool showInfo = true)
+        public void OnNavigateTo(bool showInfo = true, bool scroll = true)
         {
             OnHover();
             LibraryManager.instance.selectedLevelPath = levelPath;
-            if (showInfo) LibraryManager.instance.infoPanel.ShowLevelInfo(LibraryManager.instance.allIconInfo[levelPath].hash);
+            if (showInfo) LibraryManager.instance.infoPanel.ShowLevelInfo(LibraryManager.allIconInfo[levelPath].hash);
 
-            if (!LibraryManager.instance.IsIconFullyOnscreen(gameObject.GetComponent<RectTransform>()))
-            {
-                LibraryManager.instance.ScrollToTarget(GetComponent<RectTransform>());
-            }
+            if (scroll) LibraryManager.instance.ScrollToTarget(iconHolder.GetComponent<RectTransform>());
 
             LibraryMenuCursor.instance.SetSelectable(selectable);
             LibraryMenuCursor.instance.gridSelectable = selectable;
@@ -438,13 +474,15 @@ namespace HeavenStudio
         {
             GameObject upGameObject = LibraryManager.instance.GetGridSelectableUp(levelPath);
 
-            if (upGameObject == null) return;
-
-            if (upGameObject.TryGetComponent(out LibraryLevelIcon levelIcon))
+            if (upGameObject == null) 
+            {
+                LibraryMenuCursor.instance.SetSelectableTo(0);
+            }
+            else if (upGameObject.TryGetComponent(out LibraryLevelIcon levelIcon))
             {
                 levelIcon.OnNavigateTo();
             }
-            if (upGameObject.TryGetComponent(out LibraryFolderIcon folderIcon))
+            else if (upGameObject.TryGetComponent(out LibraryFolderIcon folderIcon))
             {
                 folderIcon.OnNavigateTo();
             }
@@ -456,13 +494,15 @@ namespace HeavenStudio
         {
             GameObject downGameObject = LibraryManager.instance.GetGridSelectableDown(levelPath);
 
-            if (downGameObject == null) return;
-
-            if (downGameObject.TryGetComponent(out LibraryLevelIcon levelIcon))
+            if (downGameObject == null) 
+            {
+                LibraryMenuCursor.instance.SetSelectableTo(1);
+            }
+            else if (downGameObject.TryGetComponent(out LibraryLevelIcon levelIcon))
             {
                 levelIcon.OnNavigateTo();
             }
-            if (downGameObject.TryGetComponent(out LibraryFolderIcon folderIcon))
+            else if (downGameObject.TryGetComponent(out LibraryFolderIcon folderIcon))
             {
                 folderIcon.OnNavigateTo();
             }
@@ -472,6 +512,8 @@ namespace HeavenStudio
 
         public void OnPointerEnter(PointerEventData eventData)
         {
+            if (!interactable) return;
+
             if (unhoverCoroutine != null)
             {
                 StopCoroutine(unhoverCoroutine);
@@ -483,6 +525,8 @@ namespace HeavenStudio
 
         public void OnPointerExit(PointerEventData eventData)
         {
+            if (!interactable) return;
+
             if (hoverCoroutine != null)
             {
                 StopCoroutine(hoverCoroutine);

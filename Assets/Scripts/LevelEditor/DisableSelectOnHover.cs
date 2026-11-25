@@ -10,6 +10,11 @@ namespace HeavenStudio.Editor
     {
         public EventParameterManager eventParameterManager;
 
+        private void Awake()
+        {
+            if (eventParameterManager == null) eventParameterManager = EventParameterManager.instance;
+        }
+
         private void Update()
         {
             if (Editor.instance == null) return;

@@ -28,6 +28,9 @@ namespace HeavenStudio.Util
 
         static GameObject oneShotAudioSourceObject;
         static AudioSource oneShotAudioSource;
+
+        static GameObject uiOneShotAudioSourceObject;
+        static AudioSource uiOneShotAudioSource;
         //static int soundIdx = 0;    Unused value - Marc
 
         public static Dictionary<string, AudioClip> audioClips { get; private set; } = new Dictionary<string, AudioClip>();
@@ -55,10 +58,17 @@ namespace HeavenStudio.Util
         {
             if (oneShotAudioSourceObject == null)
             {
-                oneShotAudioSourceObject = new GameObject("OneShot Audio Source");
+                oneShotAudioSourceObject = new GameObject("OneShot Audio Source (Game SFX)");
                 oneShotAudioSource = oneShotAudioSourceObject.AddComponent<AudioSource>();
                 oneShotAudioSource.outputAudioMixerGroup = GlobalGameManager.sfxGroup;
                 UnityEngine.Object.DontDestroyOnLoad(oneShotAudioSourceObject);
+            }
+            if (uiOneShotAudioSourceObject == null)
+            {
+                uiOneShotAudioSourceObject = new GameObject("OneShot Audio Source (UI SFX)");
+                uiOneShotAudioSource = uiOneShotAudioSourceObject.AddComponent<AudioSource>();
+                uiOneShotAudioSource.outputAudioMixerGroup = GlobalGameManager.sfxGroup;
+                UnityEngine.Object.DontDestroyOnLoad(uiOneShotAudioSourceObject);
             }
         }
 
@@ -313,7 +323,7 @@ namespace HeavenStudio.Util
             return clip;
         }
 
-        public static Sound PlayOneShot(string name, double beat = -1, float pitch = 1f, float volume = 1f, bool looping = false, string game = null, double offset = 0f, bool ignoreConductorPause = false, bool ignoreSwing = false, float panning = 0f)
+        public static Sound PlayOneShot(string name, double beat = -1, float pitch = 1f, float volume = 1f, bool looping = false, string game = null, double offset = 0f, bool ignoreConductorPause = false, bool ignoreSwing = false, float panning = 0f, bool returnSound = false, bool ui = false)
         {
             AudioClip clip = null;
             string soundName = name.Split('/')[^1];
@@ -353,7 +363,7 @@ namespace HeavenStudio.Util
                 }
             }
 
-            if (looping || beat != -1 || pitch != 1f || panning != 0f)
+            if (looping || beat != -1 || pitch != 1f || panning != 0f || returnSound)
             {
                 Sound snd = GetAvailableScheduledSound();
 
@@ -370,18 +380,30 @@ namespace HeavenStudio.Util
 
                 return snd;
             }
+            else if (ui)
+            {
+                if (uiOneShotAudioSourceObject == null)
+                {
+                    uiOneShotAudioSourceObject = new GameObject("OneShot Audio Source (UI SFX)");
+                    uiOneShotAudioSource = uiOneShotAudioSourceObject.AddComponent<AudioSource>();
+                    uiOneShotAudioSource.outputAudioMixerGroup = GlobalGameManager.sfxGroup;
+                    UnityEngine.Object.DontDestroyOnLoad(uiOneShotAudioSourceObject);
+                }
+
+                uiOneShotAudioSource.PlayOneShot(clip, volume);
+                return null;
+            }
             else
             {
                 if (oneShotAudioSourceObject == null)
                 {
-                    oneShotAudioSourceObject = new GameObject("OneShot Audio Source");
+                    oneShotAudioSourceObject = new GameObject("OneShot Audio Source (Game SFX)");
                     oneShotAudioSource = oneShotAudioSourceObject.AddComponent<AudioSource>();
                     oneShotAudioSource.outputAudioMixerGroup = GlobalGameManager.sfxGroup;
                     UnityEngine.Object.DontDestroyOnLoad(oneShotAudioSourceObject);
                 }
 
                 oneShotAudioSource.PlayOneShot(clip, volume);
-                // Debug.Log("Played Sound");
                 return null;
             }
         }
@@ -452,7 +474,7 @@ namespace HeavenStudio.Util
         ///    Unpitched, non-scheduled, non-looping sounds are played using a global One-Shot audio source that doesn't create a Sound object.
         ///    Looped sounds return their created Sound object so they can be canceled after creation.
         /// </summary>
-        public static Sound PlayOneShotGame(string name, double beat = -1, float pitch = 1f, float volume = 1f, bool looping = false, bool forcePlay = false, double offset = 0f, bool ignoreConductorPause = false, bool ignoreSwing = false, float panning = 0f)
+        public static Sound PlayOneShotGame(string name, double beat = -1, float pitch = 1f, float volume = 1f, bool looping = false, bool forcePlay = false, double offset = 0f, bool ignoreConductorPause = false, bool ignoreSwing = false, float panning = 0f, bool returnSound = false)
         {
             string gameName = name.Split('/')[0];
             var inf = GameManager.instance.GetGameInfo(gameName);
@@ -472,7 +494,7 @@ namespace HeavenStudio.Util
                     offset += timing.offset;
                     volume *= timing.volume;
                 }
-                return PlayOneShot($"games/{name}", beat, pitch, volume, looping, inf.UsesAssetBundle ? gameName : null, offset, ignoreConductorPause, ignoreSwing, panning);
+                return PlayOneShot($"games/{name}", beat, pitch, volume, looping, inf.UsesAssetBundle ? gameName : null, offset, ignoreConductorPause, ignoreSwing, panning, returnSound);
             }
 
             return null;
@@ -562,9 +584,7 @@ namespace HeavenStudio.Util
         /// </summary>
         public static float GetPitchFromSemiTones(int semiTones, bool pitchToMusic)
         {
-            var newSemitones = Mathf.Pow(2f, (1f / 12f) * semiTones);
-            if (pitchToMusic) newSemitones *= Conductor.instance.musicSource.pitch;
-            return newSemitones;
+            return GetPitchFromCents(semiTones * 100, pitchToMusic);
         }
         /// <summary>
         /// Returns the semitones from a pitch.
@@ -583,11 +603,11 @@ namespace HeavenStudio.Util
         {
             if (pitchToMusic)
             {
-                return Mathf.Pow(2f, (1f / 12f) * (cents / 100)) * Conductor.instance.musicSource.pitch;
+                return Mathf.Pow(2f, (cents + GameManager.instance.detuneCents) / 1200f) * Conductor.instance.musicSource.pitch;
             }
             else
             {
-                return Mathf.Pow(2f, (1f / 12f) * (cents / 100));
+                return Mathf.Pow(2f, cents / 1200f);
             }
         }
     }

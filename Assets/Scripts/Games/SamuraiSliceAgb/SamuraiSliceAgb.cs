@@ -472,5 +472,13 @@ namespace HeavenStudio.Games
         {
             fireColorNumberSix = colorNumbers == 1;
         }
+
+        void OnDestroy() // kill slowdown effect
+        {
+            if (Conductor.instance.isPlaying)
+            {
+                Conductor.instance.SetMinigamePitch(1f);
+            }
+        }
     }
 }

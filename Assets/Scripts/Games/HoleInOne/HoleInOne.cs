@@ -16,7 +16,7 @@ namespace HeavenStudio.Games.Loaders
     {
         public static Minigame AddGame(EventCaller eventCaller)
         {
-            return new Minigame("holeInOne", "Hole in One", "6ab99e", false, false, new List<GameAction>()
+            return new Minigame("holeInOne", "Hole in One \n<color=#eb5454>[WIP]</color>", "6ab99e", false, false, new List<GameAction>()
             {
                 new GameAction("bop", "Bop")
                 {
@@ -50,7 +50,8 @@ namespace HeavenStudio.Games.Loaders
                         new Param("appear", true, "Enter", "Toggle if the whale should enter or exit the scene."),
                         new Param("ease", Util.EasingFunction.Ease.Linear, "Ease", "Set the easing of the action.")
                     },
-                    resizable = true
+                    resizable = true,
+                    hidden = true
                 },
             },
             new List<string>() { "rvl", "normal" },
@@ -323,6 +324,7 @@ namespace HeavenStudio.Games
                 new MultiSound.Sound("holeInOne/SE_GOLF_GORILLA1", beat + 1f),
                 new MultiSound.Sound("holeInOne/SE_GOLF_GORILLA2", beat + 2f),
                 new MultiSound.Sound("holeInOne/SE_GOLF_GORILLA3", beat + 3f),
+                new MultiSound.Sound("holeInOne/SE_GOLF_GORILLA3_echo", beat + 3.25f),
                 new MultiSound.Sound("holeInOne/SE_GOLF_GORILLA5", beat + 3f),
             });
         
@@ -374,107 +376,5 @@ namespace HeavenStudio.Games
                 })
             });
         }
-
-        public void MonkeySuccess(PlayerActionEvent caller, float state)
-        {
-            if (state >= 1f)
-            {
-                double beat = caller.startBeat + caller.timer;
-
-                SoundByte.PlayOneShotGame("holeInOne/SE_GOLF_MISS_SHOT_RIGHT");           
-                SoundByte.PlayOneShotGame("holeInOne/SE_GOLF_WATER_IN_RIGHT", beat + 1f);  
-
-                MonkeyHeadAnim.DoScaledAnimationAsync("MonkeyMissHead", 1f);
-                GolferAnim.Play("GolferWhiff", 0, 0);
-            }
-            else if (state <= -1f)
-            {
-                double beat = caller.startBeat + caller.timer;
-
-                SoundByte.PlayOneShotGame("holeInOne/SE_GOLF_MISS_SHOT_LEFT");   
-                SoundByte.PlayOneShotGame("holeInOne/SE_GOLF_WATER_IN_LEFT", beat + 1f);  
-
-                MonkeyHeadAnim.DoScaledAnimationAsync("MonkeyMissHead", 1f);
-                GolferAnim.Play("GolferWhiff", 0, 0);
-            }
-
-
-            else
-            {
-                double beat = caller.startBeat + caller.timer;
-                int randomSuccess = UnityEngine.Random.Range(1, 4);
-
-                MultiSound.Play(new MultiSound.Sound[] {
-                    new MultiSound.Sound((isWhale) ? "holeInOne/SE_GOLF_WHALE" : ("holeInOne/SE_GOLF_CUP_IN_ROLL"), beat + 2f)
-                });
-
-                BeatAction.New(instance, new List<BeatAction.Action>()
-                {
-                    new BeatAction.Action(beat,       delegate { MonkeyHeadAnim.DoScaledAnimationAsync("MonkeyJustHead", 1f);}),
-                    new BeatAction.Action(beat,        delegate { GolferAnim.DoScaledAnimationAsync("GolferJust", 1f);}),
-                    new BeatAction.Action(beat + 1.5f, delegate { Hole.SetActive(true);}),
-                    new BeatAction.Action(beat + 2f,   delegate { HoleAnim.DoScaledAnimationAsync("ZoomSmall" + randomSuccess, 1f);}),
-                });
-            }
-        }
-
-        public void MonkeyMiss(PlayerActionEvent caller)
-        {
-            SoundByte.PlayOneShotGame($"holeInOne/SE_GOLF_MISS_THROUGH{UnityEngine.Random.Range(1, 4)}");
-            MonkeyHeadAnim.DoScaledAnimationAsync("MonkeySadHead", 1f);
-
-            canBop = false;
-            BeatAction.New(instance, new List<BeatAction.Action>() {
-                new BeatAction.Action(caller.startBeat + caller.timer + 2f, delegate { canBop = true; })
-            });
-        }
-
-        public void MandrillSuccess(PlayerActionEvent caller, float state)
-        {
-            if (state >= 1f || state <= -1f)
-            {
-                double beat = caller.startBeat + caller.timer;
-
-                SoundByte.PlayOneShotGame("holeInOne/SE_GOLF_MISS_SHOT_LEFT");           // temp should be both l/r
-                SoundByte.PlayOneShotGame("holeInOne/SE_GOLF_WATER_IN_LEFT", beat + 1f);    // temp should be both l/r
-
-                BallEffectAnim.Play("BallEffectJust");
-                GolferAnim.Play("GolferWhiff", 0, 0);
-            }
-            else
-            {
-                double beat = caller.startBeat + caller.timer;
-
-                MultiSound.Play(new MultiSound.Sound[] {
-                    new MultiSound.Sound("holeInOne/SE_GOLF_SHOT_GORILLA_BIG_BALL", beat),
-                    new MultiSound.Sound((isWhale) ? "holeInOne/SE_GOLF_WHALE" : ("holeInOne/SE_GOLF_CUP_IN_GORILLA"), beat + 2f)
-                });
-
-                BeatAction.New(instance, new List<BeatAction.Action>()
-                {
-                    new BeatAction.Action(beat,        delegate { GolferAnim.DoScaledAnimationAsync("GolferJust", 1f);}),
-                    new BeatAction.Action(beat + 1.5f, delegate { Hole.SetActive(true);}),
-                    new BeatAction.Action(beat + 2f,   delegate { HoleAnim.DoScaledAnimationAsync("ZoomBig", 1f);}),
-                });
-            }
-            
-        }
-
-        public void MandrillMiss(PlayerActionEvent caller)
-        {
-            SoundByte.PlayOneShotGame("holeInOne/SE_GOLF_MISS_BALL_ATTACK_BIG_GORI");
-            SoundByte.PlayOneShotGame($"holeInOne/SE_GOLF_MISS_BALL_ATTACK_BIG_VOICE{UnityEngine.Random.Range(1, 6)}");
-
-            MonkeyAnim.Play("MonkeySpin");
-            BallEffectAnim.Play("BallEffectThrough");
-            GolferAnim.Play("GolferThroughMandrill");
-
-            canBop = false;
-            BeatAction.New(instance, new List<BeatAction.Action>() {
-                new BeatAction.Action(caller.startBeat + caller.timer + 2f, delegate { canBop = true; })
-            });
-        }
-
-        public void Empty(PlayerActionEvent caller) {}
     }
 }

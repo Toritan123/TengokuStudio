@@ -71,7 +71,7 @@ namespace HeavenStudio.Games.Loaders
                 },
                 
             },
-            new List<string>() {"rvl", "normal"},
+            new List<string>() { "rvl", "normal", "endless" },
             "rvlshirawa", "en",
             new List<string>() { "en", "jp" },
             chronologicalSortKey: 301,

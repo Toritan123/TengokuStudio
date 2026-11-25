@@ -533,14 +533,7 @@ namespace HeavenStudio.InputSystem
         public override void OnSelected()
         {
             SetRotatedStickMode(true);
-            Task.Run(() => SelectionVibrate());
-        }
-
-        async void SelectionVibrate()
-        {
-            JslSetRumbleFrequency(GetHandle(), 0.5f, 0.5f, 80f, 160f);
-            await Task.Delay(100);
-            JslSetRumbleFrequency(GetHandle(), 0f, 0f, 160f, 320f);
+            Rumble(0.1f);
         }
 
         public override string GetDeviceName()
@@ -997,6 +990,18 @@ namespace HeavenStudio.InputSystem
         public override bool GetPointerLeftRight()
         {
             return false;
+        }
+
+        public override void Rumble(float seconds = 0.1F)
+        {
+            Task.Run(() => SelectionVibrate(0.1f));
+        }
+
+        async void SelectionVibrate(float seconds)
+        {
+            JslSetRumbleFrequency(GetHandle(), 0.5f, 0.5f, 160f, 160f);
+            await Task.Delay((int)seconds * 1000);
+            JslSetRumbleFrequency(GetHandle(), 0f, 0f, 160f, 320f);
         }
     }
 }

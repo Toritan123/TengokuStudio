@@ -116,6 +116,12 @@ namespace HeavenStudio.Editor
             input.GetComponent<RemixPropertyPrefab>().InitProperties(diag, "", text);
         }
 
+        public void AddTagEditor(RemixPropertiesDialog diag)
+        {
+            var input = InitPrefab(diag.TagEditorP);
+            input.GetComponent<TagPropertyEditorPrefab>().InitProperties(diag, "", "");
+        }
+
         public void AddResultMessageEditor(RemixPropertiesDialog diag)
         {
             var input = InitPrefab(diag.ResultDialogP);

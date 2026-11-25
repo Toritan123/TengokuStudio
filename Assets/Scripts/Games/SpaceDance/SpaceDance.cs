@@ -193,7 +193,7 @@ namespace HeavenStudio.Games
         }
         protected static bool IA_BatonTurnPress(out double dt)
         {
-            return PlayerInput.GetBatonDown(InputController.ActionsBaton.East, out dt)
+            return PlayerInput.GetBatonDown(InputController.ActionsBaton.Face, out dt)
                 && !instance.IsExpectingInputNow(InputAction_Punch);
         }
         protected static bool IA_TouchTurnPress(out double dt)

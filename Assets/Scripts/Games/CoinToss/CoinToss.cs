@@ -71,7 +71,7 @@ namespace HeavenStudio.Games.Loaders
                     hidden = true
                 },
             },
-            new List<string>() { "ntr", "aim" },
+            new List<string>() { "ntr", "aim", "endless" },
             "ntrcoin", "en",
             new List<string>() { },
             chronologicalSortKey: 101,

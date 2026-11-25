@@ -34,6 +34,7 @@ namespace HeavenStudio
         [SerializeField] private Sprite autoplayEnable;
         [SerializeField] private Sprite autoplayDisable;
 
+
         [Header("Vars")]
         [SerializeField] private int scrollIndex;
         [SerializeField] public int tempoMult;
@@ -117,15 +118,15 @@ namespace HeavenStudio
             if (autoplayOn)
             {
                 autoplayOn = false;
-                autoplayIcon.sprite = autoplayDisable;
-                autoplayMod.SetActive(false);
+                if (autoplayIcon != null) autoplayIcon.sprite = autoplayDisable;
             }
             else
             {
                 autoplayOn = true;
-                autoplayIcon.sprite = autoplayEnable;
-                autoplayMod.SetActive(true);
+                if (autoplayIcon != null) autoplayIcon.sprite = autoplayEnable;
             }
+
+            LibraryManager.instance.infoPanel.SetAutoplay(autoplayOn);
         }
 
         void Update()

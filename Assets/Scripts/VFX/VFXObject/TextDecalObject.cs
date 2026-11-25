@@ -29,10 +29,13 @@ namespace HeavenStudio.VFX
         int layer, bool active)
         {
             base.UpdateObject(null);
-            textContent.text = newText;
-            textContent.font = fontAssets[newFont];
+
+            if (textContent.text != newText) textContent.text = newText;
+            
             if (newFont != lastFont)
             {
+                textContent.font = fontAssets[newFont];
+
                 textContent.outlineColor = Color.black;
                 textContent.outlineWidth = -1;
                 textContent.fontMaterial.SetFloat(ShaderUtilities.ID_FaceDilate, 0);

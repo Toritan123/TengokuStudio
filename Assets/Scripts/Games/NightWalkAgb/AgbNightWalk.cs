@@ -66,7 +66,7 @@ namespace HeavenStudio.Games.Loaders
                     preFunction = delegate { var e = eventCaller.currentEntity; if (e["cue"]) AgbNightWalk.PlayFishCue(e.beat); },
                     parameters = new List<Param>()
                     {
-                        new Param("cue", false, "Cue Sound", "Use the cowbell cue sound from Rhythm Heaven Advance?")
+                        new Param("cue", false, "Cue Sound", "Use the cue sound from Rhythm Heaven Advance?")
                     }
                 },
                 new GameAction("roll", "Roll")
@@ -582,12 +582,12 @@ namespace HeavenStudio.Games
 
         public static void PlayFishCue(double beat)
         {
+            Debug.Log("played fish sound");
             MultiSound.Play(new MultiSound.Sound[]
             {
-                new MultiSound.Sound("count-ins/cowbell", beat - 2.0),
-                new MultiSound.Sound("count-ins/cowbell", beat - 1.5),
-                new MultiSound.Sound("count-ins/cowbell", beat - 1.0),
-            }, false, true);
+                new MultiSound.Sound("nightWalkAgb/shockshort", beat - 1.5, volume: 0.8f),
+                new MultiSound.Sound("nightWalkAgb/shockshort", beat - 1.0, volume: 0.8f),
+            }, true, true);
         }
 
         public static void PlayRollCue(double beat, RiqEntity entity)
@@ -596,12 +596,12 @@ namespace HeavenStudio.Games
             Debug.Log("played roll sound");
             MultiSound.Play(new MultiSound.Sound[]
             {
-                new MultiSound.Sound("games/nightWalkRvl/highJump1", beat - 1),
-                new MultiSound.Sound("games/nightWalkRvl/highJump2", beat - 0.75),
-                new MultiSound.Sound("games/nightWalkRvl/highJump3", beat - 0.5),
-                new MultiSound.Sound("games/nightWalkRvl/highJump4", beat - 0.25),
-                new MultiSound.Sound("games/nightWalkRvl/highJump6", beat + 0.25),
-            }, false, true);
+                new MultiSound.Sound("nightWalkAgb/highJump1", beat - 1),
+                new MultiSound.Sound("nightWalkAgb/highJump2", beat - 0.75),
+                new MultiSound.Sound("nightWalkAgb/highJump3", beat - 0.5),
+                new MultiSound.Sound("nightWalkAgb/highJump4", beat - 0.25),
+                new MultiSound.Sound("nightWalkAgb/highJump6", beat + 0.25),
+            }, true, true);
         }
 
         public static void WalkingCountIn(double beat, float length)

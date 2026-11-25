@@ -19,7 +19,7 @@ namespace HeavenStudio.VFX
         {
             base.UpdateObject(e);
 
-            Label.text = e["text1"];
+            if (Label.text != e["text1"]) Label.text = e["text1"];
 
             LabelRect.sizeDelta = new Vector2(18, 2 * e["valA"]);
             BGRect.sizeDelta = new Vector2(18, 2 * e["valA"]);

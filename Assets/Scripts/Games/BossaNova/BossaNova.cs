@@ -157,7 +157,7 @@ namespace HeavenStudio.Games.Loaders
                     resizable = true,
                 },
             },
-            new List<string>() { "rvl", "keep" },
+            new List<string>() { "rvl", "keep", "endless" },
             "rvlreceive", "en",
             new List<string>() { "en", "jp" },
             chronologicalSortKey: 28,

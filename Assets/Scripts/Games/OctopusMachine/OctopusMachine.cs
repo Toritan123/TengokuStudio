@@ -179,7 +179,7 @@ namespace HeavenStudio.Games.Loaders
                     defaultLength = 0.5f,
                 },
             },
-            new List<string>() {"ntr", "repeat"},
+            new List<string>() {"ntr", "repeat", "toy"},
             "ntrcork", "en",
             new List<string>() {},
             chronologicalSortKey: 204,
@@ -224,6 +224,7 @@ namespace HeavenStudio.Games
 
         [Header("Variables")]
         public bool hasMissed;
+        public bool isHolding = false;
         public int bopStatus = 0;
         int bopIterate = 0;
         bool intervalStarted;
@@ -441,6 +442,8 @@ namespace HeavenStudio.Games
         public void ForceSqueeze()
         {
             foreach (var octo in octopodes) octo.ForceSqueeze();
+
+            isHolding = true;
         }
 
         public void OctoAction(double beat, float length)
@@ -520,18 +523,24 @@ namespace HeavenStudio.Games
         {
             octopodes[2].OctoAction("Squeeze", Conductor.instance.songPositionInBeatsAsDouble);
             if (state <= -1f || state >= 1f) SoundByte.PlayOneShotGame("nearMiss");
+
+            isHolding = true;
         }
 
         private void ReleaseHit(PlayerActionEvent caller, float state)
         {
             octopodes[2].OctoAction("Release", Conductor.instance.songPositionInBeatsAsDouble);
             if (state <= -1f || state >= 1f) SoundByte.PlayOneShotGame("nearMiss");
+
+            isHolding = false;
         }
 
         private void PopHit(PlayerActionEvent caller, float state)
         {
             octopodes[2].OctoAction("Pop", Conductor.instance.songPositionInBeatsAsDouble);
             if (state <= -1f || state >= 1f) SoundByte.PlayOneShotGame("nearMiss");
+
+            isHolding = false;
         }
 
         private void Miss(PlayerActionEvent caller) 

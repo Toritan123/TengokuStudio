@@ -22,7 +22,7 @@ namespace HeavenStudio.VFX
         {
             base.UpdateObject(e);
 
-            TextboxLabel.text = e["text1"];
+            if (TextboxLabel.text != e["text1"]) TextboxLabel.text = e["text1"];
 
             Vector2 tScale = Vector2.Scale(textboxSize, new Vector2(e["valA"], e["valB"]));
             UL.size = tScale;

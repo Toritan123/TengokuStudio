@@ -69,7 +69,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -110,202 +110,454 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BonOdoriBG_0
+      name: bonodoribg_0
       rect:
         serializedVersion: 2
-        x: 127
-        y: 1608
-        width: 1198
-        height: 556
+        x: 113
+        y: 2858
+        width: 1215
+        height: 1142
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: a9c9535445d39b841b4e745554169479
-      internalID: 782154678
+      spriteID: 263a3633000000000800000000000000
+      internalID: 862167906
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BonOdoriBG_1
+      name: bonodoribg_1
       rect:
         serializedVersion: 2
-        x: 1893
-        y: 0
-        width: 232
-        height: 2303
+        x: 1457
+        y: 3811
+        width: 1411
+        height: 139
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 4f55a76026d6b5d41b5de1e933e5546a
-      internalID: -1636099264
+      spriteID: 33a2be86000000000800000000000000
+      internalID: 1760242227
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BonOdoriBG_2
+      name: bonodoribg_2
       rect:
         serializedVersion: 2
-        x: 2861
-        y: 1960
-        width: 906
-        height: 328
+        x: 3072
+        y: 3337
+        width: 448
+        height: 637
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: ba618a08557df6f4bafc6ddfa9509e23
-      internalID: 1295164127
+      spriteID: 6d057c25000000000800000000000000
+      internalID: 1388794070
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BonOdoriBG_3
+      name: bonodoribg_3
       rect:
         serializedVersion: 2
-        x: 659
-        y: 1105
-        width: 190
-        height: 201
+        x: 3713
+        y: 3727
+        width: 285
+        height: 297
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: b031ba2f5ad4c9344bdd9341ac007693
-      internalID: 1504048084
+      spriteID: 5841ca02000000000800000000000000
+      internalID: 548148357
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BonOdoriBG_4
+      name: bonodoribg_4
       rect:
         serializedVersion: 2
-        x: 2767
-        y: 833
-        width: 1086
-        height: 1087
+        x: 1387
+        y: 3165
+        width: 1561
+        height: 501
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 506d1d6ac07f5574ebc49ae6c40ce671
-      internalID: -69749337
+      spriteID: a2d322d7000000000800000000000000
+      internalID: 2099395882
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BonOdoriBG_5
+      name: bonodoribg_5
       rect:
         serializedVersion: 2
-        x: 567
-        y: 761
-        width: 376
-        height: 134
+        x: 3759
+        y: 3432
+        width: 187
+        height: 184
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 6dbc2103c4e473142947a19bd2412ced
-      internalID: 1508949685
+      spriteID: a4258564000000000800000000000000
+      internalID: 1180193354
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BonOdoriBG_6
+      name: bonodoribg_6
       rect:
         serializedVersion: 2
-        x: 2867
-        y: 15
-        width: 890
-        height: 770
+        x: 117
+        y: 114
+        width: 326
+        height: 2438
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 6b393ba35ff569f4a9dacef58c16e560
-      internalID: -1866621671
+      spriteID: f969dfb6000000000800000000000000
+      internalID: 1811781279
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BonOdoriBG_7
+      name: bonodoribg_7
       rect:
         serializedVersion: 2
-        x: 253
-        y: 151
-        width: 238
-        height: 462
+        x: 1552
+        y: 2047
+        width: 2176
+        height: 912
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 5d3578ab611d0a04cb73664c5efce1b3
-      internalID: -1576044514
+      spriteID: e8c27282000000000800000000000000
+      internalID: 673655950
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BonOdoriBG_8
+      name: bonodoribg_8
       rect:
         serializedVersion: 2
-        x: 1141
-        y: 469
-        width: 170
-        height: 172
+        x: 538
+        y: 114
+        width: 482
+        height: 482
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: f1072961b3631d14eb186615ca81a232
-      internalID: -1674933358
+      spriteID: ee23a53dffffffff0800000000000000
+      internalID: -749063442
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: BonOdoriBG_9
+      name: bonodoribg_9
       rect:
         serializedVersion: 2
-        x: 909
-        y: 325
-        width: 88
-        height: 86
+        x: 1100
+        y: 114
+        width: 635
+        height: 271
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfe62220000000000800000000000000
+      internalID: 35811068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bonodoribg_10
+      rect:
+        serializedVersion: 2
+        x: 2475
+        y: 610
+        width: 809
+        height: 509
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d8d718da5c581d45b4d98ca1b6e04bb
+      internalID: 127124594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bonodoribg_11
+      rect:
+        serializedVersion: 2
+        x: 3373
+        y: 717
+        width: 204
+        height: 157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c06f7531d10d59446902e96d6b8acfe6
+      internalID: -1116122903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bonodoribg_12
+      rect:
+        serializedVersion: 2
+        x: 2117
+        y: 125
+        width: 486
+        height: 413
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 481a581ee2c8a3249bfb9006b2859981
+      internalID: 1829559748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bonodoribg_13
+      rect:
+        serializedVersion: 2
+        x: 2630
+        y: 123
+        width: 467
+        height: 431
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6926f8d0132a7d45807646711fa973c
+      internalID: 816442258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bonodoribg_14
+      rect:
+        serializedVersion: 2
+        x: 3124
+        y: 162
+        width: 254
+        height: 321
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68aa8738c2052fd43ab54405e8ebc71a
+      internalID: 694771211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bonodoribg_15
+      rect:
+        serializedVersion: 2
+        x: 3432
+        y: 179
+        width: 208
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 505940371c098304dac76d5a98470d4d
+      internalID: -1388714816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bonodoribg_16
+      rect:
+        serializedVersion: 2
+        x: 3698
+        y: 197
+        width: 233
+        height: 231
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 357d3e9de02c3f84a8e4e94f43ce0ae6
+      internalID: -1530205929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bonodoribg_17
+      rect:
+        serializedVersion: 2
+        x: 3702
+        y: 2973
+        width: 313
+        height: 326
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d43116141d1c0034faf5579343ddc39e
+      internalID: 851775295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bonodoribg_18
+      rect:
+        serializedVersion: 2
+        x: 519
+        y: 643
+        width: 1651
+        height: 1394
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2bff0037a58f304e9fd051e3d74638e
+      internalID: 308895646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bonodoribg_19
+      rect:
+        serializedVersion: 2
+        x: 3180
+        y: 1436
+        width: 798
+        height: 535
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6edeaf5cd9297bd4f9b6a6037c4eb3f7
+      internalID: 251101999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bonodoribg_20
+      rect:
+        serializedVersion: 2
+        x: 3614
+        y: 717
+        width: 204
+        height: 157
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71fdc3799ee089243ae4e90beef1a22c
+      internalID: -184062517
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bonodoribg_21
+      rect:
+        serializedVersion: 2
+        x: 3834
+        y: 717
+        width: 204
+        height: 157
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -313,8 +565,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 96aa7358063dd724aba2fa1c5b6bf3c1
-      internalID: -175681350
+      spriteID: 7026267c84488d44b9f2f0c712c72969
+      internalID: -53018787
       vertices: []
       indices: 
       edges: []
@@ -330,16 +582,28 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      BonOdoriBG_0: 782154678
-      BonOdoriBG_1: -1636099264
-      BonOdoriBG_2: 1295164127
-      BonOdoriBG_3: 1504048084
-      BonOdoriBG_4: -69749337
-      BonOdoriBG_5: 1508949685
-      BonOdoriBG_6: -1866621671
-      BonOdoriBG_7: -1576044514
-      BonOdoriBG_8: -1674933358
-      BonOdoriBG_9: -175681350
+      bonodoribg_0: 862167906
+      bonodoribg_1: 1760242227
+      bonodoribg_10: 127124594
+      bonodoribg_11: -1116122903
+      bonodoribg_12: 1829559748
+      bonodoribg_13: 816442258
+      bonodoribg_14: 694771211
+      bonodoribg_15: -1388714816
+      bonodoribg_16: -1530205929
+      bonodoribg_17: 851775295
+      bonodoribg_18: 308895646
+      bonodoribg_19: 251101999
+      bonodoribg_2: 1388794070
+      bonodoribg_20: -184062517
+      bonodoribg_21: -53018787
+      bonodoribg_3: 548148357
+      bonodoribg_4: 2099395882
+      bonodoribg_5: 1180193354
+      bonodoribg_6: 1811781279
+      bonodoribg_7: 673655950
+      bonodoribg_8: -749063442
+      bonodoribg_9: 35811068
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

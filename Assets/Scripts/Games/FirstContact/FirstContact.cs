@@ -16,6 +16,50 @@ namespace HeavenStudio.Games.Loaders
     {
         public static Minigame AddGame(EventCaller eventCaller)
         {
+            RiqEntity StUFOdioUpdater(string datamodel, RiqEntity e) // Updates all the April Fools 2026 contacts to just work in Second Contact. They do some funny stuff so we account for the funny stuff.
+            {
+                if (datamodel.Contains("Contact"))
+                {
+                    foreach (string label in FirstContact.stufodioContacts)
+                    {
+                        if (datamodel.Contains(label))
+                        {
+                            switch (datamodel)
+                            {
+                                case "fourthContact/alien speak":
+                                    datamodel = datamodel.Replace(label, "first");
+                                    e.CreateProperty("dialogue", "<sprite name=\"AlienIcn\">");
+                                    break;
+                                case "fifthContact/beat intervals":
+                                    datamodel = datamodel.Replace(label, "first");
+                                    e.CreateProperty("auto", "false");
+                                    break;
+                                case "sixthContact/alien speak":
+                                    datamodel = datamodel.Replace(label, "first");
+                                    e.CreateProperty("dialogue", "Yum. ");
+                                    break;
+                                case "ninthContact/alien speak":
+                                    datamodel = datamodel.Replace(label, "first");
+                                    e.CreateProperty("dialogue", "Uno! ");
+                                    break;
+                                case "thirteenthContact/alien speak":
+                                    datamodel = datamodel.Replace(label, "first");
+                                    e.CreateProperty("dialogue", "two ");
+                                    break;
+                                default:
+                                    datamodel = datamodel.Replace(label, "first");
+                                    break;
+                            }
+                        }
+                    }
+                    
+                    e.datamodel = datamodel;
+                    return e;
+                }
+                return null;
+            }
+            RiqBeatmap.OnUpdateEntity += StUFOdioUpdater;
+
             return new Minigame("firstContact", "Second Contact", "1f3833", false, false, new List<GameAction>()
             {
                 new GameAction("beat intervals", "Start Interval")
@@ -23,7 +67,7 @@ namespace HeavenStudio.Games.Loaders
                     preFunction = delegate { var e = eventCaller.currentEntity; FirstContact.PreInterval(e.beat, e.length, e["dialogue"], e["auto"]);   },
                     parameters = new List<Param>()
                     {
-                        new Param("dialogue", "REPLACE THIS", "Mistranslation Dialogue", "Set the line to use when messing up the translation."),
+                        new Param("dialogue", "(unintelligible)", "Mistranslation Dialogue", "Set the line to use when messing up the translation."),
                         new Param("auto", true, "Auto Pass Turn", "Toggle if the turn should be passed automatically at the end of the start interval.")
                     },
                     defaultLength = 3f,
@@ -96,11 +140,24 @@ namespace HeavenStudio.Games
 
     public class FirstContact : Minigame
     {
-        const string MID_MSG_MISS = "<color=\"red\"> ..? </color>";
+        const string MID_MSG_MISS = "<color=\"red\">? </color>";
         const string MSG_ALIEN = "<sprite name=\"AlienIcn\">";
         const string MSG_MAN = "<sprite name=\"ManIcn\">";
-        const string MSG_MAN_DDD = "...<sprite name=\"ManIcn\">";
+        const string MSG_MAN_DDD = "•  •  • <sprite name=\"ManIcn\">";
         // I should add a DonkTroll sprite 🫰🫰🫰🫰🫰
+
+        public static string[] stufodioContacts = new string[]
+        {
+            "second",
+            "third",
+            "fourth",
+            "fifth",
+            "sixth",
+            "seventh",
+            "ninth",
+            "twentyFifth",
+            "thirteenth"
+        };
 
         public static FirstContact instance { get; private set; }
 
@@ -130,8 +187,10 @@ namespace HeavenStudio.Games
         bool onBeat;
         float liveBarBeatOffset;
 
-        string onOutDialogue = "YOU SUCK AT CHARTING";
+        double lastIntervalBeat = double.MinValue;
+        string onOutDialogue = "(unintelligible)";
         string callDiagBuffer = "";
+        string fullCallBuffer = "";
         string respDiagBuffer = "";
         List<(string, bool)> callDiagList = new();
         int callDiagIndex = 0;
@@ -193,6 +252,7 @@ namespace HeavenStudio.Games
         {
             callDiagBuffer = "";
             respDiagBuffer = "";
+            fullCallBuffer = "";
             callDiagList.Clear();
             callDiagIndex = 0;
 
@@ -210,7 +270,21 @@ namespace HeavenStudio.Games
             {
                 if (entity.beat >= beat && entity.beat < endBeat)
                 {
-                    tempEvents.Add(entity);
+                    bool exists = false;
+
+                    foreach (var e in tempEvents)
+                    {
+                        if (e.beat == entity.beat)
+                        {
+                            exists = true;
+                            break;
+                        }
+                    }
+
+                    if (!exists)
+                    {
+                        tempEvents.Add(entity);
+                    }
                 }
             }
             return tempEvents;
@@ -245,8 +319,17 @@ namespace HeavenStudio.Games
 
         private void SetIntervalStart(double beat, float interval, string outDialogue, double gameSwitchBeat, bool autoPassTurn)
         {
+            if (lastIntervalBeat >= beat) return;
+            lastIntervalBeat = beat;
+
+            if (outDialogue == "REPLACE THIS")
+            {
+                outDialogue = "(unintelligible)";
+            }
+
             List<RiqEntity> relevantSpeakEvents = GetAllSpeaksInBetweenBeat(beat, beat + interval);
             relevantSpeakEvents.Sort((x, y) => x.beat.CompareTo(y.beat));
+            List<MultiSound.Sound> sounds = new();
             List<BeatAction.Action> queuedSpeaks = new()
             {
                 new BeatAction.Action(beat, delegate
@@ -256,6 +339,7 @@ namespace HeavenStudio.Games
                     onOutDialogue = outDialogue;
                     callDiagBuffer = "";
                     respDiagBuffer = "";
+                    fullCallBuffer = "";
                     callDiagList.Clear();
                     callDiagIndex = 0;
 
@@ -270,6 +354,17 @@ namespace HeavenStudio.Games
                     {
                         AlienTurnOver(beat + interval, beat, beat + interval, 1);
                     }
+
+                    foreach (var speak in relevantSpeakEvents)
+                    {
+                        for (int i = 0; i < speak["spaceNum"] * 2; i++)
+                        {
+                            if (!string.IsNullOrEmpty(fullCallBuffer)) fullCallBuffer += " ";
+                        }
+                        fullCallBuffer += speak["dotdotdot"] ? MSG_MAN_DDD : MSG_MAN;
+                    }
+
+                    ResetAlienTextbox();
                 })
             };
             for (int i = 0; i < relevantSpeakEvents.Count; i++)
@@ -281,12 +376,21 @@ namespace HeavenStudio.Games
                     {
                         AlienSpeak(speakEventToCheck.beat, speakEventToCheck["spaceNum"], speakEventToCheck["dotdotdot"]);
                     }));
+
+                    int voiceline = UnityEngine.Random.Range(1, 11);
+                    if (voiceline == currentVoicelineIndex) voiceline++;
+                    if (voiceline > 10) voiceline = 1;
+                    currentVoicelineIndex = voiceline;
+
+                    sounds.Add(new("firstContact/Bob" + voiceline, speakEventToCheck.beat, SoundByte.GetPitchFromCents(UnityEngine.Random.Range(-100, 0), false)));
+                    sounds.Add(new("firstContact/BobB", speakEventToCheck.beat));
                 }
                 else
                 {
                     AlienSpeakInactive(speakEventToCheck["spaceNum"]);
                 }
             }
+            MultiSound.Play(sounds);
             BeatAction.New(this, queuedSpeaks);
         }
 
@@ -320,13 +424,13 @@ namespace HeavenStudio.Games
             {
                 if (isSpeaking)
                 {
-                    if (noHitOnce || callDiagIndex == 0)
+                    if (callDiagIndex == 0)
                     {
                         FailContact();
                     }
                     else
                     {
-                        SoundByte.PlayOneShotGame("firstContact/ALIEN_PLAYER_A", -1, SoundByte.GetPitchFromSemiTones(UnityEngine.Random.Range(-3, 3), false));
+                        SoundByte.PlayOneShotGame("firstContact/ALIEN_PLAYER_MISS2_A", -1, SoundByte.GetPitchFromSemiTones(UnityEngine.Random.Range(-2, 1), false));
                         TrailingContact();
                         ScoreMiss();
                     }
@@ -378,19 +482,13 @@ namespace HeavenStudio.Games
 
         private void AlienSpeak(double beat, int spaceNum, bool hasDDD)
         {
-            int voiceline = UnityEngine.Random.Range(1, 11);
-            if (voiceline == currentVoicelineIndex) voiceline++;
-            if (voiceline > 10) voiceline = 1;
-            currentVoicelineIndex = voiceline;
-            SoundByte.PlayOneShotGame("firstContact/Bob" + voiceline, beat, SoundByte.GetPitchFromCents(UnityEngine.Random.Range(-100, 0), false));
-            SoundByte.PlayOneShotGame("firstContact/BobB");
             alien.DoScaledAnimationAsync("alien_talk", 0.5f);
             if (UnityEngine.Random.Range(0, 5) == 0) translator.DoScaledAnimationAsync("translator_lookAtAlien_nod", 0.5f);
 
             alienTextbox.SetActive(true);
             for (int i = 0; i < spaceNum * 2; i++)
             {
-                callDiagBuffer += " ";
+                if (!string.IsNullOrEmpty(callDiagBuffer)) callDiagBuffer += " ";
             }
             callDiagBuffer += hasDDD ? MSG_MAN_DDD : MSG_MAN;
             UpdateAlienTextbox();
@@ -494,6 +592,15 @@ namespace HeavenStudio.Games
             alienText.text = callDiagBuffer;
         }
 
+        void ResetAlienTextbox() // I was gonna do a cool <alpha=#00> trick so i didnt HAVE to do this. BUT alpha doesnt work on the alien sprites!!!! I hate this.
+        {
+            // shift the textbox to centre the message
+            string message = fullCallBuffer;
+            // many hardcoded values there'll be a better way to do this (FUTURE REVIEWER'S NOTE: I guess there wasn't!!!!!)
+            Vector2 size = alienText.GetPreferredValues(message, 10.95f, 1);
+            alienText.rectTransform.anchoredPosition = new Vector2(Mathf.Max((10.95f / 2f) + (-size.x / 2 - 0.25f), -0.25f), Mathf.Max((1.5f / 2f) + (-size.y / 2) + 0.2f, 0.2f));
+        }
+
         string GetMessageFromCallDialogue(int callDiagIndex = 0)
         {
             StringBuilder sb = new StringBuilder();
@@ -590,6 +697,10 @@ namespace HeavenStudio.Games
             translator.Play("translator_eh", 0, 0);
             if (!hasMissed)
             {
+                if (!string.IsNullOrEmpty(respDiagBuffer) && !char.IsLetterOrDigit(respDiagBuffer[respDiagBuffer.Length - 1]))
+                {
+                    respDiagBuffer = respDiagBuffer.Substring(0, respDiagBuffer.Length - 1);
+                }
                 respDiagBuffer += MID_MSG_MISS;
                 UpdateTranslateTextbox();
             }
@@ -611,14 +722,15 @@ namespace HeavenStudio.Games
             }
             if (state >= 1f || state <= -1f)
             {
+                SoundByte.PlayOneShotGame("firstContact/ALIEN_PLAYER_A", -1, SoundByte.GetPitchFromSemiTones(UnityEngine.Random.Range(4, 7), false));
+            }
+            else
+            {
                 SoundByte.PlayOneShotGame("firstContact/ALIEN_PLAYER_A", -1, SoundByte.GetPitchFromSemiTones(UnityEngine.Random.Range(-3, 3), false));
-                TrailingContact();
-                callDiagIndex++;
-                return;
             }
 
             translator.DoScaledAnimationAsync("translator_speak", 0.5f);
-            SoundByte.PlayOneShotGame("firstContact/ALIEN_PLAYER_A", -1, SoundByte.GetPitchFromSemiTones(UnityEngine.Random.Range(-3, 3), false));
+            
             SoundByte.PlayOneShotGame("firstContact/ALIEN_PLAYER_B");
             respDiagBuffer += dialogue;
             UpdateTranslateTextbox();
@@ -635,6 +747,10 @@ namespace HeavenStudio.Games
 
             if (callDiagIndex > 0 && !hasMissed)
             {
+                if (!string.IsNullOrEmpty(respDiagBuffer) && !char.IsLetterOrDigit(respDiagBuffer[respDiagBuffer.Length - 1]))
+                {
+                    respDiagBuffer = respDiagBuffer.Substring(0, respDiagBuffer.Length - 1);
+                }
                 respDiagBuffer += MID_MSG_MISS;
                 UpdateTranslateTextbox();
                 hasMissed = true;

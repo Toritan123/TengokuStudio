@@ -68,7 +68,6 @@ namespace HeavenStudio.Editor.Track
             foreach (var sectionChange in GameManager.instance.Beatmap.SectionMarkers)
                 AddChartSection(false, sectionChange);
 
-            Timeline.instance.timelineState.SetState(Timeline.CurrentTimelineState.State.Selection);
             FixObjectsVisibility();
         }
 
