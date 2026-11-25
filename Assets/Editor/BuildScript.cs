@@ -256,6 +256,15 @@ namespace UnityBuilderAction
                     Directory.Move(assetBundleDirectory, streamingAssets);
 
                     swappedStreamingAssets = true;
+
+                    // the pack-in levels and other non-bundle files only live in Assets/StreamingAssets:
+                    // bring them along for the swapped-in bundles, or a build made on another platform ships without them
+                    foreach (string name in SharedStreamingAssets)
+                    {
+                        string src = Path.Combine(tempDirectory, name), dst = Path.Combine(streamingAssets, name);
+                        if (Directory.Exists(src)) CopyDirectory(src, dst);
+                        else if (File.Exists(src)) File.Copy(src, dst, true);
+                    }
                 }
 
                 AssetDatabase.Refresh();
@@ -272,6 +281,14 @@ namespace UnityBuilderAction
             {
                 if (swappedStreamingAssets)
                 {
+                    foreach (string name in SharedStreamingAssets)
+                    {
+                        string copied = Path.Combine(streamingAssets, name);
+                        if (Directory.Exists(copied)) Directory.Delete(copied, true);
+                        else if (File.Exists(copied)) File.Delete(copied);
+                        if (File.Exists(copied + ".meta")) File.Delete(copied + ".meta");
+                    }
+
                     if (Directory.Exists(assetBundleDirectory))
                     {
                         Directory.Delete(assetBundleDirectory, true);
@@ -300,6 +317,20 @@ namespace UnityBuilderAction
                     EditorUserBuildSettings.SwitchActiveBuildTarget(currentTG, currentBT);
                 }
             }
+        }
+
+        // files in Assets/StreamingAssets that are not asset bundles
+        static readonly string[] SharedStreamingAssets = { "Library Pack-In", "samuraislice.en" };
+
+        static void CopyDirectory(string src, string dst)
+        {
+            Directory.CreateDirectory(dst);
+            foreach (string f in Directory.GetFiles(src))
+            {
+                if (f.EndsWith(".meta")) continue;  // unity makes its own; copying them would duplicate guids
+                File.Copy(f, Path.Combine(dst, Path.GetFileName(f)), true);
+            }
+            foreach (string d in Directory.GetDirectories(src)) CopyDirectory(d, Path.Combine(dst, Path.GetFileName(d)));
         }
 
         private static string GetAssetBundleDirectory(BuildTarget buildTarget)
