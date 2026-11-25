@@ -46,13 +46,13 @@ namespace HeavenStudio.Common
         public void ShowDescription()
         {
             if (settings.DescriptionDisplay != null)
-                settings.DescriptionDisplay.text = description;
+                settings.DescriptionDisplay.text = Localization.T(description);
         }
 
         public void HideDescription()
         {
             if (settings.DescriptionDisplay != null)
-                settings.DescriptionDisplay.text = settings.defaultDescription;
+                settings.DescriptionDisplay.text = Localization.T(settings.defaultDescription);
         }
     }
 }

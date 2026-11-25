@@ -337,9 +337,9 @@ namespace HeavenStudio
                 }
                 catch (Exception e)
                 {
-                    deleteText.text = "Delete folder";
+                    deleteText.text = Localization.T("Delete folder");
                     deletePossible = false;
-                    GlobalGameManager.ShowErrorMessage("Error", "An error occurred deleting this folder:\n\n" + e.Message);
+                    GlobalGameManager.ShowErrorMessage("Error", Localization.T("An error occurred deleting this folder:") + "\n\n" + e.Message);
                 }
             }
         }

@@ -51,7 +51,7 @@ namespace HeavenStudio.Common
                 tabsManager.GenerateTabs(tabs);
 
                 BuildDateDisplay.text = GlobalGameManager.buildTime;
-                DescriptionDisplay.text = defaultDescription;
+                DescriptionDisplay.text = Localization.T(defaultDescription);
 
 
                 if (GameManager.instance != null && GameManager.instance.CircleCursor != null && GameManager.instance.playMode)

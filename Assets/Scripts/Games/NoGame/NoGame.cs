@@ -6,6 +6,7 @@ using UnityEngine;
 using TMPro;
 
 using HeavenStudio.Util;
+using HeavenStudio.Common;
 using HeavenStudio.InputSystem;
 
 using Jukebox;
@@ -94,10 +95,10 @@ namespace HeavenStudio.Games
                     ErrorText.text = "";
                     break;
                 case Error.GameNotInBuild:
-                    ErrorText.text = $"The minigame \"{gameName}\" is not present in this build.\nPlease make sure your game is up-to-date.";
+                    ErrorText.text = Localization.F("The minigame \"{0}\" is not present in this build.\nPlease make sure your game is up-to-date.", gameName);
                     break;
                 case Error.FailedToLoadGame:
-                    ErrorText.text = $"Failed to load the minigame \"{gameName}\".";
+                    ErrorText.text = Localization.F("Failed to load the minigame \"{0}\".", gameName);
                     break;
                 default:
                     ErrorText.text = "An unknown error occurred.";

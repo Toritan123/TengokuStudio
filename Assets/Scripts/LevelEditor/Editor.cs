@@ -724,7 +724,7 @@ namespace HeavenStudio.Editor
                     manualSave = "N/A";
                 }
                 
-                _confirmLoadAutosaveLabel.text = $"Level: {levelName}\nLast manual save: {manualSave}\nLast autosave: {autoSave}";
+                _confirmLoadAutosaveLabel.text = Localization.F("Level: {0}\nLast manual save: {1}\nLast autosave: {2}", levelName, manualSave, autoSave);
             }
         }
 
