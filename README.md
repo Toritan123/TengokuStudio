@@ -3,7 +3,8 @@
 [Heaven Studio](https://github.com/RHeavenStudio/HeavenStudio) を日本語にした非公式版です。
 画面の文字・ミニゲーム名・同梱レベルが日本語になり、ミニゲームの声や画面の文字画像も日本語版『リズム天国』シリーズのものに置き換えています。
 
-- ダウンロード: [Releases](../../releases)（Mac・Windows・Linux）
+- サイト: https://tengoku-studio.toritan.workers.dev （ダウンロード・更新履歴・よくある質問）
+- ダウンロード: サイトから（Mac・Windows・Linux）。予備として [Releases](../../releases) にも置いています
 - 仕組みと翻訳ファイルの場所: [LOCALIZATION.md](LOCALIZATION.md)
 - 日本語化した声・画像の一覧: [Japanese_Voice_Checklist.md](Japanese_Voice_Checklist.md)・[Japanese_Image_Checklist.md](Japanese_Image_Checklist.md)
 
